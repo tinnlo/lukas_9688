@@ -1,0 +1,39 @@
+properties:
+  file.ctime:
+    displayName: created
+  file.mtime:
+    displayName: updated
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.ext == "md"
+        - file.inFolder("/shorts_scripts")
+    order:
+      - file.name
+      - product
+      - caption
+      - published
+      - duration
+      - sales
+      - tags
+      - link
+      - source_notes
+    sort:
+      - property: published
+        direction: DESC
+      - property: file.name
+        direction: ASC
+    columnSize:
+      file.name: 220
+      note.product: 140
+      note.caption: 182
+      note.published: 120
+      note.duration: 90
+      note.sales: 80
+      note.tags: 320
+      note.link: 260
+      note.source_notes: 360
+  - type: cards
+    name: View

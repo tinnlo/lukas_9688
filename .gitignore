@@ -1,0 +1,22 @@
+# OS / editor
+.DS_Store
+
+# Ignore videos
+*.mp4
+*.mov
+*.m4v
+*.avi
+*.mkv
+*.webm
+
+# Ignore audio
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.flac
+*.ogg
+
+# Optional: rendered/exports
+*.mpg
+*.mpeg

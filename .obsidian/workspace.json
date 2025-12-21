@@ -1,0 +1,226 @@
+{
+  "main": {
+    "id": "c5a845acfb7750fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "aaadb278d8add157",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed3173eb9417c315",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "shorts_dashboard.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "shorts_dashboard"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f7330e74d70aca5f",
+    "type": "split",
+    "children": [
+      {
+        "id": "2aacb5ba0a32a5e9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "63e7a36d1f166bd1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0b6972f76725945d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "06c8a2ccd50d377c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 259.5
+  },
+  "right": {
+    "id": "372a1c2ee734819c",
+    "type": "split",
+    "children": [
+      {
+        "id": "cad0680ca27d86e9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ce76693435c1da52",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "shorts_dashboard.base",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for shorts_dashboard"
+            }
+          },
+          {
+            "id": "63a7fc51c7906866",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "shorts_dashboard.base",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from shorts_dashboard"
+            }
+          },
+          {
+            "id": "cf4d54c5881d9ca0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "8ce16896cdc7994e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "6088931f9e679a8b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "shorts_dashboard.base",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of shorts_dashboard"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "ed3173eb9417c315",
+  "lastOpenFiles": [
+    "shorts_scripts/MINISO_MS188_Flash_Sale_AI_Uebersetzer.md",
+    "shorts_dashboard.base",
+    "shorts_scripts/MINISO_MS156_Open_Ear_Echtzeituebersetzer.md",
+    "shorts_scripts/MINISO_MS156_Open_Ear_Echtzeituebersetzer.mp3",
+    "shorts_scripts/2025-12-21T12_41_37_Leon Stern - Rich and Deep_pvc_sp120_s30_sb50_v3.mp3",
+    "shorts_scripts/HTC_NE20_AI_Uebersetzer_Earbuds.mp3",
+    "shorts_scripts/2025-12-21T11_25_24_Leon Stern - Rich and Deep_pvc_sp120_s30_sb50_v3.mp3",
+    "shorts_scripts/MINISO_MS188_Flash_Sale_AI_Uebersetzer.mp3",
+    "product_list/MINISO MS188/2025-12-21T12_41_37_Leon Stern - Rich and Deep_pvc_sp120_s30_sb50_v3.mp3",
+    "product_list/MINISO MS188/7576108509268348182.md",
+    "product_list/MINISO MS188/7520182265683381526.md",
+    "product_list/MINISO MS156/2025-12-21T12_41_37_Leon Stern - Rich and Deep_pvc_sp120_s30_sb50_v3.mp3",
+    "shorts_scripts/HTC_NE20_AI_Uebersetzer_Earbuds.md",
+    "product_list/HTC NE20/2025-12-21T11_25_24_Leon Stern - Rich and Deep_pvc_sp120_s30_sb50_v3.mp3",
+    "AGENTS.md",
+    "ElevenLabs_v3_Alpha_VO_Grammar_Practice.md",
+    "ElevenLabs_Multilingual_v2_VO_Grammar_Practice.md",
+    "product_list/HTC NE20/7563249844169542914.md",
+    "Account_Description.md",
+    "shorts_scripts",
+    "7558779033610095894.md",
+    "product_list/MINISO MS188/download.png",
+    "product_list/MINISO MS156/7575477825742982403.md",
+    "product_list/MINISO MS156/download (1).png",
+    "product_list/MINISO MS156/7576137918683581718.md",
+    "product_list/HTC NE20/7579948874081651990.md",
+    "product_list/HTC NE20/download.png",
+    "product_list/HTC NE20/7579948874081651990.png",
+    "product_list/HTC NE20/7563249844169542914.png",
+    "product_list/7558779033610095894.md",
+    "MINISO MS188/7576108509268348182.md",
+    "MINISO MS188/7520182265683381526.md",
+    "MINISO MS156/7576137918683581718.md",
+    "MINISO MS156/7575477825742982403.md",
+    "HTC NE20/7563249844169542914.md",
+    "HTC NE20/7579948874081651990.md",
+    "HTC NE20/7579948874081651990.png",
+    "MINISO MS156/download (1).png"
+  ]
+}
