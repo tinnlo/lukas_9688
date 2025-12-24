@@ -366,9 +366,10 @@ def display_results(results: dict):
         col1, col2 = st.columns(2)
 
         with col1:
-            # View in browser
-            with st.expander("📖 View Report in Browser"):
-                st.markdown(md_content)
+            # View in browser button
+            if st.button("📖 View Report in Browser", key=f"view_report_{datetime.now().timestamp()}", use_container_width=True):
+                st.session_state.show_report_modal = True
+                st.session_state.report_content = md_content
 
         with col2:
             # Download markdown file
@@ -377,8 +378,29 @@ def display_results(results: dict):
                 data=md_content,
                 file_name=file_name,
                 mime="text/markdown",
-                key=f"download_md_{datetime.now().timestamp()}"
+                key=f"download_md_{datetime.now().timestamp()}",
+                use_container_width=True
             )
+
+        # Display modal if triggered
+        if st.session_state.get('show_report_modal', False):
+            st.markdown("---")
+            st.markdown("### 📄 Report Preview")
+
+            # Close button
+            if st.button("✖ Close", key="close_modal"):
+                st.session_state.show_report_modal = False
+                st.rerun()
+
+            # Display markdown in full width
+            st.markdown(st.session_state.get('report_content', ''))
+
+            # Another close button at bottom
+            if st.button("✖ Close", key="close_modal_bottom"):
+                st.session_state.show_report_modal = False
+                st.rerun()
+
+            st.markdown("---")
 
         st.markdown("---")
 
