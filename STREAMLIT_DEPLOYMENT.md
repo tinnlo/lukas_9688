@@ -1,205 +1,146 @@
-# Streamlit Cloud Deployment Guide
+# Streamlit Cloud Deployment Guide (Simplified Version)
 
-This guide shows you how to deploy the TikTok Shop Product Scraper as a web app that your colleagues can access from anywhere.
+This guide shows you how to deploy the **TikTok Shop Product Scraper Results Viewer** as a web app.
 
-## Prerequisites
+## What This App Does
 
-- GitHub account (you already have this!)
-- Streamlit Cloud account (free)
-- Tabcut.com credentials
+**This is a RESULTS VIEWER, not a scraper runner.**
 
-## Step 1: Push Code to GitHub
+- ✅ Colleagues upload scraped JSON files
+- ✅ View beautiful data visualizations
+- ✅ Download reports and summaries
+- ✅ Batch analysis dashboard
+- ❌ Does NOT run the scraper (you do that locally)
 
-First, make sure all files are committed and pushed:
+## Why This Approach?
 
-```bash
-# Check status
-git status
+The scraper requires **browser automation (Playwright)** which doesn't work well on Streamlit Cloud free tier. Instead:
 
-# Add new files
-git add streamlit_app.py requirements.txt .streamlit/ STREAMLIT_DEPLOYMENT.md .gitignore
+1. **You (admin)** run the scraper locally
+2. **Colleagues** upload results to this app for viewing
+3. **Everyone** benefits from easy data analysis
 
-# Commit
-git commit -m "Add Streamlit web interface for non-technical users
+## Deployment Steps
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+### Step 1: Code is Ready ✅
 
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+All code is already pushed to GitHub!
 
-# Push to GitHub
-git push origin main
-```
-
-## Step 2: Create Streamlit Cloud Account
+### Step 2: Deploy to Streamlit Cloud
 
 1. Go to [https://streamlit.io/cloud](https://streamlit.io/cloud)
-2. Click **"Sign up"**
-3. Choose **"Continue with GitHub"**
-4. Authorize Streamlit to access your GitHub repositories
-
-## Step 3: Deploy Your App
-
-1. **Click "New app"** in Streamlit Cloud dashboard
-
-2. **Configure deployment:**
+2. Sign in with GitHub
+3. Click **"Deploy a public app from GitHub"**
+4. Configure:
    - **Repository:** `tinnlo/lukas_9688`
    - **Branch:** `main`
    - **Main file path:** `streamlit_app.py`
-   - **App URL:** Choose a custom URL (e.g., `tiktok-scraper-lukas` or use auto-generated)
+   - **App URL:** Choose a name (e.g., `tiktok-scraper-viewer`)
+5. Click **"Deploy!"**
 
-3. **Click "Deploy"**
+The app will deploy in **~1 minute** (much faster than before!)
 
-   The app will start building. This takes 2-5 minutes on first deployment.
+### Step 3: Test the App
 
-## Step 4: Configure Secrets (IMPORTANT!)
+1. Once deployed, click **"Open app"**
+2. You should see the Results Viewer interface
+3. Try uploading a sample JSON file
 
-After deployment starts, you need to add your Tabcut credentials:
+### Step 4: Share with Colleagues
 
-1. In Streamlit Cloud dashboard, click on your app
-2. Click **"⚙️ Settings"** (top right)
-3. Go to **"Secrets"** tab
-4. Paste the following (replace with your actual credentials):
+Share the URL: `https://your-app-name.streamlit.app`
 
-```toml
-TABCUT_USERNAME = "your_actual_username"
-TABCUT_PASSWORD = "your_actual_password"
-```
+## How Colleagues Use the App
 
-5. Click **"Save"**
-6. The app will automatically restart with the new secrets
+### For Non-Technical Users:
 
-## Step 5: Install Playwright (Critical!)
+1. **Receive JSON files** from you (via email, Slack, shared folder)
+2. **Open the app** in their browser
+3. **Upload JSON files** in the "Upload Results" tab
+4. **View data** in tables and charts
+5. **Download reports** as CSV for Excel
 
-Streamlit Cloud needs additional setup for Playwright:
+### What They'll See:
 
-1. In your app settings, go to **"Advanced settings"**
-2. Add a `packages.txt` file to your repository:
+- Product information
+- Sales analytics
+- Video performance metrics
+- Top performing videos
+- Batch analysis dashboard
 
-```bash
-# Create packages.txt in repository root
-cat > packages.txt << 'EOF'
-libnss3
-libnspr4
-libatk1.0-0
-libatk-bridge2.0-0
-libcups2
-libdrm2
-libxkbcommon0
-libxcomposite1
-libxdamage1
-libxfixes3
-libxrandr2
-libgbm1
-libasound2
-EOF
-```
+## How You (Admin) Use the Workflow
 
-3. Create a post-install script for Playwright:
+### Step 1: Run Scraper Locally
 
 ```bash
-# Create .streamlit/setup.sh
-mkdir -p .streamlit
-cat > .streamlit/setup.sh << 'EOF'
-#!/bin/bash
-playwright install chromium
-playwright install-deps chromium
-EOF
-
-chmod +x .streamlit/setup.sh
+cd scripts
+source venv/bin/activate
+python run_scraper.py --batch-file products.csv --download-videos
 ```
 
-4. Update your repository:
+Results saved to: `product_list/{product_id}/tabcut_data.json`
 
-```bash
-git add packages.txt .streamlit/setup.sh
-git commit -m "Add Playwright dependencies for Streamlit Cloud
+### Step 2: Share Results
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+**Option A: Direct File Sharing**
+- Email JSON files to colleagues
+- Or use Slack/Teams/Dropbox
 
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
-git push origin main
-```
+**Option B: Colleagues Access Directly**
+- If they have access to the shared folder
+- They can grab JSON files themselves
 
-5. The app will auto-redeploy with Playwright support
+### Step 3: Colleagues View in App
 
-## Step 6: Test Your App
+They upload the JSON files to the Streamlit app.
 
-1. Once deployed, click **"Open app"** to visit your web app
-2. Test with a single product ID first: `1729630936525936882`
-3. Verify the scraping works and data is returned
+## Features
 
-## Step 7: Share with Colleagues
+### Upload Results Tab
+- Upload single or multiple JSON files
+- View detailed product information
+- Download summary CSV
 
-Your app is now live! Share the URL with your team:
+### Batch Analysis Tab
+- Upload many files at once
+- See aggregate metrics
+- Filter by sales/videos
+- Download filtered results
 
-```
-https://your-app-name.streamlit.app
-```
+### Instructions Tab
+- Complete workflow guide
+- Commands for running scraper
+- Help for non-technical users
 
-**What colleagues need to do:**
-1. Click the link
-2. That's it! No installation, no setup
+## No Secrets Required!
 
-They can:
-- Paste product IDs to scrape single products
-- Upload CSV files for batch scraping
-- Download results as JSON
-- See real-time progress
-
-## Usage Instructions for Colleagues
-
-### Single Product Mode
-
-1. Open the app URL
-2. Go to **"🎯 Single Product"** tab
-3. Enter a product ID (e.g., `1729630936525936882`)
-4. Optional: Check "Download top 5 videos" in sidebar
-5. Click **"Start Scraping"**
-6. Wait for completion
-7. Download results
-
-### Batch Mode
-
-1. Prepare a CSV file:
-   ```csv
-   product_id
-   1729630936525936882
-   7575477825742982403
-   7520182265683381526
-   ```
-
-2. Go to **"📦 Batch Mode"** tab
-3. Upload the CSV file
-4. Review the product list
-5. Optional: Check "Download top 5 videos"
-6. Click **"Start Batch Scraping"**
-7. Watch real-time progress
-8. Download results when complete
+Unlike the previous version, this app **doesn't need secrets** because:
+- It doesn't scrape anything
+- It only displays data
+- No authentication needed
 
 ## Troubleshooting
 
 ### App Won't Start
-- **Check secrets:** Make sure `TABCUT_USERNAME` and `TABCUT_PASSWORD` are set correctly
-- **Check logs:** Click "Manage app" → "Logs" to see error messages
-- **Playwright issue:** Make sure `packages.txt` and setup script are committed
+- Check Streamlit Cloud logs
+- Usually deploys in 1-2 minutes
+- If stuck >5 minutes, cancel and redeploy
 
-### Scraping Fails
-- **Verify credentials:** Wrong username/password in secrets
-- **Tabcut.com down:** Check if tabcut.com is accessible
-- **Rate limiting:** Too many requests too fast
+### Can't Upload Files
+- File must be valid JSON
+- Use files from `product_list/{product_id}/tabcut_data.json`
 
-### Slow Performance
-- **Video downloads:** Disable video downloads for faster scraping
-- **Large batches:** Break into smaller batches (10-20 products at a time)
-- **Free tier limits:** Streamlit Cloud free tier has resource limits
+### Data Looks Wrong
+- Verify JSON file structure matches scraper output
+- Check for corrupted files
 
 ## Updating the App
 
-When you make changes to the code:
+When you update the code:
 
 ```bash
-git add .
-git commit -m "Your update message
+git add streamlit_app.py
+git commit -m "Update results viewer
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
@@ -207,69 +148,49 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
 git push origin main
 ```
 
-Streamlit Cloud will **automatically redeploy** within 1-2 minutes.
+Streamlit auto-redeploys in ~1 minute.
 
-## Cost & Limits
+## Cost
 
-**Streamlit Cloud Free Tier:**
-- ✅ Unlimited public apps
-- ✅ 1GB RAM per app
-- ✅ Auto-redeploy from GitHub
-- ✅ Custom URLs
-- ⚠️ Apps sleep after 7 days of inactivity (wake up on visit)
+**100% FREE on Streamlit Cloud:**
+- Public apps unlimited
+- No resource issues (very lightweight)
+- Always available
 
-**If you need more:**
-- **Streamlit Cloud Team/Business** ($250-$1000/month) for:
-  - More resources
-  - Private apps
-  - Always-on apps
-  - Priority support
+## Alternative: Local Sharing
 
-For your use case, **free tier should be sufficient**.
-
-## Security Notes
-
-- ✅ Credentials are stored securely in Streamlit secrets (encrypted)
-- ✅ Secrets are never exposed in code or logs
-- ⚠️ App is public by default (anyone with URL can use it)
-- ⚠️ Scraped data is stored temporarily on Streamlit Cloud
-
-**For private apps:** Upgrade to Streamlit Cloud Team plan ($250/month)
-
-## Alternative: Run Locally with LAN Access
-
-If you prefer to run locally and have colleagues access via LAN:
+If you prefer not to use cloud:
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
-playwright install chromium
+# Run locally
+streamlit run streamlit_app.py
 
-# Create local secrets
-cp .streamlit/secrets.toml.example .streamlit/secrets.toml
-# Edit secrets.toml with your credentials
-
-# Run the app
+# Access on LAN
 streamlit run streamlit_app.py --server.address 0.0.0.0
+
+# Colleagues visit: http://YOUR_IP:8501
 ```
-
-Colleagues on same network visit: `http://YOUR_IP:8501`
-
-## Support
-
-For issues or questions:
-- Check Streamlit Cloud logs: Settings → Logs
-- Review GitHub repo: https://github.com/tinnlo/lukas_9688
-- Streamlit docs: https://docs.streamlit.io
 
 ---
 
 **Quick Reference:**
 
-| Task | Command/Link |
-|------|--------------|
-| Deploy app | https://streamlit.io/cloud |
-| Add secrets | App Settings → Secrets |
-| View logs | App Settings → Logs |
+| Task | Solution |
+|------|----------|
+| Deploy app | Streamlit Cloud → Deploy from GitHub |
 | Update app | `git push origin main` |
-| App URL | `https://your-app.streamlit.app` |
+| Share results | Email JSON files or shared folder |
+| View data | Colleagues upload to app |
+| Download reports | Click download buttons in app |
+
+## Summary
+
+This simplified approach:
+- ✅ Deploys fast (1 minute)
+- ✅ No resource issues
+- ✅ 100% free
+- ✅ Easy for non-technical users
+- ✅ You control scraping locally
+- ✅ Colleagues get beautiful UI
+
+Perfect for your use case!
