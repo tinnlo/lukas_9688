@@ -442,6 +442,17 @@ def main():
     """Main Streamlit app."""
     init_session_state()
 
+    # Custom CSS to limit max width and center content
+    st.markdown("""
+        <style>
+        .main .block-container {
+            max-width: 1280px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
     # Header
     st.title("🛍️ TikTok Shop Product Scraper")
     st.markdown("**Cloud-Powered Product Data Extraction**")
