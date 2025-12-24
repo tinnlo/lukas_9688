@@ -332,6 +332,48 @@ def display_results(results: dict):
         summary_df = create_summary_dataframe(results['data'])
         st.dataframe(summary_df, use_container_width=True)
 
+        # Download buttons
+        st.markdown("---")
+        col1, col2 = st.columns(2)
+
+        with col1:
+            # Generate markdown report
+            if len(results['data']) == 1:
+                md_content = generate_markdown_report(results['data'][0])
+                st.download_button(
+                    label="📄 Download Report (Markdown)",
+                    data=md_content,
+                    file_name=f"product_{results['data'][0].get('product_id', 'report')}_{datetime.now().strftime('%Y%m%d')}.md",
+                    mime="text/markdown",
+                    key=f"download_md_{datetime.now().timestamp()}"
+                )
+            else:
+                # For multiple products, create combined markdown
+                md_content = f"# TikTok Shop Products Report\n\n*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*\n\n---\n\n"
+                for data in results['data']:
+                    md_content += generate_markdown_report(data) + "\n---\n\n"
+
+                st.download_button(
+                    label="📄 Download Report (Markdown)",
+                    data=md_content,
+                    file_name=f"products_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md",
+                    mime="text/markdown",
+                    key=f"download_md_{datetime.now().timestamp()}"
+                )
+
+        with col2:
+            # Download full JSON
+            json_str = json.dumps(results['data'], indent=2, ensure_ascii=False)
+            st.download_button(
+                label="📥 Download Full Data (JSON)",
+                data=json_str,
+                file_name=f"scraped_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
+                mime="application/json",
+                key=f"download_json_{datetime.now().timestamp()}"
+            )
+
+        st.markdown("---")
+
         # Display product images if available
         for data in results['data']:
             product_id = data.get('product_id')
@@ -450,45 +492,6 @@ def display_results(results: dict):
 
                                 if idx < len(video_files):
                                     st.markdown("---")
-
-        # Download buttons
-        col1, col2 = st.columns(2)
-
-        with col1:
-            # Generate markdown report
-            if len(results['data']) == 1:
-                md_content = generate_markdown_report(results['data'][0])
-                st.download_button(
-                    label="📄 Download Report (Markdown)",
-                    data=md_content,
-                    file_name=f"product_{results['data'][0].get('product_id', 'report')}_{datetime.now().strftime('%Y%m%d')}.md",
-                    mime="text/markdown",
-                    key=f"download_md_{datetime.now().timestamp()}"
-                )
-            else:
-                # For multiple products, create combined markdown
-                md_content = f"# TikTok Shop Products Report\n\n*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*\n\n---\n\n"
-                for data in results['data']:
-                    md_content += generate_markdown_report(data) + "\n---\n\n"
-
-                st.download_button(
-                    label="📄 Download Report (Markdown)",
-                    data=md_content,
-                    file_name=f"products_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md",
-                    mime="text/markdown",
-                    key=f"download_md_{datetime.now().timestamp()}"
-                )
-
-        with col2:
-            # Download full JSON
-            json_str = json.dumps(results['data'], indent=2, ensure_ascii=False)
-            st.download_button(
-                label="📥 Download Full Data (JSON)",
-                data=json_str,
-                file_name=f"scraped_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
-                mime="application/json",
-                key=f"download_json_{datetime.now().timestamp()}"
-            )
 
 
 def main():
