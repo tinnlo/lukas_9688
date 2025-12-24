@@ -83,6 +83,10 @@ def init_session_state():
         st.session_state.carousel_index = {}
     if 'show_carousel' not in st.session_state:
         st.session_state.show_carousel = None
+    if 'show_report_modal' not in st.session_state:
+        st.session_state.show_report_modal = False
+    if 'report_content' not in st.session_state:
+        st.session_state.report_content = ''
 
 
 def create_images_zip(product_id: str, images_dir: Path) -> bytes:
@@ -366,11 +370,8 @@ def display_results(results: dict):
         col1, col2 = st.columns(2)
 
         with col1:
-            # View in browser button
-            if st.button("📖 View Report in Browser", key="view_report_btn", use_container_width=True):
-                st.session_state.show_report_modal = True
-                st.session_state.report_content = md_content
-                st.rerun()
+            # View in browser with expander (simpler, always works)
+            view_report = st.checkbox("📖 View Report in Browser", key="view_report_toggle")
 
         with col2:
             # Download markdown file
@@ -383,24 +384,11 @@ def display_results(results: dict):
                 use_container_width=True
             )
 
-        # Display modal if triggered
-        if st.session_state.get('show_report_modal', False):
+        # Display report if checkbox is checked
+        if view_report:
             st.markdown("---")
             st.markdown("### 📄 Report Preview")
-
-            # Close button
-            if st.button("✖ Close", key="close_modal"):
-                st.session_state.show_report_modal = False
-                st.rerun()
-
-            # Display markdown in full width
-            st.markdown(st.session_state.get('report_content', ''))
-
-            # Another close button at bottom
-            if st.button("✖ Close", key="close_modal_bottom"):
-                st.session_state.show_report_modal = False
-                st.rerun()
-
+            st.markdown(md_content)
             st.markdown("---")
 
         st.markdown("---")
