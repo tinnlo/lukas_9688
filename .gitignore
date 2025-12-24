@@ -20,3 +20,12 @@
 # Optional: rendered/exports
 *.mpg
 *.mpeg
+
+# Scraper
+scripts/config/.env
+scripts/config/session.json
+scripts/logs/*.log
+scripts/venv/
+scripts/**/__pycache__/
+scripts/**/*.pyc
+*.progress.json

@@ -1,0 +1,23 @@
+# Web Automation
+playwright==1.48.0
+
+# Configuration & Environment
+python-dotenv==1.0.0
+
+# Async File Operations
+aiofiles==23.2.1
+
+# Logging
+loguru==0.7.2
+
+# CLI Progress & Display
+rich==13.7.0
+
+# HTTP Client (for video downloads)
+httpx==0.26.0
+
+# Video Downloader for TikTok
+yt-dlp==2024.12.13
+
+# Retry Utilities
+tenacity==8.2.3
