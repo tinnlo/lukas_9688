@@ -67,7 +67,7 @@ from tabcut_scraper.utils import setup_logging
 st.set_page_config(
     page_title="TikTok Shop Product Scraper",
     page_icon="🛍️",
-    layout="wide"
+    layout="centered"
 )
 
 
@@ -445,10 +445,14 @@ def main():
     # Custom CSS to limit max width and center content
     st.markdown("""
         <style>
-        .main .block-container {
+        .block-container {
+            max-width: 1280px !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+        }
+        section.main > div {
             max-width: 1280px;
-            padding-left: 2rem;
-            padding-right: 2rem;
+            margin: 0 auto;
         }
         </style>
     """, unsafe_allow_html=True)
