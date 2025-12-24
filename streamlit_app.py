@@ -130,7 +130,12 @@ def generate_markdown_report(data: dict) -> str:
             estimated_sales = video.get('estimated_sales', 0)
             estimated_sales_str = f"{int(estimated_sales):,}" if isinstance(estimated_sales, (int, float)) else str(estimated_sales)
 
-            md += f"""### {video.get('rank', '?')}. {video.get('title', 'Video')}
+            # Clean up video title - remove metadata after "发现时间" if present
+            title = video.get('title', 'Video')
+            if '发现时间' in title:
+                title = title.split('发现时间')[0].strip()
+
+            md += f"""### {video.get('rank', '?')}. {title}
 
 - **Creator:** @{video.get('creator_username', 'unknown')}
 - **Published:** {video.get('publish_date', 'N/A')}
@@ -305,6 +310,20 @@ def display_results(results: dict):
         summary_df = create_summary_dataframe(results['data'])
         st.dataframe(summary_df, use_container_width=True)
 
+        # Display product images if available
+        for data in results['data']:
+            product_id = data.get('product_id')
+            if product_id:
+                images_dir = Path(f"product_list/{product_id}/product_images")
+                if images_dir.exists():
+                    image_files = list(images_dir.glob("*.jpg")) + list(images_dir.glob("*.png")) + list(images_dir.glob("*.webp"))
+                    if image_files:
+                        with st.expander(f"📸 Product Images - {data.get('product_info', {}).get('product_name', product_id)[:50]}..."):
+                            cols = st.columns(3)
+                            for idx, img_file in enumerate(sorted(image_files)[:9]):  # Max 9 images
+                                with cols[idx % 3]:
+                                    st.image(str(img_file), use_container_width=True, caption=img_file.name)
+
         # Download buttons
         col1, col2 = st.columns(2)
 
@@ -317,7 +336,7 @@ def display_results(results: dict):
                     data=md_content,
                     file_name=f"product_{results['data'][0].get('product_id', 'report')}_{datetime.now().strftime('%Y%m%d')}.md",
                     mime="text/markdown",
-                    key=f"download_md_{id(results)}"
+                    key=f"download_md_{datetime.now().timestamp()}"
                 )
             else:
                 # For multiple products, create combined markdown
@@ -330,7 +349,7 @@ def display_results(results: dict):
                     data=md_content,
                     file_name=f"products_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md",
                     mime="text/markdown",
-                    key=f"download_md_{id(results)}"
+                    key=f"download_md_{datetime.now().timestamp()}"
                 )
 
         with col2:
