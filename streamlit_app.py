@@ -14,9 +14,47 @@ import pandas as pd
 import json
 from datetime import datetime
 import io
+import subprocess
 
 # Add scripts directory to path
 sys.path.insert(0, str(Path(__file__).parent / "scripts"))
+
+
+# Install Playwright browsers on first run
+@st.cache_resource
+def install_playwright_browsers():
+    """Install Playwright browsers if not already installed."""
+    try:
+        # Check if chromium is already installed
+        result = subprocess.run(
+            ["playwright", "install", "--dry-run", "chromium"],
+            capture_output=True,
+            text=True
+        )
+
+        # If not installed, install it
+        if "chromium" in result.stdout or result.returncode != 0:
+            st.info("📦 Installing Playwright Chromium browser (first run only, ~2 minutes)...")
+
+            # Install chromium
+            install_result = subprocess.run(
+                ["playwright", "install", "chromium"],
+                capture_output=True,
+                text=True,
+                timeout=300
+            )
+
+            if install_result.returncode == 0:
+                st.success("✅ Playwright browser installed successfully!")
+            else:
+                st.error(f"❌ Failed to install Playwright: {install_result.stderr}")
+                return False
+
+        return True
+
+    except Exception as e:
+        st.error(f"❌ Error installing Playwright: {str(e)}")
+        return False
 
 from tabcut_scraper.scraper import TabcutScraper
 from tabcut_scraper.models import ScraperConfig
@@ -212,6 +250,11 @@ def main():
     # Header
     st.title("🛍️ TikTok Shop Product Scraper")
     st.markdown("**Cloud-Powered Product Data Extraction**")
+
+    # Install Playwright browsers (first run only)
+    if not install_playwright_browsers():
+        st.error("⚠️ Failed to install Playwright browsers. Please contact administrator.")
+        st.stop()
 
     # Check for credentials
     try:
