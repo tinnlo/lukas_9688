@@ -443,6 +443,10 @@ class DataExtractor:
                     logger.warning(f"Failed to extract video {rank}: {e}")
                     continue
 
+            # Re-number videos sequentially to avoid gaps/duplicates
+            for idx, video in enumerate(videos, start=1):
+                video.rank = idx
+
             logger.info(f"Successfully extracted {len(videos)} videos")
             return videos
 

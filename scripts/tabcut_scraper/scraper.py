@@ -201,6 +201,12 @@ class TabcutScraper:
                 logger.info(f"Downloading top {len(top_videos)} videos...")
                 video_output_dir = product_folder / "ref_video"
 
+                # Clean old videos to prevent duplicates from previous scrapes
+                if video_output_dir.exists():
+                    import shutil
+                    shutil.rmtree(video_output_dir)
+                    logger.info("Cleaned old video files")
+
                 await downloader.download_videos_batch(top_videos, video_output_dir)
 
                 # Update JSON with video paths
