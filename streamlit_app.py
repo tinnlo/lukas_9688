@@ -36,22 +36,24 @@ def install_playwright_browsers():
 
         # If not installed, install it
         if "chromium" in result.stdout or result.returncode != 0:
-            st.info("📦 Installing Playwright Chromium browser (first run only, ~2 minutes)...")
+            # Show message only during actual installation
+            with st.spinner("📦 Installing Playwright Chromium browser (first run only, ~2 minutes)..."):
+                # Install chromium
+                install_result = subprocess.run(
+                    ["playwright", "install", "chromium"],
+                    capture_output=True,
+                    text=True,
+                    timeout=300
+                )
 
-            # Install chromium
-            install_result = subprocess.run(
-                ["playwright", "install", "chromium"],
-                capture_output=True,
-                text=True,
-                timeout=300
-            )
+                if install_result.returncode == 0:
+                    st.success("✅ Playwright browser installed successfully!")
+                    return True
+                else:
+                    st.error(f"❌ Failed to install Playwright: {install_result.stderr}")
+                    return False
 
-            if install_result.returncode == 0:
-                st.success("✅ Playwright browser installed successfully!")
-            else:
-                st.error(f"❌ Failed to install Playwright: {install_result.stderr}")
-                return False
-
+        # Already installed - no message needed
         return True
 
     except Exception as e:
