@@ -29,3 +29,7 @@ scripts/venv/
 scripts/**/__pycache__/
 scripts/**/*.pyc
 *.progress.json
+
+# Streamlit
+.streamlit/secrets.toml
+logs/
