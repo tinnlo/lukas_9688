@@ -1,0 +1,96 @@
+{
+  "product_id": "1729647849009945599",
+  "scraped_at": "2025-12-23T23:14:22.708580",
+  "product_info": {
+    "product_name": "Sonnesee® BETA Ecdysteron - 1200 mg Cyanotis Arachnoidea Extrakt mit 1080 mg Beta-Ecdysteron für Muskelaufbau & Regeneration 90 Kapseln",
+    "shop_owner": "sonnesee",
+    "total_sales": 2189,
+    "total_sales_revenue": "€ 10.42万($ 12.13万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 306,
+    "sales_revenue": "$ 1.70万",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "29.89%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 510,
+    "带货视频达人数": 74,
+    "带货视频销量": 1223,
+    "带货视频销售额": "$ 6.78万",
+    "广告成交金额": "$ 5.01万",
+    "广告成交占比": "73.83%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADWas ein Hamster haha #muskelaufbau #tiktokshopblackfriday #unboxyourdeal #blackfriday  发现时间：2025.11.26 04:22更新时间：2025.12.01 03:16时长：00:00:20跳转至 TikTok",
+      "creator_username": "your.daily.glowup",
+      "creator_followers": "3.75万",
+      "publish_date": "2025-11-25 11:47",
+      "estimated_sales": 135,
+      "estimated_revenue": "€ 6430.05($ 7485.50)",
+      "total_views": "5.77万",
+      "video_url": "https://www.tiktok.com/@your.daily.glowup/video/7576612865327516950?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "AD无标题发现时间：2025.12.05 07:07更新时间：2025.12.06 10:20时长：00:00:51跳转至 TikTok",
+      "creator_username": "e.zedoz",
+      "creator_followers": "3.53万",
+      "publish_date": "2025-12-04 21:40",
+      "estimated_sales": 132,
+      "estimated_revenue": "€ 6287.16($ 7319.16)",
+      "total_views": "5.81万",
+      "video_url": "https://www.tiktok.com/@e.zedoz/video/7580105429167148290?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "AD#muskelaufbau #tiktokshopblackfriday #unboxyourdeal #ecdysterone #gym 发现时间：2025.12.03 15:38更新时间：2025.12.17 00:54时长：00:00:09跳转至 TikTok",
+      "creator_username": "your.daily.glowup",
+      "creator_followers": "3.75万",
+      "publish_date": "2025-12-01 08:55",
+      "estimated_sales": 92,
+      "estimated_revenue": "€ 4381.96($ 5101.23)",
+      "total_views": "20.09万",
+      "video_url": "https://www.tiktok.com/@your.daily.glowup/video/7578694708176669974?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "ADviel höher dosiert und billiger😮‍💨#tiktokmademebuyit #ecdysterone #supplements #Muskelaufbau #Weihnachtsgeschenk 发现时间：2025.12.13 07:47更新时间：2025.12.15 10:17时长：00:00:15跳转至 TikTok",
+      "creator_username": "dealattak",
+      "creator_followers": "841",
+      "publish_date": "2025-12-10 11:32",
+      "estimated_sales": 86,
+      "estimated_revenue": "€ 4096.18($ 4768.54)",
+      "total_views": "9.58万",
+      "video_url": "https://www.tiktok.com/@dealattak/video/7582175317641596182?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 5,
+      "title": "ADWas hat Popeyes schon damals gewusst??? #jungs #männer #gym  #stabil 发现时间：2025.12.08 09:28更新时间：2025.12.14 11:29时长：00:00:47跳转至 TikTok",
+      "creator_username": "e.zedoz",
+      "creator_followers": "3.53万",
+      "publish_date": "2025-12-07 18:23",
+      "estimated_sales": 66,
+      "estimated_revenue": "€ 3143.58($ 3659.58)",
+      "total_views": "20.32万",
+      "video_url": "https://www.tiktok.com/@e.zedoz/video/7581167990704524566?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

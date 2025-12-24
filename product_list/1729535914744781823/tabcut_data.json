@@ -1,0 +1,96 @@
+{
+  "product_id": "1729535914744781823",
+  "scraped_at": "2025-12-23T22:27:07.332259",
+  "product_info": {
+    "product_name": "Leber kur Mariendistel 8 fach",
+    "shop_owner": "sonnesee",
+    "total_sales": 2035,
+    "total_sales_revenue": "€ 3.54万($ 4.12万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 177,
+    "sales_revenue": "$ 3500.85",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "10.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 114,
+    "带货视频达人数": 44,
+    "带货视频销量": 772,
+    "带货视频销售额": "$ 1.53万",
+    "广告成交金额": "$ 1.50万",
+    "广告成交占比": "97.93%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADDer Körper ruft um Hilfe #Leber #gesundheit #ü30 #frauen #mariendistel  AI GENERATED - KI-Generierter Inhalt发现时间：2025.12.02 02:58更新时间：2025.12.17 19:05时长：00:02:31跳转至 TikTok",
+      "creator_username": "hildegard.schfer",
+      "creator_followers": "9304",
+      "publish_date": "2025-12-02 00:12",
+      "estimated_sales": 482,
+      "estimated_revenue": "€ 8189.18($ 9533.38)",
+      "total_views": "38.33万",
+      "video_url": "https://www.tiktok.com/@hildegard.schfer/video/7579031401123597590?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "ADDu bildest dir das nicht ein – Dein Körper braucht Hilfe. #gesundheit #frauen #u30 #leber 发现时间：2025.12.13 08:56更新时间：2025.12.22 09:29时长：00:02:23跳转至 TikTok",
+      "creator_username": "emibotin",
+      "creator_followers": "1.08万",
+      "publish_date": "2025-12-09 16:07",
+      "estimated_sales": 79,
+      "estimated_revenue": "€ 1342.21($ 1562.53)",
+      "total_views": "56.43万",
+      "video_url": "https://www.tiktok.com/@emibotin/video/7581874977717194006?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "ADDu bildest dir das nicht ein – Dein Körper braucht Hilfe. #gesundheit #frauen #u30 #leber 发现时间：2025.12.11 15:13更新时间：2025.12.16 08:36时长：00:02:24跳转至 TikTok",
+      "creator_username": "emibotin",
+      "creator_followers": "1.08万",
+      "publish_date": "2025-12-09 02:05",
+      "estimated_sales": 63,
+      "estimated_revenue": "€ 1070.37($ 1246.06)",
+      "total_views": "40.43万",
+      "video_url": "https://www.tiktok.com/@emibotin/video/7581657855024024854?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "ADEs ist nicht deine Schuld. AI GENERATED - KI-Generierter Inhalt #ü30 #frauen #gesundheit #Leber #wohlbefinden 发现时间：2025.12.03 02:40更新时间：2025.12.17 19:05时长：00:02:35跳转至 TikTok",
+      "creator_username": "hildegard.schfer",
+      "creator_followers": "9304",
+      "publish_date": "2025-12-03 01:46",
+      "estimated_sales": 21,
+      "estimated_revenue": "€ 356.79($ 415.35)",
+      "total_views": "1.32万",
+      "video_url": "https://www.tiktok.com/@hildegard.schfer/video/7579426521127882007?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 5,
+      "title": "ADDu bildest dir das nicht ein – Dein Körper braucht Hilfe. #gesundheit #frauen #u30  #leber 发现时间：2025.12.16 08:36更新时间：2025.12.19 14:37时长：00:02:08跳转至 TikTok",
+      "creator_username": "emibotin",
+      "creator_followers": "1.08万",
+      "publish_date": "2025-12-16 00:52",
+      "estimated_sales": 21,
+      "estimated_revenue": "€ 356.79($ 415.35)",
+      "total_views": "9.6万",
+      "video_url": "https://www.tiktok.com/@emibotin/video/7584236785367010592?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

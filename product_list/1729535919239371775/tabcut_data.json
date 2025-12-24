@@ -1,0 +1,96 @@
+{
+  "product_id": "1729535919239371775",
+  "scraped_at": "2025-12-23T23:13:40.892446",
+  "product_info": {
+    "product_name": "Wasserbalance 7 fach Brennnessel Komplex",
+    "shop_owner": "sonnesee",
+    "total_sales": 9185,
+    "total_sales_revenue": "€ 21.24万($ 24.72万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 221,
+    "sales_revenue": "$ 5914.78",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "17.31%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 433,
+    "带货视频达人数": 121,
+    "带货视频销量": 506,
+    "带货视频销售额": "$ 1.38万",
+    "广告成交金额": "$ 1.17万",
+    "广告成交占比": "84.77%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADWasser Balance 🩵🩵🩵 #unboxyourdeals #weihnachtsdeals 发现时间：2025.12.08 15:24更新时间：2025.12.21 19:46时长：00:02:26跳转至 TikTok",
+      "creator_username": "_hayleymarshall__",
+      "creator_followers": "6428",
+      "publish_date": "2025-12-05 23:17",
+      "estimated_sales": 137,
+      "estimated_revenue": "€ 3149.63($ 3666.62)",
+      "total_views": "25.03万",
+      "video_url": "https://www.tiktok.com/@_hayleymarshall__/video/7580501594710576406?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "ADHier gibt’s die 🔥 #tiktokmadebuythis #UnboxYourDeals #GlowUp #abnehmen #gesundheit 发现时间：2025.12.09 13:44更新时间：2025.12.10 13:33时长：00:00:10跳转至 TikTok",
+      "creator_username": "tiktok.plug752",
+      "creator_followers": "2240",
+      "publish_date": "2025-12-06 17:37",
+      "estimated_sales": 40,
+      "estimated_revenue": "€ 919.60($ 1070.55)",
+      "total_views": "4.11万",
+      "video_url": "https://www.tiktok.com/@tiktok.plug752/video/7580784981681786134?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "ADSchnappt zu! 😍🥹发现时间：2025.12.12 11:59更新时间：2025.12.14 06:26时长：00:01:35跳转至 TikTok",
+      "creator_username": "kai.blakee",
+      "creator_followers": "7353",
+      "publish_date": "2025-12-11 11:21",
+      "estimated_sales": 34,
+      "estimated_revenue": "€ 781.66($ 909.96)",
+      "total_views": "5.6万",
+      "video_url": "https://www.tiktok.com/@kai.blakee/video/7582543587267644694?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "AD#tiktokshopblackfriday #unboxyourdeals #detox *AI发现时间：2025.11.26 13:14更新时间：2025.12.02 17:47时长：00:00:24跳转至 TikTok",
+      "creator_username": "welllnesswisdom",
+      "creator_followers": "9.69万",
+      "publish_date": "2025-11-25 19:51",
+      "estimated_sales": 34,
+      "estimated_revenue": "€ 866.34($ 1008.54)",
+      "total_views": "2.16万",
+      "video_url": "https://www.tiktok.com/@welllnesswisdom/video/7576737660870479126?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 5,
+      "title": "AD#entwässern #debloat #glowup #weihnachtsdeals #unboxyourdeals 发现时间：2025.12.15 08:26更新时间：2025.12.15 08:26时长：00:00:17跳转至 TikTok",
+      "creator_username": "your.daily.glowup",
+      "creator_followers": "3.75万",
+      "publish_date": "2025-12-13 22:57",
+      "estimated_sales": 24,
+      "estimated_revenue": "€ 551.76($ 642.33)",
+      "total_views": "1.22万",
+      "video_url": "https://www.tiktok.com/@your.daily.glowup/video/7583465046202715414?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}
