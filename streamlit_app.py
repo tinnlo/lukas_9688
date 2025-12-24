@@ -15,6 +15,7 @@ import json
 from datetime import datetime
 import io
 import subprocess
+import zipfile
 from loguru import logger
 
 # Add scripts directory to path
@@ -76,6 +77,25 @@ def init_session_state():
         st.session_state.scraping_results = None
     if 'is_scraping' not in st.session_state:
         st.session_state.is_scraping = False
+    if 'carousel_index' not in st.session_state:
+        st.session_state.carousel_index = {}
+    if 'show_carousel' not in st.session_state:
+        st.session_state.show_carousel = None
+
+
+def create_images_zip(product_id: str, images_dir: Path) -> bytes:
+    """Create a ZIP file of all product images."""
+    zip_buffer = io.BytesIO()
+
+    with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+        image_files = list(images_dir.glob("*.jpg")) + list(images_dir.glob("*.png")) + list(images_dir.glob("*.webp"))
+
+        for img_file in sorted(image_files):
+            # Add file to zip with relative path
+            zip_file.write(img_file, arcname=img_file.name)
+
+    zip_buffer.seek(0)
+    return zip_buffer.getvalue()
 
 
 def generate_markdown_report(data: dict) -> str:
@@ -316,13 +336,67 @@ def display_results(results: dict):
             if product_id:
                 images_dir = Path(f"product_list/{product_id}/product_images")
                 if images_dir.exists():
-                    image_files = list(images_dir.glob("*.jpg")) + list(images_dir.glob("*.png")) + list(images_dir.glob("*.webp"))
+                    image_files = sorted(list(images_dir.glob("*.jpg")) + list(images_dir.glob("*.png")) + list(images_dir.glob("*.webp")))
                     if image_files:
-                        with st.expander(f"📸 Product Images - {data.get('product_info', {}).get('product_name', product_id)[:50]}..."):
-                            cols = st.columns(3)
-                            for idx, img_file in enumerate(sorted(image_files)[:9]):  # Max 9 images
-                                with cols[idx % 3]:
-                                    st.image(str(img_file), use_container_width=True, caption=img_file.name)
+                        product_name = data.get('product_info', {}).get('product_name', product_id)[:50]
+
+                        with st.expander(f"📸 Product Images - {product_name}... ({len(image_files)} images)"):
+                            # Download all images button
+                            zip_data = create_images_zip(product_id, images_dir)
+                            st.download_button(
+                                label=f"📦 Download All Images ({len(image_files)} files)",
+                                data=zip_data,
+                                file_name=f"product_{product_id}_images_{datetime.now().strftime('%Y%m%d')}.zip",
+                                mime="application/zip",
+                                key=f"download_images_{product_id}_{datetime.now().timestamp()}"
+                            )
+
+                            st.markdown("---")
+
+                            # Image carousel
+                            carousel_key = f"carousel_{product_id}"
+
+                            # Initialize carousel index for this product
+                            if carousel_key not in st.session_state.carousel_index:
+                                st.session_state.carousel_index[carousel_key] = 0
+
+                            current_idx = st.session_state.carousel_index[carousel_key]
+
+                            # Navigation buttons
+                            col1, col2, col3 = st.columns([1, 3, 1])
+
+                            with col1:
+                                if st.button("⬅️ Prev", key=f"prev_{product_id}", disabled=current_idx == 0):
+                                    st.session_state.carousel_index[carousel_key] = max(0, current_idx - 1)
+                                    st.rerun()
+
+                            with col2:
+                                st.markdown(f"<center><b>Image {current_idx + 1} of {len(image_files)}</b></center>", unsafe_allow_html=True)
+
+                            with col3:
+                                if st.button("Next ➡️", key=f"next_{product_id}", disabled=current_idx >= len(image_files) - 1):
+                                    st.session_state.carousel_index[carousel_key] = min(len(image_files) - 1, current_idx + 1)
+                                    st.rerun()
+
+                            # Display current full-size image
+                            current_image = image_files[current_idx]
+                            st.image(str(current_image), use_container_width=True, caption=current_image.name)
+
+                            st.markdown("---")
+
+                            # Thumbnail navigation
+                            st.markdown("**Click thumbnail to jump:**")
+                            thumb_cols = st.columns(min(6, len(image_files)))
+                            for idx, img_file in enumerate(image_files):
+                                with thumb_cols[idx % 6]:
+                                    if st.button(
+                                        f"🖼️ {idx + 1}",
+                                        key=f"thumb_{product_id}_{idx}",
+                                        type="primary" if idx == current_idx else "secondary",
+                                        use_container_width=True
+                                    ):
+                                        st.session_state.carousel_index[carousel_key] = idx
+                                        st.rerun()
 
         # Download buttons
         col1, col2 = st.columns(2)
