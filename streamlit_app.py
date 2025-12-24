@@ -360,7 +360,7 @@ def display_results(results: dict):
                 data=json_str,
                 file_name=f"scraped_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
                 mime="application/json",
-                key=f"download_json_{id(results)}"
+                key=f"download_json_{datetime.now().timestamp()}"
             )
 
 
