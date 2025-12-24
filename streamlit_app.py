@@ -1,48 +1,136 @@
 #!/usr/bin/env python3
 """
-TikTok Shop Product Scraper - Results Viewer
-Streamlit app for viewing and analyzing scraped TikTok shop product data.
+TikTok Shop Product Scraper - Full Cloud Version
+Streamlit app for scraping TikTok shop product data directly in the cloud.
 """
 
 import streamlit as st
-import json
-import pandas as pd
+import asyncio
+import sys
+import os
 from pathlib import Path
+from typing import List
+import pandas as pd
+import json
 from datetime import datetime
-from typing import List, Dict
-import zipfile
 import io
+
+# Add scripts directory to path
+sys.path.insert(0, str(Path(__file__).parent / "scripts"))
+
+from tabcut_scraper.scraper import TabcutScraper
+from tabcut_scraper.models import ScraperConfig
+from tabcut_scraper.utils import setup_logging
 
 
 # Page configuration
 st.set_page_config(
-    page_title="TikTok Shop Scraper - Results Viewer",
+    page_title="TikTok Shop Product Scraper",
     page_icon="🛍️",
     layout="wide"
 )
 
 
-def load_json_file(uploaded_file) -> Dict:
-    """Load and parse JSON file."""
+def init_session_state():
+    """Initialize session state variables."""
+    if 'scraping_results' not in st.session_state:
+        st.session_state.scraping_results = None
+    if 'is_scraping' not in st.session_state:
+        st.session_state.is_scraping = False
+
+
+async def scrape_products(
+    product_ids: List[str],
+    download_videos: bool,
+    progress_placeholder,
+    status_placeholder
+) -> dict:
+    """
+    Scrape products with progress updates.
+
+    Args:
+        product_ids: List of product IDs to scrape
+        download_videos: Whether to download videos
+        progress_placeholder: Streamlit placeholder for progress bar
+        status_placeholder: Streamlit placeholder for status messages
+
+    Returns:
+        Results dictionary with completed and failed products
+    """
+    results = {
+        'completed': [],
+        'failed': [],
+        'data': []
+    }
+
+    # Get credentials from Streamlit secrets
     try:
-        content = uploaded_file.read()
-        return json.loads(content)
+        username = st.secrets["TABCUT_USERNAME"]
+        password = st.secrets["TABCUT_PASSWORD"]
     except Exception as e:
-        st.error(f"Error loading JSON: {e}")
-        return None
+        st.error(f"❌ Credentials not configured in Streamlit Secrets! Error: {e}")
+        st.info("💡 Go to app Settings → Secrets and add TABCUT_USERNAME and TABCUT_PASSWORD")
+        return results
 
+    # Set environment variables for the scraper
+    os.environ["TABCUT_USERNAME"] = username
+    os.environ["TABCUT_PASSWORD"] = password
 
-def load_multiple_json_files(uploaded_files) -> List[Dict]:
-    """Load multiple JSON files."""
-    results = []
-    for file in uploaded_files:
-        data = load_json_file(file)
-        if data:
-            results.append(data)
+    # Create configuration
+    config = ScraperConfig(
+        headless=True,
+        timeout=30000,
+        max_retries=3,
+        download_timeout=300000,
+        output_base_dir=str(Path(__file__).parent / "product_list"),
+        log_level="INFO"
+    )
+
+    # Setup logging
+    setup_logging(log_dir='logs', log_level='INFO')
+
+    total = len(product_ids)
+
+    try:
+        async with TabcutScraper(config) as scraper:
+            for i, product_id in enumerate(product_ids, 1):
+                # Update progress
+                progress = i / total
+                progress_placeholder.progress(progress, text=f"Processing product {i}/{total}: {product_id}")
+
+                try:
+                    status_placeholder.info(f"🔄 Scraping product {product_id}...")
+
+                    await scraper.scrape_product(
+                        product_id,
+                        download_videos=download_videos
+                    )
+
+                    results['completed'].append(product_id)
+
+                    # Load scraped data
+                    data_file = Path(config.output_base_dir) / product_id / "tabcut_data.json"
+                    if data_file.exists():
+                        with open(data_file) as f:
+                            results['data'].append(json.load(f))
+
+                    status_placeholder.success(f"✅ Product {product_id} completed!")
+
+                except Exception as e:
+                    error_msg = str(e)
+                    results['failed'].append({'product_id': product_id, 'error': error_msg})
+                    status_placeholder.error(f"❌ Product {product_id} failed: {error_msg}")
+
+        progress_placeholder.progress(1.0, text="✅ All products processed!")
+
+    except Exception as e:
+        status_placeholder.error(f"❌ Scraping error: {str(e)}")
+        st.exception(e)
+
     return results
 
 
-def create_summary_dataframe(data_list: List[Dict]) -> pd.DataFrame:
+def create_summary_dataframe(data_list: List[dict]) -> pd.DataFrame:
     """Create summary DataFrame from scraped data."""
     summary_data = []
 
@@ -63,337 +151,223 @@ def create_summary_dataframe(data_list: List[Dict]) -> pd.DataFrame:
             'Related Videos': sales_data.get('related_videos', 0),
             'Conversion Rate': sales_data.get('conversion_rate', 'N/A'),
             'Video Count': video_analysis.get('带货视频数', 0),
-            'Scraped At': item.get('scraped_at', 'N/A')
         })
 
     return pd.DataFrame(summary_data)
 
 
-def display_product_details(data: Dict):
-    """Display detailed product information."""
-    st.subheader(f"📦 {data.get('product_info', {}).get('product_name', 'Product')}")
+def display_results(results: dict):
+    """Display scraping results."""
+    st.subheader("📊 Scraping Results")
 
-    # Product Info
-    with st.expander("🏪 Product Information", expanded=True):
-        product_info = data.get('product_info', {})
-        col1, col2, col3 = st.columns(3)
+    # Summary metrics
+    col1, col2, col3 = st.columns(3)
 
-        with col1:
-            st.metric("Shop Owner", product_info.get('shop_owner', 'N/A'))
-        with col2:
-            st.metric("Total Sales", product_info.get('total_sales', 0))
-        with col3:
-            st.metric("Total Revenue", product_info.get('total_sales_revenue', 'N/A'))
+    with col1:
+        st.metric("✅ Completed", len(results['completed']))
+    with col2:
+        st.metric("❌ Failed", len(results['failed']))
+    with col3:
+        total = len(results['completed']) + len(results['failed'])
+        success_rate = (len(results['completed']) / total * 100) if total > 0 else 0
+        st.metric("Success Rate", f"{success_rate:.1f}%")
 
-    # Sales Data
-    with st.expander("📊 Sales Analytics"):
-        sales_data = data.get('sales_data', {})
-        col1, col2, col3, col4 = st.columns(4)
+    # Show failed products
+    if results['failed']:
+        st.warning("⚠️ Failed Products:")
+        failed_df = pd.DataFrame(results['failed'])
+        st.dataframe(failed_df, use_container_width=True)
 
-        with col1:
-            st.metric("Period", sales_data.get('date_range', 'N/A'))
-        with col2:
-            st.metric("Sales Count", sales_data.get('sales_count', 0))
-        with col3:
-            st.metric("Revenue", sales_data.get('sales_revenue', 'N/A'))
-        with col4:
-            st.metric("Conversion Rate", sales_data.get('conversion_rate', 'N/A'))
+    # Show scraped data
+    if results['data']:
+        st.success("✅ Scraped Data:")
 
-        st.metric("Related Videos", sales_data.get('related_videos', 0))
+        # Summary table
+        summary_df = create_summary_dataframe(results['data'])
+        st.dataframe(summary_df, use_container_width=True)
 
-    # Video Analysis
-    with st.expander("🎥 Video Analysis"):
-        video_analysis = data.get('video_analysis', {})
+        # Download button
+        csv = summary_df.to_csv(index=False)
+        st.download_button(
+            label="📥 Download Summary (CSV)",
+            data=csv,
+            file_name=f"scraping_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+            mime="text/csv"
+        )
 
-        col1, col2 = st.columns(2)
-        with col1:
-            st.metric("带货视频数", video_analysis.get('带货视频数', 0))
-            st.metric("带货视频销量", video_analysis.get('带货视频销量', 0))
-        with col2:
-            st.metric("带货视频达人数", video_analysis.get('带货视频达人数', 0))
-            st.metric("带货视频销售额", video_analysis.get('带货视频销售额', 'N/A'))
-
-    # Top Videos
-    if data.get('top_videos'):
-        with st.expander("🌟 Top Performing Videos"):
-            videos_df = pd.DataFrame(data['top_videos'])
-
-            # Select relevant columns
-            display_cols = ['rank', 'title', 'creator_username', 'publish_date',
-                          'estimated_sales', 'estimated_revenue', 'total_views']
-
-            available_cols = [col for col in display_cols if col in videos_df.columns]
-            st.dataframe(videos_df[available_cols], use_container_width=True)
-
-
-def create_csv_template():
-    """Create a CSV template for product IDs."""
-    template = "product_id\n1729630936525936882\n7575477825742982403\n"
-    return template
+        # Download full JSON
+        json_str = json.dumps(results['data'], indent=2, ensure_ascii=False)
+        st.download_button(
+            label="📥 Download Full Data (JSON)",
+            data=json_str,
+            file_name=f"scraped_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
+            mime="application/json"
+        )
 
 
 def main():
     """Main Streamlit app."""
+    init_session_state()
 
     # Header
     st.title("🛍️ TikTok Shop Product Scraper")
-    st.markdown("**Results Viewer & Workflow Manager**")
+    st.markdown("**Cloud-Powered Product Data Extraction**")
+
+    # Check for credentials
+    try:
+        _ = st.secrets["TABCUT_USERNAME"]
+        _ = st.secrets["TABCUT_PASSWORD"]
+        credentials_ok = True
+    except:
+        credentials_ok = False
+        st.error("⚠️ **Credentials not configured!**")
+        st.info("""
+        Please configure your tabcut.com credentials:
+        1. Go to app Settings (⚙️)
+        2. Click "Secrets"
+        3. Add:
+        ```toml
+        TABCUT_USERNAME = "your_username"
+        TABCUT_PASSWORD = "your_password"
+        ```
+        """)
 
     # Sidebar
     with st.sidebar:
-        st.header("📋 How It Works")
+        st.header("⚙️ Settings")
 
-        st.markdown("""
-        ### Workflow:
-
-        1️⃣ **Download CSV Template**
-        Add product IDs to scrape
-
-        2️⃣ **Run Scraper Locally**
-        Use the Python scraper on your computer
-
-        3️⃣ **Upload Results Here**
-        View and analyze data in this app
-
-        4️⃣ **Share Results**
-        Download reports for your team
-        """)
-
-        st.divider()
-
-        # Download template
-        st.subheader("📥 Get Started")
-        template = create_csv_template()
-        st.download_button(
-            label="📄 Download CSV Template",
-            data=template,
-            file_name="product_ids_template.csv",
-            mime="text/csv"
+        download_videos = st.checkbox(
+            "Download top 5 videos",
+            value=False,
+            help="Download reference videos (takes longer, uses more resources)"
         )
 
         st.divider()
 
+        st.markdown("### 📚 How to Use")
         st.markdown("""
-        ### 💡 Need Help?
-
-        - **Scraper Location:**
-          `scripts/run_scraper.py`
-
-        - **Command:**
-          ```bash
-          cd scripts
-          python run_scraper.py \\
-            --batch-file products.csv \\
-            --download-videos
-          ```
-
-        - **Results Location:**
-          `product_list/{product_id}/tabcut_data.json`
+        1. Enter product IDs (one per line)
+        2. Or upload a CSV file
+        3. Click "Start Scraping"
+        4. Wait for results
+        5. Download reports
         """)
+
+        st.divider()
+
+        st.markdown("### ℹ️ About")
+        st.markdown("""
+        Scrapes TikTok shop data:
+        - Product information
+        - Sales analytics
+        - Video performance
+        - Top videos (optional download)
+        """)
+
+    if not credentials_ok:
+        st.stop()
 
     # Main content
-    tab1, tab2, tab3 = st.tabs(["📤 Upload Results", "📊 Batch Analysis", "ℹ️ Instructions"])
+    tab1, tab2 = st.tabs(["🎯 Single Product", "📦 Batch Mode"])
 
     with tab1:
-        st.subheader("Upload Scraped Data")
+        st.subheader("Scrape Single Product")
 
-        st.markdown("""
-        Upload the `tabcut_data.json` files generated by the scraper.
-        You can upload single or multiple files at once.
-        """)
-
-        uploaded_files = st.file_uploader(
-            "Choose JSON files",
-            type=['json'],
-            accept_multiple_files=True,
-            help="Select one or more tabcut_data.json files from product_list/{product_id}/"
+        product_id = st.text_input(
+            "Product ID",
+            placeholder="e.g., 1729630936525936882",
+            help="Enter the TikTok shop product ID",
+            disabled=st.session_state.is_scraping
         )
 
-        if uploaded_files:
-            st.success(f"✅ Loaded {len(uploaded_files)} file(s)")
+        if st.button("Start Scraping", key="single", type="primary", disabled=st.session_state.is_scraping):
+            if not product_id:
+                st.error("Please enter a product ID")
+            else:
+                st.session_state.is_scraping = True
 
-            # Load all data
-            data_list = load_multiple_json_files(uploaded_files)
+                progress_placeholder = st.empty()
+                status_placeholder = st.empty()
 
-            if data_list:
-                # Summary view
-                st.subheader("📊 Summary")
-                summary_df = create_summary_dataframe(data_list)
-                st.dataframe(summary_df, use_container_width=True)
+                with st.spinner("Initializing scraper..."):
+                    results = asyncio.run(scrape_products(
+                        [product_id],
+                        download_videos,
+                        progress_placeholder,
+                        status_placeholder
+                    ))
 
-                # Download summary
-                csv = summary_df.to_csv(index=False)
-                st.download_button(
-                    label="📥 Download Summary (CSV)",
-                    data=csv,
-                    file_name=f"product_summary_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                    mime="text/csv"
-                )
+                st.session_state.scraping_results = results
+                st.session_state.is_scraping = False
 
-                st.divider()
-
-                # Detailed view
-                st.subheader("📦 Detailed Product Data")
-
-                for i, data in enumerate(data_list):
-                    with st.container():
-                        display_product_details(data)
-
-                        # Download individual JSON
-                        json_str = json.dumps(data, indent=2, ensure_ascii=False)
-                        st.download_button(
-                            label=f"📥 Download JSON",
-                            data=json_str,
-                            file_name=f"product_{data.get('product_id', i)}.json",
-                            mime="application/json",
-                            key=f"download_{i}"
-                        )
-
-                        if i < len(data_list) - 1:
-                            st.divider()
+                if results['completed'] or results['failed']:
+                    display_results(results)
 
     with tab2:
-        st.subheader("Batch Analysis Dashboard")
+        st.subheader("Batch Scrape Multiple Products")
 
-        uploaded_batch = st.file_uploader(
-            "Upload multiple JSON files for batch analysis",
-            type=['json'],
-            accept_multiple_files=True,
-            key="batch_upload"
+        # Text area for product IDs
+        product_ids_text = st.text_area(
+            "Product IDs (one per line)",
+            height=150,
+            placeholder="1729630936525936882\n7575477825742982403\n7520182265683381526",
+            disabled=st.session_state.is_scraping
         )
 
-        if uploaded_batch:
-            data_list = load_multiple_json_files(uploaded_batch)
+        # OR CSV upload
+        st.markdown("**OR upload CSV:**")
+        uploaded_file = st.file_uploader(
+            "Choose CSV file",
+            type=['csv'],
+            help="CSV with product_id column",
+            disabled=st.session_state.is_scraping
+        )
 
-            if data_list:
-                # Metrics
-                st.subheader("📈 Key Metrics")
+        # Parse product IDs
+        product_ids = []
 
-                total_sales = sum(d.get('product_info', {}).get('total_sales', 0) for d in data_list)
-                total_videos = sum(d.get('sales_data', {}).get('related_videos', 0) for d in data_list)
-                avg_conversion = sum(
-                    float(d.get('sales_data', {}).get('conversion_rate', '0').rstrip('%'))
-                    for d in data_list
-                ) / len(data_list) if data_list else 0
+        if product_ids_text:
+            product_ids = [pid.strip() for pid in product_ids_text.split('\n') if pid.strip()]
 
-                col1, col2, col3, col4 = st.columns(4)
+        if uploaded_file:
+            df = pd.read_csv(uploaded_file)
+            if 'product_id' in df.columns:
+                product_ids = df['product_id'].astype(str).tolist()
+                st.success(f"✅ Loaded {len(product_ids)} products from CSV")
+            else:
+                st.error("❌ CSV must have a 'product_id' column")
 
-                with col1:
-                    st.metric("Total Products", len(data_list))
-                with col2:
-                    st.metric("Total Sales", f"{total_sales:,}")
-                with col3:
-                    st.metric("Total Videos", total_videos)
-                with col4:
-                    st.metric("Avg Conversion", f"{avg_conversion:.2f}%")
+        if product_ids:
+            st.info(f"📋 {len(product_ids)} products ready to scrape")
 
-                st.divider()
+            # Show preview
+            with st.expander("Preview product IDs"):
+                st.write(product_ids)
 
-                # Detailed table
-                st.subheader("📋 All Products")
-                summary_df = create_summary_dataframe(data_list)
+        if st.button("Start Batch Scraping", key="batch", type="primary", disabled=st.session_state.is_scraping or not product_ids):
+            st.session_state.is_scraping = True
 
-                # Add filters
-                col1, col2 = st.columns(2)
-                with col1:
-                    min_sales = st.number_input("Min Total Sales", 0, value=0)
-                with col2:
-                    min_videos = st.number_input("Min Related Videos", 0, value=0)
+            progress_placeholder = st.empty()
+            status_placeholder = st.empty()
 
-                filtered_df = summary_df[
-                    (summary_df['Total Sales'] >= min_sales) &
-                    (summary_df['Related Videos'] >= min_videos)
-                ]
+            with st.spinner("Initializing scraper..."):
+                results = asyncio.run(scrape_products(
+                    product_ids,
+                    download_videos,
+                    progress_placeholder,
+                    status_placeholder
+                ))
 
-                st.dataframe(filtered_df, use_container_width=True)
+            st.session_state.scraping_results = results
+            st.session_state.is_scraping = False
 
-                # Download
-                csv = filtered_df.to_csv(index=False)
-                st.download_button(
-                    label="📥 Download Filtered Results (CSV)",
-                    data=csv,
-                    file_name=f"batch_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                    mime="text/csv"
-                )
+            if results['completed'] or results['failed']:
+                display_results(results)
 
-    with tab3:
-        st.subheader("📖 Complete Workflow Guide")
-
-        st.markdown("""
-        ## For Administrators (Technical Users)
-
-        ### Step 1: Prepare Product IDs
-
-        1. Download the CSV template from the sidebar
-        2. Add product IDs (one per row):
-           ```csv
-           product_id
-           1729630936525936882
-           7575477825742982403
-           ```
-
-        ### Step 2: Run the Scraper
-
-        ```bash
-        # Navigate to scripts directory
-        cd scripts
-
-        # Activate virtual environment
-        source venv/bin/activate  # Mac/Linux
-        # OR: venv\\Scripts\\activate  # Windows
-
-        # Run scraper
-        python run_scraper.py --batch-file products.csv --download-videos
-
-        # Results will be saved to: ../product_list/{product_id}/tabcut_data.json
-        ```
-
-        ### Step 3: Upload Results
-
-        1. Go to "Upload Results" tab
-        2. Select the `tabcut_data.json` files
-        3. View and analyze the data
-        4. Download reports
-
-        ---
-
-        ## For Team Members (Non-Technical)
-
-        ### How to View Results
-
-        1. **Receive JSON files** from your administrator
-        2. **Open this app** (bookmark the URL)
-        3. **Upload files** in the "Upload Results" tab
-        4. **View data** in beautiful tables and charts
-        5. **Download reports** as CSV for Excel/Sheets
-
-        ### What Data You'll See
-
-        - ✅ Product names and shop owners
-        - ✅ Sales numbers and revenue
-        - ✅ Video performance metrics
-        - ✅ Top performing videos
-        - ✅ Conversion rates
-
-        ---
-
-        ## Need the Scraper?
-
-        **For administrators only:**
-        The scraper must be run locally on your computer.
-
-        **Repository:** https://github.com/tinnlo/lukas_9688
-        **Documentation:** See `scripts/README.md`
-
-        ---
-
-        ## Questions?
-
-        Contact your technical administrator for:
-        - Setting up the scraper
-        - Running batch jobs
-        - Troubleshooting issues
-        """)
+    # Show previous results if available
+    if st.session_state.scraping_results and not st.session_state.is_scraping:
+        st.divider()
+        display_results(st.session_state.scraping_results)
 
 
 if __name__ == "__main__":
