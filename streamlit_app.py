@@ -367,9 +367,10 @@ def display_results(results: dict):
 
         with col1:
             # View in browser button
-            if st.button("📖 View Report in Browser", key=f"view_report_{datetime.now().timestamp()}", use_container_width=True):
+            if st.button("📖 View Report in Browser", key="view_report_btn", use_container_width=True):
                 st.session_state.show_report_modal = True
                 st.session_state.report_content = md_content
+                st.rerun()
 
         with col2:
             # Download markdown file
@@ -378,7 +379,7 @@ def display_results(results: dict):
                 data=md_content,
                 file_name=file_name,
                 mime="text/markdown",
-                key=f"download_md_{datetime.now().timestamp()}",
+                key="download_md_btn",
                 use_container_width=True
             )
 
