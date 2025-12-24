@@ -569,9 +569,7 @@ def main():
 
                 st.session_state.scraping_results = results
                 st.session_state.is_scraping = False
-
-                if results['completed'] or results['failed']:
-                    display_results(results)
+                # Results will be displayed by the section at the bottom
 
     with tab2:
         st.subheader("Batch Scrape Multiple Products")
@@ -631,9 +629,7 @@ def main():
 
             st.session_state.scraping_results = results
             st.session_state.is_scraping = False
-
-            if results['completed'] or results['failed']:
-                display_results(results)
+            # Results will be displayed by the section at the bottom
 
     # Show previous results if available
     if st.session_state.scraping_results and not st.session_state.is_scraping:
