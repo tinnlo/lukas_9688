@@ -122,12 +122,19 @@ def generate_markdown_report(data: dict) -> str:
 
     if top_videos:
         for video in top_videos[:10]:  # Top 10
+            # Safe formatting for numeric values
+            total_views = video.get('total_views', 0)
+            total_views_str = f"{int(total_views):,}" if isinstance(total_views, (int, float)) else str(total_views)
+
+            estimated_sales = video.get('estimated_sales', 0)
+            estimated_sales_str = f"{int(estimated_sales):,}" if isinstance(estimated_sales, (int, float)) else str(estimated_sales)
+
             md += f"""### {video.get('rank', '?')}. {video.get('title', 'Video')}
 
 - **Creator:** @{video.get('creator_username', 'unknown')}
 - **Published:** {video.get('publish_date', 'N/A')}
-- **Views:** {video.get('total_views', 0):,}
-- **Estimated Sales:** {video.get('estimated_sales', 0):,}
+- **Views:** {total_views_str}
+- **Estimated Sales:** {estimated_sales_str}
 - **Estimated Revenue:** {video.get('estimated_revenue', 'N/A')}
 
 """
