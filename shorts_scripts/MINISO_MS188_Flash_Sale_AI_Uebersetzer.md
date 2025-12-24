@@ -1,16 +1,16 @@
 ---
 cover: ""
-caption: "Letzter Flash-Sale-Tag: offene AI-Übersetzer-Earbuds mit Touchscreen — sogar wasserdicht."
+caption: Offene AI-Übersetzer-Earbuds mit Touchscreen — sogar wasserdicht.
 published: 2025-12-22
 duration: 00:35
 sales:
   - yes
 link: ""
 tags:
-  - "#gadgets"
-  - "#ai"
-  - "#translator"
-  - "#earbuds"
+  - "#technik"
+  - "#ki"
+  - "#kopfhoerer"
+  - "#uebersetzer"
   - "#deals"
 product: MINISO MS188
 source_notes:

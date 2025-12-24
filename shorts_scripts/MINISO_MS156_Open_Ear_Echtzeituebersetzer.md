@@ -1,17 +1,17 @@
 ---
 cover: ""
-caption: Kein Englisch? Diese offenen Earbuds übersetzen live — direkt am kleinen Display.
+caption: Kein Englisch? Diese offenen Earbuds übersetzen live.
 published: 2025-12-22
 duration: 00:35
 sales:
   - yes
 link: ""
 tags:
-  - "#gadgets"
-  - "#ai"
-  - "#translator"
-  - "#earbuds"
-  - "#tiktokfinds"
+  - "#technik"
+  - "#ki"
+  - "#kopfhoerer"
+  - "#uebersetzer"
+  - "#reise"
 product: MINISO MS156
 source_notes:
   - product_list/MINISO MS156/7575477825742982403.md
@@ -54,4 +54,4 @@ Structure (30–40s):
 [matter-of-fact] 你可以切换语言、调整设置、控制手机…
 [confident] …甚至拍照或录视频。
 [soft] 如果耳机不小心丢了，也还能把它找回来。
-[firm] 想试试的话，链接在下面。
+[firm] 想试试的话，链接在下面。 

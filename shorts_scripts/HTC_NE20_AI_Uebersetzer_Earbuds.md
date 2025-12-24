@@ -7,11 +7,11 @@ sales:
   - yes
 link: ""
 tags:
-  - "#gadgets"
-  - "#ai"
+  - "#technik"
+  - "#ki"
+  - "#kopfhoerer"
+  - "#uebersetzer"
   - "#deals"
-  - "#earbuds"
-  - "#tiktokfinds"
 product: HTC NE20
 source_notes:
   - product_list/HTC NE20/7563249844169542914.md
@@ -44,7 +44,7 @@ Structure (30–50s):
 [matter-of-fact] …und ja: du kannst sogar Videos weiterwischen.
 [soft] Was mich wirklich überrascht hat:
 [confident] Sie sitzen locker über dem Ohr. Bequem. Auch nach längerer Zeit kein „Druck‑Gefühl“.
-[reflective] Und wasserdicht sind sie auch—also Laufen, Pendeln… sogar Dusche.
+[reflective] Und wasserdicht sind sie auch—also Laufen, Pendeln… sogar Dusche. 
 [firm] Wenn du die HTC NE20 ausprobieren willst: Link ist unten.
 
 ### ZH (Optional)
