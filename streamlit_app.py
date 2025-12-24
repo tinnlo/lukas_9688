@@ -170,9 +170,19 @@ def generate_markdown_report(data: dict) -> str:
 - **Published:** {video.get('publish_date', 'N/A')}
 - **Views:** {total_views_str}
 - **Estimated Sales:** {estimated_sales_str}
-- **Estimated Revenue:** {video.get('estimated_revenue', 'N/A')}
+- **Estimated Revenue:** {video.get('estimated_revenue', 'N/A')}"""
 
-"""
+            # Add video URL if available
+            video_url = video.get('video_url')
+            if video_url:
+                md += f"\n- **Video URL:** {video_url}"
+
+            # Add local file path if video was downloaded
+            local_path = video.get('local_path')
+            if local_path:
+                md += f"\n- **Downloaded:** `{local_path}`"
+
+            md += "\n\n"
     else:
         md += "*No video data available*\n"
 
