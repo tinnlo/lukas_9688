@@ -230,7 +230,8 @@ def display_results(results: dict):
             label="📥 Download Summary (CSV)",
             data=csv,
             file_name=f"scraping_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-            mime="text/csv"
+            mime="text/csv",
+            key=f"download_csv_{id(results)}"
         )
 
         # Download full JSON
@@ -239,7 +240,8 @@ def display_results(results: dict):
             label="📥 Download Full Data (JSON)",
             data=json_str,
             file_name=f"scraped_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
-            mime="application/json"
+            mime="application/json",
+            key=f"download_json_{id(results)}"
         )
 
 
