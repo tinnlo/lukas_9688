@@ -378,9 +378,9 @@ def display_results(results: dict):
                                     st.session_state.carousel_index[carousel_key] = min(len(image_files) - 1, current_idx + 1)
                                     st.rerun()
 
-                            # Display current full-size image
+                            # Display current full-size image (max 700px)
                             current_image = image_files[current_idx]
-                            st.image(str(current_image), use_container_width=True, caption=current_image.name)
+                            st.image(str(current_image), width=700, caption=current_image.name)
 
                             st.markdown("---")
 
