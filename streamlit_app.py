@@ -15,6 +15,7 @@ import json
 from datetime import datetime
 import io
 import subprocess
+from loguru import logger
 
 # Add scripts directory to path
 sys.path.insert(0, str(Path(__file__).parent / "scripts"))
