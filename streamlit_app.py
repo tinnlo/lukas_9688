@@ -442,15 +442,23 @@ def main():
     """Main Streamlit app."""
     init_session_state()
 
-    # Custom CSS to limit max width and center content
+    # Custom CSS to limit max width and center entire app (sidebar + main)
     st.markdown("""
         <style>
-        .block-container {
-            max-width: 1280px !important;
-            padding-left: 2rem !important;
-            padding-right: 2rem !important;
+        /* Constrain the entire app container */
+        .appview-container .main {
+            max-width: 1280px;
+            margin: 0 auto;
         }
-        section.main > div {
+
+        /* Ensure sidebar + main content are within the constraint */
+        section[data-testid="stSidebar"],
+        .main .block-container {
+            max-width: 100%;
+        }
+
+        /* Center the root container */
+        .stApp {
             max-width: 1280px;
             margin: 0 auto;
         }
