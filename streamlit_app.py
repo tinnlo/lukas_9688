@@ -217,7 +217,8 @@ async def scrape_products(
     results = {
         'completed': [],
         'failed': [],
-        'data': []
+        'data': [],
+        'videos_downloaded': download_videos  # Track if videos were downloaded in this scrape
     }
 
     # Get credentials from Streamlit secrets
@@ -461,56 +462,57 @@ def display_results(results: dict):
                                         st.session_state.carousel_index[carousel_key] = idx
                                         st.rerun()
 
-        # Display product videos if available
-        for data in results['data']:
-            product_id = data.get('product_id')
-            if product_id:
-                videos_dir = Path(f"product_list/{product_id}/ref_video")
-                if videos_dir.exists():
-                    video_files = sorted(list(videos_dir.glob("*.mp4")))
-                    if video_files:
-                        product_name = data.get('product_info', {}).get('product_name', product_id)[:50]
+        # Display product videos if available AND videos were downloaded in this scrape
+        if results.get('videos_downloaded', False):
+            for data in results['data']:
+                product_id = data.get('product_id')
+                if product_id:
+                    videos_dir = Path(f"product_list/{product_id}/ref_video")
+                    if videos_dir.exists():
+                        video_files = sorted(list(videos_dir.glob("*.mp4")))
+                        if video_files:
+                            product_name = data.get('product_info', {}).get('product_name', product_id)[:50]
 
-                        with st.expander(f"🎥 Reference Videos - {product_name}... ({len(video_files)} videos)"):
-                            st.markdown(f"**Top {len(video_files)} performing videos downloaded**")
+                            with st.expander(f"🎥 Reference Videos - {product_name}... ({len(video_files)} videos)"):
+                                st.markdown(f"**Top {len(video_files)} performing videos downloaded**")
 
-                            # Create download all videos button
-                            zip_buffer = io.BytesIO()
-                            with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
-                                for video_file in video_files:
-                                    zip_file.write(video_file, arcname=video_file.name)
-                            zip_buffer.seek(0)
+                                # Create download all videos button
+                                zip_buffer = io.BytesIO()
+                                with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+                                    for video_file in video_files:
+                                        zip_file.write(video_file, arcname=video_file.name)
+                                zip_buffer.seek(0)
 
-                            st.download_button(
-                                label=f"📦 Download All Videos ({len(video_files)} files)",
-                                data=zip_buffer.getvalue(),
-                                file_name=f"product_{product_id}_videos_{datetime.now().strftime('%Y%m%d')}.zip",
-                                mime="application/zip",
-                                key=f"download_videos_{product_id}_{datetime.now().timestamp()}"
-                            )
+                                st.download_button(
+                                    label=f"📦 Download All Videos ({len(video_files)} files)",
+                                    data=zip_buffer.getvalue(),
+                                    file_name=f"product_{product_id}_videos_{datetime.now().strftime('%Y%m%d')}.zip",
+                                    mime="application/zip",
+                                    key=f"download_videos_{product_id}_{datetime.now().timestamp()}"
+                                )
 
-                            st.markdown("---")
+                                st.markdown("---")
 
-                            # List videos with individual download
-                            for idx, video_file in enumerate(video_files, 1):
-                                col1, col2 = st.columns([3, 1])
-                                with col1:
-                                    st.markdown(f"**Video {idx}:** `{video_file.name}`")
-                                    # Video player
-                                    st.video(str(video_file))
-                                with col2:
-                                    # Individual download button
-                                    with open(video_file, 'rb') as f:
-                                        st.download_button(
-                                            label="⬇️ Download",
-                                            data=f.read(),
-                                            file_name=video_file.name,
-                                            mime="video/mp4",
-                                            key=f"video_download_{product_id}_{idx}_{datetime.now().timestamp()}"
-                                        )
+                                # List videos with individual download
+                                for idx, video_file in enumerate(video_files, 1):
+                                    col1, col2 = st.columns([3, 1])
+                                    with col1:
+                                        st.markdown(f"**Video {idx}:** `{video_file.name}`")
+                                        # Video player
+                                        st.video(str(video_file))
+                                    with col2:
+                                        # Individual download button
+                                        with open(video_file, 'rb') as f:
+                                            st.download_button(
+                                                label="⬇️ Download",
+                                                data=f.read(),
+                                                file_name=video_file.name,
+                                                mime="video/mp4",
+                                                key=f"video_download_{product_id}_{idx}_{datetime.now().timestamp()}"
+                                            )
 
-                                if idx < len(video_files):
-                                    st.markdown("---")
+                                    if idx < len(video_files):
+                                        st.markdown("---")
 
 
 def main():
