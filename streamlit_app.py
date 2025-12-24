@@ -107,13 +107,20 @@ def generate_markdown_report(data: dict) -> str:
     video_analysis = data.get('video_analysis', {})
     top_videos = data.get('top_videos', [])
 
+    # Safe formatting for numeric values
+    def format_number(value):
+        """Format number with comma separator, or return as-is if not numeric."""
+        if isinstance(value, (int, float)):
+            return f"{int(value):,}"
+        return str(value) if value is not None else 'N/A'
+
     md = f"""# {product_info.get('product_name', 'Product Report')}
 
 ## Product Information
 
 - **Product ID:** {data.get('product_id', 'N/A')}
 - **Shop Owner:** {product_info.get('shop_owner', 'N/A')}
-- **Total Sales:** {product_info.get('total_sales', 0):,}
+- **Total Sales:** {format_number(product_info.get('total_sales', 0))}
 - **Total Revenue:** {product_info.get('total_sales_revenue', 'N/A')}
 - **Scraped At:** {data.get('scraped_at', 'N/A')}
 
@@ -122,18 +129,18 @@ def generate_markdown_report(data: dict) -> str:
 ## Sales Analytics
 
 - **Period:** {sales_data.get('date_range', 'N/A')}
-- **Period Sales:** {sales_data.get('sales_count', 0):,}
+- **Period Sales:** {format_number(sales_data.get('sales_count', 0))}
 - **Period Revenue:** {sales_data.get('sales_revenue', 'N/A')}
-- **Related Videos:** {sales_data.get('related_videos', 0)}
+- **Related Videos:** {format_number(sales_data.get('related_videos', 0))}
 - **Conversion Rate:** {sales_data.get('conversion_rate', 'N/A')}
 
 ---
 
 ## Video Analysis
 
-- **带货视频数:** {video_analysis.get('带货视频数', 0)}
-- **带货视频达人数:** {video_analysis.get('带货视频达人数', 0)}
-- **带货视频销量:** {video_analysis.get('带货视频销量', 0)}
+- **带货视频数:** {format_number(video_analysis.get('带货视频数', 0))}
+- **带货视频达人数:** {format_number(video_analysis.get('带货视频达人数', 0))}
+- **带货视频销量:** {format_number(video_analysis.get('带货视频销量', 0))}
 - **带货视频销售额:** {video_analysis.get('带货视频销售额', 'N/A')}
 - **广告成交金额:** {video_analysis.get('广告成交金额', 'N/A')}
 
