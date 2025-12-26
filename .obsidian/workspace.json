@@ -11,13 +11,14 @@
             "id": "ed3173eb9417c315",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "shorts_dashboard.base",
-                "viewName": "Table"
+                "file": "scripts/README.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "shorts_dashboard"
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "shorts_dashboard.base",
+                "file": "scripts/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for shorts_dashboard"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -112,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "shorts_dashboard.base",
+                "file": "scripts/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from shorts_dashboard"
+              "title": "Outgoing links from README"
             }
           },
           {
@@ -155,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "shorts_dashboard.base",
+                "file": "scripts/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of shorts_dashboard"
+              "title": "Outline of README"
             }
           }
         ]
@@ -184,43 +185,51 @@
   },
   "active": "ed3173eb9417c315",
   "lastOpenFiles": [
-    "shorts_scripts/MINISO_MS188_Flash_Sale_AI_Uebersetzer.md",
-    "shorts_dashboard.base",
-    "shorts_scripts/MINISO_MS156_Open_Ear_Echtzeituebersetzer.md",
-    "shorts_scripts/MINISO_MS156_Open_Ear_Echtzeituebersetzer.mp3",
-    "shorts_scripts/2025-12-21T12_41_37_Leon Stern - Rich and Deep_pvc_sp120_s30_sb50_v3.mp3",
-    "shorts_scripts/HTC_NE20_AI_Uebersetzer_Earbuds.mp3",
-    "shorts_scripts/2025-12-21T11_25_24_Leon Stern - Rich and Deep_pvc_sp120_s30_sb50_v3.mp3",
-    "shorts_scripts/MINISO_MS188_Flash_Sale_AI_Uebersetzer.mp3",
-    "product_list/MINISO MS188/2025-12-21T12_41_37_Leon Stern - Rich and Deep_pvc_sp120_s30_sb50_v3.mp3",
-    "product_list/MINISO MS188/7576108509268348182.md",
-    "product_list/MINISO MS188/7520182265683381526.md",
-    "product_list/MINISO MS156/2025-12-21T12_41_37_Leon Stern - Rich and Deep_pvc_sp120_s30_sb50_v3.mp3",
-    "shorts_scripts/HTC_NE20_AI_Uebersetzer_Earbuds.md",
-    "product_list/HTC NE20/2025-12-21T11_25_24_Leon Stern - Rich and Deep_pvc_sp120_s30_sb50_v3.mp3",
-    "AGENTS.md",
-    "ElevenLabs_v3_Alpha_VO_Grammar_Practice.md",
-    "ElevenLabs_Multilingual_v2_VO_Grammar_Practice.md",
-    "product_list/HTC NE20/7563249844169542914.md",
-    "Account_Description.md",
-    "shorts_scripts",
-    "7558779033610095894.md",
-    "product_list/MINISO MS188/download.png",
-    "product_list/MINISO MS156/7575477825742982403.md",
-    "product_list/MINISO MS156/download (1).png",
-    "product_list/MINISO MS156/7576137918683581718.md",
-    "product_list/HTC NE20/7579948874081651990.md",
-    "product_list/HTC NE20/download.png",
-    "product_list/HTC NE20/7579948874081651990.png",
-    "product_list/HTC NE20/7563249844169542914.png",
-    "product_list/7558779033610095894.md",
-    "MINISO MS188/7576108509268348182.md",
-    "MINISO MS188/7520182265683381526.md",
-    "MINISO MS156/7576137918683581718.md",
-    "MINISO MS156/7575477825742982403.md",
-    "HTC NE20/7563249844169542914.md",
-    "HTC NE20/7579948874081651990.md",
-    "HTC NE20/7579948874081651990.png",
-    "MINISO MS156/download (1).png"
+    "Lukas_Appeal/Raw_Clip_Evidence_2.jpeg",
+    "Lukas_Appeal/Raw_Clip_Evidence_1.jpeg",
+    "Lukas_Appeal/Raw_Clip_Asset_List.png",
+    "Lukas_Appeal/Enforcement.PNG",
+    "Lukas_Appeal/Editing_Timeline_2.png",
+    "Lukas_Appeal/Editing_Timeline_1.png",
+    "Lukas_Appeal/Asociated_Account_Violation_Canceled.PNG",
+    "Lukas_Appeal/Asociated_Account_Enforcement_Withdrawn.PNG",
+    "Lukas_Appeal/Appeal.txt",
+    "Lukas_Appeal",
+    "product_list/1729647849009945599/video_analysis.md",
+    "product_list/1729647849009945599/video_analysis.md.tmp.36682.1766702306777",
+    "product_list/1729637770149272575/video_analysis.md",
+    "product_list/1729637770149272575/video_analysis.md.tmp.36682.1766702306543",
+    "product_list/1729535914744781823/video_analysis.md",
+    "product_list/1729535919239371775/video_analysis.md",
+    "product_list/1729535919239371775/video_analysis.md.tmp.36682.1766702120445",
+    "product_list/1729535917392698367/video_analysis.md",
+    "Appeal/Appeal.txt",
+    "Appeal/Appeal copy.txt",
+    "Appeal copy.txt",
+    "Appeal/Raw_Clip_Asset_List.png",
+    "Appeal/Raw_Clip_Evidence_3.png",
+    "Appeal/Enforcement.PNG",
+    "Appeal",
+    "product_list/1729647849009945599/ref_video/video_5_Ecdysteron für Muskelwachstum@produkt.tester_130203.mp4",
+    "QUICK_START.md",
+    "STREAMLIT_DEPLOYMENT.md",
+    "product_list/1729607478878640746/ref_video/video_1_analysis/image_prompts_video_1_ktchen37_bilingual.md",
+    "product_list/1729607478878640746/ref_video/video_1_analysis/tiktok_breakdown_video_1_ktchen37_bilingual.md",
+    "product_list/1729639958462569334/ref_video/video_4_lorelei_yin0_analysis/image_prompts_video_4_lorelei_yin0_bilingual.md",
+    "product_list/1729639958462569334/ref_video/video_4_lorelei_yin0_analysis/tiktok_breakdown_video_4_lorelei_yin0_bilingual.md",
+    "product_list/1729535919239371775/ref_video/analysis/video_4_analysis_temp/tiktok_breakdown_video_4_welllnesswisdom_bilingual.md",
+    "product_list/1729535919239371775/ref_video/analysis/video_4_analysis_temp/image_prompts_video_4_welllnesswisdom_bilingual.md",
+    "product_list/1729639958462569334/ref_video/video_4_analysis/tiktok_breakdown_video_4_lorelei_yin0_bilingual.md",
+    "product_list/1729639958462569334/ref_video/video_4_analysis/image_prompts_video_4_lorelei_yin0_bilingual.md",
+    "product_list/1729535919239371775/ref_video/analysis/video_4_analysis/image_prompts_video_4_welllnesswisdom_bilingual.md",
+    "product_list/1729535919239371775/ref_video/analysis/video_4_analysis/tiktok_breakdown_video_4_welllnesswisdom_bilingual.md",
+    "product_list/1729535919239371775/ref_video/analysis/video_1_analysis/tiktok_breakdown_video_1_hayleymarshall.md",
+    "product_list/1729535919239371775/ref_video/analysis/video_1_analysis/image_prompts_video_1_hayleymarshall.md",
+    "product_list/1729639958462569334/ref_video/analysis/image_prompts_video_4_lorelei_yin0_bilingual.md",
+    "product_list/1729639958462569334/ref_video/analysis/tiktok_breakdown_video_4_lorelei_yin0_bilingual.md",
+    "product_list/1729647849009945599/tabcut_data.md",
+    "product_list/1729639958462569334/tabcut_data.md",
+    "product_list/1729637770149272575/tabcut_data.md",
+    "product_list/1729607478878640746/tabcut_data.md"
   ]
 }
