@@ -1,5 +1,6 @@
 # OS / editor
 .DS_Store
+.obsidian/workspace.json
 
 # Ignore videos
 *.mp4
