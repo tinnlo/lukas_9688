@@ -31,6 +31,10 @@ scripts/**/__pycache__/
 scripts/**/*.pyc
 *.progress.json
 
+# Video analysis temp directories
+*_analysis_temp/
+video_*_analysis_temp/
+
 # Streamlit
 .streamlit/secrets.toml
 logs/

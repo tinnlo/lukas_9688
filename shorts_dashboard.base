@@ -10,6 +10,7 @@ views:
       and:
         - file.ext == "md"
         - file.inFolder("/shorts_scripts")
+        - '!file.name.startsWith("Campaign")'
     order:
       - file.name
       - product
@@ -26,8 +27,8 @@ views:
       - property: file.name
         direction: ASC
     columnSize:
-      file.name: 220
-      note.product: 140
+      file.name: 320
+      note.product: 176
       note.caption: 182
       note.published: 120
       note.duration: 90

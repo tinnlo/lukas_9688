@@ -272,6 +272,23 @@ echo "1729630936525936882" > test.csv
 python run_scraper.py --batch-file test.csv --download-videos
 ```
 
+## Additional Documentation
+
+### Vertex AI API Usage
+
+For information on using Google Vertex AI API for image and text generation with Gemini models, see:
+
+**[VERTEX_AI_USAGE.md](VERTEX_AI_USAGE.md)**
+
+This guide covers:
+- Authentication setup with gcloud
+- API endpoint structure and available models
+- Image and text generation examples
+- Response handling and base64 image extraction
+- Error handling and best practices
+
+The Vertex AI integration enables AI-powered content generation for TikTok video scripts and visual assets.
+
 ## License
 
 Internal tool for TikTok content creation workflow.

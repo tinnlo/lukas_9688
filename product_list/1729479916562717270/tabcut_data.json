@@ -1,0 +1,96 @@
+{
+  "product_id": "1729479916562717270",
+  "scraped_at": "2025-12-28T18:09:33.780442",
+  "product_info": {
+    "product_name": "MINISO-MS156 bietet fünf Modi, 136 Sprachen und lebenslanges kostenloses Hi-Fi-Stereo mit 40 Stunden Akku life.It eignet sich für Reisen, Lernen, Arbeit und Sport",
+    "shop_owner": "Current Boutique Store",
+    "total_sales": 3786,
+    "total_sales_revenue": "€ 6.52万($ 7.59万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 7,
+    "sales_revenue": "$ 96.59",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 96,
+    "带货视频达人数": 21,
+    "带货视频销量": 6,
+    "带货视频销售额": "$ 82.77",
+    "广告成交金额": "$ 82.77",
+    "广告成交占比": "100.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#miniso #minisoms156 #наушники #kopfhörer 发现时间：2025.12.04 03:59更新时间：2025.12.05 02:56时长：00:01:27跳转至 TikTok",
+      "creator_username": "provance_travel",
+      "creator_followers": "18.66万",
+      "publish_date": "2025-12-03 15:11",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 23.70($ 27.59)",
+      "total_views": "3076",
+      "video_url": "https://www.tiktok.com/@provance_travel/video/7579633975115795734?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_provance_travel.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADMINISO MS156#tiktokshop 发现时间：2025.12.15 08:46更新时间：2025.12.19 09:33时长：00:00:33跳转至 TikTok",
+      "creator_username": "hefjkxsrglo",
+      "creator_followers": "175",
+      "publish_date": "2025-12-13 12:35",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 11.85($ 13.80)",
+      "total_views": "841",
+      "video_url": "https://www.tiktok.com/@hefjkxsrglo/video/7583304710334024982?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_hefjkxsrglo.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADMINISO-MS156 bietet fünf Modi,   #tiktokshopcybermonday#tiltokmademebuyit#spotlightfinds#kopfhörer#BlackFriday发现时间：2025.12.04 04:22更新时间：2025.12.07 07:10时长：00:00:26跳转至 TikTok",
+      "creator_username": "zachakggorv",
+      "creator_followers": "445",
+      "publish_date": "2025-12-03 11:38",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 11.85($ 13.80)",
+      "total_views": "783",
+      "video_url": "https://www.tiktok.com/@zachakggorv/video/7579579264685575446?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_zachakggorv.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADKlickt den Link und schnappt euch schnell! Wenn ihr zU spät kommt, könnt ihr vielleicht doppelt so viel dafür bezahlen, um sie von jemand anderem zu kaufen ~ #minisoms156 #tiktokshop #kopfhörer #kiübersetzung #blackfriday 发现时间：2025.12.08 16:08更新时间：2025.12.15 01:40时长：00:00:29跳转至 TikTok",
+      "creator_username": "yukkoon",
+      "creator_followers": "3064",
+      "publish_date": "2025-12-07 09:23",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 11.85($ 13.80)",
+      "total_views": "1308",
+      "video_url": "https://www.tiktok.com/@yukkoon/video/7581028799026842902?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_yukkoon.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADMINISO-MS156 bietet fünf Modi,   #tiktokshopcybermonday#tiltokmademebuyit#spotlightfinds#kopfhörer#BlackFriday 发现时间：2025.12.21 08:28更新时间：2025.12.26 09:17时长：00:00:31跳转至 TikTok",
+      "creator_username": "zachakggorv",
+      "creator_followers": "445",
+      "publish_date": "2025-12-20 08:09",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 11.85($ 13.80)",
+      "total_views": "988",
+      "video_url": "https://www.tiktok.com/@zachakggorv/video/7585833779231542550?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_zachakggorv.mp4"
+    }
+  ]
+}

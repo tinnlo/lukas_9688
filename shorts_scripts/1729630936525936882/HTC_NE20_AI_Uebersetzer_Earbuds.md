@@ -11,7 +11,7 @@ tags:
   - "#ki"
   - "#kopfhoerer"
   - "#uebersetzer"
-  - "#deals"
+  - "#tiktokdeals"
 product: HTC NE20
 source_notes:
   - product_list/HTC NE20/7563249844169542914.md

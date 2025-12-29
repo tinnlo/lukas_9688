@@ -1,517 +1,399 @@
 ---
 name: tiktok-ad-analysis
-description: Analyzes TikTok product videos using Gemini multimodal vision. Supports deep-dive (single video storyboard) and bulk analysis (marketing insights for multiple videos). Generates bilingual (EN/CN) reports.
-version: 2.0.0
-author: Claude
+description: Video market analysis with hybrid transcription (TikTok captions → Whisper fallback). Analyzes TikTok reference videos to extract hooks, strategies, and insights for script generation.
+version: 4.0.0
+author: Automated script (Python-based)
+execution: Python script with FFmpeg + yt-dlp + Whisper + Gemini
 ---
 
-# TikTok Ad Analysis Skill
+# TikTok Ad Analysis Skill (Automated)
 
-Analyzes TikTok product videos with two modes: **Deep-Dive** (detailed shot-by-shot) and **Bulk Marketing** (insights for multiple videos).
-
-## Analysis Modes
-
-### Mode 1: Deep-Dive Analysis (Single Video)
-**Use when:** You need detailed storyboard, frame extraction, and VO transcript for ONE video
-
-**Output:** Shot-by-shot breakdown, key frames, voiceover transcript, image prompts, bilingual report
-
-### Mode 2: Bulk Marketing Insights (Multiple Videos)
-**Use when:** You need marketing insights for ALL videos in a directory/product
-
-**Output:** Consolidated marketing analysis with hooks, selling points, effectiveness ratings
+**WHAT THIS DOES:** Automatically analyzes TikTok reference videos with bilingual output (English + Chinese)
+**HOW IT WORKS:** Python script extracts frames + transcribes audio → Gemini generates analysis
+**OUTPUT:** `video_N_analysis.md` for each video + `video_synthesis.md` summary
 
 ---
 
-## Mode 1: Deep-Dive Analysis
-
-### Overview
-Complete technical and creative breakdown of a single video:
-1. **Shot Detection**: Identifies scene boundaries and shot count
-2. **Key Frame Extraction**: Extracts ONE representative frame per shot
-3. **Voiceover Extraction**: Extracts audio transcript from video
-4. **Multimodal Analysis**: Uses Gemini vision to analyze video and frames
-5. **Report Generation**: Creates breakdown report with VO and storyboard
-6. **Translation**: Bilingual (English/Chinese) version of all content
-7. **Image Prompts**: AI generation prompts for recreating visuals
-
-### Prerequisites
-
-- **ffmpeg**: For video processing, frame extraction, and audio extraction
-- **Gemini CLI**: With multimodal vision capabilities
-- **Local video files**: MP4 format
-
-### Workflow
-
-#### Step 1: Detect Shot Boundaries
-
-Use Gemini to analyze video and identify shot transitions:
-
-```
-Analyze this TikTok video and return shot boundaries as JSON:
-Video: [path to video]
-
-Return format:
-[
-  {"shot": 1, "start": 0, "end": 5, "type": "hook", "description": "..."},
-  {"shot": 2, "start": 5, "end": 20, "type": "benefit", "description": "..."},
-  ...
-]
-```
-
-#### Step 2: Extract Key Frames Per Shot
-
-Extract ONE representative frame from the middle of each shot:
+## Quick Start
 
 ```bash
-# Calculate midpoint of each shot and extract
-ffmpeg -i input.mp4 -ss 2.5 -frames:v 1 shot_01_hook.jpg -y
-ffmpeg -i input.mp4 -ss 12.5 -frames:v 1 shot_02_benefit.jpg -y
-ffmpeg -i input.mp4 -ss 27.5 -frames:v 1 shot_03_reveal.jpg -y
-# ... continue for all shots
+# Navigate to scripts directory
+cd scripts
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Analyze all videos for a product
+python analyze_video_batch.py 1729479916562717270
+
+# Or analyze a single video
+python analyze_single_video.py 1729479916562717270 2
 ```
 
-#### Step 3: Extract Voiceover/Transcript
-
-Extract audio and get transcript using Gemini:
-
-```bash
-# Extract audio
-ffmpeg -i input.mp4 -vn -acodec libmp3lame -q:a 2 audio.mp3 -y
-```
-
-Then use Gemini to transcribe and translate:
-
-```
-Transcribe this TikTok video audio to text.
-Provide ONLY the spoken words, line by line, in the original language.
-
-Also provide Chinese translation of the transcript.
-
-Video: [path to video or audio]
-
-Format:
-VO:
-[original language transcript line by line]
-
-中文翻译 (Chinese Translation):
-[chinese translation line by line]
-```
-
-#### Step 4: Generate Complete Breakdown Report
-
-Create comprehensive markdown report: `tiktok_breakdown_[VIDEO_ID].md`
-
-```markdown
-# TikTok Ad Analysis: [Product Name] | [产品名称]
-
-## 1. Overview | 概述
-**Product | 产品:** [Name]
-**Hook Type | 钩子类型:** [Type]
-**Hook | 钩子:** [Description]
+**Output:** `product_list/{product_id}/ref_video/video_N_analysis.md` (bilingual)
 
 ---
 
-## 2. Viral Hook / Meme Strategy | 病毒式钩子策略
-[Strategy explanation - English]
+## Prerequisites
 
-**策略说明 (Chinese):**
-[Strategy explanation - Chinese]
-
-**Key Viral Elements | 关键病毒元素:**
-- [Element 1]
-- [Element 2]
-
----
-
-## 3. Voiceover / Transcript | 语音/转录
-
-**Original | 原文:**
-```
-[Original transcript line by line]
-```
-
-**中文翻译 | Chinese Translation:**
-```
-[Chinese translation line by line]
-```
+✅ **Python 3.8+** with virtual environment
+✅ **ffmpeg** installed (for keyframe/audio extraction)
+✅ **faster-whisper** installed (`pip install faster-whisper`)
+✅ **yt-dlp** installed (`pip install yt-dlp`)
+✅ **gemini-cli** installed and configured
+✅ **Local video files** in `product_list/{product_id}/ref_video/`
+✅ **tabcut_data.json** available (contains performance metadata)
 
 ---
 
-## 4. Video Script & Storyboard | 视频脚本与分镜
-
-| Shot | Time | Visual Action | Voiceover | 语音 | Asset |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **01** | 0-5s | **[Description]** | **[VO text]** | **[中文]** | `shot_01.jpg` |
-| **02** | 5-15s | **[Description]** | **[VO text]** | **[中文]** | `shot_02.jpg` |
-
----
-
-## 5. Production Notes | 制作备注
-*   [Production style - English]
-*   [制作风格 - Chinese]
-```
-
-#### Step 5: Translate All Content to Chinese
-
-Use Gemini to translate the entire breakdown report while preserving English:
+## Transcription Workflow (Hybrid Approach)
 
 ```
-Translate this TikTok ad analysis to Chinese.
-Keep the original English content, then add Chinese translation below each section.
-
-Maintain this bilingual format throughout.
-
-[paste the markdown content]
-```
-
-Save as: `tiktok_breakdown_[VIDEO_ID]_bilingual.md`
-
-#### Step 6: Generate Image Prompts
-
-Generate AI image prompts for recreating visuals: `image_prompts_[VIDEO_ID].md`
-
-```markdown
-# Image Generation Prompts: [Product] | [产品]
-
-**Objective | 目标:** Generate consistent visual assets
-
----
-
-## Unified Scenario | 统一场景
-
-**Style | 风格:** [UGC description]
-**Lighting | 灯光:** [Warm soft lighting]
-**Background | 背景:** [Cozy home interior]
-**Creator | 创作者:** [Description]
-
----
-
-## Shot 01: Hook | 钩子
-
-**Reference | 参考:** shot_01_hook.jpg
-
-**Prompt:**
-> [English prompt]
-
-**提示 (Chinese):**
-> [Chinese translation]
-
----
-
-[Continue for all shots]
-```
-
-#### Step 7: Cleanup
-
-Remove temporary files:
-```bash
-rm -rf .tmp_analysis preview_*.jpg audio.mp3
-```
-
-### Deep-Dive Output Structure
-
-```
-[ref_video_dir]/
-├── video_1_[creator].mp4
-├── video_1_analysis/
-│   ├── tiktok_breakdown_[VIDEO_ID]_bilingual.md
-│   ├── image_prompts_[VIDEO_ID]_bilingual.md
-│   ├── shot_01_[type].jpg
-│   ├── shot_02_[type].jpg
-│   └── ...
-```
-
----
-
-## Mode 2: Bulk Marketing Insights
-
-### Overview
-
-Analyzes ALL videos in a product directory to extract marketing insights, creative strategies, and effectiveness ratings.
-
-**Key difference from Deep-Dive:** No frame extraction, no shot breakdown, focuses on marketing strategy and campaign-level insights.
-
-### Workflow
-
-#### Step 1: Enumerate All Video Files
-
-**CRITICAL:** Always explicitly list all video files before analysis to prevent missing videos.
-
-```bash
-# List all MP4 files in directory
-ls -1 /path/to/product/ref_video/*.mp4
-
-# Example output:
-# video_1-Product_Feature@creator1.mp4
-# video_2-Product_Value@creator2.mp4
-# video_3_creator3.mp4
-# video_4_creator3.mp4
-# video_5_creator3.mp4
-```
-
-**Store this list** to pass to Gemini explicitly.
-
-#### Step 2: Launch Gemini Analysis with Explicit File List
-
-**DO NOT** use vague prompts like "analyze all videos in this directory"
-
-**DO** use explicit enumeration:
-
-```
-Analyze ALL [N] TikTok ad videos in this directory: /path/to/product/ref_video
-
-The directory contains exactly these [N] video files:
-1. video_1-Product_Feature@creator1.mp4
-2. video_2-Product_Value@creator2.mp4
-3. video_3_creator3.mp4
-4. video_4_creator3.mp4
-5. video_5_creator3.mp4
-
-For EACH of these [N] videos, provide:
-1. Video content summary (what's shown, product features highlighted)
-2. Hook/opening strategy (first 3 seconds)
-3. Key selling points emphasized
-4. Visual elements and editing style
-5. Call-to-action approach
-6. Target audience inference
-7. Effectiveness rating (1-10) with reasoning
-
-Format as a detailed markdown report with separate sections for each video.
-```
-
-**Why this works:**
-- Gemini can't miss videos when they're explicitly listed
-- Count validation ([N] videos expected)
-- Clear structure requirements
-
-#### Step 3: Parse and Validate Results
-
-Check that Gemini analyzed all videos:
-- Count sections in output
-- Verify each filename appears
-- Flag missing analyses
-
-#### Step 4: Save Bulk Analysis Report
-
-Save as: `video_analysis.md` in the product directory
-
-```
-product_list/
-└── [product_id]/
-    ├── ref_video/
-    │   ├── video_1.mp4
-    │   ├── video_2.mp4
-    │   └── ...
-    ├── video_analysis.md  ← Bulk marketing insights
-    └── tabcut_data.json
-```
-
-### Bulk Analysis Report Template
-
-```markdown
-# TikTok Ad Video Analysis Report
-
-**Product:** [Product Name]
-**Product ID:** [ID]
-**Analysis Date:** YYYY-MM-DD
-**Videos Analyzed:** [N]
-
----
-
-## Executive Summary
-
-[Campaign overview, overall strategy, effectiveness]
-
----
-
-## Video-by-Video Analysis
-
-### Video 1: [Title/Description]
-
-**Filename:** `video_1_creator.mp4`
-**Creator:** @creator
-
-#### 1. Video Content Summary
-[What's shown, product features highlighted]
-
-#### 2. Hook / Opening Strategy (First 3 Seconds)
-**Strategy:** [Hook type]
-**Description:** [Details]
-
-#### 3. Key Selling Points Emphasized
-- [Point 1]
-- [Point 2]
-- [Point 3]
-
-#### 4. Visual Elements and Editing Style
-**Style:** [UGC, professional, etc.]
-**Elements:** [Specific visual choices]
-
-#### 5. Call-to-Action Approach
-[CTA strategy and messaging]
-
-#### 6. Target Audience Inference
-[Demographics, psychographics]
-
-#### 7. Effectiveness Rating: X/10
-**Reasoning:** [Why this rating]
-
----
-
-[Repeat for all videos]
-
----
-
-## Overall Campaign Strategy
-
-### Creative Mix Framework
-[How videos work together]
-
-### Key Success Factors
-1. [Factor 1]
-2. [Factor 2]
-
-### Recommendations for Future Creatives
-1. [Recommendation 1]
-2. [Recommendation 2]
-```
-
----
-
-## Parallel Bulk Analysis (Multiple Products)
-
-To analyze multiple products efficiently, use **async Gemini CLI** to run analyses in parallel:
-
-```bash
-# Launch 5 parallel analyses (one per product)
-# Each returns a task_id
-
-gemini_cli_execute_async(
-  query="[bulk analysis prompt with explicit file list]",
-  working_dir="/path/to/project"
-)
-
-# Monitor progress
-gemini_cli_check_result(task_id="...")
-
-# Retrieve completed results
-# Save to each product's video_analysis.md
+┌─────────────────────────────┐
+│  1. TikTok Captions         │ ← Fastest (yt-dlp)
+│     (direct download)        │
+└──────────┬──────────────────┘
+           │ Not available?
+           ▼
+┌─────────────────────────────┐
+│  2. Whisper AI              │ ← Fallback (reliable)
+│     (faster-whisper)         │
+└──────────┬──────────────────┘
+           │ Failed?
+           ▼
+┌─────────────────────────────┐
+│  3. No transcript           │ ← Music/silent
+│     (mark as unavailable)    │
+└─────────────────────────────┘
 ```
 
 **Benefits:**
-- Analyze 20+ videos in ~2-3 minutes total
-- No timeouts
-- Efficient resource usage
+- **Speed:** TikTok captions are instant when available
+- **Accuracy:** Whisper handles videos without captions
+- **Coverage:** Graceful fallback for music-only content
 
 ---
 
-## Common Issues and Solutions
+## Script Files
 
-### Issue 1: Gemini Only Analyzes 1 Video
+### `analyze_video_batch.py` - Batch Processing
 
-**Cause:** Vague directory prompt without explicit file enumeration
+**Usage:**
+```bash
+python analyze_video_batch.py <product_id>
+```
 
-**Solution:** Always use Step 1 (enumerate files) and Step 2 (explicit list in prompt)
+**What it does:**
+1. For each video in `ref_video/`:
+   - FFmpeg extracts keyframes (every 3 seconds) + audio
+   - Tries TikTok captions via yt-dlp (fast)
+   - Falls back to Whisper transcription if needed
+   - Passes frames + transcript to Gemini
+   - Writes `video_N_analysis.md`
 
-### Issue 2: Missing Videos in Analysis
+2. After all videos: Creates `video_synthesis.md` (market-level insights)
 
-**Cause:** Gemini file discovery incomplete
+**Output files:**
+```
+product_list/{product_id}/ref_video/
+├── video_1_analysis.md    # Individual analysis (bilingual)
+├── video_2_analysis.md
+├── video_3_analysis.md
+├── video_4_analysis.md
+├── video_5_analysis.md
+└── video_synthesis.md     # Market summary (all videos)
+```
 
-**Solution:**
-1. List files with `ls -1 *.mp4`
-2. Pass exact filenames in prompt
-3. Validate output has all videos
+### `analyze_single_video.py` - Single Video
 
-### Issue 3: Analysis Timeout
+**Usage:**
+```bash
+python analyze_single_video.py <product_id> <video_number>
+```
 
-**Cause:** Too many videos, synchronous execution
+**Example:**
+```bash
+python analyze_single_video.py 1729479916562717270 2
+```
 
-**Solution:** Use `gemini_cli_execute_async` for parallel processing
-
-### Issue 4: Inference-Only Analysis (No Direct Video Access)
-
-**Situation:** Gemini cannot directly process video binary
-
-**Approach:** Infer from metadata (filenames, titles, existing data)
-
-**Best Practice:**
-- Check for `tabcut_data.json` first
-- Use creator names, video titles from filenames
-- Cross-reference with existing product data
+**What it does:** Same workflow as batch, but for a single video
 
 ---
 
-## Shot Types (Deep-Dive Mode)
+## Analysis Output Format
 
-Common TikTok ad shot types:
-- **hook**: Opening grabber
-- **reveal**: Product unboxing
-- **demo**: Product demonstration
-- **benefit**: Showing results
-- **cta**: Call-to-action
-- **testimonial**: Creator speaking
+Each `video_N_analysis.md` contains:
 
-## Hook Strategies
+### 1. Video Metadata | 视频元数据
+- Creator, followers, rank, sales, views, duration
 
-- **pricing_error**: "88% off!", "Pricing mistake!"
-- **problem_solution**: "Bloated? Here's the solution."
-- **pattern_interrupt**: Unexpected/humorous opening
-- **unboxing**: Classic product opening
-- **testimonial**: Personal recommendation
-- **educational**: "Did you know...?"
-- **urgency**: "Limited time!", "Black Friday!"
+### 2. Voiceover/Dialogue Transcript | 旁白/对话文本
+- **Language Detected:** German/English/Russian/etc.
+- **Original Transcript:** With timestamps [MM:SS]
+- **中文翻译:** Chinese translation line by line
+
+### 3. Hook/Opening Strategy | 开场策略
+- Hook Type (Problem-Solution, Pricing-FOMO, etc.)
+- Hook Description
+- Visual + Audio Combination
+- Effectiveness Rating
+
+### 4. Shot-by-Shot Storyboard | 分镜脚本
+- Frame-by-frame analysis
+- Visual action descriptions
+- Voiceover alignment
+- Shot purpose (Hook, Product Reveal, CTA, etc.)
+
+### 5. Visual Elements Catalog | 视觉元素目录
+- Graphics/Text Overlays
+- Product Showcase
+- Transitions
+- Color Grading
+- Lighting
+
+### 6. Music/Audio Analysis | 音乐/音频分析
+- Genre, Mood, Audio Quality
+- Voice type (Human/TTS)
+- Sync analysis
+
+### 7. Key Selling Points | 核心卖点
+- Feature emphasis with time allocation
+
+### 8. Creative Strategy & Execution | 创意策略与执行
+- Production Style (UGC/Professional)
+- Germany Market Fit
+- Authenticity Level
+- Viral Elements
+
+### 9. Call-to-Action Analysis | 行动号召分析
+- CTA Type, Timing, Strength Rating
+
+### 10. Target Audience Inference | 目标受众推断
+- Demographics, Psychographics, Language Signals
+
+### 11. Effectiveness Rating (7-Dimension) | 有效性评分
+- Hook Strength, Pacing, Visual Quality, Trust Signals
+- Value Clarity, CTA Effectiveness, Overall Score
+
+### 12. Replication Insights | 复制要点
+- Production Budget
+- Equipment Needed
+- Key Success Factor
+- Reproduducible Elements
+
+### 13. Recommendations (DO/DON'T/OPPORTUNITY) | 建议
+- Specific actionable recommendations
+- Mistakes to avoid
+- Untapped opportunities
 
 ---
 
-## Example Usage
+## Language Support
 
-### Deep-Dive Single Video
+**Transcription supports:**
+- German (de) - Primary market
+- English (en)
+- Russian (ru) - Diaspora targeting
+- Spanish (es), French (fr), Japanese (ja), Korean (ko), Portuguese (pt)
+- Chinese Simplified (zh-Hans), Chinese Traditional (zh-Hant)
 
+**Auto-detection:** Both yt-dlp captions and Whisper auto-detect language
+
+---
+
+## Performance Notes
+
+| Method | Speed | Accuracy | When Used |
+|:-------|:------|:---------|:----------|
+| TikTok captions (yt-dlp) | ~2-5s | High (creator's own) | When creator adds captions |
+| Whisper transcription | ~30-60s | Very High | When no captions available |
+| No transcript | Instant | N/A | Music-only or unintelligible |
+
+**Typical batch time (5 videos):**
+- All have TikTok captions: ~30 seconds
+- All need Whisper: ~4-5 minutes
+- Mixed: ~1-2 minutes
+
+---
+
+## Error Handling
+
+### No TikTok captions available
 ```
-Analyze this video in detail:
-/Users/lxt/Movies/TikTok/WZ/lukas_9688/product_list/1729535919239371775/ref_video/video_1_creator.mp4
-
-Generate:
-- Shot breakdown
-- Key frames
-- VO transcript (bilingual)
-- Image prompts
-
-Save to: product_list/1729535919239371775/ref_video/video_1_analysis/
+  ├─ Fetching captions from TikTok (yt-dlp)...
+  ├─ No captions found on TikTok
+  ├─ Falling back to Whisper transcription...
 ```
 
-### Bulk Marketing Insights
-
+### Whisper transcription succeeds
 ```
-Analyze ALL 5 videos for product 1729535917392698367:
+  ├─ Transcribing audio with faster-whisper...
+  ├─ Detected language: de (confidence: 1.00)
+  ├─ Transcript length: 9 segments
+  └─ Transcript: whisper_transcription - de with 9 segments
+```
 
-Files:
-1. video_1-Magnesium Komplex mit guter Qualität@produkt.tester_131514.mp4
-2. video_2-Magnesium Komplex zum fairen Preis@produkt.tester_131613.mp4
-3. video_3_zs.carmen_1406.mp4
-4. video_4_zs.carmen_1406.mp4
-5. video_5_zs.carmen_1406.mp4
-
-Save consolidated report to: product_list/1729535917392698367/video_analysis.md
+### Both methods fail
+```
+  ├─ No transcript available - marking as music/silent
+  └─ Transcript: none - unknown with 0 segments
 ```
 
 ---
 
-## Tips for Quality Analysis
+## Installation
 
-### Deep-Dive Mode
-1. **Shot Detection**: Use Gemini vision for accurate shot boundary detection
-2. **Key Frame Timing**: Extract from middle of each shot
-3. **Frame Naming**: Use descriptive names (shot_01_hook.jpg)
-4. **VO Extraction**: Extract audio, use Gemini for transcription + translation
-5. **Bilingual Format**: Always preserve English content, add Chinese below
-6. **Unified Scenario**: Image prompts should maintain visual consistency
+```bash
+# Create virtual environment
+cd scripts
+python3 -m venv venv
 
-### Bulk Marketing Mode
-1. **File Enumeration**: ALWAYS list files explicitly first
-2. **Count Validation**: Verify [N] videos in prompt matches directory
-3. **Async Execution**: Use parallel processing for multiple products
-4. **Metadata Fallback**: If video access fails, use tabcut_data.json
-5. **Campaign-Level Insights**: Group videos by creator, hook type, strategy
-6. **Cross-Product Patterns**: Identify winning patterns across products
+# Activate
+source venv/bin/activate  # On macOS/Linux
+# or
+venv\Scripts\activate  # On Windows
+
+# Install dependencies
+pip install faster-whisper yt-dlp
+
+# Verify ffmpeg is installed
+ffmpeg -version
+
+# Verify yt-dlp works
+yt-dlp --version
+
+# Test Whisper
+python -c "from faster_whisper import WhisperModel; print('OK')"
+```
+
+---
+
+## Configuration
+
+### Whisper Model Options
+
+Edit `analyze_single_video.py` or `analyze_video_batch.py`:
+
+```python
+# Current (fast, good accuracy)
+model = WhisperModel("base", device="cpu", compute_type="int8")
+
+# For better accuracy (slower)
+model = WhisperModel("small", device="cpu", compute_type="int8")
+
+# For best accuracy (slowest)
+model = WhisperModel("medium", device="cpu", compute_type="int8")
+```
+
+### yt-dlp Language Priority
+
+Current priority order:
+```python
+"--sub-lang", "en,de,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant"
+```
+
+Add/remove languages as needed for your market.
+
+---
+
+## Troubleshooting
+
+### Issue: yt-dlp can't access TikTok
+
+**Error:** `HTTP Error 429: Too Many Requests`
+
+**Solution:** TikTok rate limiting - wait a few minutes and retry, or rely on Whisper fallback
+
+### Issue: Whisper slow transcription
+
+**Solution:** Use smaller model (`base` instead of `small`/`medium`)
+
+### Issue: Gemini quota exhausted
+
+**Error:** `API Error: You have exhausted your capacity`
+
+**Solution:** Wait for quota reset (~4-6 hours) or switch Google account
+
+### Issue: No audio in transcript
+
+**Check:**
+```bash
+# Verify audio file was extracted
+ls -lh product_list/{product_id}/ref_video/video_N_analysis_temp/audio.mp3
+
+# Play audio to verify
+ffplay product_list/{product_id}/ref_video/video_N_analysis_temp/audio.mp3
+```
+
+---
+
+## File Structure After Analysis
+
+```
+product_list/{product_id}/
+├── tabcut_data.json           # Source metadata
+├── ref_video/
+│   ├── video_1_{creator}.mp4
+│   ├── video_1_analysis_temp/  # Temp (can be deleted)
+│   │   ├── frames/            # Extracted keyframes
+│   │   │   ├── frame_001.jpg
+│   │   │   ├── frame_002.jpg
+│   │   │   └── ...
+│   │   └── audio.mp3          # Extracted audio
+│   ├── video_1_analysis.md    # ← Generated analysis
+│   ├── video_2_{creator}.mp4
+│   ├── video_2_analysis_temp/
+│   ├── video_2_analysis.md
+│   └── ...
+└── shorts_scripts/            # Scripts use analysis
+    ├── Product_Model_Angle1.md
+    ├── Product_Model_Angle2.md
+    └── Product_Model_Angle3.md
+```
+
+**Cleanup:** `*_analysis_temp/` directories can be deleted after successful analysis
+
+---
+
+## Next Step: Script Generation
+
+After video analysis is complete:
+
+1. **Check the analyses:**
+   ```bash
+   ls -lh product_list/{product_id}/ref_video/video_*_analysis.md
+   ```
+
+2. **Verify bilingual format:**
+   - Check section headers have `English | 中文`
+   - Check transcripts have Chinese translations
+
+3. **Run script generation:**
+   - Use `tiktok_script_generator.md` skill
+   - Claude will read `video_*_analysis.md` files
+   - Generate 3 production-ready scripts
+
+**Workflow:**
+```
+[Hybrid Analysis] → video_N_analysis.md (bilingual)
+                        ↓
+            [Script Generator Skill] → 3 Scripts (German + Chinese)
+```
+
+---
+
+## Version History
+
+**v4.0.0** (2025-12-29)
+- **NEW:** Hybrid transcription workflow (TikTok captions → Whisper fallback)
+- **NEW:** Bilingual output format (English + Chinese)
+- **NEW:** Language detection and confidence scores
+- **NEW:** Graceful handling of music-only content
+- **Improved:** Python-based automated processing
+- **Removed:** Manual gemini-cli prompts (now automated)
+
+**v3.0.0** (Previous)
+- Manual gemini-cli usage by user
+
+**v2.0.0** (Previous)
+- Four-tier system (failed due to MCP limitations)
