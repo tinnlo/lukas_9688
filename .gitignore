@@ -31,6 +31,19 @@ scripts/**/__pycache__/
 scripts/**/*.pyc
 *.progress.json
 
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Development artifacts
+scripts/explore_*.py
+scripts/*_debug.png
+scripts/*_error.png
+scripts/*_page*.png
+scripts/FASTMOSS_*.md
+scripts/TABCUT_*.md
+
 # Video analysis temp directories
 *_analysis_temp/
 video_*_analysis_temp/
