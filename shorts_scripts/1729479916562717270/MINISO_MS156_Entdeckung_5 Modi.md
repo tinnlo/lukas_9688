@@ -1,6 +1,6 @@
 ---
 cover: ""
-caption: Heute zeige ich euch meine neuen AI-Kopfhörer. #MINISO #AI #Earbuds #Unboxing #Tech
+caption: "Heute zeige ich euch meine neuen AI-Kopfhörer. #MINISO #AI #Earbuds #Unboxing #Tech"
 published: 2025-12-29
 duration: "00:38"
 sales:
@@ -39,7 +39,7 @@ source_notes:
 [warm] Heute zeige ich euch, was ich gerade bekommen habe.
 [curious] Die MINISO MS156 AI-Kopfhörer.
 [firm] Es gibt sie in drei Farben: Lila, Weiß und Schwarz.
-[soft] Ich hab die Lila genommen. Schaut mal, wie die aufgemacht ist.
+[soft] Ich hab die Schwarze genommen. Schaut mal, wie die aufgemacht ist.
 [matter-of-fact] Die stehen offen. Nicht im Ohr.
 [reflective] Das ist viel angenehmer.
 [bright] Die App ist komplett kostenlos.
@@ -54,7 +54,7 @@ source_notes:
 [warm] 今天给你们看看我刚收到的东西。
 [curious] MINISO MS156 AI耳机。
 [firm] 有三种颜色：紫色、白色和黑色。
-[soft] 我选了紫色的。看看这做工。
+[soft] 我选了黑色的。看看这做工。
 [matter-of-fact] 它们是开放式佩戴的。不塞进耳朵里。
 [reflective] 这样舒服多了。
 [bright] APP完全免费。
