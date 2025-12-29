@@ -1,33 +1,43 @@
 ---
 name: tiktok-product-scraper
-description: Step 1 of TikTok workflow. Scrapes product data from tabcut.com using Python scraper. Creates JSON + human-readable MD. Optional video downloads. Designed for n8n orchestration.
-version: 1.0.0
+description: Step 1 of TikTok workflow. Scrapes product data from tabcut.com OR fastmoss.com using Python scraper. Creates JSON + human-readable MD. Optional video downloads. Designed for n8n orchestration.
+version: 2.0.0
 author: User (via n8n)
 execution: n8n workflow node → Bash commands
 ---
 
-# TikTok Product Scraper Skill (Step 1)
+# TikTok Product Scraper Skill (Step 1) - Multi-Source Support
 
 **WHO RUNS THIS:** n8n workflow (or manual terminal)
 **PURPOSE:** Scrape product data and optionally download reference videos
+**DATA SOURCES:** tabcut.com (default) OR fastmoss.com
 **NEXT STEP:** Step 2 - Ad Analysis (gemini-cli)
 
 ---
 
 ## Overview
 
-This skill scrapes TikTok Shop product data from tabcut.com including:
+This skill scrapes TikTok Shop product data from **multiple sources**:
+
+### Supported Sources
+1. **tabcut.com** (default) - Original source with comprehensive data
+2. **fastmoss.com** (NEW) - Alternative source with similar data structure
+
+### Features
 - Product information and sales metrics
 - Top 5 performing videos metadata
 - Optional: Download video files for analysis
 - **Always:** Convert JSON to human-readable MD for review
+- **New:** Choose data source with `--source` parameter
 
 ---
 
 ## Prerequisites
 
 ✅ **Python 3.8+** with virtual environment
-✅ **Tabcut.com credentials** in `scripts/config/.env`
+✅ **Data source credentials** in `scripts/config/.env`
+   - **Tabcut**: `TABCUT_USERNAME`, `TABCUT_PASSWORD`
+   - **FastMoss**: `FASTMOSS_USERNAME`, `FASTMOSS_PASSWORD`
 ✅ **Playwright browser** installed (`playwright install chromium`)
 ✅ **Dependencies installed** (`pip install -r requirements.txt`)
 
@@ -48,13 +58,30 @@ cp config/.env.example config/.env
 
 ## Quick Start (n8n)
 
-### Option A: Single Product (with videos)
+### Option A: Single Product from Tabcut (with videos)
 
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
 source venv/bin/activate
 python run_scraper.py \
   --product-id {{$json.product_id}} \
+  --download-videos
+
+# Or explicitly specify tabcut (it's the default)
+python run_scraper.py \
+  --product-id {{$json.product_id}} \
+  --source tabcut \
+  --download-videos
+```
+
+### Option A2: Single Product from FastMoss (with videos)
+
+```bash
+cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
+source venv/bin/activate
+python run_scraper.py \
+  --product-id {{$json.product_id}} \
+  --source fastmoss \
   --download-videos
 
 # Generate human-readable MD
@@ -432,6 +459,29 @@ chmod +x /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts/convert_json_to_md.py
 
 ## Configuration Options
 
+### Source Selection: NEW!
+
+**Option 1: Tabcut (default)**
+```bash
+python run_scraper.py --product-id <id>
+# OR explicitly
+python run_scraper.py --product-id <id> --source tabcut
+```
+- Comprehensive data coverage
+- Well-tested data extraction
+- Original default source
+
+**Option 2: FastMoss**
+```bash
+python run_scraper.py --product-id <id> --source fastmoss
+```
+- Alternative data source
+- Different authentication method (phone + password with "密码登录")
+- May have different data availability (some features require premium account)
+- Outputs to `fastmoss_data.json` instead of `tabcut_data.json`
+
+**Tip:** You can scrape the same product from both sources to compare data!
+
 ### Download Videos: YES
 
 **When to use:**
@@ -441,7 +491,7 @@ chmod +x /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts/convert_json_to_md.py
 
 **Command:**
 ```bash
-python run_scraper.py --product-id <id> --download-videos
+python run_scraper.py --product-id <id> --download-videos --source <tabcut|fastmoss>
 ```
 
 **Output:** JSON + MD + 5 video files (~50-200 MB)
@@ -455,7 +505,7 @@ python run_scraper.py --product-id <id> --download-videos
 
 **Command:**
 ```bash
-python run_scraper.py --product-id <id>
+python run_scraper.py --product-id <id> --source <tabcut|fastmoss>
 ```
 
 **Output:** JSON + MD only (~10 KB)
@@ -559,9 +609,17 @@ Step 3 (Claude Code) → 3 TikTok scripts + Campaign_Summary.md
 
 ## Version History
 
+**v2.0.0** (2025-12-29)
+- **NEW:** Multi-source support - tabcut.com AND fastmoss.com
+- **NEW:** `--source` parameter to choose data source
+- FastMoss authentication with "密码登录" flow
+- Both sources use identical data models for consistency
+- Output files: `tabcut_data.json` or `fastmoss_data.json`
+- Comprehensive fastmoss_scraper module (auth, extractors, scraper)
+
 **v1.0.0** (2025-12-29)
 - Initial release for n8n orchestration
-- Wrapper around existing Python scraper
+- Wrapper around existing Python scraper (tabcut.com only)
 - Always creates human-readable MD file
 - Optional video downloads
 - Batch processing support

@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """
-TikTok Shop Product Scraper CLI
+TikTok Shop Product Scraper CLI - Multi-Source Support
 
 Usage:
-    # Single product
+    # Single product from tabcut.com (default)
     python run_scraper.py --product-id 1729630936525936882
+
+    # Single product from fastmoss.com
+    python run_scraper.py --product-id 1729630936525936882 --source fastmoss
 
     # Batch from CSV
     python run_scraper.py --batch-file products.csv
 
-    # Batch with video downloads
-    python run_scraper.py --batch-file products.csv --download-videos
+    # Batch from fastmoss with video downloads
+    python run_scraper.py --batch-file products.csv --source fastmoss --download-videos
 
     # Analyze downloaded videos
     python run_scraper.py --batch-file products.csv --analyze-videos
@@ -32,12 +35,13 @@ from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn
 from loguru import logger
 
-# Add tabcut_scraper to path
+# Add scrapers to path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from tabcut_scraper.scraper import TabcutScraper
 from tabcut_scraper.models import ScraperConfig
 from tabcut_scraper.utils import setup_logging
+from fastmoss_scraper.scraper import FastMossScraper
 
 # Import video analyzer
 import analyze_video
@@ -150,7 +154,8 @@ def load_product_ids_from_csv(csv_file: str) -> List[str]:
 async def scrape_single_product(
     product_id: str,
     config: ScraperConfig,
-    download_videos: bool = False
+    download_videos: bool = False,
+    source: str = 'tabcut'
 ) -> bool:
     """
     Scrape a single product.
@@ -159,12 +164,16 @@ async def scrape_single_product(
         product_id: Product ID to scrape
         config: Scraper configuration
         download_videos: Whether to download videos
+        source: Data source ('tabcut' or 'fastmoss')
 
     Returns:
         True if successful, False otherwise
     """
     try:
-        async with TabcutScraper(config) as scraper:
+        # Select appropriate scraper
+        ScraperClass = FastMossScraper if source == 'fastmoss' else TabcutScraper
+
+        async with ScraperClass(config) as scraper:
             await scraper.scrape_product(
                 product_id,
                 download_videos=download_videos
@@ -180,7 +189,8 @@ async def scrape_batch(
     product_ids: List[str],
     config: ScraperConfig,
     download_videos: bool = False,
-    resume: bool = False
+    resume: bool = False,
+    source: str = 'tabcut'
 ) -> dict:
     """
     Scrape multiple products with progress tracking.
@@ -190,6 +200,7 @@ async def scrape_batch(
         config: Scraper configuration
         download_videos: Whether to download videos
         resume: Whether to resume from previous run
+        source: Data source ('tabcut' or 'fastmoss')
 
     Returns:
         Results dictionary
@@ -211,6 +222,9 @@ async def scrape_batch(
         'failed': []
     }
 
+    # Select appropriate scraper
+    ScraperClass = FastMossScraper if source == 'fastmoss' else TabcutScraper
+
     # Progress bar
     with Progress(
         SpinnerColumn(),
@@ -220,11 +234,11 @@ async def scrape_batch(
         console=console
     ) as progress:
         task = progress.add_task(
-            f"[cyan]Scraping products...",
+            f"[cyan]Scraping products from {source}...",
             total=len(product_ids)
         )
 
-        async with TabcutScraper(config) as scraper:
+        async with ScraperClass(config) as scraper:
             for i, product_id in enumerate(product_ids, 1):
                 progress.update(
                     task,
@@ -332,7 +346,7 @@ def create_config(args) -> ScraperConfig:
 def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
-        description='TikTok Shop Product Scraper for tabcut.com',
+        description='TikTok Shop Product Scraper - Multi-Source Support (tabcut.com & fastmoss.com)',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__
     )
@@ -348,6 +362,15 @@ def main():
         '--batch-file',
         type=str,
         help='CSV file with product IDs'
+    )
+
+    # Source selection
+    parser.add_argument(
+        '--source',
+        type=str,
+        choices=['tabcut', 'fastmoss'],
+        default='tabcut',
+        help='Data source to scrape from (default: tabcut)'
     )
 
     # Scraping options
@@ -407,18 +430,19 @@ def main():
 
     # Print banner
     console.print("\n[bold cyan]TikTok Shop Product Scraper[/bold cyan]")
-    console.print("[dim]Tabcut.com data extraction tool[/dim]\n")
+    console.print(f"[dim]Data source: {args.source.upper()}[/dim]\n")
 
     # Run scraper
     try:
         if args.product_id:
             # Single product mode
-            console.print(f"[cyan]Scraping product ID: {args.product_id}[/cyan]")
+            console.print(f"[cyan]Scraping product ID: {args.product_id} from {args.source}[/cyan]")
             success = asyncio.run(
                 scrape_single_product(
                     args.product_id,
                     config,
-                    download_videos=args.download_videos
+                    download_videos=args.download_videos,
+                    source=args.source
                 )
             )
 
@@ -433,7 +457,7 @@ def main():
             # Batch mode
             product_ids = load_product_ids_from_csv(args.batch_file)
 
-            console.print(f"[cyan]Batch mode: {len(product_ids)} products[/cyan]")
+            console.print(f"[cyan]Batch mode: {len(product_ids)} products from {args.source}[/cyan]")
             if args.download_videos:
                 console.print("[cyan]Video downloads: ENABLED[/cyan]")
             if args.analyze_videos:
@@ -448,7 +472,8 @@ def main():
                     product_ids,
                     config,
                     download_videos=args.download_videos,
-                    resume=args.resume
+                    resume=args.resume,
+                    source=args.source
                 )
             )
 

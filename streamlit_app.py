@@ -61,8 +61,12 @@ def install_playwright_browsers():
         return False
 
 from tabcut_scraper.scraper import TabcutScraper
-from tabcut_scraper.models import ScraperConfig
-from tabcut_scraper.utils import setup_logging
+from tabcut_scraper.models import ScraperConfig as TabcutConfig
+from tabcut_scraper.utils import setup_logging as tabcut_setup_logging
+
+from fastmoss_scraper.scraper import FastMossScraper
+from fastmoss_scraper.models import ScraperConfig as FastmossConfig
+from fastmoss_scraper.utils import setup_logging as fastmoss_setup_logging
 
 
 # Page configuration
@@ -199,6 +203,7 @@ async def scrape_products(
     product_ids: List[str],
     download_videos: bool,
     download_images: bool,
+    source: str,
     progress_placeholder,
     status_placeholder
 ) -> dict:
@@ -208,6 +213,8 @@ async def scrape_products(
     Args:
         product_ids: List of product IDs to scrape
         download_videos: Whether to download videos
+        download_images: Whether to download product images
+        source: Data source ('tabcut' or 'fastmoss')
         progress_placeholder: Streamlit placeholder for progress bar
         status_placeholder: Streamlit placeholder for status messages
 
@@ -218,31 +225,56 @@ async def scrape_products(
         'completed': [],
         'failed': [],
         'data': [],
-        'videos_downloaded': download_videos  # Track if videos were downloaded in this scrape
+        'videos_downloaded': download_videos,  # Track if videos were downloaded in this scrape
+        'source': source
     }
 
-    # Get credentials from Streamlit secrets
+    # Get credentials from Streamlit secrets based on source
     try:
-        username = st.secrets["TABCUT_USERNAME"]
-        password = st.secrets["TABCUT_PASSWORD"]
+        if source == 'tabcut':
+            username = st.secrets["TABCUT_USERNAME"]
+            password = st.secrets["TABCUT_PASSWORD"]
+            env_prefix = "TABCUT"
+        else:  # fastmoss
+            username = st.secrets["FASTMOSS_USERNAME"]
+            password = st.secrets["FASTMOSS_PASSWORD"]
+            env_prefix = "FASTMOSS"
     except Exception as e:
-        st.error(f"❌ Credentials not configured in Streamlit Secrets! Error: {e}")
-        st.info("💡 Go to app Settings → Secrets and add TABCUT_USERNAME and TABCUT_PASSWORD")
+        st.error(f"❌ {source.upper()} credentials not configured in Streamlit Secrets! Error: {e}")
+        st.info(f"💡 Go to app Settings → Secrets and add {env_prefix}_USERNAME and {env_prefix}_PASSWORD")
         return results
 
     # Set environment variables for the scraper
-    os.environ["TABCUT_USERNAME"] = username
-    os.environ["TABCUT_PASSWORD"] = password
+    os.environ[f"{env_prefix}_USERNAME"] = username
+    os.environ[f"{env_prefix}_PASSWORD"] = password
 
-    # Create configuration
-    config = ScraperConfig(
-        headless=True,
-        timeout=30000,
-        max_retries=3,
-        download_timeout=300000,
-        output_base_dir=str(Path(__file__).parent / "product_list"),
-        log_level="INFO"
-    )
+    # Create configuration based on source
+    output_dir = str(Path(__file__).parent / "product_list")
+
+    if source == 'tabcut':
+        config = TabcutConfig(
+            headless=True,
+            timeout=30000,
+            max_retries=3,
+            download_timeout=300000,
+            output_base_dir=output_dir,
+            log_level="INFO"
+        )
+        setup_logging = tabcut_setup_logging
+        ScraperClass = TabcutScraper
+        data_filename = "tabcut_data.json"
+    else:  # fastmoss
+        config = FastmossConfig(
+            headless=True,
+            timeout=30000,
+            max_retries=3,
+            download_timeout=300000,
+            output_base_dir=output_dir,
+            log_level="INFO"
+        )
+        setup_logging = fastmoss_setup_logging
+        ScraperClass = FastMossScraper
+        data_filename = "fastmoss_data.json"
 
     # Setup logging
     setup_logging(log_dir='logs', log_level='INFO')
@@ -250,34 +282,29 @@ async def scrape_products(
     total = len(product_ids)
 
     try:
-        async with TabcutScraper(config) as scraper:
+        async with ScraperClass(config) as scraper:
             for i, product_id in enumerate(product_ids, 1):
                 # Update progress
                 progress = i / total
                 progress_placeholder.progress(progress, text=f"Processing product {i}/{total}: {product_id}")
 
                 try:
-                    status_placeholder.info(f"🔄 Scraping product {product_id}...")
+                    status_placeholder.info(f"🔄 Scraping product {product_id} from {source.upper()}...")
 
                     await scraper.scrape_product(
                         product_id,
                         download_videos=download_videos
                     )
 
-                    # Download product images if requested
-                    if download_images:
-                        from tabcut_scraper.downloader import VideoDownloader
-                        product_dir = Path(config.output_base_dir) / product_id
-
-                        status_placeholder.info(f"📸 Downloading product images for {product_id}...")
-                        downloader = VideoDownloader(scraper.page, config.download_timeout)
-                        image_paths = await downloader.download_product_images(product_dir)
-                        logger.info(f"Downloaded {len(image_paths)} product images")
+                    # Download product images if requested (already handled in scrape_product, but can be explicit)
+                    if download_images and not download_videos:
+                        # Images are downloaded by default in scrape_product
+                        pass
 
                     results['completed'].append(product_id)
 
                     # Load scraped data
-                    data_file = Path(config.output_base_dir) / product_id / "tabcut_data.json"
+                    data_file = Path(config.output_base_dir) / product_id / data_filename
                     if data_file.exists():
                         with open(data_file) as f:
                             results['data'].append(json.load(f))
@@ -559,28 +586,52 @@ def main():
         st.error("⚠️ Failed to install Playwright browsers. Please contact administrator.")
         st.stop()
 
-    # Check for credentials
-    try:
-        _ = st.secrets["TABCUT_USERNAME"]
-        _ = st.secrets["TABCUT_PASSWORD"]
-        credentials_ok = True
-    except:
-        credentials_ok = False
-        st.error("⚠️ **Credentials not configured!**")
-        st.info("""
-        Please configure your tabcut.com credentials:
-        1. Go to app Settings (⚙️)
-        2. Click "Secrets"
-        3. Add:
-        ```toml
-        TABCUT_USERNAME = "your_username"
-        TABCUT_PASSWORD = "your_password"
-        ```
-        """)
+    # Initialize source selection in session state
+    if 'data_source' not in st.session_state:
+        st.session_state.data_source = 'tabcut'
 
     # Sidebar
     with st.sidebar:
         st.header("⚙️ Settings")
+
+        # Data source selection
+        data_source = st.radio(
+            "📊 Data Source",
+            options=['tabcut', 'fastmoss'],
+            format_func=lambda x: {
+                'tabcut': '🔵 Tabcut.com',
+                'fastmoss': '🟢 FastMoss.com'
+            }[x],
+            help="Select the data source for scraping",
+            disabled=st.session_state.is_scraping
+        )
+        st.session_state.data_source = data_source
+
+        # Check credentials for selected source
+        credentials_ok = False
+        try:
+            if data_source == 'tabcut':
+                _ = st.secrets["TABCUT_USERNAME"]
+                _ = st.secrets["TABCUT_PASSWORD"]
+                credentials_ok = True
+            else:  # fastmoss
+                _ = st.secrets["FASTMOSS_USERNAME"]
+                _ = st.secrets["FASTMOSS_PASSWORD"]
+                credentials_ok = True
+        except:
+            st.error(f"⚠️ **{data_source.upper()} credentials not configured!**")
+            st.info(f"""
+            Please configure your {data_source}.com credentials:
+            1. Go to app Settings (⚙️)
+            2. Click "Secrets"
+            3. Add:
+            ```toml
+            {data_source.upper()}_USERNAME = "your_username"
+            {data_source.upper()}_PASSWORD = "your_password"
+            ```
+            """)
+
+        st.divider()
 
         download_images = st.checkbox(
             "Download product images",
@@ -609,7 +660,8 @@ def main():
 
         st.markdown("### ℹ️ About")
         st.markdown("""
-        Scrapes TikTok shop data:
+        Scrapes TikTok shop data from:
+        - **Tabcut.com** or **FastMoss.com**
         - Product information
         - Sales analytics
         - Video performance
@@ -646,6 +698,7 @@ def main():
                         [product_id],
                         download_videos,
                         download_images,
+                        data_source,
                         progress_placeholder,
                         status_placeholder
                     ))
@@ -706,6 +759,7 @@ def main():
                     product_ids,
                     download_videos,
                     download_images,
+                    data_source,
                     progress_placeholder,
                     status_placeholder
                 ))

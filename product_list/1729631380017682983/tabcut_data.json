@@ -1,0 +1,83 @@
+{
+  "product_id": "1729631380017682983",
+  "scraped_at": "2025-12-29T16:21:50.363859",
+  "product_info": {
+    "product_name": "Piratenschiff Flüssigkeitsflasche Schreibtischdekoration, Bürodekoration, Geburtstagsgeschenk für Jungen, Feiertagsgeschenk, Titanic Figurine, Spaßiges und Einzigartiges Accessoire",
+    "shop_owner": "Summit Store",
+    "total_sales": 341,
+    "total_sales_revenue": "€ 2451.79($ 2854.24)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 336,
+    "sales_revenue": "$ 2812.39",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "31.82%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": null,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "●直播",
+      "creator_username": "unknown",
+      "creator_followers": null,
+      "publish_date": "0",
+      "estimated_sales": 0,
+      "estimated_revenue": null,
+      "total_views": null,
+      "video_url": null,
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "●其它",
+      "creator_username": "unknown",
+      "creator_followers": null,
+      "publish_date": "25",
+      "estimated_sales": 179,
+      "estimated_revenue": null,
+      "total_views": null,
+      "video_url": null,
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "●商家自营账号",
+      "creator_username": "unknown",
+      "creator_followers": null,
+      "publish_date": "0",
+      "estimated_sales": 0,
+      "estimated_revenue": null,
+      "total_views": null,
+      "video_url": null,
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "●达人账号",
+      "creator_username": "unknown",
+      "creator_followers": null,
+      "publish_date": "311",
+      "estimated_sales": 2236,
+      "estimated_revenue": null,
+      "total_views": null,
+      "video_url": null,
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

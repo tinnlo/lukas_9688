@@ -1,0 +1,96 @@
+{
+  "product_id": "1729602912271309771",
+  "scraped_at": "2025-12-29T16:13:33.095345",
+  "product_info": {
+    "product_name": "Kabellose Beanie Mütze mit Licht Stirnlampe Kappe mit Kopfhörer Lautsprecher Mikrofon, Geschenke für Männer Frauen",
+    "shop_owner": "Eowulfrost",
+    "total_sales": 4252,
+    "total_sales_revenue": "€ 1.22万($ 1.41万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 203,
+    "sales_revenue": "$ 337.95",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "50.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 89,
+    "带货视频达人数": 54,
+    "带货视频销量": 131,
+    "带货视频销售额": "$ 218.08",
+    "广告成交金额": "$ 59.93",
+    "广告成交占比": "27.48%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADWegen Weihnachten ist sie schon wieder fast ausverkauft 😭 #dealsfürdich #blackfriday 发现时间：2025.12.07 15:51更新时间：2025.12.14 00:44时长：00:00:53跳转至 TikTok",
+      "creator_username": "produktfuchstestet",
+      "creator_followers": "7.2万",
+      "publish_date": "2025-12-06 18:53",
+      "estimated_sales": 45,
+      "estimated_revenue": "€ 64.35($ 74.91)",
+      "total_views": "3.3万",
+      "video_url": "https://www.tiktok.com/@produktfuchstestet/video/7580804671443471638?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "ADEr ist happy ! #winter #kids #mütze #warm #youpage 发现时间：2025.12.16 12:44更新时间：2025.12.18 02:41时长：00:01:29跳转至 TikTok",
+      "creator_username": "sascha_and_daimon",
+      "creator_followers": "14.2万",
+      "publish_date": "2025-12-16 07:06",
+      "estimated_sales": 22,
+      "estimated_revenue": "€ 31.46($ 36.62)",
+      "total_views": "8857",
+      "video_url": "https://www.tiktok.com/@sascha_and_daimon/video/7584333122968358166?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "ADKein Wunder dass sie wegen dem Black Friday fast ausverkauft ist 😭 #dealsfürdich #blackfriday 发现时间：2025.12.02 02:31更新时间：2025.12.09 00:40时长：00:00:46跳转至 TikTok",
+      "creator_username": "produktfuchstestet",
+      "creator_followers": "7.2万",
+      "publish_date": "2025-12-01 22:11",
+      "estimated_sales": 20,
+      "estimated_revenue": "€ 28.60($ 33.29)",
+      "total_views": "13.26万",
+      "video_url": "https://www.tiktok.com/@produktfuchstestet/video/7579000253093874966?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "AD#keşfetteyizzz #tiktokshop 发现时间：2025.12.24 03:11更新时间：2025.12.28 07:52时长：00:01:01跳转至 TikTok",
+      "creator_username": "guller189",
+      "creator_followers": "1.44万",
+      "publish_date": "2025-12-22 15:56",
+      "estimated_sales": 6,
+      "estimated_revenue": "€ 8.58($ 9.99)",
+      "total_views": "2884",
+      "video_url": "https://www.tiktok.com/@guller189/video/7586696243900910870?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 5,
+      "title": "ADLeider ist sie wegen Black Friday schon wieder fast ausverkauft! 😭 #dealsfürdich #blackfriday #telefonieren #mütze 发现时间：2025.12.03 02:25更新时间：2025.12.28 16:57时长：00:00:54跳转至 TikTok",
+      "creator_username": "produktfuchstestet",
+      "creator_followers": "7.2万",
+      "publish_date": "2025-12-02 12:36",
+      "estimated_sales": 5,
+      "estimated_revenue": "€ 7.15($ 8.32)",
+      "total_views": "9891",
+      "video_url": "https://www.tiktok.com/@produktfuchstestet/video/7579222924415061270?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}
