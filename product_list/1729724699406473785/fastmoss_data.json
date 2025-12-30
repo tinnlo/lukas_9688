@@ -1,0 +1,111 @@
+{
+  "product_id": "1729724699406473785",
+  "scraped_at": "2025-12-30T10:09:30.490220",
+  "product_info": {
+    "product_name": "Ergonomischer Gaming-Stuhl aus PU-Leder, Racing Style, bequem und verstellbar",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 11,
+    "total_sales_revenue": "€8669.62",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 11,
+    "sales_revenue": "€526",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": null,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by Ergonomischer",
+      "creator_username": "Ergonomischer",
+      "creator_followers": null,
+      "publish_date": "2025-12-21",
+      "estimated_sales": 76,
+      "estimated_revenue": "€3589.48",
+      "total_views": 42,
+      "likes": 1307,
+      "comments": 32,
+      "engagement_rate": "0.4%",
+      "video_url": "https://www.tiktok.com/@uteresbxiaa/video/7586216708331900182?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_Ergonomischer.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "Video by Ergonomischer",
+      "creator_username": "Ergonomischer",
+      "creator_followers": null,
+      "publish_date": "2025-12-21",
+      "estimated_sales": 13,
+      "estimated_revenue": "€620.38",
+      "total_views": 3,
+      "likes": 90,
+      "comments": 0,
+      "engagement_rate": "0.4%",
+      "video_url": "https://www.tiktok.com/@zujjhllh/video/7586241541824335126?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_Ergonomischer.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "Video by Ergonomischer",
+      "creator_username": "Ergonomischer",
+      "creator_followers": null,
+      "publish_date": "2025-12-17",
+      "estimated_sales": 11,
+      "estimated_revenue": "€526.05",
+      "total_views": 8764,
+      "likes": 23,
+      "comments": 0,
+      "engagement_rate": "0.3%",
+      "video_url": "https://www.tiktok.com/@khomznjfvnk/video/7584669605659020566?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_Ergonomischer.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "Video by Stylischer",
+      "creator_username": "Stylischer",
+      "creator_followers": null,
+      "publish_date": "2025-12-20",
+      "estimated_sales": 3,
+      "estimated_revenue": "€144.78",
+      "total_views": 8630,
+      "likes": 9,
+      "comments": 0,
+      "engagement_rate": "0.1%",
+      "video_url": "https://www.tiktok.com/@jannik0686/video/7585610337601342742?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_Stylischer.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "Video by Endlich",
+      "creator_username": "Endlich",
+      "creator_followers": null,
+      "publish_date": "2025-12-26",
+      "estimated_sales": 1,
+      "estimated_revenue": "€48.26",
+      "total_views": 844,
+      "likes": 2,
+      "comments": 0,
+      "engagement_rate": "0.2%",
+      "video_url": "https://www.tiktok.com/@kodiikoudai/video/7588078281874803990?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_Endlich.mp4"
+    }
+  ]
+}

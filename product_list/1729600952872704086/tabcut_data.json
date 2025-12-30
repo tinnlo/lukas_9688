@@ -1,0 +1,96 @@
+{
+  "product_id": "1729600952872704086",
+  "scraped_at": "2025-12-30T07:41:29.467197",
+  "product_info": {
+    "product_name": "Handdampfreiniger mit 11 Zubehörteilen, 3,2 Bar Druck, 1050W, Mehrzweckreiniger für Böden und Polster, chemikalienfrei und sicher für Haushalte mit Kindern und Haustieren",
+    "shop_owner": "Phueut-DE",
+    "total_sales": 4151,
+    "total_sales_revenue": "€ 13.50万($ 15.71万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 164,
+    "sales_revenue": "$ 5815.42",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "60.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 113,
+    "带货视频达人数": 69,
+    "带货视频销量": 449,
+    "带货视频销售额": "$ 1.59万",
+    "广告成交金额": "$ 1.11万",
+    "广告成交占比": "69.71%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD无标题发现时间：2025.12.19 12:03更新时间：2025.12.29 03:29时长：00:01:01跳转至 TikTok",
+      "creator_username": "sarah_tiny.rex",
+      "creator_followers": "13.33万",
+      "publish_date": "2025-12-08 10:01",
+      "estimated_sales": 97,
+      "estimated_revenue": "€ 2954.62($ 3439.60)",
+      "total_views": "12.99万",
+      "video_url": "https://www.tiktok.com/@sarah_tiny.rex/video/7581409597110439190?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_sarah_tiny.rex.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADОтвет пользователю @elenaschneider4 发现时间：2025.12.13 06:03更新时间：2025.12.24 08:33时长：00:01:33跳转至 TikTok",
+      "creator_username": "fruchtschmaus3",
+      "creator_followers": "1.39万",
+      "publish_date": "2025-12-12 23:18",
+      "estimated_sales": 60,
+      "estimated_revenue": "€ 1827.60($ 2127.59)",
+      "total_views": "4.44万",
+      "video_url": "https://www.tiktok.com/@fruchtschmaus3/video/7583099323517275414?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_fruchtschmaus3.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADWir sind wirklich krass überzeugt! Das Ergebnis haben wir nicht erwartet, aber nun können wir uns es nicht mehr ohne den Dampfreiniger vorstellen 🫣 #jaronsteve #fyp #tiktokshop #dampfreiniger 发现时间：2025.12.16 16:06更新时间：2025.12.23 08:45时长：00:00:36跳转至 TikTok",
+      "creator_username": "jaron.steve",
+      "creator_followers": "25.8万",
+      "publish_date": "2025-12-15 13:12",
+      "estimated_sales": 45,
+      "estimated_revenue": "€ 1370.70($ 1595.69)",
+      "total_views": "2.34万",
+      "video_url": "https://www.tiktok.com/@jaron.steve/video/7584056479905352992?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_jaron.steve.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADجهاز تنظيف و تعقيم البخاري✅#einkaufen #مشترياتي_الألمانية #نصائح #blackweek 发现时间：2025.11.30 03:38更新时间：2025.12.02 08:20时长：00:01:26跳转至 TikTok",
+      "creator_username": "she_a21",
+      "creator_followers": "3.83万",
+      "publish_date": "2025-11-29 20:45",
+      "estimated_sales": 36,
+      "estimated_revenue": "€ 1096.56($ 1276.55)",
+      "total_views": "1.59万",
+      "video_url": "https://www.tiktok.com/@she_a21/video/7578235713326550294?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_she_a21.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADSchwarze Küchenfronten, Fugen & Samtpolster – alles sauber mit einem Gerät. Nur heißer Dampf, keine Chemie. Gerade mein liebster Clean-Hack ✨ #Weihnachtsdeals #cleanhack #haushaltshacks #cleantok #tiktokshopde 发现时间：2025.12.16 18:36更新时间：2025.12.16 18:36时长：00:00:46跳转至 TikTok",
+      "creator_username": "nikiiiiiusia",
+      "creator_followers": "1.06万",
+      "publish_date": "2025-12-15 23:26",
+      "estimated_sales": 21,
+      "estimated_revenue": "€ 639.66($ 744.66)",
+      "total_views": "7514",
+      "video_url": "https://www.tiktok.com/@nikiiiiiusia/video/7584214622501342486?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_nikiiiiiusia.mp4"
+    }
+  ]
+}

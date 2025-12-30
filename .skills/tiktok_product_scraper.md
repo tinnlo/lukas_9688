@@ -17,18 +17,48 @@ execution: n8n workflow node → Bash commands
 
 ## Overview
 
-This skill scrapes TikTok Shop product data from **multiple sources**:
+This skill scrapes TikTok Shop product data from **multiple sources** with automatic fallback:
 
 ### Supported Sources
 1. **tabcut.com** (default) - Original source with comprehensive data
-2. **fastmoss.com** (NEW) - Alternative source with similar data structure
+2. **fastmoss.com** (fallback) - Alternative source when Tabcut fails
+
+### Auto-Fallback Feature 🆕
+
+**When Tabcut returns insufficient data, the scraper automatically retries with FastMoss.**
+
+**Fallback Triggers:**
+- Product name is "Unknown Product", "undefined", or `null`
+- Total sales is `null` or parsing failed
+- Zero product images downloaded
+- Zero videos available
+
+**Example:**
+```bash
+python run_scraper.py --product-id 1729724699406473785 --download-videos
+
+# Tabcut attempt...
+⚠️ Tabcut data quality check failed:
+   - Product name: Unknown Product
+   - Total sales: null
+   - Images: 0
+   - Videos: 0
+
+→ Automatically retrying with FastMoss as fallback source...
+
+✅ FastMoss scraping successful!
+   - Product: Gaming Chair
+   - Images: 2
+   - Videos: 5
+```
 
 ### Features
 - Product information and sales metrics
 - Top 5 performing videos metadata
 - Optional: Download video files for analysis
 - **Always:** Convert JSON to human-readable MD for review
-- **New:** Choose data source with `--source` parameter
+- **🆕 Auto-fallback:** Tabcut → FastMoss when data insufficient
+- **Choose source:** Use `--source` parameter to force specific source
 
 ---
 

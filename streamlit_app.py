@@ -199,6 +199,41 @@ def generate_markdown_report(data: dict) -> str:
     return md
 
 
+def is_data_sufficient(data: dict) -> tuple:
+    """
+    Check if scraped data meets minimum quality standards.
+
+    Returns:
+        (is_sufficient: bool, reasons: list)
+    """
+    reasons = []
+
+    product_info = data.get('product_info', {})
+
+    # Check product name
+    product_name = product_info.get('product_name', '')
+    if not product_name or product_name in ['Unknown Product', 'undefined', 'None', '']:
+        reasons.append("Product name missing or invalid")
+
+    # Check sales data
+    total_sales = product_info.get('total_sales')
+    if total_sales is None:
+        reasons.append("Total sales missing")
+
+    # Check images (at least 1 image expected)
+    images_count = len(data.get('product_images', []))
+    if images_count == 0:
+        reasons.append("Zero product images")
+
+    # Check videos (at least 1 video expected)
+    videos_count = len(data.get('top_videos', []))
+    if videos_count == 0:
+        reasons.append("Zero videos available")
+
+    is_sufficient = len(reasons) == 0
+    return is_sufficient, reasons
+
+
 async def scrape_products(
     product_ids: List[str],
     download_videos: bool,
@@ -208,13 +243,13 @@ async def scrape_products(
     status_placeholder
 ) -> dict:
     """
-    Scrape products with progress updates.
+    Scrape products with automatic Tabcut→FastMoss fallback.
 
     Args:
         product_ids: List of product IDs to scrape
         download_videos: Whether to download videos
         download_images: Whether to download product images
-        source: Data source ('tabcut' or 'fastmoss')
+        source: Data source (now always 'auto' for auto-fallback)
         progress_placeholder: Streamlit placeholder for progress bar
         status_placeholder: Streamlit placeholder for status messages
 
@@ -226,102 +261,141 @@ async def scrape_products(
         'failed': [],
         'data': [],
         'videos_downloaded': download_videos,  # Track if videos were downloaded in this scrape
-        'source': source
+        'source': 'auto'  # Always use auto-fallback
     }
 
-    # Get credentials from Streamlit secrets based on source
+    # Verify credentials for both sources
     try:
-        if source == 'tabcut':
-            username = st.secrets["TABCUT_USERNAME"]
-            password = st.secrets["TABCUT_PASSWORD"]
-            env_prefix = "TABCUT"
-        else:  # fastmoss
-            username = st.secrets["FASTMOSS_USERNAME"]
-            password = st.secrets["FASTMOSS_PASSWORD"]
-            env_prefix = "FASTMOSS"
-    except Exception as e:
-        st.error(f"❌ {source.upper()} credentials not configured in Streamlit Secrets! Error: {e}")
-        st.info(f"💡 Go to app Settings → Secrets and add {env_prefix}_USERNAME and {env_prefix}_PASSWORD")
+        tabcut_username = st.secrets["TABCUT_USERNAME"]
+        tabcut_password = st.secrets["TABCUT_PASSWORD"]
+        tabcut_ok = True
+    except:
+        tabcut_ok = False
+
+    try:
+        fastmoss_username = st.secrets["FASTMOSS_USERNAME"]
+        fastmoss_password = st.secrets["FASTMOSS_PASSWORD"]
+        fastmoss_ok = True
+    except:
+        fastmoss_ok = False
+
+    if not tabcut_ok and not fastmoss_ok:
+        st.error("❌ No credentials configured! Please configure at least one data source.")
+        st.info("💡 Go to app Settings → Secrets and add credentials for Tabcut or FastMoss")
         return results
 
-    # Set environment variables for the scraper
-    os.environ[f"{env_prefix}_USERNAME"] = username
-    os.environ[f"{env_prefix}_PASSWORD"] = password
-
-    # Create configuration based on source
     output_dir = str(Path(__file__).parent / "product_list")
-
-    if source == 'tabcut':
-        config = TabcutConfig(
-            headless=True,
-            timeout=30000,
-            max_retries=3,
-            download_timeout=300000,
-            output_base_dir=output_dir,
-            log_level="INFO"
-        )
-        setup_logging = tabcut_setup_logging
-        ScraperClass = TabcutScraper
-        data_filename = "tabcut_data.json"
-    else:  # fastmoss
-        config = FastmossConfig(
-            headless=True,
-            timeout=30000,
-            max_retries=3,
-            download_timeout=300000,
-            output_base_dir=output_dir,
-            log_level="INFO"
-        )
-        setup_logging = fastmoss_setup_logging
-        ScraperClass = FastMossScraper
-        data_filename = "fastmoss_data.json"
-
-    # Setup logging
-    setup_logging(log_dir='logs', log_level='INFO')
-
     total = len(product_ids)
 
-    try:
-        async with ScraperClass(config) as scraper:
-            for i, product_id in enumerate(product_ids, 1):
-                # Update progress
-                progress = i / total
-                progress_placeholder.progress(progress, text=f"Processing product {i}/{total}: {product_id}")
+    for i, product_id in enumerate(product_ids, 1):
+        progress = i / total
+        progress_placeholder.progress(progress, text=f"Processing product {i}/{total}: {product_id}")
 
-                try:
-                    status_placeholder.info(f"🔄 Scraping product {product_id} from {source.upper()}...")
+        scraped_data = None
+        used_source = None
 
-                    await scraper.scrape_product(
-                        product_id,
-                        download_videos=download_videos
-                    )
+        # Attempt 1: Try Tabcut first (if credentials available)
+        if tabcut_ok:
+            try:
+                status_placeholder.info(f"🔄 Attempting Tabcut for product {product_id}...")
 
-                    # Download product images if requested (already handled in scrape_product, but can be explicit)
-                    if download_images and not download_videos:
-                        # Images are downloaded by default in scrape_product
-                        pass
+                os.environ["TABCUT_USERNAME"] = tabcut_username
+                os.environ["TABCUT_PASSWORD"] = tabcut_password
 
-                    results['completed'].append(product_id)
+                config = TabcutConfig(
+                    headless=True,
+                    timeout=30000,
+                    max_retries=3,
+                    download_timeout=300000,
+                    output_base_dir=output_dir,
+                    log_level="INFO"
+                )
+                tabcut_setup_logging(log_dir='logs', log_level='INFO')
 
-                    # Load scraped data
-                    data_file = Path(config.output_base_dir) / product_id / data_filename
-                    if data_file.exists():
-                        with open(data_file) as f:
-                            results['data'].append(json.load(f))
+                async with TabcutScraper(config) as scraper:
+                    await scraper.scrape_product(product_id, download_videos=download_videos)
 
-                    status_placeholder.success(f"✅ Product {product_id} completed!")
+                # Load and check data quality
+                data_file = Path(output_dir) / product_id / "tabcut_data.json"
+                if data_file.exists():
+                    with open(data_file) as f:
+                        scraped_data = json.load(f)
 
-                except Exception as e:
-                    error_msg = str(e)
-                    results['failed'].append({'product_id': product_id, 'error': error_msg})
-                    status_placeholder.error(f"❌ Product {product_id} failed: {error_msg}")
+                    is_sufficient, reasons = is_data_sufficient(scraped_data)
 
-        progress_placeholder.progress(1.0, text="✅ All products processed!")
+                    if is_sufficient:
+                        status_placeholder.success(f"✅ Tabcut succeeded for {product_id}")
+                        used_source = "tabcut"
+                    else:
+                        status_placeholder.warning(f"⚠️ Tabcut data insufficient:")
+                        for reason in reasons:
+                            status_placeholder.warning(f"   - {reason}")
+                        status_placeholder.info("→ Falling back to FastMoss...")
+                        scraped_data = None  # Reset to try FastMoss
 
-    except Exception as e:
-        status_placeholder.error(f"❌ Scraping error: {str(e)}")
-        st.exception(e)
+            except Exception as e:
+                status_placeholder.warning(f"⚠️ Tabcut failed: {str(e)[:100]}")
+                status_placeholder.info("→ Falling back to FastMoss...")
+                scraped_data = None
 
+        # Attempt 2: Try FastMoss if Tabcut failed or data insufficient
+        if scraped_data is None and fastmoss_ok:
+            try:
+                status_placeholder.info(f"🔄 Attempting FastMoss for product {product_id}...")
+
+                os.environ["FASTMOSS_USERNAME"] = fastmoss_username
+                os.environ["FASTMOSS_PASSWORD"] = fastmoss_password
+
+                config = FastmossConfig(
+                    headless=True,
+                    timeout=30000,
+                    max_retries=3,
+                    download_timeout=300000,
+                    output_base_dir=output_dir,
+                    log_level="INFO"
+                )
+                fastmoss_setup_logging(log_dir='logs', log_level='INFO')
+
+                async with FastMossScraper(config) as scraper:
+                    await scraper.scrape_product(product_id, download_videos=download_videos)
+
+                # Load and check data quality
+                data_file = Path(output_dir) / product_id / "fastmoss_data.json"
+                if data_file.exists():
+                    with open(data_file) as f:
+                        scraped_data = json.load(f)
+
+                    # Copy to tabcut_data.json for consistency
+                    tabcut_file = Path(output_dir) / product_id / "tabcut_data.json"
+                    with open(tabcut_file, 'w') as f:
+                        json.dump(scraped_data, f, indent=2)
+
+                    is_sufficient, reasons = is_data_sufficient(scraped_data)
+
+                    if is_sufficient:
+                        status_placeholder.success(f"✅ FastMoss succeeded for {product_id}")
+                        used_source = "fastmoss"
+                    else:
+                        status_placeholder.error(f"❌ FastMoss also returned insufficient data:")
+                        for reason in reasons:
+                            status_placeholder.error(f"   - {reason}")
+                        scraped_data = None
+
+            except Exception as e:
+                status_placeholder.error(f"❌ FastMoss failed: {str(e)[:100]}")
+                scraped_data = None
+
+        # Record results
+        if scraped_data:
+            results['completed'].append(product_id)
+            scraped_data['data_source'] = used_source  # Mark which source was used
+            results['data'].append(scraped_data)
+        else:
+            error_msg = "Both Tabcut and FastMoss failed to provide sufficient data"
+            results['failed'].append({'product_id': product_id, 'error': error_msg})
+            status_placeholder.error(f"❌ Product {product_id} skipped - no valid data from any source")
+
+    progress_placeholder.progress(1.0, text="✅ All products processed!")
     return results
 
 
@@ -586,48 +660,51 @@ def main():
         st.error("⚠️ Failed to install Playwright browsers. Please contact administrator.")
         st.stop()
 
-    # Initialize source selection in session state
-    if 'data_source' not in st.session_state:
-        st.session_state.data_source = 'tabcut'
-
     # Sidebar
     with st.sidebar:
         st.header("⚙️ Settings")
 
-        # Data source selection
-        data_source = st.radio(
-            "📊 Data Source",
-            options=['tabcut', 'fastmoss'],
-            format_func=lambda x: {
-                'tabcut': '🔵 Tabcut.com',
-                'fastmoss': '🟢 FastMoss.com'
-            }[x],
-            help="Select the data source for scraping",
-            disabled=st.session_state.is_scraping
-        )
-        st.session_state.data_source = data_source
-
-        # Check credentials for selected source
-        credentials_ok = False
+        # Check credentials for auto-fallback
+        credentials_status = []
         try:
-            if data_source == 'tabcut':
-                _ = st.secrets["TABCUT_USERNAME"]
-                _ = st.secrets["TABCUT_PASSWORD"]
-                credentials_ok = True
-            else:  # fastmoss
-                _ = st.secrets["FASTMOSS_USERNAME"]
-                _ = st.secrets["FASTMOSS_PASSWORD"]
-                credentials_ok = True
+            _ = st.secrets["TABCUT_USERNAME"]
+            _ = st.secrets["TABCUT_PASSWORD"]
+            credentials_status.append("✅ Tabcut configured")
         except:
-            st.error(f"⚠️ **{data_source.upper()} credentials not configured!**")
-            st.info(f"""
-            Please configure your {data_source}.com credentials:
+            credentials_status.append("⚠️ Tabcut not configured")
+
+        try:
+            _ = st.secrets["FASTMOSS_USERNAME"]
+            _ = st.secrets["FASTMOSS_PASSWORD"]
+            credentials_status.append("✅ FastMoss configured")
+        except:
+            credentials_status.append("⚠️ FastMoss not configured")
+
+        # Show credential status
+        st.info("**🔄 Auto-Fallback Mode**\nTabcut → FastMoss")
+        for status in credentials_status:
+            if "✅" in status:
+                st.success(status)
+            else:
+                st.warning(status)
+
+        credentials_ok = any("✅" in s for s in credentials_status)
+
+        if not credentials_ok:
+            st.error("**⚠️ No credentials configured!**")
+            st.info("""
+            Configure at least one data source:
             1. Go to app Settings (⚙️)
             2. Click "Secrets"
-            3. Add:
+            3. Add credentials:
             ```toml
-            {data_source.upper()}_USERNAME = "your_username"
-            {data_source.upper()}_PASSWORD = "your_password"
+            # Tabcut (primary)
+            TABCUT_USERNAME = "your_username"
+            TABCUT_PASSWORD = "your_password"
+
+            # FastMoss (fallback)
+            FASTMOSS_USERNAME = "your_username"
+            FASTMOSS_PASSWORD = "your_password"
             ```
             """)
 
@@ -660,11 +737,15 @@ def main():
 
         st.markdown("### ℹ️ About")
         st.markdown("""
-        Scrapes TikTok shop data from:
-        - **Tabcut.com** or **FastMoss.com**
-        - Product information
-        - Sales analytics
-        - Video performance
+        **Auto-Fallback Scraping:**
+        - Tries **Tabcut.com** first (primary)
+        - Falls back to **FastMoss.com** if needed
+        - Quality checks ensure valid data
+
+        **Features:**
+        - Product information & sales analytics
+        - Video performance metrics
+        - Product images (always)
         - Top videos (optional download)
         """)
 
@@ -698,7 +779,7 @@ def main():
                         [product_id],
                         download_videos,
                         download_images,
-                        data_source,
+                        'auto',  # Always use auto-fallback
                         progress_placeholder,
                         status_placeholder
                     ))
@@ -759,7 +840,7 @@ def main():
                     product_ids,
                     download_videos,
                     download_images,
-                    data_source,
+                    'auto',  # Always use auto-fallback
                     progress_placeholder,
                     status_placeholder
                 ))
