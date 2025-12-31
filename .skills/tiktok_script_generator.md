@@ -1,7 +1,7 @@
 ---
 name: tiktok-script-generator
-description: Generates 3 TikTok short video scripts (30-40s) for product campaigns with comprehensive campaign summary. Uses proven "Golden 3 Seconds" hook patterns for German market. Analyzes reference videos, product data, images, and official descriptions. Creates bilingual (DE/ZH) scripts with category-specific compliance.
-version: 1.3.0
+description: Generates 3 TikTok short video scripts (30-40s) for product campaigns with comprehensive campaign summary. Uses proven "Golden 3 Seconds" hook patterns for German market. Analyzes reference videos, product data, and images (comprehensive bilingual v1.5 format with inline translations via async Gemini CLI MCP + OUTPUT VALIDATION). INTEGRATES VISUAL HOOKS from image analysis directly into scripts with filming instructions. Creates bilingual (DE/ZH) scripts with category-specific compliance. Optimized for parallel batch workflows. INCLUDES MANDATORY STEPS (validated bilingual image analysis with Visual Hooks section, hook extraction & integration, Campaign Summary with image insights, Final Quality Gate with image verification) with explicit batch execution checklist and quality verification to prevent incomplete deliverables.
+version: 1.5.1
 author: Claude
 ---
 
@@ -12,7 +12,7 @@ Generates 3 production-ready TikTok ad scripts based on reference video analysis
 ## Overview
 
 **Input:** Product ID + Category
-**Output:** 3 distinct angle scripts (30-40s each) + Campaign Summary in `shorts_scripts/{product_id}/`
+**Output:** 3 distinct angle scripts (30-40s each) + Campaign Summary in `product_list/{product_id}/scripts/`
 
 **Key Features:**
 - **Golden 3 Seconds Hook Patterns:** 8 proven opening strategies for German TikTok
@@ -27,6 +27,145 @@ Generates 3 production-ready TikTok ad scripts based on reference video analysis
 ---
 
 ## Workflow Steps
+
+**Complete workflow (12 steps):**
+
+1. **Gather Source Materials** - Collect all reference files
+2. **Product Image Analysis** ⚠️ **MANDATORY IF IMAGES EXIST** - Analyze using async Gemini CLI MCP (v1.5 format)
+3. **Official Description Verification** - Cross-reference product claims
+4. **Determine Product Category** - Identify compliance rules
+5. **Script Angle Planning** - Map 3 distinct marketing angles
+5.5. **Golden 3 Seconds Hook Selection** - Choose proven hook patterns
+5.7. **Extract Visual Hooks from Image Analysis** - Map Section 10 hooks to script angles (if Step 2 completed)
+6. **Script Writing** - Create 3 scripts with visual hook integration
+7. **ElevenLabs v3 Grammar** - Format voiceover cues
+8. **Bilingual Translation** - Add Chinese (ZH) versions
+9. **Compliance Verification** - Check category-specific rules
+10. **Campaign Summary Creation** ⚠️ **MANDATORY** - Comprehensive campaign overview with image insights
+11. **Final Quality Gate** ⚠️ **MANDATORY** - Verification checkpoint including image analysis check
+
+**🚨 CRITICAL MANDATORY STEPS (Cannot be skipped):**
+- **Step 2:** Image analysis (if `product_images/` folder exists with images)
+- **Step 10:** Campaign Summary creation
+- **Step 11:** Final Quality Gate verification
+
+**⚠️ BATCH EXECUTION WARNING:**
+When processing multiple products in batch mode, these mandatory steps are frequently missed. You MUST explicitly verify before marking any product complete:
+- [ ] Image analysis completed (if images exist)
+- [ ] Campaign Summary created
+- [ ] Final Quality Gate passed
+
+---
+
+## Batch Execution Checklist (CRITICAL)
+
+When processing multiple products from `products.csv` or a batch list:
+
+### Pre-Execution Setup
+```bash
+# Verify all products have required source materials
+for product_id in {list}; do
+  echo "=== Checking $product_id ==="
+  ls -lh product_list/$product_id/
+  # Must have: tabcut_data.md or fastmoss_data.json
+  # Optional: video_analysis.md, product_images/, ref_video/
+done
+```
+
+### Per-Product Execution Order
+
+**For EACH product, execute ALL 12 steps in sequence:**
+
+1. ✅ Gather source materials
+2. ⚠️ **STOP:** Check if `product_images/` exists and has files
+   - **IF YES:** Run async Gemini CLI MCP image analysis (v1.5 format) → Save to `image_analysis.md`
+   - **IF NO:** Skip to Step 3
+3. ✅ Verify official description
+4. ✅ Determine category
+5. ✅ Plan 3 angles
+5.5. ✅ Select Golden 3 Seconds hooks
+5.7. ✅ **IF Step 2 completed:** Extract Visual Hooks from Section 10, map to 3 script angles
+   - **IF Step 2 skipped:** Skip to Step 6
+6. ✅ Write 3 scripts (integrate visual hooks if available)
+7. ✅ Format ElevenLabs v3 grammar
+8. ✅ Add bilingual (DE/ZH)
+9. ✅ Verify compliance
+10. ⚠️ **MANDATORY:** Create Campaign Summary (include image insights if Step 2 completed)
+11. ⚠️ **MANDATORY:** Run Final Quality Gate verification
+
+**🛑 DO NOT proceed to next product until Step 11 PASSES for current product.**
+
+### Common Batch Failure Modes
+
+**❌ Mistake 1: Skipping image analysis**
+- **Why it happens:** Rushing to script writing
+- **Fix:** Add explicit check at Step 2 - if images exist, MUST analyze
+
+**❌ Mistake 2: Forgetting Campaign Summary**
+- **Why it happens:** Scripts feel "complete" without it
+- **Fix:** Step 10 is NOT optional - always create Campaign_Summary.md
+
+**❌ Mistake 3: Skipping Final Quality Gate**
+- **Why it happens:** Assuming scripts are correct
+- **Fix:** ALWAYS run Step 11 verification commands before marking complete
+
+**❌ Mistake 4: Batch processing too fast**
+- **Why it happens:** Trying to parallelize steps that must be sequential
+- **Fix:** Complete ALL 11 steps for Product A before starting Product B
+
+### Batch Verification Command
+
+After processing N products, verify completeness:
+
+```bash
+# Run this after completing batch
+for product_id in {list}; do
+  echo "=== Verifying $product_id ==="
+
+  # Check scripts folder exists
+  if [ ! -d "product_list/$product_id/scripts" ]; then
+    echo "❌ MISSING: product_list/$product_id/scripts/"
+    continue
+  fi
+
+  # Count files (must be 4: 3 scripts + Campaign Summary)
+  file_count=$(ls -1 product_list/$product_id/scripts/*.md 2>/dev/null | wc -l)
+  if [ $file_count -lt 4 ]; then
+    echo "❌ INCOMPLETE: Only $file_count files (expected 4)"
+  else
+    echo "✅ COMPLETE: $file_count files"
+  fi
+
+  # Check Campaign Summary exists
+  if [ ! -f "product_list/$product_id/scripts/Campaign_Summary.md" ]; then
+    echo "❌ MISSING: Campaign_Summary.md"
+  fi
+
+  # Check image analysis (if images exist)
+  if [ -d "product_list/$product_id/product_images" ]; then
+    img_count=$(find "product_list/$product_id/product_images" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) | wc -l)
+    if [ $img_count -gt 0 ] && [ ! -f "product_list/$product_id/image_analysis.md" ]; then
+      echo "⚠️ WARNING: $img_count images but no image_analysis.md"
+    fi
+  fi
+
+  echo ""
+done
+```
+
+**Expected Output (all products complete):**
+```
+=== Verifying 1729571650514622666 ===
+✅ COMPLETE: 4 files
+
+=== Verifying 1729625207544715402 ===
+✅ COMPLETE: 4 files
+
+=== Verifying 1729480021523209013 ===
+✅ COMPLETE: 4 files
+```
+
+---
 
 ### Step 1: Gather Source Materials
 
@@ -107,32 +246,477 @@ ffmpeg -i video_2.mp4 -ss 00:00:01 -frames:v 1 -update 1 frame2.jpg -y
 
 ---
 
-### Step 2: Product Image Analysis (If Available)
+### Step 2: Product Image Analysis ⚠️ MANDATORY IF IMAGES EXIST
 
-**Use Gemini MCP to analyze product images:**
+**🚨 CRITICAL CHECK:** Before proceeding, verify if images exist:
 
-```
-Analyze these product images for [Product Name]:
-
-[List all image paths]
-
-Please provide:
-1. **Packaging Design:** Bottle/box color, label design, aesthetic
-2. **Label Text:** Product name, key ingredients/features, certifications
-3. **Visual Highlights:** Prominently displayed text (badges, seals, counts)
-4. **Marketing Messages:** Benefit claims visible on packaging
-5. **Product Details:** Quantity, dosage/specs, usage recommendations
-6. **Trust Signals:** Lab tested, certifications, quality seals, origin
-7. **Brand:** Manufacturer/brand name and logo
-
-Format as a structured report for script writing.
+```bash
+# Check if product has images
+if [ -d "product_list/{product_id}/product_images" ]; then
+  img_count=$(find "product_list/{product_id}/product_images" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) 2>/dev/null | wc -l)
+  if [ $img_count -gt 0 ]; then
+    echo "⚠️ MANDATORY: Found $img_count images - MUST run image analysis"
+  else
+    echo "✅ No images found - safe to skip Step 2"
+  fi
+fi
 ```
 
-**Extract:**
-- **Visual hooks** (distinctive design elements for scripts)
-- **Specific terminology** (exact German text from packaging)
-- **Trust signals** (certifications, origin, quality badges)
-- **Product specs** (quantity, dosage, dimensions)
+**If images exist:** This step is **MANDATORY**. Do not skip.
+
+**Use Async Gemini CLI MCP to analyze product images:**
+
+**Why Gemini CLI MCP instead of Claude Read tool:**
+- ✅ **Parallel execution** - Analyze multiple products simultaneously
+- ✅ **Token-efficient** - Doesn't consume Claude Code context/tokens
+- ✅ **Faster processing** - Async background execution
+- ✅ **Better for batch workflows** - Launch all analyses, retrieve when needed
+
+**Tool:** `mcp__gemini-cli-mcp-async__gemini_cli_execute` or `mcp__gemini-cli-mcp-async__gemini_cli_execute_async`
+
+**🚨 CRITICAL REQUIREMENTS:**
+- **Bilingual output** (German + Chinese) - MANDATORY
+- **Synthesized insights** - not just descriptions, but actionable script elements
+- **Exact German text** - copy verbatim from packaging (for compliance)
+- **Structured data** - organized for easy reference during script writing
+
+**Example Usage:**
+
+```javascript
+// For single product (synchronous):
+mcp__gemini-cli-mcp-async__gemini_cli_execute({
+  query: `[See detailed prompt template below - use complete template for best results]`
+})
+
+// For batch workflow (asynchronous - RECOMMENDED):
+const task1 = mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
+  query: `[Complete prompt template here]`
+})
+```
+
+---
+
+### Enhanced Prompt Template v1.5 (Comprehensive Bilingual Format)
+
+**Use this COMPLETE template for image analysis (based on proven Cat Tree format):**
+
+```
+Analyze all product images in /path/to/product_list/{product_id}/product_images/
+
+Create a COMPREHENSIVE BILINGUAL product intelligence report for TikTok script writing.
+
+**OUTPUT FORMAT:**
+- Use bilingual section headers: ## Section Name | 中文节名
+- Provide inline translations for key content (German with Chinese in parentheses)
+- Include 10+ sections with actionable script elements
+- Minimum 250+ lines for comprehensive coverage
+
+**REFERENCE FORMAT:** See product_list/1729600227153779322/product_images/image_analysis.md for example structure.
+
+---
+## REQUIRED SECTIONS (Minimum 10)
+
+### Header Template
+```markdown
+# [Product Name] - Product Image Analysis
+# [Product Name Chinese] - 产品图像分析
+
+**Product ID:** {product_id}
+**Analysis Date:** YYYY-MM-DD
+**Images Analyzed:** X product images
+```
+
+---
+
+## 1. Product Design & Aesthetics | 产品设计与美学
+
+**Style:** [Modern/Traditional/Luxus/Minimalistisch/etc.]
+**风格:** [现代化/传统/奢华/简约等]
+
+**Materials:**
+- [Material 1 with details]
+- [Material 2 with details]
+
+**材料:**
+- [材料1及细节]
+- [材料2及细节]
+
+**Colors Available:**
+- **[Color Name (German)]:** [Description, use case]
+- **[颜色名称（中文）]:** [描述、使用场景]
+
+**Vibe:** [Overall aesthetic impression]
+
+---
+
+## 2. [Product-Specific Features] | [产品特定功能]
+
+*Adapt this section to product category:*
+- **Electronics:** Technical specs, display, ports, buttons
+- **Health/Supplements:** Bottle design, capsule count, ingredients
+- **Furniture:** Dimensions, assembly, materials
+- **Pet Products:** Size options, features, use cases
+
+**Subsections (as needed):**
+### [Feature Category 1] ([中文名称])
+- Details with inline Chinese translations
+
+### [Feature Category 2] ([中文名称])
+- Details with inline Chinese translations
+
+---
+
+## 3. Size & Scale Indicators | 尺寸与规模指标
+
+**Total Dimensions:** [Length x Width x Height] (KEY SELLING POINT if notable)
+**总尺寸:** [长 x 宽 x 高]（如果显著则为关键卖点）
+
+**[Component] Size:** [Specific measurements]
+**[组件]尺寸:** [具体测量值]
+
+**Capacity/Scale:** [Usage capacity, weight limits, servings, etc.]
+**容量/规模:** [使用容量、重量限制、份量等]
+
+---
+
+## 4. Text & Labels (German) | 文字与标签（德语）
+
+**Note:** [Indicate if text is in German, English, or other languages]
+
+**German Terms (EXACT from packaging):**
+- **[Term 1]:** "[Exact German text in quotes]"
+- **[Term 2]:** "[Exact German text in quotes]"
+- **[Term 3]:** "[Exact German text in quotes]"
+
+**Marketing Copy (if English/other):**
+- "[Exact text 1]"
+- "[Exact text 2]"
+
+**Key Feature Descriptions:** [How product describes itself]
+**关键功能描述:** [产品如何描述自己]
+
+---
+
+## 5. Quality Signals | 质量信号
+
+**Visible Quality Indicators:**
+
+1. **[Quality Aspect 1] ([中文])**
+   - [Details showing quality]
+   - [具体质量体现]
+
+2. **[Quality Aspect 2] ([中文])**
+   - [Details showing quality]
+   - [具体质量体现]
+
+3. **Construction Details (构造细节)**
+   - [Finishing, edges, materials]
+   - [完工、边缘、材料]
+
+4. **Certifications/Badges (认证/徽章)**
+   - [CE, GS, TÜV, Bio, Vegan, etc. - exact names]
+   - [具体认证名称]
+
+---
+
+## 6. [Variations/Options] | [变体/选项]
+
+**[Color/Size/Version] Variations:**
+
+**[Option 1]:**
+- [Description and use case]
+- [描述和使用场景]
+
+**[Option 2]:**
+- [Description and use case]
+- [描述和使用场景]
+
+---
+
+## 7. Key Differentiators (vs. Competitors) | 关键差异化（与竞争对手相比）
+
+### UNIQUE FEATURES (独特功能)
+
+1. **[Unique Feature 1] ([中文名称])**
+   - [Why it's unique, advantage over competitors]
+   - [为何独特、相比竞争对手的优势]
+
+2. **[Unique Feature 2 - STAR FEATURE] ([中文名称 - 明星功能])**
+   - [Detailed explanation of standout feature]
+   - [突出功能的详细说明]
+
+3. **[Unique Feature 3] ([中文名称])**
+   - [Advantage and market positioning]
+   - [优势和市场定位]
+
+---
+
+## 8. Usage Context | 使用场景
+
+**Room Setting / Use Environment:**
+- [Where product is shown being used]
+- [产品展示使用的地方]
+
+**Target Use Cases:**
+- [Use case 1 with target audience]
+- [Use case 2 with target audience]
+- [使用场景1及目标受众]
+- [使用场景2及目标受众]
+
+**Target Audience Indicators:**
+- [Who this product is for based on visuals]
+- [基于视觉效果的目标用户]
+
+---
+
+## 9. Packaging/Presentation | 包装/展示
+
+**Visible Packaging Elements:**
+- [Packaging type, design, certifications]
+- [包装类型、设计、认证]
+
+**Brand Presentation:**
+- [Photography style, lifestyle integration]
+- [摄影风格、生活方式融合]
+
+---
+
+## 10. Visual Hooks for TikTok Scripts | TikTok 脚本的视觉钩子
+
+### Priority Visual Elements (按优先级排序)
+
+1. **"[Hook Name]" ([中文钩子名])**
+   - **How to film:** [Specific filming instruction]
+   - **Why it works:** [Psychological/attention reason]
+   - **Script hook:** "[Exact German hook line for script]"
+   - **如何拍摄:** [具体拍摄指导]
+
+2. **"[Hook Name]" ([中文钩子名])**
+   - **How to film:** [Specific filming instruction]
+   - **Why it works:** [Psychological/attention reason]
+   - **Script hook:** "[Exact German hook line for script]"
+   - **如何拍摄:** [具体拍摄指导]
+
+3. **"[Hook Name]" ([中文钩子名])**
+   - **How to film:** [Specific filming instruction]
+   - **Why it works:** [Psychological/attention reason]
+   - **Script hook:** "[Exact German hook line for script]"
+   - **如何拍摄:** [具体拍摄指导]
+
+[Include 5-6 visual hooks minimum]
+
+---
+
+## Visual Hook Recommendations by Script Angle | 按脚本角度的视觉钩子推荐
+
+**Angle 1: [Urgency/Price/Deal]**
+- **Primary Visual:** [Main visual element]
+- **Secondary Visual:** [Supporting visual]
+- **主要视觉:** [主要视觉元素]
+- **次要视觉:** [辅助视觉]
+
+**Angle 2: [Problem-Solution]**
+- **Primary Visual:** [Main visual element]
+- **Secondary Visual:** [Supporting visual]
+- **主要视觉:** [主要视觉元素]
+- **次要视觉:** [辅助视觉]
+
+**Angle 3: [Lifestyle/Gift/Transformation]**
+- **Primary Visual:** [Main visual element]
+- **Secondary Visual:** [Supporting visual]
+- **主要视觉:** [主要视觉元素]
+- **次要视觉:** [辅助视觉]
+
+---
+
+## [Color/Version] Choice for Scripts | 脚本的[颜色/版本]选择
+
+**[Option 1]:**
+- Better for [aesthetic/angle type]
+- Recommended for [script angle]
+- 更适合[美学/角度类型]
+- 推荐用于[脚本角度]
+
+**[Option 2]:**
+- Better for [aesthetic/angle type]
+- Recommended for [script angle]
+- 更适合[美学/角度类型]
+- 推荐用于[脚本角度]
+
+---
+
+## German Text Elements for Scripts | 脚本的德语文字元素
+
+**Product Name Variations:**
+- [Variation 1]
+- [Variation 2]
+- [Variation 3]
+
+**Feature Callouts (EXACT German from packaging):**
+- "[German term 1]" ([English translation])
+- "[German term 2]" ([English translation])
+- "[German term 3]" ([English translation])
+
+**Quality Claims (Safe for Scripts):**
+- "[Safe claim 1]" ([Translation])
+- "[Safe claim 2]" ([Translation])
+- "[Safe claim 3]" ([Translation])
+
+---
+
+## Next Step: Script Generation | 下一步：脚本生成
+
+**Ready to use:**
+- ✅ Product specifications from tabcut_data.md
+- ✅ Market insights from video_analysis.md (if available)
+- ✅ Visual hooks from this image_analysis.md
+- ✅ German terminology and feature descriptions
+
+**Generate 3 scripts using:**
+1. **Angle 1:** [Recommended angle] → Hook Type: [Golden 3 Seconds pattern]
+2. **Angle 2:** [Recommended angle] → Hook Type: [Golden 3 Seconds pattern]
+3. **Angle 3:** [Recommended angle] → Hook Type: [Golden 3 Seconds pattern]
+
+---
+
+**Analysis completed:** YYYY-MM-DD
+**Ready for:** Script Generation (Step 3)
+
+**OUTPUT FORMAT:**
+Save as `product_list/{product_id}/image_analysis.md`
+```
+
+---
+
+### What Makes Good v1.5 Image Analysis
+
+**✅ GOOD (Comprehensive + Bilingual):**
+```
+## 1. Product Design & Aesthetics | 产品设计与美学
+Style: Modern, floor-to-ceiling tower style (skyscraper for cats)
+风格: 现代化，落地到天花板的塔式设计（猫的摩天大楼）
+
+Materials:
+- Soft plush fabric covering (velvety/dense texture)
+- Natural sisal rope wrapping on posts (segmented design)
+
+材料:
+- 柔软的毛绒布料覆盖（天鹅绒般/密集质地）
+- 天然剑麻绳缠绕在抓柱上（分段设计）
+
+## 10. Visual Hooks for TikTok Scripts | TikTok 脚本的视觉钩子
+
+1. **"The Penthouse View" (顶层视角)**
+   - **How to film:** Slow pan UP the 210cm height to reveal cat looking down
+   - **Why it works:** Emphasizes impressive height, shows scale dramatically
+   - **Script hook:** "Deine Katze verdient eine Penthouse-Wohnung, kein einfaches Bett."
+```
+
+**❌ BAD (Generic + Monolingual):**
+```
+## 1. Packaging Design
+- Color Scheme: White background with blue accent
+- Aesthetic: Minimalist
+- Visual Impression: Simple cardboard box
+```
+
+---
+
+**Save Analysis:**
+ALWAYS save comprehensive bilingual analysis to:
+```
+product_list/{product_id}/image_analysis.md
+```
+
+This becomes a critical reference document for script writing.
+
+---
+
+### Output Validation & Quality Check ⚠️ MANDATORY
+
+**After Gemini completes image analysis, you MUST verify output quality:**
+
+#### Minimum Requirements (PASS/FAIL)
+
+```bash
+# Verify image analysis meets requirements
+wc -l product_list/{product_id}/image_analysis.md
+# Expected: 250+ lines minimum for v1.5 comprehensive format
+```
+
+**✅ PASS Criteria (All must be true):**
+- [ ] **File size:** 250+ lines (good examples: 300-400 lines)
+- [ ] **Bilingual headers:** All major sections use "## Name | 中文名" format
+- [ ] **Inline translations:** Key content has Chinese translations in parentheses or separate lines
+- [ ] **Section 10 present:** "Visual Hooks for TikTok Scripts" with 5-6 hooks
+- [ ] **Exact German text:** Verbatim quotes from packaging (in quotes)
+- [ ] **Actionable hooks:** "How to film" + "Script hook" for each visual element
+- [ ] **Script recommendations:** "Visual Hook Recommendations by Script Angle" section exists
+
+**❌ FAIL Indicators (Requires retry):**
+- **Too short:** <200 lines = incomplete analysis
+- **No inline bilingual:** Headers bilingual but body content only in one language
+- **No Section 10:** Missing "Visual Hooks for TikTok Scripts" = not actionable
+- **Generic hooks:** "Show the product" without specific filming instructions
+- **No script lines:** Missing ready-to-use German hook formulations
+
+#### Verification Command
+
+```bash
+# Quick quality check (v1.5 format)
+echo "=== IMAGE ANALYSIS QUALITY CHECK (v1.5) ==="
+echo "Line count: $(wc -l < product_list/{product_id}/image_analysis.md)"
+echo ""
+echo "Required sections check:"
+grep -c "## 1.*|" product_list/{product_id}/image_analysis.md && echo "✓ Section 1 (Bilingual)" || echo "✗ MISSING bilingual section 1"
+grep -c "## 10.*Visual Hooks" product_list/{product_id}/image_analysis.md && echo "✓ Section 10 (Visual Hooks)" || echo "✗ MISSING Visual Hooks section"
+grep -c "How to film:" product_list/{product_id}/image_analysis.md && echo "✓ Filming instructions present" || echo "✗ MISSING filming instructions"
+grep -c "Script hook:" product_list/{product_id}/image_analysis.md && echo "✓ Script hooks present" || echo "✗ MISSING script hooks"
+```
+
+**Expected output (PASS):**
+```
+=== IMAGE ANALYSIS QUALITY CHECK (v1.5) ===
+Line count: 362
+
+Required sections check:
+✓ Section 1 (Bilingual)
+✓ Section 10 (Visual Hooks)
+✓ Filming instructions present
+✓ Script hooks present
+```
+
+#### If Output FAILS Validation
+
+**🔄 RETRY REQUIRED - Reference the complete v1.5 template:**
+
+```javascript
+mcp__gemini-cli-mcp-async__gemini_cli_execute({
+  query: `CRITICAL: Previous analysis was incomplete. You MUST follow the v1.5 comprehensive bilingual format.
+
+REFERENCE EXAMPLE: product_list/1729600227153779322/product_images/image_analysis.md
+(This is the gold standard - 362 lines, fully bilingual, actionable visual hooks)
+
+[Paste complete template from lines 314-584 above]
+
+MANDATORY v1.5 REQUIREMENTS:
+1. Minimum 250+ lines total
+2. All major sections use bilingual headers: ## Name | 中文名
+3. Inline Chinese translations for key content
+4. Section 10 "Visual Hooks for TikTok Scripts" with 5-6 detailed hooks
+5. Each hook must have:
+   - **How to film:** Specific camera instruction
+   - **Why it works:** Psychological reason
+   - **Script hook:** Ready-to-use German line
+6. Exact German text from packaging in quotes
+7. "Visual Hook Recommendations by Script Angle" section
+8. "Next Step: Script Generation" section with angle recommendations
+
+DO NOT output shortened analysis. Follow the Cat Tree example structure exactly.`
+})
+```
+
+**🚨 CRITICAL:** Do NOT proceed to script writing with failed image analysis. Scripts will be low-quality without comprehensive bilingual input.
 
 ---
 
@@ -438,13 +1022,119 @@ Format as a structured report for script writing.
 
 ---
 
+### Step 5.7: Extract Visual Hooks from Image Analysis v1.5
+
+**🎯 CRITICAL:** If you completed Step 2 (Image Analysis), you now have ready-to-use visual hooks in Section 10 of `image_analysis.md`.
+
+**Purpose:** Map visual hooks from image analysis to your 3 script angles.
+
+#### How to Extract Visual Hooks
+
+**1. Read Section 10 from image analysis:**
+```bash
+# Extract Visual Hooks section
+sed -n '/## 10. Visual Hooks for TikTok Scripts/,/## Visual Hook Recommendations/p' product_list/{product_id}/image_analysis.md
+```
+
+**Expected output:** 5-6 detailed visual hooks, each with:
+- **How to film:** Specific camera/filming instruction
+- **Why it works:** Psychological appeal
+- **Script hook:** Ready-to-use German line
+- **如何拍摄:** Chinese translation
+
+**2. Map hooks to your 3 script angles:**
+
+| Script Angle | Primary Visual Hook | Script Hook Line (from analysis) |
+|:-------------|:-------------------|:--------------------------------|
+| Angle 1: [Problem-Solution] | Hook #X: "[Name]" | "[Exact German line from analysis]" |
+| Angle 2: [Lifestyle/Glow Up] | Hook #Y: "[Name]" | "[Exact German line from analysis]" |
+| Angle 3: [Educational/Value] | Hook #Z: "[Name]" | "[Exact German line from analysis]" |
+
+**3. Review "Visual Hook Recommendations by Script Angle" section:**
+
+The image analysis already suggests which visual hooks work best for each angle type. Use these recommendations.
+
+#### Decision Framework: Which Hook for Which Script?
+
+**Problem-Solution Scripts (Angle 1):**
+- Look for hooks showing "before/after" transformations
+- Example hook types: "The Transformation", "The Clutter to Clean", "The Messy to Organized"
+
+**Lifestyle/Glow Up Scripts (Angle 2):**
+- Look for hooks showing usage context or aesthetic appeal
+- Example hook types: "The Cozy Setup", "The Aesthetic Reveal", "The Daily Ritual"
+
+**Educational/Value Scripts (Angle 3):**
+- Look for hooks highlighting unique features or quality signals
+- Example hook types: "The Hidden Feature", "The Quality Proof", "The Size Comparison"
+
+#### Integration Checklist
+
+Before moving to Step 6 (Script Writing), verify:
+
+- [ ] Read Section 10 "Visual Hooks for TikTok Scripts" from image_analysis.md
+- [ ] Identified 3 visual hooks (one per script angle)
+- [ ] Copied exact German "Script hook" lines for each
+- [ ] Noted specific "How to film" instructions for production team
+- [ ] Reviewed "Visual Hook Recommendations by Script Angle" section
+
+**If you skipped Step 2 (no images):** Skip this step, proceed directly to Step 6.
+
+---
+
 ### Step 6: Script Writing
 
 **Create 3 scripts following this structure:**
 
+#### Using Visual Hooks from Image Analysis (v1.5)
+
+**🎯 NEW REQUIREMENT:** If image analysis was completed (Step 2), each script MUST integrate visual hooks from Section 10.
+
+**How to integrate:**
+
+1. **Opening Hook (0-3s):** Use the "Script hook" line from image_analysis.md directly
+   - Example from Cat Tree analysis: *"Deine Katze verdient eine Penthouse-Wohnung, kein einfaches Bett."*
+   - These lines are pre-tested for German market appeal
+
+2. **Product Introduction (3-8s):** Reference visual elements from analysis
+   - Use exact German terms from Section 4 "Text & Labels"
+   - Reference distinctive design elements from Section 1 "Product Design & Aesthetics"
+
+3. **Trust Signals (15-25s):** Use quality signals from Section 5
+   - Certifications mentioned in analysis (GS, CE, TÜV, Bio, etc.)
+   - Quality construction details identified
+
+4. **CTA (28-35s):** Reference visual recognition elements
+   - Color/design elements that make product recognizable
+   - Packaging features from Section 9
+
+**Example Integration (using Cat Tree analysis):**
+
+```markdown
+## Voiceover
+
+> with ElevenLabs v3 (alpha) grammar
+
+### DE (ElevenLabs Prompt | 35s)
+
+[bright] Deine Katze verdient eine Penthouse-Wohnung, kein einfaches Bett.  # ← From Section 10, Hook #1
+[curious] Das ist der XXL Katzenbaum. 210cm hoch.  # ← From Section 3, Size & Scale
+[matter-of-fact] Sisal-Kratzsäulen, Plüsch-Höhlen, und ganz oben—  # ← From Section 2, Features
+[soft] die Aussichtsplattform.  # ← From Section 10, "The Penthouse View" hook
+[reflective] Meine Katze liegt jetzt nur noch da oben.
+[confident] Made in Germany, stabil bis 15kg.  # ← From Section 5, Quality Signals
+[firm] Link ist unten.
+```
+
+**Benefits of this integration:**
+- ✅ **Pre-tested language:** Visual hook lines are based on product analysis
+- ✅ **Compliance-safe:** German text extracted from official packaging
+- ✅ **Market-tested:** Hooks designed for German TikTok psychology
+- ✅ **Production-ready:** "How to film" instructions guide video creation
+
 #### File Naming
 ```
-shorts_scripts/{product_id}/
+product_list/{product_id}/scripts/
 ├── {Product}_{Angle1}_Keyword.md
 ├── {Product}_{Angle2}_Keyword.md
 └── {Product}_{Angle3}_Keyword.md
@@ -607,7 +1297,7 @@ Structure (30–40s):
 
 **File Location:**
 ```
-shorts_scripts/{product_id}/Campaign_Summary.md
+product_list/{product_id}/scripts/Campaign_Summary.md
 ```
 
 **Required Content Sections:**
@@ -678,6 +1368,62 @@ From `tabcut_data.md`:
 - **Visual Requirements** for each script (what to film)
 - **Voiceover Style** (tone, delivery, language notes)
 
+#### 9.5. Image Analysis Insights (v1.5) - **IF STEP 2 COMPLETED**
+
+**⚠️ CRITICAL:** If image analysis was performed (Step 2), this section is MANDATORY.
+
+**Purpose:** Document visual intelligence from product images for video production team.
+
+**Include:**
+
+**A. Visual Hooks Used in Scripts**
+List which visual hooks from image_analysis.md Section 10 were integrated into each script:
+
+```markdown
+**Script 1: [Filename]**
+- Primary Visual Hook: "[Hook Name]" (from Section 10, Hook #X)
+  - How to film: [Copy exact filming instruction from analysis]
+  - German line used: "[Exact line from script]"
+
+**Script 2: [Filename]**
+- Primary Visual Hook: "[Hook Name]" (from Section 10, Hook #Y)
+  - How to film: [Copy exact filming instruction from analysis]
+  - German line used: "[Exact line from script]"
+
+**Script 3: [Filename]**
+- Primary Visual Hook: "[Hook Name]" (from Section 10, Hook #Z)
+  - How to film: [Copy exact filming instruction from analysis]
+  - German line used: "[Exact line from script]"
+```
+
+**B. Key Visual Elements from Analysis**
+Summarize critical visual elements identified in image_analysis.md:
+
+- **Product Design (Section 1):** [Style, materials, aesthetic vibe]
+- **Distinctive Features (Section 2):** [Star features that must be shown]
+- **Size & Scale (Section 3):** [Key dimensions, capacity - if selling point]
+- **German Text Elements (Section 4):** [Exact terms from packaging to show on screen]
+- **Quality Signals (Section 5):** [Certifications, construction details to highlight]
+- **Color/Variations (Section 6):** [Which version to film, why]
+- **Usage Context (Section 8):** [Room setting, target use cases for B-roll]
+- **Packaging Elements (Section 9):** [Recognition features for final frame]
+
+**C. Production Team Reference**
+Direct production team to full analysis for comprehensive details:
+```markdown
+**Full Image Analysis:** `product_list/{product_id}/image_analysis.md`
+- 10+ sections with bilingual details
+- Section 10 has 5-6 additional visual hooks not used in these scripts
+- "Visual Hook Recommendations by Script Angle" section suggests alternatives for A/B testing
+```
+
+**If Step 2 was skipped (no images):**
+```markdown
+#### 9.5. Image Analysis Insights
+**N/A** - No product images available for this product.
+Visual direction based on video analysis and product description only.
+```
+
 #### 10. Recommendations for Future Creatives
 - **High Priority:** 3-4 immediate next steps
 - **Medium Priority:** 3-4 testing opportunities
@@ -693,9 +1439,10 @@ From `video_analysis.md`:
 List all reference files:
 ```markdown
 - **Product Data:** `product_list/{product_id}/tabcut_data.md`
-- **Video Analysis:** `product_list/{product_id}/video_analysis.md`
-- **Product Images:** `product_list/{product_id}/product_images/`
-- **Reference Videos:** `product_list/{product_id}/ref_video/`
+- **Video Analysis:** `product_list/{product_id}/video_analysis.md` (if available)
+- **Image Analysis (v1.5):** `product_list/{product_id}/image_analysis.md` (if Step 2 completed)
+- **Product Images:** `product_list/{product_id}/product_images/` (if available)
+- **Reference Videos:** `product_list/{product_id}/ref_video/` (if available)
 ```
 
 #### 13. Compliance Notes
@@ -716,7 +1463,336 @@ List all reference files:
 - Portfolio comparison table (if creating multiple campaign summaries)
 - Competitive analysis (if available)
 
-**Example Summary File:** See `shorts_scripts/1729535917392698367/Campaign_Summary.md` for reference.
+**Example Summary File:** See `product_list/1729535917392698367/scripts/Campaign_Summary.md` for reference.
+
+---
+
+### Step 11: Final Quality Gate ⚠️ MANDATORY CHECKPOINT
+
+**🛑 STOP: Do NOT mark this task as complete until ALL criteria below are verified.**
+
+This is the **final verification checkpoint** before delivery. All previous steps may have been completed, but this gate ensures **nothing was missed**.
+
+---
+
+#### Deliverables Verification
+
+**Run this command to verify all files exist:**
+
+```bash
+# Verify all required files for product {product_id}
+ls -lh product_list/{product_id}/scripts/
+
+# Expected output (4 files minimum):
+# - Script_1.md (1.5-2.5KB typical size)
+# - Script_2.md (1.5-2.5KB typical size)
+# - Script_3.md (1.5-2.5KB typical size)
+# - Campaign_Summary.md (15-25KB typical size)
+```
+
+**Verification Checklist:**
+
+- [ ] **Script 1 file exists** at `product_list/{product_id}/scripts/{Product}_{Angle1}.md`
+- [ ] **Script 2 file exists** at `product_list/{product_id}/scripts/{Product}_{Angle2}.md`
+- [ ] **Script 3 file exists** at `product_list/{product_id}/scripts/{Product}_{Angle3}.md`
+- [ ] **Campaign Summary exists** at `product_list/{product_id}/scripts/Campaign_Summary.md`
+
+**🚨 CRITICAL:** If ANY file is missing, the task is **INCOMPLETE**. Do NOT proceed.
+
+---
+
+#### Content Quality Verification
+
+**For EACH of the 3 scripts, verify:**
+
+```bash
+# Quick verification command
+for file in product_list/{product_id}/scripts/*.md; do
+  echo "=== $file ==="
+  head -20 "$file" | grep -E "(cover:|caption:|duration:|product:|tags:)"
+  echo "---"
+done
+```
+
+**Script Quality Checklist (verify ALL 3 scripts):**
+
+- [ ] **YAML frontmatter present** (starts with `---`)
+- [ ] **Caption field populated** (not empty "")
+- [ ] **Duration field valid** (format: "00:XX" between 00:30-00:50)
+- [ ] **Exactly 5 tags** (count them - no more, no less)
+- [ ] **Tags include hashtags in caption** (e.g., "Text #tag1 #tag2...")
+- [ ] **Product name matches** official product name from tabcut_data.md
+- [ ] **Source notes linked** to actual files used
+- [ ] **ElevenLabs v3 marker present** (`> with ElevenLabs v3 (alpha) grammar`)
+- [ ] **DE section exists** with voiceover cues
+- [ ] **ZH section exists** with Chinese translation
+- [ ] **Cue count reasonable** (6-8 cues per script, not 15+)
+- [ ] **Word count appropriate** (~65-115 words for 30-40s duration)
+
+**🚨 CRITICAL:** If ANY script fails these checks, **FIX IT** before proceeding.
+
+---
+
+#### Image Analysis Verification (If Step 2 Was Performed)
+
+**🎯 Check if image analysis was required and completed:**
+
+```bash
+# Check if product has images
+if [ -d "product_list/{product_id}/product_images" ]; then
+  img_count=$(find "product_list/{product_id}/product_images" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) 2>/dev/null | wc -l)
+  if [ $img_count -gt 0 ]; then
+    echo "⚠️ Product has $img_count images - image analysis is MANDATORY"
+    if [ -f "product_list/{product_id}/image_analysis.md" ]; then
+      echo "✓ image_analysis.md exists"
+      echo "Line count: $(wc -l < product_list/{product_id}/image_analysis.md)"
+    else
+      echo "❌ MISSING: image_analysis.md - MUST be completed"
+    fi
+  else
+    echo "✓ No images - image analysis not required"
+  fi
+else
+  echo "✓ No product_images folder - image analysis not required"
+fi
+```
+
+**Image Analysis Quality Checklist (v1.5 Format):**
+
+**IF images exist and analysis was performed:**
+
+- [ ] **File exists** at `product_list/{product_id}/image_analysis.md`
+- [ ] **Minimum line count** (250+ lines for v1.5 comprehensive format)
+- [ ] **Bilingual headers** present (## Section Name | 中文节名)
+- [ ] **Section 10 exists** "Visual Hooks for TikTok Scripts | TikTok 脚本的视觉钩子"
+- [ ] **Visual hooks complete** (5-6 hooks with "How to film", "Script hook", "如何拍摄")
+- [ ] **German text extracted** (Section 4 has exact packaging text in quotes)
+- [ ] **Quality signals documented** (Section 5 has certifications, construction details)
+- [ ] **Visual Hook Recommendations section** exists
+- [ ] **Scripts reference visual hooks** (each script uses at least one hook from Section 10)
+
+**Verification command (v1.5):**
+```bash
+# Run comprehensive image analysis check
+if [ -f "product_list/{product_id}/image_analysis.md" ]; then
+  echo "=== IMAGE ANALYSIS QUALITY CHECK (v1.5) ==="
+  line_count=$(wc -l < product_list/{product_id}/image_analysis.md)
+  echo "Line count: $line_count (minimum 250 required)"
+
+  grep -c "## 1.*|" product_list/{product_id}/image_analysis.md && echo "✓ Bilingual headers present"
+  grep -c "## 10.*Visual Hooks" product_list/{product_id}/image_analysis.md && echo "✓ Section 10 present"
+  hook_count=$(grep -c "How to film:" product_list/{product_id}/image_analysis.md)
+  echo "Visual hooks: $hook_count (minimum 5 required)"
+  script_hook_count=$(grep -c "Script hook:" product_list/{product_id}/image_analysis.md)
+  echo "Script hook lines: $script_hook_count"
+
+  if [ $line_count -lt 250 ]; then
+    echo "❌ FAIL: Analysis too short ($line_count lines < 250 minimum)"
+  elif [ $hook_count -lt 5 ]; then
+    echo "❌ FAIL: Not enough visual hooks ($hook_count < 5 minimum)"
+  else
+    echo "✅ PASS: Image analysis meets v1.5 standards"
+  fi
+fi
+```
+
+**🚨 CRITICAL FAILURE MODES:**
+
+1. **Image analysis missing when images exist**
+   - Fix: Go back to Step 2, run async Gemini CLI MCP analysis
+   - Use v1.5 comprehensive template
+
+2. **Image analysis too short (<250 lines)**
+   - Fix: Regenerate with explicit v1.5 template reference
+   - Reference Cat Tree example: `product_list/1729600227153779322/product_images/image_analysis.md`
+
+3. **Scripts don't reference visual hooks**
+   - Fix: Go back to Step 5.7 and 6
+   - Extract hooks from Section 10, integrate into script opening lines
+
+**IF no images exist:** Skip this verification - proceed to Campaign Summary Verification.
+
+---
+
+#### Campaign Summary Verification
+
+**Verify Campaign Summary completeness:**
+
+```bash
+# Check Campaign Summary structure
+grep -E "^#{1,2} " product_list/{product_id}/scripts/Campaign_Summary.md
+# Should show all 14 section headers
+```
+
+**Campaign Summary Checklist:**
+
+- [ ] **Header metadata present** (YAML frontmatter with product_id, campaign_date, etc.)
+- [ ] **Product Overview section** (features, USPs, use cases)
+- [ ] **Campaign Strategy section** (psychological triggers, key insight)
+- [ ] **Scripts Overview** (all 3 scripts with effectiveness ratings)
+- [ ] **Audience Segmentation Table** (markdown table with segments)
+- [ ] **Key Selling Points** (Rational/Emotional triggers, Trust signals)
+- [ ] **Performance Data section** (actual sales, conversion rate from tabcut_data.md)
+- [ ] **Performance Predictions** (ranked 1-3 with reasoning)
+- [ ] **Content Production Notes** (visual requirements, VO style)
+- [ ] **Image Analysis Insights (Section 9.5)** - **IF image analysis was performed (Step 2)**
+  - [ ] Visual hooks used in each script documented
+  - [ ] Key visual elements summarized from analysis
+  - [ ] Production team reference to full image_analysis.md included
+  - [ ] **IF Step 2 skipped:** Section 9.5 marked as "N/A"
+- [ ] **Recommendations section** (High/Medium priority, testing opportunities)
+- [ ] **Source Materials listed** (all reference files including image_analysis.md if Step 2 completed)
+- [ ] **Compliance Notes section** (safe claims, avoided claims)
+- [ ] **Footer present** (campaign date, performance summary)
+- [ ] **File size reasonable** (18-30KB typical with image insights - if <10KB, likely incomplete)
+
+**🚨 CRITICAL:** Campaign Summary is NOT optional. If missing or incomplete, **CREATE/FIX IT** now.
+
+---
+
+#### Compliance Verification (Category-Specific)
+
+**Health & Supplements Products:**
+- [ ] No medical claims ("heilt", "behandelt", "therapiert", "garantiert")
+- [ ] Only safe language ("kann unterstützen", "hilft dabei", "traditionell eingesetzt")
+- [ ] Personal experience framing ("hab ich gefühlt", "bei mir", "sah aus")
+- [ ] All ingredient claims match official product description
+
+**Electronics & Tech Products:**
+- [ ] Technical specs accurate (match official listing)
+- [ ] No exaggerated performance claims
+- [ ] Safety certifications mentioned accurately
+
+**Beauty & Skincare Products:**
+- [ ] No medical/therapeutic claims
+- [ ] Ingredient transparency maintained
+- [ ] Observation language ("sieht aus", "spendet Feuchtigkeit")
+
+**General Products:**
+- [ ] Material/quality descriptions honest
+- [ ] No unverified durability claims
+
+---
+
+#### Angle Differentiation Verification
+
+**Verify scripts have DISTINCT angles (no overlap):**
+
+```bash
+# Quick check: read first 5 lines of each script's voiceover
+grep -A 5 "### DE (ElevenLabs" product_list/{product_id}/scripts/*.md
+```
+
+**Angle Differentiation Checklist:**
+
+- [ ] **Script 1 hook** is DIFFERENT from Script 2 and 3
+- [ ] **Script 2 hook** is DIFFERENT from Script 1 and 3
+- [ ] **Script 3 hook** is DIFFERENT from Script 1 and 2
+- [ ] Each script targets **different psychological trigger** or **audience segment**
+- [ ] No repetitive content across scripts (each angle is unique)
+
+**Common Failure:** All 3 scripts sound the same with minor word changes. If this happens, **REWRITE** to create true differentiation.
+
+---
+
+#### Common Failure Modes - Check These
+
+**🔍 Most Common Mistakes:**
+
+1. **Missing Campaign Summary** ← Most frequent failure
+   - Solution: Always create Step 10, never skip it
+
+2. **Caption missing hashtags**
+   - Wrong: `caption: "Great product"`
+   - Correct: `caption: "Great product #tag1 #tag2 #tag3 #tag4 #tag5"`
+
+3. **More or fewer than 5 tags**
+   - Must be EXACTLY 5 tags in the tags array
+
+4. **Scripts too long** (>40s / >115 words)
+   - Count words, ensure 65-115 range for 30-40s
+
+5. **Over-cued voiceover** (15+ cues)
+   - Keep to 6-8 cues maximum per script
+
+6. **Identical scripts with different filenames**
+   - Each script must have distinct hook, angle, and content
+
+7. **Chinese translation missing**
+   - Every script needs both DE and ZH sections
+
+8. **Compliance violations**
+   - Health products: Check for medical claims
+   - All products: Verify claims match official description
+
+---
+
+#### Final Verification Command
+
+**Run this comprehensive check:**
+
+```bash
+cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/product_list/{product_id}/scripts
+
+echo "=== FILE COUNT CHECK ==="
+file_count=$(ls -1 *.md | wc -l)
+echo "Files found: $file_count (Expected: 4 minimum)"
+
+echo -e "\n=== CAMPAIGN SUMMARY CHECK ==="
+if [ -f "Campaign_Summary.md" ]; then
+  size=$(ls -lh Campaign_Summary.md | awk '{print $5}')
+  echo "✓ Campaign_Summary.md exists (Size: $size)"
+else
+  echo "✗ MISSING: Campaign_Summary.md"
+fi
+
+echo -e "\n=== SCRIPT FILES CHECK ==="
+ls -1 *.md | grep -v Campaign_Summary
+
+echo -e "\n=== TAG COUNT VERIFICATION ==="
+for file in *.md; do
+  if [[ "$file" != "Campaign_Summary.md" ]]; then
+    tag_count=$(grep -A 6 "^tags:" "$file" | grep "#" | wc -l)
+    echo "$file: $tag_count tags (Expected: 5)"
+  fi
+done
+
+echo -e "\n=== ELEVENLABS MARKER CHECK ==="
+for file in *.md; do
+  if [[ "$file" != "Campaign_Summary.md" ]]; then
+    if grep -q "> with ElevenLabs v3 (alpha) grammar" "$file"; then
+      echo "✓ $file has ElevenLabs marker"
+    else
+      echo "✗ $file MISSING ElevenLabs marker"
+    fi
+  fi
+done
+```
+
+---
+
+#### PASS/FAIL Criteria
+
+**✅ PASS - Task Complete:**
+- All 4 files exist (3 scripts + Campaign Summary)
+- All scripts have valid YAML frontmatter
+- All scripts have exactly 5 tags
+- All scripts have both DE and ZH sections
+- All scripts have ElevenLabs v3 marker
+- Campaign Summary has all 14 sections
+- No compliance violations detected
+- Scripts have distinct angles (no overlap)
+
+**❌ FAIL - Task Incomplete:**
+- ANY file missing
+- ANY quality check failed
+- ANY compliance violation present
+- Scripts have overlapping/identical content
+- Campaign Summary incomplete or missing
+
+**If FAIL:** Do NOT mark task as complete. Fix issues immediately, then re-run verification.
+
+**If PASS:** Task is complete and ready for production. Update todo list to mark as completed.
 
 ---
 
@@ -769,7 +1845,7 @@ Task: Create 3 TikTok ad scripts
 ### Output:
 
 ```
-shorts_scripts/1729535919239371775/
+product_list/1729535919239371775/scripts/
 ├── Brennnessel_Komplex_Bloating_Loesung.md
 ├── Brennnessel_Komplex_Glow_Up.md
 └── Brennnessel_Komplex_Detox_Wellness.md
@@ -911,29 +1987,161 @@ shorts_scripts/1729535919239371775/
 
 ### Definition of Done
 
-Before delivering scripts:
+**🛑 MANDATORY:** Complete Step 11 (Final Quality Gate) before marking task as done.
 
-- [ ] All 3 scripts created in correct directory
-- [ ] Each script has unique angle (no overlap)
-- [ ] All frontmatter complete and valid
-- [ ] Target duration met (30-40s)
-- [ ] Word count appropriate (65-115 words)
-- [ ] ElevenLabs v3 grammar correct
-- [ ] Both DE and ZH versions present
-- [ ] Category compliance verified
-- [ ] Official product description cross-referenced
+**Step 11 automatically verifies:**
+
+- [ ] All 4 files exist (3 scripts + Campaign Summary)
+- [ ] All scripts have valid YAML frontmatter
+- [ ] All scripts have exactly 5 tags
+- [ ] Tags are included in caption field with hashtags
+- [ ] All scripts have both DE and ZH sections
+- [ ] All scripts have ElevenLabs v3 marker
+- [ ] Campaign Summary has all 14 required sections
+- [ ] Campaign Summary file size is reasonable (15-25KB)
+- [ ] No compliance violations detected
+- [ ] Scripts have distinct angles (no overlap)
+- [ ] Word count appropriate (65-115 words per script)
+- [ ] Duration estimates realistic (30-40s)
+- [ ] Source notes correctly linked
 - [ ] Visual hooks integrated (if images available)
 - [ ] Trust signals accurate
-- [ ] No medical/therapeutic claims (for health products)
-- [ ] Tags relevant and max 5
-- [ ] Source notes correctly linked
-- [ ] **Campaign Summary created** with all required sections
-- [ ] Performance data analyzed and insights documented
-- [ ] Optimization strategy included
+- [ ] Category-specific compliance rules followed
+
+**How to verify:** Run the Final Verification Command from Step 11.
+
+**If ANY check fails:** Fix immediately, do NOT mark as complete.
 
 ---
 
 ## Version History
+
+**v1.5.1** (2025-12-31) - **VISUAL HOOKS INTEGRATION & WORKFLOW ENHANCEMENT**
+- **NEW STEP 5.7:** "Extract Visual Hooks from Image Analysis v1.5"
+  - Maps Section 10 visual hooks to 3 script angles
+  - Decision framework for hook selection (Problem-Solution, Lifestyle, Educational)
+  - Integration checklist before script writing
+- **ENHANCED STEP 6:** "Script Writing with Visual Hook Integration"
+  - NEW REQUIREMENT: Scripts MUST integrate visual hooks from Section 10 if Step 2 completed
+  - Added example integration showing exact placement of hooks (Opening, Product, Trust, CTA)
+  - Benefits documented: Pre-tested language, compliance-safe, market-tested, production-ready
+- **ENHANCED STEP 10:** Campaign Summary now includes Section 9.5 "Image Analysis Insights (v1.5)"
+  - **NEW MANDATORY SECTION** if Step 2 completed
+  - Documents visual hooks used in each script
+  - Summarizes key visual elements from all 10 sections of image analysis
+  - Production team reference to full analysis for comprehensive details
+- **ENHANCED STEP 11:** Final Quality Gate now verifies image analysis
+  - NEW Image Analysis Verification section
+  - Checks if analysis exists when images present
+  - Validates v1.5 format quality (250+ lines, Section 10, visual hooks)
+  - Automated verification command for image analysis
+  - Critical failure modes documented with fixes
+- **WORKFLOW UPDATES:**
+  - Updated workflow from 11 to 12 steps (added Step 5.7)
+  - Updated Batch Execution Checklist to include Step 5.7
+  - Updated Campaign Summary checklist to verify Section 9.5
+  - Updated Source Materials section to include image_analysis.md reference
+- **WHY THIS MATTERS:**
+  - Bridges v1.5 comprehensive image analysis to actual script production
+  - Ensures visual hooks aren't wasted - they MUST be used in scripts
+  - Production teams get clear filming instructions from analysis
+  - Quality gate prevents incomplete deliverables
+
+**v1.5.0** (2025-12-31) - **COMPREHENSIVE BILINGUAL FORMAT (Cat Tree Standard)**
+- **MAJOR REWRITE:** New template based on proven Cat Tree example format
+- **Format change:** From PART 1-6 structure → 10+ section comprehensive format
+- **Bilingual approach:** Inline translations (## Name | 中文名) instead of separate DE/ZH blocks
+- **Section structure (minimum 10):**
+  1. Product Design & Aesthetics | 产品设计与美学
+  2. [Product-Specific Features] (adapts to category)
+  3. Size & Scale Indicators | 尺寸与规模指标
+  4. Text & Labels (German) | 文字与标签（德语）
+  5. Quality Signals | 质量信号
+  6. Variations/Options | 变体/选项
+  7. Key Differentiators (vs. Competitors) | 关键差异化
+  8. Usage Context | 使用场景
+  9. Packaging/Presentation | 包装/展示
+  10. **Visual Hooks for TikTok Scripts** | TikTok 脚本的视觉钩子 (CRITICAL)
+- **Enhanced Visual Hooks section:** Each hook includes:
+  - "How to film" (specific camera instructions)
+  - "Why it works" (psychological appeal)
+  - "Script hook" (ready-to-use German line)
+- **Additional sections:** Visual Hook Recommendations by Script Angle, German Text Elements for Scripts, Next Step: Script Generation
+- **Quality standard:** 250-400 lines (vs old 44-100 lines)
+- **Reference example:** product_list/1729600227153779322/product_images/image_analysis.md (362 lines)
+- **Updated validation:** New v1.5 verification command checks for bilingual headers, Section 10, filming instructions, script hooks
+- **Why this matters:** User feedback - "This one is good" (Cat Tree format), requested v1.5 based on this comprehensive structure
+
+**v1.4.3** (2025-12-31) - **OUTPUT VALIDATION REQUIREMENT**
+- **CRITICAL ADDITION:** Output Validation & Quality Check section after Step 2
+- **Mandatory verification:** Must check image analysis output before proceeding
+- **PASS/FAIL criteria:** Clear checklist (150+ lines, all 6 parts, bilingual, synthesized)
+- **Verification command:** Bash script to automatically check output quality
+- **Retry instructions:** If output fails, explicit template to retry with complete requirements
+- **Why this matters:** Prevents proceeding with incomplete/generic image analysis (user reported issue: some analyses were concise with no translation)
+- **Quality gate:** Do NOT proceed to script writing if image analysis fails validation
+- **Example comparison:** Good example (362 lines, bilingual, synthesized) vs Bad example (44 lines, no Chinese, no synthesis)
+- **Enforcement:** Added "🚨 CRITICAL: Do NOT proceed to script writing with failed image analysis"
+
+**v1.4.2** (2025-12-31) - **IMAGE ANALYSIS ENHANCEMENT (Bilingual + Synthesized)**
+- **CRITICAL IMPROVEMENT:** Complete rewrite of image analysis prompt template
+- **New bilingual format:** German (Parts 1-3) + Chinese (Parts 4-6) - MANDATORY
+- **Synthesized insights:** Part 2 (DE) and Part 5 (ZH) provide actionable script elements
+- **6-Part structure:**
+  - Part 1/4: Visual Intelligence (DE/ZH) - raw observations
+  - Part 2/5: Synthesized Script Elements (DE/ZH) - hook ideas, core features, trust signals
+  - Part 3/6: Compliance Check (DE/ZH) - safe vs problematic claims
+- **Script-ready outputs:**
+  - "Für Hook (Erste 3 Sekunden)" - ready-to-use hook formulations
+  - "Für Produktvorstellung" - core features with exact German terms
+  - "Für Trust-Building" - compliance-safe trust signals
+  - "Für CTA" - visual recognition elements
+- **Exact German text requirement:** Copy verbatim from packaging (critical for compliance)
+- **Good vs Bad examples:** Added comparison showing generic vs synthesized analysis
+- **Why this matters:** Previous image analysis was too generic/descriptive; new format provides actionable data directly usable in script writing
+- **Token efficiency:** Structured format reduces back-and-forth, one analysis provides everything needed
+
+**v1.4.1** (2025-12-31) - **BATCH EXECUTION CLARITY UPDATE**
+- **CRITICAL ADDITION:** Batch Execution Checklist section (lines 59-163)
+- **Enhanced workflow steps** with explicit mandatory markers (⚠️)
+- **New pre-execution setup** commands to verify source materials
+- **Per-product execution order** with stop points at mandatory steps
+- **Common batch failure modes** documented with fixes:
+  - Skipping image analysis (Mistake #1)
+  - Forgetting Campaign Summary (Mistake #2 - most common)
+  - Skipping Final Quality Gate (Mistake #3)
+  - Batch processing too fast (Mistake #4)
+- **Batch verification command** to check completeness after processing N products
+- **Step 2 enhancement:** Added critical check to verify if images exist before proceeding
+- **Why this matters:** Prevents incomplete deliverables in batch workflows
+- **Target issue:** Image analysis and Campaign Summary frequently missed in batch mode
+
+**v1.4.0** (2025-12-31) - **STABILITY RELEASE**
+- **MAJOR FEATURE:** Added Step 11 - Final Quality Gate (Mandatory Verification Checkpoint)
+- **Why this matters:** Prevents incomplete deliverables (missing Campaign Summary was #1 failure mode)
+- **What it includes:**
+  - Deliverables verification (all 4 files must exist)
+  - Content quality verification (YAML, tags, cues, word count)
+  - Campaign Summary completeness check (all 14 sections)
+  - Category-specific compliance verification
+  - Angle differentiation verification (no script overlap)
+  - Common failure modes checklist (8 most frequent mistakes)
+  - Final verification command (automated bash check)
+  - Clear PASS/FAIL criteria (cannot mark complete until all pass)
+- **Added workflow steps overview** at beginning (all 11 steps listed)
+- **Updated Quality Gates section** to reference Step 11
+- **Critical requirement:** Step 11 CANNOT be skipped - enforced with 🛑 warnings
+
+**v1.3.1** (2025-12-31)
+- **PERFORMANCE OPTIMIZATION:** Updated Step 2 (Product Image Analysis) to use Async Gemini CLI MCP
+- **Benefits:**
+  - Parallel execution for batch workflows (analyze multiple products simultaneously)
+  - Token-efficient (doesn't consume Claude Code context)
+  - Faster processing with async background execution
+  - Better suited for automated e2e workflows
+- **Tool Change:** `mcp__gemini-cli-mcp-async__gemini_cli_execute` replaces Claude Read tool for image analysis
+- Added example usage for both synchronous and asynchronous workflows
+- Added recommendation to save analysis to `image_analysis.md` for reference
 
 **v1.3.0** (2025-12-27)
 - **MAJOR FEATURE:** Added Step 5.5 - Golden 3 Seconds Hook Patterns

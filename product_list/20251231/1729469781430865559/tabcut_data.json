@@ -1,0 +1,96 @@
+{
+  "product_id": "1729469781430865559",
+  "scraped_at": "2025-12-31T02:03:42.146486",
+  "product_info": {
+    "product_name": "WOLTU Schminktisch mit Spiegel und LED-Beleuchtung, Einstellbarer Helligkeit, Frisiertisch Kosmetiktisch mit licht und 2 Schubladen, 4 offene Ablagen, 2 USB-Ports, Make-up Tisch für Schlafzimmer, Moderner Schminktisch, Weiß MB6112ws",
+    "shop_owner": "WOLTU HOME",
+    "total_sales": 1103,
+    "total_sales_revenue": "€ 9.19万($ 10.70万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 9,
+    "sales_revenue": "$ 1072.14",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 61,
+    "带货视频达人数": 24,
+    "带货视频销量": 44,
+    "带货视频销售额": "$ 5241.58",
+    "广告成交金额": "$ 5122.45",
+    "广告成交占比": "97.73%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD无标题发现时间：2025.12.03 02:44更新时间：2025.12.10 17:28时长：00:01:03跳转至 TikTok",
+      "creator_username": "ukropchiktv",
+      "creator_followers": "3.54万",
+      "publish_date": "2025-12-02 23:10",
+      "estimated_sales": 17,
+      "estimated_revenue": "€ 1739.61($ 2025.16)",
+      "total_views": "5.41万",
+      "video_url": "https://www.tiktok.com/@ukropchiktv/video/7579386422436564226?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_ukropchiktv.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADOra si che si vede tutto quello che ho ✨💋💄发现时间：2025.12.05 10:50更新时间：2025.12.29 00:13时长：00:09:01跳转至 TikTok",
+      "creator_username": "valentinasaccavino",
+      "creator_followers": "8.47万",
+      "publish_date": "2025-12-04 16:13",
+      "estimated_sales": 17,
+      "estimated_revenue": "€ 1739.61($ 2025.16)",
+      "total_views": "41.34万",
+      "video_url": "https://www.tiktok.com/@valentinasaccavino/video/7580021043658493206?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_valentinasaccavino.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#مكياج #طاولة #trnd #winter أنثى发现时间：2025.12.14 16:35更新时间：2025.12.23 01:27时长：00:01:11跳转至 TikTok",
+      "creator_username": "lafanda..12",
+      "creator_followers": "7.42万",
+      "publish_date": "2025-12-13 18:40",
+      "estimated_sales": 7,
+      "estimated_revenue": "€ 716.31($ 833.89)",
+      "total_views": "9.19万",
+      "video_url": "https://www.tiktok.com/@lafanda..12/video/7583398812304133409?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_lafanda..12.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#ورق_عنب_بالحامض_ودبس_الرمان #طبخات_سهله_لذيذه #اكسبلور؟ #videoviral #fyp 发现时间：2025.12.11 13:19更新时间：2025.12.20 03:12时长：00:01:03跳转至 TikTok",
+      "creator_username": "ruru_mousa97",
+      "creator_followers": "5.19万",
+      "publish_date": "2025-12-11 11:18",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 102.33($ 119.13)",
+      "total_views": "1225",
+      "video_url": "https://www.tiktok.com/@ruru_mousa97/video/7582542800672050454?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_ruru_mousa97.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD无标题发现时间：2025.12.09 03:12更新时间：2025.12.11 22:05时长：00:00:13跳转至 TikTok",
+      "creator_username": "brayana_del1",
+      "creator_followers": "7.7万",
+      "publish_date": "2025-12-08 17:47",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 102.33($ 119.13)",
+      "total_views": "3780",
+      "video_url": "https://www.tiktok.com/@brayana_del1/video/7578924459843734806?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_brayana_del1.mp4"
+    }
+  ]
+}

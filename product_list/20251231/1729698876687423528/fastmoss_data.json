@@ -1,0 +1,111 @@
+{
+  "product_id": "1729698876687423528",
+  "scraped_at": "2025-12-31T08:11:01.626210",
+  "product_info": {
+    "product_name": "Schminktisch, Frisiertisch mit Spiegel und Einer Schublade, Kosmetiktisch, verstellbare Ablagen, modern, 40 x 70 x 136 cm, wolkenweiß",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 4,
+    "total_sales_revenue": "€2297",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 4,
+    "sales_revenue": "€138",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": null,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by Der",
+      "creator_username": "Der",
+      "creator_followers": null,
+      "publish_date": "2025-12-23",
+      "estimated_sales": 6,
+      "estimated_revenue": "€173",
+      "total_views": 5,
+      "likes": 131,
+      "comments": 0,
+      "engagement_rate": "0.3%",
+      "video_url": "https://www.tiktok.com/@hannah_6685/video/7586693231312768289?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "Video by Der",
+      "creator_username": "Der",
+      "creator_followers": null,
+      "publish_date": "2025-12-20",
+      "estimated_sales": 0,
+      "estimated_revenue": "€0",
+      "total_views": 5,
+      "likes": 152,
+      "comments": 1,
+      "engagement_rate": "0.3%",
+      "video_url": "https://www.tiktok.com/@jannik0686/video/7585612590164856086?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "Video by Der",
+      "creator_username": "Der",
+      "creator_followers": null,
+      "publish_date": "2025-12-21",
+      "estimated_sales": 0,
+      "estimated_revenue": "€0",
+      "total_views": 7223,
+      "likes": 20,
+      "comments": 1,
+      "engagement_rate": "0.3%",
+      "video_url": "https://www.tiktok.com/@hannah_6685/video/7585996205415501089?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "Video by er",
+      "creator_username": "er",
+      "creator_followers": null,
+      "publish_date": "2025-12-22",
+      "estimated_sales": 0,
+      "estimated_revenue": "€0",
+      "total_views": 1,
+      "likes": 45,
+      "comments": 7,
+      "engagement_rate": "0.5%",
+      "video_url": "https://www.tiktok.com/@hannah_6685/video/7586296150685175073?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 5,
+      "title": "Video by Der",
+      "creator_username": "Der",
+      "creator_followers": null,
+      "publish_date": "2025-12-23",
+      "estimated_sales": 0,
+      "estimated_revenue": "€0",
+      "total_views": 1346,
+      "likes": 5,
+      "comments": 0,
+      "engagement_rate": "0.4%",
+      "video_url": "https://www.tiktok.com/@oswald_yf/video/7587039824729689366?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

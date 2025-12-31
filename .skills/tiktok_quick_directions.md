@@ -1,8 +1,8 @@
 # Skill: TikTok Quick Directions (Lightweight Product Analysis)
 
-**Version:** 1.0.0
-**Purpose:** Quick analysis of tabcut data + product images to generate 3 short script direction titles
-**Last Updated:** 2025-12-29
+**Version:** 1.1.0
+**Purpose:** Quick analysis of tabcut/fastmoss data + product images to generate 3 short script direction titles
+**Last Updated:** 2025-12-30
 
 ---
 
@@ -12,6 +12,8 @@ This skill provides a fast way to analyze product data and generate 3 TikTok sho
 - Initial product research
 - Quick topic ideation
 - Script direction planning
+
+**NEW:** Auto-fallback to FastMoss when Tabcut data is insufficient or missing.
 
 ---
 
@@ -23,11 +25,16 @@ This skill provides a fast way to analyze product data and generate 3 TikTok sho
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │  Input: Product Folder                                           │
-│  ├── tabcut_data.json OR tabcut_data.md                         │
+│  ├── tabcut_data.json OR tabcut_data.md (primary)              │
+│  ├── fastmoss_data.json OR fastmoss_data.md (fallback) 🆕      │
 │  └── product_images/*.webp                                       │
 │                                                                  │
-│  Process: gemini-cli analysis                                    │
-│  1. Read tabcut data (sales, videos, product info)              │
+│  Data Quality Check: 🆕                                          │
+│  ├── Tabcut data sufficient? → Proceed                          │
+│  └── Tabcut data insufficient? → Retry with FastMoss            │
+│                                                                  │
+│  Process: Analysis                                               │
+│  1. Read product data (sales, videos, product info)             │
 │  2. Read product images (visual analysis)                        │
 │  3. Generate 3 script direction titles                           │
 │                                                                  │
@@ -61,6 +68,32 @@ Extract:
 - Sales data (7-day, 30-day if available)
 - Video count and performance metrics
 - Top performing video stats
+
+**🆕 Data Quality Check:**
+If Tabcut data shows any of these issues, retry with FastMoss:
+- Product name is "Unknown Product", "undefined", or empty
+- Total sales is null or missing
+- Zero product images downloaded
+- Less than 3 videos in top videos list
+
+### Step 1.5: FastMoss Fallback (If Needed)
+
+If Tabcut data is insufficient, retry with FastMoss:
+
+```bash
+# Retry scraping with FastMoss source
+cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
+source venv/bin/activate
+python run_scraper.py --product-id {product_id} --source fastmoss
+
+# Convert to markdown
+python3 ../scripts/convert_json_to_md.py {product_id}
+
+# Now use fastmoss_data.md instead of tabcut_data.md
+cat product_list/{product_id}/fastmoss_data.md
+```
+
+**Note:** FastMoss outputs to `fastmoss_data.json` and `fastmoss_data.md` instead of `tabcut_data.*`.
 
 ### Step 2: Prepare Image Analysis
 

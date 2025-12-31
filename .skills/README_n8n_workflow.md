@@ -15,19 +15,26 @@ Step 1: Product Scraping
 ├── Input: Product ID(s)
 ├── Tool: Python scraper (n8n Execute Command)
 ├── Options: Download videos YES/NO
-└── Output: tabcut_data.json + tabcut_data.md [+ ref_video/*.mp4]
+└── Output: tabcut_data.json + tabcut_data.md + product_images/ [+ ref_video/*.mp4]
          ↓
-Step 2: Ad Analysis
+Step 2: Ad Analysis (OPTIONAL - Manual)
 ├── Input: tabcut_data.json + ref_video/*.mp4
-├── Tool: gemini-cli (User runs manually)
-├── Action: Analyze reference videos + product images
-└── Output: video_analysis.md + image_analysis.md
+├── Tool: gemini-cli (User runs manually if desired)
+├── Action: Analyze reference videos for market insights
+└── Output: video_analysis.md (OPTIONAL)
          ↓
-Step 3: Script Generation
-├── Input: All analysis files
-├── Tool: Claude Code (n8n API call)
-├── Action: Generate 3 production-ready scripts
-└── Output: 3 script .md files + Campaign_Summary.md
+Step 3: Script Generation (INCLUDES Image Analysis)
+├── Input: tabcut_data.md [+ video_analysis.md if available]
+├── Tool: Claude Code (tiktok-script-generator skill)
+├── Action:
+│   1. Image analysis (async Gemini CLI MCP - MANDATORY if images exist)
+│   2. Generate 3 production-ready scripts
+│   3. Create Campaign Summary (MANDATORY)
+│   4. Final Quality Gate verification (MANDATORY)
+└── Output:
+    ├── image_analysis.md (if product_images/ exists)
+    ├── 3 script .md files (MANDATORY)
+    └── Campaign_Summary.md (MANDATORY)
 ```
 
 ---
@@ -86,37 +93,39 @@ product_list/{product_id}/
 
 ---
 
-## Step 2: Ad Analysis
+## Step 2: Ad Analysis (OPTIONAL - Manual)
 
 **Skill:** `.skills/tiktok_ad_analysis.md`
 
-### Manual Execution (User)
+**⚠️ IMPORTANT CHANGE:** This step is now **OPTIONAL** for video analysis only.
+- **Video analysis:** User can run manually for deeper insights (recommended for high-priority products)
+- **Image analysis:** Now handled automatically in Step 3 (async Gemini CLI MCP)
 
-**This step runs OUTSIDE n8n - user executes in terminal**
+### Manual Video Analysis (Optional)
+
+**This step runs OUTSIDE n8n - user executes in terminal IF desired**
 
 ```bash
 # Navigate to product directory
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/product_list/1729630936525936882/ref_video/
 
-# Run video analysis with gemini-cli
+# Run video analysis with gemini-cli (OPTIONAL)
 gemini "$(cat ../tabcut_data.json)" "Analyze all MP4 videos in current directory. [See full prompt in skill file]" > ../video_analysis.md
-
-# Run image analysis (if product_images/ exists)
-cd ../product_images/
-gemini "Analyze all images for product intelligence. [See full prompt in skill file]" > image_analysis.md
 ```
 
-**Output:**
+**Output (if manual video analysis performed):**
 ```
 product_list/{product_id}/
-├── video_analysis.md       ← Created by user
-└── product_images/
-    └── image_analysis.md   ← Created by user
+└── video_analysis.md       ← Created by user (OPTIONAL)
 ```
 
-**Success Criteria:**
+**Success Criteria (if running this step):**
 - `video_analysis.md` contains market insights for all reference videos
-- `image_analysis.md` contains product packaging analysis (if images available)
+
+**🚨 IMAGE ANALYSIS NO LONGER RUNS HERE:**
+- Image analysis has moved to Step 3 for better batch execution
+- Uses async Gemini CLI MCP (token-efficient, parallel processing)
+- Automatically runs if `product_images/` folder exists
 
 ### n8n Integration Option
 
@@ -134,9 +143,15 @@ gemini "$(cat ../tabcut_data.json)" "[Full prompt from tiktok_ad_analysis.md]" >
 
 ---
 
-## Step 3: Script Generation
+## Step 3: Script Generation (INCLUDES Image Analysis + Campaign Summary + Quality Gate)
 
-**Skill:** `.skills/tiktok_script_generator.md`
+**Skill:** `.skills/tiktok_script_generator.md` (v1.4.1)
+
+**⚠️ CRITICAL:** This step now includes ALL mandatory tasks:
+1. **Image analysis** (async Gemini CLI MCP - runs automatically if images exist)
+2. **Script generation** (3 distinct scripts with proven hook patterns)
+3. **Campaign Summary** (comprehensive performance overview)
+4. **Final Quality Gate** (mandatory verification before completion)
 
 ### n8n Node Configuration
 
@@ -147,7 +162,7 @@ gemini "$(cat ../tabcut_data.json)" "[Full prompt from tiktok_ad_analysis.md]" >
 **Command:**
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688 && \
-claude "Generate 3 TikTok scripts for product {{$json.product_id}} using the tiktok-script-generator skill. Category: {{$json.category}}"
+claude "Generate 3 TikTok scripts for product {{$json.product_id}} using the tiktok-script-generator skill. Category: {{$json.category}}. CRITICAL: Follow ALL 11 steps including mandatory image analysis (if images exist), Campaign Summary creation, and Final Quality Gate verification."
 ```
 
 **Option B: HTTP Request to Claude API**
@@ -189,20 +204,27 @@ claude "Generate 3 TikTok scripts for product {{$json.product_id}} using the tik
 
 **Output:**
 ```
+product_list/{product_id}/
+└── image_analysis.md           ← MANDATORY if product_images/ exists
+
 shorts_scripts/{product_id}/
-├── {Product}_{Angle1}.md
-├── {Product}_{Angle2}.md
-├── {Product}_{Angle3}.md
-└── Campaign_Summary.md
+├── {Product}_{Angle1}.md       ← MANDATORY
+├── {Product}_{Angle2}.md       ← MANDATORY
+├── {Product}_{Angle3}.md       ← MANDATORY
+└── Campaign_Summary.md         ← MANDATORY
 ```
 
-**Success Criteria:**
-- 3 unique script files created
-- Campaign_Summary.md created
-- All scripts have YAML frontmatter
-- Scripts are 30-40 seconds duration
-- Bilingual (DE + ZH)
-- Compliance verified
+**Success Criteria (ALL must pass Final Quality Gate):**
+- ✅ Image analysis created (if `product_images/` folder has images)
+- ✅ Exactly 3 unique script files created
+- ✅ Campaign_Summary.md created (15-25KB typical size)
+- ✅ All scripts have valid YAML frontmatter
+- ✅ All scripts have exactly 5 tags
+- ✅ Scripts are 30-40 seconds duration
+- ✅ Bilingual (DE + ZH) sections present
+- ✅ ElevenLabs v3 grammar markers present
+- ✅ Compliance verified (category-specific rules)
+- ✅ Final Quality Gate passed (Step 11 verification)
 
 ---
 
@@ -330,23 +352,37 @@ shorts_scripts/{product_id}/
 product_list/{product_id}/
 ├── tabcut_data.json              # Step 1 output
 ├── tabcut_data.md                # Step 1 output (for review)
-├── video_analysis.md             # Step 2 output (manual)
-├── product_images/
+├── video_analysis.md             # Step 2 output (OPTIONAL - manual)
+├── image_analysis.md             # Step 3 output (MANDATORY if images exist)
+├── product_images/               # Step 1 output (scraped from source)
 │   ├── product_image_1.webp
-│   ├── ...
-│   └── image_analysis.md         # Step 2 output (manual)
-└── ref_video/
-    ├── video_1_{creator}.mp4     # Step 1 output (optional)
+│   ├── product_image_2.webp
+│   └── ...
+└── ref_video/                    # Step 1 output (if download_videos=true)
+    ├── video_1_{creator}.mp4
     ├── video_2_{creator}.mp4
     ├── ...
     └── video_5_{creator}.mp4
 
 shorts_scripts/{product_id}/
-├── {Product}_{Angle1}.md         # Step 3 output
-├── {Product}_{Angle2}.md         # Step 3 output
-├── {Product}_{Angle3}.md         # Step 3 output
-└── Campaign_Summary.md           # Step 3 output
+├── {Product}_{Angle1}.md         # Step 3 output (MANDATORY)
+├── {Product}_{Angle2}.md         # Step 3 output (MANDATORY)
+├── {Product}_{Angle3}.md         # Step 3 output (MANDATORY)
+└── Campaign_Summary.md           # Step 3 output (MANDATORY)
 ```
+
+**🚨 CRITICAL FILE REQUIREMENTS:**
+
+**MANDATORY Files (must exist):**
+- `product_list/{product_id}/tabcut_data.md` OR `fastmoss_data.json`
+- `product_list/{product_id}/image_analysis.md` (if product_images/ has images)
+- `shorts_scripts/{product_id}/{Product}_{Angle1}.md`
+- `shorts_scripts/{product_id}/{Product}_{Angle2}.md`
+- `shorts_scripts/{product_id}/{Product}_{Angle3}.md`
+- `shorts_scripts/{product_id}/Campaign_Summary.md`
+
+**OPTIONAL Files (enhance quality if present):**
+- `product_list/{product_id}/video_analysis.md` (manual video insights)
 
 ---
 
@@ -476,28 +512,55 @@ python run_scraper.py --product-id {PRODUCT_ID} --source fastmoss --download-vid
 
 ## Quality Gates
 
-### After Step 1
-- [ ] `tabcut_data.json` created
+### After Step 1 (Product Scraping)
+- [ ] `tabcut_data.json` OR `fastmoss_data.json` created
 - [ ] `tabcut_data.md` created and reviewed
-- [ ] Product data looks accurate
-- [ ] Videos downloaded (if requested)
-- [ ] Ready to proceed to Step 2
+- [ ] Product data looks accurate (not "Unknown Product")
+- [ ] Product images scraped to `product_images/` (if available on source)
+- [ ] Videos downloaded to `ref_video/` (if requested)
+- [ ] Ready to proceed to Step 2 OR Step 3
 
-### After Step 2
-- [ ] `video_analysis.md` created
-- [ ] All reference videos analyzed
-- [ ] Market insights section included
-- [ ] `image_analysis.md` created (if images available)
+### After Step 2 (OPTIONAL - Manual Video Analysis)
+- [ ] `video_analysis.md` created (if user chose to run this step)
+- [ ] All reference videos analyzed with market insights
 - [ ] Ready to proceed to Step 3
 
-### After Step 3
-- [ ] 3 unique scripts created
-- [ ] Campaign_Summary.md created
-- [ ] All scripts have frontmatter
-- [ ] Duration targets met (30-40s)
-- [ ] Bilingual (DE + ZH)
-- [ ] Compliance verified
+**⚠️ Note:** Step 2 is OPTIONAL. Can proceed directly to Step 3 if skipping manual video analysis.
+
+### After Step 3 (Script Generation - INCLUDES Image Analysis + Quality Gate)
+
+**🚨 CRITICAL:** Step 3 now includes internal quality gates. Do NOT mark complete until ALL verified:
+
+#### Image Analysis (if applicable)
+- [ ] Checked if `product_images/` folder exists
+- [ ] IF images exist: `image_analysis.md` created via async Gemini CLI MCP
+- [ ] IF no images: Correctly skipped image analysis
+
+#### Script Generation
+- [ ] Exactly 3 unique script files created
+- [ ] All scripts have valid YAML frontmatter
+- [ ] All scripts have exactly 5 tags
+- [ ] Tags included in caption field with hashtags
+- [ ] All scripts have both DE and ZH sections
+- [ ] All scripts have ElevenLabs v3 marker
+- [ ] Duration targets met (30-40s / 65-115 words)
+- [ ] Compliance verified (category-specific rules followed)
+
+#### Campaign Summary
+- [ ] `Campaign_Summary.md` created (NOT optional)
+- [ ] File size reasonable (15-25KB typical)
+- [ ] All 14 required sections present
+- [ ] Performance data from tabcut_data.md included
+- [ ] All 3 scripts documented with effectiveness ratings
+
+#### Final Quality Gate (Step 11)
+- [ ] Ran Final Verification Command (bash script from skill)
+- [ ] All file count checks passed (4 files minimum)
+- [ ] All quality checks passed
+- [ ] PASS/FAIL criteria met
 - [ ] Ready for production
+
+**🛑 If ANY check fails:** Do NOT proceed. Fix issues immediately.
 
 ---
 
@@ -610,6 +673,17 @@ Add notification nodes after each step:
 ---
 
 ## Version History
+
+**v2.1.0** (2025-12-31) - **WORKFLOW CLARITY UPDATE**
+- **CRITICAL CHANGE:** Image analysis moved from Step 2 to Step 3 (automatic via async Gemini CLI MCP)
+- **Step 2 is now OPTIONAL:** Manual video analysis only (no longer includes image analysis)
+- **Step 3 enhanced:** Now includes image analysis + script generation + Campaign Summary + Final Quality Gate
+- **Updated workflow diagram:** Shows Step 3 includes all mandatory tasks
+- **Enhanced Quality Gates section:** Detailed checklist for Step 3 internal verification
+- **File structure clarified:** Marked MANDATORY vs OPTIONAL files
+- **Success criteria updated:** All Step 3 deliverables clearly listed
+- **Why this matters:** Eliminates confusion about where image analysis happens; prevents missing image analysis and Campaign Summary in batch execution
+- **Target issue:** Batch workflows were missing image analysis and Campaign Summary because Step 2 was being skipped
 
 **v2.0.0** (2025-12-30)
 - **NEW:** Automatic Tabcut→FastMoss fallback on failures

@@ -1,0 +1,96 @@
+{
+  "product_id": "1729642086521084131",
+  "scraped_at": "2025-12-31T01:52:36.720577",
+  "product_info": {
+    "product_name": "Atmungsaktives Warmes Plüsch-Haustierhaus, Innen- und Außenbereich Hundebett mit Schaumstofffüllung, Ganzjahres-Klein- und Mittelhundehütte für Hunde & Katzen",
+    "shop_owner": "PearlDent",
+    "total_sales": 242,
+    "total_sales_revenue": "€ 2754.27($ 3206.37)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 17,
+    "sales_revenue": "$ 142.89",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 16,
+    "带货视频达人数": 13,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#videoviral #for #viralvideos #viral #foruyou 发现时间：2025.12.20 11:01更新时间：2025.12.22 17:10时长：00:00:55跳转至 TikTok",
+      "creator_username": "ptzwrs",
+      "creator_followers": "1.31万",
+      "publish_date": "2025-12-19 23:44",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "254",
+      "video_url": "https://www.tiktok.com/@ptzwrs/video/7585703615185145110?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_ptzwrs.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADDie chillen da nur noch drin #cat #haustier #katzenhaus #catlover #tiktokshop 发现时间：2025.12.28 03:08更新时间：2025.12.30 14:47时长：00:00:19跳转至 TikTok",
+      "creator_username": "pascalgraff2202",
+      "creator_followers": "1.22万",
+      "publish_date": "2025-12-27 20:25",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "471",
+      "video_url": "https://www.tiktok.com/@pascalgraff2202/video/7588621056785829123?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_pascalgraff2202.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#haustierhaus 发现时间：2025.12.05 13:15更新时间：2025.12.07 10:42时长：00:01:03跳转至 TikTok",
+      "creator_username": "lij@vitalij1978_",
+      "creator_followers": "3.32万",
+      "publish_date": "2025-12-05 13:05",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "431",
+      "video_url": "https://www.tiktok.com/@vitalij1978_/video/7580343890633379094?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_lij@vitalij1978_.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#CapCut 发现时间：2025.12.18 11:59更新时间：2025.12.25 19:20时长：00:01:11跳转至 TikTok",
+      "creator_username": "crazy.clips.2025",
+      "creator_followers": "1551",
+      "publish_date": "2025-12-12 19:16",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "775",
+      "video_url": "https://www.tiktok.com/@crazy.clips.2025/video/7583036992368266518?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_crazy.clips.2025.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#Weihnachtsmarkt in #Frankfurt 发现时间：2025.12.08 07:42更新时间：2025.12.26 01:55时长：00:01:21跳转至 TikTok",
+      "creator_username": "luzmarinalagrande",
+      "creator_followers": "1738",
+      "publish_date": "2025-12-07 20:09",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "59",
+      "video_url": "https://www.tiktok.com/@luzmarinalagrande/video/7581195087116242208?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_luzmarinalagrande.mp4"
+    }
+  ]
+}

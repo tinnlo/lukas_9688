@@ -1,0 +1,96 @@
+{
+  "product_id": "1729625207544715402",
+  "scraped_at": "2025-12-31T01:35:53.193943",
+  "product_info": {
+    "product_name": "Cat Scratching Toy for Indoor Play, Protects Furniture, Natural Jute Cat Scratch Board, Pet Training Accessory, Ideal for Kittens",
+    "shop_owner": "Egolp",
+    "total_sales": 200,
+    "total_sales_revenue": "€ 1872.00($ 2179.28)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 22,
+    "sales_revenue": "$ 239.72",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 26,
+    "带货视频达人数": 20,
+    "带货视频销量": 4,
+    "带货视频销售额": "$ 43.59",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADJetzt kaufen❤️❤️❤️ #tiktokshop #tiktokmakemebuyit #fyp #CatScratchingToy 发现时间：2025.12.18 13:05更新时间：2025.12.18 13:05时长：00:00:14跳转至 TikTok",
+      "creator_username": "loveme00250",
+      "creator_followers": "3064",
+      "publish_date": "2025-12-15 13:08",
+      "estimated_sales": 3,
+      "estimated_revenue": "€ 28.08($ 32.69)",
+      "total_views": "2076",
+      "video_url": "https://www.tiktok.com/@loveme00250/video/7584055471972093206?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_loveme00250.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#Katzenreinigungssystem#TikTokMadeMeBuyIt #BlackFriday #tiktokshopblackfriday 发现时间：2025.12.16 01:47更新时间：2025.12.18 04:47时长：00:00:14跳转至 TikTok",
+      "creator_username": "chammomilad3",
+      "creator_followers": "2167",
+      "publish_date": "2025-12-15 15:34",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 9.36($ 10.90)",
+      "total_views": "2440",
+      "video_url": "https://www.tiktok.com/@chammomilad3/video/7584093014990195991?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_chammomilad3.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADJetzt kaufen❤️❤️❤️ #tiktokshop #tiktokmakemebuyit #fyp #KatzeKratzbrett 发现时间：2025.12.29 06:17更新时间：2025.12.29 06:17时长：00:00:12跳转至 TikTok",
+      "creator_username": "zng6a50yw854",
+      "creator_followers": "1919",
+      "publish_date": "2025-12-27 12:17",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "469",
+      "video_url": "https://www.tiktok.com/@zng6a50yw854/video/7588495059516017953?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_zng6a50yw854.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADKeine Sorge mehr, dass die Möbel zerkratzt werden! Kratzspielzeug für Katzen zum Indoor-Spiel, Schutz von Möbeln, Natürliches Jute-Kratzbrett, Trainingszubehör für Haustiere, Ideal für Kätzchen#cat #fyp #catlover #spotlightfinds #tiktokshopsale发现时间：2025.12.28 09:02更新时间：2025.12.29 03:24时长：00:00:15跳转至 TikTok",
+      "creator_username": "hannah_6685",
+      "creator_followers": "3.53万",
+      "publish_date": "2025-12-27 08:30",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "828",
+      "video_url": "https://www.tiktok.com/@hannah_6685/video/7588436662657502497?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_hannah_6685.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADJetzt kaufen #CatScratchingToy #tiktokshop #tiktokmakemebuyit #fyp发现时间：2025.12.28 07:00更新时间：2025.12.29 00:36时长：00:00:10跳转至 TikTok",
+      "creator_username": "hgfcvbp",
+      "creator_followers": "3341",
+      "publish_date": "2025-12-27 09:09",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "735",
+      "video_url": "https://www.tiktok.com/@hgfcvbp/video/7588446837930069270?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_hgfcvbp.mp4"
+    }
+  ]
+}

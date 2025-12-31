@@ -8,11 +8,15 @@ This is an Obsidian vault for creating TikTok short-form video scripts (German-l
 
 ## Core Workflow Rule
 
-**Read-Only vs Editable:**
-- `product_list/` — **READ-ONLY** source materials (product reference videos, transcripts, images)
-- `shorts_scripts/` — **WRITE HERE** generated/edited video scripts (Markdown notes)
+**Directory Structure:**
+- `product_list/{product_id}/` — Product source materials (data, images, analysis)
+  - Source data files are **READ-ONLY**
+  - `scripts/` subfolder — **WRITE HERE** generated/edited video scripts for each product
 
-Never edit anything inside `product_list/`. Always create new scripts in `shorts_scripts/`.
+**Workflow:**
+1. Source materials in `product_list/{product_id}/` (tabcut_data.json, image_analysis.md, etc.)
+2. Generated scripts go into `product_list/{product_id}/scripts/`
+3. Never edit source data files directly
 
 ## Automation: TikTok Shop Product Scraper
 
@@ -51,9 +55,14 @@ python run_scraper.py --batch-file products.csv --resume
 product_list/
 └── {product_id}/               # e.g., "1729630936525936882"
     ├── tabcut_data.json        # All scraped metadata
-    └── ref_video/              # Top 5 downloaded reference videos
-        ├── video_1_{creator}.mp4
-        └── ...
+    ├── image_analysis.md       # Product image analysis (if available)
+    ├── ref_video/              # Top 5 downloaded reference videos
+    │   ├── video_1_{creator}.mp4
+    │   └── ...
+    └── scripts/                # Generated scripts for this product
+        ├── Script1_Angle1.md
+        ├── Script2_Angle2.md
+        └── Campaign_Summary.md
 ```
 
 See `scripts/README.md` for complete documentation.
@@ -61,7 +70,7 @@ See `scripts/README.md` for complete documentation.
 ## Script File Structure
 
 ### Naming Convention
-Files in `shorts_scripts/`: `Product_Model_KeyAngle.md`
+Files in `product_list/{product_id}/scripts/`: `Product_Model_KeyAngle.md`
 - Use underscores, keep concise and descriptive
 - Example: `HTC_NE20_AI_Uebersetzer_Earbuds.md`
 
@@ -154,7 +163,8 @@ Then use delivery cues in **square brackets**, one cue per line:
 
 ## Pre-Save Review Checklist
 
-- [ ] Script saved under `shorts_scripts/` (nothing in `product_list/` changed)
+- [ ] Script saved under `product_list/{product_id}/scripts/`
+- [ ] Source data files in `product_list/` unchanged (read-only)
 - [ ] Frontmatter exists and parses correctly (valid date + duration formats)
 - [ ] VO fits 30–50s read time with clear CTA
 - [ ] Tags ≤ 5 and meaningful for discovery/commerce
