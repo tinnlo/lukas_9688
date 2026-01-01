@@ -1,0 +1,111 @@
+{
+  "product_id": "1729480085814221423",
+  "scraped_at": "2025-12-31T16:26:10.902532",
+  "product_info": {
+    "product_name": "Men's Ethnic Pattern Embroidery Denim Jacket, Loose Casual Long Sleeve Button Front Outerwear for Spring & Fall, Fashion Men's Clothes for Daily Wear",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 0,
+    "total_sales_revenue": "€1.12",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 0,
+    "sales_revenue": "€0",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": null,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by fyp",
+      "creator_username": "fyp",
+      "creator_followers": null,
+      "publish_date": "2025-09-02",
+      "estimated_sales": 0,
+      "estimated_revenue": "€0",
+      "total_views": 500,
+      "likes": 2,
+      "comments": 0,
+      "engagement_rate": "0.8%",
+      "video_url": "https://www.tiktok.com/@sinoo_o/video/7545351375371226390?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "Video by fyp",
+      "creator_username": "fyp",
+      "creator_followers": null,
+      "publish_date": "2025-09-02",
+      "estimated_sales": 0,
+      "estimated_revenue": "€0",
+      "total_views": 213,
+      "likes": 2,
+      "comments": 0,
+      "engagement_rate": "0.9%",
+      "video_url": "https://www.tiktok.com/@kwowgrkrwkqplt/video/7545354256639954198?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "Video by fyp",
+      "creator_username": "fyp",
+      "creator_followers": null,
+      "publish_date": "2025-09-12",
+      "estimated_sales": 0,
+      "estimated_revenue": "€0",
+      "total_views": 481,
+      "likes": 4,
+      "comments": 0,
+      "engagement_rate": "0.8%",
+      "video_url": "https://www.tiktok.com/@zdhapkbyze4/video/7549082668395269398?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "Video by fyp",
+      "creator_username": "fyp",
+      "creator_followers": null,
+      "publish_date": "2025-09-29",
+      "estimated_sales": 0,
+      "estimated_revenue": "€0",
+      "total_views": 16,
+      "likes": 1693,
+      "comments": 70,
+      "engagement_rate": "1.2%",
+      "video_url": "https://www.tiktok.com/@tarekalbasha.music/video/7555207460978445590?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 5,
+      "title": "Video by tiktokshop",
+      "creator_username": "tiktokshop",
+      "creator_followers": null,
+      "publish_date": "2025-10-19",
+      "estimated_sales": 0,
+      "estimated_revenue": "€0",
+      "total_views": 6,
+      "likes": 114,
+      "comments": 10,
+      "engagement_rate": "0.2%",
+      "video_url": "https://www.tiktok.com/@majd_alzaeem/video/7562629754206063894?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

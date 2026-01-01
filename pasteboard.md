@@ -1,5 +1,8 @@
 
-
+```
+Go ahead.  Please consider the recent autonomous scripts but it should be gated by ai agent and make sysnthesis report afterward. Also define which tasks should be executed by which agents, such as image analysis and video asnalysis by gemini aynsc mcp, but scripts be handled by claude code.
+Also try to separate script generator with the image analysis, for separation of concern, and simplify the duplicate content in compaign summary from image analysis, video analysis, sysnthesis reports, we can just simply quote them.
+```
 
 # System Prompt Template: Veo 3 UGC Selfie Video Generation (8 Seconds)
 

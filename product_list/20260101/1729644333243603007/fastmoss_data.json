@@ -1,0 +1,47 @@
+{
+  "product_id": "1729644333243603007",
+  "scraped_at": "2025-12-31T16:25:03.857311",
+  "product_info": {
+    "product_name": "Coffee Cup Design Neon Sign, USB Powered 3D Coffee Cup Neon Light, Decorative Neon Sign for Home Coffee Shop Bar Office",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 0,
+    "total_sales_revenue": "€75.6",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 0,
+    "sales_revenue": "€2",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": null,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by Verleihe",
+      "creator_username": "Verleihe",
+      "creator_followers": null,
+      "publish_date": "2025-12-09",
+      "estimated_sales": 4,
+      "estimated_revenue": "€62.4",
+      "total_views": 1,
+      "likes": 29,
+      "comments": 0,
+      "engagement_rate": "0.2%",
+      "video_url": "https://www.tiktok.com/@sparalarm12/video/7581780145606855958?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

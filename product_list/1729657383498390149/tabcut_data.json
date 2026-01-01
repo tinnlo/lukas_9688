@@ -1,0 +1,96 @@
+{
+  "product_id": "1729657383498390149",
+  "scraped_at": "2026-01-01T09:45:37.888836",
+  "product_info": {
+    "product_name": "Men's Business Fashion Watch & Perfume Set, Including Watch & Perfume & Bracelet, Trendy All-match & Exquisite Watch Set for Birthday Gift",
+    "shop_owner": "XBang",
+    "total_sales": 1013,
+    "total_sales_revenue": "€ 16.87万($ 19.64万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 57,
+    "sales_revenue": "$ 579.29",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "37.50%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 41,
+    "带货视频达人数": 33,
+    "带货视频销量": 36,
+    "带货视频销售额": "$ 365.87",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD🤭发现时间：2025.12.22 07:51更新时间：2025.12.23 07:40时长：00:00:08跳转至 TikTok",
+      "creator_username": "marinus.jung",
+      "creator_followers": "2.05万",
+      "publish_date": "2025-12-11 11:20",
+      "estimated_sales": 23,
+      "estimated_revenue": "€ 200.79($ 233.75)",
+      "total_views": "16.48万",
+      "video_url": "https://www.tiktok.com/@marinus.jung/video/7582543185176530198?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_marinus.jung.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADUnd die Qualität ist 1A ! Kann ich empfehlen! #set #fashion #parfüm #businessman #tiktokshop 发现时间：2025.12.26 16:58更新时间：2025.12.31 07:48时长：00:00:14跳转至 TikTok",
+      "creator_username": "pascalgraff2202",
+      "creator_followers": "1.22万",
+      "publish_date": "2025-12-25 06:50",
+      "estimated_sales": 5,
+      "estimated_revenue": "€ 43.65($ 50.81)",
+      "total_views": "1.81万",
+      "video_url": "https://www.tiktok.com/@pascalgraff2202/video/7587668832269896982?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_pascalgraff2202.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADOhne Stress Luxus schenken #Geschenkidee #geschenk #luxus #uhr #parfum 发现时间：2025.12.25 06:54更新时间：2025.12.26 03:58时长：00:00:15跳转至 TikTok",
+      "creator_username": "hannah_6685",
+      "creator_followers": "3.53万",
+      "publish_date": "2025-12-24 21:11",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 17.46($ 20.33)",
+      "total_views": "938",
+      "video_url": "https://www.tiktok.com/@hannah_6685/video/7587476085730823456?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_hannah_6685.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADOhne Stress Luxus schenken #Geschenkidee #geschenk #luxus #uhr #parfum 发现时间：2025.12.26 03:58更新时间：2025.12.27 04:02时长：00:00:16跳转至 TikTok",
+      "creator_username": "hannah_6685",
+      "creator_followers": "3.53万",
+      "publish_date": "2025-12-25 11:48",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 17.46($ 20.33)",
+      "total_views": "774",
+      "video_url": "https://www.tiktok.com/@hannah_6685/video/7587745604034448672?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_hannah_6685.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#de #100k #afghanistan🖤❤️💚 #afghanistan🇦🇫 #afghan 发现时间：2025.12.15 04:36更新时间：2025.12.16 13:25时长：00:01:07跳转至 TikTok",
+      "creator_username": "ai_afg",
+      "creator_followers": "3.01万",
+      "publish_date": "2025-12-14 14:07",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 17.46($ 20.33)",
+      "total_views": "1052",
+      "video_url": "https://www.tiktok.com/@ai_afg/video/7583699648653593878?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_ai_afg.mp4"
+    }
+  ]
+}

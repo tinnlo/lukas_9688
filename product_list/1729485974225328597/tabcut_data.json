@@ -1,0 +1,96 @@
+{
+  "product_id": "1729485974225328597",
+  "scraped_at": "2026-01-01T09:44:47.660477",
+  "product_info": {
+    "product_name": "Women's Solid Long Sleeve Crop Top & Drawstring Waist Straight Leg Pants Loungewear Set, Casual Comfy Round Neck Top & Trousers PJ Set, Ladies Sleepwear for Spring & Fall",
+    "shop_owner": "WAKE CLOTHING",
+    "total_sales": 887,
+    "total_sales_revenue": "€ 1.00万($ 1.16万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 481,
+    "sales_revenue": "$ 6114.69",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "16.67%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 13,
+    "带货视频达人数": 12,
+    "带货视频销量": 175,
+    "带货视频销售额": "$ 2224.68",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD无标题发现时间：2025.12.22 21:49更新时间：2025.12.31 15:09时长：00:00:10跳转至 TikTok",
+      "creator_username": "xkat21",
+      "creator_followers": "5.7万",
+      "publish_date": "2025-12-21 02:16",
+      "estimated_sales": 172,
+      "estimated_revenue": "€ 1878.24($ 2186.54)",
+      "total_views": "81.9万",
+      "video_url": "https://www.tiktok.com/@xkat21/video/7586113910395145494?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_xkat21.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD\"Ganz einfach die beste Auswahl für den Alltag! 💖 #EverydayFashion #CasualChic #Loungewear #Comfy #Style\"发现时间：2025.12.30 08:15更新时间：2025.12.31 06:59时长：00:00:11跳转至 TikTok",
+      "creator_username": "especiallymefind",
+      "creator_followers": "1742",
+      "publish_date": "2025-12-29 10:26",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 21.84($ 25.42)",
+      "total_views": "785",
+      "video_url": "https://www.tiktok.com/@especiallymefind/video/7589208861177810209?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_especiallymefind.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD🤍 ad发现时间：2025.12.18 15:46更新时间：2025.12.31 06:41时长：00:00:13跳转至 TikTok",
+      "creator_username": "servinxxx",
+      "creator_followers": "2.28万",
+      "publish_date": "2025-12-17 22:43",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 10.92($ 12.71)",
+      "total_views": "8653",
+      "video_url": "https://www.tiktok.com/@servinxxx/video/7584945817350393121?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_servinxxx.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#valeryfink #патпищик #viral #fyp #fu 发现时间：2025.12.22 04:05更新时间：2025.12.22 04:05时长：00:00:42跳转至 TikTok",
+      "creator_username": "valery.fink",
+      "creator_followers": "3.07万",
+      "publish_date": "2025-12-21 18:50",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "430",
+      "video_url": "https://www.tiktok.com/@valery.fink/video/7586370147288501526?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_valery.fink.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADIch esse momentan so unglaublich viel 😭🤣 aber ich liebe dieses Outfit unnormal!! Es  ist so bequem! 😍😍😍#viral #outfit #fY #zugenommen #mode 发现时间：2025.12.21 09:48更新时间：2025.12.22 01:25时长：00:01:00跳转至 TikTok",
+      "creator_username": "lauramylon",
+      "creator_followers": "10.13万",
+      "publish_date": "2025-12-20 20:51",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "679",
+      "video_url": "https://www.tiktok.com/@lauramylon/video/7586030216292748566?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_lauramylon.mp4"
+    }
+  ]
+}

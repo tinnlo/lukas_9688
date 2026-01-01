@@ -1,0 +1,79 @@
+{
+  "product_id": "1729482648327591942",
+  "scraped_at": "2025-12-31T16:24:18.854849",
+  "product_info": {
+    "product_name": "Abdominal Wheel Roller with Elbow Support, Automatic Rebound Abdominal Wheel Rollers with Four-wheel Design, Workout Equipment for Home Gym, Valentine's Day Gift",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 14,
+    "total_sales_revenue": "€1.00",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 14,
+    "sales_revenue": "€337",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": null,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by Jetzt",
+      "creator_username": "Jetzt",
+      "creator_followers": null,
+      "publish_date": "2025-12-14",
+      "estimated_sales": 18,
+      "estimated_revenue": "€415.78",
+      "total_views": 3782,
+      "likes": 13,
+      "comments": 0,
+      "engagement_rate": "0.4%",
+      "video_url": "https://www.tiktok.com/@leonscherzi/video/7583624502307769622?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "Video by lego",
+      "creator_username": "lego",
+      "creator_followers": null,
+      "publish_date": "2025-12-16",
+      "estimated_sales": 7,
+      "estimated_revenue": "€134.47",
+      "total_views": 4204,
+      "likes": 261,
+      "comments": 0,
+      "engagement_rate": "6.2%",
+      "video_url": "https://www.tiktok.com/@arayshi88/video/7584479043836333334?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "Video by Abdominal",
+      "creator_username": "Abdominal",
+      "creator_followers": null,
+      "publish_date": "2025-12-28",
+      "estimated_sales": 1,
+      "estimated_revenue": "€31.3",
+      "total_views": 396,
+      "likes": 17,
+      "comments": 2,
+      "engagement_rate": "10.6%",
+      "video_url": "https://www.tiktok.com/@ringophotos/video/7588913473342524694?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

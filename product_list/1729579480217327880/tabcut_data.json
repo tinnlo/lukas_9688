@@ -1,0 +1,96 @@
+{
+  "product_id": "1729579480217327880",
+  "scraped_at": "2026-01-01T13:19:51.281712",
+  "product_info": {
+    "product_name": "Large Capacity Foldable Storage Bags for Clothes and Quilts - Durable, Dustproof, and Aesthetic Organizer Solution, Perfect for Home or Dorm Use, Moving, and Seasonal Storage, Moving Bag|Decorative Storage|Durable Organizer, Clothes Organizer Storage, Und",
+    "shop_owner": "Premium Living",
+    "total_sales": 131,
+    "total_sales_revenue": "€ 754.69($ 878.57)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 0,
+    "sales_revenue": "$ 0.00",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 8,
+    "带货视频达人数": 6,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#strangerthings5 #christmas2025 #fnaf #nikolaus 发现时间：2025.12.17 13:24更新时间：2025.12.18 10:25时长：00:00:14跳转至 TikTok",
+      "creator_username": "lorelei_yin0",
+      "creator_followers": "2.69万",
+      "publish_date": "2025-12-17 07:06",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "288",
+      "video_url": "https://www.tiktok.com/@lorelei_yin0/video/7584704383628201219?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_lorelei_yin0.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD无标题发现时间：2025.12.20 08:59更新时间：2025.12.25 00:50时长：00:01:19跳转至 TikTok",
+      "creator_username": "caviar_blaque",
+      "creator_followers": "1.36万",
+      "publish_date": "2025-12-19 22:54",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "436",
+      "video_url": "https://www.tiktok.com/@caviar_blaque/video/7585690806787362070?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_caviar_blaque.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#tiktokshop #ferien #rückblick2025 #strangerthings5 发现时间：2025.12.31 12:09更新时间：2025.12.31 12:09时长：00:00:16跳转至 TikTok",
+      "creator_username": "oswald_yf",
+      "creator_followers": "3.06万",
+      "publish_date": "2025-12-30 07:04",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "571",
+      "video_url": "https://www.tiktok.com/@oswald_yf/video/7589527642391563542?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_oswald_yf.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD无标题发现时间：2025.12.05 03:37更新时间：2025.12.11 07:45时长：00:00:41跳转至 TikTok",
+      "creator_username": "food.world398",
+      "creator_followers": "2503",
+      "publish_date": "2025-12-04 16:04",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "6238",
+      "video_url": "https://www.tiktok.com/@food.world398/video/7580018770337434902?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_food.world398.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD🧳Large XXL#home #tiktokshop #aufbewahrung #alltag #rückblick2025 发现时间：2025.12.28 05:57更新时间：2025.12.29 03:25时长：00:00:14跳转至 TikTok",
+      "creator_username": "oswald_yf",
+      "creator_followers": "3.06万",
+      "publish_date": "2025-12-27 20:58",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "4986",
+      "video_url": "https://www.tiktok.com/@oswald_yf/video/7588629679658061078?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_oswald_yf.mp4"
+    }
+  ]
+}

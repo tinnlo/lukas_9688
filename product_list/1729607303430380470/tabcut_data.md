@@ -1,110 +1,130 @@
-# TikTok Product Data: 1729607303430380470
+# 11-In-1 Multifunctional European Standard Power Socket, 5 Ac Outlets, Motion Sensor Night Light, Independent Switches, Portable Design
 
-**Scraped:** 2025-12-30T15:02:40.219870
+**Product ID:** `1729607303430380470`  
+
+**Scraped:** 2026-01-01 09:41  
+
+**Shop:** POWEON  
+
+**Rating:** N/A  
+
+**Category:** N/A  
+
 
 ---
 
-## Product Information
+## Sales Data | 销售数据
 
-- **Product Name:** 11-In-1 Multifunctional European Standard Power Socket, 5 Ac Outlets, Motion Sensor Night Light, Independent Switches, Portable Design
-- **Shop Owner:** POWEON
-- **Total Sales:** 2,848 units
-- **Total Revenue:** € 3.42万($ 3.98万)
-- **Product Rating:** None
-- **Category:** None
-
----
-
-## Sales Data (7day)
-
-- **Sales Count:** 174 units
-- **Sales Revenue:** $ 2406.42
-- **Related Videos:** None
-- **Conversion Rate:** 0.00%
-- **Click-Through Rate:** None
+| Metric | Metric (中文) | Value |
+|:-------|:-------------|------|
+| Total Sales | 总销量 | 2893 |
+| Total Revenue | 总收入 | € 3.47万($ 4.04万) |
+| 7-Day Sales | 7天销量 | 188 |
+| 7-Day Revenue | 7天收入 | $ 2600.04 |
+| Conversion Rate | 转化率 | 0.00% |
+| Click-Through Rate | 点击率 | N/A |
 
 ---
 
-## Video Analysis Metrics
+## Video Analysis | 视频分析
 
-- **Total Videos:** 147
-- **Total Creators:** 76
-- **Video Sales:** 50
-- **Video Revenue:** $ 691.50
-- **Ad Revenue:** $ 0.00
-- **Ad Conversion %:** 0.00%
-
----
-
-## Top 5 Performing Videos
-
-
-### Video #1: @lescousinsasmr
-
-- **Title:** ADEsta es la MEJOR regleta para enchufar a la LUZ! tiene MUCHÍSIMAS opciones y es BARATA, la recomiendo! 😊✨️ #regleta #luz #cargador #usb #descubrelasofertas 发现时间：2025.12.16 03:40更新时间：2025.12.23 23:18时长：00:01:51跳转至 TikTok
-- **Creator:** @lescousinsasmr (160万 followers)
-- **Published:** 2025-12-15 20:55
-- **Sales:** 20 units
-- **Revenue:** € 237.60($ 276.60)
-- **Views:** 88.27万
-- **Video URL:** https://www.tiktok.com/@lescousinsasmr/video/7584162959367343362?is_copy_url=1&is_from_webapp=v1
-- **Video ID:** None
-- **Local Path:** `None`
+| Metric | Metric (中文) | Value |
+|:-------|:-------------|------|
+| Affiliate Videos | 带货视频数 | 147 |
+| Affiliate Creators | 带货视频达人数 | 80 |
+| Video Sales | 带货视频销量 | 36 |
+| Video Revenue | 带货视频销售额 | $ 497.88 |
+| Ad Revenue | 广告成交金额 | $ 0.00 |
+| Ad Revenue Ratio | 广告成交占比 | 0.00% |
 
 ---
 
-### Video #2: @kasap_suatt
+## Top Videos | 热门视频
 
-- **Title:** ADBLACK FRIDAY 11-in-1 Multifunktionaleuropäische Standard-Steckdose, 5 Wechselstromanschlüsse, Bewegungssensor-Nachtlicht, Unabhängige Schalter, Tragbares Design #TikTokShopBlackFriday #tiktokshop #deutchland🇩🇪 发现时间：2025.12.01 18:08更新时间：2025.12.01 18:08时长：00:00:53跳转至 TikTok
-- **Creator:** @kasap_suatt (170万 followers)
-- **Published:** 2025-11-30 11:37
-- **Sales:** 11 units
-- **Revenue:** € 130.68($ 152.13)
-- **Views:** 5.79万
-- **Video URL:** https://www.tiktok.com/@kasap_suatt/video/7578465577296186627?is_copy_url=1&is_from_webapp=v1
-- **Video ID:** None
-- **Local Path:** `None`
+### Video 1: Esta es la MEJOR regleta para enchufar a la LUZ! tiene MUCHÍSIMAS opciones y es BARATA, la recomiendo! 😊✨️ #regleta #luz #cargador #usb #descubrelasofertas
 
----
+**Tags:** #regleta #luz #cargador #usb #descubrelasofertas  
 
-### Video #3: @chotas.ttshop
+| Field | Field (中文) | Value |
+|:-----|:-----------|------|
+| Creator | 创作者 | @lescousinsasmr |
+| Followers | 粉丝数 | 160万 |
+| Publish Date | 发布时间 | 2025-12-15 20:55 |
+| Estimated Sales | 预估销量 | 20 |
+| Estimated Revenue | 预估收入 | € 237.60($ 276.60) |
+| Total Views | 总观看量 | 88.27万 |
+| Local File | 本地文件 | `ref_video/video_1_lescousinsasmr.mp4` |
 
-- **Title:** ADCon esta multiestación, podrás meter todos los enchufes que quieras… #ofertasimperdibles #ofertasparati #casa #enchufe #dondeenchufoelsecador 发现时间：2025.12.05 00:44更新时间：2025.12.25 23:48时长：00:01:20跳转至 TikTok
-- **Creator:** @chotas.ttshop (2.48万 followers)
-- **Published:** 2025-12-04 17:47
-- **Sales:** 11 units
-- **Revenue:** € 130.68($ 152.13)
-- **Views:** 39.89万
-- **Video URL:** https://www.tiktok.com/@chotas.ttshop/video/7580045258659171607?is_copy_url=1&is_from_webapp=v1
-- **Video ID:** None
-- **Local Path:** `None`
+[View on TikTok](https://www.tiktok.com/@lescousinsasmr/video/7584162959367343362?is_copy_url=1&is_from_webapp=v1)
 
----
 
-### Video #4: @serega_in_germany
 
-- **Title:** AD无标题发现时间：2025.12.22 08:54更新时间：2025.12.24 07:26时长：00:00:20跳转至 TikTok
-- **Creator:** @serega_in_germany (3.14万 followers)
-- **Published:** 2025-12-21 11:45
-- **Sales:** 1 units
-- **Revenue:** € 11.88($ 13.83)
-- **Views:** 899
-- **Video URL:** https://www.tiktok.com/@serega_in_germany/video/7586260415382834454?is_copy_url=1&is_from_webapp=v1
-- **Video ID:** None
-- **Local Path:** `None`
+### Video 2: Con esta multiestación, podrás meter todos los enchufes que quieras… #ofertasimperdibles #ofertasparati #casa #enchufe #dondeenchufoelsecador
 
----
+**Tags:** #ofertasimperdibles #ofertasparati #casa #enchufe #dondeenchufoelsecador  
 
-### Video #5: @quality_everyday
+| Field | Field (中文) | Value |
+|:-----|:-----------|------|
+| Creator | 创作者 | @chotas.ttshop |
+| Followers | 粉丝数 | 2.5万 |
+| Publish Date | 发布时间 | 2025-12-04 17:47 |
+| Estimated Sales | 预估销量 | 11 |
+| Estimated Revenue | 预估收入 | € 130.68($ 152.13) |
+| Total Views | 总观看量 | 39.89万 |
+| Local File | 本地文件 | `ref_video/video_2_chotas.ttshop.mp4` |
 
-- **Title:** AD11-IN-1 STECKDOSENLEISTE MIT SENSOR-NACHTLICHT – BLACK FRIDAY DEAL ⚡#blackfridayde#steckdose#TikTokShopBlackFriday#UnboxYourDeals#TikTokMadeMeBuyIt发现时间：2025.12.07 03:17更新时间：2025.12.08 03:38时长：00:00:31跳转至 TikTok
-- **Creator:** @quality_everyday (1667 followers)
-- **Published:** 2025-12-02 10:57
-- **Sales:** 1 units
-- **Revenue:** € 11.88($ 13.83)
-- **Views:** 7930
-- **Video URL:** https://www.tiktok.com/@quality_everyday/video/7579197550301826326?is_copy_url=1&is_from_webapp=v1
-- **Video ID:** None
-- **Local Path:** `None`
+[View on TikTok](https://www.tiktok.com/@chotas.ttshop/video/7580045258659171607?is_copy_url=1&is_from_webapp=v1)
 
----
+
+
+### Video 3: NiewiederSteckdosenmangel🔌11-in-1LösungfürdeinZuhause#11in1Steckdose#SmartHome#Steckdosenlösung#Ordnung#GadgetMustHave
+
+**Tags:** #11in1Steckdose #SmartHome #Steckdosenlösung #Ordnung #GadgetMustHave发现时间  
+
+| Field | Field (中文) | Value |
+|:-----|:-----------|------|
+| Creator | 创作者 | @nathanloveit |
+| Followers | 粉丝数 | 1675 |
+| Publish Date | 发布时间 | 2025-12-17 11:53 |
+| Estimated Sales | 预估销量 | 1 |
+| Estimated Revenue | 预估收入 | € 11.88($ 13.83) |
+| Total Views | 总观看量 | 766 |
+| Local File | 本地文件 | `ref_video/video_3_nathanloveit.mp4` |
+
+[View on TikTok](https://www.tiktok.com/@nathanloveit/video/7584778264023993622?is_copy_url=1&is_from_webapp=v1)
+
+
+
+### Video 4: 无标题
+
+| Field | Field (中文) | Value |
+|:-----|:-----------|------|
+| Creator | 创作者 | @serega_in_germany |
+| Followers | 粉丝数 | 3.15万 |
+| Publish Date | 发布时间 | 2025-12-21 11:45 |
+| Estimated Sales | 预估销量 | 1 |
+| Estimated Revenue | 预估收入 | € 11.88($ 13.83) |
+| Total Views | 总观看量 | 899 |
+| Local File | 本地文件 | `ref_video/video_4_serega_in_germany.mp4` |
+
+[View on TikTok](https://www.tiktok.com/@serega_in_germany/video/7586260415382834454?is_copy_url=1&is_from_webapp=v1)
+
+
+
+### Video 5: 11-IN-1 STECKDOSENLEISTE MIT SENSOR-NACHTLICHT – BLACK FRIDAY DEAL ⚡#blackfridayde#steckdose#TikTokShopBlackFriday#UnboxYourDeals#TikTokMadeMeBuyIt
+
+**Tags:** #blackfridayde #steckdose #TikTokShopBlackFriday #UnboxYourDeals #TikTokMadeMeBuyIt发现时间  
+
+| Field | Field (中文) | Value |
+|:-----|:-----------|------|
+| Creator | 创作者 | @quality_everyday |
+| Followers | 粉丝数 | 1671 |
+| Publish Date | 发布时间 | 2025-12-02 10:57 |
+| Estimated Sales | 预估销量 | 1 |
+| Estimated Revenue | 预估收入 | € 11.88($ 13.83) |
+| Total Views | 总观看量 | 7930 |
+| Local File | 本地文件 | `ref_video/video_5_quality_everyday.mp4` |
+
+[View on TikTok](https://www.tiktok.com/@quality_everyday/video/7579197550301826326?is_copy_url=1&is_from_webapp=v1)
+
+

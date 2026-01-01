@@ -1,0 +1,95 @@
+{
+  "product_id": "1729483322301848170",
+  "scraped_at": "2025-12-31T16:28:00.388069",
+  "product_info": {
+    "product_name": "Pet Water Fountain, USB Rechargeable Automatic Circulation Cat Water Dispenser, Indoor Cat Water Fountain, Pet Drinking Supplies",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 4,
+    "total_sales_revenue": "€5661.49",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 4,
+    "sales_revenue": "€30",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": null,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by Ads",
+      "creator_username": "Ads",
+      "creator_followers": null,
+      "publish_date": "2025-12-11",
+      "estimated_sales": 33,
+      "estimated_revenue": "€230.59",
+      "total_views": 13,
+      "likes": 602,
+      "comments": 17,
+      "engagement_rate": "0.6%",
+      "video_url": "https://www.tiktok.com/@oswald_yf/video/7582549516725898518?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "Video by Hahaha",
+      "creator_username": "Hahaha",
+      "creator_followers": null,
+      "publish_date": "2025-11-23",
+      "estimated_sales": 6,
+      "estimated_revenue": "€42.86",
+      "total_views": 7088,
+      "likes": 116,
+      "comments": 2,
+      "engagement_rate": "2%",
+      "video_url": "https://www.tiktok.com/@ttshopcheck/video/7575608663532948758?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "Video by chat",
+      "creator_username": "chat",
+      "creator_followers": null,
+      "publish_date": "2025-09-19",
+      "estimated_sales": 6,
+      "estimated_revenue": "€52.96",
+      "total_views": 15,
+      "likes": 1237,
+      "comments": 153,
+      "engagement_rate": "1.4%",
+      "video_url": "https://www.tiktok.com/@sora_unity/video/7551811882106047766?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "Video by Die",
+      "creator_username": "Die",
+      "creator_followers": null,
+      "publish_date": "2025-11-13",
+      "estimated_sales": 4,
+      "estimated_revenue": "€28.92",
+      "total_views": 7135,
+      "likes": 56,
+      "comments": 3,
+      "engagement_rate": "0.9%",
+      "video_url": "https://www.tiktok.com/@pascalgraff2202/video/7572176017595403542?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}
