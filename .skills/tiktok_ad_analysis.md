@@ -1,20 +1,84 @@
 ---
 name: tiktok-ad-analysis
-description: Video market analysis with hybrid transcription (TikTok captions → Whisper fallback). Analyzes TikTok reference videos to extract hooks, strategies, and insights for script generation.
-version: 4.0.0
+description: AUTOMATIC video market analysis with hybrid transcription (TikTok captions → Whisper fallback). Auto-triggers when videos exist in ref_video/. Analyzes TikTok reference videos to extract hooks, strategies, and insights for script generation.
+version: 4.2.0
 author: Automated script (Python-based)
-execution: Python script with FFmpeg + yt-dlp + Whisper + Gemini
+execution: Python script with FFmpeg + yt-dlp + Whisper + Gemini (AUTO-RUNS conditionally)
+orchestration: tiktok_product_analysis.md (for batch parallelism)
 ---
 
-# TikTok Ad Analysis Skill (Automated)
+# TikTok Ad Analysis Skill (AUTOMATIC)
 
 **WHAT THIS DOES:** Automatically analyzes TikTok reference videos with bilingual output (English + Chinese)
+**WHEN IT RUNS:** AUTO-TRIGGERS after Step 1 (scraping) if `ref_video/` folder contains .mp4 files
 **HOW IT WORKS:** Python script extracts frames + transcribes audio → Gemini generates analysis
-**OUTPUT:** `video_N_analysis.md` for each video + `video_synthesis.md` summary
+**OUTPUT:** `video_N_analysis.md` for each video + `video_synthesis.md` summary (MANDATORY)
 
 ---
 
-## Quick Start
+## Integration with Skill Pipeline
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  SKILL PIPELINE                                             │
+│                                                             │
+│  1. tiktok_product_scraper.md → Downloads products + videos │
+│                     │                                       │
+│                     ▼                                       │
+│  2. THIS SKILL (tiktok_ad_analysis.md)                      │
+│     - Python scripts for frame extraction + transcription   │
+│     - Gemini for per-video analysis                         │
+│     - Output: video_N_analysis.md files                     │
+│                     │                                       │
+│                     ▼                                       │
+│  3. tiktok_product_analysis.md (ORCHESTRATION)              │
+│     - Parallel batch processing across products             │
+│     - Image analysis (Gemini async MCP)                     │
+│     - Video synthesis generation (Gemini async MCP)         │
+│     - Output: video_synthesis.md, image_analysis.md         │
+│                     │                                       │
+│                     ▼                                       │
+│  4. tiktok_script_generator.md                              │
+│     - Script writing (Claude Code)                          │
+│     - Campaign Summary (references analysis files)          │
+│     - Output: Script_1/2/3.md, Campaign_Summary.md          │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Agent Assignment:**
+| Task | Agent | Tool |
+|:-----|:------|:-----|
+| Video frame extraction | Python (FFmpeg) | Local script |
+| Audio transcription | Python (Whisper) | Local script |
+| Per-video analysis | Gemini | gemini_cli_execute |
+| Batch orchestration | Gemini | gemini_cli_execute_async |
+| Video synthesis | Gemini | gemini_cli_execute_async |
+| Script writing | Claude Code | Direct writing |
+
+---
+
+## Auto-Trigger Logic
+
+**⚠️ CRITICAL:** This skill AUTO-RUNS conditionally. No manual invocation needed in normal workflow.
+
+**Trigger Conditions:**
+```bash
+# After Step 1 (product scraping) completes:
+if [ -d "product_list/{product_id}/ref_video" ]; then
+  video_count=$(find "product_list/{product_id}/ref_video" -type f -name "*.mp4" 2>/dev/null | wc -l)
+  if [ $video_count -gt 0 ]; then
+    echo "✅ AUTO-TRIGGER: Found $video_count videos"
+    # Automatically run video analysis
+    python analyze_video_batch.py {product_id}
+  else
+    echo "⏭️ SKIP: No videos found"
+  fi
+else
+  echo "⏭️ SKIP: No ref_video folder"
+fi
+```
+
+**Manual Execution (if needed):**
 
 ```bash
 # Navigate to scripts directory
@@ -30,7 +94,9 @@ python analyze_video_batch.py 1729479916562717270
 python analyze_single_video.py 1729479916562717270 2
 ```
 
-**Output:** `product_list/{product_id}/ref_video/video_N_analysis.md` (bilingual)
+**Output:**
+- `product_list/{product_id}/ref_video/video_N_analysis.md` (bilingual, per video)
+- `product_list/{product_id}/ref_video/video_synthesis.md` (MANDATORY market summary)
 
 ---
 
@@ -383,6 +449,15 @@ After video analysis is complete:
 ---
 
 ## Version History
+
+**v4.1.0** (2026-01-01) - **AUTOMATIC EXECUTION**
+- **MAJOR CHANGE:** Skill now AUTO-RUNS conditionally (no longer manual/optional)
+- **Auto-trigger logic:** Checks if `ref_video/` has .mp4 files after Step 1 → runs automatically
+- **Updated description:** Changed from "Automated" to "AUTOMATIC" (clarifies it's conditional, not manual)
+- **Added trigger conditions:** Documented when skill runs vs when it skips
+- **Output requirement:** `video_synthesis.md` is now MANDATORY (not optional)
+- **Why this matters:** Ensures video analysis never gets skipped when videos exist
+- **Integration:** Part of automated workflow, not a standalone manual tool
 
 **v4.0.0** (2025-12-29)
 - **NEW:** Hybrid transcription workflow (TikTok captions → Whisper fallback)

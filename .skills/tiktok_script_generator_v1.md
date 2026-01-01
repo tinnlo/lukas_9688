@@ -1,7 +1,7 @@
 ---
 name: tiktok-script-generator
-description: Generates 3 TikTok short video scripts (30-40s) for product campaigns with comprehensive campaign summary. Uses proven "Golden 3 Seconds" hook patterns for German market. Analyzes reference videos, product data, and images (comprehensive bilingual format with inline translations via async Gemini CLI MCP + OUTPUT VALIDATION). Creates bilingual (DE/ZH) scripts with category-specific compliance. Optimized for parallel batch workflows. INCLUDES MANDATORY STEPS (validated bilingual image analysis with Visual Hooks section, Campaign Summary, Final Quality Gate) with explicit batch execution checklist and quality verification to prevent incomplete deliverables.
-version: 1.5.0
+description: Generates 3 TikTok short video scripts (30-40s) for product campaigns with comprehensive bilingual campaign summary. Uses proven "Golden 3 Seconds" hook patterns for German market. Analyzes reference videos, product data, and images (comprehensive bilingual v1.5 format with inline translations via async Gemini CLI MCP + OUTPUT VALIDATION). INTEGRATES VISUAL HOOKS from image analysis directly into scripts with filming instructions. Creates bilingual (DE/ZH) scripts AND bilingual Campaign Summary with inline Chinese translations. Optimized for parallel batch workflows. INCLUDES MANDATORY STEPS (validated bilingual image analysis with Visual Hooks section, hook extraction & integration, bilingual Campaign Summary with image insights, Final Quality Gate with bilingual verification) with explicit batch execution checklist and quality verification to prevent incomplete deliverables.
+version: 1.7.0
 author: Claude
 ---
 
@@ -12,36 +12,38 @@ Generates 3 production-ready TikTok ad scripts based on reference video analysis
 ## Overview
 
 **Input:** Product ID + Category
-**Output:** 3 distinct angle scripts (30-40s each) + Campaign Summary in `shorts_scripts/{product_id}/`
+**Output:** 3 distinct angle scripts (30-40s each) + Bilingual Campaign Summary in `product_list/{product_id}/scripts/`
 
 **Key Features:**
 - **Golden 3 Seconds Hook Patterns:** 8 proven opening strategies for German TikTok
 - Multi-source analysis (videos, data, images, official description)
 - Category-specific compliance verification
-- Bilingual output (German + Chinese translation)
+- Bilingual output (German + Chinese translation) for scripts AND Campaign Summary
 - ElevenLabs v3 (alpha) grammar formatting
 - Visual hook integration from packaging
 - 3 different marketing angles per product
-- Comprehensive campaign summary with performance predictions
+- Comprehensive bilingual campaign summary with inline Chinese translations and performance predictions
 
 ---
 
 ## Workflow Steps
 
-**Complete workflow (11 steps):**
+**Complete workflow (13 steps):**
 
+0. **Pre-Check Verification** ⚠️ **MANDATORY - BLOCKS IF FAILS** - Verify all required source files exist before starting
 1. **Gather Source Materials** - Collect all reference files
-2. **Product Image Analysis** ⚠️ **MANDATORY IF IMAGES EXIST** - Analyze using async Gemini CLI MCP
+2. **Product Image Analysis** ⚠️ **MANDATORY IF IMAGES EXIST** - Analyze using async Gemini CLI MCP (v1.5 format)
 3. **Official Description Verification** - Cross-reference product claims
 4. **Determine Product Category** - Identify compliance rules
 5. **Script Angle Planning** - Map 3 distinct marketing angles
 5.5. **Golden 3 Seconds Hook Selection** - Choose proven hook patterns
-6. **Script Writing** - Create 3 scripts with templates
+5.7. **Extract Visual Hooks from Image Analysis** - Map Section 10 hooks to script angles (if Step 2 completed)
+6. **Script Writing** - Create 3 scripts with visual hook integration
 7. **ElevenLabs v3 Grammar** - Format voiceover cues
 8. **Bilingual Translation** - Add Chinese (ZH) versions
 9. **Compliance Verification** - Check category-specific rules
-10. **Campaign Summary Creation** ⚠️ **MANDATORY** - Comprehensive campaign overview
-11. **Final Quality Gate** ⚠️ **MANDATORY** - Verification checkpoint
+10. **Campaign Summary Creation** ⚠️ **MANDATORY** - Comprehensive campaign overview with image insights
+11. **Final Quality Gate** ⚠️ **MANDATORY** - Verification checkpoint including image analysis check
 
 **🚨 CRITICAL MANDATORY STEPS (Cannot be skipped):**
 - **Step 2:** Image analysis (if `product_images/` folder exists with images)
@@ -73,21 +75,23 @@ done
 
 ### Per-Product Execution Order
 
-**For EACH product, execute ALL 11 steps in sequence:**
+**For EACH product, execute ALL 12 steps in sequence:**
 
 1. ✅ Gather source materials
 2. ⚠️ **STOP:** Check if `product_images/` exists and has files
-   - **IF YES:** Run async Gemini CLI MCP image analysis → Save to `image_analysis.md`
+   - **IF YES:** Run async Gemini CLI MCP image analysis (v1.5 format) → Save to `image_analysis.md`
    - **IF NO:** Skip to Step 3
 3. ✅ Verify official description
 4. ✅ Determine category
 5. ✅ Plan 3 angles
 5.5. ✅ Select Golden 3 Seconds hooks
-6. ✅ Write 3 scripts
+5.7. ✅ **IF Step 2 completed:** Extract Visual Hooks from Section 10, map to 3 script angles
+   - **IF Step 2 skipped:** Skip to Step 6
+6. ✅ Write 3 scripts (integrate visual hooks if available)
 7. ✅ Format ElevenLabs v3 grammar
 8. ✅ Add bilingual (DE/ZH)
 9. ✅ Verify compliance
-10. ⚠️ **MANDATORY:** Create Campaign Summary
+10. ⚠️ **MANDATORY:** Create Campaign Summary (include image insights if Step 2 completed)
 11. ⚠️ **MANDATORY:** Run Final Quality Gate verification
 
 **🛑 DO NOT proceed to next product until Step 11 PASSES for current product.**
@@ -120,13 +124,13 @@ for product_id in {list}; do
   echo "=== Verifying $product_id ==="
 
   # Check scripts folder exists
-  if [ ! -d "shorts_scripts/$product_id" ]; then
-    echo "❌ MISSING: shorts_scripts/$product_id/"
+  if [ ! -d "product_list/$product_id/scripts" ]; then
+    echo "❌ MISSING: product_list/$product_id/scripts/"
     continue
   fi
 
   # Count files (must be 4: 3 scripts + Campaign Summary)
-  file_count=$(ls -1 shorts_scripts/$product_id/*.md 2>/dev/null | wc -l)
+  file_count=$(ls -1 product_list/$product_id/scripts/*.md 2>/dev/null | wc -l)
   if [ $file_count -lt 4 ]; then
     echo "❌ INCOMPLETE: Only $file_count files (expected 4)"
   else
@@ -134,7 +138,7 @@ for product_id in {list}; do
   fi
 
   # Check Campaign Summary exists
-  if [ ! -f "shorts_scripts/$product_id/Campaign_Summary.md" ]; then
+  if [ ! -f "product_list/$product_id/scripts/Campaign_Summary.md" ]; then
     echo "❌ MISSING: Campaign_Summary.md"
   fi
 
@@ -161,6 +165,166 @@ done
 === Verifying 1729480021523209013 ===
 ✅ COMPLETE: 4 files
 ```
+
+---
+
+### Step 0: Pre-Check Verification ⚠️ MANDATORY - BLOCKS IF FAILS
+
+**🛑 CRITICAL:** Before starting script generation, verify all required source files exist. This prevents wasted effort on incomplete data.
+
+**Purpose:** Ensure the campaign is built on complete foundation data (product info, images, videos).
+
+#### Pre-Check Command
+
+```bash
+# Run this verification BEFORE Step 1
+product_id="{product_id}"
+
+echo "=== PRE-CHECK VERIFICATION FOR PRODUCT: $product_id ==="
+echo ""
+
+# Check 1: Product data file (MANDATORY - at least one must exist)
+echo "1. Checking product data files..."
+has_tabcut=false
+has_fastmoss=false
+
+if [ -f "product_list/$product_id/tabcut_data.md" ]; then
+  echo "   ✅ tabcut_data.md exists"
+  has_tabcut=true
+elif [ -f "product_list/$product_id/fastmoss_data.json" ]; then
+  echo "   ✅ fastmoss_data.json exists"
+  has_fastmoss=true
+fi
+
+if [ "$has_tabcut" = false ] && [ "$has_fastmoss" = false ]; then
+  echo "   ❌ BLOCKER: No product data file found"
+  echo "   Required: tabcut_data.md OR fastmoss_data.json"
+  exit 1
+fi
+
+# Check 2: Image analysis (MANDATORY if images exist)
+echo ""
+echo "2. Checking image analysis..."
+if [ -d "product_list/$product_id/product_images" ]; then
+  img_count=$(find "product_list/$product_id/product_images" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) 2>/dev/null | wc -l)
+  if [ $img_count -gt 0 ]; then
+    echo "   Found $img_count product images"
+    if [ -f "product_list/$product_id/image_analysis.md" ]; then
+      line_count=$(wc -l < "product_list/$product_id/image_analysis.md")
+      echo "   ✅ image_analysis.md exists ($line_count lines)"
+      if [ $line_count -lt 250 ]; then
+        echo "   ⚠️  WARNING: Analysis seems incomplete ($line_count < 250 lines)"
+      fi
+    else
+      echo "   ❌ BLOCKER: image_analysis.md MISSING"
+      echo "   Required: Run Step 2 (Image Analysis) first"
+      exit 1
+    fi
+  else
+    echo "   ⏭️  No images found - image analysis not required"
+  fi
+else
+  echo "   ⏭️  No product_images folder - image analysis not required"
+fi
+
+# Check 3: Video analysis (MANDATORY if videos exist)
+echo ""
+echo "3. Checking video analysis..."
+if [ -d "product_list/$product_id/ref_video" ]; then
+  video_count=$(find "product_list/$product_id/ref_video" -type f -name "*.mp4" 2>/dev/null | wc -l)
+  if [ $video_count -gt 0 ]; then
+    echo "   Found $video_count reference videos"
+
+    # Check individual video analyses
+    analysis_count=$(find "product_list/$product_id/ref_video" -type f -name "video_*_analysis.md" 2>/dev/null | wc -l)
+    echo "   Found $analysis_count individual video analyses"
+
+    if [ $analysis_count -eq 0 ]; then
+      echo "   ❌ BLOCKER: No video_*_analysis.md files found"
+      echo "   Required: Run Step 2 (Video Analysis) first"
+      exit 1
+    fi
+
+    # Check video synthesis (market summary)
+    if [ -f "product_list/$product_id/ref_video/video_synthesis.md" ]; then
+      synth_lines=$(wc -l < "product_list/$product_id/ref_video/video_synthesis.md")
+      echo "   ✅ video_synthesis.md exists ($synth_lines lines)"
+      if [ $synth_lines -lt 200 ]; then
+        echo "   ⚠️  WARNING: Synthesis seems incomplete ($synth_lines < 200 lines)"
+      fi
+    else
+      echo "   ❌ BLOCKER: video_synthesis.md MISSING"
+      echo "   Required: Market summary is mandatory when videos exist"
+      exit 1
+    fi
+  else
+    echo "   ⏭️  No videos found - video analysis not required"
+  fi
+else
+  echo "   ⏭️  No ref_video folder - video analysis not required"
+fi
+
+# Summary
+echo ""
+echo "=== PRE-CHECK COMPLETE ==="
+echo "✅ All required source files verified"
+echo "Ready to proceed with script generation"
+```
+
+#### Pre-Check Criteria
+
+**✅ PASS Conditions:**
+- At least ONE of: `tabcut_data.md` OR `fastmoss_data.json` exists
+- IF `product_images/` has files → `image_analysis.md` exists (250+ lines)
+- IF `ref_video/` has .mp4 files → ALL of:
+  - `video_*_analysis.md` files exist (one per video)
+  - `video_synthesis.md` exists (200+ lines)
+
+**❌ BLOCKER Conditions (STOP - Do NOT proceed):**
+- No product data file (neither tabcut nor fastmoss)
+- Images exist BUT no `image_analysis.md`
+- Videos exist BUT no `video_*_analysis.md` files
+- Videos exist BUT no `video_synthesis.md`
+
+#### Failure Handling
+
+**If pre-check fails, DO NOT proceed. Instead:**
+
+1. **Missing product data:**
+   ```bash
+   # Re-run Step 1 (scraping)
+   cd scripts && source venv/bin/activate
+   python run_scraper.py --product-id {product_id}
+   ```
+
+2. **Missing image analysis (but images exist):**
+   ```bash
+   # Image analysis should auto-run in Step 1 of script generation
+   # But if missing, this indicates Step 1 was skipped
+   # Go back to Step 1 (Gather Source Materials) and run image analysis
+   ```
+
+3. **Missing video analysis (but videos exist):**
+   ```bash
+   # Re-run Step 2 (video analysis) - should have auto-triggered
+   cd scripts && source venv/bin/activate
+   python analyze_video_batch.py {product_id}
+   ```
+
+4. **Incomplete analysis files (line count too low):**
+   - Regenerate analysis using complete v1.5 template
+   - Verify output quality before proceeding
+
+#### Integration with Workflow
+
+**Before Step 1 "Gather Source Materials":**
+```
+[Step 0: Pre-Check] → PASS → [Step 1: Gather Source Materials] → ...
+                    ↓
+                   FAIL → [Fix missing files] → [Re-run Step 0]
+```
+
+**🚨 ENFORCEMENT:** If you encounter missing files during Step 1, STOP and run Pre-Check verification. Do NOT attempt to generate scripts with incomplete data.
 
 ---
 
@@ -717,304 +881,6 @@ DO NOT output shortened analysis. Follow the Cat Tree example structure exactly.
 
 ---
 
-**Warnhinweise/Anweisungen:** [Falls sichtbar]
-
-### 3. Visuelle Highlights & Badges
-- **Siegel/Zertifikate:** [Welche Qualitätssiegel sind sichtbar? z.B. "Laborgeprüft", "Made in Germany", etc.]
-- **Zahlen/Counts:** [z.B. "7-Fach Komplex", "60 Kapseln", "500ml", etc.]
-- **Hervorhebungen:** [Was wird visuell betont? Kreise, Pfeile, Boxen?]
-
-### 4. Marketing-Botschaften
-**Hauptversprechen:** [Was wird versprochen? Exakter Wortlaut]
-**Zielgruppe:** [Für wen ist das Produkt? Sichtbare Hinweise?]
-**Use Cases:** [Wofür wird es verwendet? Icons, Bilder, Text?]
-
-### 5. Produktdetails
-**Menge/Größe:** [Exakte Angaben: ml, g, Stückzahl, Tage-Vorrat]
-**Dosierung:** [Falls angegeben - wie viel, wie oft?]
-**Abmessungen:** [Größenangaben in cm/mm falls sichtbar]
-**Varianten:** [Verschiedene Farben/Größen/Versionen sichtbar?]
-
-### 6. Vertrauenssignale
-- **Zertifizierungen:** [CE, GS, TÜV, Bio, Vegan, etc. - exakte Bezeichnungen]
-- **Herkunft:** ["Made in...", "Hergestellt in...", Flaggen-Icons]
-- **Qualitätsversprechen:** ["Laborgeprüft", "Dermatologisch getestet", etc.]
-- **Marke/Hersteller:** [Name und Logo - Markenbekanntheit?]
-
----
-## PART 2: SYNTHESIZED SCRIPT ELEMENTS (DE)
-
-### Für Hook (Erste 3 Sekunden)
-**Visuelle Hooks (was sofort erkennbar ist):**
-- [Element 1 mit exaktem deutschen Begriff]
-- [Element 2 mit exaktem deutschen Begriff]
-- [Element 3 mit exaktem deutschen Begriff]
-
-**Mögliche Hook-Formulierungen basierend auf Verpackung:**
-- "[Formulierung 1 basierend auf größtem Claim]"
-- "[Formulierung 2 basierend auf Zahlen/Counts]"
-- "[Formulierung 3 basierend auf Zertifikaten]"
-
-### Für Produktvorstellung (Sekunden 3-15)
-**Kernmerkmale für Scripts (in Reihenfolge der Wichtigkeit):**
-1. [Hauptmerkmal - mit exaktem deutschen Begriff von Verpackung]
-2. [Zweites Merkmal - mit exaktem deutschen Begriff]
-3. [Drittes Merkmal - mit exaktem deutschen Begriff]
-
-**Spezifische Zahlen/Daten für Glaubwürdigkeit:**
-- [z.B. "60 Kapseln für 2 Monate"]
-- [z.B. "7-Fach Komplex mit..."]
-- [z.B. "500ml - reicht für..."]
-
-### Für Trust-Building (Sekunden 15-25)
-**Vertrauenselemente (von Verpackung):**
-- [Trust Signal 1 - exakter deutscher Wortlaut]
-- [Trust Signal 2 - exakter deutscher Wortlaut]
-- [Trust Signal 3 - exakter deutscher Wortlaut]
-
-### Für CTA (Letzten 5-10 Sekunden)
-**Erkennungsmerkmale für "Link unten":**
-- "[Was macht das Produkt visuell erkennbar? z.B. 'Mit den blauen Orchideen erkennst du es']"
-- "[Verpackungsdetail das einzigartig ist]"
-
----
-## PART 3: COMPLIANCE CHECK (DE)
-
-**Gesundheitsbezogene Angaben (falls Health/Supplement):**
-- [Welche Claims werden gemacht? Exakter Wortlaut]
-- [Sind diese Claims "sicher" (unterstützt/kann helfen) oder "problematisch" (heilt/garantiert)?]
-
-**Zu vermeidende Begriffe (falls auf Verpackung):**
-- [Liste problematischer medizinischer Claims, falls vorhanden]
-
-**Sichere Alternativen:**
-- [Wie können die Verpackungs-Claims compliance-konform umformuliert werden?]
-
----
-## PART 4: 中文翻译 (Product Intelligence in Chinese)
-
-### 1. 包装设计与美学
-**颜色：** [包装主色调]
-**材质：** [瓶/罐/盒/袋 - 材质和形状]
-**视觉风格：** [现代/传统/奢华/简约等]
-**突出设计元素：** [最显眼的是什么？]
-
-### 2. 德语包装文字（原文照抄）
-**产品名称：** "[包装上的准确名称]"
-**主要宣称：** "[最大/最突出的文字]"
-**功能描述：** "[产品如何被描述？]"
-**成分/组件：** [准确的德语术语列表]
-**警告/说明：** [如果可见]
-
-### 3. 视觉亮点与徽章
-- **认证/证书：** [可见的质量认证？如"实验室测试"、"德国制造"等]
-- **数字/计数：** [如"7重复合物"、"60粒胶囊"、"500毫升"等]
-- **强调内容：** [视觉强调了什么？圈、箭头、框？]
-
-### 4. 营销信息
-**主要承诺：** [承诺了什么？准确措辞]
-**目标受众：** [产品面向谁？可见线索？]
-**使用场景：** [用于什么？图标、图片、文字？]
-
-### 5. 产品详情
-**数量/尺寸：** [准确信息：毫升、克、件数、天数供应]
-**剂量：** [如有说明 - 多少、多久一次？]
-**尺寸：** [厘米/毫米的尺寸信息（如可见）]
-**变体：** [可见不同颜色/尺寸/版本？]
-
-### 6. 信任信号
-- **认证：** [CE、GS、TÜV、有机、纯素等 - 准确名称]
-- **产地：** ["Made in..."、"制造于..."、国旗图标]
-- **质量承诺：** ["实验室测试"、"皮肤科测试"等]
-- **品牌/制造商：** [名称和标志 - 品牌知名度？]
-
----
-## PART 5: 脚本要素综合（中文）
-
-### 钩子（前3秒）
-**视觉钩子（立即可识别）：**
-- [要素1及准确德语术语]
-- [要素2及准确德语术语]
-- [要素3及准确德语术语]
-
-**基于包装的可能钩子表述：**
-- "[基于最大宣称的表述1]"
-- "[基于数字/计数的表述2]"
-- "[基于证书的表述3]"
-
-### 产品介绍（3-15秒）
-**脚本核心特征（按重要性排序）：**
-1. [主要特征 - 包装上的准确德语术语]
-2. [第二特征 - 包装上的准确德语术语]
-3. [第三特征 - 包装上的准确德语术语]
-
-**增强可信度的具体数字/数据：**
-- [如"60粒胶囊可用2个月"]
-- [如"7重复合物含..."]
-- [如"500毫升 - 足够..."]
-
-### 信任建立（15-25秒）
-**信任要素（来自包装）：**
-- [信任信号1 - 准确德语措辞]
-- [信任信号2 - 准确德语措辞]
-- [信任信号3 - 准确德语措辞]
-
-### 行动号召（最后5-10秒）
-**"链接在下方"的识别特征：**
-- "[什么让产品在视觉上可识别？如'通过蓝色兰花你就能认出它']"
-- "[独特的包装细节]"
-
----
-## PART 6: COMPLIANCE 检查（中文）
-
-**健康相关声明（如果是健康/补充剂）：**
-- [做出了哪些声明？准确措辞]
-- [这些声明是"安全的"（支持/可以帮助）还是"有问题的"（治愈/保证）？]
-
-**应避免的术语（如果在包装上）：**
-- [有问题的医学声明列表（如有）]
-
-**安全替代方案：**
-- [如何将包装声明改写为合规表述？]
-
----
-
-**OUTPUT FORMAT:**
-Save this complete bilingual analysis as `image_analysis.md` in the product folder.
-Structure exactly as shown above with all 6 parts (3 German + 3 Chinese).
-Use markdown headers (##, ###) for proper formatting.
-```
-
----
-
-### What Makes Good Image Analysis
-
-**❌ BAD (Generic/Descriptive):**
-```
-Packaging Design: Blue and white bottle
-Label Text: Product name is visible
-Marketing Messages: Claims to help with health
-```
-
-**✅ GOOD (Specific/Synthesized):**
-```
-## Verpackungsdesign & Ästhetik
-Farben: Tiefblau (Pantone 2945C ähnlich) mit weißen/goldenen Akzenten
-Material: Transparente PET-Flasche mit hochwertiger Aluminium-Kappe
-Auffällige Designelemente: Blaue Orchideen-Grafik nimmt 40% der Vorderseite ein
-
-## Deutscher Text von der Verpackung (WORTGENAU)
-Produktname: "Brennnessel Komplex - Entwässerung & Ausscheidung"
-Hauptclaim: "Unterstützt natürliche Wasserbalance"
-Inhaltsstoffe: "7-Fach Komplex: Brennnesselblatt-Extrakt, Löwenzahnwurzel-Extrakt, Birkenblatt..."
-
-## Für Hook (Erste 3 Sekunden)
-Visuelle Hooks:
-- "7-Fach Komplex" Badge (rechteckig, gold, top-right)
-- Blaue Orchideen (sofort erkennbar, Markenzeichen)
-- "60 Kapseln = 2 Monate Vorrat" (prominent auf Vorderseite)
-
-Mögliche Hook-Formulierungen:
-- "Kennst du das? Morgens aufgedunsen... [zeigt 7-Fach Badge]"
-- "Das mit den blauen Orchideen - 60 Kapseln für 2 Monate"
-- "Laborgeprüft + Made in Germany + 7-Fach Komplex"
-```
-
----
-
-**Save Analysis:**
-ALWAYS save Gemini's bilingual analysis to:
-```
-product_list/{product_id}/image_analysis.md
-```
-
-This becomes a critical reference document for script writing.
-
----
-
-### Output Validation & Quality Check ⚠️ MANDATORY
-
-**After Gemini completes image analysis, you MUST verify output quality:**
-
-#### Minimum Requirements (PASS/FAIL)
-
-```bash
-# Verify image analysis meets requirements
-wc -l product_list/{product_id}/image_analysis.md
-# Expected: 150+ lines minimum (bilingual = more content)
-```
-
-**✅ PASS Criteria (All must be true):**
-- [ ] **File size:** 150+ lines (good examples: 250-400 lines)
-- [ ] **German sections exist:** Parts 1-3 with headers in German
-- [ ] **Chinese sections exist:** Parts 4-6 with headers in Chinese (## PART 4: 中文翻译)
-- [ ] **Synthesized elements present:** "Für Hook", "Für Produktvorstellung", etc.
-- [ ] **Exact German text:** Verbatim quotes from packaging (in quotes)
-- [ ] **Actionable hooks:** 3+ ready-to-use hook formulations
-
-**❌ FAIL Indicators (Requires retry):**
-- **Too short:** <100 lines = incomplete/generic analysis
-- **No Chinese:** Only German/English sections = not bilingual
-- **No synthesis:** Only describes what's visible, no "Für Hook" section
-- **No quotes:** No exact German text from packaging in quotes
-- **Generic language:** "Product looks nice", "Good quality" without specifics
-
-#### Verification Command
-
-```bash
-# Quick quality check
-echo "=== IMAGE ANALYSIS QUALITY CHECK ==="
-echo "Line count: $(wc -l < product_list/{product_id}/image_analysis.md)"
-echo ""
-echo "Required sections check:"
-grep -c "## PART 1:" product_list/{product_id}/image_analysis.md && echo "✓ Part 1 (DE Visual Intelligence)" || echo "✗ MISSING Part 1"
-grep -c "## PART 2:" product_list/{product_id}/image_analysis.md && echo "✓ Part 2 (DE Synthesized)" || echo "✗ MISSING Part 2"
-grep -c "## PART 3:" product_list/{product_id}/image_analysis.md && echo "✓ Part 3 (DE Compliance)" || echo "✗ MISSING Part 3"
-grep -c "## PART 4:" product_list/{product_id}/image_analysis.md && echo "✓ Part 4 (ZH Translation)" || echo "✗ MISSING Part 4"
-grep -c "## PART 5:" product_list/{product_id}/image_analysis.md && echo "✓ Part 5 (ZH Synthesized)" || echo "✗ MISSING Part 5"
-grep -c "## PART 6:" product_list/{product_id}/image_analysis.md && echo "✓ Part 6 (ZH Compliance)" || echo "✗ MISSING Part 6"
-```
-
-**Expected output (PASS):**
-```
-=== IMAGE ANALYSIS QUALITY CHECK ===
-Line count: 287
-
-Required sections check:
-✓ Part 1 (DE Visual Intelligence)
-✓ Part 2 (DE Synthesized)
-✓ Part 3 (DE Compliance)
-✓ Part 4 (ZH Translation)
-✓ Part 5 (ZH Synthesized)
-✓ Part 6 (ZH Compliance)
-```
-
-#### If Output FAILS Validation
-
-**🔄 RETRY REQUIRED - Run image analysis again with explicit instructions:**
-
-```javascript
-mcp__gemini-cli-mcp-async__gemini_cli_execute({
-  query: `CRITICAL: Previous analysis was incomplete. You MUST follow the COMPLETE template below.
-
-[Paste COMPLETE template from lines 301-485]
-
-MANDATORY OUTPUT REQUIREMENTS:
-1. ALL 6 PARTS must be present (3 German + 3 Chinese)
-2. Minimum 150 lines total
-3. Part 2 "Für Hook" section with 3+ ready-to-use formulations
-4. Part 5 "钩子" section with Chinese translations
-5. Exact German text in quotes (verbatim from packaging)
-6. No generic descriptions - specific, synthesized insights only
-
-DO NOT output incomplete analysis. If images are insufficient, state what's missing but still provide all 6 sections.`
-})
-```
-
-**🚨 CRITICAL:** Do NOT proceed to script writing with failed image analysis. Scripts will be low-quality without proper bilingual, synthesized input.
-
----
-
 ### Step 3: Official Description Verification
 
 **Read official TikTok Shop product description** (screenshot or saved file).
@@ -1317,13 +1183,119 @@ DO NOT output incomplete analysis. If images are insufficient, state what's miss
 
 ---
 
+### Step 5.7: Extract Visual Hooks from Image Analysis v1.5
+
+**🎯 CRITICAL:** If you completed Step 2 (Image Analysis), you now have ready-to-use visual hooks in Section 10 of `image_analysis.md`.
+
+**Purpose:** Map visual hooks from image analysis to your 3 script angles.
+
+#### How to Extract Visual Hooks
+
+**1. Read Section 10 from image analysis:**
+```bash
+# Extract Visual Hooks section
+sed -n '/## 10. Visual Hooks for TikTok Scripts/,/## Visual Hook Recommendations/p' product_list/{product_id}/image_analysis.md
+```
+
+**Expected output:** 5-6 detailed visual hooks, each with:
+- **How to film:** Specific camera/filming instruction
+- **Why it works:** Psychological appeal
+- **Script hook:** Ready-to-use German line
+- **如何拍摄:** Chinese translation
+
+**2. Map hooks to your 3 script angles:**
+
+| Script Angle | Primary Visual Hook | Script Hook Line (from analysis) |
+|:-------------|:-------------------|:--------------------------------|
+| Angle 1: [Problem-Solution] | Hook #X: "[Name]" | "[Exact German line from analysis]" |
+| Angle 2: [Lifestyle/Glow Up] | Hook #Y: "[Name]" | "[Exact German line from analysis]" |
+| Angle 3: [Educational/Value] | Hook #Z: "[Name]" | "[Exact German line from analysis]" |
+
+**3. Review "Visual Hook Recommendations by Script Angle" section:**
+
+The image analysis already suggests which visual hooks work best for each angle type. Use these recommendations.
+
+#### Decision Framework: Which Hook for Which Script?
+
+**Problem-Solution Scripts (Angle 1):**
+- Look for hooks showing "before/after" transformations
+- Example hook types: "The Transformation", "The Clutter to Clean", "The Messy to Organized"
+
+**Lifestyle/Glow Up Scripts (Angle 2):**
+- Look for hooks showing usage context or aesthetic appeal
+- Example hook types: "The Cozy Setup", "The Aesthetic Reveal", "The Daily Ritual"
+
+**Educational/Value Scripts (Angle 3):**
+- Look for hooks highlighting unique features or quality signals
+- Example hook types: "The Hidden Feature", "The Quality Proof", "The Size Comparison"
+
+#### Integration Checklist
+
+Before moving to Step 6 (Script Writing), verify:
+
+- [ ] Read Section 10 "Visual Hooks for TikTok Scripts" from image_analysis.md
+- [ ] Identified 3 visual hooks (one per script angle)
+- [ ] Copied exact German "Script hook" lines for each
+- [ ] Noted specific "How to film" instructions for production team
+- [ ] Reviewed "Visual Hook Recommendations by Script Angle" section
+
+**If you skipped Step 2 (no images):** Skip this step, proceed directly to Step 6.
+
+---
+
 ### Step 6: Script Writing
 
 **Create 3 scripts following this structure:**
 
+#### Using Visual Hooks from Image Analysis (v1.5)
+
+**🎯 NEW REQUIREMENT:** If image analysis was completed (Step 2), each script MUST integrate visual hooks from Section 10.
+
+**How to integrate:**
+
+1. **Opening Hook (0-3s):** Use the "Script hook" line from image_analysis.md directly
+   - Example from Cat Tree analysis: *"Deine Katze verdient eine Penthouse-Wohnung, kein einfaches Bett."*
+   - These lines are pre-tested for German market appeal
+
+2. **Product Introduction (3-8s):** Reference visual elements from analysis
+   - Use exact German terms from Section 4 "Text & Labels"
+   - Reference distinctive design elements from Section 1 "Product Design & Aesthetics"
+
+3. **Trust Signals (15-25s):** Use quality signals from Section 5
+   - Certifications mentioned in analysis (GS, CE, TÜV, Bio, etc.)
+   - Quality construction details identified
+
+4. **CTA (28-35s):** Reference visual recognition elements
+   - Color/design elements that make product recognizable
+   - Packaging features from Section 9
+
+**Example Integration (using Cat Tree analysis):**
+
+```markdown
+## Voiceover
+
+> with ElevenLabs v3 (alpha) grammar
+
+### DE (ElevenLabs Prompt | 35s)
+
+[bright] Deine Katze verdient eine Penthouse-Wohnung, kein einfaches Bett.  # ← From Section 10, Hook #1
+[curious] Das ist der XXL Katzenbaum. 210cm hoch.  # ← From Section 3, Size & Scale
+[matter-of-fact] Sisal-Kratzsäulen, Plüsch-Höhlen, und ganz oben—  # ← From Section 2, Features
+[soft] die Aussichtsplattform.  # ← From Section 10, "The Penthouse View" hook
+[reflective] Meine Katze liegt jetzt nur noch da oben.
+[confident] Made in Germany, stabil bis 15kg.  # ← From Section 5, Quality Signals
+[firm] Link ist unten.
+```
+
+**Benefits of this integration:**
+- ✅ **Pre-tested language:** Visual hook lines are based on product analysis
+- ✅ **Compliance-safe:** German text extracted from official packaging
+- ✅ **Market-tested:** Hooks designed for German TikTok psychology
+- ✅ **Production-ready:** "How to film" instructions guide video creation
+
 #### File Naming
 ```
-shorts_scripts/{product_id}/
+product_list/{product_id}/scripts/
 ├── {Product}_{Angle1}_Keyword.md
 ├── {Product}_{Angle2}_Keyword.md
 └── {Product}_{Angle3}_Keyword.md
@@ -1474,20 +1446,53 @@ Structure (30–40s):
 
 ---
 
-### Step 10: Create Campaign Summary
+### Step 10: Create Bilingual Campaign Summary
 
-**After all 3 scripts are complete, create a comprehensive campaign summary file.**
+**After all 3 scripts are complete, create a comprehensive bilingual campaign summary file.**
 
 **Purpose:**
 - Provides strategic overview of all 3 scripts as a unified campaign
 - Documents performance data and predictions
-- Serves as production brief for video team
+- Serves as production brief for video team (accessible to both German and Chinese-speaking team members)
 - Enables data-driven optimization decisions
 
 **File Location:**
 ```
-shorts_scripts/{product_id}/Campaign_Summary.md
+product_list/{product_id}/scripts/Campaign_Summary.md
 ```
+
+**⚠️ BILINGUAL FORMAT REQUIREMENT:**
+
+The Campaign Summary MUST be bilingual with inline Chinese translations throughout. Use the following format:
+
+**Headers:**
+```markdown
+## Section Title | 章节标题
+### Subsection Title | 子章节标题
+```
+
+**Content:**
+- Bullet points: `English content | 中文翻译`
+- Key terms: `**Term | 术语:** Description | 描述`
+- Paragraphs: English paragraph followed by Chinese paragraph
+
+**Example:**
+```markdown
+## 2. Campaign Strategy | 活动策略
+
+### Overall Strategic Approach | 整体战略方法
+- **Viral Wow Factor | 病毒式惊艳因素** - Lead with transformation | 以变形开场
+- **Gift-Giving Urgency | 送礼紧迫感** - Seasonal shopping | 季节性购物
+
+**Key Insight | 关键洞察:** "The transformation IS the product."
+
+与传统遥控玩具将变形作为次要功能不同，该产品的核心价值主张是瞬间变形。
+```
+
+**Reference Example:**
+See `product_list/1729655828988926782/scripts/Campaign_Summary.md` for complete bilingual format reference.
+
+---
 
 **Required Content Sections:**
 
@@ -1496,66 +1501,139 @@ shorts_scripts/{product_id}/Campaign_Summary.md
 ---
 product_id: "{product_id}"
 product_name: "{Full Product Name}"
+product_name_zh: "{产品全名}"
 campaign_date: YYYY-MM-DD
 scripts_count: 3
 total_duration: "~XXXs (Xm XXs)"
 target_audience: "{Primary demographic}"
+target_audience_zh: "{主要人群}"
 ---
 ```
 
-#### 2. Product Overview
-- Full product name and shop
-- Key features and USPs
-- Supply details (quantity, duration)
-- Quality certifications
-- Main ingredients/components list
+**Note:** Include both English and Chinese versions in frontmatter for key fields.
 
-#### 3. Campaign Strategy
-- Overall strategic approach
-- Psychological triggers used (Fear/Urgency, Validation, Education, etc.)
-- Key insight statement
+#### 2. Product Overview | 产品概述
+- Full product name and shop | 完整产品名称和店铺
+- Key features and USPs | 核心特性和独特卖点
+- Supply details (quantity, duration) | 供应详情（数量、时长）
+- Quality certifications | 质量认证
+- Main ingredients/components list | 主要成分/组件清单
 
-#### 4. Scripts Overview (All 3)
+**Format:** Use bilingual bullet points: `- **Feature | 特性:** Description | 描述`
+
+#### 3. Campaign Strategy | 活动策略
+- Overall strategic approach | 整体战略方法
+- Psychological triggers used (Fear/Urgency, Validation, Education, etc.) | 使用的心理触发器（恐惧/紧迫感、验证、教育等）
+- Key insight statement | 关键洞察陈述
+
+**Format:** Include both English and Chinese paragraphs for key insights.
+
+#### 4. Scripts Overview (All 3) | 脚本概览（全部3个）
 For each script:
-- **File name** and duration
-- **Effectiveness rating** (X/10) based on video analysis or prediction
-- **Hook** (exact opening line)
-- **Strategy** (what makes this angle work)
-- **Tags** (hashtag list)
-- **Best For** (specific audience segment)
-- **Why It Works** or **Based On** (reference to video analysis insights)
+- **File name | 文件名** and duration | 时长
+- **Effectiveness rating | 有效性评分** (X/10) based on video analysis or prediction
+- **Hook | 钩子** (exact opening line | 确切的开场白)
+- **Strategy | 策略** (what makes this angle work | 为何这个角度有效)
+- **Tags | 标签** (hashtag list | 标签列表)
+- **Best For | 最适合** (specific audience segment | 特定受众群体)
+- **Why It Works | 为何有效** or **Based On | 基于** (reference to video analysis insights | 参考视频分析洞察)
 
-#### 5. Audience Segmentation Table
+**Format:** Use bilingual headers and inline translations for each script summary.
+
+#### 5. Audience Segmentation Table | 受众细分表
 ```markdown
-| Audience Segment | Primary Script | Secondary Script |
-|:-----------------|:---------------|:-----------------|
-| {Segment 1} | Script X ({Angle}) | Script Y ({Angle}) |
-| {Segment 2} | Script Y ({Angle}) | Script X ({Angle}) |
+| Audience Segment | 受众群体 | Primary Script | 主要脚本 | Secondary Script | 次要脚本 | Targeting Strategy | 定位策略 |
+|:-----------------|:---------|:---------------|:---------|:-----------------|:---------|:-------------------|:---------|
+| {Segment 1} | {群体1} | Script X ({Angle}) | 脚本X（{角度}） | Script Y ({Angle}) | 脚本Y（{角度}） | {Strategy} | {策略} |
 ...
 ```
 
-#### 6. Key Selling Points Across Campaign
+**Format:** Full bilingual table with columns for both English and Chinese.
+
+#### 6. Key Selling Points Across Campaign | 整个活动的关键卖点
 Organize by trigger type:
-- **Rational Triggers (Left Brain):** Specs, certifications, value
-- **Emotional Triggers (Right Brain):** Feelings, relief, transformation
-- **Trust Signals:** Quality badges, origin, testing
+- **Rational Triggers (Left Brain) | 理性触发器（左脑）:** Specs, certifications, value | 规格、认证、价值
+- **Emotional Triggers (Right Brain) | 情感触发器（右脑）:** Feelings, relief, transformation | 情感、解脱、转变
+- **Trust Signals | 信任信号:** Quality badges, origin, testing | 质量徽章、来源、测试
 
-#### 7. Performance Data (Actual Market Results)
+**Format:** Use bilingual headers and inline translations for each trigger.
+
+#### 7. Performance Data (Actual Market Results) | 表现数据（实际市场结果）
 From `tabcut_data.md`:
-- Total Sales & Revenue
-- 7-Day Sales & Revenue
-- Conversion Rate
-- Video Performance metrics
-- Top Performing Video details (creator, hook, views, sales)
-- **Key Insight** statement interpreting the data
+- Total Sales & Revenue | 总销量和收入
+- 7-Day Sales & Revenue | 7天销量和收入
+- Conversion Rate | 转化率
+- Video Performance metrics | 视频表现指标
+- Top Performing Video details (creator, hook, views, sales) | 最佳表现视频详情（创作者、钩子、观看、销量）
+- **Key Insight | 关键洞察** statement interpreting the data | 解读数据的陈述
 
-#### 8. Performance Predictions
-- **Expected Best Performers** (rank all 3 scripts with reasoning)
-- **Optimization Strategy** (week-by-week scaling plan)
+**Format:** Include both English and Chinese for key metrics and insights.
+
+#### 8. Performance Predictions | 表现预测
+- **Expected Best Performers | 预期最佳表现者** (rank all 3 scripts with reasoning) | （对所有3个脚本排名并说明理由）
+- **Optimization Strategy | 优化策略** (week-by-week scaling plan) | （逐周扩展计划）
+
+**Format:** Use bilingual headers and inline translations for predictions and strategies.
 
 #### 9. Content Production Notes
 - **Visual Requirements** for each script (what to film)
 - **Voiceover Style** (tone, delivery, language notes)
+
+#### 9.5. Image Analysis Insights (v1.5) - **IF STEP 2 COMPLETED**
+
+**⚠️ CRITICAL:** If image analysis was performed (Step 2), this section is MANDATORY.
+
+**Purpose:** Document visual intelligence from product images for video production team.
+
+**Include:**
+
+**A. Visual Hooks Used in Scripts**
+List which visual hooks from image_analysis.md Section 10 were integrated into each script:
+
+```markdown
+**Script 1: [Filename]**
+- Primary Visual Hook: "[Hook Name]" (from Section 10, Hook #X)
+  - How to film: [Copy exact filming instruction from analysis]
+  - German line used: "[Exact line from script]"
+
+**Script 2: [Filename]**
+- Primary Visual Hook: "[Hook Name]" (from Section 10, Hook #Y)
+  - How to film: [Copy exact filming instruction from analysis]
+  - German line used: "[Exact line from script]"
+
+**Script 3: [Filename]**
+- Primary Visual Hook: "[Hook Name]" (from Section 10, Hook #Z)
+  - How to film: [Copy exact filming instruction from analysis]
+  - German line used: "[Exact line from script]"
+```
+
+**B. Key Visual Elements from Analysis**
+Summarize critical visual elements identified in image_analysis.md:
+
+- **Product Design (Section 1):** [Style, materials, aesthetic vibe]
+- **Distinctive Features (Section 2):** [Star features that must be shown]
+- **Size & Scale (Section 3):** [Key dimensions, capacity - if selling point]
+- **German Text Elements (Section 4):** [Exact terms from packaging to show on screen]
+- **Quality Signals (Section 5):** [Certifications, construction details to highlight]
+- **Color/Variations (Section 6):** [Which version to film, why]
+- **Usage Context (Section 8):** [Room setting, target use cases for B-roll]
+- **Packaging Elements (Section 9):** [Recognition features for final frame]
+
+**C. Production Team Reference**
+Direct production team to full analysis for comprehensive details:
+```markdown
+**Full Image Analysis:** `product_list/{product_id}/image_analysis.md`
+- 10+ sections with bilingual details
+- Section 10 has 5-6 additional visual hooks not used in these scripts
+- "Visual Hook Recommendations by Script Angle" section suggests alternatives for A/B testing
+```
+
+**If Step 2 was skipped (no images):**
+```markdown
+#### 9.5. Image Analysis Insights
+**N/A** - No product images available for this product.
+Visual direction based on video analysis and product description only.
+```
 
 #### 10. Recommendations for Future Creatives
 - **High Priority:** 3-4 immediate next steps
@@ -1568,34 +1646,70 @@ From `video_analysis.md`:
 - Visual elements that work
 - Creator success factors
 
-#### 12. Source Materials
+#### 12. Source Materials | 源材料
 List all reference files:
 ```markdown
-- **Product Data:** `product_list/{product_id}/tabcut_data.md`
-- **Video Analysis:** `product_list/{product_id}/video_analysis.md`
-- **Product Images:** `product_list/{product_id}/product_images/`
-- **Reference Videos:** `product_list/{product_id}/ref_video/`
+### Product Data | 产品数据
+- **Product Data | 产品数据:** `product_list/{product_id}/tabcut_data.md`
+- **Video Analysis | 视频分析:** `product_list/{product_id}/video_analysis.md` (if available)
+- **Image Analysis (v1.5) | 图像分析（v1.5）:** `product_list/{product_id}/image_analysis.md` (if Step 2 completed)
+
+### Reference Videos | 参考视频
+- **Reference Videos | 参考视频:** `product_list/{product_id}/ref_video/` (if available)
+
+### Product Images | 产品图片
+- **Product Images | 产品图片:** `product_list/{product_id}/product_images/` (if available)
+
+### Generated Scripts | 生成的脚本
+- **Script 1 | 脚本1:** `product_list/{product_id}/scripts/Script_1.md`
+- **Script 2 | 脚本2:** `product_list/{product_id}/scripts/Script_2.md`
+- **Script 3 | 脚本3:** `product_list/{product_id}/scripts/Script_3.md`
 ```
 
-#### 13. Compliance Notes
-- **Health Claims Used (Safe):** List exact phrases used
-- **Avoided Claims:** What was intentionally not said
-- **Important Notes:** Category-specific warnings or disclaimers
+**Format:** Use bilingual headers for all source material sections.
 
-#### 14. Footer
+#### 13. Compliance Notes | 合规说明
+- **Product Category | 产品类别:** {Category} | {类别}
+- **Safe Language Used | 使用的安全语言:** List exact phrases used | 列出使用的确切短语
+- **Avoided Claims | 避免的声明:** What was intentionally not said | 有意避免说的内容
+- **Important Notes | 重要说明:** Category-specific warnings or disclaimers | 特定类别的警告或免责声明
+
+**Format:** Use bilingual headers and inline translations for compliance items.
+
+#### 14. Footer | 页脚
 ```markdown
 ---
-*Campaign created: YYYY-MM-DD*
-*Based on proven market performance: X sales, €X revenue, X% conversion*
-*Scripts ready for production with ElevenLabs v3 (alpha) voiceover*
+
+**Campaign created | 活动创建日期:** YYYY-MM-DD
+
+**Based on proven market performance | 基于已验证的市场表现:**
+- X total sales | 总销量X件
+- €X total revenue | 总收入€X
+- X% conversion rate | X%转化率
+
+**Scripts ready for production | 准备制作的脚本:**
+- 3 unique angles (XXs, XXs, XXs) | 3个独特角度（XX秒、XX秒、XX秒）
+- Based on Video Analysis insights | 基于视频分析洞察
+- ElevenLabs v3 (alpha) voiceover compatible | 兼容ElevenLabs v3（alpha）配音
+- Bilingual (DE/ZH) internal reference | 双语（德语/中文）内部参考
+
+---
 ```
+
+**Format:** Include bilingual headers and inline translations in footer.
 
 **Optional Additions:**
 - **TOP PERFORMER** or **PRIORITY FOR SCALING** tags for high-performing products
 - Portfolio comparison table (if creating multiple campaign summaries)
 - Competitive analysis (if available)
 
-**Example Summary File:** See `shorts_scripts/1729535917392698367/Campaign_Summary.md` for reference.
+**Example Bilingual Summary File:**
+See `product_list/1729655828988926782/scripts/Campaign_Summary.md` for complete bilingual format reference with:
+- Inline Chinese translations throughout all sections
+- Bilingual headers (## Section Title | 章节标题)
+- Bilingual bullet points (English | 中文)
+- Bilingual tables with both language columns
+- Bilingual frontmatter metadata
 
 ---
 
@@ -1613,7 +1727,7 @@ This is the **final verification checkpoint** before delivery. All previous step
 
 ```bash
 # Verify all required files for product {product_id}
-ls -lh shorts_scripts/{product_id}/
+ls -lh product_list/{product_id}/scripts/
 
 # Expected output (4 files minimum):
 # - Script_1.md (1.5-2.5KB typical size)
@@ -1624,10 +1738,10 @@ ls -lh shorts_scripts/{product_id}/
 
 **Verification Checklist:**
 
-- [ ] **Script 1 file exists** at `shorts_scripts/{product_id}/{Product}_{Angle1}.md`
-- [ ] **Script 2 file exists** at `shorts_scripts/{product_id}/{Product}_{Angle2}.md`
-- [ ] **Script 3 file exists** at `shorts_scripts/{product_id}/{Product}_{Angle3}.md`
-- [ ] **Campaign Summary exists** at `shorts_scripts/{product_id}/Campaign_Summary.md`
+- [ ] **Script 1 file exists** at `product_list/{product_id}/scripts/{Product}_{Angle1}.md`
+- [ ] **Script 2 file exists** at `product_list/{product_id}/scripts/{Product}_{Angle2}.md`
+- [ ] **Script 3 file exists** at `product_list/{product_id}/scripts/{Product}_{Angle3}.md`
+- [ ] **Campaign Summary exists** at `product_list/{product_id}/scripts/Campaign_Summary.md`
 
 **🚨 CRITICAL:** If ANY file is missing, the task is **INCOMPLETE**. Do NOT proceed.
 
@@ -1639,7 +1753,7 @@ ls -lh shorts_scripts/{product_id}/
 
 ```bash
 # Quick verification command
-for file in shorts_scripts/{product_id}/*.md; do
+for file in product_list/{product_id}/scripts/*.md; do
   echo "=== $file ==="
   head -20 "$file" | grep -E "(cover:|caption:|duration:|product:|tags:)"
   echo "---"
@@ -1665,34 +1779,141 @@ done
 
 ---
 
-#### Campaign Summary Verification
+#### Image Analysis Verification (If Step 2 Was Performed)
 
-**Verify Campaign Summary completeness:**
+**🎯 Check if image analysis was required and completed:**
 
 ```bash
-# Check Campaign Summary structure
-grep -E "^#{1,2} " shorts_scripts/{product_id}/Campaign_Summary.md
-# Should show all 14 section headers
+# Check if product has images
+if [ -d "product_list/{product_id}/product_images" ]; then
+  img_count=$(find "product_list/{product_id}/product_images" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) 2>/dev/null | wc -l)
+  if [ $img_count -gt 0 ]; then
+    echo "⚠️ Product has $img_count images - image analysis is MANDATORY"
+    if [ -f "product_list/{product_id}/image_analysis.md" ]; then
+      echo "✓ image_analysis.md exists"
+      echo "Line count: $(wc -l < product_list/{product_id}/image_analysis.md)"
+    else
+      echo "❌ MISSING: image_analysis.md - MUST be completed"
+    fi
+  else
+    echo "✓ No images - image analysis not required"
+  fi
+else
+  echo "✓ No product_images folder - image analysis not required"
+fi
+```
+
+**Image Analysis Quality Checklist (v1.5 Format):**
+
+**IF images exist and analysis was performed:**
+
+- [ ] **File exists** at `product_list/{product_id}/image_analysis.md`
+- [ ] **Minimum line count** (250+ lines for v1.5 comprehensive format)
+- [ ] **Bilingual headers** present (## Section Name | 中文节名)
+- [ ] **Section 10 exists** "Visual Hooks for TikTok Scripts | TikTok 脚本的视觉钩子"
+- [ ] **Visual hooks complete** (5-6 hooks with "How to film", "Script hook", "如何拍摄")
+- [ ] **German text extracted** (Section 4 has exact packaging text in quotes)
+- [ ] **Quality signals documented** (Section 5 has certifications, construction details)
+- [ ] **Visual Hook Recommendations section** exists
+- [ ] **Scripts reference visual hooks** (each script uses at least one hook from Section 10)
+
+**Verification command (v1.5):**
+```bash
+# Run comprehensive image analysis check
+if [ -f "product_list/{product_id}/image_analysis.md" ]; then
+  echo "=== IMAGE ANALYSIS QUALITY CHECK (v1.5) ==="
+  line_count=$(wc -l < product_list/{product_id}/image_analysis.md)
+  echo "Line count: $line_count (minimum 250 required)"
+
+  grep -c "## 1.*|" product_list/{product_id}/image_analysis.md && echo "✓ Bilingual headers present"
+  grep -c "## 10.*Visual Hooks" product_list/{product_id}/image_analysis.md && echo "✓ Section 10 present"
+  hook_count=$(grep -c "How to film:" product_list/{product_id}/image_analysis.md)
+  echo "Visual hooks: $hook_count (minimum 5 required)"
+  script_hook_count=$(grep -c "Script hook:" product_list/{product_id}/image_analysis.md)
+  echo "Script hook lines: $script_hook_count"
+
+  if [ $line_count -lt 250 ]; then
+    echo "❌ FAIL: Analysis too short ($line_count lines < 250 minimum)"
+  elif [ $hook_count -lt 5 ]; then
+    echo "❌ FAIL: Not enough visual hooks ($hook_count < 5 minimum)"
+  else
+    echo "✅ PASS: Image analysis meets v1.5 standards"
+  fi
+fi
+```
+
+**🚨 CRITICAL FAILURE MODES:**
+
+1. **Image analysis missing when images exist**
+   - Fix: Go back to Step 2, run async Gemini CLI MCP analysis
+   - Use v1.5 comprehensive template
+
+2. **Image analysis too short (<250 lines)**
+   - Fix: Regenerate with explicit v1.5 template reference
+   - Reference Cat Tree example: `product_list/1729600227153779322/product_images/image_analysis.md`
+
+3. **Scripts don't reference visual hooks**
+   - Fix: Go back to Step 5.7 and 6
+   - Extract hooks from Section 10, integrate into script opening lines
+
+**IF no images exist:** Skip this verification - proceed to Campaign Summary Verification.
+
+---
+
+#### Campaign Summary Verification (Bilingual Format Required)
+
+**Verify Campaign Summary completeness and bilingual format:**
+
+```bash
+# Check Campaign Summary structure (bilingual headers)
+grep -E "^#{1,2} " product_list/{product_id}/scripts/Campaign_Summary.md
+# Should show all 14 section headers with " | " pattern for bilingual format
+
+# Check for bilingual format indicators
+grep -c " | " product_list/{product_id}/scripts/Campaign_Summary.md
+# Should show 50+ occurrences (bilingual headers, bullets, and content)
 ```
 
 **Campaign Summary Checklist:**
 
-- [ ] **Header metadata present** (YAML frontmatter with product_id, campaign_date, etc.)
-- [ ] **Product Overview section** (features, USPs, use cases)
-- [ ] **Campaign Strategy section** (psychological triggers, key insight)
-- [ ] **Scripts Overview** (all 3 scripts with effectiveness ratings)
-- [ ] **Audience Segmentation Table** (markdown table with segments)
-- [ ] **Key Selling Points** (Rational/Emotional triggers, Trust signals)
-- [ ] **Performance Data section** (actual sales, conversion rate from tabcut_data.md)
-- [ ] **Performance Predictions** (ranked 1-3 with reasoning)
+- [ ] **Header metadata present** (YAML frontmatter with product_id, product_name_zh, target_audience_zh, etc.)
+- [ ] **Bilingual format throughout** (headers use "Section Title | 章节标题" format)
+- [ ] **Product Overview section | 产品概述** (features, USPs, use cases with inline translations)
+- [ ] **Campaign Strategy section | 活动策略** (psychological triggers, key insight with Chinese paragraphs)
+- [ ] **Scripts Overview | 脚本概览** (all 3 scripts with bilingual headers and inline translations)
+- [ ] **Audience Segmentation Table | 受众细分表** (bilingual table with both language columns)
+- [ ] **Key Selling Points | 关键卖点** (Rational/Emotional triggers, Trust signals with inline Chinese)
+- [ ] **Performance Data section | 表现数据** (actual sales, conversion rate with bilingual headers)
+- [ ] **Performance Predictions | 表现预测** (ranked 1-3 with reasoning, bilingual)
 - [ ] **Content Production Notes** (visual requirements, VO style)
+- [ ] **Image Analysis Insights (Section 9.5)** - **IF image analysis was performed (Step 2)**
+  - [ ] Visual hooks used in each script documented
+  - [ ] Key visual elements summarized from analysis
+  - [ ] Production team reference to full image_analysis.md included
+  - [ ] **IF Step 2 skipped:** Section 9.5 marked as "N/A"
 - [ ] **Recommendations section** (High/Medium priority, testing opportunities)
-- [ ] **Source Materials listed** (all reference files)
-- [ ] **Compliance Notes section** (safe claims, avoided claims)
-- [ ] **Footer present** (campaign date, performance summary)
-- [ ] **File size reasonable** (15-25KB typical - if <10KB, likely incomplete)
+- [ ] **Source Materials | 源材料** (all reference files with bilingual headers)
+- [ ] **Compliance Notes | 合规说明** (safe claims, avoided claims with bilingual headers)
+- [ ] **Footer | 页脚** (campaign date, performance summary with bilingual format)
+- [ ] **File size reasonable** (20-35KB typical with bilingual content - if <15KB, likely incomplete)
 
-**🚨 CRITICAL:** Campaign Summary is NOT optional. If missing or incomplete, **CREATE/FIX IT** now.
+**Bilingual Format Verification:**
+```bash
+# Check key bilingual markers
+echo "=== Bilingual Format Check ==="
+echo "Section headers with |: $(grep -c '^## .* | ' product_list/{product_id}/scripts/Campaign_Summary.md)"
+echo "Frontmatter bilingual fields: $(grep -c '_zh:' product_list/{product_id}/scripts/Campaign_Summary.md)"
+echo "Inline translations: $(grep -c ' | ' product_list/{product_id}/scripts/Campaign_Summary.md)"
+
+# Expected results:
+# Section headers: 14+ (all major sections)
+# Frontmatter bilingual fields: 2+ (product_name_zh, target_audience_zh)
+# Inline translations: 100+ (throughout content)
+```
+
+**🚨 CRITICAL:** Campaign Summary MUST be bilingual. If monolingual or missing, **CREATE/FIX IT** now.
+
+**Reference:** See `product_list/1729655828988926782/scripts/Campaign_Summary.md` for complete bilingual format example.
 
 ---
 
@@ -1726,7 +1947,7 @@ grep -E "^#{1,2} " shorts_scripts/{product_id}/Campaign_Summary.md
 
 ```bash
 # Quick check: read first 5 lines of each script's voiceover
-grep -A 5 "### DE (ElevenLabs" shorts_scripts/{product_id}/*.md
+grep -A 5 "### DE (ElevenLabs" product_list/{product_id}/scripts/*.md
 ```
 
 **Angle Differentiation Checklist:**
@@ -1778,7 +1999,7 @@ grep -A 5 "### DE (ElevenLabs" shorts_scripts/{product_id}/*.md
 **Run this comprehensive check:**
 
 ```bash
-cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/shorts_scripts/{product_id}
+cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/product_list/{product_id}/scripts
 
 echo "=== FILE COUNT CHECK ==="
 file_count=$(ls -1 *.md | wc -l)
@@ -1891,7 +2112,7 @@ Task: Create 3 TikTok ad scripts
 ### Output:
 
 ```
-shorts_scripts/1729535919239371775/
+product_list/1729535919239371775/scripts/
 ├── Brennnessel_Komplex_Bloating_Loesung.md
 ├── Brennnessel_Komplex_Glow_Up.md
 └── Brennnessel_Komplex_Detox_Wellness.md
@@ -2061,6 +2282,103 @@ shorts_scripts/1729535919239371775/
 ---
 
 ## Version History
+
+**v1.7.0** (2026-01-01) - **BILINGUAL CAMPAIGN SUMMARY REQUIREMENT**
+- **MANDATORY CHANGE:** Campaign Summary MUST now be bilingual with inline Chinese translations
+- **Step 10 Enhanced:** "Create Campaign Summary" → "Create Bilingual Campaign Summary"
+  - Added comprehensive bilingual format requirements
+  - Headers must use "Section Title | 章节标题" format
+  - Content must include inline translations: `English | 中文`
+  - Tables must have bilingual columns
+  - Frontmatter must include `product_name_zh` and `target_audience_zh` fields
+- **Format Documentation:** Added detailed bilingual format examples and guidelines
+  - Example headers, bullet points, paragraphs, and tables
+  - Reference to `product_list/1729655828988926782/scripts/Campaign_Summary.md`
+- **All 14 Sections Updated:** Every required section now has bilingual format specifications
+  - Section 1: Header Metadata (bilingual frontmatter)
+  - Section 2-14: All sections with Chinese header translations and inline content
+- **Final Quality Gate Updated:** Added bilingual format verification checks
+  - Verification command checks for " | " pattern (50+ occurrences expected)
+  - Checks for bilingual headers (14+ sections)
+  - Checks for frontmatter bilingual fields (2+)
+  - Checks for inline translations (100+)
+  - Updated expected file size: 20-35KB (was 18-30KB)
+- **Overview Updated:** Description now mentions "bilingual Campaign Summary" explicitly
+- **Why This Matters:** Makes Campaign Summary accessible to both German and Chinese-speaking team members
+- **Breaking Change:** All future Campaign Summaries must follow bilingual format
+- **Reference Example:** Complete bilingual format example documented in skill file
+
+**v1.6.0** (2026-01-01) - **PRE-CHECK ENFORCEMENT & SOURCE FILE VERIFICATION**
+- **NEW STEP 0:** Pre-Check Verification (MANDATORY - blocks if fails)
+  - Verifies tabcut_data.md OR fastmoss_data.json exists (at least one required)
+  - Verifies image_analysis.md exists IF product_images/ has files
+  - Verifies video_*_analysis.md + video_synthesis.md exist IF ref_video/ has .mp4 files
+  - Checks file quality (line counts: image ≥250 lines, synthesis ≥200 lines)
+  - BLOCKS script generation if required files missing
+- **Bash verification command:** Automated pre-check script with clear PASS/FAIL criteria
+- **Failure handling:** Documented remediation steps for each missing file type
+- **Workflow integration:** Pre-check runs BEFORE Step 1 (Gather Source Materials)
+- **Enforcement:** Prevents wasted effort on incomplete data; ensures scripts built on complete foundation
+- **Updated workflow:** 12 steps → 13 steps (added Step 0)
+- **Updated description:** Added "with comprehensive campaign summary" + pre-check mention
+- **Why this matters:** User reported scripts being generated without video analysis when videos existed
+- **Target issue:** Scripts missing critical insights because source files weren't verified upfront
+
+**v1.5.1** (2025-12-31) - **VISUAL HOOKS INTEGRATION & WORKFLOW ENHANCEMENT**
+- **NEW STEP 5.7:** "Extract Visual Hooks from Image Analysis v1.5"
+  - Maps Section 10 visual hooks to 3 script angles
+  - Decision framework for hook selection (Problem-Solution, Lifestyle, Educational)
+  - Integration checklist before script writing
+- **ENHANCED STEP 6:** "Script Writing with Visual Hook Integration"
+  - NEW REQUIREMENT: Scripts MUST integrate visual hooks from Section 10 if Step 2 completed
+  - Added example integration showing exact placement of hooks (Opening, Product, Trust, CTA)
+  - Benefits documented: Pre-tested language, compliance-safe, market-tested, production-ready
+- **ENHANCED STEP 10:** Campaign Summary now includes Section 9.5 "Image Analysis Insights (v1.5)"
+  - **NEW MANDATORY SECTION** if Step 2 completed
+  - Documents visual hooks used in each script
+  - Summarizes key visual elements from all 10 sections of image analysis
+  - Production team reference to full analysis for comprehensive details
+- **ENHANCED STEP 11:** Final Quality Gate now verifies image analysis
+  - NEW Image Analysis Verification section
+  - Checks if analysis exists when images present
+  - Validates v1.5 format quality (250+ lines, Section 10, visual hooks)
+  - Automated verification command for image analysis
+  - Critical failure modes documented with fixes
+- **WORKFLOW UPDATES:**
+  - Updated workflow from 11 to 12 steps (added Step 5.7)
+  - Updated Batch Execution Checklist to include Step 5.7
+  - Updated Campaign Summary checklist to verify Section 9.5
+  - Updated Source Materials section to include image_analysis.md reference
+- **WHY THIS MATTERS:**
+  - Bridges v1.5 comprehensive image analysis to actual script production
+  - Ensures visual hooks aren't wasted - they MUST be used in scripts
+  - Production teams get clear filming instructions from analysis
+  - Quality gate prevents incomplete deliverables
+
+**v1.5.0** (2025-12-31) - **COMPREHENSIVE BILINGUAL FORMAT (Cat Tree Standard)**
+- **MAJOR REWRITE:** New template based on proven Cat Tree example format
+- **Format change:** From PART 1-6 structure → 10+ section comprehensive format
+- **Bilingual approach:** Inline translations (## Name | 中文名) instead of separate DE/ZH blocks
+- **Section structure (minimum 10):**
+  1. Product Design & Aesthetics | 产品设计与美学
+  2. [Product-Specific Features] (adapts to category)
+  3. Size & Scale Indicators | 尺寸与规模指标
+  4. Text & Labels (German) | 文字与标签（德语）
+  5. Quality Signals | 质量信号
+  6. Variations/Options | 变体/选项
+  7. Key Differentiators (vs. Competitors) | 关键差异化
+  8. Usage Context | 使用场景
+  9. Packaging/Presentation | 包装/展示
+  10. **Visual Hooks for TikTok Scripts** | TikTok 脚本的视觉钩子 (CRITICAL)
+- **Enhanced Visual Hooks section:** Each hook includes:
+  - "How to film" (specific camera instructions)
+  - "Why it works" (psychological appeal)
+  - "Script hook" (ready-to-use German line)
+- **Additional sections:** Visual Hook Recommendations by Script Angle, German Text Elements for Scripts, Next Step: Script Generation
+- **Quality standard:** 250-400 lines (vs old 44-100 lines)
+- **Reference example:** product_list/1729600227153779322/product_images/image_analysis.md (362 lines)
+- **Updated validation:** New v1.5 verification command checks for bilingual headers, Section 10, filming instructions, script hooks
+- **Why this matters:** User feedback - "This one is good" (Cat Tree format), requested v1.5 based on this comprehensive structure
 
 **v1.4.3** (2025-12-31) - **OUTPUT VALIDATION REQUIREMENT**
 - **CRITICAL ADDITION:** Output Validation & Quality Check section after Step 2
