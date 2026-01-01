@@ -65,7 +65,7 @@ Use these sections in this order:
 - Language: German is primary. Optional Chinese version may be included under a separate heading.
 - Avoid medical/legal guarantees; keep claims consistent with source notes.
 - Keep sentences short and spoken-word friendly.
-- For v3 prompt writing best practices (natural pacing, minimal cues), follow `ElevenLabs_v3_Alpha_VO_Grammar_Practice.md`.
+- For v3 prompt writing best practices (natural pacing, minimal cues), follow `doc/ElevenLabs_v3_Alpha_VO_Grammar_Practice.md`.
 
 ### ElevenLabs Prompt Format
 

@@ -139,7 +139,7 @@ Then use delivery cues in **square brackets**, one cue per line:
 - Hashtags or custom cue syntax
 - Over-direction (too many cues feel synthetic)
 
-### Writing Style (See ElevenLabs_v3_Alpha_VO_Grammar_Practice.md)
+### Writing Style (See doc/ElevenLabs_v3_Alpha_VO_Grammar_Practice.md)
 
 **Best practices:**
 - One idea per line (short "micro-lines" for natural breaths)
@@ -175,7 +175,8 @@ Then use delivery cues in **square brackets**, one cue per line:
 ## Reference Materials
 
 - `AGENTS.md` — Complete workflow guidelines and rules
-- `ElevenLabs_v3_Alpha_VO_Grammar_Practice.md` — Detailed v3 prompting best practices
+- `doc/ElevenLabs_v3_Alpha_VO_Grammar_Practice.md` — Detailed v3 prompting best practices
+- `doc/Tiktok_Golden_3_seconds.md` — 8 core hook patterns for German TikTok
 - `Account_Description.md` — Account purpose/audience
 - `shorts_dashboard.base` — Obsidian Base view (avoid editing unless requested)
 - `.obsidian/` — Local Obsidian settings (avoid editing)
