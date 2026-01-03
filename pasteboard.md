@@ -1,8 +1,6 @@
 
 ```
-https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=AIzaSyCTgdfpGiZPQBEtgHtYPxmc7odnbo4y4mg
 
-https://us-central1-aiplatform.googleapis.com/v1/projects/vertex-ai-trial-482611/locations/us-central1/publishers/google/models/veo-3.1-generate-001:predictLongRunning?key=AQ.Ab8RN6Ib9HqmV7n9RJRlrf-Lc0HdRcHKYx3fa42IEv831ueXDw
 ```
 
 # System Prompt Template: Veo 3 UGC Selfie Video Generation (8 Seconds)
