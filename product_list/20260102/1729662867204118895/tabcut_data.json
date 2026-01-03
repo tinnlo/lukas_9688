@@ -1,0 +1,96 @@
+{
+  "product_id": "1729662867204118895",
+  "scraped_at": "2026-01-01T22:00:13.302517",
+  "product_info": {
+    "product_name": "1:24 Scale Remote Control Drift Racing Car, Multi-Player Battle, LED Lights, Rechargeable, Unisex, Ages 8+, Outdoor & Indoor Play",
+    "shop_owner": "Quirk Toys",
+    "total_sales": 469,
+    "total_sales_revenue": "€ 5.56万($ 6.47万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 307,
+    "sales_revenue": "$ 3913.44",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "12.20%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 41,
+    "带货视频达人数": 33,
+    "带货视频销量": 42,
+    "带货视频销售额": "$ 535.39",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADJetzt kaufen❤️❤️❤️ #tiktokshop #tiktokmakemebuyit #fyp #DriftRennauto发现时间：2025.12.19 14:39更新时间：2025.12.21 19:52时长：00:00:14跳转至 TikTok",
+      "creator_username": "leonscherzi",
+      "creator_followers": "2532",
+      "publish_date": "2025-12-19 12:44",
+      "estimated_sales": 17,
+      "estimated_revenue": "€ 186.15($ 216.71)",
+      "total_views": "1.33万",
+      "video_url": "https://www.tiktok.com/@leonscherzi/video/7585533479740378401?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_leonscherzi.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADWhat an amazing hand size stocking filler for 45% off !!! 发现时间：2025.12.17 01:54更新时间：2025.12.28 11:45时长：00:00:21跳转至 TikTok",
+      "creator_username": "thefmstudio",
+      "creator_followers": "1.31万",
+      "publish_date": "2025-12-16 23:10",
+      "estimated_sales": 10,
+      "estimated_revenue": "€ 109.50($ 127.47)",
+      "total_views": "22.5万",
+      "video_url": "https://www.tiktok.com/@thefmstudio/video/7584581634461125910?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_thefmstudio.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD无标题发现时间：2025.12.10 14:28更新时间：2025.12.14 18:41时长：00:00:37跳转至 TikTok",
+      "creator_username": "martinjennaaccount",
+      "creator_followers": "35.19万",
+      "publish_date": "2025-12-09 17:12",
+      "estimated_sales": 6,
+      "estimated_revenue": "€ 65.70($ 76.48)",
+      "total_views": "7286",
+      "video_url": "https://www.tiktok.com/@martinjennaaccount/video/7581891649912048918?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_martinjennaaccount.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD无标题发现时间：2025.12.06 01:15更新时间：2025.12.24 12:35时长：00:00:08跳转至 TikTok",
+      "creator_username": "halal_adventures1",
+      "creator_followers": "3587",
+      "publish_date": "2025-12-04 15:33",
+      "estimated_sales": 5,
+      "estimated_revenue": "€ 54.75($ 63.74)",
+      "total_views": "4719",
+      "video_url": "https://www.tiktok.com/@halal_adventures1/video/7580010848777702678?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_halal_adventures1.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADThis is your sign to get one before Christmas !!! #fyp  #rc #christmas #gift #stockingfiller 发现时间：2025.12.17 01:54更新时间：2025.12.31 14:02时长：00:00:12跳转至 TikTok",
+      "creator_username": "thefmstudio",
+      "creator_followers": "1.31万",
+      "publish_date": "2025-12-15 12:13",
+      "estimated_sales": 4,
+      "estimated_revenue": "€ 43.80($ 50.99)",
+      "total_views": "155.85万",
+      "video_url": "https://www.tiktok.com/@thefmstudio/video/7584041183781915926?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_thefmstudio.mp4"
+    }
+  ]
+}

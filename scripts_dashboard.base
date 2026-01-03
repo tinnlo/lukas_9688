@@ -9,8 +9,9 @@ views:
     filters:
       and:
         - file.ext == "md"
-        - file.inFolder("/shorts_scripts")
+        - file.path.startsWith("product_list")
         - '!file.name.startsWith("Campaign")'
+        - file.path.contains("scripts")
     order:
       - file.name
       - product

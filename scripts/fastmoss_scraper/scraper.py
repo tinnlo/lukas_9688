@@ -183,14 +183,20 @@ class FastMossScraper:
             product_data.save_to_file(str(json_path))
             logger.success(f"Product data saved to: {json_path}")
 
-            # Download product images (only if product exists on FastMoss)
-            if product_info.product_name == "Unknown Product" or product_info.shop_owner == "Unknown Shop":
+            downloader = VideoDownloader(self.page, timeout=self.config.download_timeout)
+
+            # Download product images if we have a valid product name
+            product_name = (product_info.product_name or "").strip()
+            if not product_name or product_name == "Unknown Product":
                 logger.warning(f"Product {product_id} not found on FastMoss - skipping image downloads")
                 logger.info("No product images downloaded (product does not exist)")
                 image_paths = []
             else:
+                if product_info.shop_owner == "Unknown Shop":
+                    logger.warning(
+                        f"Product {product_id} missing shop owner; attempting image download anyway"
+                    )
                 logger.info("Downloading product images...")
-                downloader = VideoDownloader(self.page, timeout=self.config.download_timeout)
                 image_paths = await downloader.download_product_images(product_folder)
                 logger.success(f"Downloaded {len(image_paths)} product images")
 

@@ -27,12 +27,12 @@ def get_tiktok_captions(video_url: str) -> dict:
     """
     print(f"  ├─ Fetching captions from TikTok (yt-dlp)...")
 
-    # Use yt-dlp to get subtitles in JSON format
+    # Use yt-dlp to get subtitles in VTT format (TikTok native format)
     cmd = [
         "yt-dlp",
         "--write-subs", "--write-auto-subs",
-        "--sub-lang", "en,de,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant",
-        "--sub-format", "json",
+        "--sub-lang", "de,en,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant",
+        "--sub-format", "vtt",
         "--skip-download",
         "--print", "%(subtitles,%(ext)s)s",
         video_url
@@ -60,9 +60,10 @@ def get_tiktok_captions(video_url: str) -> dict:
     cmd_download = [
         "yt-dlp",
         "--write-subs", "--write-auto-subs",
-        "--sub-lang", "en,de,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant",
-        "--sub-format", "json",
+        "--sub-lang", "de,en,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant",
+        "--sub-format", "vtt",  # TikTok provides VTT format
         "--skip-download",
+        "--convert-subs", "srt",  # Convert to SRT for easier parsing
         "-o", str(temp_dir / "%(id)s.%(ext)s"),
         video_url
     ]
@@ -70,52 +71,65 @@ def get_tiktok_captions(video_url: str) -> dict:
     try:
         subprocess.run(cmd_download, capture_output=True, timeout=60, check=False)
 
-        # Find any JSON subtitle files
-        json_files = list(temp_dir.glob("*.json"))
+        # Find any SRT subtitle files
+        srt_files = list(temp_dir.glob("*.srt"))
 
-        if not json_files:
+        if not srt_files:
             print(f"  ├─ No caption files downloaded")
             return None
 
         # Read the first available subtitle file
-        import json as json_mod
-        for sub_file in json_files:
+        for sub_file in srt_files:
             try:
-                with open(sub_file, 'r') as f:
-                    sub_data = json_mod.load(f)
+                with open(sub_file, 'r', encoding='utf-8') as f:
+                    content = f.read()
 
-                if 'events' not in sub_data:
-                    continue
-
-                # Convert JSON3 format to our transcript format
+                # Parse SRT format
                 segments = []
                 full_text = []
 
-                for event in sub_data['events']:
-                    if 'segs' not in event:
+                # Split by double newlines (subtitle blocks)
+                blocks = content.strip().split('\n\n')
+
+                for block in blocks:
+                    lines = block.strip().split('\n')
+                    if len(lines) < 3:
                         continue
 
-                    text = ''.join([seg.get('utf8', '') for seg in event['segs']]).strip()
-                    if not text:
+                    # Line 1: sequence number (skip)
+                    # Line 2: timestamp
+                    # Line 3+: text
+
+                    try:
+                        timestamp_line = lines[1]
+                        text_lines = lines[2:]
+
+                        # Parse timestamp: "00:00:00,000 --> 00:00:03,000"
+                        start_str, end_str = timestamp_line.split(' --> ')
+
+                        def parse_srt_time(time_str):
+                            """Convert SRT timestamp to seconds"""
+                            h, m, s = time_str.replace(',', '.').split(':')
+                            return int(h) * 3600 + int(m) * 60 + float(s)
+
+                        start_time = parse_srt_time(start_str)
+                        end_time = parse_srt_time(end_str)
+                        text = ' '.join(text_lines).strip()
+
+                        if text:
+                            segments.append({
+                                "start": start_time,
+                                "end": end_time,
+                                "text": text
+                            })
+                            full_text.append(text)
+
+                    except Exception:
                         continue
-
-                    start_time = event.get('tStartMs', 0) / 1000.0
-                    duration = event.get('dDurationMs', 0) / 1000.0
-                    end_time = start_time + duration
-
-                    segments.append({
-                        "start": start_time,
-                        "end": end_time,
-                        "text": text
-                    })
-                    full_text.append(text)
 
                 if segments:
-                    # Detect language from content
-                    content_sample = " ".join(full_text[:5])
-
                     # Clean up temp files
-                    for f in json_files:
+                    for f in srt_files:
                         f.unlink()
 
                     return {
@@ -127,7 +141,7 @@ def get_tiktok_captions(video_url: str) -> dict:
                         "segments": segments
                     }
 
-            except Exception as e:
+            except Exception:
                 continue
 
         print(f"  ├─ No valid captions found")
@@ -489,7 +503,8 @@ Identify which product features are emphasized:
             capture_output=True,
             text=True,
             timeout=300,  # 5 minutes
-            check=True
+            check=True,
+            cwd=Path(__file__).parent.parent
         )
         return result.stdout
     except subprocess.TimeoutExpired:

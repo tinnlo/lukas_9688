@@ -71,10 +71,11 @@ Extract:
 
 **🆕 Data Quality Check:**
 If Tabcut data shows any of these issues, retry with FastMoss:
-- Product name is "Unknown Product", "undefined", or empty
-- Total sales is null or missing
-- Zero product images downloaded
-- Less than 3 videos in top videos list
+- Product name or shop owner is missing/placeholder ("Unknown Product", "undefined", empty, or null)
+- Sales data missing/unparseable (e.g., total sales or sales count is null)
+- `product_images/` missing or empty
+- Top videos list is empty or all entries lack a usable video URL
+- Fewer than 3 top videos (soft signal of low-quality data)
 
 ### Step 1.5: FastMoss Fallback (If Needed)
 

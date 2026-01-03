@@ -36,9 +36,10 @@ def get_tiktok_captions(video_url: str) -> dict:
     cmd_download = [
         "yt-dlp",
         "--write-subs", "--write-auto-subs",
-        "--sub-lang", "en,de,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant",
-        "--sub-format", "json",
+        "--sub-lang", "de,en,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant",
+        "--sub-format", "vtt",  # TikTok provides VTT format
         "--skip-download",
+        "--convert-subs", "srt",  # Convert to SRT for easier parsing
         "-o", str(temp_dir / "%(id)s.%(ext)s"),
         video_url
     ]
@@ -46,47 +47,64 @@ def get_tiktok_captions(video_url: str) -> dict:
     try:
         subprocess.run(cmd_download, capture_output=True, timeout=60, check=False)
 
-        # Find any JSON subtitle files
-        json_files = list(temp_dir.glob("*.json"))
+        # Find any SRT subtitle files
+        srt_files = list(temp_dir.glob("*.srt"))
 
-        if not json_files:
+        if not srt_files:
             return None
 
         # Read the first available subtitle file
-        for sub_file in json_files:
+        for sub_file in srt_files:
             try:
-                with open(sub_file, 'r') as f:
-                    sub_data = json.load(f)
+                with open(sub_file, 'r', encoding='utf-8') as f:
+                    content = f.read()
 
-                if 'events' not in sub_data:
-                    continue
-
-                # Convert JSON3 format to our transcript format
+                # Parse SRT format
                 segments = []
                 full_text = []
 
-                for event in sub_data['events']:
-                    if 'segs' not in event:
+                # Split by double newlines (subtitle blocks)
+                blocks = content.strip().split('\n\n')
+
+                for block in blocks:
+                    lines = block.strip().split('\n')
+                    if len(lines) < 3:
                         continue
 
-                    text = ''.join([seg.get('utf8', '') for seg in event['segs']]).strip()
-                    if not text:
+                    # Line 1: sequence number (skip)
+                    # Line 2: timestamp
+                    # Line 3+: text
+
+                    try:
+                        timestamp_line = lines[1]
+                        text_lines = lines[2:]
+
+                        # Parse timestamp: "00:00:00,000 --> 00:00:03,000"
+                        start_str, end_str = timestamp_line.split(' --> ')
+
+                        def parse_srt_time(time_str):
+                            """Convert SRT timestamp to seconds"""
+                            h, m, s = time_str.replace(',', '.').split(':')
+                            return int(h) * 3600 + int(m) * 60 + float(s)
+
+                        start_time = parse_srt_time(start_str)
+                        end_time = parse_srt_time(end_str)
+                        text = ' '.join(text_lines).strip()
+
+                        if text:
+                            segments.append({
+                                "start": start_time,
+                                "end": end_time,
+                                "text": text
+                            })
+                            full_text.append(text)
+
+                    except Exception:
                         continue
-
-                    start_time = event.get('tStartMs', 0) / 1000.0
-                    duration = event.get('dDurationMs', 0) / 1000.0
-                    end_time = start_time + duration
-
-                    segments.append({
-                        "start": start_time,
-                        "end": end_time,
-                        "text": text
-                    })
-                    full_text.append(text)
 
                 if segments:
                     # Clean up temp files
-                    for f in json_files:
+                    for f in srt_files:
                         f.unlink()
 
                     return {
@@ -248,7 +266,7 @@ def extract_keyframes_and_audio(video_path: Path, output_dir: Path, interval: in
     ]
     subprocess.run(cmd_frames, check=True, capture_output=True)
 
-    # Extract audio
+    # Extract audio (skip gracefully if no audio stream)
     audio_path = output_dir / "audio.mp3"
     cmd_audio = [
         "ffmpeg", "-i", str(video_path),
@@ -257,7 +275,10 @@ def extract_keyframes_and_audio(video_path: Path, output_dir: Path, interval: in
         str(audio_path),
         "-y"
     ]
-    subprocess.run(cmd_audio, check=True, capture_output=True)
+    try:
+        subprocess.run(cmd_audio, check=True, capture_output=True)
+    except subprocess.CalledProcessError:
+        audio_path = None
 
     # Count extracted frames
     frame_count = len(list(frames_dir.glob("frame_*.jpg")))
@@ -271,7 +292,8 @@ def analyze_video_with_gemini(
     transcript: dict,
     duration: float,
     frame_count: int,
-    metadata: dict
+    metadata: dict,
+    product_name: str
 ):
     """
     Analyze video using gemini-cli with extracted frames and transcript.
@@ -314,7 +336,7 @@ def analyze_video_with_gemini(
     prompt = f"""Analyze this TikTok ad video in EXTREME DETAIL for market intelligence with BILINGUAL output (English + Chinese):
 
 **VIDEO:** {video_path.name}
-**PRODUCT:** MINISO MS156 AI Translator Earbuds
+**PRODUCT:** {product_name}
 **TARGET MARKET:** Germany (TikTok Shop DE)
 
 **PERFORMANCE METADATA:**
@@ -466,7 +488,8 @@ Identify which product features are emphasized:
             capture_output=True,
             text=True,
             timeout=300,  # 5 minutes
-            check=True
+            check=True,
+            cwd=Path(__file__).parent.parent
         )
         return result.stdout
     except subprocess.TimeoutExpired:
@@ -491,6 +514,8 @@ def analyze_all_videos(product_id: str):
     with open(tabcut_json) as f:
         tabcut_data = json.load(f)
 
+    product_name = tabcut_data.get("product_info", {}).get("product_name") or "Unknown Product"
+
     # Get all videos
     videos = sorted(ref_video_dir.glob("video_*.mp4"))
 
@@ -508,7 +533,8 @@ def analyze_all_videos(product_id: str):
         video_metadata = {}
         video_url = None
         for top_video in tabcut_data.get("top_videos", []):
-            if str(i) in top_video.get("local_path", ""):
+            local_path = top_video.get("local_path") or ""
+            if str(i) in local_path:
                 video_metadata = top_video
                 video_url = top_video.get("video_url") or top_video.get("url")
                 break
@@ -550,7 +576,8 @@ def analyze_all_videos(product_id: str):
             transcript,
             duration,
             frame_count,
-            video_metadata
+            video_metadata,
+            product_name
         )
 
         # Save analysis

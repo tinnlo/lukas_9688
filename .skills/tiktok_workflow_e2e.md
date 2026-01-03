@@ -97,48 +97,82 @@ product_list/{product_id}/
 
 ## Phase 2: Analysis
 
-**Sub-phases (can run in parallel):**
+**⚠️ CONCURRENCY LIMIT:** Max 5 Gemini async tasks at once.
 
-### 2A: Video Analysis (Python + Gemini)
+**CRITICAL CONSTRAINT:** Each product has 5 videos. Analyzing 5 videos in parallel = all 5 slots used.
+- **Process products SEQUENTIALLY** (one complete pipeline at a time)
+- **Within each product:** Videos in parallel → Image → Synthesis (sequential stages)
+
+### 2A: Video Analysis (Python + Gemini - Per Product)
 ```bash
 # For each product with videos
+# This script analyzes videos sequentially per product
 python analyze_video_batch.py {product_id}
 ```
 
 **Output:** `ref_video/video_N_analysis.md` (per video)
 
-### 2B: Image Analysis (Gemini async MCP)
+### 2B: Complete Product Pipeline (Gemini async MCP)
+
+**Process products sequentially with pipeline stages:**
+
 ```javascript
-// Launch all image analyses in parallel
-for (product_id of products) {
-  mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
+// Process products ONE AT A TIME (sequential)
+for (const product_id of products) {
+  console.log(`\n=== Processing ${product_id} ===`);
+
+  // Stage 1: Launch 5 video analyses in parallel (fills all 5 slots)
+  console.log(`Stage 1: Analyzing 5 videos in parallel...`);
+  const videoTasks = [];
+
+  for (let i = 1; i <= 5; i++) {
+    const task = await mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
+      query: `Analyze video ${i} in product_list/${product_id}/ref_video/
+              Create bilingual video_${i}_analysis.md with detailed breakdown.
+              Save to product_list/${product_id}/ref_video/video_${i}_analysis.md`,
+      yolo: true
+    });
+    videoTasks.push(task);
+  }
+
+  // Wait for all 5 videos to complete
+  await Promise.all(videoTasks.map(t => waitForCompletion(t)));
+  console.log(`✅ Videos analyzed`);
+
+  // Stage 2: Image analysis (1 task)
+  console.log(`Stage 2: Analyzing product images...`);
+  const imageTask = await mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
     query: `Analyze images in product_list/${product_id}/product_images/
             Create bilingual image_analysis.md with 10+ sections.
             Save to product_list/${product_id}/product_images/image_analysis.md`,
     yolo: true
-  })
-}
-```
+  });
 
-**Output:** `product_images/image_analysis.md`
+  await waitForCompletion(imageTask);
+  console.log(`✅ Images analyzed`);
 
-### 2C: Video Synthesis (Gemini async MCP)
-**Requires:** 2A complete (video analyses exist)
-
-```javascript
-// After video analyses complete, launch synthesis in parallel
-for (product_id of products) {
-  mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
+  // Stage 3: Video synthesis (1 task)
+  console.log(`Stage 3: Creating market synthesis...`);
+  const synthesisTask = await mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
     query: `Create market synthesis from video analyses in
             product_list/${product_id}/ref_video/video_*_analysis.md
             Include: hook patterns, selling points, replication strategy.
             Save to product_list/${product_id}/ref_video/video_synthesis.md`,
     yolo: true
-  })
+  });
+
+  await waitForCompletion(synthesisTask);
+  console.log(`✅ Synthesis complete`);
+  console.log(`✅✅✅ Product ${product_id} COMPLETE\n`);
 }
+
+console.log(`\n=== ALL ${products.length} PRODUCTS ANALYZED ===`);
 ```
 
-**Output:** `ref_video/video_synthesis.md` (CRITICAL)
+**Output per product:**
+- `ref_video/video_N_analysis.md` (5 files)
+- `product_images/image_analysis.md`
+- `ref_video/video_synthesis.md` (CRITICAL)
 
 ---
 
@@ -218,16 +252,34 @@ User prompt to Claude:
 
 ## Time Estimates
 
-| Phase | Single Product | 8 Products (Parallel) |
-|:------|:---------------|:----------------------|
-| 1. Scraping | 2-3 min | 5 min |
-| 2A. Video Analysis | 3-5 min | 8 min |
-| 2B. Image Analysis | 1-2 min | 3 min |
-| 2C. Synthesis | 2-3 min | 4 min |
-| 3. Scripts | 5-8 min | 40-50 min |
-| **Total** | **13-21 min** | **~60-70 min** |
+| Phase | Single Product | 8 Products (Sequential Pipeline) | Scaling Notes |
+|:------|:---------------|:---------------------------------|:--------------|
+| 1. Scraping | 2-3 min | 5 min | Parallel across products |
+| 2. Analysis (per product) | 4 min | 32 min | **Sequential products** |
+|  - Videos (parallel) | 2 min | 16 min | 5 videos in parallel per product |
+|  - Image | 1 min | 8 min | 1 task per product |
+|  - Synthesis | 1 min | 8 min | 1 task per product |
+| 3. Scripts | 5-8 min | 40-50 min | Sequential for quality |
+| **Total** | **11-15 min** | **~77-87 min** | |
 
-**vs Sequential:** 8 × 20 min = 160 min (saves 55-60%)
+### Pipeline Strategy (8 Products)
+
+**Phase 2 Analysis (Sequential products, pipeline within each):**
+
+```
+Product 1: [5 videos||] → [image] → [synthesis] = 4 min
+Product 2: [5 videos||] → [image] → [synthesis] = 4 min
+Product 3: [5 videos||] → [image] → [synthesis] = 4 min
+...
+Product 8: [5 videos||] → [image] → [synthesis] = 4 min
+Total: 8 × 4 min = 32 min
+```
+
+**Why this is still fast:**
+- **Parallel videos within each product:** 5 videos × 2min = 10min if sequential → 2min with parallel ✅
+- **Sequential products:** Required due to 5-task concurrency limit
+- **vs Fully sequential:** 8 × (10 + 1 + 1) = 96 min → **3x slower**
+- **vs Trying to parallelize (broken):** Would launch 40 video tasks → **TIMEOUT/FAILURE**
 
 ---
 
@@ -294,14 +346,32 @@ Claude:
 1. Starting Phase 1: Scraping 8 products...
    ✅ 8/8 products scraped (5 min)
 
-2. Starting Phase 2: Analysis...
-   - Launching 8 video batch analyses (Python)
-   - Launching 8 image analyses (Gemini async)
-   ...waiting for video analyses...
-   ✅ Video analyses complete (8 min)
-   - Launching 8 synthesis tasks (Gemini async)
-   ...waiting for synthesis...
-   ✅ All synthesis complete (4 min)
+2. Starting Phase 2: Analysis (sequential products, pipeline within each)...
+
+   === Product 1/8 ===
+   - Stage 1: Launching 5 video analyses in parallel...
+   ✅ Videos analyzed (2 min)
+   - Stage 2: Analyzing product images...
+   ✅ Images analyzed (1 min)
+   - Stage 3: Creating market synthesis...
+   ✅ Synthesis complete (1 min)
+   ✅✅✅ Product 1 COMPLETE (4 min)
+
+   === Product 2/8 ===
+   - Stage 1: Launching 5 video analyses in parallel...
+   ✅ Videos analyzed (2 min)
+   - Stage 2: Analyzing product images...
+   ✅ Images analyzed (1 min)
+   - Stage 3: Creating market synthesis...
+   ✅ Synthesis complete (1 min)
+   ✅✅✅ Product 2 COMPLETE (4 min)
+
+   ...
+
+   === Product 8/8 ===
+   ✅✅✅ Product 8 COMPLETE (4 min)
+
+   ✅ All 8 products analyzed (32 min total)
 
 3. Quality Gate...
    ✅ 8/8 products have valid synthesis files
@@ -313,7 +383,7 @@ Claude:
    - Product 8/8: Writing scripts... ✅ (5 min)
 
 === WORKFLOW COMPLETE ===
-Total time: 62 minutes
+Total time: 83 minutes
 Products processed: 8/8
 Scripts generated: 24 (3 per product)
 Campaign summaries: 8

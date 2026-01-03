@@ -27,11 +27,12 @@ This skill scrapes TikTok Shop product data from **multiple sources** with autom
 
 **When Tabcut returns insufficient data, the scraper automatically retries with FastMoss.**
 
-**Fallback Triggers:**
-- Product name is "Unknown Product", "undefined", or `null`
-- Total sales is `null` or parsing failed
-- Zero product images downloaded
-- Zero videos available
+**Fallback Triggers (any one = retry with FastMoss):**
+- Product name or shop owner is missing/placeholder ("Unknown Product", "undefined", empty, or `null`)
+- Sales data missing or unparseable (e.g., `total_sales` or `sales_count` is `null`)
+- `product_images/` missing or zero images downloaded
+- Top videos list is empty OR all top videos lack a `video_url`
+- When `--download-videos` is used: `ref_video/` missing or contains 0 MP4s
 
 **Example:**
 ```bash

@@ -128,26 +128,54 @@ This orchestrates all 4 skills in proper order with quality gates.
 
 ## Time Efficiency Comparison
 
-### Old Workflow (Sequential)
+### Old Workflow (Fully Sequential)
 ```
 8 products × 15 min/product = 120 minutes total
+(Videos sequential: 5 × 2min, Image: 2min, Synthesis: 3min, Scripts: 5min)
 ```
 
-### New Workflow (Parallel Analysis + Sequential Scripts)
+### New Workflow (Sequential Products, Pipeline Within Each)
 ```
 Phase 1 (scraping):   ~5 min (parallel downloads)
-Phase 2 (analysis):   ~7 min (all parallel via Gemini async)
+Phase 2 (analysis):   ~32 min (sequential products, parallel videos within)
+  └─ Per product:     4 min (5 videos|| 2min + image 1min + synthesis 1min)
 Phase 3 (scripts):    ~40 min (8 products × 5 min, focused quality)
 ────────────────────────────────────────────────────
-Total:               ~52 min (56% faster)
+Total:               ~77 min (36% faster)
 ```
 
 ### Scaling Benefits
-| Products | Old (Sequential) | New (Parallel) | Savings |
-|:---------|:-----------------|:---------------|:--------|
-| 8 | 120 min | 52 min | 57% |
-| 20 | 300 min | 112 min | 63% |
-| 50 | 750 min | 262 min | 65% |
+
+**⚠️ CRITICAL:** Each product has **5 videos**. Analyzing 5 videos in parallel = **all 5 Gemini async slots used**.
+
+| Products | Old (Fully Sequential) | New (Pipeline) | Per Product | Savings |
+|:---------|:----------------------|:---------------|:------------|:--------|
+| 1 | 15 min | 11 min | 4 min analysis | 27% |
+| 5 | 75 min | 45 min | 5 × 4 min = 20 min | 40% |
+| 8 | 120 min | 77 min | 8 × 4 min = 32 min | 36% |
+| 20 | 300 min | 165 min | 20 × 4 min = 80 min | 45% |
+| 50 | 750 min | 405 min | 50 × 4 min = 200 min | 46% |
+
+### Pipeline Strategy
+
+**CRITICAL CONSTRAINT:** 5-task concurrency limit in Gemini async MCP
+
+**Sequential products (one at a time):**
+- Product 1: [5 videos in parallel] → [image] → [synthesis] = 4 min
+- Product 2: [5 videos in parallel] → [image] → [synthesis] = 4 min
+- Product 3: [5 videos in parallel] → [image] → [synthesis] = 4 min
+- ...
+
+**Why sequential products:**
+- Each product's 5 videos use all 5 concurrent task slots
+- Cannot process multiple products simultaneously without exceeding limit
+- Trying to parallelize products → 40+ concurrent tasks → **TIMEOUT/FAILURE**
+
+**Why still fast:**
+- **Within each product:** 5 videos in parallel (not sequential)
+- **If videos were sequential:** 5 × 2min = 10min per product = 80min total for 8 products
+- **With parallel videos:** 2min per product = 32min total for 8 products
+- **Speed gain:** 2.5x faster than fully sequential
 
 ---
 

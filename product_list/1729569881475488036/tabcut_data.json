@@ -1,0 +1,96 @@
+{
+  "product_id": "1729569881475488036",
+  "scraped_at": "2026-01-02T16:03:12.299111",
+  "product_info": {
+    "product_name": "Rose Gift Box with Heart Necklace, Perfect for Wife Lover Friend Grandma Birthday Valentine Christmas Present",
+    "shop_owner": "Elegance Gift",
+    "total_sales": 192,
+    "total_sales_revenue": "€ 2464.30($ 2868.80)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 123,
+    "sales_revenue": "$ 1870.06",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 8,
+    "带货视频达人数": 7,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADCadou Cadou perfecte de Crăciun #UnboxYourYear #shopingnightangel #cadouri #cadouridecraciun🎄🎁 发现时间：2025.12.21 16:53更新时间：2025.12.23 09:09时长：00:00:25跳转至 TikTok",
+      "creator_username": "iingerulnoptii",
+      "creator_followers": "2.54万",
+      "publish_date": "2025-12-21 16:47",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "221",
+      "video_url": "https://www.tiktok.com/@iingerulnoptii/video/7586338297685871894?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_iingerulnoptii.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADI will be very happy to receive this gift. #viral #fyp #valentinesday #necklace #tiktokshop发现时间：2025.12.27 08:14更新时间：2025.12.27 08:14时长：00:00:15跳转至 TikTok",
+      "creator_username": "jannik0686",
+      "creator_followers": "1.92万",
+      "publish_date": "2025-12-25 19:55",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "797",
+      "video_url": "https://www.tiktok.com/@jannik0686/video/7587863848321862934?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_jannik0686.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADIch glaube es gefällt ihr ☺️ #fyp #unboxyourdeals #weihnachtsdeals #newyearnewme #winterdeals 发现时间：2026.01.01 08:24更新时间：2026.01.01 08:24时长：00:00:56跳转至 TikTok",
+      "creator_username": "shopmitlukas",
+      "creator_followers": "7535",
+      "publish_date": "2025-12-31 11:23",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "231",
+      "video_url": "https://www.tiktok.com/@shopmitlukas/video/7589965674278079747?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_shopmitlukas.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADRose Geschenkbox mit Herz Halskette,Perfekt für Frauen Liebhaber Freund Oma Geburtstag Valentinstag Weihnachten Geschenk • Herz Rosen Halskette Set • Herzgeschenk Rosenduft-Geschenkset #geschenk #boxingday #valentinesday #tiktokshop 发现时间：2025.12.29 20:13更新时间：2025.12.29 20:13时长：00:01:37跳转至 TikTok",
+      "creator_username": "potap_tv",
+      "creator_followers": "5037",
+      "publish_date": "2025-12-29 17:25",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "103",
+      "video_url": "https://www.tiktok.com/@potap_tv/video/7589316695450324246?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_potap_tv.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#viral #fyp #christmasgift #necklace #tiktokshop 发现时间：2025.12.18 04:05更新时间：2025.12.19 02:19时长：00:00:40跳转至 TikTok",
+      "creator_username": "godsownfamily_",
+      "creator_followers": "2.84万",
+      "publish_date": "2025-12-17 18:00",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "2003",
+      "video_url": "https://www.tiktok.com/@godsownfamily_/video/7584872789966949654?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_godsownfamily_.mp4"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "product_id": "1729698782485387393",
+  "scraped_at": "2026-01-02T18:39:50.315011",
+  "product_info": {
+    "product_name": "Tragbare Autoheizung, Auto-Windschutzscheiben-Heizung, gegen Kondensation, Winter",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 7,
+    "total_sales_revenue": "€1.00",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 7,
+    "sales_revenue": "€65",
+    "related_videos": 7,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 0,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by Endlich",
+      "creator_username": "Endlich",
+      "creator_followers": null,
+      "publish_date": "2025-11-24",
+      "estimated_sales": 33,
+      "estimated_revenue": "€301.78",
+      "total_views": 34,
+      "likes": 958,
+      "comments": 48,
+      "engagement_rate": "0.4%",
+      "video_url": "https://www.tiktok.com/@talasavely567/video/7576262681175297302?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "Video by TragbareAutoheizung",
+      "creator_username": "TragbareAutoheizung",
+      "creator_followers": null,
+      "publish_date": "2025-12-20",
+      "estimated_sales": 32,
+      "estimated_revenue": "€281.37",
+      "total_views": 5,
+      "likes": 123,
+      "comments": 10,
+      "engagement_rate": "0.3%",
+      "video_url": "https://www.tiktok.com/@oswald_yf/video/7585881539041348886?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "Video by Tragbarer",
+      "creator_username": "Tragbarer",
+      "creator_followers": null,
+      "publish_date": "2025-11-24",
+      "estimated_sales": 30,
+      "estimated_revenue": "€242.01",
+      "total_views": 8,
+      "likes": 366,
+      "comments": 4,
+      "engagement_rate": "0.5%",
+      "video_url": "https://www.tiktok.com/@schmidt_7861/video/7576163295082663190?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "Video by Buy",
+      "creator_username": "Buy",
+      "creator_followers": null,
+      "publish_date": "2025-12-19",
+      "estimated_sales": 20,
+      "estimated_revenue": "€160.41",
+      "total_views": 4,
+      "likes": 109,
+      "comments": 3,
+      "engagement_rate": "0.4%",
+      "video_url": "https://www.tiktok.com/@lotti420_/video/7585507271770131734?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "product_id": "1729611879419517583",
+  "scraped_at": "2026-01-02T16:04:13.530215",
+  "product_info": {
+    "product_name": "1PC Stunning Start With Bismillah Metal Islamic Wall Decorative Art Ramadan Home Decoration, Ideal Islamic Piece home and garden",
+    "shop_owner": "HelloYoung",
+    "total_sales": 13,
+    "total_sales_revenue": "€ 131.56($ 153.15)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 10,
+    "sales_revenue": "$ 118.98",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 3,
+    "带货视频达人数": 3,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADTiktok made me buy it, and I was fascinated by it.#tiktokshop #tiktok #spotlightfinds#tiktokshopcybermonday #tiktokshopblackfriday发现时间：2025.12.26 02:41更新时间：2025.12.27 01:54时长：00:00:16跳转至 TikTok",
+      "creator_username": "hannes_we07",
+      "creator_followers": "2.06万",
+      "publish_date": "2025-12-25 18:14",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "109",
+      "video_url": "https://www.tiktok.com/@hannes_we07/video/7587845077234470166?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_hannes_we07.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#viralvideos #ديكور #fpy 发现时间：2025.12.30 16:19更新时间：2025.12.31 16:44时长：00:00:27跳转至 TikTok",
+      "creator_username": "mayash992",
+      "creator_followers": "1.4万",
+      "publish_date": "2025-12-29 19:44",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "403",
+      "video_url": "https://www.tiktok.com/@mayash992/video/7589352654749453590?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_mayash992.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADThe best decorations for Ramadan#spotlightfinds  #gifts #decorations #Ramadan #fyp 发现时间：2025.12.26 03:58更新时间：2025.12.28 09:02时长：00:00:15跳转至 TikTok",
+      "creator_username": "hannah_6685",
+      "creator_followers": "3.53万",
+      "publish_date": "2025-12-25 17:28",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "292",
+      "video_url": "https://www.tiktok.com/@hannah_6685/video/7587833190199364897?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_hannah_6685.mp4"
+    }
+  ]
+}

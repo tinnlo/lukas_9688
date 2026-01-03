@@ -26,20 +26,122 @@ execution_agent: Gemini CLI MCP (async)
 
 ---
 
+## ⚠️ Concurrency Limits | 并发限制
+
+**CRITICAL OPERATIONAL CONSTRAINT:**
+
+Gemini async MCP has a **maximum safe limit of 5 concurrent tasks**.
+
+### The Real Bottleneck: Videos Per Product
+
+**Each product has 5 top-performing videos** to analyze. This means:
+
+| Task Type | Concurrency | Slots Used |
+|:----------|:------------|:-----------|
+| 5 videos (per product) | Parallel | **5 slots** ✅ (FULL) |
+| + Image analysis | ❌ BLOCKED | Would need 6 slots |
+| + Synthesis | ❌ BLOCKED | Would need 6 slots |
+
+### Why This Matters
+
+❌ **WRONG - Launching videos + images simultaneously:**
+```python
+# DANGEROUS - Exceeds 5-task limit
+for product in products:
+    # Launch 5 videos in parallel (5 tasks)
+    for video in get_videos(product):  # 5 videos
+        launch_video_analysis(product, video)
+
+    # FAILS - trying to add 6th task while videos running
+    launch_image_analysis(product)
+```
+
+✅ **CORRECT - Sequential pipeline per product:**
+```python
+# SAFE - Process products sequentially, pipeline within each
+for product_id in products:  # Sequential across products
+
+    # Step 1: Launch 5 video analyses in parallel (fills all 5 slots)
+    video_tasks = []
+    for i, video in enumerate(get_videos(product_id)):
+        task = launch_video_analysis(product_id, i+1, video)
+        video_tasks.append(task)
+
+    # Wait for all 5 videos to complete
+    wait_for_all(video_tasks)
+
+    # Step 2: Launch image analysis (1 task)
+    image_task = launch_image_analysis(product_id)
+    wait_for_completion(image_task)
+
+    # Step 3: Launch synthesis (1 task)
+    synthesis_task = launch_synthesis(product_id)
+    wait_for_completion(synthesis_task)
+
+    print(f"✅ Product {product_id} complete")
+```
+
+### Pipeline Strategy Per Product
+
+**Within ONE product (sequential stages):**
+1. **Video Analysis Stage**: 5 videos in parallel → Wait for completion
+2. **Image Analysis Stage**: 1 task → Wait for completion
+3. **Synthesis Stage**: 1 task → Wait for completion
+
+**Across multiple products:**
+- Process products **sequentially** (one product pipeline at a time)
+- Never try to process multiple products in parallel
+
+### Time Impact (8 Products Example)
+
+**Sequential processing (CORRECT):**
+- Product 1: Videos (2min) + Image (1min) + Synthesis (1min) = 4 min
+- Product 2: 4 min
+- ...
+- Product 8: 4 min
+- **Total: ~32 minutes** for 8 products
+
+**Trying to parallelize products (BROKEN):**
+- Launch all 8 products' video analyses = 40 concurrent tasks
+- Result: **TIMEOUT/FAILURE** ❌
+
+**Why sequential is still fast:**
+- Within each product, 5 videos analyzed in parallel (not sequential)
+- If videos were sequential: 5 × 2min = 10min per product = 80min total
+- With parallel videos: 2min per product = 32min total
+- **Still 2.5x faster** than fully sequential
+
+---
+
 ## Workflow Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  PHASE 1: PARALLEL ANALYSIS (Gemini Async MCP)              │
+│  PHASE 1: SEQUENTIAL PRODUCT ANALYSIS (Gemini Async MCP)    │
+│  Process products one at a time, pipeline within each       │
 │                                                             │
-│  Product A ──┬── Image Analysis ──┐                         │
-│              └── Video 1-5 Analysis ── Video Synthesis      │
+│  FOR EACH PRODUCT (sequential):                             │
 │                                                             │
-│  Product B ──┬── Image Analysis ──┐     (all parallel)      │
-│              └── Video 1-5 Analysis ── Video Synthesis      │
+│  ┌────────────────────────────────────────────────────┐    │
+│  │ Stage 1: Video Analysis (PARALLEL)                 │    │
+│  │ ├─ Video 1 analysis ──┐                            │    │
+│  │ ├─ Video 2 analysis ──┤                            │    │
+│  │ ├─ Video 3 analysis ──┼─→ Wait for all 5 complete │    │
+│  │ ├─ Video 4 analysis ──┤   (fills all 5 slots)     │    │
+│  │ └─ Video 5 analysis ──┘                            │    │
+│  └────────────────────────────────────────────────────┘    │
+│                      ↓                                      │
+│  ┌────────────────────────────────────────────────────┐    │
+│  │ Stage 2: Image Analysis (1 task)                   │    │
+│  │ └─ Analyze all product images → Wait for complete  │    │
+│  └────────────────────────────────────────────────────┘    │
+│                      ↓                                      │
+│  ┌────────────────────────────────────────────────────┐    │
+│  │ Stage 3: Video Synthesis (1 task)                  │    │
+│  │ └─ Synthesize market insights → Wait for complete  │    │
+│  └────────────────────────────────────────────────────┘    │
 │                                                             │
-│  Product C ──┬── Image Analysis ──┐                         │
-│              └── Video 1-5 Analysis ── Video Synthesis      │
+│  Repeat for next product...                                 │
 └─────────────────────────────────────────────────────────────┘
                             │
                             ▼
@@ -60,33 +162,23 @@ execution_agent: Gemini CLI MCP (async)
 
 ---
 
-## Phase 1: Parallel Analysis Execution
+## Phase 1: Sequential Product Analysis Pipeline
 
-### Step 1.1: Launch All Image Analyses (Parallel)
+**Process products one at a time, with pipeline stages within each product.**
 
-**For each product with images, launch async:**
-
-```python
-# Launch image analysis for all products in parallel
-tasks = {}
-for product_id in product_ids:
-    if has_images(product_id):
-        task = mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
-            "query": IMAGE_ANALYSIS_PROMPT.format(product_id=product_id),
-            "working_dir": PROJECT_ROOT,
-            "yolo": True
-        })
-        tasks[product_id] = {"image": task}
-```
-
-### Step 1.2: Launch All Video Analyses (Parallel)
-
-**For each video in each product, launch async:**
+### Complete Implementation
 
 ```python
-# Launch video analysis for all videos in parallel
-for product_id in product_ids:
-    videos = get_videos(product_id)
+PROJECT_ROOT = "/Users/lxt/Movies/TikTok/WZ/lukas_9688"
+
+for product_id in product_ids:  # Sequential across products
+    print(f"\n=== Processing Product {product_id} ===")
+
+    # Stage 1: Launch 5 video analyses in parallel
+    print(f"Stage 1: Analyzing 5 videos in parallel...")
+    video_tasks = []
+    videos = get_videos(product_id)  # Returns list of 5 video paths
+
     for i, video in enumerate(videos, 1):
         task = mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
             "query": VIDEO_ANALYSIS_PROMPT.format(
@@ -97,28 +189,70 @@ for product_id in product_ids:
             "working_dir": PROJECT_ROOT,
             "yolo": True
         })
-        tasks[product_id][f"video_{i}"] = task
-```
+        video_tasks.append(task)
 
-### Step 1.3: Wait for Video Analyses, Then Launch Synthesis
+    # Wait for all 5 videos to complete
+    for task in video_tasks:
+        result = check_task_completion(task)
+        while result.status == "running":
+            time.sleep(5)
+            result = check_task_completion(task)
 
-**Synthesis depends on video analyses completing first:**
+    print(f"✅ Stage 1 complete: 5 videos analyzed")
 
-```python
-# Check video analysis completion, then launch synthesis
-for product_id in product_ids:
-    # Wait for all video analyses to complete
-    video_tasks = [t for k, t in tasks[product_id].items() if k.startswith("video_")]
-    wait_for_all(video_tasks)
+    # Stage 2: Launch image analysis (1 task)
+    if has_images(product_id):
+        print(f"Stage 2: Analyzing product images...")
+        image_task = mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
+            "query": IMAGE_ANALYSIS_PROMPT.format(product_id=product_id),
+            "working_dir": PROJECT_ROOT,
+            "yolo": True
+        })
 
-    # Now launch synthesis (can run in parallel across products)
-    task = mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
+        # Wait for image analysis to complete
+        result = check_task_completion(image_task)
+        while result.status == "running":
+            time.sleep(5)
+            result = check_task_completion(image_task)
+
+        print(f"✅ Stage 2 complete: Images analyzed")
+
+    # Stage 3: Launch video synthesis (1 task)
+    print(f"Stage 3: Creating market synthesis...")
+    synthesis_task = mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
         "query": SYNTHESIS_PROMPT.format(product_id=product_id),
         "working_dir": PROJECT_ROOT,
         "yolo": True
     })
-    tasks[product_id]["synthesis"] = task
+
+    # Wait for synthesis to complete
+    result = check_task_completion(synthesis_task)
+    while result.status == "running":
+        time.sleep(5)
+        result = check_task_completion(synthesis_task)
+
+    print(f"✅ Stage 3 complete: Synthesis created")
+    print(f"✅✅✅ Product {product_id} COMPLETE\n")
+
+print(f"\n=== ALL {len(product_ids)} PRODUCTS ANALYZED ===")
 ```
+
+### Breakdown by Stage
+
+**Stage 1: Video Analysis (Parallel within product)**
+- Launch 5 video analyses simultaneously
+- Uses all 5 available Gemini async slots
+- Wait for all to complete before proceeding
+
+**Stage 2: Image Analysis (Single task)**
+- Launch 1 image analysis task
+- Wait for completion before proceeding
+- Skipped if product has no images
+
+**Stage 3: Video Synthesis (Single task)**
+- Launch 1 synthesis task
+- Requires Stage 1 video analyses to exist
+- Wait for completion before moving to next product
 
 ---
 
@@ -282,40 +416,63 @@ product_list/{product_id}/ref_video/video_*_analysis.md
 
 ## Batch Processing Example
 
-**For 8 products with 5 videos each = 48 parallel tasks:**
+**For 8 products with 5 videos each:**
 
 ```python
 # Time comparison:
-# Sequential: 8 products × (5 videos × 2min + synthesis 3min + image 2min) = 8 × 15min = 120min
-# Parallel:   All 40 videos parallel (2min) + 8 synthesis parallel (3min) + 8 images parallel (2min) = 7min
+# Fully sequential: 8 products × (5 videos × 2min each) = 8 × 10min = 80min (videos alone)
+# Pipeline approach: 8 products × (5 videos in parallel: 2min + image: 1min + synthesis: 1min) = 8 × 4min = 32min
+# Speed improvement: 2.5x faster
 
-# Launch all tasks
-all_tasks = {}
-for product_id in products:
-    all_tasks[product_id] = {}
+# Process products sequentially with pipeline stages
+completed_products = []
+failed_products = []
 
-    # Image analysis (parallel)
-    if has_images(product_id):
-        all_tasks[product_id]['image'] = launch_image_analysis(product_id)
+for product_id in products:  # Sequential across products
+    print(f"\n=== Product {product_id} ===")
 
-    # Video analyses (parallel)
-    for i in range(1, 6):
-        all_tasks[product_id][f'video_{i}'] = launch_video_analysis(product_id, i)
+    try:
+        # Stage 1: Video analyses (5 tasks in parallel)
+        print(f"Launching 5 video analyses...")
+        video_tasks = []
+        for i in range(1, 6):
+            task = launch_video_analysis(product_id, i)
+            video_tasks.append(task)
 
-# Wait for all video analyses, then launch synthesis (parallel)
-for product_id in products:
-    wait_for_videos(all_tasks[product_id])
-    all_tasks[product_id]['synthesis'] = launch_synthesis(product_id)
+        # Wait for all 5 videos
+        wait_for_all(video_tasks)
+        print(f"✅ Videos analyzed")
 
-# Wait for all synthesis to complete
-wait_for_all_synthesis(all_tasks)
+        # Stage 2: Image analysis (1 task)
+        if has_images(product_id):
+            print(f"Analyzing images...")
+            image_task = launch_image_analysis(product_id)
+            wait_for_completion(image_task)
+            print(f"✅ Images analyzed")
 
-# Quality gate verification
-for product_id in products:
-    verify_analysis(product_id)
+        # Stage 3: Synthesis (1 task)
+        print(f"Creating synthesis...")
+        synthesis_task = launch_synthesis(product_id)
+        wait_for_completion(synthesis_task)
+        print(f"✅ Synthesis complete")
+
+        # Quality gate verification
+        verify_analysis(product_id)
+        completed_products.append(product_id)
+
+    except Exception as e:
+        print(f"❌ Failed: {e}")
+        failed_products.append(product_id)
+        continue  # Continue with next product
+
+# Summary
+print(f"\n=== BATCH COMPLETE ===")
+print(f"Completed: {len(completed_products)}/{len(products)}")
+if failed_products:
+    print(f"Failed: {failed_products}")
 
 # Now proceed to script generation (Claude Code)
-print("✅ All analysis complete. Ready for script generation.")
+print("\n✅ Ready for script generation phase")
 ```
 
 ---

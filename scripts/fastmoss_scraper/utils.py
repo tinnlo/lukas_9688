@@ -147,10 +147,13 @@ def format_number(value: str) -> Optional[int]:
         # Remove currency symbols and spaces
         value = re.sub(r'[€$¥\s]', '', value)
 
-        # Handle Chinese "万" (10,000)
+        # Handle Chinese units (万 = 10,000, 亿 = 100,000,000)
         if '万' in value:
             value = value.replace('万', '')
             multiplier = 10000
+        elif '亿' in value:
+            value = value.replace('亿', '')
+            multiplier = 100000000
         else:
             multiplier = 1
 

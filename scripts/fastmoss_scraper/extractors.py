@@ -7,6 +7,7 @@ from playwright.async_api import Page
 from loguru import logger
 
 from .models import ProductInfo, SalesData, VideoAnalysis, VideoData
+from .utils import format_number
 
 
 class DataExtractor:
@@ -73,6 +74,92 @@ class DataExtractor:
         if match:
             return f"{match.group(1)}%"
         return None
+
+    def _sanitize_value(self, value: Optional[str]) -> Optional[str]:
+        """Normalize placeholder values to None."""
+        if not value:
+            return None
+        cleaned = value.strip()
+        if cleaned in {"-", "--", "—", "N/A", ".", "·"}:
+            return None
+        return cleaned
+
+    def _extract_metric_text(self, text: str, labels: List[str]) -> Optional[str]:
+        """Extract a raw metric value that appears near a label."""
+        if not text:
+            return None
+
+        label_pattern = "|".join(re.escape(label) for label in labels)
+        pattern = rf"(?:{label_pattern})\s*[:：]?\s*([€$¥]?\s*[\d.,]+(?:万|亿)?%?)"
+        match = re.search(pattern, text)
+        if match:
+            return self._sanitize_value(match.group(1))
+
+        lines = [line.strip() for line in text.splitlines() if line.strip()]
+        for idx, line in enumerate(lines):
+            if any(label in line for label in labels):
+                line_clean = line
+                for label in labels:
+                    line_clean = line_clean.replace(label, " ")
+                match = re.search(r"([€$¥]?\s*[\d.,]+(?:万)?%?)", line_clean)
+                if match:
+                    return self._sanitize_value(match.group(1))
+                if idx + 1 < len(lines):
+                    next_line = lines[idx + 1]
+                    match = re.search(r"([€$¥]?\s*[\d.,]+(?:万)?%?)", next_line)
+                    if match:
+                        return self._sanitize_value(match.group(1))
+        return None
+
+    async def _collect_page_text(self) -> str:
+        """Collect page text from visible, hidden, and app-state sources."""
+        inner_text = await self.page.evaluate('''() => {
+            return document.body ? (document.body.innerText || "") : "";
+        }''')
+        text_content = await self.page.evaluate('''() => {
+            return document.body ? (document.body.textContent || "") : "";
+        }''')
+        state_text = await self.page.evaluate('''() => {
+            const chunks = [];
+            const nextData = document.getElementById('__NEXT_DATA__');
+            if (nextData && nextData.textContent) {
+                chunks.push(nextData.textContent);
+            }
+            if (window.__NUXT__) {
+                try {
+                    chunks.push(JSON.stringify(window.__NUXT__));
+                } catch (e) {
+                    // Ignore stringify failures for large/cyclic state
+                }
+            }
+            return chunks.join('\\n');
+        }''')
+
+        return "\n".join(
+            part for part in [inner_text, text_content, state_text] if part
+        )
+
+    def _normalize_currency(self, value: Optional[str]) -> Optional[str]:
+        """Normalize currency text to a compact form (e.g., €1,234.56)."""
+        cleaned = self._sanitize_value(value)
+        if not cleaned:
+            return None
+        compact = cleaned.replace(" ", "")
+        match = re.search(r"€([\d.,]+)", compact)
+        if match:
+            return f"€{match.group(1)}"
+        return compact
+
+    def _normalize_percent(self, value: Optional[str]) -> Optional[str]:
+        """Normalize percent values to include %."""
+        cleaned = self._sanitize_value(value)
+        if not cleaned:
+            return None
+        compact = cleaned.replace(" ", "")
+        match = re.search(r"([\d.]+%)", compact)
+        if match:
+            return match.group(1)
+        return compact
 
     async def extract_product_info(self) -> ProductInfo:
         """
@@ -201,12 +288,40 @@ class DataExtractor:
                 return result;
             }''')
 
+            page_text = await self._collect_page_text()
+            sales_count = sales_metrics.get('sales_count')
+            sales_revenue = sales_metrics.get('sales_revenue')
+
+            if sales_count is None:
+                sales_count = format_number(
+                    self._extract_metric_text(page_text, ["销量"])
+                )
+            if not sales_revenue:
+                sales_revenue = self._normalize_currency(
+                    self._extract_metric_text(page_text, ["销售额"])
+                )
+
+            related_videos = format_number(
+                self._extract_metric_text(page_text, ["关联视频", "相关视频"])
+            )
+            related_creators = format_number(
+                self._extract_metric_text(page_text, ["关联达人", "相关达人"])
+            )
+            conversion_rate = self._normalize_percent(
+                self._extract_metric_text(page_text, ["转化率"])
+            )
+            click_through_rate = self._normalize_percent(
+                self._extract_metric_text(page_text, ["点击率"])
+            )
+
             return SalesData(
                 date_range=date_range,
-                sales_count=sales_metrics.get('sales_count'),
-                sales_revenue=sales_metrics.get('sales_revenue'),
-                related_videos=sales_metrics.get('related_videos'),
-                related_creators=sales_metrics.get('related_creators')
+                sales_count=sales_count,
+                sales_revenue=sales_revenue,
+                related_videos=related_videos,
+                related_creators=related_creators,
+                conversion_rate=conversion_rate,
+                click_through_rate=click_through_rate
             )
 
         except Exception as e:
@@ -223,9 +338,28 @@ class DataExtractor:
         logger.info("Extracting video analysis...")
 
         try:
-            # These metrics are typically in charts/graphs on FastMoss
-            # Extract what's available
-            return VideoAnalysis()
+            page_text = await self._collect_page_text()
+
+            return VideoAnalysis(
+                带货视频数=format_number(
+                    self._extract_metric_text(page_text, ["带货视频数"])
+                ),
+                带货视频达人数=format_number(
+                    self._extract_metric_text(page_text, ["带货视频达人数", "带货视频达人"])
+                ),
+                带货视频销量=format_number(
+                    self._extract_metric_text(page_text, ["带货视频销量"])
+                ),
+                带货视频销售额=self._normalize_currency(
+                    self._extract_metric_text(page_text, ["带货视频销售额"])
+                ),
+                广告成交金额=self._normalize_currency(
+                    self._extract_metric_text(page_text, ["广告成交金额"])
+                ),
+                广告成交占比=self._normalize_percent(
+                    self._extract_metric_text(page_text, ["广告成交占比"])
+                )
+            )
 
         except Exception as e:
             logger.error(f"Failed to extract video analysis: {e}")

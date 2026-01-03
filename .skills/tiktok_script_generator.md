@@ -1,15 +1,15 @@
 ---
 name: tiktok-script-generator
-description: Generates 3 TikTok short video scripts (30-40s) with bilingual Campaign Summary. References pre-existing analysis files (does NOT duplicate content). Focused on creative writing quality.
-version: 2.0.0
+description: Generates 3 TikTok short video scripts (30–40s) in German with MANDATORY Chinese translation, plus a bilingual Campaign Summary. References pre-existing analysis files (does NOT duplicate content). Outputs Obsidian-ready notes to product_list/{id}/scripts with required frontmatter and sections.
+version: 2.1.0
 author: Claude
 execution_agent: Claude Code (direct writing)
 prerequisite: tiktok_product_analysis.md (must complete first)
 ---
 
-# TikTok Script Generator Skill v2.0
+# TikTok Script Generator Skill v2.1
 
-**PURPOSE:** Generate production-ready scripts from analysis foundation
+**PURPOSE:** Generate production-ready scripts from analysis foundation (German VO + mandatory Chinese translation)
 **EXECUTOR:** Claude Code (for quality creative writing)
 **INPUT:** Analysis files from `tiktok_product_analysis.md`
 **OUTPUT:** 3 scripts + Campaign Summary (references analysis, no duplication)
@@ -95,6 +95,8 @@ echo "✅ Pre-check passed. Ready for script generation."
 3. **`tabcut_data.json`** (product metadata)
    - Product name, price, shop
    - Sales data, conversion rate
+4. **`fastmoss_data.json`** (fallback if tabcut data is missing/unknown)
+   - Use if product_name is "Unknown Product" or key sales metrics are null
 
 **Extract these key elements:**
 - Top 3 hook patterns from synthesis
@@ -109,11 +111,11 @@ echo "✅ Pre-check passed. Ready for script generation."
 
 **Each script must have:**
 
-### Required YAML Frontmatter
+### Required YAML Frontmatter (Obsidian)
 ```yaml
 ---
 cover: ""
-caption: "German caption with hashtags"
+caption: "Short, punchy German caption (no hashtags)"
 published: YYYY-MM-DD
 duration: "00:35"
 sales:
@@ -124,19 +126,25 @@ tags:
   - "#tag2"
   - "#tag3"
   - "#tag4"
-  - "#tiktokshop"
+  - "#tag5"
 product: "Full Product Name"
 source_notes:
   - "product_list/{id}/ref_video/video_synthesis.md"
   - "product_list/{id}/product_images/image_analysis.md"
+  - "product_list/{id}/tabcut_data.json"
 ---
 ```
+**Rules:**
+- `duration` target: 00:30–00:50
+- `tags` max 5 and meaningful for commerce/interest
+- `caption` is short and production-ready (no hashtags)
+- Always include `source_notes` to exact files used (use fastmoss_data.json if applicable)
 
 ### Required Sections
 ```markdown
-## Script N: [Angle Name] ([Strategy Type])
+## Scripts
 
-[1-2 sentence concept description]
+[1–2 sentence concept description]
 
 ### Structure (35s)
 - Hook: [Description] (0-3s)
@@ -156,20 +164,21 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-### DE (German - 35s)
+### DE (ElevenLabs Prompt | 30–50s)
 
 [tone] German voiceover line 1.
 [tone] German voiceover line 2.
 [tone] German voiceover line 3.
 ...
 
-### ZH (中文翻译 - 35s)
+### ZH (中文翻译 | 30–50s)
 
 [tone] Chinese translation line 1.
 [tone] Chinese translation line 2.
 [tone] Chinese translation line 3.
 ...
 ```
+**MANDATORY:** Chinese translation is required for every script. No exceptions.
 
 ### ElevenLabs v3 Tone Markers
 ```
@@ -180,9 +189,7 @@ source_notes:
 
 ### Script Naming Convention
 ```
-Script_1_[Angle].md    # e.g., Script_1_Kitchen_Chaos.md
-Script_2_[Angle].md    # e.g., Script_2_Nightstand_Upgrade.md
-Script_3_[Angle].md    # e.g., Script_3_Safety_First.md
+Product_Model_KeyAngle.md   # e.g., HTC_NE20_AI_Uebersetzer_Earbuds.md
 ```
 
 ---
@@ -244,17 +251,17 @@ Based on video synthesis analysis, we identified 3 winning angles:
 ## 5. Scripts Summary | 脚本摘要
 
 ### Script 1: [Title]
-- **File:** `scripts/Script_1_[Angle].md`
+- **File:** `scripts/[Product_Model_KeyAngle].md`
 - **Hook:** [First 3 seconds description]
 - **Key Message:** [Core selling point]
 
 ### Script 2: [Title]
-- **File:** `scripts/Script_2_[Angle].md`
+- **File:** `scripts/[Product_Model_KeyAngle].md`
 - **Hook:** [First 3 seconds description]
 - **Key Message:** [Core selling point]
 
 ### Script 3: [Title]
-- **File:** `scripts/Script_3_[Angle].md`
+- **File:** `scripts/[Product_Model_KeyAngle].md`
 - **Hook:** [First 3 seconds description]
 - **Key Message:** [Core selling point]
 
@@ -299,8 +306,8 @@ scripts_dir="product_list/$product_id/scripts"
 
 echo "=== QUALITY GATE: $product_id ==="
 
-# Check script count
-script_count=$(ls -1 "$scripts_dir"/Script_*.md 2>/dev/null | wc -l | tr -d ' ')
+# Check script count (exclude Campaign_Summary.md)
+script_count=$(ls -1 "$scripts_dir"/*.md 2>/dev/null | grep -v 'Campaign_Summary.md' | wc -l | tr -d ' ')
 if [ "$script_count" -lt 3 ]; then
     echo "❌ FAIL: Only $script_count scripts (need 3)"
     exit 1
@@ -315,7 +322,10 @@ fi
 echo "✅ Campaign Summary exists"
 
 # Check script quality (not stubs)
-for script in "$scripts_dir"/Script_*.md; do
+for script in "$scripts_dir"/*.md; do
+    if [ "$(basename "$script")" = "Campaign_Summary.md" ]; then
+        continue
+    fi
     lines=$(wc -l < "$script" | tr -d ' ')
     if [ "$lines" -lt 40 ]; then
         echo "⚠️ WARNING: $(basename $script) may be a stub ($lines lines)"
@@ -324,6 +334,10 @@ for script in "$scripts_dir"/Script_*.md; do
     # Check for placeholder content
     if grep -q 'product: "Product"' "$script"; then
         echo "❌ FAIL: $(basename $script) has placeholder product name"
+        exit 1
+    fi
+    if ! grep -q '### ZH' "$script"; then
+        echo "❌ FAIL: $(basename $script) missing Chinese translation section"
         exit 1
     fi
 done
@@ -370,7 +384,7 @@ Product C: [Read Analysis] → [Write Scripts] → [Campaign Summary] → [Gate]
 **Fix:** Every VO line needs [tone] marker at start
 
 ### ❌ Mistake 5: Skipping Chinese translations
-**Fix:** Both DE and ZH sections required for all scripts
+**Fix:** Chinese translation is mandatory for every script (DE + ZH sections required)
 
 ---
 
@@ -387,9 +401,9 @@ product_list/{product_id}/
 │   ├── video_*_analysis.md             # From analysis skill
 │   └── video_synthesis.md              # From analysis skill (CRITICAL)
 └── scripts/                            # FROM THIS SKILL
-    ├── Script_1_[Angle].md
-    ├── Script_2_[Angle].md
-    ├── Script_3_[Angle].md
+    ├── Product_Model_KeyAngle.md
+    ├── Product_Model_KeyAngle.md
+    ├── Product_Model_KeyAngle.md
     └── Campaign_Summary.md
 ```
 
@@ -410,11 +424,13 @@ ls product_list/$product_id/ref_video/video_synthesis.md  # Must exist
 
 ---
 
-**Version:** 2.0.0
-**Last Updated:** 2026-01-01
-**Changes from v1.7:**
+**Version:** 2.1.0
+**Last Updated:** 2026-01-02
+**Changes from prior version:**
 - Separated analysis from script generation
 - Reference-based Campaign Summary (no duplication)
 - Clear agent assignment (Claude for scripts)
 - Simplified workflow (5 steps vs 13)
 - Removed image analysis template (moved to tiktok_product_analysis.md)
+- Mandatory Chinese translation in every script
+- Output paths and naming aligned to Obsidian vault rules
