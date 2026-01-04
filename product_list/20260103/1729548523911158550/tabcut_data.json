@@ -1,0 +1,96 @@
+{
+  "product_id": "1729548523911158550",
+  "scraped_at": "2026-01-03T11:15:57.891709",
+  "product_info": {
+    "product_name": "Fashionable Handbag with Charm, Casual Versatile Shoulder Bag for Women, Trendy All-match Commuter Bag for Daily Used",
+    "shop_owner": "VIMON BAG",
+    "total_sales": 590,
+    "total_sales_revenue": "€ 8477.97($ 9869.58)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 361,
+    "sales_revenue": "$ 6005.47",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "10.34%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 87,
+    "带货视频达人数": 63,
+    "带货视频销量": 19,
+    "带货视频销售额": "$ 316.08",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADشنطة كتف 🥰🛍🛍#تيك_توك_شوب #اكسبلورexplore❥🕊 #تفاعلكم_لايك_متابعه_اكسبلوررررراexplore #اكسبلور_لايك_كومنت_فولو_ي_عسل🍯🌷 #اعادة_نشر🔁 发现时间：2025.12.26 06:28更新时间：2026.01.02 07:35时长：00:00:20跳转至 TikTok",
+      "creator_username": "lolo.sy8934",
+      "creator_followers": "7027",
+      "publish_date": "2025-12-24 20:22",
+      "estimated_sales": 8,
+      "estimated_revenue": "€ 114.32($ 133.08)",
+      "total_views": "3984",
+      "video_url": "https://www.tiktok.com/@lolo.sy8934/video/7587507127749463318?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_lolo.sy8934.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#donna #outfit #borsa 发现时间：2025.12.18 12:55更新时间：2025.12.18 12:55时长：00:00:18跳转至 TikTok",
+      "creator_username": "alessandragiuliano0",
+      "creator_followers": "3.3万",
+      "publish_date": "2025-12-17 13:07",
+      "estimated_sales": 3,
+      "estimated_revenue": "€ 42.87($ 49.91)",
+      "total_views": "1003",
+      "video_url": "https://www.tiktok.com/@alessandragiuliano0/video/7584797242331073814?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_alessandragiuliano0.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#tiktokshopbacktoschool #rucksack #holidaypacking #womenfashion #longchamp 发现时间：2025.12.31 04:46更新时间：2026.01.01 05:37时长：00:01:00跳转至 TikTok",
+      "creator_username": "einestadtdieniemalsschl",
+      "creator_followers": "1827",
+      "publish_date": "2025-12-29 22:01",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 28.58($ 33.27)",
+      "total_views": "795",
+      "video_url": "https://www.tiktok.com/@einestadtdieniemalsschl/video/7589387914497363232?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_einestadtdieniemalsschl.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADDiese schöne kleine Frauen-Handtasche ist der perfekte Begleiter für Alltag & Abend. Elegant, leicht und trotzdem praktisch – ein echtes Must-have, das jedes Outfit sofort aufwertet. 💼💖 #TikTokShop #Handtasche #FrauenStyle #TrendAccessoire #tiktokshop 发现时间：2025.12.18 04:20更新时间：2025.12.20 02:19时长：00:00:25跳转至 TikTok",
+      "creator_username": "novapicks_de",
+      "creator_followers": "4859",
+      "publish_date": "2025-12-17 11:07",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 14.29($ 16.64)",
+      "total_views": "606",
+      "video_url": "https://www.tiktok.com/@novapicks_de/video/7584766335129767190?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_novapicks_de.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#tiktokshopblackfriday #UnboxYourDeals   Die Tasche ist so Hübsch oder?1🤩发现时间：2025.12.14 10:24更新时间：2025.12.14 10:24时长：00:00:50跳转至 TikTok",
+      "creator_username": "georgiana_welt",
+      "creator_followers": "2203",
+      "publish_date": "2025-12-13 16:19",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 14.29($ 16.64)",
+      "total_views": "478",
+      "video_url": "https://www.tiktok.com/@georgiana_welt/video/7583362327718710560?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_georgiana_welt.mp4"
+    }
+  ]
+}

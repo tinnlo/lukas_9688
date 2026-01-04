@@ -509,12 +509,43 @@ def analyze_all_videos(product_id: str):
     product_dir = base_dir / "product_list" / product_id
     ref_video_dir = product_dir / "ref_video"
     tabcut_json = product_dir / "tabcut_data.json"
+    fastmoss_json = product_dir / "fastmoss_data.json"
 
-    # Load metadata
-    with open(tabcut_json) as f:
-        tabcut_data = json.load(f)
+    def _load_json(path: Path) -> dict:
+        with open(path) as f:
+            return json.load(f)
 
-    product_name = tabcut_data.get("product_info", {}).get("product_name") or "Unknown Product"
+    def _score_data(data: dict) -> tuple:
+        product_name = (data.get("product_info", {}) or {}).get("product_name") or ""
+        product_ok = bool(product_name.strip()) and product_name.strip() not in {"Unknown Product", "undefined", "None"}
+
+        top_videos = data.get("top_videos", []) or []
+        with_url = sum(
+            1 for v in top_videos
+            if (v.get("video_url") or v.get("url") or "").strip()
+        )
+        with_local = sum(
+            1 for v in top_videos
+            if (v.get("local_path") or "").strip()
+        )
+        return (1 if product_ok else 0, with_url, with_local, len(top_videos))
+
+    # Load metadata (prefer the richer one if both exist)
+    tabcut_data = _load_json(tabcut_json) if tabcut_json.exists() else None
+    fastmoss_data = _load_json(fastmoss_json) if fastmoss_json.exists() else None
+
+    if tabcut_data and fastmoss_data:
+        tabcut_score = _score_data(tabcut_data)
+        fastmoss_score = _score_data(fastmoss_data)
+        metadata = fastmoss_data if fastmoss_score > tabcut_score else tabcut_data
+    else:
+        metadata = tabcut_data or fastmoss_data
+
+    if not metadata:
+        print(f"❌ No metadata JSON found for {product_id} (expected tabcut_data.json or fastmoss_data.json)")
+        return
+
+    product_name = metadata.get("product_info", {}).get("product_name") or "Unknown Product"
 
     # Get all videos
     videos = sorted(ref_video_dir.glob("video_*.mp4"))
@@ -529,15 +560,21 @@ def analyze_all_videos(product_id: str):
     for i, video_path in enumerate(videos, 1):
         print(f"[{i}/{len(videos)}] Analyzing {video_path.name}...")
 
-        # Find metadata for this video
+        # Find metadata for this video (match by filename first, then fall back to index)
         video_metadata = {}
         video_url = None
-        for top_video in tabcut_data.get("top_videos", []):
-            local_path = top_video.get("local_path") or ""
-            if str(i) in local_path:
+        top_videos = metadata.get("top_videos", []) or []
+
+        for top_video in top_videos:
+            local_path = (top_video.get("local_path") or "").strip()
+            if local_path and video_path.name in local_path:
                 video_metadata = top_video
                 video_url = top_video.get("video_url") or top_video.get("url")
                 break
+
+        if not video_metadata and 0 <= (i - 1) < len(top_videos):
+            video_metadata = top_videos[i - 1] or {}
+            video_url = video_metadata.get("video_url") or video_metadata.get("url")
 
         # Extract frames and audio
         output_dir = ref_video_dir / f"video_{i}_analysis_temp"

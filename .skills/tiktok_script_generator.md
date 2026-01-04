@@ -1,6 +1,6 @@
 ---
 name: tiktok-script-generator
-description: Generates 3 TikTok short video scripts (30–40s) in German with MANDATORY Chinese translation, plus a bilingual Campaign Summary. References pre-existing analysis files (does NOT duplicate content). Outputs Obsidian-ready notes to product_list/{id}/scripts with required frontmatter and sections.
+description: Generates 3 TikTok short video scripts (45–50s) in German with MANDATORY Chinese translation, plus a bilingual Campaign Summary. References pre-existing analysis files (does NOT duplicate content). Outputs Obsidian-ready notes to product_list/{vendor}/{product_id}/script/ with required frontmatter and sections.
 version: 2.1.0
 author: Claude
 execution_agent: Claude Code (direct writing)
@@ -115,7 +115,8 @@ echo "✅ Pre-check passed. Ready for script generation."
 ```yaml
 ---
 cover: ""
-caption: "Short, punchy German caption (no hashtags)"
+caption: >-
+  Short, punchy TikTok caption in German WITH hashtags appended (TikTok caption format: no quote marks, no commas)
 published: YYYY-MM-DD
 duration: "00:35"
 sales:
@@ -129,15 +130,16 @@ tags:
   - "#tag5"
 product: "Full Product Name"
 source_notes:
-  - "product_list/{id}/ref_video/video_synthesis.md"
-  - "product_list/{id}/product_images/image_analysis.md"
-  - "product_list/{id}/tabcut_data.json"
+  - "product_list/{vendor}/{product_id}/ref_video/video_synthesis.md"
+  - "product_list/{vendor}/{product_id}/product_images/image_analysis.md"
+  - "product_list/{vendor}/{product_id}/tabcut_data.json"
 ---
 ```
 **Rules:**
 - `duration` target: 00:30–00:50
 - `tags` max 5 and meaningful for commerce/interest
-- `caption` is short and production-ready (no hashtags)
+- `caption` uses TikTok caption format: include the same hashtags as `tags` appended at the end (space-separated), and avoid commas
+- Use YAML block scalar `caption: >-` so `:` and `#` don't break frontmatter parsing
 - Always include `source_notes` to exact files used (use fastmoss_data.json if applicable)
 
 ### Required Sections
@@ -186,6 +188,13 @@ source_notes:
 [curious] [amused] [matter-of-fact] [concerned]
 [enthusiastic] [serious] [whisper] [energetic]
 ```
+
+### VO Pacing Rules (Important)
+- **FORBIDDEN:** Do not use `[pause]` / `[pause 200ms]` / `[pause: 200ms]` cues.
+- Avoid “slow list delivery”: don’t write long ingredient lists as many 1-word lines ending in `.`.
+  - Prefer 1–2 tight lines with commas and an em-dash, e.g.:
+    - `[matter-of-fact] Cyanotis Arachnoidea Extrakt: 1200 mg.`
+    - `[excited] Und dazu: BCAA, Ashwagandha, Rhodiola, Schwarzer Pfeffer‑Extrakt—als Bonus im Stack.`
 
 ### Script Naming Convention
 ```
@@ -302,7 +311,8 @@ Based on video synthesis analysis, we identified 3 winning angles:
 
 ```bash
 product_id="{product_id}"
-scripts_dir="product_list/$product_id/scripts"
+vendor="{vendor}"
+scripts_dir="product_list/$vendor/$product_id/script"
 
 echo "=== QUALITY GATE: $product_id ==="
 
@@ -339,6 +349,11 @@ for script in "$scripts_dir"/*.md; do
     if ! grep -q '### ZH' "$script"; then
         echo "❌ FAIL: $(basename $script) missing Chinese translation section"
         exit 1
+    fi
+
+    # Caption should use YAML block scalar so hashtags don't break YAML parsing
+    if ! awk 'BEGIN{in=0} /^---$/{in=!in} in && /^caption: >-/{ok=1} END{exit !ok}' "$script"; then
+        echo "⚠️ WARNING: $(basename $script) caption is not using 'caption: >-' (hashtags may break YAML)"
     fi
 done
 echo "✅ Script quality verified"
@@ -400,7 +415,7 @@ product_list/{product_id}/
 │   ├── video_*.mp4
 │   ├── video_*_analysis.md             # From analysis skill
 │   └── video_synthesis.md              # From analysis skill (CRITICAL)
-└── scripts/                            # FROM THIS SKILL
+└── script/                             # FROM THIS SKILL (new workflow)
     ├── Product_Model_KeyAngle.md
     ├── Product_Model_KeyAngle.md
     ├── Product_Model_KeyAngle.md

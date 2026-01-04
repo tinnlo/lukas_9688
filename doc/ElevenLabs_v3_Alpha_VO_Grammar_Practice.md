@@ -93,7 +93,7 @@ Notes:
 
 ## Recommended house template for this vault
 
-In `shorts_scripts/*.md`:
+In `product_list/{vendor}/{product_id}/script/*.md`:
 
 ```text
 ## Voiceover

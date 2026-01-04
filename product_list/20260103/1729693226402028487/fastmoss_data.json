@@ -1,0 +1,47 @@
+{
+  "product_id": "1729693226402028487",
+  "scraped_at": "2026-01-03T11:26:58.928691",
+  "product_info": {
+    "product_name": "Schminktisch mit Spiegel und 10 LED-Leuchten, Schminkkommode mit 3 Ablagen & 4 offenen Fächern, Schminktisch mit großer Schublade & Schrank",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 0,
+    "total_sales_revenue": "€91.48",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 0,
+    "sales_revenue": "€4",
+    "related_videos": 7,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 0,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by AdsThe",
+      "creator_username": "AdsThe",
+      "creator_followers": null,
+      "publish_date": "2025-11-12",
+      "estimated_sales": 1,
+      "estimated_revenue": "€42.73",
+      "total_views": 19,
+      "likes": 905,
+      "comments": 7,
+      "engagement_rate": "0.5%",
+      "video_url": "https://www.tiktok.com/@ely30zepeto/video/7571855774075358486?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_AdsThe.mp4"
+    }
+  ]
+}

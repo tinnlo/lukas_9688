@@ -411,7 +411,7 @@ product_list/{product_id}/
 │   ├── video_2_analysis_temp/
 │   ├── video_2_analysis.md
 │   └── ...
-└── shorts_scripts/            # Scripts use analysis
+└── script/                    # Scripts use analysis (new workflow)
     ├── Product_Model_Angle1.md
     ├── Product_Model_Angle2.md
     └── Product_Model_Angle3.md
