@@ -1,0 +1,96 @@
+{
+  "product_id": "1729622414239569941",
+  "scraped_at": "2026-01-05T12:49:44.384513",
+  "product_info": {
+    "product_name": "MAWIRON Kabelloser Auto-Polierpolierer für Makita-Akku 6-Zoll-Autopolierer , Auto-Polier- und Polierer-Set mit 6 variablen Geschwindigkeiten (6000 U/min), Polierer für Auto-Detailing/Polieren/Wachsen/Kratzerentfernung",
+    "shop_owner": "LWtoolbox_Germany",
+    "total_sales": 98,
+    "total_sales_revenue": "€ 3224.20($ 3753.43)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 0,
+    "sales_revenue": "$ 0.00",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 8,
+    "带货视频达人数": 4,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADAuto Poliermaschine Mawiron 3 Tage Lieferzeit Mega Set #auto #poliermaschine #tools #geschenk #werkzeug 发现时间：2025.12.21 07:58更新时间：2025.12.21 07:58时长：00:01:02跳转至 TikTok",
+      "creator_username": "jrg.dold",
+      "creator_followers": "3984",
+      "publish_date": "2025-12-20 13:41",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "407",
+      "video_url": "https://www.tiktok.com/@jrg.dold/video/7585919344211741974?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_jrg.dold.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADAkku Poliermaschine Mega Set 2Tage Lieferzeit #auto #tools #werkzeug #poliermaschine #geschenk 发现时间：2025.12.23 07:40更新时间：2025.12.23 07:40时长：00:00:26跳转至 TikTok",
+      "creator_username": "jrg.dold",
+      "creator_followers": "3984",
+      "publish_date": "2025-12-22 19:01",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "224",
+      "video_url": "https://www.tiktok.com/@jrg.dold/video/7586743870420028694?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_jrg.dold.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#Kabelloser #polierpolierer #auto #tiktokmademebuyit #tiktokshop 发现时间：2026.01.04 07:00更新时间：2026.01.04 07:00时长：00:00:14跳转至 TikTok",
+      "creator_username": "ibprknv1593",
+      "creator_followers": "1938",
+      "publish_date": "2026-01-01 17:08",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "5347",
+      "video_url": "https://www.tiktok.com/@ibprknv1593/video/7590425753326456086?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_ibprknv1593.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADAuto Poliermaschine Set 2x Akku 2Tage Lieferzeit #geschenk #werkzeug #tools #auto #poliermaschine 发现时间：2025.12.23 07:40更新时间：2025.12.23 07:40时长：00:00:41跳转至 TikTok",
+      "creator_username": "jrg.dold",
+      "creator_followers": "3984",
+      "publish_date": "2025-12-22 18:30",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "331",
+      "video_url": "https://www.tiktok.com/@jrg.dold/video/7586736115936169238?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_jrg.dold.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADAkku Poliermaschine Mega Set 2x Akku #poliermaschine #auto #tools #werkzeug #empfehlung 发现时间：2025.12.28 09:24更新时间：2025.12.28 09:24时长：00:01:14跳转至 TikTok",
+      "creator_username": "jrg.dold",
+      "creator_followers": "3984",
+      "publish_date": "2025-12-27 15:28",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "710",
+      "video_url": "https://www.tiktok.com/@jrg.dold/video/7588544452214525206?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_jrg.dold.mp4"
+    }
+  ]
+}

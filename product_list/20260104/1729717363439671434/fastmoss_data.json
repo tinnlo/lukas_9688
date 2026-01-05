@@ -1,0 +1,111 @@
+{
+  "product_id": "1729717363439671434",
+  "scraped_at": "2026-01-04T21:25:26.403887",
+  "product_info": {
+    "product_name": "Neuer Ai-Roboterhund, ultrarealistisches intelligentes elektrisches Haustierhund, nachahmt Gehen und Bellen, interaktiver High-Tech-Kampfgefährte, Geht+Bellt",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 49,
+    "total_sales_revenue": "€1.22",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 49,
+    "sales_revenue": "€444",
+    "related_videos": 7,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 0,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by Ads",
+      "creator_username": "Ads",
+      "creator_followers": null,
+      "publish_date": "2025-12-17",
+      "estimated_sales": 661,
+      "estimated_revenue": "€6455.92",
+      "total_views": 170,
+      "likes": 8448,
+      "comments": 285,
+      "engagement_rate": "0.7%",
+      "video_url": "https://www.tiktok.com/@hgfcvbp/video/7584707205845355778?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "Video by Neuer",
+      "creator_username": "Neuer",
+      "creator_followers": null,
+      "publish_date": "2025-12-22",
+      "estimated_sales": 98,
+      "estimated_revenue": "€692.84",
+      "total_views": 11,
+      "likes": 895,
+      "comments": 30,
+      "engagement_rate": "1%",
+      "video_url": "https://www.tiktok.com/@hgfcvbp/video/7586584596767198486?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "Video by Ads",
+      "creator_username": "Ads",
+      "creator_followers": null,
+      "publish_date": "2025-12-18",
+      "estimated_sales": 43,
+      "estimated_revenue": "€382.35",
+      "total_views": 12,
+      "likes": 500,
+      "comments": 6,
+      "engagement_rate": "0.6%",
+      "video_url": "https://www.tiktok.com/@xthree012/video/7585164168236420374?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "Video by Neuer",
+      "creator_username": "Neuer",
+      "creator_followers": null,
+      "publish_date": "2025-12-25",
+      "estimated_sales": 37,
+      "estimated_revenue": "€248.63",
+      "total_views": 4,
+      "likes": 109,
+      "comments": 2,
+      "engagement_rate": "0.4%",
+      "video_url": "https://www.tiktok.com/@hgfcvbp/video/7587742609712467222?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 5,
+      "title": "Video by Free",
+      "creator_username": "Free",
+      "creator_followers": null,
+      "publish_date": "2025-12-23",
+      "estimated_sales": 36,
+      "estimated_revenue": "€268.37",
+      "total_views": 3,
+      "likes": 461,
+      "comments": 8,
+      "engagement_rate": "1.7%",
+      "video_url": "https://www.tiktok.com/@b4rt039/video/7586978254720961794?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_Free.mp4"
+    }
+  ]
+}

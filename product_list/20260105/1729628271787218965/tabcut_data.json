@@ -1,0 +1,96 @@
+{
+  "product_id": "1729628271787218965",
+  "scraped_at": "2026-01-05T12:50:36.789572",
+  "product_info": {
+    "product_name": "MAWIRON Akku Schlagschrauber, kompatibel mit Makita 18V,Gehäuse * 4 (14/17/19/22), 5 Spezifikationen Mahogany Bohrer, 7 Spezifikationen Bohrer, 1 Verlängerungsbohr, 6.0A Akku + Ladegerät *1, für Makita 18V BL1830",
+    "shop_owner": "LWtoolbox_Germany",
+    "total_sales": 598,
+    "total_sales_revenue": "€ 1.72万($ 2.01万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 160,
+    "sales_revenue": "$ 3091.95",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "16.36%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 55,
+    "带货视频达人数": 25,
+    "带货视频销量": 76,
+    "带货视频销售额": "$ 1468.68",
+    "广告成交金额": "$ 1391.38",
+    "广告成交占比": "94.74%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADMawiron Schlagschrauber 25€ Mega Set 3 Tage Lieferzeit #auto #schlagschrauber #tools #werkzeug #geschenk 发现时间：2025.12.21 07:58更新时间：2026.01.04 06:26时长：00:00:47跳转至 TikTok",
+      "creator_username": "jrg.dold",
+      "creator_followers": "3984",
+      "publish_date": "2025-12-20 12:27",
+      "estimated_sales": 22,
+      "estimated_revenue": "€ 365.20($ 425.15)",
+      "total_views": "33.88万",
+      "video_url": "https://www.tiktok.com/@jrg.dold/video/7585900161197509910?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_jrg.dold.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADMakita Akku = volle Power! Unsere kabellose Schraubendrehermaschine macht jeden Job leicht #MakitaPower #KabelloseWerkzeuge #HandwerkerEffizienz发现时间：2026.01.04 08:32更新时间：2026.01.04 08:32时长：00:00:34跳转至 TikTok",
+      "creator_username": "monika5648",
+      "creator_followers": "170",
+      "publish_date": "2025-12-30 18:41",
+      "estimated_sales": 15,
+      "estimated_revenue": "€ 249.00($ 289.87)",
+      "total_views": "5278",
+      "video_url": "https://www.tiktok.com/@monika5648/video/7589607236209626390?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_monika5648.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADKein Adapter nötig – passt direkt auf deinen Makita Originalakku! Kabellose Schraubmaschine #MakitaKompatibel #WerkzeugFreiheit #DIYLeichtgemacht发现时间：2026.01.04 08:32更新时间：2026.01.04 08:32时长：00:00:34跳转至 TikTok",
+      "creator_username": "monika5648",
+      "creator_followers": "170",
+      "publish_date": "2026-01-02 12:05",
+      "estimated_sales": 14,
+      "estimated_revenue": "€ 232.40($ 270.55)",
+      "total_views": "4838",
+      "video_url": "https://www.tiktok.com/@monika5648/video/7589953704355269910?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_monika5648.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#mawiron #rabais #foryou 发现时间：2026.01.03 05:54更新时间：2026.01.04 15:56时长：00:00:42跳转至 TikTok",
+      "creator_username": "imparatulrigipsului.nr1",
+      "creator_followers": "150万",
+      "publish_date": "2026-01-02 15:24",
+      "estimated_sales": 9,
+      "estimated_revenue": "€ 149.40($ 173.92)",
+      "total_views": "4818",
+      "video_url": "https://www.tiktok.com/@imparatulrigipsului.nr1/video/7590770036885703969?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_imparatulrigipsului.nr1.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#Akku #Schlagschrauber #werkzeuge #tiktokmademebuyit #tiktokshop 发现时间：2026.01.04 07:00更新时间：2026.01.04 07:00时长：00:00:14跳转至 TikTok",
+      "creator_username": "ibprknv1593",
+      "creator_followers": "1938",
+      "publish_date": "2026-01-02 14:36",
+      "estimated_sales": 5,
+      "estimated_revenue": "€ 83.00($ 96.62)",
+      "total_views": "1893",
+      "video_url": "https://www.tiktok.com/@ibprknv1593/video/7590757617970973974?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_ibprknv1593.mp4"
+    }
+  ]
+}

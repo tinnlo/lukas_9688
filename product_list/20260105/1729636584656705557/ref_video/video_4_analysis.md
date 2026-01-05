@@ -1,0 +1,2 @@
+This is a complex task requiring multi-step analysis and content generation. I will use `sequentialthinking` to break it down and ensure all requirements are met, starting with the transcript translation.I will analyze the TikTok ad video in detail to provide a comprehensive market intelligence report with bilingual output (English + Chinese). My first step will be to translate the German transcript into Chinese, as required.
+

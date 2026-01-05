@@ -1,0 +1,96 @@
+{
+  "product_id": "1729615742226110921",
+  "scraped_at": "2026-01-04T21:15:51.750603",
+  "product_info": {
+    "product_name": "WiFi Range Extender,2.4GHz Dual Band WiFi,Extender with Ethernet 300Mbps Wireless WiFi Repeater,WiFi Signal Booster for Home Up to 6000 sq.ft with 50 Devices",
+    "shop_owner": "Wold Vision",
+    "total_sales": 2046,
+    "total_sales_revenue": "€ 1.28万($ 1.48万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 860,
+    "sales_revenue": "$ 5826.78",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "15.79%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 19,
+    "带货视频达人数": 14,
+    "带货视频销量": 285,
+    "带货视频销售额": "$ 1930.97",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADمقوي انترنيت#محمدالعزيز 发现时间：2025.12.27 08:08更新时间：2026.01.03 15:40时长：00:00:25跳转至 TikTok",
+      "creator_username": "_m.o.h.a.m.d.a.l.z.e.z_",
+      "creator_followers": "69.9万",
+      "publish_date": "2025-12-26 18:03",
+      "estimated_sales": 283,
+      "estimated_revenue": "€ 1647.06($ 1917.42)",
+      "total_views": "10.97万",
+      "video_url": "https://www.tiktok.com/@_m.o.h.a.m.d.a.l.z.e.z_/video/7588213330985127190?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1__m.o.h.a.m.d.a.l.z.e.z_.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADمقوي انترنيت#محمدالعزيز 发现时间：2025.12.31 16:57更新时间：2025.12.31 16:57时长：00:00:31跳转至 TikTok",
+      "creator_username": "brhomaih",
+      "creator_followers": "2.69万",
+      "publish_date": "2025-12-31 11:09",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 5.82($ 6.78)",
+      "total_views": "540",
+      "video_url": "https://www.tiktok.com/@brhomaih/video/7589962002500422934?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_brhomaih.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#wifiextenderorwifirepeater #gadget #wificonnection #winterdeals #newyearnewme 发现时间：2026.01.02 02:50更新时间：2026.01.02 02:50时长：00:00:24跳转至 TikTok",
+      "creator_username": "simplyido",
+      "creator_followers": "3742",
+      "publish_date": "2026-01-01 14:56",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 5.82($ 6.78)",
+      "total_views": "547",
+      "video_url": "https://www.tiktok.com/@simplyido/video/7590391575260286230?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_simplyido.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADمقوي انترنيت#محمدالعزيز 发现时间：2025.12.29 02:27更新时间：2025.12.29 02:27时长：00:00:31跳转至 TikTok",
+      "creator_username": "_m.o.h.a.m.d.a.l.z.e.z_",
+      "creator_followers": "69.9万",
+      "publish_date": "2025-12-28 22:31",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "416",
+      "video_url": "https://www.tiktok.com/@_m.o.h.a.m.d.a.l.z.e.z_/video/7589024694402075907?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4__m.o.h.a.m.d.a.l.z.e.z_.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADExtensor de rango wifi mejorado, repetidor wifi, amplificador de señal wifi para una señal wifi más fuerte#tik_tok #tiktokshop 发现时间：2025.12.10 03:31更新时间：2025.12.24 00:15时长：00:00:31跳转至 TikTok",
+      "creator_username": "antonio7leblanc",
+      "creator_followers": "4095",
+      "publish_date": "2025-12-09 07:15",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "4.37万",
+      "video_url": "https://www.tiktok.com/@antonio7leblanc/video/7581737931082059030?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_antonio7leblanc.mp4"
+    }
+  ]
+}

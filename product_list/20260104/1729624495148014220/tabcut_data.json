@@ -1,0 +1,96 @@
+{
+  "product_id": "1729624495148014220",
+  "scraped_at": "2026-01-04T21:13:52.975545",
+  "product_info": {
+    "product_name": "Electric interactive cat toy, an automatic rotating rubber cat toy suitable for indoor cats. Durable and bite-resistant electric version, an interesting moving toy for bored kittens.",
+    "shop_owner": "Shught shop",
+    "total_sales": 1321,
+    "total_sales_revenue": "€ 7722.79($ 8990.44)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 224,
+    "sales_revenue": "$ 1246.48",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "11.76%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 17,
+    "带货视频达人数": 9,
+    "带货视频销量": 3,
+    "带货视频销售额": "$ 16.69",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADDieses Katzenspielzeug haben wir schon länger und ich muss sagen: Er spielt jedes Mal wieder damit. Langzeitfazit: absolute Empfehlung 😻🐾 Anzeige | wegen TikTok Shop Link #katze #katzenspielzeug #katzenbeschäftigung #tiktokshopdeals #tiktokshop 发现时间：2025.12.18 09:43更新时间：2025.12.21 10:34时长：00:00:15跳转至 TikTok",
+      "creator_username": "pati1308",
+      "creator_followers": "3578",
+      "publish_date": "2025-12-16 18:44",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 9.56($ 11.13)",
+      "total_views": "3896",
+      "video_url": "https://www.tiktok.com/@pati1308/video/7584513068277714198?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_pati1308.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADDieses Spielzeug animiert sogar die faulsten Katzen zum Spielen 👌😆😻 Es ist so lustig! #Katzenspielzeug #elektrisch #interaktiv #TikTokShopDeutschland #UnboxYourDeals  发现时间：2025.12.21 02:34更新时间：2025.12.23 13:08时长：00:00:17跳转至 TikTok",
+      "creator_username": "rosa_und_charlie",
+      "creator_followers": "4.22万",
+      "publish_date": "2025-12-20 12:35",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 4.78($ 5.56)",
+      "total_views": "6535",
+      "video_url": "https://www.tiktok.com/@rosa_und_charlie/video/7585902419960220950?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_rosa_und_charlie.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#catlover #katze #cutecat #cat #bkh 发现时间：2025.12.09 03:58更新时间：2025.12.28 04:24时长：00:00:19跳转至 TikTok",
+      "creator_username": "ktchen37",
+      "creator_followers": "8162",
+      "publish_date": "2025-12-08 19:37",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "1.72万",
+      "video_url": "https://www.tiktok.com/@ktchen37/video/7581558121584151811?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_ktchen37.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD🥹 #weihnachtsdeals #unboxyourdeals 发现时间：2025.12.05 09:13更新时间：2025.12.07 13:53时长：00:00:11跳转至 TikTok",
+      "creator_username": "denno.finds",
+      "creator_followers": "1.44万",
+      "publish_date": "2025-12-04 23:40",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "563",
+      "video_url": "https://www.tiktok.com/@denno.finds/video/7580125692688469270?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_denno.finds.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADDas ist aktuell das Lieblingsspielzeug unserer Katzen 😻👍✨  es aktiviert sofort den Jagdinstinkt, probiere es auf jeden Fall aus 👏😻 #Katzenspielzeug #interaktiv #Federspielzeug #TikTokShopDeutschland #WinterDeals发现时间：2026.01.03 04:44更新时间：2026.01.03 04:44时长：00:00:20跳转至 TikTok",
+      "creator_username": "rosa_und_charlie",
+      "creator_followers": "4.22万",
+      "publish_date": "2026-01-02 14:57",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "790",
+      "video_url": "https://www.tiktok.com/@rosa_und_charlie/video/7590763107677523222?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_rosa_und_charlie.mp4"
+    }
+  ]
+}

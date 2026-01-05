@@ -33,10 +33,8 @@ Structure (30–35s):
 ### DE (ElevenLabs Prompt | 30–35s)
 
 [confident] Drei Monate.
-[matter-of-fact] Das war's.
-[firm] Schau dir den Unterschied an.
-[matter-of-fact] Haare. Haut. Nägel.
-[understated] Drei Dinge.
+[firm] Versorgt Haare, Haut und Nägel mit Nährstoffen.
+[understated] Drei Dinge. 
 [reflective] Die alle gleichzeitig Aufmerksamkeit brauchen.
 [warm] TRIO CARE+ von Zehnplus.
 [confident] Ein Jar. Drei Benefits.
@@ -50,9 +48,7 @@ Structure (30–35s):
 ### ZH (中文翻译)
 
 [confident] 三个月。
-[matter-of-fact] 就这样。
-[firm] 看看这个区别。
-[matter-of-fact] 头发。皮肤。指甲。
+[firm] 滋养头发。皮肤。指甲。
 [understated] 三样东西。
 [reflective] 都需要同时关注。
 [warm] Zehnplus 的 TRIO CARE+。

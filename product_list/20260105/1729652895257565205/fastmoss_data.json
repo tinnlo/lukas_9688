@@ -1,0 +1,47 @@
+{
+  "product_id": "1729652895257565205",
+  "scraped_at": "2026-01-05T12:57:51.970929",
+  "product_info": {
+    "product_name": "(Rabais)Kabelloser Random Orbital Schleifer, kompatibel mit Makita 18V / 20V Batterie, Batterie Orbital Schleifer mit 12pcs Schleifblätter, 3 variable Geschwindigkeiten, perfekt für Holz und Stahl",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 0,
+    "total_sales_revenue": "€147.8",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 0,
+    "sales_revenue": "€3",
+    "related_videos": 7,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 0,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by Ads",
+      "creator_username": "Ads",
+      "creator_followers": null,
+      "publish_date": "2025-12-05",
+      "estimated_sales": 2,
+      "estimated_revenue": "€61.2",
+      "total_views": 6373,
+      "likes": 96,
+      "comments": 3,
+      "engagement_rate": "1.6%",
+      "video_url": "https://www.tiktok.com/@bohriss_live/video/7580297084742405398?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_Ads.mp4"
+    }
+  ]
+}

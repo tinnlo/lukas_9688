@@ -1,0 +1,96 @@
+{
+  "product_id": "1729636584656705557",
+  "scraped_at": "2026-01-05T12:52:09.668683",
+  "product_info": {
+    "product_name": "MAWIRON Elektrische Kartuschenpistole für Makita 18 V Akku, Zementglas, Klebstoff, Kleber, Dichtungswerkzeug, kabellose Glasklebepistole (keine Batterie)",
+    "shop_owner": "LWtoolbox_Germany",
+    "total_sales": 38,
+    "total_sales_revenue": "€ 1615.80($ 1881.02)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 4,
+    "sales_revenue": "$ 24.68",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "2.50%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 40,
+    "带货视频达人数": 14,
+    "带货视频销量": 2,
+    "带货视频销售额": "$ 12.34",
+    "广告成交金额": "$ 12.34",
+    "广告成交占比": "100.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADKabelfreie Dichtungsbürste passend für Makita Akku – DIY & Renovierung effizienter denn je! #MakitaZubehör #HandwerkTools #DIYRenovierung #KabelfreiWerkzeug #HeimwerkerTipps发现时间：2025.12.10 15:51更新时间：2025.12.12 12:28时长：00:00:34跳转至 TikTok",
+      "creator_username": "monika5648",
+      "creator_followers": "170",
+      "publish_date": "2025-12-09 18:06",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 10.60($ 12.34)",
+      "total_views": "747",
+      "video_url": "https://www.tiktok.com/@monika5648/video/7581805289536605462?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_monika5648.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADSchnell & einfach – Makita kompatible Kordlose Dichtungsgun für jeden Job #Werkstatt #MakitaZubehörTrends #KabelfreieEffizienz #HeimwerkPerfektion #DichtungsTools发现时间：2025.12.10 15:51更新时间：2025.12.11 08:06时长：00:00:31跳转至 TikTok",
+      "creator_username": "monika5648",
+      "creator_followers": "170",
+      "publish_date": "2025-12-09 12:04",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "527",
+      "video_url": "https://www.tiktok.com/@monika5648/video/7581804826741263638?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_monika5648.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADSuper Tool für jeden Heimwerker,  die elektrische Silikonspritze #heimwerker #handwerker #werkzeug #toolsfürhandwerker #maschinenfürheimwerker 发现时间：2025.12.27 07:10更新时间：2025.12.28 11:17时长：00:01:09跳转至 TikTok",
+      "creator_username": "mimi.the.deal.cat",
+      "creator_followers": "5183",
+      "publish_date": "2025-12-26 11:08",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "456",
+      "video_url": "https://www.tiktok.com/@mimi.the.deal.cat/video/7588106479509622019?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_mimi.the.deal.cat.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADKartuschenpresse mit Akku. Kein Pressen mehr nötig. Einfach auf Knopfdruck schöne Fugen machen  #werkzeug #heimwerker #handwerk #silicone #presse 发现时间：2025.12.16 07:25更新时间：2025.12.18 10:47时长：00:01:48跳转至 TikTok",
+      "creator_username": "mr.zahnlos",
+      "creator_followers": "2942",
+      "publish_date": "2025-12-14 09:35",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "4052",
+      "video_url": "https://www.tiktok.com/@mr.zahnlos/video/7583629312604048662?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_mr.zahnlos.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADVom Kleckern zur Präzision: So geht Silikon heute! ✨#VorherNachher #Satisfying #Präzision #Handwerk #Projekt发现时间：2025.12.11 07:57更新时间：2025.12.12 05:50时长：00:00:40跳转至 TikTok",
+      "creator_username": "lwtoolbox7",
+      "creator_followers": "1545",
+      "publish_date": "2025-12-09 11:25",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "500",
+      "video_url": "https://www.tiktok.com/@lwtoolbox7/video/7581802378953821462?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_lwtoolbox7.mp4"
+    }
+  ]
+}
