@@ -25,6 +25,8 @@ Reference notes:
 
 Core pattern: **Problem‑Surface (Rost/rau) → Tool‑Reveal → Live‑Demo → Wipe‑Reveal → CTA + PPE**.
 
+生锈钢材，打磨木材，展示配件
+
 | Script | Angle | Duration | Hook Type |
 |:--|:--|:--|:--|
 | Exzenterschleifer_Rost_Rettung | Rust rescue | 00:40 | Problem‑Solution |

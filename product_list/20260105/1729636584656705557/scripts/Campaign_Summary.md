@@ -25,6 +25,8 @@ Reference notes:
 
 Core pattern: **Messy‑Pain → Tool‑Reveal → One‑Take Linie → Ergebnis/Tipps → CTA + “Akku nicht dabei”**.
 
+洗手池，马桶，墙角，灶台
+
 | Script | Angle | Duration | Hook Type |
 |:--|:--|:--|:--|
 | Kartuschenpistole_Silikon_Sauber | Clean seams | 00:40 | Before/After |

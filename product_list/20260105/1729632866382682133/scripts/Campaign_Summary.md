@@ -25,6 +25,8 @@ Reference notes:
 
 Core pattern: **Pinsel‑Pain → Tool‑Reveal → gleichmäßige Demo‑Bahnen → Finish‑Reveal → CTA + Safety**.
 
+喷水， 喷天花板， 
+
 | Script | Angle | Duration | Hook Type |
 |:--|:--|:--|:--|
 | Farbsprueher_Zaun_1Tag | Fence renovation | 00:40 | Problem‑Solution |
