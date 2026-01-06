@@ -62,9 +62,8 @@ Preferred ways to create “human timing”:
 1) **Micro-lines** (best)
 2) **Self-correction** (“Also—nicht das Case. Die Earbuds.”)
 3) **Punctuation** (`…` / `—`)
-4) **Explicit pause** `[pause 150ms]` only when a beat must land
 
-Rule: 0–2 explicit pause cues per 30–40s script.
+Rule: Explicit pause cues are disabled in this workflow.
 
 ---
 

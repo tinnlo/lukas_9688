@@ -100,10 +100,10 @@ This orchestrates all 4 skills in proper order with quality gates.
 │  └── Create Campaign Summary (references files, no duplication)     │
 │                                                                     │
 │  Outputs:                                                           │
-│  ├── scripts/Script_1_[Angle].md                                    │
-│  ├── scripts/Script_2_[Angle].md                                    │
-│  ├── scripts/Script_3_[Angle].md                                    │
-│  └── scripts/Campaign_Summary.md                                    │
+│  ├── product_list/YYYYMMDD/{product_id}/scripts/Script_1_[Angle].md │
+│  ├── product_list/YYYYMMDD/{product_id}/scripts/Script_2_[Angle].md │
+│  ├── product_list/YYYYMMDD/{product_id}/scripts/Script_3_[Angle].md │
+│  └── product_list/YYYYMMDD/{product_id}/scripts/Campaign_Summary.md │
 │                                                                     │
 │  Time: ~5-8 min per product (focused quality writing)               │
 └─────────────────────────────────────────────────────────────────────┘
@@ -214,7 +214,7 @@ python run_scraper.py --batch-file products.csv --download-videos
 ## File Structure After Completion
 
 ```
-product_list/{product_id}/
+product_list/YYYYMMDD/{product_id}/
 ├── tabcut_data.json                    # Product metadata
 ├── tabcut_data.md                      # Markdown version
 ├── product_images/

@@ -125,7 +125,7 @@ Run analysis prompts with:
 ```bash
 # For each product with videos
 # This script analyzes videos sequentially per product
-python analyze_video_batch.py {product_id}
+python analyze_video_batch.py {product_id} --date YYYYMMDD
 ```
 
 **Output:** `ref_video/video_N_analysis.md` (per video)
@@ -136,8 +136,10 @@ python analyze_video_batch.py {product_id}
 
 ```javascript
 // Process products ONE AT A TIME (sequential)
+const date = "YYYYMMDD";
 for (const product_id of products) {
   console.log(`\n=== Processing ${product_id} ===`);
+  const base = `product_list/${date}/${product_id}`;
 
   // Stage 1: Launch 5 video analyses in parallel (fills all 5 slots)
   console.log(`Stage 1: Analyzing 5 videos in parallel...`);
@@ -145,9 +147,9 @@ for (const product_id of products) {
 
   for (let i = 1; i <= 5; i++) {
     const task = await mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
-      query: `Analyze video ${i} in product_list/${product_id}/ref_video/
+      query: `Analyze video ${i} in ${base}/ref_video/
               Create bilingual video_${i}_analysis.md with detailed breakdown.
-              Save to product_list/${product_id}/ref_video/video_${i}_analysis.md`,
+              Save to ${base}/ref_video/video_${i}_analysis.md`,
       yolo: true
     });
     videoTasks.push(task);
@@ -160,9 +162,9 @@ for (const product_id of products) {
   // Stage 2: Image analysis (1 task)
   console.log(`Stage 2: Analyzing product images...`);
   const imageTask = await mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
-    query: `Analyze images in product_list/${product_id}/product_images/
+    query: `Analyze images in ${base}/product_images/
             Create bilingual image_analysis.md with 10+ sections.
-            Save to product_list/${product_id}/product_images/image_analysis.md`,
+            Save to ${base}/product_images/image_analysis.md`,
     yolo: true
   });
 
@@ -173,9 +175,9 @@ for (const product_id of products) {
   console.log(`Stage 3: Creating market synthesis...`);
   const synthesisTask = await mcp__gemini-cli-mcp-async__gemini_cli_execute_async({
     query: `Create market synthesis from video analyses in
-            product_list/${product_id}/ref_video/video_*_analysis.md
+            ${base}/ref_video/video_*_analysis.md
             Include: hook patterns, selling points, replication strategy.
-            Save to product_list/${product_id}/ref_video/video_synthesis.md`,
+            Save to ${base}/ref_video/video_synthesis.md`,
     yolo: true
   });
 
@@ -202,18 +204,19 @@ console.log(`\n=== ALL ${products.length} PRODUCTS ANALYZED ===`);
 #!/bin/bash
 # verify_ready_for_scripts.sh
 
+date="YYYYMMDD"
 products="1729607303430380470 1729607478878640746 ..."  # Your product IDs
 
 for pid in $products; do
   echo "=== $pid ==="
 
   # MANDATORY: Synthesis must exist
-  if [ ! -f "product_list/$pid/ref_video/video_synthesis.md" ]; then
+  if [ ! -f "product_list/$date/$pid/ref_video/video_synthesis.md" ]; then
     echo "❌ BLOCKED: video_synthesis.md missing"
     exit 1
   fi
 
-  lines=$(wc -l < "product_list/$pid/ref_video/video_synthesis.md" | tr -d ' ')
+  lines=$(wc -l < "product_list/$date/$pid/ref_video/video_synthesis.md" | tr -d ' ')
   if [ "$lines" -lt 150 ]; then
     echo "❌ BLOCKED: synthesis only $lines lines (need 150+)"
     exit 1
@@ -246,6 +249,8 @@ For each product, Claude reads analysis files and writes:
 2. `Script_2_[Angle].md` - Feature Demo angle
 3. `Script_3_[Angle].md` - Social Proof angle
 4. `Campaign_Summary.md` - Executive summary
+
+**Output location:** `product_list/YYYYMMDD/{product_id}/scripts/`
 
 **Key rules:**
 - Claude writes ALL scripts (not Gemini)

@@ -1,6 +1,6 @@
 ---
 name: tiktok-script-generator
-description: Generates 3 TikTok short video scripts (45–50s) in German with MANDATORY Chinese translation, plus a bilingual Campaign Summary. References pre-existing analysis files (does NOT duplicate content). Outputs Obsidian-ready notes to product_list/{vendor}/{product_id}/script/ with required frontmatter and sections.
+description: Generates 3 TikTok short video scripts (45–50s) in German with MANDATORY Chinese translation, plus a bilingual Campaign Summary. References pre-existing analysis files (does NOT duplicate content). Outputs Obsidian-ready notes to product_list/YYYYMMDD/{product_id}/scripts/ with required frontmatter and sections.
 version: 2.1.0
 author: Claude
 execution_agent: Claude Code (direct writing)
@@ -138,9 +138,9 @@ tags:
   - "#tag5"
 product: "Full Product Name"
 source_notes:
-  - "product_list/{vendor}/{product_id}/ref_video/video_synthesis.md"
-  - "product_list/{vendor}/{product_id}/product_images/image_analysis.md"
-  - "product_list/{vendor}/{product_id}/tabcut_data.json"
+  - "product_list/YYYYMMDD/{product_id}/ref_video/video_synthesis.md"
+  - "product_list/YYYYMMDD/{product_id}/product_images/image_analysis.md"
+  - "product_list/YYYYMMDD/{product_id}/tabcut_data.json"
 ---
 ```
 **Rules:**
@@ -319,8 +319,8 @@ Based on video synthesis analysis, we identified 3 winning angles:
 
 ```bash
 product_id="{product_id}"
-vendor="{vendor}"
-scripts_dir="product_list/$vendor/$product_id/script"
+date="YYYYMMDD"
+scripts_dir="product_list/$date/$product_id/scripts"
 
 echo "=== QUALITY GATE: $product_id ==="
 
@@ -414,7 +414,7 @@ Product C: [Read Analysis] → [Write Scripts] → [Campaign Summary] → [Gate]
 ## File Structure After Completion
 
 ```
-product_list/{product_id}/
+product_list/YYYYMMDD/{product_id}/
 ├── tabcut_data.json                    # From scraper
 ├── product_images/
 │   ├── *.webp
@@ -423,7 +423,7 @@ product_list/{product_id}/
 │   ├── video_*.mp4
 │   ├── video_*_analysis.md             # From analysis skill
 │   └── video_synthesis.md              # From analysis skill (CRITICAL)
-└── script/                             # FROM THIS SKILL (new workflow)
+└── scripts/                            # FROM THIS SKILL (new workflow)
     ├── Product_Model_KeyAngle.md
     ├── Product_Model_KeyAngle.md
     ├── Product_Model_KeyAngle.md
@@ -442,7 +442,8 @@ product_list/{product_id}/
 **Handoff verification:**
 ```bash
 # Before running this skill, verify:
-ls product_list/$product_id/ref_video/video_synthesis.md  # Must exist
+date="YYYYMMDD"
+ls product_list/$date/$product_id/ref_video/video_synthesis.md  # Must exist
 ```
 
 ---

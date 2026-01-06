@@ -4,14 +4,13 @@ This repository is an Obsidian vault for a TikTok affiliate/ad promotion account
 
 ## Core Rule: Reference vs Output
 
-- **Do not edit** anything inside `product_list/`. Treat it as **read-only input source** material.
-- Create new scripts (and only edit scripts) inside `shorts_scripts/`.
+- Treat non-script files inside `product_list/` as **read-only input source** material.
+- Create new scripts (and only edit scripts) inside `product_list/YYYYMMDD/{product_id}/scripts/`.
 
 ## Folder Structure
 
-- `product_list/` — reference materials per product (read-only).
-- `shorts_scripts/` — generated/edited short-form video scripts (write here).
-- `shorts_dashboard.base` — Obsidian Base view for listing scripts (do not edit unless requested).
+- `product_list/` — reference materials per product; scripts live under dated batch folders.
+- `scripts_dashboard.base` — Obsidian Base view for listing scripts (do not edit unless requested).
 - `.obsidian/` — local Obsidian settings (avoid editing unless necessary).
 
 ## Script Note Naming
@@ -21,7 +20,7 @@ This repository is an Obsidian vault for a TikTok affiliate/ad promotion account
 
 ## Required Frontmatter (YAML)
 
-Every note in `shorts_scripts/` must start with YAML frontmatter.
+Every script note in `product_list/YYYYMMDD/{product_id}/scripts/` must start with YAML frontmatter.
 
 Required keys:
 
@@ -62,7 +61,7 @@ Use these sections in this order:
 ## Voiceover Style (Workflow Standard)
 
 - Target VO length: **30–40 seconds** (unless a script is already published).
-- Language: German is primary. Optional Chinese version may be included under a separate heading.
+- Language: German is primary. Chinese version is mandatory under a separate heading.
 - Avoid medical/legal guarantees; keep claims consistent with source notes.
 - Keep sentences short and spoken-word friendly.
 - For v3 prompt writing best practices (natural pacing, minimal cues), follow `doc/ElevenLabs_v3_Alpha_VO_Grammar_Practice.md`.
@@ -75,8 +74,8 @@ In `## Voiceover`, include:
 - Then the VO prompt with delivery cues in **square brackets**, one cue per line.
 
 Allowed cue style:
-- Examples: `[bright]`, `[firm]`, `[curious]`, `[soft]`, `[matter-of-fact]`, `[confident]`, `[pause 200ms]`
-- Do **not** use hashtags or custom cue syntaxes.
+- Examples: `[bright]`, `[firm]`, `[curious]`, `[soft]`, `[matter-of-fact]`, `[confident]`
+- Do **not** use hashtags, pause cues, or custom cue syntaxes.
 
 Example:
 
@@ -91,7 +90,7 @@ Example:
 
 ## Review Checklist (Before Saving)
 
-- Script is saved under `shorts_scripts/` and **nothing** in `product_list/` is changed.
+- Script is saved under `product_list/YYYYMMDD/{product_id}/scripts/` and source data files in `product_list/` are unchanged.
 - Frontmatter exists and parses (date + duration formats valid).
 - VO fits **30–50s** read time and has a clear CTA.
 - Tags ≤ 5 and meaningful for discovery/commerce.

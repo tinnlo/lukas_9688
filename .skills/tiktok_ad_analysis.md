@@ -64,12 +64,14 @@ orchestration: tiktok_product_analysis.md (for batch parallelism)
 **Trigger Conditions:**
 ```bash
 # After Step 1 (product scraping) completes:
-if [ -d "product_list/{product_id}/ref_video" ]; then
-  video_count=$(find "product_list/{product_id}/ref_video" -type f -name "*.mp4" 2>/dev/null | wc -l)
+date="YYYYMMDD"
+base="product_list/$date/{product_id}"
+if [ -d "$base/ref_video" ]; then
+  video_count=$(find "$base/ref_video" -type f -name "*.mp4" 2>/dev/null | wc -l)
   if [ $video_count -gt 0 ]; then
     echo "✅ AUTO-TRIGGER: Found $video_count videos"
     # Automatically run video analysis
-    python analyze_video_batch.py {product_id}
+    python analyze_video_batch.py {product_id} --date "$date"
   else
     echo "⏭️ SKIP: No videos found"
   fi
@@ -88,15 +90,15 @@ cd scripts
 source venv/bin/activate
 
 # Analyze all videos for a product
-python analyze_video_batch.py 1729479916562717270
+python analyze_video_batch.py 1729479916562717270 --date YYYYMMDD
 
 # Or analyze a single video
-python analyze_single_video.py 1729479916562717270 2
+python analyze_single_video.py 1729479916562717270 2 --date YYYYMMDD
 ```
 
 **Output:**
-- `product_list/{product_id}/ref_video/video_N_analysis.md` (bilingual, per video)
-- `product_list/{product_id}/ref_video/video_synthesis.md` (MANDATORY market summary)
+- `product_list/YYYYMMDD/{product_id}/ref_video/video_N_analysis.md` (bilingual, per video)
+- `product_list/YYYYMMDD/{product_id}/ref_video/video_synthesis.md` (MANDATORY market summary)
 
 ---
 
@@ -107,7 +109,7 @@ python analyze_single_video.py 1729479916562717270 2
 ✅ **faster-whisper** installed (`pip install faster-whisper`)
 ✅ **yt-dlp** installed (`pip install yt-dlp`)
 ✅ **gemini-cli** installed and configured
-✅ **Local video files** in `product_list/{product_id}/ref_video/`
+✅ **Local video files** in `product_list/YYYYMMDD/{product_id}/ref_video/`
 ✅ **tabcut_data.json** available (contains performance metadata)
 
 ---
@@ -161,7 +163,7 @@ python analyze_video_batch.py <product_id>
 
 **Output files:**
 ```
-product_list/{product_id}/ref_video/
+product_list/YYYYMMDD/{product_id}/ref_video/
 ├── video_1_analysis.md    # Individual analysis (bilingual)
 ├── video_2_analysis.md
 ├── video_3_analysis.md
@@ -385,10 +387,10 @@ Add/remove languages as needed for your market.
 **Check:**
 ```bash
 # Verify audio file was extracted
-ls -lh product_list/{product_id}/ref_video/video_N_analysis_temp/audio.mp3
+ls -lh product_list/YYYYMMDD/{product_id}/ref_video/video_N_analysis_temp/audio.mp3
 
 # Play audio to verify
-ffplay product_list/{product_id}/ref_video/video_N_analysis_temp/audio.mp3
+ffplay product_list/YYYYMMDD/{product_id}/ref_video/video_N_analysis_temp/audio.mp3
 ```
 
 ---
@@ -396,7 +398,7 @@ ffplay product_list/{product_id}/ref_video/video_N_analysis_temp/audio.mp3
 ## File Structure After Analysis
 
 ```
-product_list/{product_id}/
+product_list/YYYYMMDD/{product_id}/
 ├── tabcut_data.json           # Source metadata
 ├── ref_video/
 │   ├── video_1_{creator}.mp4
@@ -427,7 +429,7 @@ After video analysis is complete:
 
 1. **Check the analyses:**
    ```bash
-   ls -lh product_list/{product_id}/ref_video/video_*_analysis.md
+   ls -lh product_list/YYYYMMDD/{product_id}/ref_video/video_*_analysis.md
    ```
 
 2. **Verify bilingual format:**

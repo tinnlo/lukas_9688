@@ -273,16 +273,18 @@ print(f"\n=== ALL {len(product_ids)} PRODUCTS ANALYZED ===")
 # verify_analysis.sh
 
 product_id=$1
+date="YYYYMMDD"
+base="product_list/$date/$product_id"
 status="PASS"
 
 echo "=== Analysis Verification: $product_id ==="
 
 # Check 1: Image analysis (if images exist)
-if [ -d "product_list/$product_id/product_images" ]; then
-    img_count=$(find "product_list/$product_id/product_images" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) 2>/dev/null | wc -l | tr -d ' ')
+if [ -d "$base/product_images" ]; then
+    img_count=$(find "$base/product_images" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) 2>/dev/null | wc -l | tr -d ' ')
     if [ "$img_count" -gt 0 ]; then
-        if [ -f "product_list/$product_id/product_images/image_analysis.md" ]; then
-            lines=$(wc -l < "product_list/$product_id/product_images/image_analysis.md" | tr -d ' ')
+        if [ -f "$base/product_images/image_analysis.md" ]; then
+            lines=$(wc -l < "$base/product_images/image_analysis.md" | tr -d ' ')
             if [ "$lines" -ge 200 ]; then
                 echo "✅ Image analysis: $lines lines"
             else
@@ -297,11 +299,11 @@ if [ -d "product_list/$product_id/product_images" ]; then
 fi
 
 # Check 2: Video synthesis (MANDATORY if videos exist)
-if [ -d "product_list/$product_id/ref_video" ]; then
-    video_count=$(find "product_list/$product_id/ref_video" -type f -name "*.mp4" 2>/dev/null | wc -l | tr -d ' ')
+if [ -d "$base/ref_video" ]; then
+    video_count=$(find "$base/ref_video" -type f -name "*.mp4" 2>/dev/null | wc -l | tr -d ' ')
     if [ "$video_count" -gt 0 ]; then
-        if [ -f "product_list/$product_id/ref_video/video_synthesis.md" ]; then
-            lines=$(wc -l < "product_list/$product_id/ref_video/video_synthesis.md" | tr -d ' ')
+        if [ -f "$base/ref_video/video_synthesis.md" ]; then
+            lines=$(wc -l < "$base/ref_video/video_synthesis.md" | tr -d ' ')
             if [ "$lines" -ge 150 ]; then
                 echo "✅ Video synthesis: $lines lines"
             else
@@ -314,7 +316,7 @@ if [ -d "product_list/$product_id/ref_video" ]; then
         fi
 
         # Check individual video analyses
-        analysis_count=$(find "product_list/$product_id/ref_video" -type f -name "video_*_analysis.md" 2>/dev/null | wc -l | tr -d ' ')
+        analysis_count=$(find "$base/ref_video" -type f -name "video_*_analysis.md" 2>/dev/null | wc -l | tr -d ' ')
         echo "   Video analyses: $analysis_count/$video_count"
     fi
 fi
@@ -356,11 +358,11 @@ When generating analysis files, the model must output clean Markdown only. Add t
 ### Image Analysis Prompt (Bilingual)
 
 ```
-Analyze all product images in product_list/{product_id}/product_images/
+Analyze all product images in product_list/YYYYMMDD/{product_id}/product_images/
 
 Create a BILINGUAL product analysis for TikTok script writing.
 
-**OUTPUT FILE:** Save as product_list/{product_id}/product_images/image_analysis.md
+**OUTPUT FILE:** Save as product_list/YYYYMMDD/{product_id}/product_images/image_analysis.md
 
 STRICT OUTPUT:
 - Output ONLY Markdown (no preamble, no meta text)
@@ -393,9 +395,9 @@ STRICT OUTPUT:
 ### Video Analysis Prompt (Per Video)
 
 ```
-Analyze video: product_list/{product_id}/ref_video/video_{video_num}_*.mp4
+Analyze video: product_list/YYYYMMDD/{product_id}/ref_video/video_{video_num}_*.mp4
 
-**OUTPUT FILE:** Save as product_list/{product_id}/ref_video/video_{video_num}_analysis.md
+**OUTPUT FILE:** Save as product_list/YYYYMMDD/{product_id}/ref_video/video_{video_num}_analysis.md
 
 **REQUIRED SECTIONS:**
 1. Video Metadata (duration, creator, views)
@@ -419,9 +421,9 @@ Analyze video: product_list/{product_id}/ref_video/video_{video_num}_*.mp4
 
 ```
 Create a COMPREHENSIVE market synthesis from all video analyses in:
-product_list/{product_id}/ref_video/video_*_analysis.md
+product_list/YYYYMMDD/{product_id}/ref_video/video_*_analysis.md
 
-**OUTPUT FILE:** Save as product_list/{product_id}/ref_video/video_synthesis.md
+**OUTPUT FILE:** Save as product_list/YYYYMMDD/{product_id}/ref_video/video_synthesis.md
 
 STRICT OUTPUT:
 - Output ONLY Markdown (no preamble, no meta text)
@@ -534,7 +536,7 @@ print("\n✅ Ready for script generation phase")
 **After Phase 1 completes, the following files exist:**
 
 ```
-product_list/{product_id}/
+product_list/YYYYMMDD/{product_id}/
 ├── tabcut_data.json           # Product metadata (from scraper)
 ├── product_images/
 │   ├── *.webp                 # Product images

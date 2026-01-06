@@ -56,10 +56,10 @@ Read the product's tabcut data file:
 
 ```bash
 # Check if markdown exists (preferred)
-cat product_list/{product_id}/tabcut_data.md
+cat product_list/YYYYMMDD/{product_id}/tabcut_data.md
 
 # Or read JSON
-cat product_list/{product_id}/tabcut_data.json
+cat product_list/YYYYMMDD/{product_id}/tabcut_data.json
 ```
 
 Extract:
@@ -85,13 +85,13 @@ If Tabcut data is insufficient, retry with FastMoss:
 # Retry scraping with FastMoss source
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
 source venv/bin/activate
-python run_scraper.py --product-id {product_id} --source fastmoss
+python run_scraper.py --product-id {product_id} --source fastmoss --output-dir ../product_list/YYYYMMDD
 
 # Convert to markdown
-python3 ../scripts/convert_json_to_md.py {product_id}
+python3 ../scripts/convert_json_to_md.py {product_id} --date YYYYMMDD
 
 # Now use fastmoss_data.md instead of tabcut_data.md
-cat product_list/{product_id}/fastmoss_data.md
+cat product_list/YYYYMMDD/{product_id}/fastmoss_data.md
 ```
 
 **Note:** FastMoss outputs to `fastmoss_data.json` and `fastmoss_data.md` instead of `tabcut_data.*`.
@@ -101,7 +101,7 @@ cat product_list/{product_id}/fastmoss_data.md
 Gather product images for analysis:
 
 ```bash
-ls -la product_list/{product_id}/product_images/
+ls -la product_list/YYYYMMDD/{product_id}/product_images/
 ```
 
 ### Step 3: Run Gemini Analysis
@@ -109,7 +109,7 @@ ls -la product_list/{product_id}/product_images/
 Use gemini-cli to analyze and generate 3 direction titles:
 
 ```bash
-cd product_list/{product_id}
+cd product_list/YYYYMMDD/{product_id}
 
 # Create a combined prompt for gemini-cli
 cat > /tmp/quick_directions_prompt.txt << 'EOF'
@@ -172,7 +172,8 @@ The final output should be:
 # One-liner for quick directions
 quick_directions() {
     local product_id=$1
-    cd "product_list/$product_id" || exit 1
+    local date="YYYYMMDD"
+    cd "product_list/$date/$product_id" || exit 1
     gemini-cli "Analyze this TikTok product data and suggest 3 short video direction titles for German market. Format: Title, Angle, Duration, Target, Why. Data: $(cat tabcut_data.md 2>/dev/null || jq '.' tabcut_data.json) Images: $(ls product_images/)"
 }
 

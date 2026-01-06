@@ -94,15 +94,19 @@ cp config/.env.example config/.env
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
 source venv/bin/activate
+DATE=YYYYMMDD
+OUT="../product_list/$DATE"
 python run_scraper.py \
   --product-id {{$json.product_id}} \
-  --download-videos
+  --download-videos \
+  --output-dir "$OUT"
 
 # Or explicitly specify tabcut (it's the default)
 python run_scraper.py \
   --product-id {{$json.product_id}} \
   --source tabcut \
-  --download-videos
+  --download-videos \
+  --output-dir "$OUT"
 ```
 
 ### Option A2: Single Product from FastMoss (with videos)
@@ -110,10 +114,13 @@ python run_scraper.py \
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
 source venv/bin/activate
+DATE=YYYYMMDD
+OUT="../product_list/$DATE"
 python run_scraper.py \
   --product-id {{$json.product_id}} \
   --source fastmoss \
-  --download-videos
+  --download-videos \
+  --output-dir "$OUT"
 
 # Generate human-readable MD
 python -c "
@@ -123,10 +130,11 @@ sys.path.append('.')
 from tabcut_scraper.utils import json_to_markdown
 
 product_id = '{{$json.product_id}}'
-with open(f'../product_list/{product_id}/tabcut_data.json') as f:
+date = 'YYYYMMDD'
+with open(f'../product_list/{date}/{product_id}/tabcut_data.json') as f:
     data = json.load(f)
 md = json_to_markdown(data)
-with open(f'../product_list/{product_id}/tabcut_data.md', 'w') as f:
+with open(f'../product_list/{date}/{product_id}/tabcut_data.md', 'w') as f:
     f.write(md)
 print('✅ Created tabcut_data.md')
 "
@@ -137,7 +145,9 @@ print('✅ Created tabcut_data.md')
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
 source venv/bin/activate
-python run_scraper.py --product-id {{$json.product_id}}
+DATE=YYYYMMDD
+OUT="../product_list/$DATE"
+python run_scraper.py --product-id {{$json.product_id}} --output-dir "$OUT"
 
 # Generate MD (same as above)
 python -c "..."
@@ -148,9 +158,12 @@ python -c "..."
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
 source venv/bin/activate
+DATE=YYYYMMDD
+OUT="../product_list/$DATE"
 python run_scraper.py \
   --batch-file {{$json.csv_file_path}} \
-  --download-videos
+  --download-videos \
+  --output-dir "$OUT"
 
 # Generate MD for all products in batch
 python -c "
@@ -159,7 +172,8 @@ import sys
 sys.path.append('.')
 from tabcut_scraper.utils import json_to_markdown
 
-for json_file in glob.glob('../product_list/*/tabcut_data.json'):
+date = 'YYYYMMDD'
+for json_file in glob.glob(f'../product_list/{date}/*/tabcut_data.json'):
     product_id = json_file.split('/')[-2]
     with open(json_file) as f:
         data = json.load(f)
@@ -181,12 +195,13 @@ for json_file in glob.glob('../product_list/*/tabcut_data.json'):
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts && \
 source venv/bin/activate && \
-python run_scraper.py --product-id {{$json.product_id}} {{$json.download_videos && '--download-videos' || ''}}
+python run_scraper.py --product-id {{$json.product_id}} {{$json.download_videos && '--download-videos' || ''}} --output-dir ../product_list/{{$json.date}}
 ```
 
 **Parameters:**
 - `product_id`: String (required) - TikTok product ID
 - `download_videos`: Boolean (optional, default: false) - Download video files
+- `date`: String (required) - YYYYMMDD batch folder under product_list/
 
 **Expected Output:**
 ```json
@@ -194,7 +209,7 @@ python run_scraper.py --product-id {{$json.product_id}} {{$json.download_videos 
   "success": true,
   "product_id": "1729630936525936882",
   "files_created": [
-    "product_list/1729630936525936882/tabcut_data.json"
+    "product_list/YYYYMMDD/1729630936525936882/tabcut_data.json"
   ],
   "videos_downloaded": 5
 }
@@ -269,8 +284,9 @@ def json_to_markdown(data):
 
 # Main execution
 product_id = '{{$json.product_id}}'
-json_path = f'product_list/{product_id}/tabcut_data.json'
-md_path = f'product_list/{product_id}/tabcut_data.md'
+date = '{{$json.date}}'
+json_path = f'product_list/{date}/{product_id}/tabcut_data.json'
+md_path = f'product_list/{date}/{product_id}/tabcut_data.md'
 
 with open(json_path, 'r') as f:
     data = json.load(f)
@@ -292,7 +308,7 @@ print(json.dumps({
 ```json
 {
   "success": true,
-  "md_file": "product_list/1729630936525936882/tabcut_data.md",
+  "md_file": "product_list/YYYYMMDD/1729630936525936882/tabcut_data.md",
   "product_name": "HTC NE20 Translator Earbuds..."
 }
 ```
@@ -306,14 +322,16 @@ print(json.dumps({
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
 source venv/bin/activate
+DATE=YYYYMMDD
 
 # Scrape + download videos
 python run_scraper.py \
   --product-id 1729630936525936882 \
-  --download-videos
+  --download-videos \
+  --output-dir "../product_list/$DATE"
 
 # Convert to MD for review
-python3 ../scripts/convert_json_to_md.py 1729630936525936882
+python3 ../scripts/convert_json_to_md.py 1729630936525936882 --date "$DATE"
 ```
 
 ### Single Product WITHOUT Videos
@@ -321,12 +339,13 @@ python3 ../scripts/convert_json_to_md.py 1729630936525936882
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
 source venv/bin/activate
+DATE=YYYYMMDD
 
 # Scrape metadata only
-python run_scraper.py --product-id 1729630936525936882
+python run_scraper.py --product-id 1729630936525936882 --output-dir "../product_list/$DATE"
 
 # Convert to MD
-python3 ../scripts/convert_json_to_md.py 1729630936525936882
+python3 ../scripts/convert_json_to_md.py 1729630936525936882 --date "$DATE"
 ```
 
 ### Batch Processing
@@ -334,6 +353,7 @@ python3 ../scripts/convert_json_to_md.py 1729630936525936882
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
 source venv/bin/activate
+DATE=YYYYMMDD
 
 # Create CSV with product IDs
 cat > products.csv << EOF
@@ -346,12 +366,13 @@ EOF
 # Scrape all (with videos)
 python run_scraper.py \
   --batch-file products.csv \
-  --download-videos
+  --download-videos \
+  --output-dir "../product_list/$DATE"
 
 # Convert all to MD
-for product_dir in ../product_list/*/; do
+for product_dir in ../product_list/$DATE/*/; do
   product_id=$(basename "$product_dir")
-  python3 ../scripts/convert_json_to_md.py "$product_id"
+  python3 ../scripts/convert_json_to_md.py "$product_id" --date "$DATE"
 done
 ```
 
@@ -362,7 +383,7 @@ done
 After running this skill:
 
 ```
-product_list/{product_id}/
+product_list/YYYYMMDD/{product_id}/
 ├── tabcut_data.json          # Raw scraped data
 ├── tabcut_data.md            # ← Human-readable review file (ALWAYS created)
 └── ref_video/                # ← Optional (if --download-videos used)
@@ -454,11 +475,18 @@ def json_to_markdown(data):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python convert_json_to_md.py <product_id>")
+        print("Usage: python convert_json_to_md.py <product_id> [--date YYYYMMDD]")
         sys.exit(1)
 
     product_id = sys.argv[1]
-    base_dir = Path(__file__).parent.parent / "product_list" / product_id
+    date = None
+    if len(sys.argv) >= 4 and sys.argv[2] == "--date":
+        date = sys.argv[3]
+
+    base_dir = Path(__file__).parent.parent / "product_list"
+    if date:
+        base_dir = base_dir / date
+    base_dir = base_dir / product_id
     json_path = base_dir / "tabcut_data.json"
     md_path = base_dir / "tabcut_data.md"
 
