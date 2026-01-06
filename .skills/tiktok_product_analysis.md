@@ -32,6 +32,14 @@ execution_agent: Gemini CLI MCP (async)
 
 Gemini async MCP has a **maximum safe limit of 5 concurrent tasks**.
 
+## Model Policy (MANDATORY)
+
+Use **Gemini 3.0** models first:
+- Primary: `gemini-3-pro-preview`
+- Fallback (only if capacity/quota hit): `gemini-3-flash-preview`
+
+Avoid relying on older `2.5` models unless explicitly requested.
+
 ### The Real Bottleneck: Videos Per Product
 
 **Each product has 5 top-performing videos** to analyze. This means:
@@ -317,9 +325,33 @@ echo "Status: $status"
 exit 0
 ```
 
+### Recommended (Repo Verifier)
+
+Prefer the repo verifier script so the gate is consistent across runs:
+
+```bash
+# Analysis-only gate for a date batch folder
+bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase analysis
+```
+
+### Retry / Stop Criteria (MANDATORY)
+
+- If `image_analysis.md` fails gate checks (missing / too short / meta preamble), rerun image analysis **once** with the strict output contract.
+- If `video_synthesis.md` fails gate checks (missing / too short / meta preamble), rerun synthesis **once** with the strict output contract.
+- If it still fails after one retry: mark the product as **analysis_incomplete** and **do not proceed** to script generation for that product.
+
 ---
 
 ## Prompt Templates
+
+### Strict Output Contract (MANDATORY)
+
+When generating analysis files, the model must output clean Markdown only. Add these constraints to every Gemini prompt:
+
+- Output **ONLY** Markdown content (no preamble like “I will…” and no tool/system chatter)
+- Do **not** claim you saved/wrote files
+- Do **not** describe tool usage
+- If uncertain, label uncertainty explicitly
 
 ### Image Analysis Prompt (Bilingual)
 
@@ -329,6 +361,10 @@ Analyze all product images in product_list/{product_id}/product_images/
 Create a BILINGUAL product analysis for TikTok script writing.
 
 **OUTPUT FILE:** Save as product_list/{product_id}/product_images/image_analysis.md
+
+STRICT OUTPUT:
+- Output ONLY Markdown (no preamble, no meta text)
+- Do NOT mention tools/filesystem, do NOT say you saved files
 
 **FORMAT:**
 - Bilingual headers: ## Section | 中文标题
@@ -387,6 +423,10 @@ product_list/{product_id}/ref_video/video_*_analysis.md
 
 **OUTPUT FILE:** Save as product_list/{product_id}/ref_video/video_synthesis.md
 
+STRICT OUTPUT:
+- Output ONLY Markdown (no preamble, no meta text)
+- Do NOT mention tools/filesystem, do NOT say you saved files
+
 **REQUIRED SECTIONS (14 minimum):**
 1. Executive Summary | 执行摘要
 2. Common Winning Patterns | 共同获胜模式
@@ -410,6 +450,18 @@ product_list/{product_id}/ref_video/video_*_analysis.md
 - Bilingual headers and inline translations
 - 150+ lines minimum (comprehensive analysis)
 - Actionable insights for script generation
+```
+
+### Post-Run Validation (Quick Sanity Checks)
+
+After writing an analysis file, do not proceed if it contains meta chatter. Examples of invalid first lines:
+- “I will…”
+- “Loaded cached credentials…”
+
+Use the repo verifier to enforce this consistently:
+
+```bash
+bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase analysis
 ```
 
 ---

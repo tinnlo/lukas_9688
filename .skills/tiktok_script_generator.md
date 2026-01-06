@@ -54,7 +54,9 @@ prerequisite: tiktok_product_analysis.md (must complete first)
 
 ```bash
 product_id="{product_id}"
-base="product_list/$product_id"
+# Use the correct dated batch folder:
+date="YYYYMMDD"
+base="product_list/$date/$product_id"
 
 echo "=== PRE-CHECK: $product_id ==="
 
@@ -66,8 +68,8 @@ if [ ! -f "$base/ref_video/video_synthesis.md" ]; then
 fi
 
 lines=$(wc -l < "$base/ref_video/video_synthesis.md" | tr -d ' ')
-if [ "$lines" -lt 100 ]; then
-    echo "❌ BLOCKED: video_synthesis.md too short ($lines lines)"
+if [ "$lines" -lt 150 ]; then
+    echo "❌ BLOCKED: video_synthesis.md too short ($lines lines, need 150+)"
     exit 1
 fi
 
@@ -75,6 +77,12 @@ echo "✅ Pre-check passed. Ready for script generation."
 ```
 
 **If blocked:** Run `tiktok_product_analysis.md` skill first.
+
+### Recommended (Repo Verifier)
+
+```bash
+bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase analysis
+```
 
 ---
 

@@ -10,11 +10,17 @@ Workflow:
 
 Usage:
     python analyze_video_batch.py <product_id>
+    python analyze_video_batch.py <product_id> --date YYYYMMDD
+    python analyze_video_batch.py <product_id> --base product_list/YYYYMMDD
 """
 
+import argparse
 import json
+import os
 import subprocess
 import sys
+import tempfile
+import shutil
 from pathlib import Path
 
 # Import faster-whisper for audio transcription (fallback)
@@ -309,6 +315,49 @@ def analyze_video_with_gemini(
     Returns:
         Analysis markdown content
     """
+    META_LINE_PREFIXES = (
+        "Loaded cached credentials.",
+        "Server ",
+        "Here is",
+        "***Note:",
+    )
+
+    def _sanitize_markdown(text: str, required_first_line: str) -> str:
+        lines = (text or "").splitlines()
+
+        cleaned = []
+        for line in lines:
+            if any(line.startswith(p) for p in META_LINE_PREFIXES):
+                continue
+            cleaned.append(line)
+
+        # Drop "I will..." planning/tool chatter preambles by keeping from first header onward.
+        first_header_idx = None
+        for i, line in enumerate(cleaned):
+            if line.lstrip().startswith("#"):
+                first_header_idx = i
+                break
+        if first_header_idx is not None:
+            cleaned = cleaned[first_header_idx:]
+
+        while cleaned and cleaned[0].strip() == "":
+            cleaned = cleaned[1:]
+
+        if not cleaned or cleaned[0].strip() != required_first_line:
+            cleaned = [required_first_line, ""] + cleaned
+
+        return "\n".join(cleaned).rstrip() + "\n"
+
+    def _should_fallback(stderr: str) -> bool:
+        s = (stderr or "").lower()
+        return (
+            "exhausted your capacity" in s
+            or "quota will reset" in s
+            or "resource_exhausted" in s
+            or "rate limit" in s
+            or "429" in s
+        )
+
     # Get all frame files
     frame_files = sorted(frames_dir.glob("frame_*.jpg"))
 
@@ -333,7 +382,14 @@ def analyze_video_with_gemini(
         transcript_text = "**No voiceover detected** - Background music or silent\n"
 
     # Build gemini prompt
-    prompt = f"""Analyze this TikTok ad video in EXTREME DETAIL for market intelligence with BILINGUAL output (English + Chinese):
+    prompt = f"""You are a TikTok performance strategist. Analyze this TikTok ad video in EXTREME DETAIL for market intelligence with BILINGUAL output (English + Chinese).
+
+STRICT OUTPUT CONTRACT (MANDATORY):
+- Output MUST be pure Markdown only. No preamble, no tool chatter, no "I will...", no "Here is...", no "Loaded cached credentials".
+- First line MUST be: "# TikTok Ad Analysis Report | TikTok 广告分析报告"
+- ALL section headers must be bilingual (English | 中文)
+- Base analysis on ACTUAL frames provided and transcript provided below.
+- Do NOT invent product claims not supported by frames/transcript.
 
 **VIDEO:** {video_path.name}
 **PRODUCT:** {product_name}
@@ -471,42 +527,65 @@ Identify which product features are emphasized:
 - Maintain bilingual format throughout (English + Chinese)
 """
 
-    # Build gemini-cli command with files
-    # Only pass frame images (transcript is in the prompt)
-    cmd = ["gemini", "-o", "text"]
+    required_first_line = "# TikTok Ad Analysis Report | TikTok 广告分析报告"
 
-    # Add all frame images
-    for frame_file in frame_files:
-        cmd.append(str(frame_file))
+    model_primary = os.getenv("GEMINI_MODEL") or "gemini-3-pro-preview"
+    model_fallback = os.getenv("GEMINI_MODEL_FALLBACK") or "gemini-3-flash-preview"
 
-    # Add the prompt last
-    cmd.append(prompt)
+    last_result = None
+    for model in (model_primary, model_fallback):
+        cmd = ["gemini", "-o", "text", "-m", model]
 
-    try:
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            timeout=300,  # 5 minutes
-            check=True,
-            cwd=Path(__file__).parent.parent
-        )
-        return result.stdout
-    except subprocess.TimeoutExpired:
-        return f"# Analysis Failed: Timeout\n\nVideo: {video_path.name}"
-    except subprocess.CalledProcessError as e:
-        return f"# Analysis Failed: {e}\n\nVideo: {video_path.name}\n\nError: {e.stderr}"
+        for frame_file in frame_files:
+            cmd.append(str(frame_file))
+
+        cmd.append(prompt)
+
+        try:
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                timeout=300,  # 5 minutes
+                check=False,
+                cwd=Path(__file__).parent.parent
+            )
+            last_result = result
+            if result.returncode == 0 and (result.stdout or "").strip():
+                return _sanitize_markdown(result.stdout, required_first_line)
+            if model != model_fallback and _should_fallback(result.stderr):
+                continue
+        except subprocess.TimeoutExpired:
+            last_result = None
+            continue
+
+    stderr = ""
+    if last_result is not None:
+        stderr = last_result.stderr or ""
+
+    return _sanitize_markdown(
+        f"""{required_first_line}
+
+## Error | 错误
+Gemini analysis failed.
+
+```
+{stderr.strip()}
+```
+""",
+        required_first_line,
+    )
 
 
-def analyze_all_videos(product_id: str):
+def analyze_all_videos(product_id: str, base: Path):
     """
     Analyze all videos for a product.
 
     Args:
         product_id: Product ID (e.g., "1729479916562717270")
+        base: Base folder that contains product_id subfolders (legacy: product_list, dated: product_list/YYYYMMDD)
     """
-    base_dir = Path(__file__).parent.parent
-    product_dir = base_dir / "product_list" / product_id
+    product_dir = base / product_id
     ref_video_dir = product_dir / "ref_video"
     tabcut_json = product_dir / "tabcut_data.json"
     fastmoss_json = product_dir / "fastmoss_data.json"
@@ -577,7 +656,7 @@ def analyze_all_videos(product_id: str):
             video_url = video_metadata.get("video_url") or video_metadata.get("url")
 
         # Extract frames and audio
-        output_dir = ref_video_dir / f"video_{i}_analysis_temp"
+        output_dir = Path(tempfile.gettempdir()) / "tiktok_video_analysis" / str(product_id) / f"video_{i}"
         output_dir.mkdir(parents=True, exist_ok=True)
 
         print(f"  ├─ Extracting keyframes and audio...")
@@ -622,23 +701,28 @@ def analyze_all_videos(product_id: str):
         analysis_path.write_text(analysis_md)
         print(f"  └─ ✅ Saved: {analysis_path.name}\n")
 
-        # Keep temp dir for now (don't delete until all videos analyzed)
-        # The audio/frames are needed for potential re-analysis
-        # import shutil
-        # shutil.rmtree(output_dir)
+        shutil.rmtree(output_dir, ignore_errors=True)
 
     print(f"✅ All {len(videos)} videos analyzed!\n")
     print("📊 Next step: Run synthesis to create video_synthesis.md")
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: python analyze_video_batch.py <product_id>")
-        print("Example: python analyze_video_batch.py 1729479916562717270")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description="Analyze all videos for a product using gemini-cli.")
+    parser.add_argument("product_id", type=str, help="TikTok product ID")
+    parser.add_argument("--base", type=str, default=None, help="Base folder containing product_id subfolders")
+    parser.add_argument("--date", type=str, default=None, help="YYYYMMDD under product_list/ (sets base)")
+    args = parser.parse_args()
 
-    product_id = sys.argv[1]
-    analyze_all_videos(product_id)
+    project_root = Path(__file__).parent.parent
+    if args.base:
+        base = Path(args.base)
+    elif args.date:
+        base = project_root / "product_list" / args.date
+    else:
+        base = project_root / "product_list"
+
+    analyze_all_videos(args.product_id, base)
 
 
 if __name__ == "__main__":

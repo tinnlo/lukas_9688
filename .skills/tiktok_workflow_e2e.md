@@ -68,21 +68,33 @@ author: Claude
 
 ## Phase 1: Scraping
 
+### Output Folder (Dated Batches)
+
+This vault organizes runs under `product_list/YYYYMMDD/<product_id>/` (see existing folders like `product_list/20260103/`).
+
+Set a date folder for the current run:
+
+```bash
+DATE=YYYYMMDD
+OUT="../product_list/$DATE"
+mkdir -p "$OUT"
+```
+
 **Execute:**
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
 source venv/bin/activate
 
 # Single product
-python run_scraper.py --product-id {product_id} --download-videos
+python run_scraper.py --product-id {product_id} --download-videos --output-dir "$OUT"
 
 # Batch (from products.csv)
-python run_scraper.py --batch-file products.csv --download-videos
+python run_scraper.py --batch-file products.csv --download-videos --output-dir "$OUT"
 ```
 
 **Output per product:**
 ```
-product_list/{product_id}/
+product_list/YYYYMMDD/{product_id}/
 ├── tabcut_data.json       # Product metadata
 ├── tabcut_data.md         # Markdown version
 ├── product_images/        # 5-9 product images
@@ -98,6 +110,12 @@ product_list/{product_id}/
 ## Phase 2: Analysis
 
 **⚠️ CONCURRENCY LIMIT:** Max 5 Gemini async tasks at once.
+
+### Model Policy (MANDATORY)
+
+Run analysis prompts with:
+- Primary: `-m gemini-3-pro-preview`
+- Fallback (only if capacity/quota hit): `-m gemini-3-flash-preview`
 
 **CRITICAL CONSTRAINT:** Each product has 5 videos. Analyzing 5 videos in parallel = all 5 slots used.
 - **Process products SEQUENTIALLY** (one complete pipeline at a time)
@@ -196,8 +214,9 @@ for pid in $products; do
   fi
 
   lines=$(wc -l < "product_list/$pid/ref_video/video_synthesis.md" | tr -d ' ')
-  if [ "$lines" -lt 100 ]; then
-    echo "⚠️ WARNING: synthesis only $lines lines"
+  if [ "$lines" -lt 150 ]; then
+    echo "❌ BLOCKED: synthesis only $lines lines (need 150+)"
+    exit 1
   fi
 
   echo "✅ Ready for scripts"
@@ -205,6 +224,15 @@ done
 
 echo ""
 echo "=== ALL PRODUCTS READY FOR PHASE 3 ==="
+```
+
+### Recommended (Repo Verifier)
+
+Run the repo verifier script (hard gate) instead of maintaining manual lists:
+
+```bash
+# Gate analysis + scripts for a date batch folder
+bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase all
 ```
 
 ---
@@ -223,6 +251,11 @@ For each product, Claude reads analysis files and writes:
 - Claude writes ALL scripts (not Gemini)
 - Read synthesis first, then write
 - Campaign Summary references files (no duplication)
+
+### Retry / Stop Rules
+
+- If the gate fails (missing files or below line thresholds), retry the failed stage **once** with the strict output contract prompts.
+- If it fails again, mark that product as **BLOCKED** and continue to the next product (do not generate scripts with incomplete analysis).
 
 ---
 
