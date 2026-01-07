@@ -1,0 +1,96 @@
+{
+  "product_id": "1729480321595120397",
+  "scraped_at": "2026-01-07T21:06:39.556735",
+  "product_info": {
+    "product_name": "Waterproof Tarpaulin, 2 Counts Transparent PE Rain Cloth, Multifunctional Rain Cloth for Indoor & Outdoor Coverage",
+    "shop_owner": "Szeahki",
+    "total_sales": 1049,
+    "total_sales_revenue": "€ 1.04万($ 1.21万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 738,
+    "sales_revenue": "$ 6641.14",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "5.13%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 39,
+    "带货视频达人数": 30,
+    "带货视频销量": 36,
+    "带货视频销售额": "$ 323.96",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADWer sagt, dass Terrasse nur im Sommer geht? 😍 Mit diesen Planen haben wir uns einfach einen Wintergarten gebaut ❄️🔥 Regen? Wind? Kein Problem! Gemütlich draußen sitzen – auch im Winter. #winterdeals #newyearnewyou #plane #wintergarten #musthave 发现时间：2026.01.03 02:23更新时间：2026.01.05 21:17时长：00:00:20跳转至 TikTok",
+      "creator_username": "einfach_jacky",
+      "creator_followers": "1230",
+      "publish_date": "2026-01-02 11:00",
+      "estimated_sales": 35,
+      "estimated_revenue": "€ 270.55($ 314.96)",
+      "total_views": "23.51万",
+      "video_url": "https://www.tiktok.com/@einfach_jacky/video/7590702000749382914?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_einfach_jacky.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD无标题发现时间：2026.01.01 05:12更新时间：2026.01.05 21:03时长：00:01:50跳转至 TikTok",
+      "creator_username": "pileto09",
+      "creator_followers": "11.9万",
+      "publish_date": "2025-12-30 14:45",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 7.73($ 9.00)",
+      "total_views": "5867",
+      "video_url": "https://www.tiktok.com/@pileto09/video/7589646748830666006?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_pileto09.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#wasserdicht #winddicht #TikTokMadeMeBuyIt #BlackFriday #tiktokshop 发现时间：2025.12.17 00:54更新时间：2025.12.18 01:11时长：00:00:14跳转至 TikTok",
+      "creator_username": "cat_love_cat_7",
+      "creator_followers": "2170",
+      "publish_date": "2025-12-16 09:15",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "1.98万",
+      "video_url": "https://www.tiktok.com/@cat_love_cat_7/video/7584366437842701571?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_cat_love_cat_7.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#wasserdicht #winddicht #foryoupage 发现时间：2026.01.02 11:14更新时间：2026.01.04 07:54时长：00:00:14跳转至 TikTok",
+      "creator_username": "loveme09894",
+      "creator_followers": "2465",
+      "publish_date": "2026-01-01 13:44",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "258",
+      "video_url": "https://www.tiktok.com/@loveme09894/video/7590373257455471894?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_loveme09894.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADJetzt kaufen❤️❤️❤️ #tiktokshop #tiktokmakemebuyit #fyp #waterproof #tarpaulin 发现时间：2025.12.21 10:48更新时间：2025.12.23 12:54时长：00:00:14跳转至 TikTok",
+      "creator_username": "loveme00224",
+      "creator_followers": "3246",
+      "publish_date": "2025-12-20 15:54",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "355",
+      "video_url": "https://www.tiktok.com/@loveme00224/video/7585953466804210976?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_loveme00224.mp4"
+    }
+  ]
+}

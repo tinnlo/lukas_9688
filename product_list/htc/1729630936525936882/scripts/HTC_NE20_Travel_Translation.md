@@ -40,7 +40,7 @@ source_notes:
 
 ### German (DE)
 
-[reflective] Du stehst in Barcelona. Suchst dein Hotel.
+[reflective] Du stehst an der Kasse in Barcelona. Die Verkäuferin spricht nur Spanisch.
 [soft] Keiner versteht dich.
 [skeptical] Google Translate? Zu umständlich.
 [understated] Gestikulieren? Peinlich.
@@ -56,7 +56,7 @@ source_notes:
 
 ### Chinese (ZH)
 
-[reflective] 你站在巴塞罗那。找你的酒店。
+[reflective] 你站在巴塞罗那的超市柜台，柜员只说西班牙语。
 [soft] 没人听得懂你。
 [skeptical] 谷歌翻译？太麻烦了。
 [understated] 比手画脚？尴尬。

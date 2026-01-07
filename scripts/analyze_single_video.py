@@ -12,12 +12,13 @@ import subprocess
 import sys
 import re
 from pathlib import Path
+from typing import Optional
 
 # Import faster-whisper for audio transcription (fallback)
 from faster_whisper import WhisperModel
 
 
-def get_tiktok_captions(video_url: str) -> dict:
+def get_tiktok_captions(video_url: str) -> Optional[dict]:
     """
     Extract captions from TikTok using yt-dlp.
 
@@ -30,19 +31,29 @@ def get_tiktok_captions(video_url: str) -> dict:
     # Use yt-dlp to get subtitles in VTT format (TikTok native format)
     cmd = [
         "yt-dlp",
-        "--write-subs", "--write-auto-subs",
-        "--sub-lang", "de,en,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant",
-        "--sub-format", "vtt",
+        "--write-subs",
+        "--write-auto-subs",
+        "--sub-lang",
+        "de,en,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant",
+        "--sub-format",
+        "vtt",
         "--skip-download",
-        "--print", "%(subtitles,%(ext)s)s",
-        video_url
+        "--print",
+        "%(subtitles,%(ext)s)s",
+        video_url,
     ]
 
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=60, check=False)
+        result = subprocess.run(
+            cmd, capture_output=True, text=True, timeout=60, check=False
+        )
 
         # Check if we got any subtitles
-        if not result.stdout or "None" in result.stdout or "youtube" not in result.stdout.lower():
+        if (
+            not result.stdout
+            or "None" in result.stdout
+            or "youtube" not in result.stdout.lower()
+        ):
             print(f"  ├─ No captions found on TikTok")
             return None
 
@@ -59,13 +70,18 @@ def get_tiktok_captions(video_url: str) -> dict:
 
     cmd_download = [
         "yt-dlp",
-        "--write-subs", "--write-auto-subs",
-        "--sub-lang", "de,en,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant",
-        "--sub-format", "vtt",  # TikTok provides VTT format
+        "--write-subs",
+        "--write-auto-subs",
+        "--sub-lang",
+        "de,en,ru,es,fr,ja,ko,pt,zh-Hans,zh-Hant",
+        "--sub-format",
+        "vtt",  # TikTok provides VTT format
         "--skip-download",
-        "--convert-subs", "srt",  # Convert to SRT for easier parsing
-        "-o", str(temp_dir / "%(id)s.%(ext)s"),
-        video_url
+        "--convert-subs",
+        "srt",  # Convert to SRT for easier parsing
+        "-o",
+        str(temp_dir / "%(id)s.%(ext)s"),
+        video_url,
     ]
 
     try:
@@ -81,7 +97,7 @@ def get_tiktok_captions(video_url: str) -> dict:
         # Read the first available subtitle file
         for sub_file in srt_files:
             try:
-                with open(sub_file, 'r', encoding='utf-8') as f:
+                with open(sub_file, "r", encoding="utf-8") as f:
                     content = f.read()
 
                 # Parse SRT format
@@ -89,10 +105,10 @@ def get_tiktok_captions(video_url: str) -> dict:
                 full_text = []
 
                 # Split by double newlines (subtitle blocks)
-                blocks = content.strip().split('\n\n')
+                blocks = content.strip().split("\n\n")
 
                 for block in blocks:
-                    lines = block.strip().split('\n')
+                    lines = block.strip().split("\n")
                     if len(lines) < 3:
                         continue
 
@@ -105,23 +121,21 @@ def get_tiktok_captions(video_url: str) -> dict:
                         text_lines = lines[2:]
 
                         # Parse timestamp: "00:00:00,000 --> 00:00:03,000"
-                        start_str, end_str = timestamp_line.split(' --> ')
+                        start_str, end_str = timestamp_line.split(" --> ")
 
                         def parse_srt_time(time_str):
                             """Convert SRT timestamp to seconds"""
-                            h, m, s = time_str.replace(',', '.').split(':')
+                            h, m, s = time_str.replace(",", ".").split(":")
                             return int(h) * 3600 + int(m) * 60 + float(s)
 
                         start_time = parse_srt_time(start_str)
                         end_time = parse_srt_time(end_str)
-                        text = ' '.join(text_lines).strip()
+                        text = " ".join(text_lines).strip()
 
                         if text:
-                            segments.append({
-                                "start": start_time,
-                                "end": end_time,
-                                "text": text
-                            })
+                            segments.append(
+                                {"start": start_time, "end": end_time, "text": text}
+                            )
                             full_text.append(text)
 
                     except Exception:
@@ -138,7 +152,7 @@ def get_tiktok_captions(video_url: str) -> dict:
                         "language_probability": 1.0,
                         "duration": segments[-1]["end"] if segments else 0,
                         "full_text": " ".join(full_text),
-                        "segments": segments
+                        "segments": segments,
                     }
 
             except Exception:
@@ -160,27 +174,60 @@ def detect_language_from_text(text: str) -> tuple:
     text_lower = text.lower()
 
     # German indicators
-    german_words = ['und', 'der', 'die', 'das', 'ist', 'nicht', 'für', 'mit', 'sie', 'ich',
-                    'bitte', 'danke', 'guten', 'tag', 'haben', 'sein', 'werden', 'können']
+    german_words = [
+        "und",
+        "der",
+        "die",
+        "das",
+        "ist",
+        "nicht",
+        "für",
+        "mit",
+        "sie",
+        "ich",
+        "bitte",
+        "danke",
+        "guten",
+        "tag",
+        "haben",
+        "sein",
+        "werden",
+        "können",
+    ]
     german_count = sum(1 for word in german_words if word in text_lower)
 
     # Russian indicators (Cyrillic)
-    russian_chars = sum(1 for c in text if '\u0400' <= c <= '\u04FF')
+    russian_chars = sum(1 for c in text if "\u0400" <= c <= "\u04ff")
     russian_ratio = russian_chars / len(text) if text else 0
 
     # English indicators
-    english_words = ['the', 'is', 'and', 'to', 'of', 'a', 'in', 'for', 'that', 'with',
-                     'you', 'this', 'are', 'it', 'on']
+    english_words = [
+        "the",
+        "is",
+        "and",
+        "to",
+        "of",
+        "a",
+        "in",
+        "for",
+        "that",
+        "with",
+        "you",
+        "this",
+        "are",
+        "it",
+        "on",
+    ]
     english_count = sum(1 for word in english_words if word in text_lower.split())
 
     if russian_ratio > 0.3:
-        return ('ru', 0.9)
+        return ("ru", 0.9)
     elif german_count > 3:
-        return ('de', 0.8)
+        return ("de", 0.8)
     elif english_count > 3:
-        return ('en', 0.8)
+        return ("en", 0.8)
     else:
-        return ('unknown', 0.5)
+        return ("unknown", 0.5)
 
 
 def transcribe_audio_fallback(audio_path: Path) -> dict:
@@ -192,15 +239,15 @@ def transcribe_audio_fallback(audio_path: Path) -> dict:
     """
     print(f"  ├─ Transcribing audio with faster-whisper...")
 
-    # Use base model for speed
-    model = WhisperModel("base", device="cpu", compute_type="int8")
+    # Use tiny model for speed (optimized, matches batch script)
+    model = WhisperModel("tiny", device="cpu", compute_type="int8")
 
-    # Transcribe with auto language detection
+    # Transcribe with auto language detection (optimized params for speed)
     segments, info = model.transcribe(
         str(audio_path),
-        beam_size=5,
+        beam_size=1,  # Reduced from 5 for speed
         vad_filter=True,
-        word_timestamps=True
+        word_timestamps=False,  # Disabled - not used in output
     )
 
     # Build result
@@ -210,7 +257,7 @@ def transcribe_audio_fallback(audio_path: Path) -> dict:
         "language_probability": info.language_probability,
         "duration": info.duration,
         "full_text": "",
-        "segments": []
+        "segments": [],
     }
 
     all_text = []
@@ -218,20 +265,24 @@ def transcribe_audio_fallback(audio_path: Path) -> dict:
         seg_data = {
             "start": segment.start,
             "end": segment.end,
-            "text": segment.text.strip()
+            "text": segment.text.strip(),
         }
         result["segments"].append(seg_data)
         all_text.append(segment.text.strip())
 
     result["full_text"] = " ".join(all_text)
 
-    print(f"  ├─ Detected language: {result['language']} (confidence: {result['language_probability']:.2f})")
+    print(
+        f"  ├─ Detected language: {result['language']} (confidence: {result['language_probability']:.2f})"
+    )
     print(f"  ├─ Transcript length: {len(result['segments'])} segments")
 
     return result
 
 
-def get_transcript(video_url: str = None, audio_path: Path = None) -> dict:
+def get_transcript(
+    video_url: Optional[str] = None, audio_path: Optional[Path] = None
+) -> Optional[dict]:
     """
     Get transcript using hybrid approach:
     1. Try yt-dlp for TikTok captions (fastest)
@@ -253,7 +304,9 @@ def get_transcript(video_url: str = None, audio_path: Path = None) -> dict:
             lang, confidence = detect_language_from_text(transcript["full_text"])
             transcript["language"] = lang
             transcript["language_probability"] = confidence
-            print(f"  ├─ Using TikTok captions (language: {lang}, {len(transcript['segments'])} segments)")
+            print(
+                f"  ├─ Using TikTok captions (language: {lang}, {len(transcript['segments'])} segments)"
+            )
             return transcript
 
     # Fall back to Whisper
@@ -275,32 +328,45 @@ def extract_keyframes_and_audio(video_path: Path, output_dir: Path, interval: in
 
     # Get video duration
     cmd_duration = [
-        "ffprobe", "-v", "error",
-        "-show_entries", "format=duration",
-        "-of", "default=noprint_wrappers=1:nokey=1",
-        str(video_path)
+        "ffprobe",
+        "-v",
+        "error",
+        "-show_entries",
+        "format=duration",
+        "-of",
+        "default=noprint_wrappers=1:nokey=1",
+        str(video_path),
     ]
     result = subprocess.run(cmd_duration, capture_output=True, text=True)
     duration = float(result.stdout.strip())
 
-    # Extract keyframes every N seconds
+    # Extract keyframes every N seconds (optimized: 640px width, lower quality)
     cmd_frames = [
-        "ffmpeg", "-i", str(video_path),
-        "-vf", f"fps=1/{interval}",
-        "-q:v", "2",
+        "ffmpeg",
+        "-i",
+        str(video_path),
+        "-vf",
+        f"scale=640:-1,fps=1/{interval}",  # Resize to 640px width
+        "-q:v",
+        "8",  # Lower quality - sufficient for Gemini
         str(frames_dir / "frame_%03d.jpg"),
-        "-y"
+        "-y",
     ]
     subprocess.run(cmd_frames, check=True, capture_output=True)
 
     # Extract audio
     audio_path = output_dir / "audio.mp3"
     cmd_audio = [
-        "ffmpeg", "-i", str(video_path),
-        "-vn", "-acodec", "libmp3lame",
-        "-q:a", "2",
+        "ffmpeg",
+        "-i",
+        str(video_path),
+        "-vn",
+        "-acodec",
+        "libmp3lame",
+        "-q:a",
+        "2",
         str(audio_path),
-        "-y"
+        "-y",
     ]
     subprocess.run(cmd_audio, check=True, capture_output=True)
 
@@ -316,7 +382,7 @@ def analyze_video_with_gemini(
     transcript: dict,
     duration: float,
     frame_count: int,
-    metadata: dict
+    metadata: dict,
 ):
     """
     Analyze video using gemini-cli with extracted frames and transcript.
@@ -329,7 +395,7 @@ def analyze_video_with_gemini(
     if transcript and transcript.get("segments"):
         lang = transcript.get("language", "unknown").upper()
         transcript_text = f"""
-**Language Detected:** {lang} (Confidence: {transcript.get('language_probability', 0):.2f})
+**Language Detected:** {lang} (Confidence: {transcript.get("language_probability", 0):.2f})
 
 **Original Transcript:**
 ```
@@ -340,7 +406,9 @@ def analyze_video_with_gemini(
             transcript_text += f"{timestamp} {seg['text']}\n"
 
         transcript_text += "```\n\n**中文翻译:**\n```\n"
-        transcript_text += "[Please translate the above transcript to Chinese line by line]\n```\n"
+        transcript_text += (
+            "[Please translate the above transcript to Chinese line by line]\n```\n"
+        )
     else:
         transcript_text = "**No voiceover detected** - Background music or silent\n"
 
@@ -352,18 +420,18 @@ def analyze_video_with_gemini(
 **TARGET MARKET:** Germany (TikTok Shop DE)
 
 **PERFORMANCE METADATA:**
-- Creator: @{metadata.get('creator_username', 'Unknown')}
-- Followers: {metadata.get('creator_followers', 'N/A')}
-- Rank: #{metadata.get('rank', 'N/A')}
-- Sales: {metadata.get('estimated_sales', 'N/A')} units
-- Revenue: {metadata.get('estimated_revenue', 'N/A')}
-- Views: {metadata.get('total_views', 'N/A')}
-- Published: {metadata.get('publish_date', 'N/A')}
+- Creator: @{metadata.get("creator_username", "Unknown")}
+- Followers: {metadata.get("creator_followers", "N/A")}
+- Rank: #{metadata.get("rank", "N/A")}
+- Sales: {metadata.get("estimated_sales", "N/A")} units
+- Revenue: {metadata.get("estimated_revenue", "N/A")}
+- Views: {metadata.get("total_views", "N/A")}
+- Published: {metadata.get("publish_date", "N/A")}
 - Duration: {duration:.0f} seconds
 
 **EXTRACTED CONTENT:**
 - Keyframes: {frame_count} frames (extracted every 3 seconds)
-- Transcript: {transcript.get('language', 'unknown')} voiceover with {len(transcript.get('segments', []))} segments
+- Transcript: {transcript.get("language", "unknown")} voiceover with {len(transcript.get("segments", []))} segments
 
 **YOUR TASK:**
 
@@ -445,7 +513,7 @@ Identify which product features are emphasized:
 | **CTA Effectiveness** | X/10 | [Why this score] |
 | **Overall Effectiveness** | **X.X/10** | [Average + overall assessment] |
 
-**Performance Context:** With {metadata.get('total_views', 'N/A')} views and {metadata.get('estimated_sales', 'N/A')} sales, this video achieved [conversion rate]% conversion.
+**Performance Context:** With {metadata.get("total_views", "N/A")} views and {metadata.get("estimated_sales", "N/A")} sales, this video achieved [conversion rate]% conversion.
 
 ## 12. Replication Insights | 复制要点
 
@@ -495,7 +563,9 @@ Identify which product features are emphasized:
     cmd.append(prompt)
 
     print(f"  ├─ Running gemini with {len(frame_files)} frames")
-    print(f"  ├─ Transcript: {transcript.get('language', 'unknown')} with {len(transcript.get('segments', []))} segments")
+    print(
+        f"  ├─ Transcript: {transcript.get('language', 'unknown')} with {len(transcript.get('segments', []))} segments"
+    )
 
     try:
         result = subprocess.run(
@@ -504,13 +574,15 @@ Identify which product features are emphasized:
             text=True,
             timeout=300,  # 5 minutes
             check=True,
-            cwd=Path(__file__).parent.parent
+            cwd=Path(__file__).parent.parent,
         )
         return result.stdout
     except subprocess.TimeoutExpired:
         return f"# Analysis Failed: Timeout\n\nVideo: {video_path.name}"
     except subprocess.CalledProcessError as e:
-        error_msg = f"# Analysis Failed: {e}\n\nVideo: {video_path.name}\n\nStderr: {e.stderr}"
+        error_msg = (
+            f"# Analysis Failed: {e}\n\nVideo: {video_path.name}\n\nStderr: {e.stderr}"
+        )
         print(f"  └─ ❌ Error: {e.stderr}")
         return error_msg
 
@@ -575,18 +647,13 @@ def main():
             "language_probability": 0.0,
             "duration": duration,
             "full_text": "",
-            "segments": []
+            "segments": [],
         }
 
     # Analyze with gemini
     print(f"  ├─ Analyzing with gemini-cli...")
     analysis_md = analyze_video_with_gemini(
-        video_path,
-        frames_dir,
-        transcript,
-        duration,
-        frame_count,
-        video_metadata
+        video_path, frames_dir, transcript, duration, frame_count, video_metadata
     )
 
     # Save analysis
