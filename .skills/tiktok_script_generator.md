@@ -124,7 +124,7 @@ bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase a
 ---
 cover: ""
 caption: >-
-  Short, punchy TikTok caption in German WITH hashtags appended (TikTok caption format: no quote marks, no commas)
+  Short, punchy TikTok caption in German WITH hashtags appended (space-separated, no commas, no quote marks)
 published: YYYY-MM-DD
 duration: "00:35"
 sales:
@@ -146,7 +146,7 @@ source_notes:
 **Rules:**
 - `duration` target: 00:30–00:50
 - `tags` max 5 and meaningful for commerce/interest
-- `caption` uses TikTok caption format: include the same hashtags as `tags` appended at the end (space-separated), and avoid commas
+- `caption` uses TikTok caption format: include the same hashtags as `tags` appended at the end (space-separated), with no commas and no quote marks
 - Use YAML block scalar `caption: >-` so `:` and `#` don't break frontmatter parsing
 - Always include `source_notes` to exact files used (use fastmoss_data.json if applicable)
 

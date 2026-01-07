@@ -83,7 +83,8 @@ Every script note must start with:
 ```yaml
 ---
 cover: ""
-caption: ""
+caption: >-
+  Short, punchy TikTok caption in German WITH hashtags appended (space-separated, no commas, no quote marks)
 published: YYYY-MM-DD
 duration: "MM:SS"   # target 00:30–00:50
 sales:

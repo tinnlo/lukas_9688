@@ -50,6 +50,7 @@ Rules:
 - `duration` should be a best estimate for VO read time; default to a value in **00:30–00:50**.
 - `tags` maximum **5**; prefer meaningful commerce/interest tags (avoid vague tags like `#deutsch`).
 - `caption` should be short, punchy, and production-ready for TikTok.
+- `caption` must append the same hashtags as `tags` (space-separated), with **no commas** and **no quote marks**; use `caption: >-` block scalar to avoid YAML issues.
 
 ## Note Sections (Required)
 
