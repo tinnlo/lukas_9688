@@ -1,0 +1,14 @@
+{
+  "text": "이걸로",
+  "language": "ko",
+  "source": "whisper_transcription",
+  "confidence": 0.26581448316574097,
+  "segment_count": 1,
+  "segments": [
+    {
+      "start": 0.05,
+      "end": 2.05,
+      "text": "이걸로"
+    }
+  ]
+}

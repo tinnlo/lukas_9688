@@ -1,0 +1,80 @@
+2026-01-14 23:50:18 | INFO     | __main__:setup_logging:61 | Logging to: ../targeted_analysis/20260114/7056373783682190597/analysis.log
+2026-01-14 23:50:18 | INFO     | __main__:main:103 | ======================================================================
+2026-01-14 23:50:18 | INFO     | __main__:main:104 | TARGETED VIDEO ANALYSIS - SINGLE VIDEO
+2026-01-14 23:50:18 | INFO     | __main__:main:105 | ======================================================================
+2026-01-14 23:50:18 | INFO     | __main__:main:106 | URL: https://vm.tiktok.com/ZGdmamnRy/
+2026-01-14 23:50:18 | INFO     | __main__:main:107 | Video ID: 7056373783682190597
+2026-01-14 23:50:18 | INFO     | __main__:main:108 | Product: Video_Analysis_02
+2026-01-14 23:50:18 | INFO     | __main__:main:109 | Output: ../targeted_analysis/20260114/7056373783682190597
+2026-01-14 23:50:18 | INFO     | __main__:main:110 | ======================================================================
+2026-01-14 23:50:18 | INFO     | targeted_analysis.metadata_extractor:extract_metadata_and_download:269 | === PHASE 1: METADATA EXTRACTION ===
+2026-01-14 23:50:18 | INFO     | targeted_analysis.metadata_extractor:extract_metadata_and_download:270 | URL: https://vm.tiktok.com/ZGdmamnRy/
+2026-01-14 23:50:18 | INFO     | targeted_analysis.metadata_extractor:extract_metadata_and_download:272 | Product: Video_Analysis_02
+2026-01-14 23:50:18 | DEBUG    | targeted_analysis.metadata_extractor:extract_video_id:43 | URL appears to be a short link, using yt-dlp to resolve
+2026-01-14 23:50:20 | INFO     | targeted_analysis.metadata_extractor:extract_video_id:54 | Resolved short URL to video ID: 7056373783682190597
+2026-01-14 23:50:20 | INFO     | targeted_analysis.metadata_extractor:fetch_metadata:78 | Fetching metadata for video ID: 7056373783682190597
+2026-01-14 23:50:34 | SUCCESS  | targeted_analysis.metadata_extractor:fetch_metadata:118 | Metadata fetched: 519propertymaintenance | 24.0s | 12500000 views
+2026-01-14 23:50:34 | DEBUG    | targeted_analysis.metadata_extractor:extract_video_id:43 | URL appears to be a short link, using yt-dlp to resolve
+2026-01-14 23:50:36 | INFO     | targeted_analysis.metadata_extractor:extract_video_id:54 | Resolved short URL to video ID: 7056373783682190597
+2026-01-14 23:50:36 | INFO     | targeted_analysis.metadata_extractor:download_video:175 | Downloading video ID: 7056373783682190597 to ../targeted_analysis/20260114/7056373783682190597
+2026-01-14 23:50:47 | SUCCESS  | targeted_analysis.metadata_extractor:download_video:231 | Video downloaded: video.mp4 (2.2MB, 24.0s)
+2026-01-14 23:50:47 | SUCCESS  | targeted_analysis.metadata_extractor:extract_metadata_and_download:288 | Metadata saved to: ../targeted_analysis/20260114/7056373783682190597/metadata.json
+2026-01-14 23:50:47 | SUCCESS  | targeted_analysis.metadata_extractor:extract_metadata_and_download:290 | ✅ PHASE 1 COMPLETE
+2026-01-14 23:50:47 | INFO     | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:390 | === PHASE 2: FRAME + AUDIO EXTRACTION + TRANSCRIPTION ===
+2026-01-14 23:50:47 | INFO     | targeted_analysis.frame_processor:extract_keyframes_and_audio:54 | Extracting keyframes (every 2s) and audio...
+2026-01-14 23:50:47 | DEBUG    | targeted_analysis.frame_processor:extract_keyframes_and_audio:69 | Video duration: 24.03s
+2026-01-14 23:50:53 | SUCCESS  | targeted_analysis.frame_processor:extract_keyframes_and_audio:96 | Audio extracted: audio.mp3
+2026-01-14 23:50:53 | SUCCESS  | targeted_analysis.frame_processor:extract_keyframes_and_audio:104 | Extracted 12 frames (24.0s ÷ 2s) and audio
+2026-01-14 23:50:53 | INFO     | targeted_analysis.frame_processor:get_transcript:321 | === Transcript Extraction (Hybrid Approach) ===
+2026-01-14 23:50:53 | INFO     | targeted_analysis.frame_processor:get_tiktok_captions:122 | Attempting to fetch TikTok captions...
+2026-01-14 23:50:56 | INFO     | targeted_analysis.frame_processor:get_tiktok_captions:147 | No TikTok captions found
+2026-01-14 23:50:56 | INFO     | targeted_analysis.frame_processor:transcribe_audio_fallback:265 | Transcribing audio with Whisper (fallback method)...
+2026-01-14 23:50:56 | INFO     | targeted_analysis.frame_processor:get_whisper_model:32 | Loading Whisper tiny model (cached for batch processing)...
+2026-01-14 23:50:57 | SUCCESS  | targeted_analysis.frame_processor:get_whisper_model:34 | Whisper model loaded
+2026-01-14 23:50:58 | SUCCESS  | targeted_analysis.frame_processor:transcribe_audio_fallback:299 | Whisper transcription complete: 0 segments, language=en (0.26)
+2026-01-14 23:50:58 | SUCCESS  | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:403 | Transcript saved to: ../targeted_analysis/20260114/7056373783682190597/transcript.json
+2026-01-14 23:50:58 | SUCCESS  | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:405 | ✅ PHASE 2 COMPLETE
+2026-01-14 23:50:58 | INFO     | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:406 |    Frames: 12 frames in ../targeted_analysis/20260114/7056373783682190597/frames
+2026-01-14 23:50:58 | INFO     | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:407 |    Audio: ../targeted_analysis/20260114/7056373783682190597/audio.mp3
+2026-01-14 23:50:58 | INFO     | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:408 |    Transcript: whisper_transcription (en, 0 segments)
+2026-01-14 23:50:58 | INFO     | __main__:main:161 | ======================================================================
+2026-01-14 23:50:58 | INFO     | __main__:main:162 | PHASE 3: COMPREHENSIVE ANALYSIS (4 parts)
+2026-01-14 23:50:58 | INFO     | __main__:main:163 | ======================================================================
+2026-01-14 23:50:58 | INFO     | targeted_analysis.analyzers.structural:analyze_structural:35 | === Phase 3A: Structural Analysis ===
+2026-01-14 23:50:58 | INFO     | targeted_analysis.analyzers.structural:analyze_structural:105 | Calling Gemini with 12 frames...
+2026-01-14 23:54:03 | SUCCESS  | targeted_analysis.analyzers.structural:analyze_structural:119 | Structural analysis complete (2042 chars)
+2026-01-14 23:54:03 | INFO     | targeted_analysis.analyzers.content:analyze_content:34 | === Phase 3B: Content Analysis ===
+2026-01-14 23:54:03 | INFO     | targeted_analysis.analyzers.content:analyze_content:134 | Calling Gemini for content analysis...
+2026-01-14 23:56:11 | SUCCESS  | targeted_analysis.analyzers.content:analyze_content:148 | Content analysis complete (3436 chars)
+2026-01-14 23:56:11 | INFO     | targeted_analysis.analyzers.strategic:analyze_strategic:32 | === Phase 3C: Strategic Analysis ===
+2026-01-14 23:56:11 | INFO     | targeted_analysis.analyzers.strategic:analyze_strategic:148 | Calling Gemini for strategic analysis...
+2026-01-14 23:57:01 | SUCCESS  | targeted_analysis.analyzers.strategic:analyze_strategic:162 | Strategic analysis complete (5163 chars)
+2026-01-14 23:57:01 | INFO     | targeted_analysis.analyzers.character:analyze_character:32 | === Phase 3D: Character Descriptions ===
+2026-01-14 23:57:01 | INFO     | targeted_analysis.analyzers.character:analyze_character:116 | Calling Gemini for character analysis...
+2026-01-14 23:59:16 | SUCCESS  | targeted_analysis.analyzers.character:analyze_character:130 | Character analysis complete (578 chars)
+2026-01-14 23:59:16 | SUCCESS  | __main__:main:197 | ✅ PHASE 3 COMPLETE - Analysis saved
+2026-01-14 23:59:16 | INFO     | targeted_analysis.generators.script_generator:generate_replication_script:32 | === PHASE 4: REPLICATION SCRIPT GENERATION ===
+2026-01-14 23:59:16 | INFO     | targeted_analysis.generators.script_generator:generate_replication_script:186 | Calling Gemini for replication script...
+2026-01-15 00:00:02 | SUCCESS  | targeted_analysis.generators.script_generator:generate_replication_script:229 | Replication script generated (3517 chars)
+2026-01-15 00:00:02 | SUCCESS  | targeted_analysis.generators.script_generator:generate_replication_script:230 | ✅ PHASE 4 COMPLETE
+2026-01-15 00:00:02 | SUCCESS  | __main__:main:225 | Replication script saved: ../targeted_analysis/20260114/7056373783682190597/replication_script.md
+2026-01-15 00:00:02 | INFO     | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:30 | === PHASE 5: AI VIDEO PROMPTS GENERATION ===
+2026-01-15 00:00:02 | INFO     | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:126 | Calling Gemini for AI video prompts...
+2026-01-15 00:00:43 | SUCCESS  | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:182 | AI video prompts generated (5 shots)
+2026-01-15 00:00:43 | SUCCESS  | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:183 | ✅ PHASE 5 COMPLETE
+2026-01-15 00:00:43 | SUCCESS  | __main__:main:249 | AI video prompts saved: ../targeted_analysis/20260114/7056373783682190597/ai_video_prompts.md
+2026-01-15 00:00:43 | INFO     | __main__:main:257 | ======================================================================
+2026-01-15 00:00:43 | SUCCESS  | __main__:main:258 | ✅ ALL PHASES COMPLETE
+2026-01-15 00:00:43 | INFO     | __main__:main:259 | ======================================================================
+2026-01-15 00:00:43 | INFO     | __main__:main:260 | Output directory: ../targeted_analysis/20260114/7056373783682190597
+2026-01-15 00:00:43 | INFO     | __main__:main:261 | Generated files:
+2026-01-15 00:00:43 | INFO     | __main__:main:262 |   - metadata.json
+2026-01-15 00:00:43 | INFO     | __main__:main:263 |   - video.mp4
+2026-01-15 00:00:43 | INFO     | __main__:main:264 |   - frames/ (12 frames)
+2026-01-15 00:00:43 | INFO     | __main__:main:265 |   - transcript.json
+2026-01-15 00:00:43 | INFO     | __main__:main:266 |   - analysis.md (includes character descriptions)
+2026-01-15 00:00:43 | INFO     | __main__:main:267 |   - replication_script.md
+2026-01-15 00:00:43 | INFO     | __main__:main:268 |   - ai_video_prompts.md
+2026-01-15 00:00:43 | INFO     | __main__:main:269 |   - processing_status.json
+2026-01-15 00:00:43 | INFO     | __main__:main:270 |   - analysis.log
+2026-01-15 00:00:43 | INFO     | __main__:main:271 | ======================================================================

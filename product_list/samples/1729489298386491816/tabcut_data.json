@@ -1,0 +1,96 @@
+{
+  "product_id": "1729489298386491816",
+  "scraped_at": "2026-01-12T22:35:02.570438",
+  "product_info": {
+    "product_name": "Magcubic HY300Pro+ 290ANSI Android14 Portable Projector 0.8:1 Short Projection Throw Ratio Native 1280*720P WIFI6 BT5.4  Allwinner H726 Home Cinema Mini Smart Projector",
+    "shop_owner": "Magcubic Tech",
+    "total_sales": 10900,
+    "total_sales_revenue": "€ 40.05万($ 46.62万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 0,
+    "sales_revenue": "$ 0.00",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 192,
+    "带货视频达人数": 67,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADKannst damit auch Netflix usw. schauen 📺✨ #beamer #homecinema #projector #weihnachtsdeals #unboxyourdeals 发现时间：2025.12.23 06:44更新时间：2025.12.23 06:44时长：00:00:10跳转至 TikTok",
+      "creator_username": "itsmissbecka",
+      "creator_followers": "3598",
+      "publish_date": "2025-12-21 23:24",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "301",
+      "video_url": "https://www.tiktok.com/@itsmissbecka/video/7586440572903132439?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_itsmissbecka.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#UnboxYourDeals #weihnachtsdeals 发现时间：2026.01.04 06:52更新时间：2026.01.04 06:52时长：00:00:26跳转至 TikTok",
+      "creator_username": "sparfuchs455",
+      "creator_followers": "1.26万",
+      "publish_date": "2026-01-03 21:56",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "766",
+      "video_url": "https://www.tiktok.com/@sparfuchs455/video/7591242141049851158?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_sparfuchs455.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADNicht schlecht #tiktokshop #winterdeals #newyearnewyou 发现时间：2025.12.28 01:38更新时间：2025.12.28 01:38时长：00:00:36跳转至 TikTok",
+      "creator_username": "produkt.bruder",
+      "creator_followers": "7840",
+      "publish_date": "2025-12-27 23:34",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "134",
+      "video_url": "https://www.tiktok.com/@produkt.bruder/video/7588669874981834006?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_produkt.bruder.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#projector #netflix_comedy1 #tiktokshopblackfriday #unboxyourdeals #deutschland 发现时间：2025.12.23 05:31更新时间：2026.01.07 14:53时长：00:00:23跳转至 TikTok",
+      "creator_username": "aliaad132",
+      "creator_followers": "3388",
+      "publish_date": "2025-12-23 01:06",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "312",
+      "video_url": "https://www.tiktok.com/@aliaad132/video/7586837872787934496?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_aliaad132.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#stitch mit @BeamlyHome Projector #beamer #magcubic #weihnachtsdeals #unboxyourdeals 发现时间：2026.01.07 04:39更新时间：2026.01.07 04:39时长：00:00:24跳转至 TikTok",
+      "creator_username": "jonas.jamess",
+      "creator_followers": "1.89万",
+      "publish_date": "2026-01-06 17:15",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "385",
+      "video_url": "https://www.tiktok.com/@jonas.jamess/video/7592283064252763414?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_jonas.jamess.mp4"
+    }
+  ]
+}

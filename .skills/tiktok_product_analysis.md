@@ -14,6 +14,19 @@ execution_agent: Gemini CLI MCP (async)
 
 ---
 
+## Compliance & Policy Notes (DE Market)
+
+This skill should explicitly capture policy-sensitive claims so downstream scripts stay safe.
+
+- **Price / discount:** treat exact prices as volatile; prefer “günstig/preiswert” guidance in final scripts.
+- **Waterproof:** only treat `IP67/IPX7/etc.` as valid if it’s visible in packaging text or in `tabcut_data.json`. Otherwise use `spritzwassergeschützt` / `wasserabweisend`.
+- **Medical:** avoid medical guarantees; prefer wellness/comfort language.
+- **Tech specs:** ensure claims match source (e.g. projectors: “4K Dekodierung” vs native 4K).
+
+Add these as explicit DO/DON’T bullets in the generated `ref_video/video_synthesis.md` (section already exists in your template as “Compliance & Trust Signals”).
+
+---
+
 ## Agent Assignment
 
 | Task | Agent | Tool | Parallelizable |
@@ -362,6 +375,9 @@ Analyze all product images in product_list/YYYYMMDD/{product_id}/product_images/
 
 Create a BILINGUAL product analysis for TikTok script writing.
 
+MANDATORY: Include inline Chinese translations throughout (not just headers).
+- Every key bullet should include Chinese in parentheses: `English text (中文翻译)`
+
 **OUTPUT FILE:** Save as product_list/YYYYMMDD/{product_id}/product_images/image_analysis.md
 
 STRICT OUTPUT:
@@ -370,7 +386,7 @@ STRICT OUTPUT:
 
 **FORMAT:**
 - Bilingual headers: ## Section | 中文标题
-- Inline translations for key terms
+- Inline Chinese translations on the same line for key bullets: `English text (中文翻译)`
 - 10+ sections, 200+ lines minimum
 
 **REQUIRED SECTIONS:**
@@ -441,6 +457,10 @@ STRICT OUTPUT:
 6. Creative Production Patterns | 创意制作模式
 7. Seasonal Context | 季节性背景
 8. Compliance & Trust Signals | 合规与信任信号
+   - Price: avoid exact € in scripts (use relative wording)
+   - Waterproof: only claim if IP rating sourced
+   - Medical: avoid therapy/healing promises
+   - Tech specs: avoid ambiguous claims (e.g. 4K decode vs native)
 9. Competitive Differentiation | 竞争差异化
 10. Replication Strategy | 复制策略
     - 3+ specific script angles with estimated effectiveness
@@ -449,7 +469,7 @@ STRICT OUTPUT:
 13. Source Materials | 源材料
 
 **FORMAT:**
-- Bilingual headers and inline translations
+- Bilingual headers AND inline Chinese translations for key bullets (`English text (中文翻译)`) 
 - 150+ lines minimum (comprehensive analysis)
 - Actionable insights for script generation
 ```
@@ -460,7 +480,16 @@ After writing an analysis file, do not proceed if it contains meta chatter. Exam
 - “I will…”
 - “Loaded cached credentials…”
 
-Use the repo verifier to enforce this consistently:
+Also run these quick compliance scans on the *generated scripts* folder (optional but strongly recommended):
+
+```bash
+scripts_dir="product_list/YYYYMMDD/{product_id}/scripts"
+rg -n "€|\\bEuro\\b|欧元" "$scripts_dir" --glob '!Campaign_Summary.md' || true
+rg -n "100% wasserdicht|komplett wasserdicht|100%防水|完全防水" "$scripts_dir" --glob '!Campaign_Summary.md' || true
+rg -n "Schmerz|Physio|Therapeut|Tiefengewebe|heilt|behandelt" "$scripts_dir" --glob '!Campaign_Summary.md' || true
+```
+
+Use the repo verifier to enforce analysis-output formatting consistently:
 
 ```bash
 bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase analysis

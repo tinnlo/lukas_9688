@@ -1,0 +1,96 @@
+{
+  "product_id": "1729565806858115327",
+  "scraped_at": "2026-01-10T14:46:16.256947",
+  "product_info": {
+    "product_name": "Portable Cordless Electric Air Blower with Turbo Jet Technology, High Power for Car Hair Drying & Dust Cleaning, Ideal Portable Tool",
+    "shop_owner": "Easy Trading",
+    "total_sales": 6765,
+    "total_sales_revenue": "€ 12.03万($ 14.00万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 500,
+    "sales_revenue": "$ 9522.72",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "7.53%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 93,
+    "带货视频达人数": 27,
+    "带货视频销量": 330,
+    "带货视频销售额": "$ 6284.98",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADAlternative zum Kompressor, leistungsstark mit Akkuu Luftgebläse  #fyp #gadget #werkzeug #cartok #carwrap 发现时间：2025.12.19 12:43更新时间：2026.01.09 12:17时长：00:00:36跳转至 TikTok",
+      "creator_username": "kloster_industries",
+      "creator_followers": "6.15万",
+      "publish_date": "2025-12-18 15:04",
+      "estimated_sales": 151,
+      "estimated_revenue": "€ 2470.36($ 2875.85)",
+      "total_views": "85.63万",
+      "video_url": "https://www.tiktok.com/@kloster_industries/video/7585198511700987168?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_kloster_industries.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD😊#autowäsche #auto 发现时间：2025.12.24 03:51更新时间：2025.12.30 19:59时长：00:00:34跳转至 TikTok",
+      "creator_username": "dennofinds",
+      "creator_followers": "3.81万",
+      "publish_date": "2025-12-23 19:37",
+      "estimated_sales": 87,
+      "estimated_revenue": "€ 1423.32($ 1656.95)",
+      "total_views": "23.6万",
+      "video_url": "https://www.tiktok.com/@dennofinds/video/7587124275425840386?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_dennofinds.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADAntwort auf @Lenin  Akku Gebläse für Autowäsche, Laub oder als Jet Bag #fyp #gadget #carwrap #cartok #autowaschen 发现时间：2025.12.30 15:45更新时间：2025.12.31 15:44时长：00:00:41跳转至 TikTok",
+      "creator_username": "kloster_industries",
+      "creator_followers": "6.15万",
+      "publish_date": "2025-12-29 17:44",
+      "estimated_sales": 62,
+      "estimated_revenue": "€ 1014.32($ 1180.81)",
+      "total_views": "40.71万",
+      "video_url": "https://www.tiktok.com/@kloster_industries/video/7589321568308727073?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_kloster_industries.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#قطر🇶🇦 #قطر🇶🇦الإمارات🇦🇪الكويت🇰🇼 #tiktok_india_ 发现时间：2025.12.31 16:24更新时间：2026.01.09 04:31时长：00:00:07跳转至 TikTok",
+      "creator_username": "abu.yazan112",
+      "creator_followers": "18.92万",
+      "publish_date": "2025-12-31 01:47",
+      "estimated_sales": 24,
+      "estimated_revenue": "€ 392.64($ 457.09)",
+      "total_views": "151.93万",
+      "video_url": "https://www.tiktok.com/@abu.yazan112/video/7589817298395860256?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_abu.yazan112.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#قطر🇶🇦الإمارات🇦🇪الكويت🇰🇼 #tiktok_india_ #قطر🇶🇦 发现时间：2025.12.29 05:34更新时间：2026.01.01 07:00时长：00:00:14跳转至 TikTok",
+      "creator_username": "abu.yazan112",
+      "creator_followers": "18.92万",
+      "publish_date": "2025-12-29 00:02",
+      "estimated_sales": 4,
+      "estimated_revenue": "€ 65.44($ 76.18)",
+      "total_views": "1.81万",
+      "video_url": "https://www.tiktok.com/@abu.yazan112/video/7589048034114211104?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_abu.yazan112.mp4"
+    }
+  ]
+}

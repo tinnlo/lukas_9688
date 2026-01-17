@@ -1,0 +1,96 @@
+{
+  "product_id": "1729655462492150450",
+  "scraped_at": "2026-01-12T22:30:41.550757",
+  "product_info": {
+    "product_name": "Bionic hand heating massage device, used for deep tissue pain relief, wireless portable electric finger pressure 4D kneading massage, designed to simulate the human hand, suitable for neck/shoulder/hand/leg massage, ideal item for home massage.",
+    "shop_owner": "Clear Smile Tooth",
+    "total_sales": 2224,
+    "total_sales_revenue": "€ 7.12万($ 8.28万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 303,
+    "sales_revenue": "$ 1.13万",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "26.47%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 102,
+    "带货视频达人数": 46,
+    "带货视频销量": 68,
+    "带货视频销售额": "$ 2537.14",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADHab es ihr versprochen  #massage #neckpain #entspannung #newyearnewyou #winterdeals 发现时间：2026.01.03 02:45更新时间：2026.01.03 02:45时长：00:00:43跳转至 TikTok",
+      "creator_username": "drivenbydestiny2",
+      "creator_followers": "71.06万",
+      "publish_date": "2026-01-02 22:00",
+      "estimated_sales": 10,
+      "estimated_revenue": "€ 320.50($ 373.11)",
+      "total_views": "3592",
+      "video_url": "https://www.tiktok.com/@drivenbydestiny2/video/7590823775965383958?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_drivenbydestiny2.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#مغربيةوافتخر #مغاربة_العالم #promotion #tiktokshop #deutschland 发现时间：2026.01.07 07:27更新时间：2026.01.10 06:48时长：00:01:36跳转至 TikTok",
+      "creator_username": "scheichmomo",
+      "creator_followers": "6.79万",
+      "publish_date": "2026-01-06 18:19",
+      "estimated_sales": 8,
+      "estimated_revenue": "€ 256.40($ 298.49)",
+      "total_views": "3574",
+      "video_url": "https://www.tiktok.com/@scheichmomo/video/7592299409619111190?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_scheichmomo.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADEs hilft einfach ungemein  #massage #neckpain #neckpainrelief #weihnachtsdeals #unboxyourdeals 发现时间：2025.12.19 10:09更新时间：2025.12.19 10:09时长：00:00:29跳转至 TikTok",
+      "creator_username": "drivenbydestiny2",
+      "creator_followers": "71.06万",
+      "publish_date": "2025-12-18 22:43",
+      "estimated_sales": 7,
+      "estimated_revenue": "€ 224.35($ 261.18)",
+      "total_views": "2370",
+      "video_url": "https://www.tiktok.com/@drivenbydestiny2/video/7585290960309914902?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_drivenbydestiny2.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADDas beliebte Massagegerät #massagegerät #nackenschmerzenloswerden #newyearnewyou #winterdeals #TikTokShopdeutschland 发现时间：2026.01.02 15:52更新时间：2026.01.03 00:04时长：00:00:19跳转至 TikTok",
+      "creator_username": "mr.creepytiktok",
+      "creator_followers": "5.55万",
+      "publish_date": "2025-12-27 19:39",
+      "estimated_sales": 6,
+      "estimated_revenue": "€ 192.30($ 223.86)",
+      "total_views": "9174",
+      "video_url": "https://www.tiktok.com/@mr.creepytiktok/video/7588609112296918294?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_mr.creepytiktok.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADThis is new viral massage! Buy it’s ASAP! 🤩👇 #WeihnachtsDeals #UnboxYourDeals #massager #massage #giftideas 发现时间：2025.12.21 06:37更新时间：2025.12.21 06:37时长：00:00:14跳转至 TikTok",
+      "creator_username": "irynaai",
+      "creator_followers": "3.35万",
+      "publish_date": "2025-12-20 20:19",
+      "estimated_sales": 4,
+      "estimated_revenue": "€ 128.20($ 149.24)",
+      "total_views": "1356",
+      "video_url": "https://www.tiktok.com/@irynaai/video/7586021875025857814?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_irynaai.mp4"
+    }
+  ]
+}

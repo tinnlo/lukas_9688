@@ -1,0 +1,96 @@
+{
+  "product_id": "1729602300252691281",
+  "scraped_at": "2026-01-11T12:04:32.411526",
+  "product_info": {
+    "product_name": "Damen Ultra Warme Winterstiefel, Schneestiefel mit dicker Sohle für extreme Kälte, Hochdichte-Futter mit Hitzesperre-Technologie, strapazierfähige PVC-Sohle für Outdoor-Wandern und Mode",
+    "shop_owner": "a Simple girl",
+    "total_sales": 954,
+    "total_sales_revenue": "€ 9896.32($ 1.15万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 122,
+    "sales_revenue": "$ 1475.65",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 11,
+    "带货视频达人数": 11,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD无标题发现时间：2025.12.23 20:35更新时间：2025.12.23 20:35时长：00:00:20跳转至 TikTok",
+      "creator_username": "malikaafghan06",
+      "creator_followers": "8309",
+      "publish_date": "2025-12-23 19:34",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "86",
+      "video_url": "https://www.tiktok.com/@malikaafghan06/video/7587123483042188566?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "AD#wintertime #foruyou 发现时间：2026.01.05 10:52更新时间：2026.01.05 10:52时长：00:00:19跳转至 TikTok",
+      "creator_username": "samina.yasmeen225",
+      "creator_followers": "2278",
+      "publish_date": "2025-12-23 07:48",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "1129",
+      "video_url": "https://www.tiktok.com/@samina.yasmeen225/video/7586941633418038550?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 3,
+      "title": "AD无标题发现时间：2025.12.25 10:37更新时间：2025.12.31 06:57时长：00:00:16跳转至 TikTok",
+      "creator_username": "krakra10.125",
+      "creator_followers": "2229",
+      "publish_date": "2025-12-23 17:54",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "137",
+      "video_url": "https://www.tiktok.com/@krakra10.125/video/7587097708008148246?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_krakra10.125.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#tiktokshopgarmany #wintershoes #Comfortabel #fyp 发现时间：2025.12.20 05:13更新时间：2025.12.21 13:05时长：00:00:19跳转至 TikTok",
+      "creator_username": "fliegenlernen202020",
+      "creator_followers": "4114",
+      "publish_date": "2025-12-19 20:50",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "484",
+      "video_url": "https://www.tiktok.com/@fliegenlernen202020/video/7585658733682838806?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_fliegenlernen202020.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#damenwinterstiefel发现时间：2026.01.07 11:02更新时间：2026.01.08 06:29时长：00:01:11跳转至 TikTok",
+      "creator_username": "lij@vitalij1978_",
+      "creator_followers": "3.32万",
+      "publish_date": "2026-01-06 12:13",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "618",
+      "video_url": "https://www.tiktok.com/@vitalij1978_/video/7592205088693751062?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

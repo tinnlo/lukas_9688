@@ -1,0 +1,29 @@
+{
+  "text": "Wenn bei Ihnen heute Schnee gefallen ist und Sie sind gerade dabei den Bürgerstall vor ihren eigenen Haus frei zu rohnen. Nimm Sie sich an Moment Zeit und machen Sie die Seite des Nachbarn aufgleich mit. Denn wenn Sie man nicht da sind, macht er das vielleicht auch für Sie.",
+  "language": "de",
+  "source": "whisper_transcription",
+  "confidence": 0.9929083585739136,
+  "segment_count": 4,
+  "segments": [
+    {
+      "start": 0.24,
+      "end": 5.14,
+      "text": "Wenn bei Ihnen heute Schnee gefallen ist und Sie sind gerade dabei den Bürgerstall vor"
+    },
+    {
+      "start": 5.14,
+      "end": 7.14,
+      "text": "ihren eigenen Haus frei zu rohnen."
+    },
+    {
+      "start": 7.14,
+      "end": 12.18,
+      "text": "Nimm Sie sich an Moment Zeit und machen Sie die Seite des Nachbarn aufgleich mit."
+    },
+    {
+      "start": 12.18,
+      "end": 15.64,
+      "text": "Denn wenn Sie man nicht da sind, macht er das vielleicht auch für Sie."
+    }
+  ]
+}

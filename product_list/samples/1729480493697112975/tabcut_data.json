@@ -1,0 +1,96 @@
+{
+  "product_id": "1729480493697112975",
+  "scraped_at": "2026-01-12T22:36:05.345163",
+  "product_info": {
+    "product_name": "Rechargeable Electric Toothbrush Set, 1 Box Electric Toothbrush with 8 Counts Replacement Brush Heads, Intelligent Timer Toothbrushes for Adults #TOP PICKS",
+    "shop_owner": "Uiesno",
+    "total_sales": 338,
+    "total_sales_revenue": "€ 3845.07($ 4476.22)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 275,
+    "sales_revenue": "$ 3688.00",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "6.67%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 15,
+    "带货视频达人数": 14,
+    "带货视频销量": 19,
+    "带货视频销售额": "$ 254.81",
+    "广告成交金额": "$ 254.81",
+    "广告成交占比": "100.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADفرشاية أسنان كهربائية روعة بتنضف 8 8 أضعاف الفرشاية العادية مع 8 رووس بيجو بالعلبة فقط ب 10 يورو ‼️🔥🔥🔥🔥😍😍 #zähne #viral #treanding #fyp #tiktokshop 发现时间：2026.01.03 08:43更新时间：2026.01.06 06:29时长：00:01:49跳转至 TikTok",
+      "creator_username": "alzaeem.61",
+      "creator_followers": "5738",
+      "publish_date": "2026-01-02 21:45",
+      "estimated_sales": 19,
+      "estimated_revenue": "€ 218.88($ 254.81)",
+      "total_views": "9.05万",
+      "video_url": "https://www.tiktok.com/@alzaeem.61/video/7590868209750904086?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_alzaeem.61.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD无标题发现时间：2025.12.27 00:02更新时间：2026.01.06 04:16时长：00:00:34跳转至 TikTok",
+      "creator_username": "ollymerla",
+      "creator_followers": "1.44万",
+      "publish_date": "2025-12-26 17:35",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "994",
+      "video_url": "https://www.tiktok.com/@ollymerla/video/7588206195870059808?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_ollymerla.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADElektronische Zahnbürste mit einem 2 Jahresvorrat an Ersatzbürsten😍 #elektrischezahnbürste #Zahnbürste #unboxyourdeals #Zähneputzen #essentials 发现时间：2025.12.22 11:50更新时间：2025.12.22 11:50时长：00:00:25跳转至 TikTok",
+      "creator_username": "sweedflow",
+      "creator_followers": "4.54万",
+      "publish_date": "2025-12-22 10:44",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "83",
+      "video_url": "https://www.tiktok.com/@sweedflow/video/7586615921284877590?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_sweedflow.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#Wiederaufladbares #Elektrische #zahnbürsten 发现时间：2026.01.02 06:28更新时间：2026.01.02 06:28时长：00:00:35跳转至 TikTok",
+      "creator_username": "aleksandrnuernberg",
+      "creator_followers": "9523",
+      "publish_date": "2026-01-01 13:19",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "601",
+      "video_url": "https://www.tiktok.com/@aleksandrnuernberg/video/7590366761036533014?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_aleksandrnuernberg.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADSuper günstig mit 2 Jahresvorrat an Ersatzbürsten #elektrischezahnbürste #zahnbürste #ersatzkopf #unboxyourdeals #elektrozahnbürste 发现时间：2025.12.20 01:45更新时间：2025.12.20 01:45时长：00:00:33跳转至 TikTok",
+      "creator_username": "sweedflow",
+      "creator_followers": "4.54万",
+      "publish_date": "2025-12-19 19:42",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "296",
+      "video_url": "https://www.tiktok.com/@sweedflow/video/7585641205220789526?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_sweedflow.mp4"
+    }
+  ]
+}

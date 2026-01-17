@@ -1,0 +1,44 @@
+{
+  "text": "Black Ice is everywhere this month. Don't let your dad slip over. These fleece line snow boots grips like tires. They're flexible, light, fully fur-lined, waterproof, and he won't even need to tie laces. Safe, warm, and easy. Grab the pair for them now.",
+  "language": "en",
+  "source": "whisper_transcription",
+  "confidence": 0.9976958632469177,
+  "segment_count": 7,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.24,
+      "text": "Black Ice is everywhere this month."
+    },
+    {
+      "start": 2.24,
+      "end": 3.8,
+      "text": "Don't let your dad slip over."
+    },
+    {
+      "start": 3.8,
+      "end": 6.48,
+      "text": "These fleece line snow boots grips like tires."
+    },
+    {
+      "start": 6.48,
+      "end": 11.04,
+      "text": "They're flexible, light, fully fur-lined, waterproof, and he won't even need to tie"
+    },
+    {
+      "start": 11.04,
+      "end": 12.04,
+      "text": "laces."
+    },
+    {
+      "start": 12.04,
+      "end": 13.56,
+      "text": "Safe, warm, and easy."
+    },
+    {
+      "start": 13.56,
+      "end": 14.76,
+      "text": "Grab the pair for them now."
+    }
+  ]
+}

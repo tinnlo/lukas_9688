@@ -1,0 +1,29 @@
+{
+  "text": "I'm just gonna stick that in right there. See you in a little bit. Alrighty, holy macaro! Alright, we're gonna get it.",
+  "language": "en",
+  "source": "whisper_transcription",
+  "confidence": 0.9941748976707458,
+  "segment_count": 4,
+  "segments": [
+    {
+      "start": 6.96,
+      "end": 9.96,
+      "text": "I'm just gonna stick that in right there."
+    },
+    {
+      "start": 9.96,
+      "end": 11.96,
+      "text": "See you in a little bit."
+    },
+    {
+      "start": 11.96,
+      "end": 40.59,
+      "text": "Alrighty, holy macaro!"
+    },
+    {
+      "start": 40.59,
+      "end": 65.6,
+      "text": "Alright, we're gonna get it."
+    }
+  ]
+}

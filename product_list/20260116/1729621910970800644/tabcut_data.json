@@ -1,0 +1,96 @@
+{
+  "product_id": "1729621910970800644",
+  "scraped_at": "2026-01-16T18:28:17.381738",
+  "product_info": {
+    "product_name": "All-Season Pet Sofa Bed | Ultra Soft Warm Dog/Cat Bed - Washable Removable Cover, Non-Slip Bottom for Small to Medium Pets",
+    "shop_owner": "Nexus Living",
+    "total_sales": 10,
+    "total_sales_revenue": "€ 230.30($ 268.10)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 0,
+    "sales_revenue": "$ 0.00",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 9,
+    "带货视频达人数": 6,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#WinterDeals #NewYearNewYou #flashsale #tiktokmademebuylt #dog 发现时间：2026.01.14 08:46更新时间：2026.01.15 08:21时长：00:00:15跳转至 TikTok",
+      "creator_username": "kodiikoudai",
+      "creator_followers": "3078",
+      "publish_date": "2026-01-14 08:40",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "446",
+      "video_url": "https://www.tiktok.com/@kodiikoudai/video/7595118980554149142?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_kodiikoudai.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#MustHave #WinterDeals #NewYearNewYou #flashsale 发现时间：2026.01.15 08:22更新时间：2026.01.15 08:22时长：00:00:22跳转至 TikTok",
+      "creator_username": "trevor8114",
+      "creator_followers": "1万",
+      "publish_date": "2026-01-14 08:32",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "505",
+      "video_url": "https://www.tiktok.com/@trevor8114/video/7595116843795238166?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_trevor8114.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#WinterDeals #NewYearNewYou #tiktokmadebuythis #flashsale 发现时间：2026.01.15 12:03更新时间：2026.01.15 12:03时长：00:00:23跳转至 TikTok",
+      "creator_username": "ssashop22",
+      "creator_followers": "9450",
+      "publish_date": "2026-01-14 15:01",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "291",
+      "video_url": "https://www.tiktok.com/@ssashop22/video/7595132113414917398?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "ADDogs fanny moments 😂 #foryouu #creatorsearchinsights #virale #foryouuu #byviral 发现时间：2026.01.08 15:58更新时间：2026.01.15 05:43时长：00:01:00跳转至 TikTok",
+      "creator_username": "videovibedaily",
+      "creator_followers": "2.12万",
+      "publish_date": "2026-01-07 15:00",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "781",
+      "video_url": "https://www.tiktok.com/@videovibedaily/video/7592619242407709974?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_videovibedaily.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADTreat your furry friend to our ultra-soft, all-year-round pet sofa bed! Perfect for naps and ultimate comfort. #PetComfort #DogSofa #SoftBed #FurryFriend 发现时间：2025.12.26 05:27更新时间：2025.12.26 05:27时长：00:00:08跳转至 TikTok",
+      "creator_username": "funnydog_24",
+      "creator_followers": "2381",
+      "publish_date": "2025-12-25 23:00",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "20",
+      "video_url": "https://www.tiktok.com/@funnydog_24/video/7587769466155584771?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_funnydog_24.mp4"
+    }
+  ]
+}

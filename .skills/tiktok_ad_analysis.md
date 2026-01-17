@@ -16,6 +16,19 @@ orchestration: tiktok_product_analysis.md (for batch parallelism)
 
 ---
 
+## Compliance & Policy Notes (DE Market)
+
+This is an *analysis* skill, but it should proactively flag compliance-risk claims found in source videos so the script generator can avoid them.
+
+- **Price / discount claims:** flag exact `€` amounts / “Euro” / “欧元”, hard discounts, and precise comparisons.
+- **Waterproof claims:** flag absolutes like `"100% wasserdicht"`, `"komplett wasserdicht"`, `"完全防水"` unless an IP rating is visible in packaging.
+- **Medical claims:** flag pain/therapy/healing language (e.g., `Schmerzfreiheit`, `Therapeut`, `Physio`, `heilt`).
+- **Tech specs:** flag ambiguous claims like `"4K Support"` (often decode, not native).
+
+When writing `video_synthesis.md`, include a small “Compliance & Trust Signals” section listing what to avoid in final scripts.
+
+---
+
 ## Integration with Skill Pipeline
 
 ```

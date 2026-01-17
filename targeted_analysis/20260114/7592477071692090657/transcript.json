@@ -1,0 +1,29 @@
+{
+  "text": "Am Öffüße und ein paar Zentimeter größer wirken, schaut in diese Boots an. Die Gifütter des inneren Leben mehgerbequemisole und das alles in einem super leichten Sneakerlook. Sie sind Wasser dicht, geben richtig Krip auf Schnee und fühlen sich an wie kleine Heizungen an den Füßen. Plus der Kule Metalljans unter...",
+  "language": "de",
+  "source": "whisper_transcription",
+  "confidence": 0.9938668608665466,
+  "segment_count": 4,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.56,
+      "text": "Am Öffüße und ein paar Zentimeter größer wirken, schaut in diese Boots an."
+    },
+    {
+      "start": 3.56,
+      "end": 8.36,
+      "text": "Die Gifütter des inneren Leben mehgerbequemisole und das alles in einem super leichten Sneakerlook."
+    },
+    {
+      "start": 8.36,
+      "end": 12.68,
+      "text": "Sie sind Wasser dicht, geben richtig Krip auf Schnee und fühlen sich an wie kleine Heizungen an den Füßen."
+    },
+    {
+      "start": 12.68,
+      "end": 14.2,
+      "text": "Plus der Kule Metalljans unter..."
+    }
+  ]
+}

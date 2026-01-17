@@ -1,0 +1,96 @@
+{
+  "product_id": "1729623596019063013",
+  "scraped_at": "2026-01-12T22:32:55.152037",
+  "product_info": {
+    "product_name": "Waterproof box speaker, bathroom waterproof 360 ° rotating touch screen, Bluetooth speaker, watch movies, listen to music, phone holder Bluetooth speaker audio shower TV holder, swimming pool, kitchen, bathroom, sink",
+    "shop_owner": "AwesomeTech",
+    "total_sales": 594,
+    "total_sales_revenue": "€ 11.70万($ 13.63万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 255,
+    "sales_revenue": "$ 2063.16",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "10.34%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 29,
+    "带货视频达人数": 23,
+    "带货视频销量": 7,
+    "带货视频销售额": "$ 56.64",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADIch war früher sowieso schon immer  zu lange unter der Dusche. Jetzt komm ich einfach nicht mehr raus 😭🙏发现时间：2026.01.07 08:44更新时间：2026.01.09 03:05时长：00:00:18跳转至 TikTok",
+      "creator_username": "nr.1_trendvault",
+      "creator_followers": "1.69万",
+      "publish_date": "2026-01-06 22:28",
+      "estimated_sales": 5,
+      "estimated_revenue": "€ 34.75($ 40.45)",
+      "total_views": "3071",
+      "video_url": "https://www.tiktok.com/@nr.1_trendvault/video/7592363644386839831?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_nr.1_trendvault.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#tiktokshop #foryoupage❤️❤️ #pentrutine 发现时间：2025.12.25 10:20更新时间：2025.12.28 06:18时长：00:02:52跳转至 TikTok",
+      "creator_username": "andreeamaria.ilie",
+      "creator_followers": "9471",
+      "publish_date": "2025-12-22 16:43",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 6.95($ 8.09)",
+      "total_views": "491",
+      "video_url": "https://www.tiktok.com/@andreeamaria.ilie/video/7586708334326140192?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_andreeamaria.ilie.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADDuschen, Serien schauen oder Musik hören alles gleichzeitig 📱😱 Dieser wasserdichte Screen + Lautsprecher  #badezimmerupgrade #tiktokshopde #cozytech #musthave #blackfridaydeal发现时间：2025.12.18 10:19更新时间：2025.12.18 10:19时长：00:00:26跳转至 TikTok",
+      "creator_username": "itsmissbecka",
+      "creator_followers": "3598",
+      "publish_date": "2025-12-17 00:12",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 6.95($ 8.09)",
+      "total_views": "348",
+      "video_url": "https://www.tiktok.com/@itsmissbecka/video/7584597551328824598?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_itsmissbecka.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#afganistantiktok #foryour #berliner #deutschlernen 发现时间：2025.12.24 15:49更新时间：2025.12.27 00:13时长：00:00:46跳转至 TikTok",
+      "creator_username": "pirozbehsudi",
+      "creator_followers": "5438",
+      "publish_date": "2025-12-23 05:33",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "264",
+      "video_url": "https://www.tiktok.com/@pirozbehsudi/video/7586667286992309526?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_pirozbehsudi.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADWaterproof box speaker, bathro#tiktokshop #tiktoknews #fyppp #foryoupage❤️❤️ 发现时间：2026.01.05 23:31更新时间：2026.01.05 23:31时长：00:00:13跳转至 TikTok",
+      "creator_username": "chabder",
+      "creator_followers": "1932",
+      "publish_date": "2026-01-05 03:51",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "306",
+      "video_url": "https://www.tiktok.com/@chabder/video/7591704259855469857?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_chabder.mp4"
+    }
+  ]
+}

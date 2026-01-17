@@ -1,0 +1,117 @@
+---
+cover: ""
+caption: >-
+  NUR HEUTE noch für verrückte Preise! 🌷 Tulpenlampe LED - sieht aus wie echt! Jetzt checken bevor es zu spät ist! #tulpenlampe #homedecor #deals #tiktokshop #lastchance
+published: 2026-01-15
+duration: "00:30"
+sales:
+  - yes
+link: ""
+tags:
+  - "#tulpenlampe"
+  - "#homedecor"
+  - "#deals"
+  - "#tiktokshop"
+  - "#lastchance"
+product: "Tulpenlampe LED-Simulation"
+source_notes:
+  - "product_list/20260115/1729482453531663142/ref_video/video_synthesis.md"
+  - "product_list/20260115/1729482453531663142/product_images/image_analysis.md"
+  - "product_list/20260115/1729482453531663142/tabcut_data.json"
+---
+
+## Scripts
+
+### Beat Sheet (30s FOMO + Tutorial Structure)
+
+**[0-3s] HOOK - Urgent Pricing FOMO**
+- Visual: Tulip lamp glowing beautifully in dark
+- Text overlay flashing: "NUR HEUTE! 🚨"
+- Price slashed graphic: "€19.99 → €9.99"
+
+**[3-7s] Product Beauty Showcase**
+- Visual: Close-up of realistic pink tulip petals
+- Day shot: Looks like real flowers
+- Night shot: Magical LED glow
+- Text: "Sieht aus wie echte Tulpen! 🌷"
+
+**[7-15s] Checkout Tutorial (Critical Conversion Element)**
+- Visual: Screen recording of TikTok Shop
+- Step 1: Tap yellow shopping bag icon
+- Step 2: "In den Warenkorb"
+- Step 3: Checkout page showing coupon auto-applied
+- Text overlays:
+  - "So bekommst du den Rabatt:"
+  - "1. Warenkorb ➕"
+  - "2. Bis Checkout ✅"
+  - "3. TikTok wendet Gutschein an 💰"
+
+**[15-23s] Key Benefits Rapid Fire**
+- Visual: Multiple tulip colors (white, pink, yellow)
+- No wiring/no water demonstration
+- Battery compartment close-up
+- Text sequence:
+  - "Keine Batterien wechseln 🔋"
+  - "3 Tulpen pro Einheit"
+  - "Perfekt als Geschenk 🎁"
+
+**[23-27s] Final Urgency Push**
+- Visual: Clock ticking animation
+- Text: "Sale endet HEUTE Nacht! ⏰"
+- Product glowing with urgent red border
+
+**[27-30s] CTA**
+- Visual: Arrow pointing down to cart
+- Text: "JETZT sichern! Nicht verpassen! ⬇️"
+
+---
+
+## Voiceover
+
+> with ElevenLabs v3 (alpha) grammar
+
+### DE (ElevenLabs Prompt | 28–32s)
+
+[urgent] Nur heute.
+[firm] Verrückte Preise wie diese.
+[bright] Neunundneunzig statt neunzehn.
+
+[warm] Sieht aus wie echte Tulpen.
+[confident] Aber leuchtet nachts.
+[bright] Magisch.
+
+[matter-of-fact] So bekommst du den Rabatt.
+[firm] Warenkorb. Checkout.
+[confident] TikTok wendet den Gutschein automatisch an.
+
+[bright] Keine Batterien ständig wechseln.
+[warm] Drei Tulpen. Mehrere Farben.
+[confident] Perfektes Geschenk.
+
+[urgent] Sale endet heute Nacht.
+[firm] Jetzt holen.
+[confident] Nicht warten.
+
+---
+
+### ZH (中文翻译 | 28–32s)
+
+[urgent] 仅限今天。
+[firm] 这样疯狂的价格。
+[bright] 9.99欧元而非19.99欧元。
+
+[warm] 看起来像真郁金香。
+[confident] 但晚上会发光。
+[bright] 神奇。
+
+[matter-of-fact] 这样获得折扣。
+[firm] 加入购物车。结账。
+[confident] TikTok会自动应用优惠券。
+
+[bright] 无需经常换电池。
+[warm] 三朵郁金香。多种颜色。
+[confident] 完美礼物。
+
+[urgent] 促销今晚结束。
+[firm] 现在就入手。
+[confident] 不要等待。

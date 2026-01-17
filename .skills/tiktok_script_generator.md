@@ -150,6 +150,55 @@ source_notes:
 - Use YAML block scalar `caption: >-` so `:` and `#` don't break frontmatter parsing
 - Always include `source_notes` to exact files used (use fastmoss_data.json if applicable)
 
+### Compliance & Policy Wording (DE Market)
+
+These rules reduce avoidable ad/policy rejections and “false advertising” complaints.
+
+**1) Price / Discount Claims**
+- Avoid exact prices and exact discount math in scripts and captions (e.g. `"10€"`, `"€5.49"`, `"40€ → 15€"`, `"10€ vs 100€"`). Prices change too often.
+- Prefer relative wording:
+  - German: `"super günstig"`, `"preiswert"`, `"für kleines Geld"`, `"fairer Preis"`
+  - Chinese: `"价格很友好"`, `"很划算"`, `"不贵"`
+- If a price is absolutely required: only use what’s explicitly present in `tabcut_data.json`, and treat it as “current at time of recording” (still risky).
+
+**2) Waterproof / Water-Resistance Claims**
+- Do **not** say `"100% wasserdicht"` / `"komplett wasserdicht"` / `"完全防水"` unless an IP rating is clearly documented in `tabcut_data.json` or packaging text from `product_images/image_analysis.md`.
+- Safe defaults:
+  - German: `"spritzwassergeschützt"` (shower splash), `"wasserabweisend"` (rain)
+  - Chinese: `"防溅水"` / `"防泼水"`
+- If an IP rating exists, be precise:
+  - `IP67` / `IPX7` is okay **only if sourced**, and keep wording practical (e.g., “regen/shower ok”)—avoid implying “swimming”.
+
+**3) Medical / Therapeutic Claims**
+- Avoid medical promises or therapy framing:
+  - Don’t use: `"Schmerzlinderung"`, `"Schmerzfreiheit"`, `"heilt"`, `"behandelt"`, `"Therapeut"`, `"Physio"`, `"Tiefengewebe-Behandlung"`
+- Use wellness language:
+  - German: `"Entspannung"`, `"Wohlbefinden"`, `"lockert Verspannungen"` (no guarantees)
+  - Chinese: `"放松"`, `"缓解紧绷感"` (avoid medical certainty)
+
+**4) Tech Specs & Capability Claims**
+- Match the strongest claim to the strongest source.
+- Especially for projectors:
+  - `"4K Support"` is ambiguous; prefer `"unterstützt 4K Dekodierung"` unless you can prove native 4K.
+  - Avoid “instant/no lag/zero buffering” absolutes; use “läuft flüssig” / “keine spürbare Verzögerung” (still be careful).
+
+### Quick Post-Gen Scan (recommended)
+
+Run these after generating scripts to catch compliance issues fast:
+
+```bash
+scripts_dir="product_list/YYYYMMDD/{product_id}/scripts"
+
+# Prices / currency
+rg -n "€|\\bEuro\\b|欧元" "$scripts_dir" --glob '!Campaign_Summary.md' || true
+
+# Waterproof absolutes
+rg -n "100% wasserdicht|komplett wasserdicht|100%防水|完全防水" "$scripts_dir" --glob '!Campaign_Summary.md' || true
+
+# Medical claims
+rg -n "Schmerz|Physio|Therapeut|Tiefengewebe|heilt|behandelt" "$scripts_dir" --glob '!Campaign_Summary.md' || true
+```
+
 ### Required Sections
 ```markdown
 ## Scripts
@@ -215,7 +264,9 @@ Product_Model_KeyAngle.md   # e.g., HTC_NE20_AI_Uebersetzer_Earbuds.md
 
 **Key Change from v1:** DO NOT duplicate content from analysis files. REFERENCE them.
 
-### Simplified Campaign Summary Template
+### Campaign Summary Template (Comprehensive Inline Chinese)
+
+MANDATORY: use inline Chinese throughout (English text (中文翻译)), not just headings.
 
 ```markdown
 ---
@@ -231,87 +282,91 @@ shop_name: "Shop Name"
 
 ## 1. Product Overview | 产品概述
 
-**Product:** [Name] | [中文名]
-**Shop:** [Shop Name]
-**Price:** €XX.XX
+**Product (产品):** Product Name | 产品名称  
+**Shop (店铺):** Shop Name  
+**Price (价格):** €XX.XX (from sales data | 基于销售数据)  
 
-> For detailed product analysis, see:
+> For detailed analysis, see (详细分析请参考):
 > - `product_images/image_analysis.md`
 > - `ref_video/video_synthesis.md`
 
 ## 2. Campaign Strategy | 活动策略
 
-Based on video synthesis analysis, we identified 3 winning angles:
+Based on video synthesis insights (基于视频综合洞察), we selected 3 angles (选择3个角度) to cover different pain points (覆盖不同痛点):
 
-| Script | Angle | Duration | Hook Type |
+| Script (脚本) | Angle (角度) | Duration (时长) | Hook Type (钩子类型) |
 |:-------|:------|:---------|:----------|
-| Script 1 | [Angle] | 35s | [Hook Type] |
-| Script 2 | [Angle] | 35s | [Hook Type] |
-| Script 3 | [Angle] | 35s | [Hook Type] |
+| Script 1 | Angle name (角度中文) | 35s | Hook type (钩子中文) |
+| Script 2 | Angle name (角度中文) | 35s | Hook type (钩子中文) |
+| Script 3 | Angle name (角度中文) | 35s | Hook type (钩子中文) |
+
+**Why these angles work (为什么有效):**
+- Angle 1 reason (角度1原因)
+- Angle 2 reason (角度2原因)
+- Angle 3 reason (角度3原因)
 
 ## 3. Key Selling Points | 核心卖点
 
-*Extracted from video_synthesis.md:*
+Extracted from `ref_video/video_synthesis.md` (提取自视频综合):
 
-1. **[Point 1]** | [中文] - [Why it converts]
-2. **[Point 2]** | [中文] - [Why it converts]
-3. **[Point 3]** | [中文] - [Why it converts]
+1. Selling point (卖点) — why it converts (转化原因)
+2. Selling point (卖点) — why it converts (转化原因)
+3. Selling point (卖点) — why it converts (转化原因)
+4. Selling point (卖点) — why it converts (转化原因)
+5. Selling point (卖点) — why it converts (转化原因)
 
 ## 4. Target Audience | 目标受众
 
-*From video_synthesis.md Section 5:*
+- Primary audience (主要受众): description (中文描述)
+- Secondary audience (次要受众): description (中文描述)
 
-- **Primary:** [Demographic]
-- **Pain Points:** [Key pain points]
-- **Values:** [What they care about]
+**Pain Points → Solutions (痛点→解决方案):**
+- "Pain point" (中文痛点) → solution (中文解决方案)
+- "Pain point" (中文痛点) → solution (中文解决方案)
 
 ## 5. Scripts Summary | 脚本摘要
 
-### Script 1: [Title]
-- **File:** `scripts/[Product_Model_KeyAngle].md`
-- **Hook:** [First 3 seconds description]
-- **Key Message:** [Core selling point]
+### Script 1 (脚本1): Script_File_Name.md
+- File (文件): `scripts/Script_File_Name.md`
+- Hook (钩子): description (中文描述)
+- Key Message (核心信息): description (中文描述)
+- Proof Mechanic (证据机制): description (中文描述)
 
-### Script 2: [Title]
-- **File:** `scripts/[Product_Model_KeyAngle].md`
-- **Hook:** [First 3 seconds description]
-- **Key Message:** [Core selling point]
+### Script 2 (脚本2): Script_File_Name.md
+- File (文件): `scripts/Script_File_Name.md`
+- Hook (钩子): description (中文描述)
+- Key Message (核心信息): description (中文描述)
+- Proof Mechanic (证据机制): description (中文描述)
 
-### Script 3: [Title]
-- **File:** `scripts/[Product_Model_KeyAngle].md`
-- **Hook:** [First 3 seconds description]
-- **Key Message:** [Core selling point]
+### Script 3 (脚本3): Script_File_Name.md
+- File (文件): `scripts/Script_File_Name.md`
+- Hook (钩子): description (中文描述)
+- Key Message (核心信息): description (中文描述)
+- Proof Mechanic (证据机制): description (中文描述)
 
 ## 6. Production Notes | 制作说明
 
-*From image_analysis.md Section 10 (Visual Hooks):*
-
-- **Primary Visual:** [Key visual to capture]
-- **Lighting:** [Recommendation]
-- **Props Needed:** [List]
+From image analysis (来自图片分析):
+- Primary visual hook (主要视觉钩子): description (中文描述)
+- Props (道具): list (中文)
 
 ## 7. Source Files | 源文件
 
-| File | Purpose | Status |
+| File (文件) | Purpose (用途) | Status (状态) |
 |:-----|:--------|:-------|
-| `tabcut_data.json` | Product metadata | ✅ |
-| `ref_video/video_synthesis.md` | Market analysis | ✅ |
-| `product_images/image_analysis.md` | Visual analysis | ✅/⏭️ |
-| `scripts/Script_1_*.md` | Script 1 | ✅ |
-| `scripts/Script_2_*.md` | Script 2 | ✅ |
-| `scripts/Script_3_*.md` | Script 3 | ✅ |
+| `tabcut_data.json` | Product metadata (产品元数据) | ✅ |
+| `ref_video/video_synthesis.md` | Market synthesis (市场综合) | ✅ |
+| `product_images/image_analysis.md` | Visual analysis (视觉分析) | ✅/⏭️ |
+| `scripts/*.md` | 3 scripts + summary (三条脚本+总结) | ✅ |
 
 ---
-**Generated:** YYYY-MM-DD
-**Ready for:** Video Production
+Generated (生成): YYYY-MM-DD  
+Ready for (用于): Video Production (视频制作)
 ```
 
-**Benefits of Reference-Based Summary:**
-- Shorter file (50-80 lines vs 200+ lines)
-- No content duplication
-- Single source of truth (analysis files)
-- Easier to update (change analysis, summary stays valid)
-- Faster to generate
+### Optional: Simplified Summary
+
+If you need a super short internal note, you can use a simplified variant, but keep `| 中文` headings and inline Chinese for key bullets.
 
 ---
 

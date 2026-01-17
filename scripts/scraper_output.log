@@ -1,0 +1,150 @@
+
+TikTok Shop Product Scraper
+Data source: TABCUT
+
+[32m14:50:43[0m | [1mINFO    [0m | [1mLoaded 4 product IDs from products.csv[0m
+Batch mode: 4 products from tabcut
+
+[32m14:50:43[0m | [1mINFO    [0m | [1mStarting browser...[0m
+[32m14:50:45[0m | [1mINFO    [0m | [1mCreating browser context with Chinese locale...[0m
+[32m14:50:45[0m | [1mINFO    [0m | [1mBrowser started successfully[0m
+[32m14:50:45[0m | [1mINFO    [0m | [1mStarting scrape for product ID: 1729515724280404212[0m
+[32m14:50:45[0m | [1mINFO    [0m | [1mAlready authenticated[0m
+[32m14:50:45[0m | [1mINFO    [0m | [1mNavigating to Chinese workbench...[0m
+[32m14:50:51[0m | [1mINFO    [0m | [1mNavigating to: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729515724280404212&region=DE[0m
+[32m14:50:59[0m | [1mINFO    [0m | [1mLogin modal detected, handling authentication...[0m
+[32m14:51:01[0m | [1mINFO    [0m | [1mLooking for '密码登录' tab in modal...[0m
+[32m14:51:01[0m | [1mINFO    [0m | [1mFound '密码登录' tab[0m
+[32m14:51:03[0m | [1mINFO    [0m | [1mFilling in credentials in modal...[0m
+[32m14:51:03[0m | [1mINFO    [0m | [1mClicked login button[0m
+[32m14:51:08[0m | [32m[1mSUCCESS [0m | [32m[1mSuccessfully logged in via modal[0m
+[32m14:51:08[0m | [1mINFO    [0m | [1mCurrent URL: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729515724280404212&region=DE[0m
+[32m14:51:08[0m | [1mINFO    [0m | [1mExtracting product information...[0m
+[32m14:51:08[0m | [1mINFO    [0m | [1mProduct: Car Engine Cover Work Light, Rechargeable COB Work Light with Hook & Rotatable Magnetic Base, Portable LED Light for Car Repair Emergency Work, Shop: LIUMEY Shop[0m
+[32m14:51:10[0m | [1mINFO    [0m | [1mExtracting sales data...[0m
+[32m14:51:10[0m | [1mINFO    [0m | [1mSwitching to 商品分析 tab...[0m
+[32m14:51:12[0m | [1mINFO    [0m | [1m商品分析 tab loaded successfully[0m
+[32m14:51:13[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: 关联直播New[0m
+[32m14:51:18[0m | [1mINFO    [0m | [1mExtracting video analysis data...[0m
+[32m14:51:18[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m14:51:20[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m14:51:23[0m | [1mINFO    [0m | [1mExtracting top 5 videos...[0m
+[32m14:51:23[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m14:51:25[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m14:51:30[0m | [1mINFO    [0m | [1mSuccessfully extracted 5 videos[0m
+[32m14:51:30[0m | [32m[1mSUCCESS [0m | [32m[1mProduct data saved to: ../product_list/20260114/1729515724280404212/tabcut_data.json[0m
+[32m14:51:30[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m14:51:30[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m14:51:30[0m | [1mINFO    [0m | [1mCollecting initial images...[0m
+[32m14:51:31[0m | [1mINFO    [0m | [1mInitial: 5 images[0m
+[32m14:51:32[0m | [1mINFO    [0m | [1mFound carousel arrow at (590, 500)[0m
+[32m14:51:34[0m | [1mINFO    [0m | [1mClick 1: +3 new images (total: 8)[0m
+[32m14:51:36[0m | [1mINFO    [0m | [1mClick 2: +0 new images (total: 8)[0m
+[32m14:51:36[0m | [1mINFO    [0m | [1mAfter carousel navigation: 8 total images[0m
+[32m14:51:36[0m | [1mINFO    [0m | [1mFound 8 unique product images[0m
+[32m14:51:42[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded 8/8 product images[0m
+[32m14:51:42[0m | [32m[1mSUCCESS [0m | [32m[1mDownloaded 8 product images[0m
+✓ Product 1729515724280404212 completed
+[32m14:51:42[0m | [1mINFO    [0m | [1mStarting scrape for product ID: 1729553513200130922[0m
+[32m14:51:42[0m | [1mINFO    [0m | [1mAlready authenticated[0m
+[32m14:51:42[0m | [1mINFO    [0m | [1mNavigating to Chinese workbench...[0m
+[32m14:51:46[0m | [1mINFO    [0m | [1mNavigating to: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729553513200130922&region=DE[0m
+[32m14:51:52[0m | [1mINFO    [0m | [1mCurrent URL: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729553513200130922&region=DE[0m
+[32m14:51:52[0m | [1mINFO    [0m | [1mExtracting product information...[0m
+[32m14:51:52[0m | [1mINFO    [0m | [1mProduct: Car Windshield Snow Brush & Ice Scraper, 1 Set 360 Degree Rotatable Car Snow Removal Tool, Extendable Car Snow Accessories with Foam Grip For Car, Truck, SUV, Shop: Fealkira shop[0m
+[32m14:51:55[0m | [1mINFO    [0m | [1mExtracting sales data...[0m
+[32m14:51:55[0m | [1mINFO    [0m | [1mSwitching to 商品分析 tab...[0m
+[32m14:51:57[0m | [1mINFO    [0m | [1m商品分析 tab loaded successfully[0m
+[32m14:51:58[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: 关联直播New[0m
+[32m14:52:02[0m | [1mINFO    [0m | [1mExtracting video analysis data...[0m
+[32m14:52:02[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m14:52:04[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m14:52:04[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: -[0m
+[32m14:52:04[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: -[0m
+[32m14:52:04[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: -[0m
+[32m14:52:09[0m | [1mINFO    [0m | [1mExtracting top 5 videos...[0m
+[32m14:52:09[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m14:52:11[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m14:52:13[0m | [1mINFO    [0m | [1mSuccessfully extracted 0 videos[0m
+[32m14:52:13[0m | [32m[1mSUCCESS [0m | [32m[1mProduct data saved to: ../product_list/20260114/1729553513200130922/tabcut_data.json[0m
+[32m14:52:13[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m14:52:13[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m14:52:13[0m | [1mINFO    [0m | [1mCollecting initial images...[0m
+[32m14:52:13[0m | [1mINFO    [0m | [1mInitial: 1 images[0m
+[32m14:52:14[0m | [1mINFO    [0m | [1mFound carousel arrow at (590, 500)[0m
+[32m14:52:16[0m | [1mINFO    [0m | [1mClick 1: +0 new images (total: 1)[0m
+[32m14:52:16[0m | [1mINFO    [0m | [1mAfter carousel navigation: 1 total images[0m
+[32m14:52:16[0m | [1mINFO    [0m | [1mFound 1 unique product images[0m
+[32m14:52:16[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded 1/1 product images[0m
+[32m14:52:16[0m | [32m[1mSUCCESS [0m | [32m[1mDownloaded 1 product images[0m
+✓ Product 1729553513200130922 completed
+[32m14:52:16[0m | [1mINFO    [0m | [1mStarting scrape for product ID: 1729656460050078658[0m
+[32m14:52:16[0m | [1mINFO    [0m | [1mAlready authenticated[0m
+[32m14:52:16[0m | [1mINFO    [0m | [1mNavigating to Chinese workbench...[0m
+[32m14:52:21[0m | [1mINFO    [0m | [1mNavigating to: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729656460050078658&region=DE[0m
+[32m14:52:29[0m | [1mINFO    [0m | [1mCurrent URL: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729656460050078658&region=DE[0m
+[32m14:52:29[0m | [1mINFO    [0m | [1mExtracting product information...[0m
+[32m14:52:29[0m | [1mINFO    [0m | [1mProduct: Die multifunktionale, ausziehbare Schneeschaufel ist leicht zu verstauen und aus hochwertigem Material, effizient im Schneeräumen an schneereichen Tagen., Shop: Furu Trade[0m
+[32m14:52:31[0m | [1mINFO    [0m | [1mExtracting sales data...[0m
+[32m14:52:31[0m | [1mINFO    [0m | [1mSwitching to 商品分析 tab...[0m
+[32m14:52:33[0m | [1mINFO    [0m | [1m商品分析 tab loaded successfully[0m
+[32m14:52:34[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: 关联直播New[0m
+[32m14:52:39[0m | [1mINFO    [0m | [1mExtracting video analysis data...[0m
+[32m14:52:39[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m14:52:41[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m14:52:45[0m | [1mINFO    [0m | [1mExtracting top 5 videos...[0m
+[32m14:52:45[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m14:52:47[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m14:52:52[0m | [1mINFO    [0m | [1mSuccessfully extracted 5 videos[0m
+[32m14:52:52[0m | [32m[1mSUCCESS [0m | [32m[1mProduct data saved to: ../product_list/20260114/1729656460050078658/tabcut_data.json[0m
+[32m14:52:52[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m14:52:52[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m14:52:52[0m | [1mINFO    [0m | [1mCollecting initial images...[0m
+[32m14:52:52[0m | [1mINFO    [0m | [1mInitial: 5 images[0m
+[32m14:52:53[0m | [1mINFO    [0m | [1mFound carousel arrow at (590, 500)[0m
+[32m14:52:55[0m | [1mINFO    [0m | [1mClick 1: +4 new images (total: 9)[0m
+[32m14:52:57[0m | [1mINFO    [0m | [1mClick 2: +0 new images (total: 9)[0m
+[32m14:52:57[0m | [1mINFO    [0m | [1mAfter carousel navigation: 9 total images[0m
+[32m14:52:57[0m | [1mINFO    [0m | [1mFound 9 unique product images[0m
+[32m14:53:04[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded 9/9 product images[0m
+[32m14:53:04[0m | [32m[1mSUCCESS [0m | [32m[1mDownloaded 9 product images[0m
+✓ Product 1729656460050078658 completed
+[32m14:53:04[0m | [1mINFO    [0m | [1mStarting scrape for product ID: 1729692726479788757[0m
+[32m14:53:04[0m | [1mINFO    [0m | [1mAlready authenticated[0m
+[32m14:53:04[0m | [1mINFO    [0m | [1mNavigating to Chinese workbench...[0m
+[32m14:53:08[0m | [1mINFO    [0m | [1mNavigating to: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729692726479788757&region=DE[0m
+[32m14:53:14[0m | [1mINFO    [0m | [1mCurrent URL: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729692726479788757&region=DE[0m
+[32m14:53:14[0m | [1mINFO    [0m | [1mExtracting product information...[0m
+[32m14:53:14[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: -[0m
+[32m14:53:14[0m | [1mINFO    [0m | [1mProduct: Unknown Product, Shop: Unknown Shop[0m
+[32m14:53:17[0m | [1mINFO    [0m | [1mExtracting sales data...[0m
+[32m14:53:17[0m | [1mINFO    [0m | [1mSwitching to 商品分析 tab...[0m
+[32m14:54:17[0m | [33m[1mWARNING [0m | [33m[1mCould not click 商品分析 tab[0m
+[32m14:54:17[0m | [33m[1mWARNING [0m | [33m[1mFailed to switch to 商品分析 tab, using current page data[0m
+[32m14:54:47[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: -[0m
+[32m14:54:47[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: 关联直播New[0m
+[32m14:54:51[0m | [1mINFO    [0m | [1mExtracting video analysis data...[0m
+[32m14:54:51[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m14:55:51[0m | [33m[1mWARNING [0m | [33m[1mCould not click 关联视频 tab[0m
+[32m14:55:51[0m | [33m[1mWARNING [0m | [33m[1mFailed to switch to 关联视频 tab[0m
+[32m14:55:56[0m | [1mINFO    [0m | [1mExtracting top 5 videos...[0m
+[32m14:55:56[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m14:56:56[0m | [33m[1mWARNING [0m | [33m[1mCould not click 关联视频 tab[0m
+[32m14:56:58[0m | [1mINFO    [0m | [1mSuccessfully extracted 4 videos[0m
+[32m14:56:58[0m | [32m[1mSUCCESS [0m | [32m[1mProduct data saved to: ../product_list/20260114/1729692726479788757/tabcut_data.json[0m
+[32m14:56:58[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m14:56:58[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m14:56:58[0m | [1mINFO    [0m | [1mCollecting initial images...[0m
+[32m14:56:58[0m | [1mINFO    [0m | [1mInitial: 0 images[0m
+[32m14:56:59[0m | [1mINFO    [0m | [1mNo carousel arrow found, using initial images only[0m
+[32m14:56:59[0m | [33m[1mWARNING [0m | [33m[1mNo product images found[0m
+[32m14:56:59[0m | [32m[1mSUCCESS [0m | [32m[1mDownloaded 0 product images[0m
+✓ Product 1729692726479788757 completed
+[32m14:56:59[0m | [1mINFO    [0m | [1mClosing browser...[0m
+[32m14:56:59[0m | [1mINFO    [0m | [1mSession saved to config/session.json[0m
+[32m14:56:59[0m | [1mINFO    [0m | [1mBrowser closed[0m
+  Product 4/4: 1729692726479788757 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100%
+
+Batch Scraping Summary:
+✓ Completed: 4
+✗ Failed: 0

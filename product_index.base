@@ -1,0 +1,94 @@
+properties:
+  file.ctime:
+    displayName: created
+  file.mtime:
+    displayName: updated
+views:
+  - type: cards
+    name: Product Cards
+    filters:
+      and:
+        - file.name == "product_index"
+        - file.ext == "md"
+        - file.path.startsWith("product_list")
+    order:
+      - file.name
+      - product_name
+      - total_sales
+    sort:
+      - property: total_sales
+        direction: DESC
+    imageAspectRatio: 1
+    image: note.cover
+  - type: table
+    name: All Products
+    filters:
+      and:
+        - file.name == "product_index"
+        - file.ext == "md"
+        - file.path.startsWith("product_list")
+    order:
+      - product_name
+      - shop_owner
+      - category
+      - total_sales
+      - sales_revenue_usd
+      - conversion_rate
+      - scripts_generated
+      - tags
+    sort:
+      - property: total_sales
+        direction: DESC
+    columnSize:
+      note.product_name: 250
+      note.shop_owner: 120
+      note.category: 100
+      note.total_sales: 100
+      note.sales_revenue_usd: 120
+      note.conversion_rate: 100
+      note.scripts_generated: 100
+      note.tags: 280
+  - type: table
+    name: High Performers
+    filters:
+      and:
+        - file.name == "product_index"
+        - file.ext == "md"
+        - file.path.startsWith("product_list")
+        - note.total_sales > 1000
+    order:
+      - product_name
+      - total_sales
+      - sales_revenue_usd
+      - conversion_rate
+      - scripts_generated
+    sort:
+      - property: total_sales
+        direction: DESC
+    columnSize:
+      note.product_name: 280
+      note.total_sales: 100
+      note.sales_revenue_usd: 120
+      note.conversion_rate: 100
+      note.scripts_generated: 100
+  - type: table
+    name: Needs Scripts
+    filters:
+      and:
+        - file.name == "product_index"
+        - file.ext == "md"
+        - file.path.startsWith("product_list")
+        - note.scripts_generated < 3
+    order:
+      - product_name
+      - total_sales
+      - scripts_generated
+      - last_script_date
+    sort:
+      - property: total_sales
+        direction: DESC
+    columnSize:
+      note.product_name: 280
+      note.total_sales: 100
+      note.scripts_generated: 100
+      note.last_script_date: 120

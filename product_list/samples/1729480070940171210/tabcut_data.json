@@ -1,0 +1,96 @@
+{
+  "product_id": "1729480070940171210",
+  "scraped_at": "2026-01-12T14:54:47.347130",
+  "product_info": {
+    "product_name": "Portable 15.22 Oz USB Rechargeable Blender with LED Display, Durable Abs Material, Perfect for Smoothies & Juices, Home Kitchen Essential",
+    "shop_owner": "Value Picks",
+    "total_sales": 11800,
+    "total_sales_revenue": "€ 10.76万($ 12.53万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 0,
+    "sales_revenue": "$ 0.00",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 145,
+    "带货视频达人数": 77,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADRechargeable Blender  good quality portable  #weihnachtsgeschenke #tiktokmademebuylt #giftidea #kitchenhacks #blender 发现时间：2025.12.28 08:47更新时间：2025.12.29 02:45时长：00:00:23跳转至 TikTok",
+      "creator_username": "taraglobalofficial1",
+      "creator_followers": "1.07万",
+      "publish_date": "2025-12-27 08:13",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "278",
+      "video_url": "https://www.tiktok.com/@taraglobalofficial1/video/7588432424195984662?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_taraglobalofficial1.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADAntwort auf @li.ja32  Smoothie Maker  #smoothie #mixer #weihnachtsdeals #unboxyourdeals #tiktokshop 发现时间：2025.12.16 04:53更新时间：2025.12.16 04:53时长：00:00:33跳转至 TikTok",
+      "creator_username": "derjp112",
+      "creator_followers": "6647",
+      "publish_date": "2025-12-15 16:28",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "264",
+      "video_url": "https://www.tiktok.com/@derjp112/video/7584107054797835542?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_derjp112.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADMandarinen, Eis, Wasser 😋 #smoothies #shakes #smoothiemaker #winterdeals #newyearnewyou 发现时间：2025.12.30 12:44更新时间：2025.12.31 23:51时长：00:00:23跳转至 TikTok",
+      "creator_username": "vinzenz.mp4",
+      "creator_followers": "1.5万",
+      "publish_date": "2025-12-29 21:02",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "8198",
+      "video_url": "https://www.tiktok.com/@vinzenz.mp4/video/7589372818714905878?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_vinzenz.mp4.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADAntwort auf @jogibaer836 Wie lange hält der Akku vom tragbaren Mixer mit Akku, der auch unterwegs Shakes, Smoothies und vieles mehr zubereitet? #minimixer #shake #smoothie #newyearnewyou #winterdeals 发现时间：2026.01.04 08:22更新时间：2026.01.04 08:22时长：00:00:41跳转至 TikTok",
+      "creator_username": "vinzenz.mp4",
+      "creator_followers": "1.5万",
+      "publish_date": "2026-01-03 20:23",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "1440",
+      "video_url": "https://www.tiktok.com/@vinzenz.mp4/video/7591218075995753750?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_vinzenz.mp4.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#smoothies #healthylife #kuchen #juicer #tiktokshopgermany 发现时间：2025.12.26 09:19更新时间：2026.01.09 20:10时长：00:00:39跳转至 TikTok",
+      "creator_username": "lilia.2358",
+      "creator_followers": "2129",
+      "publish_date": "2025-12-26 00:08",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "670",
+      "video_url": "https://www.tiktok.com/@lilia.2358/video/7587936471638625558?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_lilia.2358.mp4"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "product_id": "1729575915518466878",
+  "scraped_at": "2026-01-15T17:47:50.449880",
+  "product_info": {
+    "product_name": "Automatic Cat & Dog Water Dispenser with Integrated Food Basin - 1-10L Capacity, No Batteries Needed, Modern White Design for Easy Cleaning & Hydration - Durable Pet Hydration Solution, Automatic Pet Feeder, Sleek Pet Accessory, Sturdy Construction",
+    "shop_owner": "Genmri",
+    "total_sales": 158,
+    "total_sales_revenue": "€ 1403.09($ 1633.40)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 6,
+    "sales_revenue": "$ 81.66",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 2,
+    "带货视频达人数": 2,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADTiktok made me buy it, and I was fascinated by it.#tiktokshop #tiktok #spotlightfinds#tiktokshopcybermonday #tiktokshopblackfriday发现时间：2025.12.27 01:54更新时间：2025.12.27 01:54时长：00:00:16跳转至 TikTok",
+      "creator_username": "hannes_we07",
+      "creator_followers": "2.06万",
+      "publish_date": "2025-12-26 16:20",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "68",
+      "video_url": "https://www.tiktok.com/@hannes_we07/video/7588186809977326870?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_hannes_we07.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADEine klare Empfehlung🤗 #fyp#dieZwillinge#fürdich#intelligent发现时间：2025.12.25 06:54更新时间：2025.12.26 03:58时长：00:00:16跳转至 TikTok",
+      "creator_username": "hannah_6685",
+      "creator_followers": "3.56万",
+      "publish_date": "2025-12-24 18:40",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "667",
+      "video_url": "https://www.tiktok.com/@hannah_6685/video/7587472402351705377?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_hannah_6685.mp4"
+    }
+  ]
+}

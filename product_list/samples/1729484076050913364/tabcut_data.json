@@ -1,0 +1,96 @@
+{
+  "product_id": "1729484076050913364",
+  "scraped_at": "2026-01-12T22:45:03.672363",
+  "product_info": {
+    "product_name": "Smartwatch (Dual Band, Multiple Options), 1.85\" HD Display Fitness Watch with BT Calling & 100+ Exercise Modes, Smartwatch for Android iOS, Back To School Gifts, Wearable",
+    "shop_owner": "Mingtawn Wearables",
+    "total_sales": 3131,
+    "total_sales_revenue": "€ 5.82万($ 6.78万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 533,
+    "sales_revenue": "$ 8140.79",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "22.22%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 54,
+    "带货视频达人数": 32,
+    "带货视频销量": 29,
+    "带货视频销售额": "$ 442.93",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#UnboxYourDeals #tiktokshopdeals #WeihnachtsDeals #creatorlife #realtalk 发现时间：2025.12.28 09:06更新时间：2025.12.28 09:06时长：00:01:43跳转至 TikTok",
+      "creator_username": "tiktok_de_simo",
+      "creator_followers": "2.7万",
+      "publish_date": "2025-12-27 18:20",
+      "estimated_sales": 7,
+      "estimated_revenue": "€ 91.84($ 106.91)",
+      "total_views": "2347",
+      "video_url": "https://www.tiktok.com/@tiktok_de_simo/video/7588574232829889814?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_tiktok_de_simo.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADSmartwatch mit Stil #Smartwatch #Angebot #Gesundheit #Schrittzähler #tiktokshopfinds发现时间：2025.12.26 06:52更新时间：2025.12.27 09:13时长：00:00:36跳转至 TikTok",
+      "creator_username": "fundrausch",
+      "creator_followers": "1675",
+      "publish_date": "2025-12-23 04:12",
+      "estimated_sales": 5,
+      "estimated_revenue": "€ 65.60($ 76.37)",
+      "total_views": "1793",
+      "video_url": "https://www.tiktok.com/@fundrausch/video/7586777696181505313?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_fundrausch.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#tiktokshop 发现时间：2026.01.01 08:04更新时间：2026.01.03 08:33时长：00:01:10跳转至 TikTok",
+      "creator_username": "florin.marcu45",
+      "creator_followers": "28.96万",
+      "publish_date": "2025-12-30 14:54",
+      "estimated_sales": 5,
+      "estimated_revenue": "€ 65.60($ 76.37)",
+      "total_views": "1.66万",
+      "video_url": "https://www.tiktok.com/@florin.marcu45/video/7589648935854312727?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_florin.marcu45.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADSmartwatch mit Stil #Smartwatch #Angebot #Gesundheit #Schrittzähler #tiktokshopfinds发现时间：2026.01.04 06:39更新时间：2026.01.06 06:48时长：00:00:36跳转至 TikTok",
+      "creator_username": "jetztsparen3",
+      "creator_followers": "1.58万",
+      "publish_date": "2026-01-03 20:47",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 26.24($ 30.55)",
+      "total_views": "2076",
+      "video_url": "https://www.tiktok.com/@jetztsparen3/video/7591224300749819168?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_jetztsparen3.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADFunktionsreiche Smartwatch!#smartwatch #tendencia #fyp #tiktokshop #tiktokshop 发现时间：2025.12.18 13:07更新时间：2025.12.22 10:41时长：00:00:14跳转至 TikTok",
+      "creator_username": "user9761935485684",
+      "creator_followers": "397",
+      "publish_date": "2025-12-17 08:35",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 26.24($ 30.55)",
+      "total_views": "1974",
+      "video_url": "https://www.tiktok.com/@user9761935485684/video/7584727323732151574?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_user9761935485684.mp4"
+    }
+  ]
+}

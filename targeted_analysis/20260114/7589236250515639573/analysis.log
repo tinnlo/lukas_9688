@@ -1,0 +1,210 @@
+2026-01-15 00:06:39 | INFO     | __main__:setup_logging:61 | Logging to: ../targeted_analysis/20260114/7589236250515639573/analysis.log
+2026-01-15 00:06:39 | INFO     | __main__:main:103 | ======================================================================
+2026-01-15 00:06:39 | INFO     | __main__:main:104 | TARGETED VIDEO ANALYSIS - SINGLE VIDEO
+2026-01-15 00:06:39 | INFO     | __main__:main:105 | ======================================================================
+2026-01-15 00:06:39 | INFO     | __main__:main:106 | URL: https://vm.tiktok.com/ZGdmaqMxT/
+2026-01-15 00:06:39 | INFO     | __main__:main:107 | Video ID: 7589236250515639573
+2026-01-15 00:06:39 | INFO     | __main__:main:108 | Product: Video_Analysis_07
+2026-01-15 00:06:39 | INFO     | __main__:main:109 | Output: ../targeted_analysis/20260114/7589236250515639573
+2026-01-15 00:06:39 | INFO     | __main__:main:110 | ======================================================================
+2026-01-15 00:06:39 | INFO     | targeted_analysis.metadata_extractor:extract_metadata_and_download:269 | === PHASE 1: METADATA EXTRACTION ===
+2026-01-15 00:06:39 | INFO     | targeted_analysis.metadata_extractor:extract_metadata_and_download:270 | URL: https://vm.tiktok.com/ZGdmaqMxT/
+2026-01-15 00:06:39 | INFO     | targeted_analysis.metadata_extractor:extract_metadata_and_download:272 | Product: Video_Analysis_07
+2026-01-15 00:06:39 | DEBUG    | targeted_analysis.metadata_extractor:extract_video_id:43 | URL appears to be a short link, using yt-dlp to resolve
+2026-01-15 00:06:41 | INFO     | targeted_analysis.metadata_extractor:extract_video_id:54 | Resolved short URL to video ID: 7589236250515639573
+2026-01-15 00:06:41 | INFO     | targeted_analysis.metadata_extractor:fetch_metadata:78 | Fetching metadata for video ID: 7589236250515639573
+2026-01-15 00:06:50 | SUCCESS  | targeted_analysis.metadata_extractor:fetch_metadata:118 | Metadata fetched: afu0831 | 10.0s | 3300000 views
+2026-01-15 00:06:50 | DEBUG    | targeted_analysis.metadata_extractor:extract_video_id:43 | URL appears to be a short link, using yt-dlp to resolve
+2026-01-15 00:06:52 | INFO     | targeted_analysis.metadata_extractor:extract_video_id:54 | Resolved short URL to video ID: 7589236250515639573
+2026-01-15 00:06:52 | INFO     | targeted_analysis.metadata_extractor:download_video:175 | Downloading video ID: 7589236250515639573 to ../targeted_analysis/20260114/7589236250515639573
+2026-01-15 00:07:02 | SUCCESS  | targeted_analysis.metadata_extractor:download_video:231 | Video downloaded: video.mp4 (0.5MB, 10.1s)
+2026-01-15 00:07:02 | SUCCESS  | targeted_analysis.metadata_extractor:extract_metadata_and_download:288 | Metadata saved to: ../targeted_analysis/20260114/7589236250515639573/metadata.json
+2026-01-15 00:07:02 | SUCCESS  | targeted_analysis.metadata_extractor:extract_metadata_and_download:290 | ✅ PHASE 1 COMPLETE
+2026-01-15 00:07:02 | INFO     | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:390 | === PHASE 2: FRAME + AUDIO EXTRACTION + TRANSCRIPTION ===
+2026-01-15 00:07:02 | INFO     | targeted_analysis.frame_processor:extract_keyframes_and_audio:54 | Extracting keyframes (every 2s) and audio...
+2026-01-15 00:07:02 | DEBUG    | targeted_analysis.frame_processor:extract_keyframes_and_audio:69 | Video duration: 10.15s
+2026-01-15 00:07:02 | SUCCESS  | targeted_analysis.frame_processor:extract_keyframes_and_audio:96 | Audio extracted: audio.mp3
+2026-01-15 00:07:02 | SUCCESS  | targeted_analysis.frame_processor:extract_keyframes_and_audio:104 | Extracted 5 frames (10.1s ÷ 2s) and audio
+2026-01-15 00:07:02 | INFO     | targeted_analysis.frame_processor:get_transcript:321 | === Transcript Extraction (Hybrid Approach) ===
+2026-01-15 00:07:02 | INFO     | targeted_analysis.frame_processor:get_tiktok_captions:122 | Attempting to fetch TikTok captions...
+2026-01-15 00:07:05 | INFO     | targeted_analysis.frame_processor:get_tiktok_captions:147 | No TikTok captions found
+2026-01-15 00:07:05 | INFO     | targeted_analysis.frame_processor:transcribe_audio_fallback:265 | Transcribing audio with Whisper (fallback method)...
+2026-01-15 00:07:05 | INFO     | targeted_analysis.frame_processor:get_whisper_model:32 | Loading Whisper tiny model (cached for batch processing)...
+2026-01-15 00:07:06 | SUCCESS  | targeted_analysis.frame_processor:get_whisper_model:34 | Whisper model loaded
+2026-01-15 00:07:07 | SUCCESS  | targeted_analysis.frame_processor:transcribe_audio_fallback:299 | Whisper transcription complete: 1 segments, language=ko (0.27)
+2026-01-15 00:07:07 | SUCCESS  | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:403 | Transcript saved to: ../targeted_analysis/20260114/7589236250515639573/transcript.json
+2026-01-15 00:07:07 | SUCCESS  | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:405 | ✅ PHASE 2 COMPLETE
+2026-01-15 00:07:07 | INFO     | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:406 |    Frames: 5 frames in ../targeted_analysis/20260114/7589236250515639573/frames
+2026-01-15 00:07:07 | INFO     | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:407 |    Audio: ../targeted_analysis/20260114/7589236250515639573/audio.mp3
+2026-01-15 00:07:07 | INFO     | targeted_analysis.frame_processor:extract_frames_audio_and_transcribe:408 |    Transcript: whisper_transcription (ko, 1 segments)
+2026-01-15 00:07:07 | INFO     | __main__:main:161 | ======================================================================
+2026-01-15 00:07:07 | INFO     | __main__:main:162 | PHASE 3: COMPREHENSIVE ANALYSIS (4 parts)
+2026-01-15 00:07:07 | INFO     | __main__:main:163 | ======================================================================
+2026-01-15 00:07:07 | INFO     | targeted_analysis.analyzers.structural:analyze_structural:35 | === Phase 3A: Structural Analysis ===
+2026-01-15 00:07:07 | INFO     | targeted_analysis.analyzers.structural:analyze_structural:105 | Calling Gemini with 5 frames...
+2026-01-15 00:07:19 | WARNING  | targeted_analysis.analyzers.structural:analyze_structural:127 | gemini-3-pro failed, trying flash model: Loaded cached credentials.
+Server 'filesystem' supports tool updates. Listening for changes...
+Server 'sequential-thinking' supports tool updates. Listening for changes...
+Server 'context7' supports tool updates. Listening for changes...
+Error when talking to Gemini API Full report available at: /var/folders/kt/j2l9r3892f1__8kc19n9dff00000gp/T/gemini-client-error-Turn.run-sendMessageStream-2026-01-14T23-07-19-523Z.json TerminalQuotaError: You have exhausted your capacity on this model. Your quota will reset after 14h53m3s.
+    at classifyGoogleError (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/googleQuotaErrors.js:136:28)
+    at retryWithBackoff (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/retry.js:127:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:364:32)
+    at async GeminiChat.streamWithRetries (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:225:40)
+    at async Turn.run (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/turn.js:64:30)
+    at async GeminiClient.processTurn (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/client.js:440:26)
+    at async GeminiClient.sendMessageStream (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/client.js:536:20)
+    at async file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/dist/src/nonInteractiveCli.js:192:34
+    at async main (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/dist/src/gemini.js:452:9) {
+  cause: {
+    code: 429,
+    message: 'You have exhausted your capacity on this model. Your quota will reset after 14h53m3s.',
+    details: [ [Object], [Object] ]
+  },
+  retryDelayMs: 53583497.450976
+}
+An unexpected critical error occurred:[object Object]
+
+2026-01-15 00:09:24 | SUCCESS  | targeted_analysis.analyzers.structural:analyze_structural:132 | Structural analysis complete (fallback model)
+2026-01-15 00:09:24 | INFO     | targeted_analysis.analyzers.content:analyze_content:34 | === Phase 3B: Content Analysis ===
+2026-01-15 00:09:24 | INFO     | targeted_analysis.analyzers.content:analyze_content:134 | Calling Gemini for content analysis...
+2026-01-15 00:09:36 | WARNING  | targeted_analysis.analyzers.content:analyze_content:153 | Trying flash model: Loaded cached credentials.
+Server 'sequential-thinking' supports tool updates. Listening for changes
+2026-01-15 00:11:25 | SUCCESS  | targeted_analysis.analyzers.content:analyze_content:158 | Content analysis complete (fallback)
+2026-01-15 00:11:25 | INFO     | targeted_analysis.analyzers.strategic:analyze_strategic:32 | === Phase 3C: Strategic Analysis ===
+2026-01-15 00:11:25 | INFO     | targeted_analysis.analyzers.strategic:analyze_strategic:148 | Calling Gemini for strategic analysis...
+2026-01-15 00:11:37 | WARNING  | targeted_analysis.analyzers.strategic:analyze_strategic:166 | Trying flash model: Loaded cached credentials.
+Server 'context7' supports tool updates. Listening for changes...
+Server 
+2026-01-15 00:13:08 | SUCCESS  | targeted_analysis.analyzers.strategic:analyze_strategic:171 | Strategic analysis complete (fallback)
+2026-01-15 00:13:08 | INFO     | targeted_analysis.analyzers.character:analyze_character:32 | === Phase 3D: Character Descriptions ===
+2026-01-15 00:13:08 | INFO     | targeted_analysis.analyzers.character:analyze_character:116 | Calling Gemini for character analysis...
+2026-01-15 00:13:20 | WARNING  | targeted_analysis.analyzers.character:analyze_character:134 | Trying flash model: Loaded cached credentials.
+Server 'filesystem' supports tool updates. Listening for changes...
+Serve
+2026-01-15 00:14:34 | SUCCESS  | targeted_analysis.analyzers.character:analyze_character:139 | Character analysis complete (fallback)
+2026-01-15 00:14:34 | SUCCESS  | __main__:main:197 | ✅ PHASE 3 COMPLETE - Analysis saved
+2026-01-15 00:14:34 | INFO     | targeted_analysis.generators.script_generator:generate_replication_script:32 | === PHASE 4: REPLICATION SCRIPT GENERATION ===
+2026-01-15 00:14:34 | INFO     | targeted_analysis.generators.script_generator:generate_replication_script:186 | Calling Gemini for replication script...
+2026-01-15 00:14:47 | WARNING  | targeted_analysis.generators.script_generator:generate_replication_script:234 | Trying flash model: Loaded cached credentials.
+Server 'filesystem' supports tool updates. Listening for changes...
+Serve
+2026-01-15 00:15:51 | SUCCESS  | targeted_analysis.generators.script_generator:generate_replication_script:247 | Replication script generated (fallback)
+2026-01-15 00:15:51 | SUCCESS  | targeted_analysis.generators.script_generator:generate_replication_script:248 | ✅ PHASE 4 COMPLETE
+2026-01-15 00:15:51 | SUCCESS  | __main__:main:225 | Replication script saved: ../targeted_analysis/20260114/7589236250515639573/replication_script.md
+2026-01-15 00:15:51 | INFO     | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:30 | === PHASE 5: AI VIDEO PROMPTS GENERATION ===
+2026-01-15 00:15:51 | INFO     | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:126 | Calling Gemini for AI video prompts...
+2026-01-15 00:16:03 | WARNING  | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:187 | Trying flash model: Loaded cached credentials.
+Server 'context7' supports tool updates. Listening for changes...
+Server 
+2026-01-15 00:18:38 | SUCCESS  | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:228 | AI video prompts generated (fallback, 5 shots)
+2026-01-15 00:18:38 | SUCCESS  | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:229 | ✅ PHASE 5 COMPLETE
+2026-01-15 00:18:38 | SUCCESS  | __main__:main:249 | AI video prompts saved: ../targeted_analysis/20260114/7589236250515639573/ai_video_prompts.md
+2026-01-15 00:18:38 | INFO     | __main__:main:257 | ======================================================================
+2026-01-15 00:18:38 | SUCCESS  | __main__:main:258 | ✅ ALL PHASES COMPLETE
+2026-01-15 00:18:38 | INFO     | __main__:main:259 | ======================================================================
+2026-01-15 00:18:38 | INFO     | __main__:main:260 | Output directory: ../targeted_analysis/20260114/7589236250515639573
+2026-01-15 00:18:38 | INFO     | __main__:main:261 | Generated files:
+2026-01-15 00:18:38 | INFO     | __main__:main:262 |   - metadata.json
+2026-01-15 00:18:38 | INFO     | __main__:main:263 |   - video.mp4
+2026-01-15 00:18:38 | INFO     | __main__:main:264 |   - frames/ (5 frames)
+2026-01-15 00:18:38 | INFO     | __main__:main:265 |   - transcript.json
+2026-01-15 00:18:38 | INFO     | __main__:main:266 |   - analysis.md (includes character descriptions)
+2026-01-15 00:18:38 | INFO     | __main__:main:267 |   - replication_script.md
+2026-01-15 00:18:38 | INFO     | __main__:main:268 |   - ai_video_prompts.md
+2026-01-15 00:18:38 | INFO     | __main__:main:269 |   - processing_status.json
+2026-01-15 00:18:38 | INFO     | __main__:main:270 |   - analysis.log
+2026-01-15 00:18:38 | INFO     | __main__:main:271 | ======================================================================
+2026-01-15 08:48:07 | INFO     | __main__:setup_logging:61 | Logging to: ../targeted_analysis/20260114/7589236250515639573/analysis.log
+2026-01-15 08:48:07 | INFO     | __main__:main:103 | ======================================================================
+2026-01-15 08:48:07 | INFO     | __main__:main:104 | TARGETED VIDEO ANALYSIS - SINGLE VIDEO
+2026-01-15 08:48:07 | INFO     | __main__:main:105 | ======================================================================
+2026-01-15 08:48:07 | INFO     | __main__:main:106 | URL: https://vm.tiktok.com/ZGdmaqMxT/
+2026-01-15 08:48:07 | INFO     | __main__:main:107 | Video ID: 7589236250515639573
+2026-01-15 08:48:07 | INFO     | __main__:main:108 | Product: Video_Analysis_07
+2026-01-15 08:48:07 | INFO     | __main__:main:109 | Output: ../targeted_analysis/20260114/7589236250515639573
+2026-01-15 08:48:07 | INFO     | __main__:main:110 | ======================================================================
+2026-01-15 08:48:07 | INFO     | __main__:main:129 | ⏭️  PHASE 1 SKIPPED
+2026-01-15 08:48:07 | INFO     | __main__:main:148 | ⏭️  PHASE 2 SKIPPED
+2026-01-15 08:48:07 | INFO     | __main__:main:161 | ======================================================================
+2026-01-15 08:48:07 | INFO     | __main__:main:162 | PHASE 3: COMPREHENSIVE ANALYSIS (4 parts)
+2026-01-15 08:48:07 | INFO     | __main__:main:163 | ======================================================================
+2026-01-15 08:48:07 | INFO     | targeted_analysis.analyzers.structural:analyze_structural:35 | === Phase 3A: Structural Analysis ===
+2026-01-15 08:48:07 | INFO     | targeted_analysis.analyzers.structural:analyze_structural:105 | Calling Gemini with 5 frames...
+2026-01-15 08:48:26 | WARNING  | targeted_analysis.analyzers.structural:analyze_structural:127 | gemini-3-pro failed, trying flash model: Loaded cached credentials.
+Server 'filesystem' supports tool updates. Listening for changes...
+Server 'context7' supports tool updates. Listening for changes...
+Server 'sequential-thinking' supports tool updates. Listening for changes...
+Error when talking to Gemini API Full report available at: /var/folders/kt/j2l9r3892f1__8kc19n9dff00000gp/T/gemini-client-error-Turn.run-sendMessageStream-2026-01-15T07-48-26-177Z.json TerminalQuotaError: You have exhausted your capacity on this model. Your quota will reset after 6h11m56s.
+    at classifyGoogleError (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/googleQuotaErrors.js:136:28)
+    at retryWithBackoff (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/retry.js:127:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:364:32)
+    at async GeminiChat.streamWithRetries (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:225:40)
+    at async Turn.run (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/turn.js:64:30)
+    at async GeminiClient.processTurn (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/client.js:440:26)
+    at async GeminiClient.sendMessageStream (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/client.js:536:20)
+    at async file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/dist/src/nonInteractiveCli.js:192:34
+    at async main (file:///Users/lxt/.nvm/versions/node/v23.8.0/lib/node_modules/@google/gemini-cli/dist/src/gemini.js:452:9) {
+  cause: {
+    code: 429,
+    message: 'You have exhausted your capacity on this model. Your quota will reset after 6h11m56s.',
+    details: [ [Object], [Object] ]
+  },
+  retryDelayMs: 22316847.205981
+}
+An unexpected critical error occurred:[object Object]
+
+2026-01-15 08:49:33 | INFO     | __main__:setup_logging:61 | Logging to: ../targeted_analysis/20260114/7589236250515639573/analysis.log
+2026-01-15 08:49:33 | INFO     | __main__:main:103 | ======================================================================
+2026-01-15 08:49:33 | INFO     | __main__:main:104 | TARGETED VIDEO ANALYSIS - SINGLE VIDEO
+2026-01-15 08:49:33 | INFO     | __main__:main:105 | ======================================================================
+2026-01-15 08:49:33 | INFO     | __main__:main:106 | URL: https://vm.tiktok.com/ZGdmaqMxT/
+2026-01-15 08:49:33 | INFO     | __main__:main:107 | Video ID: 7589236250515639573
+2026-01-15 08:49:33 | INFO     | __main__:main:108 | Product: Video_Analysis_07
+2026-01-15 08:49:33 | INFO     | __main__:main:109 | Output: ../targeted_analysis/20260114/7589236250515639573
+2026-01-15 08:49:33 | INFO     | __main__:main:110 | ======================================================================
+2026-01-15 08:49:33 | INFO     | __main__:main:129 | ⏭️  PHASE 1 SKIPPED
+2026-01-15 08:49:33 | INFO     | __main__:main:148 | ⏭️  PHASE 2 SKIPPED
+2026-01-15 08:49:33 | INFO     | __main__:main:161 | ======================================================================
+2026-01-15 08:49:33 | INFO     | __main__:main:162 | PHASE 3: COMPREHENSIVE ANALYSIS (4 parts)
+2026-01-15 08:49:33 | INFO     | __main__:main:163 | ======================================================================
+2026-01-15 08:49:33 | INFO     | targeted_analysis.analyzers.structural:analyze_structural:35 | === Phase 3A: Structural Analysis ===
+2026-01-15 08:49:33 | INFO     | targeted_analysis.analyzers.structural:analyze_structural:105 | Calling Gemini with 5 frames...
+2026-01-15 08:52:26 | SUCCESS  | targeted_analysis.analyzers.structural:analyze_structural:119 | Structural analysis complete (1913 chars)
+2026-01-15 08:52:26 | INFO     | targeted_analysis.analyzers.content:analyze_content:34 | === Phase 3B: Content Analysis ===
+2026-01-15 08:52:26 | INFO     | targeted_analysis.analyzers.content:analyze_content:134 | Calling Gemini for content analysis...
+2026-01-15 08:53:17 | SUCCESS  | targeted_analysis.analyzers.content:analyze_content:148 | Content analysis complete (3444 chars)
+2026-01-15 08:53:17 | INFO     | targeted_analysis.analyzers.strategic:analyze_strategic:32 | === Phase 3C: Strategic Analysis ===
+2026-01-15 08:53:17 | INFO     | targeted_analysis.analyzers.strategic:analyze_strategic:148 | Calling Gemini for strategic analysis...
+2026-01-15 08:54:10 | SUCCESS  | targeted_analysis.analyzers.strategic:analyze_strategic:162 | Strategic analysis complete (5103 chars)
+2026-01-15 08:54:10 | INFO     | targeted_analysis.analyzers.character:analyze_character:32 | === Phase 3D: Character Descriptions ===
+2026-01-15 08:54:10 | INFO     | targeted_analysis.analyzers.character:analyze_character:116 | Calling Gemini for character analysis...
+2026-01-15 08:55:47 | SUCCESS  | targeted_analysis.analyzers.character:analyze_character:130 | Character analysis complete (1578 chars)
+2026-01-15 08:55:47 | SUCCESS  | __main__:main:197 | ✅ PHASE 3 COMPLETE - Analysis saved
+2026-01-15 08:55:47 | INFO     | targeted_analysis.generators.script_generator:generate_replication_script:32 | === PHASE 4: REPLICATION SCRIPT GENERATION ===
+2026-01-15 08:55:47 | INFO     | targeted_analysis.generators.script_generator:generate_replication_script:186 | Calling Gemini for replication script...
+2026-01-15 08:56:32 | SUCCESS  | targeted_analysis.generators.script_generator:generate_replication_script:229 | Replication script generated (4184 chars)
+2026-01-15 08:56:32 | SUCCESS  | targeted_analysis.generators.script_generator:generate_replication_script:230 | ✅ PHASE 4 COMPLETE
+2026-01-15 08:56:32 | SUCCESS  | __main__:main:225 | Replication script saved: ../targeted_analysis/20260114/7589236250515639573/replication_script.md
+2026-01-15 08:56:32 | INFO     | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:30 | === PHASE 5: AI VIDEO PROMPTS GENERATION ===
+2026-01-15 08:56:32 | INFO     | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:126 | Calling Gemini for AI video prompts...
+2026-01-15 08:57:13 | SUCCESS  | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:182 | AI video prompts generated (5 shots)
+2026-01-15 08:57:13 | SUCCESS  | targeted_analysis.generators.prompt_generator:generate_ai_video_prompts:183 | ✅ PHASE 5 COMPLETE
+2026-01-15 08:57:13 | SUCCESS  | __main__:main:249 | AI video prompts saved: ../targeted_analysis/20260114/7589236250515639573/ai_video_prompts.md
+2026-01-15 08:57:13 | INFO     | __main__:main:257 | ======================================================================
+2026-01-15 08:57:13 | SUCCESS  | __main__:main:258 | ✅ ALL PHASES COMPLETE
+2026-01-15 08:57:13 | INFO     | __main__:main:259 | ======================================================================
+2026-01-15 08:57:13 | INFO     | __main__:main:260 | Output directory: ../targeted_analysis/20260114/7589236250515639573
+2026-01-15 08:57:13 | INFO     | __main__:main:261 | Generated files:
+2026-01-15 08:57:13 | INFO     | __main__:main:262 |   - metadata.json
+2026-01-15 08:57:13 | INFO     | __main__:main:263 |   - video.mp4
+2026-01-15 08:57:13 | INFO     | __main__:main:264 |   - frames/ (5 frames)
+2026-01-15 08:57:13 | INFO     | __main__:main:265 |   - transcript.json
+2026-01-15 08:57:13 | INFO     | __main__:main:266 |   - analysis.md (includes character descriptions)
+2026-01-15 08:57:13 | INFO     | __main__:main:267 |   - replication_script.md
+2026-01-15 08:57:13 | INFO     | __main__:main:268 |   - ai_video_prompts.md
+2026-01-15 08:57:13 | INFO     | __main__:main:269 |   - processing_status.json
+2026-01-15 08:57:13 | INFO     | __main__:main:270 |   - analysis.log
+2026-01-15 08:57:13 | INFO     | __main__:main:271 | ======================================================================
