@@ -103,7 +103,7 @@ Based on video synthesis analysis (基于视频综合分析), we identified 3 wi
 
 ## 6. Production Notes | 制作说明
 
-*From image_analysis.md Section 13 + video_synthesis.md Section 7 (来自图片分析第13节+视频综合分析第7节 - Visual Editing Playbook | 视觉剪辑打法):*
+*From image_analysis.md Section 10 (来自图片分析第10节 - Visual Hooks | 视觉钩子):*
 
 - **Primary Visual (主要视觉):** The "Ceiling Reveal" moment (天花板揭示时刻) - POV shot from pillow/bed, camera tilts up to show massive movie on ceiling (从枕头/床上的POV镜头，相机向上倾斜显示天花板上的巨大电影). This is THE signature shot (这是标志性镜头).
 - **Lighting (灯光):** MUST show both scenarios (必须展示两种场景): daytime/lights ON (projection faint but visible | 投影暗淡但可见) + nighttime/lights OFF (projection vibrant and cinema-like | 投影鲜艳如电影院). Honesty = trust (诚实=信任).

@@ -1,10 +1,10 @@
 ---
 name: tiktok-ad-analysis
-description: AUTOMATIC video market analysis with hybrid transcription (TikTok captions → Whisper fallback). Auto-triggers when videos exist in ref_video/. Analyzes TikTok reference videos to extract hooks, strategies, and insights for script generation. OPTIMIZED for speed with parallel processing.
-version: 4.3.0
+description: AUTOMATIC video market analysis with hybrid transcription (TikTok captions → Whisper fallback). Auto-triggers when videos exist in ref_video/. Analyzes TikTok reference videos to extract hooks, strategies, and insights for script generation. OPTIMIZED for speed with parallel processing across products.
+version: 4.4.0
 author: Automated script (Python-based)
-execution: Python script with FFmpeg + yt-dlp + Whisper + Gemini (AUTO-RUNS conditionally, OPTIMIZED)
-orchestration: tiktok_product_analysis.md (for batch parallelism)
+execution: Python script with FFmpeg + yt-dlp + Whisper + Gemini (AUTO-RUNS conditionally, PARALLELIZED across products)
+orchestration: tiktok_product_analysis.md (for batch parallelism - 5 products max)
 ---
 
 # TikTok Ad Analysis Skill (AUTOMATIC)
@@ -102,8 +102,23 @@ cd scripts
 # Activate virtual environment
 source venv/bin/activate
 
-# Analyze all videos for a product
+# Single product (sequential)
 python analyze_video_batch.py 1729479916562717270 --date YYYYMMDD
+
+# PARALLEL EXECUTION (v4.4.0 - RECOMMENDED for multiple products)
+# Launch up to 5 products simultaneously (Gemini CLI thread limit)
+
+# Batch 1: 5 products in parallel
+for pid in 1729671956792187076 1729480049905277853 1729637085247609526 1729697087571270361 1729630936525936882; do
+  python analyze_video_batch.py $pid --date YYYYMMDD &
+done
+wait  # Wait for all 5 to complete
+
+# Batch 2: Remaining products in parallel
+for pid in 1729607303430380470 1729607478878640746 1729489298386491816; do
+  python analyze_video_batch.py $pid --date YYYYMMDD &
+done
+wait
 
 # Or analyze a single video
 python analyze_single_video.py 1729479916562717270 2 --date YYYYMMDD
@@ -320,15 +335,21 @@ Translate for Chinese-speaking German residents, not Mainland China audience.
 | Whisper transcription (tiny) | ~8-15s | High | When no captions available |
 | No transcript | Instant | N/A | Music-only or unintelligible |
 
-**Typical batch time (5 videos) - OPTIMIZED:**
+**Typical batch time (5 videos per product) - OPTIMIZED:**
 - All have TikTok captions: ~20-30 seconds (was ~30s)
 - All need Whisper: ~80-120 seconds (was ~4-5 minutes) **↓ 3-5x faster**
 - Mixed: ~40-60 seconds (was ~1-2 minutes) **↓ 2-3x faster**
 
-**Optimization Highlights (v4.3.0):**
+**Multi-product performance (v4.4.0 - PARALLELIZED):**
+- **Sequential (old):** 8 products × 2 min = 16 min
+- **Parallel (new):** Batch1(5 products) + Batch2(3 products) = 4 min ⭐ **4x faster**
+- **Key:** Launch up to 5 products in parallel using bash background jobs (`&` + `wait`)
+
+**Optimization Highlights (v4.4.0):**
+- ✅ **CROSS-PRODUCT PARALLELISM:** Up to 5 products simultaneously (Gemini CLI limit)
 - ✅ Whisper model caching (load once per batch, not per video)
 - ✅ Parallel frame/audio extraction (ThreadPoolExecutor, 5 workers)
-- ✅ Async Gemini analysis (max 5 concurrent API calls)
+- ✅ Async Gemini analysis (max 5 concurrent API calls per product)
 - ✅ Optimized FFmpeg (640px frames, lower quality, sufficient for analysis)
 - ✅ Tiny Whisper model (4x faster than base, minimal accuracy loss)
 - ✅ 3-phase pipeline architecture (extract → transcribe → analyze)
@@ -505,6 +526,15 @@ After video analysis is complete:
 ---
 
 ## Version History
+
+**v4.4.0** (2026-01-18) - **CROSS-PRODUCT PARALLELISM**
+- **MAJOR IMPROVEMENT:** 4x faster multi-product processing via parallel execution
+- **NEW:** Support for up to 5 products running simultaneously (Gemini CLI thread limit)
+- **NEW:** Bash background job orchestration (`&` + `wait` for batching)
+- **PERFORMANCE:** 8 products: ~4 min (was 16 min) ⭐ **4x faster**
+- **EXECUTION:** Batch1(5 products in parallel) + Batch2(3 products in parallel)
+- **WHY:** User feedback - can parallelize across products, not just within products
+- **COMPATIBILITY:** Fully backward compatible with single-product execution
 
 **v4.3.0** (2026-01-07) - **PERFORMANCE OPTIMIZATION**
 - **MAJOR IMPROVEMENT:** 3-5x faster batch processing through parallelization

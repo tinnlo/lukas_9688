@@ -42,7 +42,7 @@ Based on video synthesis analysis (基于视频综合分析), we identified 3 wi
 
 ## 3. Key Selling Points | 核心卖点
 
-*Extracted from video_synthesis.md + image_analysis.md (提取自视频综合分析+图片分析):*
+*Extracted from video_synthesis.md (提取自视频综合分析):*
 
 1. **IPX4 Waterproof Rating (IPX4防水等级)** - Splash-proof from all directions (全方向防溅水), internal water-blocking grooves with silicone seals (内部阻水槽配硅胶密封圈). **Conversion Factor (转化因素):** Removes fear of expensive phone damage (消除昂贵手机损坏的恐惧). Germans are risk-averse - technical spec (IPX4) builds more trust than vague "waterproof" claims (德国人规避风险——技术规格(IPX4)比模糊的"防水"声明更能建立信任).
 
@@ -100,7 +100,7 @@ Based on video synthesis analysis (基于视频综合分析), we identified 3 wi
 
 ## 6. Production Notes | 制作说明
 
-*From image_analysis.md Section 11 + video_synthesis.md Section 6 (来自图片分析第11节+视频综合分析第6节 - Visual Editing Playbook | 视觉剪辑打法):*
+*From image_analysis.md Section 10 (来自图片分析第10节 - Visual Hooks | 视觉钩子):*
 
 - **Primary Visual (主要视觉):** The "Water Splash" money shot (溅水特写镜头) - water stream hitting phone case screen directly while Netflix/TikTok plays underneath (水流直接打在手机壳屏幕上，下面播放Netflix/TikTok). This is THE conversion shot (这是转化镜头).
 - **Lighting (灯光):** Normal bathroom lighting works better than studio setup (普通浴室灯光比工作室设置效果更好) - UGC aesthetic builds trust (UGC美学建立信任). Show steam/fog to emphasize anti-fog feature (显示蒸汽/雾以强调防雾功能).
