@@ -203,9 +203,35 @@ Total: ~80-120s per product (was ~4-5 min)
 
 ---
 
-## Quality Gate
+## Quality Gate - ENHANCED
 
-**Before Phase 3, verify:**
+**Before Phase 3, verify analysis quality and compliance:**
+
+### Option 1: Enhanced Quality Gate (Recommended)
+
+Use the updated verify_gate.sh script with integrated quality validators:
+
+```bash
+# Comprehensive gate: file existence + bilingual coverage + compliance + ElevenLabs cues
+bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase all
+```
+
+The enhanced gate now validates:
+- **Phase 1: File Existence** (existing checks)
+  - `tabcut_data.json/md` presence
+  - `image_analysis.md` (200+ lines, no meta preamble)
+  - `video_synthesis.md` (150+ lines, no meta preamble)
+  - Video analysis files count
+  - Script files count (4+)
+
+- **Phase 2: Quality Standards** (NEW)
+  - **Bilingual Coverage**: DE/ZH pairs (30+), bilingual headers (10+), Chinese ratio (8-25%)
+  - **Compliance Flags**: Risky claims properly flagged in analysis, absent from scripts
+  - **ElevenLabs Cues**: Density (≥0.3), variety (≥8 unique), valid cues only
+
+### Option 2: Manual Verification (Basic)
+
+If you need a quick check without quality validators:
 
 ```bash
 #!/bin/bash
@@ -229,6 +255,11 @@ for pid in $products; do
     exit 1
   fi
 
+  # NEW: Quality validators (optional but recommended)
+  echo "Checking quality standards..."
+  python3 scripts/validate_bilingual_coverage.py "product_list/$date/$pid/ref_video/video_synthesis.md" || echo "⚠️ Bilingual coverage below standards"
+  python3 scripts/validate_compliance_flags.py "product_list/$date/$pid/ref_video/video_synthesis.md" || echo "⚠️ Compliance issues found"
+
   echo "✅ Ready for scripts"
 done
 
@@ -236,13 +267,19 @@ echo ""
 echo "=== ALL PRODUCTS READY FOR PHASE 3 ==="
 ```
 
-### Recommended (Repo Verifier)
+### Individual Validator Usage
 
-Run the repo verifier script (hard gate) instead of maintaining manual lists:
+Run validators individually for debugging:
 
 ```bash
-# Gate analysis + scripts for a date batch folder
-bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase all
+# Bilingual coverage
+python3 scripts/validate_bilingual_coverage.py product_list/YYYYMMDD/{product_id}/ref_video/video_synthesis.md
+
+# Compliance flags
+python3 scripts/validate_compliance_flags.py product_list/YYYYMMDD/{product_id}/ref_video/video_synthesis.md
+
+# ElevenLabs cues (for scripts)
+python3 scripts/validate_elevenlabs_cues.py product_list/YYYYMMDD/{product_id}/scripts/Script_Name.md
 ```
 
 ---

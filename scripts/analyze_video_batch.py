@@ -493,6 +493,22 @@ Analyze the keyframe images and the provided transcript to create a comprehensiv
 
 {transcript_text}
 
+**CHINESE TRANSLATION PHILOSOPHY (MANDATORY):**
+Translate for Chinese-speaking German residents (not Mainland China audience):
+- Use natural idioms, NOT literal word-for-word
+- Expand if German idiom has no Chinese equivalent
+- Match emotional tone (frustrated → 沮丧, amused → 好笑)
+- Keep brand names and German terms original
+
+EXAMPLES:
+German: "Gönn dir was Gutes"
+❌ Literal: "请自己享受好东西" (grammatically awkward)
+✅ Adapted: "对自己好一点" (natural Chinese expression)
+
+German: "Das läppert sich"
+❌ Literal: "那累积起来" (loses meaning)
+✅ Adapted: "一个月下来可是一大笔" (captures accumulation + impact)
+
 ## 3. Hook/Opening Strategy (First 3 Seconds) | 开场策略(前3秒)
 
 - **Hook Type | 钩子类型:** [Problem-Solution/Pricing-FOMO/Educational/Feature-Led/Pattern-Interrupt/Unboxing/Testimonial]
@@ -771,6 +787,22 @@ Analyze the keyframe images and the provided transcript to create a comprehensiv
 ## 2. Voiceover/Dialogue Transcript | 旁白/对话文本
 
 {transcript_text}
+
+**CHINESE TRANSLATION PHILOSOPHY (MANDATORY):**
+Translate for Chinese-speaking German residents (not Mainland China audience):
+- Use natural idioms, NOT literal word-for-word
+- Expand if German idiom has no Chinese equivalent
+- Match emotional tone (frustrated → 沮丧, amused → 好笑)
+- Keep brand names and German terms original
+
+EXAMPLES:
+German: "Gönn dir was Gutes"
+❌ Literal: "请自己享受好东西" (grammatically awkward)
+✅ Adapted: "对自己好一点" (natural Chinese expression)
+
+German: "Das läppert sich"
+❌ Literal: "那累积起来" (loses meaning)
+✅ Adapted: "一个月下来可是一大笔" (captures accumulation + impact)
 
 ## 3. Hook/Opening Strategy (First 3 Seconds) | 开场策略(前3秒)
 

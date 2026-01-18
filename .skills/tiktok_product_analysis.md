@@ -14,16 +14,56 @@ execution_agent: Gemini CLI MCP (async)
 
 ---
 
-## Compliance & Policy Notes (DE Market)
+## Compliance & Policy Notes (DE Market) - ENHANCED
+
+### Safety Matrix with Concrete Examples
 
 This skill should explicitly capture policy-sensitive claims so downstream scripts stay safe.
 
-- **Price / discount:** treat exact prices as volatile; prefer “günstig/preiswert” guidance in final scripts.
-- **Waterproof:** only treat `IP67/IPX7/etc.` as valid if it’s visible in packaging text or in `tabcut_data.json`. Otherwise use `spritzwassergeschützt` / `wasserabweisend`.
-- **Medical:** avoid medical guarantees; prefer wellness/comfort language.
-- **Tech specs:** ensure claims match source (e.g. projectors: “4K Dekodierung” vs native 4K).
+| Risk Type | ❌ AVOID | ⚠️ USE CAREFULLY | ✅ SAFE |
+|:----------|:---------|:----------------|:--------|
+| **Price** | "nur €10!", "50% Rabatt" | "~€10" with disclaimer | "erschwinglich", "preiswert" |
+| **Waterproof** | "100% wasserdicht", "完全防水" | "IP67" (only if sourced) | "spritzwassergeschützt" |
+| **Medical** | "heilt", "Schmerzfreiheit" | "Entspannung" (no guarantees) | "angenehm", "komfortabel" |
+| **Tech Specs** | "4K Support" (ambiguous) | "4K Dekodierung" (if sourced) | "HD Qualität" |
 
-Add these as explicit DO/DON’T bullets in the generated `ref_video/video_synthesis.md` (section already exists in your template as “Compliance & Trust Signals”).
+**Example format for analysis files:**
+```markdown
+*   **CRITICAL**: Das Produkt ist NICHT spülmaschinenfest. Darauf muss in Kommentaren hingewiesen werden.
+    **关键**：该产品不可放入洗碗机。必须在评论中指出。
+```
+
+Add these as explicit DO/DON'T bullets with concrete examples in the generated `ref_video/video_synthesis.md` (section already exists in your template as "Compliance & Trust Signals").
+
+---
+
+## Bilingual Output Standards | 双语输出标准
+
+MANDATORY inline Chinese translation pattern for all analysis files:
+
+**Format for key bullets:**
+```markdown
+- DE: German or English description
+  ZH: 中文翻译
+```
+
+**Example from gold-standard sample (image_analysis.md:93-94):**
+```markdown
+*   **12-Blade Power (`product_image_6.webp`):**
+    *   DE: Die meisten tragbaren Mixer haben nur 4 oder 6 Klingen.
+        ZH: 大多数便携式榨汁机只有4或6叶刀片。
+```
+
+**Target metrics:**
+- Chinese character ratio: 15-20% of total content
+- DE/ZH pairs: 30+ per analysis file
+- Bilingual section headers: 10+ per file
+
+**Quality indicators:**
+- NOT literal word-for-word translation
+- Cultural adaptation for Chinese-speaking German residents
+- Natural idioms and expressions
+- Maintain German brand names and technical terms
 
 ---
 
@@ -52,6 +92,40 @@ Use **Gemini 3.0** models first:
 - Fallback (only if capacity/quota hit): `gemini-3-flash-preview`
 
 Avoid relying on older `2.5` models unless explicitly requested.
+
+---
+
+## German Market Intelligence (MANDATORY in video_synthesis.md)
+
+**Required section in synthesis output: "## German Market Fit | 德国市场适配"**
+
+Analysis files must include specific cultural context that informs creative production:
+
+**Must document:**
+1. 5+ specific cultural behaviors/preferences observed in winning videos
+2. How each behavior maps to creative production choices
+3. Language signals Germans respond to (formal/informal, proof > emotion)
+4. Trust signals specific to German market (specs, numbers, precision)
+
+**Example pattern from gold-standard sample:**
+
+```markdown
+## German Market Fit | 德国市场适配
+
+**Cultural Triggers (文化触发器):**
+- Germans worry portable gadgets are "weak toys" → Ice crush proof shot needed
+- Germans value efficiency over entertainment → Office routine angle resonates
+- Germans are price-sensitive but not cheap → Show exact ROI math (€109/month vs €10/month)
+- Germans trust specs over claims → LED battery display = credibility
+- Germans prefer practical over aesthetic → Function-first storyboards
+```
+
+**Implementation requirement:**
+- This section must appear in `video_synthesis.md`
+- Must include 5+ specific cultural insights with actionable implications
+- Must show how insights translate to creative decisions
+
+---
 
 ### The Real Bottleneck: Videos Per Product
 
@@ -467,6 +541,26 @@ STRICT OUTPUT:
 11. Performance Predictions | 效果预测
 12. Recommendations (DO's and DON'Ts) | 建议
 13. Source Materials | 源材料
+
+**CRITICAL - Depth Requirements:**
+
+Section 2 (Winning Patterns) must include:
+- **Hook Library Table** with 25+ patterns:
+  | Pattern | German Example | When to Use | Risk Level |
+  (Reference sample: video_synthesis.md contains 25+ concrete hook examples)
+
+Section 5 (Creative Production) must include:
+- **German Copy Bank** with 80+ production-ready lines:
+  - Hooks (Problem/Attention) - 20 lines
+  - Features & Benefits - 20 lines
+  - CTAs - 20 lines
+  - Objection Handling - 20 lines
+  (Each with Chinese translation)
+
+**Example quality benchmark from sample:**
+1. Hör auf, überteuerte Smoothies zu kaufen! (Stop buying overpriced smoothies!)
+2. Dein neuer bester Freund im Büro. (Your new best friend at the office.)
+3. Das läppert sich, oder? (That adds up, doesn't it?)
 
 **FORMAT:**
 - Bilingual headers AND inline Chinese translations for key bullets (`English text (中文翻译)`) 

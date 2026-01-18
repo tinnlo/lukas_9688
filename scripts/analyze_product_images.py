@@ -79,6 +79,14 @@ INLINE TRANSLATION RULE (MANDATORY):
     ZH: ...
 - If something is not visible, write "DE: Unklar." then "ZH: 不清楚。"
 
+EXAMPLE FROM HIGH-QUALITY SAMPLE (MANDATORY REFERENCE):
+*   **12-Blade Power (`product_image_6.webp`):**
+    *   DE: Die meisten tragbaren Mixer haben nur 4 oder 6 Klingen. 12 Klingen sind ein massives Upgrade für feinere Smoothies.
+        ZH: 大多数便携式榨汁机只有4或6叶刀片。12叶刀片是巨大的升级，能打出更细腻的冰沙。
+
+NOT ACCEPTABLE:
+*   **12-Blade Power:** Most portable blenders have 4-6 blades. (Missing Chinese, missing DE/ZH structure)
+
 LINE COUNT COMPLIANCE (MANDATORY):
 - Include a section "## On-Screen Text Suggestions (DE) (80+ lines) | 屏幕文字建议（德语 80+行）" with at least 80 single-line German overlay texts (one per line).
 - Include a section "## Shot List (25+) | 分镜清单（至少25条）" with at least 25 rows.
@@ -88,6 +96,23 @@ ANTI-GENERIC RULE (MANDATORY):
 - Every section must include concrete, image-grounded details.
 - If a detail is not visible, write "Unclear" (do not invent).
 - In sections 1–4, include at least 30 bullet points, and each bullet MUST cite evidence by mentioning the specific image filename(s) (e.g., `product_image_1.webp`).
+
+COMPLIANCE SAFETY MATRIX (MANDATORY):
+Section "## 8. Risks / Compliance Notes" must include:
+
+**Required subsections:**
+1. Dishwasher/cleaning warnings (if applicable, cite image)
+2. Usage limits (cite specific warnings from images)
+3. Health claims assessment (safe alternatives)
+4. Price claim risks
+5. Waterproof verification (check for IP ratings in packaging)
+
+**Example format (from sample):**
+*   **Dishwasher Warning (`product_image_8.webp`):**
+    *   DE: **CRITICAL**: Das Produkt ist NICHT spülmaschinenfest. Darauf muss in Kommentaren hingewiesen werden.
+        ZH: **关键**：该产品不可放入洗碗机。必须在评论中指出。
+
+No generic warnings. Always cite specific image filenames.
 
 CONTEXT:
 - Target market: Germany (TikTok Shop DE)
@@ -106,7 +131,14 @@ Analyze ALL provided images as a set. Focus on:
 4) Visual angles that will sell on TikTok (macro shots, textures, UI screens, accessories)
 5) Competitive positioning (who would buy it, what pain it solves, why now)
 6) Compliance (avoid medical/legal guarantees; flag risky claims if seen)
-7) Filming plan ideas: at least 12 shot ideas with seconds + purpose
+7) Visual Hooks for Scripts | 脚本视觉钩子 (Section 10):
+   - Minimum 5 specific visual hook ideas
+   - Each must include: filming instruction + German hook line + priority ranking
+   - Format: Time window | Visual setup (DE/ZH) | Audio/Overlay | Purpose (Hook/Proof/Social Proof/etc.)
+
+   Example from sample:
+   | 0-3s | DE: Nahaufnahme: Gefrorene Beeren fallen in den transparenten Becher.
+           ZH: 特写：冷冻浆果落入透明杯中。 | ASMR Sound (Klappern) + "Stop buying expensive smoothies!" | Hook: Visuelle Befriedigung + Spar-Argument |
 8) Editing overlays: suggested German on-screen text lines (short, punchy)
 9) Objections + rebuttals (German audience)
 10) Recommended 3 script angles derived from visuals

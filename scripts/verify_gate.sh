@@ -180,6 +180,38 @@ for pid in $PRODUCT_IDS; do
       echo "❌ FAIL: no images and no videos found (blocked)"
       fail=1
     fi
+
+    # Phase 2: Quality Standards (bilingual coverage, compliance)
+    echo ""
+    echo "--- Quality Standards ---"
+
+    # Bilingual coverage validation
+    if [[ -f "$img_dir/image_analysis.md" ]]; then
+      if python3 scripts/validate_bilingual_coverage.py "$img_dir/image_analysis.md" >/dev/null 2>&1; then
+        echo "✅ image_analysis.md bilingual coverage"
+      else
+        echo "⚠️ WARN: image_analysis.md bilingual coverage below standards"
+      fi
+    fi
+
+    if [[ -f "$video_dir/video_synthesis.md" ]]; then
+      if python3 scripts/validate_bilingual_coverage.py "$video_dir/video_synthesis.md" >/dev/null 2>&1; then
+        echo "✅ video_synthesis.md bilingual coverage"
+      else
+        echo "❌ FAIL: video_synthesis.md bilingual coverage below standards"
+        fail=1
+      fi
+    fi
+
+    # Compliance flags validation
+    if [[ -f "$video_dir/video_synthesis.md" ]]; then
+      if python3 scripts/validate_compliance_flags.py "$video_dir/video_synthesis.md" >/dev/null 2>&1; then
+        echo "✅ video_synthesis.md compliance flags"
+      else
+        echo "❌ FAIL: video_synthesis.md has compliance violations"
+        fail=1
+      fi
+    fi
   fi
 
   if [[ "$PHASE" == "scripts" || "$PHASE" == "all" ]]; then
@@ -214,6 +246,39 @@ for pid in $PRODUCT_IDS; do
           break
         fi
       done
+
+      # Phase 2: Quality Standards for scripts
+      echo ""
+      echo "--- Script Quality Standards ---"
+
+      # Compliance check for scripts (no risky claims)
+      script_compliance_fail=0
+      for script in "$scripts_dir"/*.md; do
+        [[ -e "$script" ]] || continue
+        [[ "$(basename "$script")" == "Campaign_Summary.md" ]] && continue
+        if ! python3 scripts/validate_compliance_flags.py "$script" >/dev/null 2>&1; then
+          echo "❌ FAIL: $(basename "$script") has compliance violations"
+          fail=1
+          script_compliance_fail=1
+          break
+        fi
+      done
+      [[ "$script_compliance_fail" -eq 0 ]] && echo "✅ All scripts: compliance clean"
+
+      # ElevenLabs cues validation
+      script_cues_fail=0
+      for script in "$scripts_dir"/*.md; do
+        [[ -e "$script" ]] || continue
+        [[ "$(basename "$script")" == "Campaign_Summary.md" ]] && continue
+        if ! python3 scripts/validate_elevenlabs_cues.py "$script" >/dev/null 2>&1; then
+          echo "❌ FAIL: $(basename "$script") ElevenLabs cues below standards"
+          fail=1
+          script_cues_fail=1
+          break
+        fi
+      done
+      [[ "$script_cues_fail" -eq 0 ]] && echo "✅ All scripts: ElevenLabs cues quality"
+
     else
       echo "❌ FAIL: scripts/ folder missing"
       fail=1

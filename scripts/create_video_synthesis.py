@@ -71,6 +71,17 @@ LINE COUNT COMPLIANCE (MANDATORY):
 - Include a hook library table with at least 25 rows.
 - Include a replication checklist with at least 20 bullet items.
 
+HOOK LIBRARY TABLE FORMAT (MANDATORY - 25+ patterns):
+Columns: Shot | Time | Visual (Video Content) | Audio/Overlay Idea | Purpose
+
+EXAMPLE FROM SAMPLE:
+| Shot | Time | Visual (Video Content) | Audio/Overlay Idea | Purpose |
+|:-----|:-----|:-----------------------|:-------------------|:--------|
+| 1 | 0-2s | DE: Nahaufnahme: Gefrorene Beeren fallen in den transparenten Becher. ZH: 特写：冷冻浆果落入透明杯中。 | ASMR Sound + "Stop buying expensive smoothies!" | Hook: Visual satisfaction + savings argument |
+| 2 | 2-4s | DE: Wasser/Milch wird bis zur Pfeilmarkierung eingegossen. ZH: 水/牛奶倒至箭头标记处。 | "Only 3 Steps." | Education: Demonstrate simplicity |
+
+Minimum 12 rows. Each must have specific visual description (not "product shot"), audio strategy, and psychological purpose.
+
 TARGET MARKET:
 - Germany (TikTok Shop DE)
 
@@ -82,12 +93,39 @@ Read all provided `video_*_analysis.md` files (and product JSON if provided) and
 3. Proof & Trust Mechanics | 证据与信任机制
 4. Objection Handling | 异议处理
 5. German Copy Bank (short lines) | 德语文案库（短句）
-6. Visual Editing Playbook | 视觉剪辑打法
-7. CTA Patterns & Timing | CTA 节奏与时机
-8. Audience Segments | 受众细分
-9. Replication Checklist (shooting + edit) | 复刻清单（拍摄+剪辑）
-10. 3 Script Angles Recommended | 三个脚本角度
-11. Risk / Compliance Notes | 风险与合规提醒
+6. German Market Psychology | 德国市场心理 (NEW - MANDATORY)
+7. Visual Editing Playbook | 视觉剪辑打法
+8. CTA Patterns & Timing | CTA 节奏与时机
+9. Audience Segments | 受众细分
+10. Replication Checklist (shooting + edit) | 复刻清单（拍摄+剪辑）
+11. 3 Script Angles Recommended | 三个脚本角度
+12. Risk / Compliance Notes | 风险与合规提醒
+
+SECTION 6 REQUIREMENTS - German Market Psychology (MANDATORY):
+Must include:
+- 5+ specific cultural behaviors/preferences observed in winning videos
+- How each behavior maps to creative production choices
+- Trust signals Germans respond to (specs, numbers, precision)
+
+EXAMPLE FROM SAMPLE:
+**Cultural Triggers (文化触发器):**
+- Germans worry portable gadgets are "weak toys" → Ice crush proof shot needed
+- Germans value efficiency over entertainment → Office routine angle resonates
+- Germans are price-sensitive but not cheap → Show exact ROI math (€109/month vs €10/month)
+- Germans trust specs over claims → LED battery display = credibility
+- Germans prefer practical over aesthetic → Function-first storyboards
+
+SECTION 5 REQUIREMENTS - German Copy Bank (80+ lines, categorized):
+   - Hooks (Problem/Attention) - 20 lines
+   - Features & Benefits - 20 lines
+   - CTAs - 20 lines
+   - Objection Handling - 20 lines
+
+   Each line must be: German text (English translation)
+
+   EXAMPLE:
+   1. Hör auf, überteuerte Smoothies zu kaufen! (Stop buying overpriced smoothies!)
+   2. Dein neuer bester Freund im Büro. (Your new best friend at the office.)
 
 Include tables where useful:
 - Hook library table (Pattern / Example DE line / When to use / Risk)

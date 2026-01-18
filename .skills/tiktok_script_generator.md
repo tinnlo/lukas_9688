@@ -1,18 +1,19 @@
 ---
 name: tiktok-script-generator
-description: Generates 3 TikTok short video scripts (45–50s) in German with MANDATORY Chinese translation, plus a bilingual Campaign Summary. References pre-existing analysis files (does NOT duplicate content). Outputs Obsidian-ready notes to product_list/YYYYMMDD/{product_id}/scripts/ with required frontmatter and sections.
-version: 2.1.0
+description: Generates 3 TikTok short video scripts (40–50s UGC ad style) in German with MANDATORY Chinese translation, plus a bilingual Campaign Summary. Uses official ElevenLabs v3 audio tags (every line MUST have 1-2 cues). References pre-existing analysis files (does NOT duplicate content). Outputs Obsidian-ready notes to product_list/YYYYMMDD/{product_id}/scripts/ with required frontmatter and sections.
+version: 2.2.0
 author: Claude
 execution_agent: Claude Code (direct writing)
 prerequisite: tiktok_product_analysis.md (must complete first)
 ---
 
-# TikTok Script Generator Skill v2.1
+# TikTok Script Generator Skill v2.2
 
-**PURPOSE:** Generate production-ready scripts from analysis foundation (German VO + mandatory Chinese translation)
+**PURPOSE:** Generate production-ready UGC TikTok ad scripts with official ElevenLabs v3 audio tags (German VO + mandatory Chinese translation)
 **EXECUTOR:** Claude Code (for quality creative writing)
 **INPUT:** Analysis files from `tiktok_product_analysis.md`
 **OUTPUT:** 3 scripts + Campaign Summary (references analysis, no duplication)
+**STYLE:** Fast-paced UGC ads with mandatory emotion cues (1-2 per line), engaging delivery, dynamic performance
 
 ---
 
@@ -126,7 +127,7 @@ cover: ""
 caption: >-
   Short, punchy TikTok caption in German WITH hashtags appended (space-separated, no commas, no quote marks)
 published: YYYY-MM-DD
-duration: "00:35"
+duration: "00:45"
 sales:
   - yes
 link: ""
@@ -144,7 +145,7 @@ source_notes:
 ---
 ```
 **Rules:**
-- `duration` target: 00:30–00:50
+- `duration` target: 00:40–00:50
 - `tags` max 5 and meaningful for commerce/interest
 - `caption` uses TikTok caption format: include the same hashtags as `tags` appended at the end (space-separated), with no commas and no quote marks
 - Use YAML block scalar `caption: >-` so `:` and `#` don't break frontmatter parsing
@@ -212,46 +213,158 @@ rg -n "Schmerz|Physio|Therapeut|Tiefengewebe|heilt|behandelt" "$scripts_dir" --g
 - Benefits: [Description] (20-30s)
 - CTA: [Description] (30-35s)
 
-### Visual Strategy
+### Visual Strategy - ENHANCED TEMPLATE
+
+**Required format:** Seconds | Visual | Purpose (psychological function)
+
+**Sample-quality example (from Blender_Skeptiker_Eiswuerfel_Test.md):**
+
 | Seconds | Visual | Purpose |
 |:--------|:-------|:--------|
-| 00-03 | [Specific shot] | [Why it works] |
-| 03-08 | [Specific shot] | [Why it works] |
-| ... | ... | ... |
+| 00-03 | Screenshot of negative comment: "Breaks after 1 day" with creator looking annoyed | Hook: Relatable objection creates curiosity |
+| 03-07 | Hands dropping LARGE ice cubes + frozen berries into transparent cup | Build tension: "Can it really handle this?" |
+| 07-10 | Close-up: LED display showing battery at 95% before starting | Trust: Tech credibility with real data |
+| 10-15 | Blender upside down, ice crushing visible through transparent cup | Proof: Visual confirmation of power |
+| 20-25 | Final smoothie texture shot (creamy, no chunks) | Result proof: Delivers on promise |
+
+**Purpose categories (choose 1 per shot):**
+- **Hook:** Attention/Relatability/Pattern Interrupt
+- **Problem:** Pain amplification/Anchoring
+- **Proof:** Evidence/Trust building/Demonstration
+- **Objection Handling:** Removes barrier (noise, battery, cleaning)
+- **Social Proof:** FOMO/Aspiration
+- **Conversion:** CTA/Urgency
+
+**Minimum:** 8-10 shots for 40-50s, each with clear psychological purpose
 
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
-### DE (ElevenLabs Prompt | 30–50s)
+### DE (ElevenLabs Prompt | 40–50s)
 
-[tone] German voiceover line 1.
-[tone] German voiceover line 2.
-[tone] German voiceover line 3.
+[emotion1] [action1] German voiceover line 1.
+[emotion2] German voiceover line 2.
+[emotion3] [action2] German voiceover line 3.
 ...
 
-### ZH (中文翻译 | 30–50s)
+**MANDATORY:** Every line MUST have 1-2 audio tags (emotion + optional action).
 
-[tone] Chinese translation line 1.
-[tone] Chinese translation line 2.
-[tone] Chinese translation line 3.
+### ZH (中文翻译 | 40–50s)
+
+[emotion1] [action1] Chinese translation line 1.
+[emotion2] Chinese translation line 2.
+[emotion3] [action2] Chinese translation line 3.
 ...
+
+**MANDATORY:** Every line MUST have 1-2 audio tags (emotion + optional action).
 ```
 **MANDATORY:** Chinese translation is required for every script. No exceptions.
 
-### ElevenLabs v3 Tone Markers
-```
-[confident] [bright] [warm] [firm] [soft]
-[curious] [amused] [matter-of-fact] [concerned]
-[enthusiastic] [serious] [whisper] [energetic]
-```
+---
+
+### Voiceover Length Calibration | 配音长度校准
+
+**Target word counts (UGC TikTok Ad style - FAST PACED):**
+
+| Duration | German Words | Chinese Characters | Notes |
+|:---------|:-------------|:-------------------|:------|
+| 40s | 100-130 | 130-160 | Fast UGC delivery ⭐ |
+| 45s | 110-140 | 140-170 | Fast UGC delivery ⭐ |
+| 50s | 120-150 | 150-180 | Fast UGC delivery ⭐ |
+
+**Target range:** 40–50s scripts
+**Note**: UGC ads use faster tempo than standard narration. Every line MUST have 1-2 emotion/action cues.
+
+---
+
+### ElevenLabs v3 Audio Tags - OFFICIAL VOCABULARY (UGC TikTok Style)
+
+**Source:** Official ElevenLabs v3 documentation + UGC TikTok workflow customizations
+
+**CRITICAL FOR UGC ADS:** Every line MUST have 1-2 audio tags. Combine emotion + action cues for maximum impact.
+
+#### Voice-related Tags (Emotion & Delivery) ⭐ = UGC Favorites
+
+**Official ElevenLabs tags:**
+- `[laughs]` - Full laugh ⭐
+- `[laughs harder]` - Intensified laughter
+- `[starts laughing]` - Gradual laughter
+- `[wheezing]` - Breathless laughter
+- `[giggles]` - Light laugh ⭐
+- `[chuckles]` - Quiet laugh
+- `[whispers]` - Quiet, intimate ⭐
+- `[sighs]` - Exhale of frustration/relief ⭐
+- `[exhales]` - Sharp breath out
+- `[inhales deeply]` - Deep breath in
+- `[exhales sharply]` - Quick breath out
+- `[clears throat]` - Throat clearing
+- `[sarcastic]` - Sarcastic tone ⭐
+- `[curious]` - Questioning, interested ⭐
+- `[excited]` - High enthusiasm ⭐
+- `[crying]` - Tearful delivery
+- `[snorts]` - Dismissive sound
+- `[mischievously]` - Sly, knowing ⭐
+
+**Additional validated emotion tags:**
+- `[happy]` - Joyful delivery ⭐
+- `[sad]` - Melancholy tone
+- `[angry]` - Frustrated/upset
+- `[annoyed]` - Irritated ⭐
+- `[surprised]` - Caught off-guard ⭐
+- `[cheerfully]` - Upbeat ⭐
+- `[elated]` - Very pleased ⭐
+- `[delighted]` - Very happy ⭐
+- `[dramatically]` - Theatrical ⭐
+- `[warmly]` - Kind/friendly
+- `[impressed]` - Admiring
+- `[frustrated]` - Annoyed ⭐
+- `[nervously]` - Anxious
+- `[shocked]` - Stunned ⭐
+
+#### Special Tags
+
+- `[strong X accent]` - Replace X with accent (e.g., `[strong French accent]`) ⭐
+- `[sings]` - Melodic delivery ⭐
+- `[screams]` - Excited yell (use strategically)
+
+#### Sound Effects (use sparingly)
+
+- `[applause]` - Clapping sound
+- `[clapping]` - Hand clapping
+- `[gunshot]` - Gunshot
+- `[explosion]` - Explosion
+
+**UGC Workflow Density Requirements:**
+- **MANDATORY:** 1-2 cues per line (NO uncued lines allowed)
+- Hook: 2 cues per line for instant grab
+- Middle: 1-2 cues per line for dynamic flow
+- CTA: 2 cues for confident close
+- Variety: Use diverse emotion chains (Curious → Excited → Happy → Delighted)
+- Combination examples: `[excited] [gasps]`, `[shocked] [laughs]`, `[curious] [whispers]`
+
+**Complete reference:** See `doc/ElevenLabs_v3_Alpha_VO_Grammar_Practice.md` for full vocabulary and UGC best practices.
 
 ### VO Pacing Rules (Important)
-- **FORBIDDEN:** Do not use `[pause]` / `[pause 200ms]` / `[pause: 200ms]` cues.
-- Avoid “slow list delivery”: don’t write long ingredient lists as many 1-word lines ending in `.`.
-  - Prefer 1–2 tight lines with commas and an em-dash, e.g.:
-    - `[matter-of-fact] Cyanotis Arachnoidea Extrakt: 1200 mg.`
-    - `[excited] Und dazu: BCAA, Ashwagandha, Rhodiola, Schwarzer Pfeffer‑Extrakt—als Bonus im Stack.`
+
+**CRITICAL - Official v3 Grammar:**
+- **FORBIDDEN:** v3 does NOT support SSML `<break time="x.xs" />` tags
+- **FORBIDDEN:** Do not use `[pause]` / `[pause 200ms]` / `[pause: 200ms]` cues
+- Use **ellipses (`…`)** for pauses instead
+- Use **em-dash (`—`)** for interruptions/pivots
+- Use **CAPS** for emphasis on key words (official v3 technique)
+
+**UGC Fast Pacing:**
+- Avoid "slow list delivery": don't write long ingredient lists as many 1-word lines ending in `.`
+- Prefer 1–2 tight lines with commas and an em-dash, e.g.:
+  - `[excited] Das ist WIRKLICH gut!`
+  - `[shocked] [gasps] Was?! Das gibt's NICHT!`
+  - `[curious] Und dazu: BCAA, Ashwagandha, Rhodiola—als Bonus im Stack.`
+
+**Tag Placement (official best practice):**
+- Start of line: `[curious] What is this?`
+- End for reactions: `This is amazing! [laughs]`
+- Mid-sentence at pauses: `Well, [sighs] I'm not sure what to say.`
 
 ### Script Naming Convention
 ```
@@ -266,7 +379,8 @@ Product_Model_KeyAngle.md   # e.g., HTC_NE20_AI_Uebersetzer_Earbuds.md
 
 ### Campaign Summary Template (Comprehensive Inline Chinese)
 
-MANDATORY: use inline Chinese throughout (English text (中文翻译)), not just headings.
+**MANDATORY:** Use inline Chinese throughout (English text (中文翻译)) following the template format below.
+EVERY section header must have `| 中文翻译`. Every key bullet must have inline Chinese.
 
 ```markdown
 ---
@@ -282,91 +396,151 @@ shop_name: "Shop Name"
 
 ## 1. Product Overview | 产品概述
 
-**Product (产品):** Product Name | 产品名称  
-**Shop (店铺):** Shop Name  
-**Price (价格):** €XX.XX (from sales data | 基于销售数据)  
+**Product (产品):** Product Name | 产品名称
+**Shop (店铺):** Shop Name
+**Price (价格):** ~€XX.XX (based on sales data | 基于销售数据)
+**Model (型号):** Model Number (if applicable | 如适用)
+**Total Sales (总销量):** X,XXX units | X,XXX 件
+**Total Revenue (总营收):** €XXX.XK ($ XXX.XK)
 
-> For detailed analysis, see (详细分析请参考):
-> - `product_images/image_analysis.md`
-> - `ref_video/video_synthesis.md`
+> For detailed product analysis, see (详细产品分析请参考):
+> - `product_images/image_analysis.md` (图片分析 - XXX lines | XXX行)
+> - `ref_video/video_synthesis.md` (视频综合分析 - XXX lines | XXX行)
 
 ## 2. Campaign Strategy | 活动策略
 
-Based on video synthesis insights (基于视频综合洞察), we selected 3 angles (选择3个角度) to cover different pain points (覆盖不同痛点):
+Based on video synthesis analysis (基于视频综合分析), we identified 3 winning angles (获胜角度) targeting different audience pain points (针对不同受众痛点):
 
 | Script (脚本) | Angle (角度) | Duration (时长) | Hook Type (钩子类型) |
 |:-------|:------|:---------|:----------|
-| Script 1 | Angle name (角度中文) | 35s | Hook type (钩子中文) |
-| Script 2 | Angle name (角度中文) | 35s | Hook type (钩子中文) |
-| Script 3 | Angle name (角度中文) | 35s | Hook type (钩子中文) |
+| Script_File_1.md | Angle Name (角度名称) | XXs | Hook description (钩子描述) |
+| Script_File_2.md | Angle Name (角度名称) | XXs | Hook description (钩子描述) |
+| Script_File_3.md | Angle Name (角度名称) | XXs | Hook description (钩子描述) |
 
-**Why these angles work (为什么有效):**
-- Angle 1 reason (角度1原因)
-- Angle 2 reason (角度2原因)
-- Angle 3 reason (角度3原因)
+**Why these angles work (为什么这些角度有效):**
+- **Angle 1 brief (角度1简述)** – Description (描述)
+- **Angle 2 brief (角度2简述)** – Description (描述)
+- **Angle 3 brief (角度3简述)** – Description (描述)
 
 ## 3. Key Selling Points | 核心卖点
 
-Extracted from `ref_video/video_synthesis.md` (提取自视频综合):
+*Extracted from video_synthesis.md (提取自视频综合分析):*
 
-1. Selling point (卖点) — why it converts (转化原因)
-2. Selling point (卖点) — why it converts (转化原因)
-3. Selling point (卖点) — why it converts (转化原因)
-4. Selling point (卖点) — why it converts (转化原因)
-5. Selling point (卖点) — why it converts (转化原因)
+1. **Selling Point 1 (卖点1)** – Description (描述). **Conversion Factor (转化因素):** How it overcomes objections (克服异议的方式)
+
+2. **Selling Point 2 (卖点2)** – Description (描述). **Conversion Factor (转化因素):** How it overcomes objections (克服异议的方式)
+
+3. **Selling Point 3 (卖点3)** – Description (描述). **Conversion Factor (转化因素):** How it overcomes objections (克服异议的方式)
+
+4. **Selling Point 4 (卖点4)** – Description (描述). **Conversion Factor (转化因素):** How it overcomes objections (克服异议的方式)
+
+5. **Selling Point 5 (卖点5)** – Description (描述). **Conversion Factor (转化因素):** How it overcomes objections (克服异议的方式)
 
 ## 4. Target Audience | 目标受众
 
-- Primary audience (主要受众): description (中文描述)
-- Secondary audience (次要受众): description (中文描述)
+*From video_synthesis.md (来自视频综合分析):*
 
-**Pain Points → Solutions (痛点→解决方案):**
-- "Pain point" (中文痛点) → solution (中文解决方案)
-- "Pain point" (中文痛点) → solution (中文解决方案)
+- **Primary 1 (首要受众1):** Audience Segment Name (受众细分名称) – Description (描述). Age (年龄): XX-XX. Key trait (关键特征): trait (特征).
+
+- **Primary 2 (首要受众2):** Audience Segment Name (受众细分名称) – Description (描述). Key trait (关键特征): trait (特征).
+
+- **Secondary (次要受众):** Audience Segment Name (受众细分名称) – Description (描述). Key trait (关键特征): trait (特征).
+
+- **Tertiary (第三受众):** Audience Segment Name (受众细分名称) – Description (描述). Key trait (关键特征): trait (特征).
+
+**Pain Points Addressed (解决的痛点):**
+- "Pain point quote" (痛点引用) → Solution (解决方案)
+- "Pain point quote" (痛点引用) → Solution (解决方案)
+- "Pain point quote" (痛点引用) → Solution (解决方案)
+- "Pain point quote" (痛点引用) → Solution (解决方案)
 
 ## 5. Scripts Summary | 脚本摘要
 
 ### Script 1 (脚本1): Script_File_Name.md
-- File (文件): `scripts/Script_File_Name.md`
-- Hook (钩子): description (中文描述)
-- Key Message (核心信息): description (中文描述)
-- Proof Mechanic (证据机制): description (中文描述)
+- **File (文件):** `scripts/Script_File_Name.md`
+- **Hook (钩子):** Visual + audio description (视觉+音频描述)
+- **Key Message (核心信息):** Description (描述)
+- **Proof Mechanic (证据机制):** Description (描述)
+- **Best For (最适合):** Target audience (目标受众), use case (使用场景)
+- **Emotional Arc (情感弧线):** Emotion → Emotion → Emotion → Emotion (情感→情感→情感→情感)
 
 ### Script 2 (脚本2): Script_File_Name.md
-- File (文件): `scripts/Script_File_Name.md`
-- Hook (钩子): description (中文描述)
-- Key Message (核心信息): description (中文描述)
-- Proof Mechanic (证据机制): description (中文描述)
+- **File (文件):** `scripts/Script_File_Name.md`
+- **Hook (钩子):** Visual + audio description (视觉+音频描述)
+- **Key Message (核心信息):** Description (描述)
+- **Proof Mechanic (证据机制):** Description (描述)
+- **Best For (最适合):** Target audience (目标受众), use case (使用场景)
+- **Emotional Arc (情感弧线):** Emotion → Emotion → Emotion → Emotion (情感→情感→情感→情感)
 
 ### Script 3 (脚本3): Script_File_Name.md
-- File (文件): `scripts/Script_File_Name.md`
-- Hook (钩子): description (中文描述)
-- Key Message (核心信息): description (中文描述)
-- Proof Mechanic (证据机制): description (中文描述)
+- **File (文件):** `scripts/Script_File_Name.md`
+- **Hook (钩子):** Visual + audio description (视觉+音频描述)
+- **Key Message (核心信息):** Description (描述)
+- **Proof Mechanic (证据机制):** Description (描述)
+- **Best For (最适合):** Target audience (目标受众), use case (使用场景)
+- **Emotional Arc (情感弧线):** Emotion → Emotion → Emotion → Emotion (情感→情感→情感→情感)
 
 ## 6. Production Notes | 制作说明
 
-From image analysis (来自图片分析):
-- Primary visual hook (主要视觉钩子): description (中文描述)
-- Props (道具): list (中文)
+*From image_analysis.md Section 10 (来自图片分析第10节 - Visual Hooks | 视觉钩子):*
+
+- **Primary Visual (主要视觉):** Description (描述) – Why it works (为什么有效)
+- **Lighting (灯光):** Description (描述)
+- **Props Needed (所需道具):**
+  - Prop 1 (道具1) –用途/purpose (用途)
+  - Prop 2 (道具2) –用途/purpose (用途)
+  - Prop 3 (道具3) –用途/purpose (用途) - for Script X (用于脚本X)
+- **Audio (音频):** Description (描述) – keep X to emphasize "Y" feature (保持X以强调"Y"特性)
+
+**Filming Tips from synthesis (来自综合分析的拍摄技巧):**
+- Tip 1 (技巧1) – Purpose (目的)
+- Tip 2 (技巧2) – Purpose (目的)
+- Tip 3 (技巧3) – Purpose (目的)
 
 ## 7. Source Files | 源文件
 
 | File (文件) | Purpose (用途) | Status (状态) |
 |:-----|:--------|:-------|
-| `tabcut_data.json` | Product metadata (产品元数据) | ✅ |
-| `ref_video/video_synthesis.md` | Market synthesis (市场综合) | ✅ |
-| `product_images/image_analysis.md` | Visual analysis (视觉分析) | ✅/⏭️ |
-| `scripts/*.md` | 3 scripts + summary (三条脚本+总结) | ✅ |
+| `tabcut_data.json` | Product metadata (产品元数据): X.XK sales (销量), €XXK revenue (营收) | ✅ |
+| `ref_video/video_synthesis.md` | Market analysis (市场分析): XXX lines (行), X top videos (X个热门视频) | ✅ |
+| `product_images/image_analysis.md` | Visual analysis (视觉分析): XXX lines (行), X images (X张图片) | ✅ |
+| `scripts/Script_File_1.md` | Script 1 (脚本1) – Angle description (角度描述) | ✅ |
+| `scripts/Script_File_2.md` | Script 2 (脚本2) – Angle description (角度描述) | ✅ |
+| `scripts/Script_File_3.md` | Script 3 (脚本3) – Angle description (角度描述) | ✅ |
 
 ---
-Generated (生成): YYYY-MM-DD  
-Ready for (用于): Video Production (视频制作)
+**Generated (生成日期):** YYYY-MM-DD
+**Ready for (准备用于):** Video Production (视频制作)
+**Estimated Performance (预计表现):** Assessment (评估) – addresses top X objections (解决前X大异议): objection list (异议列表) with proof type (证据类型)
 ```
+
+### Inline Chinese Format Rules
+
+**CRITICAL:** Follow these rules for comprehensive bilingual coverage:
+
+1. **Section Headers:** ALL must have `| 中文翻译`
+   - ✅ `## 1. Product Overview | 产品概述`
+   - ❌ `## Product Overview`
+
+2. **Bold Labels:** Inline Chinese for ALL bold labels
+   - ✅ `**Product (产品):** Product Name | 产品名称`
+   - ❌ `**Product:** Product Name`
+
+3. **Table Headers:** ALL columns must have inline Chinese
+   - ✅ `| Script (脚本) | Angle (角度) |`
+   - ❌ `| Script | Angle |`
+
+4. **Bullet Points:** Key items must have inline Chinese
+   - ✅ `- **Primary (主要):** Description (中文描述)`
+   - ❌ `- **Primary:** Description`
+
+5. **Value Lists:** Items with `|` separator should be translated
+   - ✅ `Product Name | 产品名称`
+   - ❌ `Product Name only`
 
 ### Optional: Simplified Summary
 
-If you need a super short internal note, you can use a simplified variant, but keep `| 中文` headings and inline Chinese for key bullets.
+If you need a super short internal note, you can use a simplified variant, but still keep `| 中文` headings and inline Chinese for key bullets.
 
 ---
 
@@ -503,9 +677,19 @@ ls product_list/$date/$product_id/ref_video/video_synthesis.md  # Must exist
 
 ---
 
-**Version:** 2.1.0
-**Last Updated:** 2026-01-02
-**Changes from prior version:**
+**Version:** 2.2.0
+**Last Updated:** 2026-01-17
+**Changes from v2.1:**
+- Updated to official ElevenLabs v3 audio tags (verified from docs)
+- MANDATORY 1-2 audio tags per line (UGC TikTok workflow)
+- Fast-paced UGC delivery style (higher word counts: 50s = 120-150 words)
+- Added official v3 grammar rules (no SSML break tags, use ellipses/CAPS)
+- Expanded audio tag vocabulary (laughs, gasps, excited, shocked, etc.)
+- Action cues for dramatic effect (giggles, sighs, whispers)
+- Complete reference to `doc/ElevenLabs_v3_Alpha_VO_Grammar_Practice.md`
+- Tag combination examples for maximum impact
+
+**Changes from v2.0:**
 - Separated analysis from script generation
 - Reference-based Campaign Summary (no duplication)
 - Clear agent assignment (Claude for scripts)

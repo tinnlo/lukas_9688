@@ -42,13 +42,13 @@ source_notes:
 [curious] Tun dir die Ohren nach 30 Minuten Kopfhörer weh?
 [matter-of-fact] Normales Problem bei In-Ears.
 [neutral] Druck im Gehörgang. Schweiß sammelt sich.
-[soft] Nach zwei Stunden Büro? Unerträglich. [pause 200ms]
+[soft] Nach zwei Stunden Büro? Unerträglich.
 [bright] Diese hier gehen gar nicht rein ins Ohr.
 [firm] Offene Bauweise. Haken ums Ohr. Fertig.
 [understated] Kein Druck. Kein Schwitzen.
 [confident] 60 Stunden Akku. IPX5 wasserdicht.
 [amused] Du kannst damit duschen.
-[matter-of-fact] Und beim Laufen? Schütteltest bestanden. [pause 200ms]
+[matter-of-fact] Und beim Laufen? Schütteltest bestanden. 
 [firm] Ganztags-Komfort. Keine Kompromisse.
 [warm] Link ist unten.
 

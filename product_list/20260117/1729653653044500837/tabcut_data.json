@@ -1,0 +1,83 @@
+{
+  "product_id": "1729653653044500837",
+  "scraped_at": "2026-01-17T19:44:25.313459",
+  "product_info": {
+    "product_name": "Automatic Pet Feeder Toy for Dogs & Cats, Self-Play Snack Dispenser, Freeze-Dried Food Feeding Machine, Duck Design",
+    "shop_owner": "Treasure Pavilion Y",
+    "total_sales": 344,
+    "total_sales_revenue": "€ 2.98万($ 3.47万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 312,
+    "sales_revenue": "$ 2865.75",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "25.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 4,
+    "带货视频达人数": 3,
+    "带货视频销量": 283,
+    "带货视频销售额": "$ 2599.38",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADEhrliche Frage… warum hat nicht jeder Hund so eine Ente 🦆#Hundeliebe #Hundespielzeug发现时间：2026.01.02 16:58更新时间：2026.01.15 07:35时长：00:00:46跳转至 TikTok",
+      "creator_username": "joyspot67",
+      "creator_followers": "2594",
+      "publish_date": "2025-12-18 22:05",
+      "estimated_sales": 283,
+      "estimated_revenue": "€ 2232.87($ 2599.38)",
+      "total_views": "81.58万",
+      "video_url": "https://www.tiktok.com/@joyspot67/video/7585307177934474518?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_joyspot67.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADDas macht Deinen Hund glücklich und powert ihn schön aus. Hund happy  ➡️ Frauchen und Herrchen happy💫 Klick noch schnell auf den Einkaufswagen und sicher Fir dieses tolle Spielzeug#Futterente #Hundespielzeug #Hunddliebe #Hundespass 发现时间：2026.01.04 06:30更新时间：2026.01.04 06:30时长：00:00:41跳转至 TikTok",
+      "creator_username": "joyspot67",
+      "creator_followers": "2594",
+      "publish_date": "2025-12-28 22:47",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "671",
+      "video_url": "https://www.tiktok.com/@joyspot67/video/7589028645419699478?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_joyspot67.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADDas macht Deinen Hund glücklich und powert ihn schön aus. Hund happy - Frauchen und Herrchen happy Klick noch schnell auf den Einkaufswagen und sicher Fir dieses tolle Spielzeug#Futterente #Hundespielzeug #Hunddliebe #Hundespass发现时间：2026.01.10 10:46更新时间：2026.01.11 23:38时长：00:00:14跳转至 TikTok",
+      "creator_username": "xthree042",
+      "creator_followers": "2365",
+      "publish_date": "2026-01-08 08:41",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "1339",
+      "video_url": "https://www.tiktok.com/@xthree042/video/7592892533613546784?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_xthree042.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADNie wieder Lange Weile beim Spielen🐾🐕Werbung #Hundespielzeug #DogToy #CleveresSpielzeug #TikTokShop 发现时间：2026.01.05 06:40更新时间：2026.01.07 16:30时长：00:00:06跳转至 TikTok",
+      "creator_username": "kerstinmothes",
+      "creator_followers": "2257",
+      "publish_date": "2026-01-04 14:51",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "596",
+      "video_url": "https://www.tiktok.com/@kerstinmothes/video/7591503726574095638?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_kerstinmothes.mp4"
+    }
+  ]
+}

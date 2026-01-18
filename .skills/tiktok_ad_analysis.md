@@ -213,6 +213,36 @@ Each `video_N_analysis.md` contains:
 - **Original Transcript:** With timestamps [MM:SS]
 - **中文翻译:** Chinese translation line by line
 
+---
+
+## Chinese Translation Philosophy | 中文翻译哲学
+
+**CRITICAL: Not literal word-for-word translation**
+
+Translate for Chinese-speaking German residents, not Mainland China audience.
+
+**Translation principles:**
+- Use natural idioms, NOT literal word-for-word
+- Expand if German idiom has no Chinese equivalent
+- Match emotional tone (frustrated → 沮丧, amused → 好笑)
+- Keep brand names and German terms original
+
+**Examples from gold-standard sample scripts:**
+
+| German | ❌ Literal Translation | ✅ Cultural Adaptation |
+|:-------|:---------------------|:----------------------|
+| "Gönn dir was Gutes" | "请自己享受好东西" (awkward) | "对自己好一点" (natural) |
+| "Das läppert sich" | "那累积起来" (loses meaning) | "一个月下来可是一大笔" (captures impact) |
+| "Ich bin mal skeptisch" | "我是怀疑的" (unnatural) | "我本来还挺怀疑" (conversational) |
+
+**Quality indicators:**
+- Sounds natural when read aloud in Chinese
+- Preserves emotional arc and tone of original
+- Uses appropriate register (casual vs. formal)
+- Maintains cultural context of German market
+
+---
+
 ### 3. Hook/Opening Strategy | 开场策略
 - Hook Type (Problem-Solution, Pricing-FOMO, etc.)
 - Hook Description

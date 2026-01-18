@@ -1,0 +1,96 @@
+{
+  "product_id": "1729517020487785272",
+  "scraped_at": "2026-01-17T19:46:05.059753",
+  "product_info": {
+    "product_name": "Toilet Paper, 64 Rolls, 3-Ply Cellulose, 150 Sheets per Roll, White",
+    "shop_owner": "TAZ Commerce",
+    "total_sales": 8380,
+    "total_sales_revenue": "€ 18.49万($ 21.52万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 589,
+    "sales_revenue": "$ 1.35万",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "18.94%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 132,
+    "带货视频达人数": 89,
+    "带货视频销量": 115,
+    "带货视频销售额": "$ 2637.37",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADJetzt ist erstmal genug im Haus! #winterdeals #newyearnewyou #toilettenpapier #tiktokshopdeutschland 发现时间：2026.01.07 13:19更新时间：2026.01.08 05:32时长：00:00:52跳转至 TikTok",
+      "creator_username": "armineagle",
+      "creator_followers": "150万",
+      "publish_date": "2026-01-07 11:33",
+      "estimated_sales": 21,
+      "estimated_revenue": "€ 413.70($ 481.61)",
+      "total_views": "11.3万",
+      "video_url": "https://www.tiktok.com/@armineagle/video/7592565861676797206?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_armineagle.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD无标题发现时间：2026.01.15 15:29更新时间：2026.01.15 21:06时长：00:00:12跳转至 TikTok",
+      "creator_username": "bambamprodukte",
+      "creator_followers": "7872",
+      "publish_date": "2026-01-11 13:09",
+      "estimated_sales": 17,
+      "estimated_revenue": "€ 334.90($ 389.87)",
+      "total_views": "6279",
+      "video_url": "https://www.tiktok.com/@bambamprodukte/video/7594074901816954145?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_bambamprodukte.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD„Stopp 🚨 Das ist kein normales Klopapier. Das ist ein GANZER VORRAT. 🧻😂 64 Rollen, 3-lagig – größer als dein Wochenend-Einkauf. Kein Nachkaufen. Kein Stress. Kein Drama. Einmal bestellen… und monatelang Ruhe haben.“ #fyp #tiktokshop #toilette #alltagsprobleme #funnyfinds 发现时间：2026.01.10 15:07更新时间：2026.01.16 07:19时长：00:00:18跳转至 TikTok",
+      "creator_username": "aicontent1992",
+      "creator_followers": "5531",
+      "publish_date": "2026-01-09 15:58",
+      "estimated_sales": 13,
+      "estimated_revenue": "€ 256.10($ 298.14)",
+      "total_views": "1.05万",
+      "video_url": "https://www.tiktok.com/@aicontent1992/video/7593376243853167894?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_aicontent1992.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADAntwort auf @Jürgen Götsch entspannter kann man sein Toilettenpapier nicht nach Hause bekommen 😁 #winterdeals #newyearnewyou #toilettenpapier #fürdich 发现时间：2026.01.09 03:43更新时间：2026.01.09 17:16时长：00:00:33跳转至 TikTok",
+      "creator_username": "armineagle",
+      "creator_followers": "150万",
+      "publish_date": "2026-01-08 14:35",
+      "estimated_sales": 9,
+      "estimated_revenue": "€ 177.30($ 206.40)",
+      "total_views": "1.25万",
+      "video_url": "https://www.tiktok.com/@armineagle/video/7592983858010803478?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_armineagle.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#ТИКТОКШОП 发现时间：2025.12.25 08:52更新时间：2026.01.09 22:27时长：00:00:59跳转至 TikTok",
+      "creator_username": "user3590609781146",
+      "creator_followers": "1.3万",
+      "publish_date": "2025-12-25 06:41",
+      "estimated_sales": 8,
+      "estimated_revenue": "€ 157.60($ 183.47)",
+      "total_views": "5655",
+      "video_url": "https://www.tiktok.com/@user3590609781146/video/7587666333580496150?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_user3590609781146.mp4"
+    }
+  ]
+}
