@@ -1,9 +1,9 @@
 ---
 name: tiktok-workflow-e2e
 description: End-to-end orchestration of TikTok content creation. Single entry point for batch processing multiple products from scraping to production-ready scripts.
-version: 1.3.0
+version: 1.4.0
 author: Claude
-updated: 2026-01-18 (parallel video analysis + batched scripts - 60% faster)
+updated: 2026-01-20 (aligned with underlying skills - corrected concurrency model)
 ---
 
 # TikTok E2E Workflow
@@ -51,12 +51,13 @@ updated: 2026-01-18 (parallel video analysis + batched scripts - 60% faster)
                               │
                               ▼
 ┌────────────────────────────────────────────────────────────────┐
-│  PHASE 2B+2C: ANALYSIS + SYNTHESIS (Claude Parallel Reads)     │
-│  Skills: tiktok_product_analysis.md + synthesis                │
-│  Agent: Claude (parallel tool calls)                           │
-│  Parallel: Read all 5 video analyses + glob images at once     │
+│  PHASE 2B+2C: ANALYSIS + SYNTHESIS (Gemini MCP Async)          │
+│  Skill: tiktok_product_analysis.md                             │
+│  Agent: Gemini CLI MCP (async)                                 │
+│  Parallel: SEQUENTIAL across products (5 MCP task limit)       │
+│           Within each product: Videos(5) → Image(1) → Synth(1) │
 │  Output: image_analysis.md + video_synthesis.md                │
-│  OPTIMIZED v1.2.0: 10-15s (was 60-90s) - 4-6x faster          │
+│  Per tiktok_product_analysis.md v1.0.0                         │
 └────────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -136,8 +137,10 @@ product_list/YYYYMMDD/{product_id}/
 - **Result:** 8 products analyzed in ~4 minutes (was 16 min sequential)
 
 **Image + Synthesis (Gemini MCP async):**
-- Uses 2 MCP async slots per product (image + synthesis)
-- Can parallelize 2-3 products at once (MCP slot availability)
+- **⚠️ CRITICAL:** 5 MCP task limit (per tiktok_product_analysis.md)
+- Process products **SEQUENTIALLY** (one at a time)
+- Within each product: Stage 1 (5 videos parallel) → Stage 2 (image) → Stage 3 (synthesis)
+- **Never** try to parallelize multiple products for image+synthesis
 
 ### Model Policy (MANDATORY)
 
@@ -190,24 +193,41 @@ Total per product: ~80-120s (was ~4-5 min)
 
 **Output:** `ref_video/video_N_analysis.md` (bilingual, per video)
 
-### 2B+2C: Image Analysis + Video Synthesis (Parallel - OPTIMIZED v1.2.0)
+### 2B+2C: Image Analysis + Video Synthesis (Gemini MCP Async - SEQUENTIAL)
 
-**⚡ OPTIMIZATION: Claude reads all files in parallel, generates both analyses immediately.**
+**⚠️ CORRECTED MODEL (per tiktok_product_analysis.md v1.0.0):**
 
-**How it works**:
-1. In a single message, make parallel tool calls:
-   - `Read()` all 5 `video_*_analysis.md` files
-   - `Glob()` all product images
-2. Generate both outputs:
-   - `image_analysis.md`
-   - `video_synthesis.md`
+Uses **Gemini CLI MCP async** (NOT Claude). Process products **SEQUENTIALLY** due to 5 MCP task limit.
 
-**No external scripts needed** - just use Claude's native parallel tool execution.
+**Pipeline per product (3 sequential stages):**
+```
+┌─────────────────────────────────────────────────────────────┐
+│ Stage 1: Video Analysis (5 tasks in parallel - fills limit) │
+│ └─ video_1..5_analysis.md → Wait for all 5                  │
+├─────────────────────────────────────────────────────────────┤
+│ Stage 2: Image Analysis (1 task)                            │
+│ └─ image_analysis.md → Wait for completion                  │
+├─────────────────────────────────────────────────────────────┤
+│ Stage 3: Video Synthesis (1 task)                           │
+│ └─ video_synthesis.md → Wait for completion                 │
+└─────────────────────────────────────────────────────────────┘
+Then proceed to next product...
+```
 
-**Performance**:
-- **Old (sequential):** 60-90 seconds (read → generate → read → generate)
-- **New (parallel):** 10-15 seconds (read all → generate both)
-- **Speedup:** 4-6x faster
+**Execution:**
+```bash
+# Process products sequentially with pipeline stages
+for product_id in $products; do
+  # Stage 1: Launch 5 video analyses (parallel, fills 5 MCP slots)
+  # Stage 2: Image analysis (1 task, waits)
+  # Stage 3: Synthesis (1 task, waits)
+done
+```
+
+**Performance (8 products):**
+- Per product: Videos (2min) + Image (1min) + Synthesis (1min) = ~4 min
+- 8 products sequential: ~32 min
+- **Why still fast:** 5 videos analyzed in parallel within each product
 
 **Output per product:**
 - `product_images/image_analysis.md`
@@ -349,10 +369,10 @@ User prompt to Claude:
 
 **Claude will:**
 1. Run Phase 1 (scraping) - wait for completion
-2. Run Phase 2A (video analysis) - parallel via Python
-3. Run Phase 2B+2C (image + synthesis) - parallel via Gemini async
+2. Run Phase 2A (video analysis) - parallel via Python (bash bg, 5 products max)
+3. Run Phase 2B+2C (image + synthesis) - **SEQUENTIAL** via Gemini MCP (per tiktok_product_analysis.md)
 4. Verify quality gate
-5. Run Phase 3 (scripts) - sequential for quality
+5. Run Phase 3 (scripts) - sequential with batched writes
 6. Report completion status
 
 ---
@@ -364,29 +384,36 @@ User prompt to Claude:
 | Phase | Single Product | 8 Products | Scaling Notes |
 |:------|:---------------|:-----------|:--------------|
 | 1. Scraping | 2-3 min | 5 min | Parallel across products |
-| 2. Analysis | **2-3 min** | **6-8 min** | **PARALLELIZED (5 at once)** ⭐ |
-|  - Videos (Python async) | **1.5-2 min** | **4 min** | **v4.4.0: 5 products parallel** |
-|  - Image (Gemini MCP) | 0.5 min | 2 min | 2-3 products parallel |
-|  - Synthesis (Gemini MCP) | 0.5 min | 2 min | 2-3 products parallel |
+| 2A. Video Analysis | **1.5-2 min** | **4 min** | **v4.4.0: 5 products parallel (bash bg)** ⭐ |
+| 2B+2C. Image+Synthesis | **2-3 min** | **~32 min** | **SEQUENTIAL** (5 MCP task limit) |
+|  - Image (Gemini MCP) | 1 min | 8 min | Sequential per product |
+|  - Synthesis (Gemini MCP) | 1 min | 8 min | Sequential per product |
 | 3. Scripts | **2-3 min** | **16-24 min** | **Batched Write calls** ⭐ |
-| **Total** | **6-9 min** | **~27-37 min** | **Was 61-79 min - 60% faster** ⭐ |
+| **Total** | **7-11 min** | **~57-65 min** | Corrected model |
 
-### Performance Improvement
+### Performance Notes
 
-**Phase 2 Analysis (8 products):**
+**Phase 2A Video Analysis (8 products) - PARALLELIZED:**
 - **Old (v4.3.0 sequential):** 8 × 2 min = 16 min
 - **New (v4.4.0 parallel):** Batch1(5): 2min + Batch2(3): 2min = 4 min
 - **Savings:** ~12 minutes ⭐ **4x faster**
 
-**Phase 3 Scripts (8 products):**
+**Phase 2B+2C Image+Synthesis (8 products) - SEQUENTIAL:**
+- **Per tiktok_product_analysis.md:** Products processed sequentially
+- **Why:** 5 MCP task limit prevents cross-product parallelism
+- **Time:** 8 × 4 min = ~32 min (videos parallel within each product)
+
+**Phase 3 Scripts (8 products) - BATCHED:**
 - **Old (sequential writes):** 8 × 5 min = 40 min
 - **New (batched writes):** 8 × 2.5 min = 20 min
 - **Savings:** ~20 minutes ⭐ **2x faster**
 
-**Total Workflow Improvement:**
-- **Old:** 61-79 min
-- **New:** 27-37 min
-- **Savings:** ~30-40 minutes ⭐ **60% faster overall**
+**Total Workflow (Corrected):**
+- **Phase 1:** 5 min
+- **Phase 2A:** 4 min (parallel)
+- **Phase 2B+2C:** 32 min (sequential)
+- **Phase 3:** 20 min (batched)
+- **Total:** ~61 min for 8 products
 
 ### Pipeline Strategy (8 Products - PARALLELIZED)
 
@@ -414,13 +441,24 @@ User prompt to Claude:
 Total: ~4 min (was 16 min sequential) ⭐ 4x faster
 ```
 
-**Phase 2B+2C: Image + Synthesis (Can parallelize 2-3 at once):**
+**Phase 2B+2C: Image + Synthesis (SEQUENTIAL per tiktok_product_analysis.md):**
 ```
-Batch 1 (3 products): [Image + Synthesis MCP] → 2 min
-Batch 2 (3 products): [Image + Synthesis MCP] → 2 min
-Batch 3 (2 products): [Image + Synthesis MCP] → 2 min
-Total: ~4-6 min (was 8 min)
+⚠️ CORRECTED: Products processed ONE AT A TIME (5 MCP task limit)
+
+Product 1: [Videos: 5 parallel] → [Image: 1] → [Synthesis: 1] → 4 min
+Product 2: [Videos: 5 parallel] → [Image: 1] → [Synthesis: 1] → 4 min
+Product 3: [Videos: 5 parallel] → [Image: 1] → [Synthesis: 1] → 4 min
+...
+Product 8: [Videos: 5 parallel] → [Image: 1] → [Synthesis: 1] → 4 min
+
+Total: ~32 min (sequential, but 5 videos parallel within each product)
 ```
+
+**Why sequential?** Per tiktok_product_analysis.md:
+- Gemini MCP has 5 concurrent task limit
+- 5 video analyses fill all slots
+- Must wait before image/synthesis
+- Cannot parallelize across products
 
 **Phase 3: Scripts (Batched Write calls per product):**
 ```
@@ -466,24 +504,40 @@ Total: ~20 min (was 40 min) ⭐ 2x faster
 ## Skill Dependency Map
 
 ```
-tiktok_product_scraper.md
-         │
-         ├──────────────────────────┐
-         │                          │
-         ▼                          ▼
-tiktok_ad_analysis.md    tiktok_product_analysis.md
-(video_N_analysis.md)    (image_analysis.md)
-         │                          │
-         └──────────┬───────────────┘
-                    │
-                    ▼
-         tiktok_product_analysis.md
-            (video_synthesis.md)
-                    │
-                    ▼
-         tiktok_script_generator.md
-         (Script_1/2/3.md + Campaign_Summary.md)
+tiktok_product_scraper.md (v2.0.0)
+│  Agent: Python script
+│  Output: tabcut_data.json, product_images/, ref_video/*.mp4
+│
+├──────────────────────────────────────────────────┐
+│                                                  │
+▼                                                  ▼
+tiktok_ad_analysis.md (v4.4.0)        tiktok_product_analysis.md (v1.0.0)
+│  Agent: Python + Gemini CLI          │  Agent: Gemini MCP async
+│  Parallel: 5 products via bash bg    │  Sequential: 1 product at a time
+│  Output: video_N_analysis.md         │  Output: image_analysis.md
+│                                      │
+└──────────────┬───────────────────────┘
+               │
+               ▼
+    tiktok_product_analysis.md (v1.0.0)
+    │  Agent: Gemini MCP async
+    │  Output: video_synthesis.md (CRITICAL)
+    │
+    ▼
+    tiktok_script_generator.md (v2.3.0)
+    │  Agent: Claude Code
+    │  Batched: 4 Write calls per product
+    │  Output: Script_1/2/3.md + Campaign_Summary.md
 ```
+
+**Agent Assignment Summary:**
+| Phase | Agent | Why |
+|:------|:------|:----|
+| 1. Scraping | Python | Playwright automation |
+| 2A. Video Analysis | Python + Gemini CLI | Bash background parallelism |
+| 2B. Image Analysis | Gemini MCP async | Sequential, 5 task limit |
+| 2C. Synthesis | Gemini MCP async | Sequential, 5 task limit |
+| 3. Scripts | Claude Code | Better creative quality |
 
 ---
 
@@ -518,11 +572,16 @@ Claude:
 
    ✅ All 8 products - videos analyzed (4 min total, was 16 min) ⭐ 4x faster
 
-   === Phase 2B+2C: Image Analysis + Synthesis (Parallel batches) ===
-   🚀 Batch 1 (3 products): Image + Synthesis... ✅ (2 min)
-   🚀 Batch 2 (3 products): Image + Synthesis... ✅ (2 min)
-   🚀 Batch 3 (2 products): Image + Synthesis... ✅ (2 min)
-   ✅ All 8 products analyzed (6 min total)
+   === Phase 2B+2C: Image Analysis + Synthesis (SEQUENTIAL - 5 MCP limit) ===
+   📦 Product 1: [Videos 5∥] → [Image] → [Synthesis] ✅ (4 min)
+   📦 Product 2: [Videos 5∥] → [Image] → [Synthesis] ✅ (4 min)
+   📦 Product 3: [Videos 5∥] → [Image] → [Synthesis] ✅ (4 min)
+   📦 Product 4: [Videos 5∥] → [Image] → [Synthesis] ✅ (4 min)
+   📦 Product 5: [Videos 5∥] → [Image] → [Synthesis] ✅ (4 min)
+   📦 Product 6: [Videos 5∥] → [Image] → [Synthesis] ✅ (4 min)
+   📦 Product 7: [Videos 5∥] → [Image] → [Synthesis] ✅ (4 min)
+   📦 Product 8: [Videos 5∥] → [Image] → [Synthesis] ✅ (4 min)
+   ✅ All 8 products analyzed (32 min total - sequential per tiktok_product_analysis.md)
 
 3. Quality Gate...
    ✅ 8/8 products have valid synthesis files
@@ -539,15 +598,15 @@ Claude:
    ✅ All scripts generated (20 min, was 40 min) ⭐ 2x faster
 
 === WORKFLOW COMPLETE ===
-Total time: 35 minutes (was 71 min) ⭐ **60% faster with v1.3.0**
+Total time: ~61 minutes (corrected model per tiktok_product_analysis.md)
 Products processed: 8/8
 Scripts generated: 24 (3 per product)
 Campaign summaries: 8
 
 Performance Breakdown:
 - Phase 1 (Scraping): 5 min
-- Phase 2A (Videos): 4 min ⭐ (was 16 min - 4x faster via parallel batches)
-- Phase 2B+2C (Image+Synthesis): 6 min (was 8 min)
+- Phase 2A (Videos): 4 min ⭐ (was 16 min - 4x faster via bash parallel batches)
+- Phase 2B+2C (Image+Synthesis): 32 min (SEQUENTIAL - 5 MCP task limit)
 - Phase 3 (Scripts): 20 min ⭐ (was 40 min - 2x faster via batched writes)
 
 Ready for video production!
@@ -555,19 +614,25 @@ Ready for video production!
 
 ---
 
-**Version:** 1.3.0
-**Last Updated:** 2026-01-18
+**Version:** 1.4.0
+**Last Updated:** 2026-01-20
 **Changelog:**
-- v1.3.0 (2026-01-18): **MAJOR PERFORMANCE OPTIMIZATION - 60% faster**
+- v1.4.0 (2026-01-20): **ALIGNED WITH UNDERLYING SKILLS**
+  - **CORRECTED:** Phase 2B+2C uses Gemini MCP async (NOT Claude)
+  - **CORRECTED:** Products processed SEQUENTIALLY for 2B+2C (5 MCP task limit)
+  - **CORRECTED:** Time estimates updated to reflect sequential model
+  - Aligned with tiktok_product_analysis.md v1.0.0 concurrency constraints
+  - Phase 2A (videos): Still parallel via bash bg (correct)
+  - Phase 2B+2C (image+synthesis): Sequential products, parallel videos within
+  - 8 products: ~61 min (corrected from optimistic 27-37 min)
+  - Updated pipeline diagrams to show correct execution model
+- v1.3.0 (2026-01-18): Parallel video analysis + batched scripts
   - Parallel video analysis across products (5 Gemini CLI threads max)
   - Batched script generation (4 Write calls per product in one message)
-  - 8 products: 27-37 min (was 61-79 min) ⭐ **60% faster overall**
   - Phase 2A: 4 min (was 16 min) via parallel batches of 5 products
   - Phase 3: 20 min (was 40 min) via batched Write tool calls
-  - Updated all time estimates and pipeline diagrams
-- v1.2.0 (2026-01-07): Parallel image+synthesis execution
+- v1.2.0 (2026-01-07): Parallel image+synthesis execution (NOTE: was incorrect)
 - v1.1.0 (2026-01-07): Updated for v4.3.0 video analysis optimizations
   - 3-5x faster video analysis (Python async + ThreadPoolExecutor)
-  - Updated time estimates (8 products: 71 min vs 83 min)
   - Clarified that video analysis uses Python async, not MCP slots
 - v1.0.0 (2026-01-01): Initial e2e workflow documentation
