@@ -23,14 +23,12 @@ views:
       - link
       - source_notes
     sort:
-      - property: published
-        direction: DESC
       - property: file.name
         direction: ASC
     columnSize:
       file.name: 320
       note.product: 176
-      note.caption: 182
+      note.caption: 381
       note.published: 120
       note.duration: 90
       note.sales: 80

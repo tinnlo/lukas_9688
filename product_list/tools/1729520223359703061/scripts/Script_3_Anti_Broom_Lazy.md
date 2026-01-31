@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Hör auf deinen Rücken zu quälen Nie wieder Fegen mit dem Besen Terrasse sauber in 30 Sekunden Arbeite smart nicht hart #lifehack #garten #faulpelz #tiktokshop #gadgets
+  Hör auf deinen Rücken zu quälen Schluss mit Schnee schaufeln Auto schneefrei in Sekunden Arbeite smart nicht hart #lifehack #winter #schneefrei #tiktokshop #gadgets
 published: 2026-01-21
 duration: "00:38"
 sales:
@@ -9,8 +9,8 @@ sales:
 link: ""
 tags:
   - "#lifehack"
-  - "#garten"
-  - "#faulpelz"
+  - "#winter"
+  - "#schneefrei"
   - "#tiktokshop"
   - "#gadgets"
 product: "MAWIROM 18V Akku-Gebläse"
@@ -22,10 +22,10 @@ source_notes:
 
 ## Scripts
 
-**Hook (0-3s):** Throw broom across yard with dramatic effect → Text "Der Besen ist Geschichte"
-**Problem (3-10s):** Show sweating/struggling with traditional sweeping → Back pain agitation
-**Solution (10-30s):** Fast montage of clearing leaves, snow, sawdust with one hand → Show holding coffee in other hand
-**Comedy & CTA (30-38s):** "Arbeite smart, nicht hart" → Link with urgency message
+**Hook (0-3s):** Throw snow shovel across yard with dramatic effect → Text "Die Schaufel ist Geschichte"
+**Problem (3-10s):** Show sweating/struggling with traditional snow shoveling → Back pain agitation
+**Solution (10-30s):** Fast montage of clearing car windshield, driveway, stairs with one hand → Show holding coffee in other hand
+**Comedy & CTA (30-38s):** "Arbeite smart, nicht hart" → Link in bio
 
 ## Voiceover
 
@@ -33,17 +33,17 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-[frustrated] [firm] Hör auf, deinen Rücken zu brechen!
+[frustrated] [firm] Hör auf, deinen Rücken zu quälen!
 
-[amused] [chuckles] Der Besen ist Geschichte.
+[amused] [chuckles] Die Schaufel ist Geschichte.
 
 [confident] Schau.
 
-[enthusiastic] Terrasse?
-[satisfied] Sauber in 30 Sekunden.
-[excited] Auto voll Schnee?
-[delighted] Weggeblasen!
-[cheerfully] Sägespäne in der Werkstatt?
+[enthusiastic] Auto voll Schnee?
+[satisfied] Scheiben frei in Sekunden.
+[excited] Eingang zugeschneit?
+[delighted] Freigeblasen!
+[cheerfully] Treppe voller Schnee?
 [happy] Erledigt.
 
 [playful] [giggles] Mit einer Hand.
@@ -57,7 +57,7 @@ source_notes:
 [excited] Kommt mit zwei Akkus.
 [satisfied] Ladegerät dabei.
 
-[relieved] [sighs] Keine Bückerei mehr.
+[relieved] [sighs] Kein Schaufeln mehr.
 [happy] Keine Rückenschmerzen.
 [confident] Keine verschwendete Zeit.
 
@@ -72,18 +72,18 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-[frustrated] [firm] 别再摧残你的背了！
+[frustrated] [firm] 别再折磨你的背了！
 
-[amused] [chuckles] 扫帚是过去式了。
+[amused] [chuckles] 铲子已经是过去式了。
 
 [confident] 看。
 
-[enthusiastic] 露台？
-[satisfied] 30秒搞定。
-[excited] 车上全是雪？
-[delighted] 吹走！
-[cheerfully] 车间里的锯末？
-[happy] 解决。
+[enthusiastic] 车上全是雪？
+[satisfied] 几秒钟清理完挡风玻璃。
+[excited] 入口被雪堵了？
+[delighted] 吹干净！
+[cheerfully] 楼梯全是雪？
+[happy] 搞定。
 
 [playful] [giggles] 用一只手。
 
@@ -96,7 +96,7 @@ source_notes:
 [excited] 附带两块电池。
 [satisfied] 还有充电器。
 
-[relieved] [sighs] 不用再弯腰。
+[relieved] [sighs] 不用再铲雪。
 [happy] 不用再腰疼。
 [confident] 不用再浪费时间。
 

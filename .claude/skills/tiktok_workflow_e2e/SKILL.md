@@ -333,6 +333,13 @@ python3 scripts/validate_elevenlabs_cues.py product_list/YYYYMMDD/{product_id}/s
 
 ## Phase 3: Script Generation (BATCHED v2.3.0)
 
+⚠️ **CRITICAL FORMAT REQUIREMENT - ElevenLabs v3 Inline Cues:**
+- **MANDATORY:** Emotion cues MUST be inline: `[emotion] Text here.`
+- **FORBIDDEN:** Broken lines format with cue on separate line from text
+- **WRONG:** `[frustrated]` followed by `Du kennst das?` on next line ❌
+- **CORRECT:** `[frustrated] Du kennst das?` on same line ✅
+- See `tiktok_script_generator.md` lines 285-311 for full format specification
+
 **Execute (Claude Code with batch Write calls):**
 
 For each product, Claude reads analysis files and writes **ALL 4 FILES IN ONE MESSAGE**:

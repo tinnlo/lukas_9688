@@ -1,7 +1,7 @@
 ---
 cover: "product_list/samples/1729484076050913364/product_images/product_image_1.webp"
 product_id: "1729484076050913364"
-product_name: "Smartwatch (Dual Band, Multiple Options), 1.85" HD Display Fitness Watch with BT Calling & 100+ Exercise Modes, Smartwatch for Android iOS, Back To School Gifts, Wearable"
+product_name: "Smartwatch (Dual Band, Multiple Options), 1.85\" HD Display Fitness Watch with BT Calling & 100+ Exercise Modes, Smartwatch for Android iOS, Back To School Gifts, Wearable"
 shop_owner: "Mingtawn Wearables"
 category: "samples"
 scraped_at: "2026-01-12"

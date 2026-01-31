@@ -3,6 +3,56 @@ properties:
     displayName: created
   file.mtime:
     displayName: updated
+  note.cover:
+    displayName: Cover
+  note.product_id:
+    displayName: Product ID
+  note.product_name:
+    displayName: Product Name
+  note.shop_owner:
+    displayName: Shop
+  note.category:
+    displayName: Category
+  note.scraped_at:
+    displayName: Scraped
+  note.total_sales:
+    displayName: Total Sales
+  note.sales_revenue_usd:
+    displayName: Revenue (USD)
+  note.sales_7day:
+    displayName: 7-Day Sales
+  note.sales_7day_revenue_usd:
+    displayName: 7-Day Revenue
+  note.conversion_rate:
+    displayName: Conversion %
+  note.video_count:
+    displayName: Videos
+  note.creator_count:
+    displayName: Creators
+  note.video_sales:
+    displayName: Video Sales
+  note.video_revenue_usd:
+    displayName: Video Revenue
+  note.ad_revenue_percentage:
+    displayName: Ad Revenue %
+  note.top_video_views:
+    displayName: Top Video Views
+  note.top_video_sales:
+    displayName: Top Video Sales
+  note.top_video_creator:
+    displayName: Top Creator
+  note.top_video_url:
+    displayName: Top Video URL
+  note.scripts_generated:
+    displayName: Scripts
+  note.has_campaign_summary:
+    displayName: Campaign Summary
+  note.last_script_date:
+    displayName: Last Script
+  note.tags:
+    displayName: Tags
+  note.link:
+    displayName: Link
 views:
   - type: cards
     name: Product Cards
@@ -12,11 +62,13 @@ views:
         - file.ext == "md"
         - file.path.startsWith("product_list")
     order:
-      - file.name
       - product_name
+      - shop_owner
+      - category
       - total_sales
+      - sales_revenue_usd
     sort:
-      - property: total_sales
+      - property: category
         direction: DESC
     imageAspectRatio: 1
     image: note.cover
@@ -35,18 +87,20 @@ views:
       - sales_revenue_usd
       - conversion_rate
       - scripts_generated
+      - last_script_date
       - tags
     sort:
       - property: total_sales
         direction: DESC
     columnSize:
-      note.product_name: 250
+      note.product_name: 280
       note.shop_owner: 120
       note.category: 100
       note.total_sales: 100
       note.sales_revenue_usd: 120
       note.conversion_rate: 100
       note.scripts_generated: 100
+      note.last_script_date: 120
       note.tags: 280
   - type: table
     name: High Performers
@@ -58,6 +112,7 @@ views:
         - note.total_sales > 1000
     order:
       - product_name
+      - shop_owner
       - total_sales
       - sales_revenue_usd
       - conversion_rate
@@ -67,6 +122,7 @@ views:
         direction: DESC
     columnSize:
       note.product_name: 280
+      note.shop_owner: 120
       note.total_sales: 100
       note.sales_revenue_usd: 120
       note.conversion_rate: 100
@@ -81,6 +137,8 @@ views:
         - note.scripts_generated < 3
     order:
       - product_name
+      - shop_owner
+      - category
       - total_sales
       - scripts_generated
       - last_script_date
@@ -89,6 +147,81 @@ views:
         direction: DESC
     columnSize:
       note.product_name: 280
+      note.shop_owner: 120
+      note.category: 100
       note.total_sales: 100
       note.scripts_generated: 100
       note.last_script_date: 120
+  - type: table
+    name: Recent Arrivals
+    filters:
+      and:
+        - file.name == "product_index"
+        - file.ext == "md"
+        - file.path.startsWith("product_list")
+    order:
+      - product_name
+      - shop_owner
+      - category
+      - scraped_at
+      - total_sales
+      - scripts_generated
+    sort:
+      - property: scraped_at
+        direction: DESC
+    columnSize:
+      note.product_name: 280
+      note.shop_owner: 120
+      note.category: 100
+      note.scraped_at: 120
+      note.total_sales: 100
+      note.scripts_generated: 100
+  - type: table
+    name: Video Performance
+    filters:
+      and:
+        - file.name == "product_index"
+        - file.ext == "md"
+        - file.path.startsWith("product_list")
+        - note.video_count > 0
+    order:
+      - product_name
+      - video_count
+      - creator_count
+      - top_video_views
+      - video_sales
+      - video_revenue_usd
+    sort:
+      - property: top_video_views
+        direction: DESC
+    columnSize:
+      note.product_name: 280
+      note.video_count: 100
+      note.creator_count: 100
+      note.top_video_views: 120
+      note.video_sales: 100
+      note.video_revenue_usd: 120
+  - type: table
+    name: By Category
+    filters:
+      and:
+        - file.name == "product_index"
+        - file.ext == "md"
+        - file.path.startsWith("product_list")
+    order:
+      - category
+      - product_name
+      - shop_owner
+      - total_sales
+      - scripts_generated
+    sort:
+      - property: category
+        direction: ASC
+      - property: total_sales
+        direction: DESC
+    columnSize:
+      note.category: 120
+      note.product_name: 280
+      note.shop_owner: 120
+      note.total_sales: 100
+      note.scripts_generated: 100

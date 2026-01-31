@@ -405,6 +405,19 @@ if [ -d "$base/ref_video" ]; then
         # Check individual video analyses
         analysis_count=$(find "$base/ref_video" -type f -name "video_*_analysis.md" 2>/dev/null | wc -l | tr -d ' ')
         echo "   Video analyses: $analysis_count/$video_count"
+        
+        # CRITICAL: Verify compliance risks are properly flagged in synthesis
+        echo "   Checking compliance flagging..."
+        if [ -f "$base/ref_video/video_synthesis.md" ]; then
+            if python3 scripts/validate_compliance_flags.py "$base/ref_video/video_synthesis.md" >/dev/null 2>&1; then
+                echo "   ✅ Compliance risks properly flagged"
+            else
+                echo "   ⚠️ WARNING: Unflagged compliance risks detected"
+                echo "      Run: python3 scripts/validate_compliance_flags.py \"$base/ref_video/video_synthesis.md\""
+                echo "      Ensure 'Compliance & Trust Signals' section documents all risks"
+                status="WARN"
+            fi
+        fi
     fi
 fi
 
@@ -562,25 +575,66 @@ Section 5 (Creative Production) must include:
 2. Dein neuer bester Freund im Büro. (Your new best friend at the office.)
 3. Das läppert sich, oder? (That adds up, doesn't it?)
 
-**FORMAT:**
-- Bilingual headers AND inline Chinese translations for key bullets (`English text (中文翻译)`) 
-- 150+ lines minimum (comprehensive analysis)
-- Actionable insights for script generation
+**CRITICAL FORMAT - Bilingual Structure:**
+
+⚠️ **MANDATORY Bilingual Format:**
+- **Bilingual headers:** Section | 章节
+- **Key points MUST use nested DE:/ZH: format:**
+  ```markdown
+  *   **Key Point Name:**
+      *   DE: Full German explanation text here.
+      *   ZH: Full Chinese translation here.
+  ```
+- **NEVER parenthetical:** Do NOT use `German text (中文翻译)` format
+- **Tables in Hook Library:** Each cell must have `DE: ... ZH: ...` format
+
+**Example CORRECT format:**
+*   **The "Chaos Reality" Hook:**
+    *   DE: Visual clutter creates tension. Filters target audience instantly.
+    *   ZH: 视觉混乱制造紧张感。瞬间筛选目标受众。
+
+**Example WRONG format (DO NOT USE):**
+*   ❌ Visual clutter creates tension (视觉混乱制造紧张感)
+*   ❌ German text (Chinese translation in parentheses)
+
+**Minimum 150+ lines** with comprehensive bilingual coverage for all key insights.
 ```
 
 ### Post-Run Validation (Quick Sanity Checks)
 
 After writing an analysis file, do not proceed if it contains meta chatter. Examples of invalid first lines:
-- “I will…”
-- “Loaded cached credentials…”
+- "I will…"
+- "Loaded cached credentials…"
 
-Also run these quick compliance scans on the *generated scripts* folder (optional but strongly recommended):
+#### Automated Compliance Validation (RECOMMENDED)
+
+Use the compliance validator to automatically check all generated content:
+
+```bash
+# Validate synthesis for properly flagged risks
+python3 scripts/validate_compliance_flags.py product_list/YYYYMMDD/{product_id}/ref_video/video_synthesis.md
+
+# Validate all scripts (analysis phase should flag risks, scripts should have none)
+for script in product_list/YYYYMMDD/{product_id}/scripts/*.md; do
+  [[ "$(basename "$script")" == "Campaign_Summary.md" ]] && continue
+  python3 scripts/validate_compliance_flags.py "$script"
+done
+```
+
+#### Manual Compliance Scans (Optional)
+
+For targeted checks, use these ripgrep commands:
 
 ```bash
 scripts_dir="product_list/YYYYMMDD/{product_id}/scripts"
-rg -n "€|\\bEuro\\b|欧元" "$scripts_dir" --glob '!Campaign_Summary.md' || true
-rg -n "100% wasserdicht|komplett wasserdicht|100%防水|完全防水" "$scripts_dir" --glob '!Campaign_Summary.md' || true
+# Price bait patterns
+rg -n "€|\\bEuro\\b|欧元|nur\\s+\\d|statt\\s+\\d" "$scripts_dir" --glob '!Campaign_Summary.md' || true
+# Absolute claims
+rg -n "100% wasserdicht|komplett wasserdicht|100%防水|完全防水|genauso\\s+gut|besser\\s+als|perfekt" "$scripts_dir" --glob '!Campaign_Summary.md' || true
+# Medical claims
 rg -n "Schmerz|Physio|Therapeut|Tiefengewebe|heilt|behandelt" "$scripts_dir" --glob '!Campaign_Summary.md' || true
+# Exaggerated promotions
+rg -n "unbezahlbar|genial|unglaublich|bevor\\s+es|letzte\\s+Chance" "$scripts_dir" --glob '!Campaign_Summary.md' || true
 ```
 
 Use the repo verifier to enforce analysis-output formatting consistently:

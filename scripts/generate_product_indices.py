@@ -290,12 +290,12 @@ def extract_product_metadata(json_path: Path, product_path: Path) -> dict:
     # Count scripts
     scripts_generated, has_campaign_summary, last_script_date = count_scripts(product_path)
 
-    # Get cover image (relative path)
+    # Get cover image (project-level path)
     cover_image = ""
     img_path = product_path / "product_images" / "product_image_1.webp"
     if img_path.exists():
-        # Store relative path from product_list
-        cover_image = "product_images/product_image_1.webp"
+        # Store path relative to repo root (unique per product)
+        cover_image = str(img_path.relative_to(REPO_ROOT))
 
     # Get category
     category = get_product_category(product_path)
@@ -338,6 +338,46 @@ def extract_product_metadata(json_path: Path, product_path: Path) -> dict:
     return metadata
 
 
+def escape_yaml_string(value: str) -> str:
+    """
+    Escape string for YAML double-quoted strings (YAML 1.2 spec).
+
+    In YAML double-quoted strings, backslash is the escape character:
+    - Backslash: \\
+    - Double quote: \"
+    - Newline: \\n
+    - Tab: \\t
+
+    Examples:
+        'Mini "Pro" Blender' → 'Mini \\"Pro\\" Blender'
+        'Path\\to\\file' → 'Path\\\\to\\\\file'
+        'Line1\nLine2' → 'Line1\\nLine2'
+
+    Args:
+        value: String to escape
+
+    Returns:
+        Escaped string safe for YAML double-quoted strings
+    """
+    if not value:
+        return ""
+
+    value = str(value)
+
+    # CRITICAL: Escape backslashes FIRST (before other escapes add backslashes)
+    value = value.replace('\\', '\\\\')
+
+    # Escape double quotes
+    value = value.replace('"', '\\"')
+
+    # Escape newlines and carriage returns (preserve literal whitespace)
+    value = value.replace('\n', '\\n')
+    value = value.replace('\r', '\\r')
+    value = value.replace('\t', '\\t')
+
+    return value
+
+
 def generate_frontmatter(metadata: dict) -> str:
     """
     Generate YAML frontmatter from metadata.
@@ -349,15 +389,15 @@ def generate_frontmatter(metadata: dict) -> str:
         YAML frontmatter string with --- delimiters
     """
     tags = metadata['performance_tags']
-    tags_yaml = '\n'.join(f'  - "{tag}"' for tag in tags) if tags else '  - ""'
+    tags_yaml = '\n'.join(f'  - "{escape_yaml_string(tag)}"' for tag in tags) if tags else '  - ""'
 
     return f"""---
-cover: "{metadata['cover_image']}"
-product_id: "{metadata['product_id']}"
-product_name: "{metadata['product_name']}"
-shop_owner: "{metadata['shop_owner']}"
-category: "{metadata['category']}"
-scraped_at: "{metadata['scraped_at']}"
+cover: "{escape_yaml_string(metadata['cover_image'])}"
+product_id: "{escape_yaml_string(metadata['product_id'])}"
+product_name: "{escape_yaml_string(metadata['product_name'])}"
+shop_owner: "{escape_yaml_string(metadata['shop_owner'])}"
+category: "{escape_yaml_string(metadata['category'])}"
+scraped_at: "{escape_yaml_string(metadata['scraped_at'])}"
 
 total_sales: {metadata['total_sales']}
 sales_revenue_usd: {metadata['sales_revenue_usd']:.2f}
@@ -373,12 +413,12 @@ ad_revenue_percentage: {metadata['ad_revenue_percentage']:.2f}
 
 top_video_views: {metadata['top_video_views']}
 top_video_sales: {metadata['top_video_sales']}
-top_video_creator: "{metadata['top_video_creator']}"
-top_video_url: "{metadata['top_video_url']}"
+top_video_creator: "{escape_yaml_string(metadata['top_video_creator'])}"
+top_video_url: "{escape_yaml_string(metadata['top_video_url'])}"
 
 scripts_generated: {metadata['scripts_generated']}
 has_campaign_summary: {str(metadata['has_campaign_summary']).lower()}
-last_script_date: "{metadata['last_script_date']}"
+last_script_date: "{escape_yaml_string(metadata['last_script_date'])}"
 
 tags:
 {tags_yaml}
