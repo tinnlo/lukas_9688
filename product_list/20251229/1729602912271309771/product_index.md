@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251229/1729602912271309771/product_images/product_image_1.webp"
 product_id: "1729602912271309771"
 product_name: "Kabellose Beanie Mütze mit Licht Stirnlampe Kappe mit Kopfhörer Lautsprecher Mikrofon, Geschenke für Männer Frauen"
 shop_owner: "Eowulfrost"

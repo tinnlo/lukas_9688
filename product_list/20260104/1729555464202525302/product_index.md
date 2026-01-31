@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260104/1729555464202525302/product_images/product_image_1.webp"
 product_id: "1729555464202525302"
 product_name: "Aufbewahrungsbox für Kleidung und Bettwäsche mit großem Fassungsvermögen, strapazierfähiges Kunststoff- und faltbares Design, praktische Griffe und Riemen für einfaches Tragen und Organisation zu Hause"
 shop_owner: "Jinhua Jining Tradin"

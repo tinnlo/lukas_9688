@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/sonnesee/1729535917392698367/product_images/product_image_1.webp"
 product_id: "1729535917392698367"
 product_name: "Magnesium Komplex 180 Kapseln, Magnesium-Nahrungsergänzungsmittel für Männer und Frauen, in Deutschland Laborgeprüft produziert"
 shop_owner: "sonnesee"

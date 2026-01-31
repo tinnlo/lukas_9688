@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/tools/1729636584656705557/product_images/product_image_1.webp"
 product_id: "1729636584656705557"
 product_name: "MAWIRON Elektrische Kartuschenpistole für Makita 18 V Akku, Zementglas, Klebstoff, Kleber, Dichtungswerkzeug, kabellose Glasklebepistole (keine Batterie)"
 shop_owner: "LWtoolbox_Germany"

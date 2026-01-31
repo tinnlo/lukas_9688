@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251230/1729569571006880574/product_images/product_image_1.webp"
 product_id: "1729569571006880574"
 product_name: "Eternal Rose Bear Artificial Flower Arrangement - Red Roses Black Flower Basket with Crown, Christmas, Valentine's Day, Mother's Day, Graduation Ceremony Plastic Desktop Decoration, No Batteries Required, Bear Decoration, Romantic Gift Idea, Decorative Ri"
 shop_owner: "Genmri"

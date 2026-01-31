@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251231/1729482399774382490/product_images/product_image_1.webp"
 product_id: "1729482399774382490"
 product_name: "Front & Inside Dashcam, 1 Count Dash Camera for Car, Car Dashcam with 32GB Memory Card, Wide Angle Car Driving Recorder with IR Night-Visionr, 3.16 Inch lPS Screen 1080P HD Camera with Dual Lens, Fall Gift Birthday Gifts #TOP PICKS"
 shop_owner: "StarWin Intelligent"

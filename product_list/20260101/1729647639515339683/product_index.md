@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260101/1729647639515339683/product_images/product_image_1.webp"
 product_id: "1729647639515339683"
 product_name: "Winter New Style Thickened Casual Sneakers, Versatile Short Boots for Snow & Height Increase, Warm Lining Design for Cold Weather"
 shop_owner: "siyu Luxe Step"

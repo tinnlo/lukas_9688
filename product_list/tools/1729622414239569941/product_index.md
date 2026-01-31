@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/tools/1729622414239569941/product_images/product_image_1.webp"
 product_id: "1729622414239569941"
 product_name: "MAWIRON Kabelloser Auto-Polierpolierer für Makita-Akku 6-Zoll-Autopolierer , Auto-Polier- und Polierer-Set mit 6 variablen Geschwindigkeiten (6000 U/min), Polierer für Auto-Detailing/Polieren/Wachsen/Kratzerentfernung"
 shop_owner: "LWtoolbox_Germany"

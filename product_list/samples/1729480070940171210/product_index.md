@@ -1,9 +1,9 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/samples/1729480070940171210/product_images/product_image_1.webp"
 product_id: "1729480070940171210"
 product_name: "Portable 15.22 Oz USB Rechargeable Blender with LED Display, Durable Abs Material, Perfect for Smoothies & Juices, Home Kitchen Essential"
 shop_owner: "Value Picks"
-category: "20260112"
+category: "samples"
 scraped_at: "2026-01-12"
 
 total_sales: 11800
@@ -23,9 +23,9 @@ top_video_sales: 0
 top_video_creator: "taraglobalofficial1"
 top_video_url: "https://www.tiktok.com/@taraglobalofficial1/video/7588432424195984662?is_copy_url=1&is_from_webapp=v1"
 
-scripts_generated: 0
-has_campaign_summary: false
-last_script_date: ""
+scripts_generated: 3
+has_campaign_summary: true
+last_script_date: "2026-01-17"
 
 tags:
   - "#bestseller"
@@ -34,7 +34,7 @@ link: ""
 
 ## Product Overview
 **Portable 15.22 Oz USB Rechargeable Blender with LED Display, Durable Abs Material, Perfect for Smoothies & Juices, Home Kitchen Essential**
-**Shop**: Value Picks | **Category**: 20260112 | **ID**: `1729480070940171210`
+**Shop**: Value Picks | **Category**: samples | **ID**: `1729480070940171210`
 
 ## Sales Performance
 - **Total Sales**: 11,800 units | $125,300.00
@@ -52,11 +52,12 @@ link: ""
 [Watch Video](https://www.tiktok.com/@taraglobalofficial1/video/7588432424195984662?is_copy_url=1&is_from_webapp=v1)
 
 ## Script Status
-- **Scripts Generated**: 0
-- **Campaign Summary**: ✗
+- **Scripts Generated**: 3
+- **Campaign Summary**: ✓
+- **Latest Script**: 2026-01-17
 
 ## Source Files
-- [Product Data](product_list/samples/1729480070940171210/tabcut_data.json)
+- [Product Data](./tabcut_data.json)
 - [Product Images](./product_images/)
 - [Reference Videos](./ref_video/)
 - [Scripts](./scripts/)

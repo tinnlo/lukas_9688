@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260101/1729483322301848170/product_images/product_image_1.webp"
 product_id: "1729483322301848170"
 product_name: "Haustier-Wasserbrunnen, USB-Aufladbarer Automatischer Kreislauf Katzen-Wasserspender, Katzen-Wasserbrunnen für den Innenbereich, Trinkzubehör für Haustiere"
 shop_owner: "SKTOMESHOP"

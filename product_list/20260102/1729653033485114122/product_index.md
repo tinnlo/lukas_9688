@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260102/1729653033485114122/product_images/product_image_1.webp"
 product_id: "1729653033485114122"
 product_name: "1 Paar warme und wasserdichte Touchscreen-Herrenhandschuhe, geeignet für Outdoor-Sport, Skifahren, Motorradfahren, Fahrradfahren, aus Polyesterfaser, Halloween, Weihnachten"
 shop_owner: "Xi Xi Fashion Access"

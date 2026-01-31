@@ -3,7 +3,7 @@ cover: ""
 product_id: "1729733875734387411"
 product_name: "Unknown Product"
 shop_owner: "Unknown Shop"
-category: "20260112"
+category: "samples"
 scraped_at: "2026-01-12"
 
 total_sales: 0
@@ -34,7 +34,7 @@ link: ""
 
 ## Product Overview
 **Unknown Product**
-**Shop**: Unknown Shop | **Category**: 20260112 | **ID**: `1729733875734387411`
+**Shop**: Unknown Shop | **Category**: samples | **ID**: `1729733875734387411`
 
 ## Sales Performance
 - **Total Sales**: 0 units | $0.00
@@ -54,7 +54,7 @@ link: ""
 - **Campaign Summary**: ✗
 
 ## Source Files
-- [Product Data](product_list/samples/1729733875734387411/tabcut_data.json)
+- [Product Data](./tabcut_data.json)
 - [Product Images](./product_images/)
 - [Reference Videos](./ref_video/)
 - [Scripts](./scripts/)

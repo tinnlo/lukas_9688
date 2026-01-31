@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/sonnesee/1729637770149272575/product_images/product_image_1.webp"
 product_id: "1729637770149272575"
 product_name: "Bio Schwarzkümmelöl 1200mg+Vitamin E 300 Kapseln"
 shop_owner: "sonnesee"

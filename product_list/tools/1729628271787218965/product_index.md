@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/tools/1729628271787218965/product_images/product_image_1.webp"
 product_id: "1729628271787218965"
 product_name: "MAWIRON Akku Schlagschrauber, kompatibel mit Makita 18V,Gehäuse * 4 (14/17/19/22), 5 Spezifikationen Mahogany Bohrer, 7 Spezifikationen Bohrer, 1 Verlängerungsbohr, 6.0A Akku + Ladegerät *1, für Makita 18V BL1830"
 shop_owner: "LWtoolbox_Germany"

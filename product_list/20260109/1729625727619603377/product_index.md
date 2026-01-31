@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260109/1729625727619603377/product_images/product_image_1.webp"
 product_id: "1729625727619603377"
 product_name: "Modern Metal Islamic Wall Art Bismillah Sculpture, Perfect Ramadan Decor & Eid Gift, Living Room Home Decoration"
 shop_owner: "Sleek Trend Decor"

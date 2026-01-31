@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/sonnesee/1729535919239371775/product_images/product_image_1.webp"
 product_id: "1729535919239371775"
 product_name: "Wasserbalance 7 fach Brennnessel Komplex"
 shop_owner: "sonnesee"

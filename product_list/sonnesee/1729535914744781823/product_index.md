@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/sonnesee/1729535914744781823/product_images/product_image_1.webp"
 product_id: "1729535914744781823"
 product_name: "Leber kur Mariendistel 8 fach"
 shop_owner: "sonnesee"

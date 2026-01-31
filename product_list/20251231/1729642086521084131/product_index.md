@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251231/1729642086521084131/product_images/product_image_1.webp"
 product_id: "1729642086521084131"
 product_name: "Atmungsaktives Warmes Plüsch-Haustierhaus, Innen- und Außenbereich Hundebett mit Schaumstofffüllung, Ganzjahres-Klein- und Mittelhundehütte für Hunde & Katzen"
 shop_owner: "PearlDent"

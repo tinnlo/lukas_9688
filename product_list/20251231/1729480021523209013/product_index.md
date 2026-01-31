@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251231/1729480021523209013/product_images/product_image_1.webp"
 product_id: "1729480021523209013"
 product_name: "Double Flannel Plush Blankets, 1 Count Soft Comfortable Throw Blankets for Home, Warm Napping Blanket for Home Office Travel Camping Dormitory"
 shop_owner: "Snug Slumber"

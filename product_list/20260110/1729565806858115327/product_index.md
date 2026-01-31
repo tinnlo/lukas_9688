@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260110/1729565806858115327/product_images/product_image_1.webp"
 product_id: "1729565806858115327"
 product_name: "Portable Cordless Electric Air Blower with Turbo Jet Technology, High Power for Car Hair Drying & Dust Cleaning, Ideal Portable Tool"
 shop_owner: "Easy Trading"

@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/htc/1729489180499876438/product_images/product_image_1.webp"
 product_id: "1729489180499876438"
 product_name: "MINISO MS188 Offene Ohrhörer, 136 Sprachen, echte kabellose offene Ohrhörer mit LED-Digitalanzeige, Stereo-Hi-Fi-Sound, Touch-Steuerung, zwei Mikrofone mit Geräuschunterdrückung, 60 Stunden Spielzeit, IPX5, geeignet für Training, Yoga, Laufen"
 shop_owner: "Current Boutique Store"
@@ -25,7 +25,7 @@ top_video_url: "https://www.tiktok.com/@user4019397705782/video/7581464847284587
 
 scripts_generated: 4
 has_campaign_summary: true
-last_script_date: "2025-12-29"
+last_script_date: "2026-01-17"
 
 tags:
   - "#bestseller"
@@ -54,7 +54,7 @@ link: ""
 ## Script Status
 - **Scripts Generated**: 4
 - **Campaign Summary**: ✓
-- **Latest Script**: 2025-12-29
+- **Latest Script**: 2026-01-17
 
 ## Source Files
 - [Product Data](./tabcut_data.json)

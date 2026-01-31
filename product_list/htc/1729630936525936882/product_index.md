@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/htc/1729630936525936882/product_images/product_image_1.webp"
 product_id: "1729630936525936882"
 product_name: "HTC NE20 Translator Bluetooth 6.0 Ohrhörer, 134-Sprachen-Übersetzung mit LED-Anzeige, wasserdichte kabellose Ohrhörer, Fernkamera und Gaming-Apps | Perfekt für Arbeit, Sport, Studium und Lehre | Eingebautes Mikrofon | Ohrhörer"
 shop_owner: "HTC.DE"

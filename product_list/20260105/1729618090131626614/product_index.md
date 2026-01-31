@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260105/1729618090131626614/product_images/product_image_1.webp"
 product_id: "1729595756428237693"
 product_name: "Magnetic Car Windshield Snow Cover, Thickened Glass Sunshade, Half-Covered Frost Protection, Easy Installation, Single Piece"
 shop_owner: "carsun"

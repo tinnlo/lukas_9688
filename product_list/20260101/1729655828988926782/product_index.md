@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260101/1729655828988926782/product_images/product_image_1.webp"
 product_id: "1729655828988926782"
 product_name: "Transform Car Robot Toy, 1 Set 2.4GHz Remote Control Car, Rechargeable Deformation Car Robot Toy with Cool Light, Birthday Gift for Teenagers"
 shop_owner: "Novelty Rc Toy"

@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260109/1729599363061226408/product_images/product_image_1.webp"
 product_id: "1729599363061226408"
 product_name: "High-pressure steam cleaner for home use, multi-functional, sterilizing and descaling"
 shop_owner: "nexT.k.DE"

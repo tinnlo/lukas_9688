@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/htc/1729479916562717270/product_images/product_image_1.webp"
 product_id: "1729479916562717270"
 product_name: "MINISO-MS156 bietet fünf Modi, 136 Sprachen und lebenslanges kostenloses Hi-Fi-Stereo mit 40 Stunden Akku life.It eignet sich für Reisen, Lernen, Arbeit und Sport"
 shop_owner: "Current Boutique Store"
@@ -23,9 +23,9 @@ top_video_sales: 2
 top_video_creator: "provance_travel"
 top_video_url: "https://www.tiktok.com/@provance_travel/video/7579633975115795734?is_copy_url=1&is_from_webapp=v1"
 
-scripts_generated: 7
+scripts_generated: 8
 has_campaign_summary: true
-last_script_date: "2025-12-29"
+last_script_date: "2026-01-21"
 
 tags:
   - "#bestseller"
@@ -52,9 +52,9 @@ link: ""
 [Watch Video](https://www.tiktok.com/@provance_travel/video/7579633975115795734?is_copy_url=1&is_from_webapp=v1)
 
 ## Script Status
-- **Scripts Generated**: 7
+- **Scripts Generated**: 8
 - **Campaign Summary**: ✓
-- **Latest Script**: 2025-12-29
+- **Latest Script**: 2026-01-21
 
 ## Source Files
 - [Product Data](./tabcut_data.json)

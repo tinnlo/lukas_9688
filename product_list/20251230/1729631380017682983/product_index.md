@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251230/1729631380017682983/product_images/product_image_1.webp"
 product_id: "1729631380017682983"
 product_name: "Piratenschiff Flüssigkeitsflasche Schreibtischdekoration, Bürodekoration, Geburtstagsgeschenk für Jungen, Feiertagsgeschenk, Titanic Figurine, Spaßiges und Einzigartiges Accessoire"
 shop_owner: "Summit Store"

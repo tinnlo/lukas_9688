@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251231/1729625207544715402/product_images/product_image_1.webp"
 product_id: "1729625207544715402"
 product_name: "Cat Scratching Toy for Indoor Play, Protects Furniture, Natural Jute Cat Scratch Board, Pet Training Accessory, Ideal for Kittens"
 shop_owner: "Egolp"

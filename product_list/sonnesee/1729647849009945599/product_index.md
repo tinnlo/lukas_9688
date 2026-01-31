@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/sonnesee/1729647849009945599/product_images/product_image_1.webp"
 product_id: "1729647849009945599"
 product_name: "Sonnesee® BETA Ecdysteron - 1200 mg Cyanotis Arachnoidea Extrakt mit 1080 mg Beta-Ecdysteron für Muskelaufbau & Regeneration 90 Kapseln"
 shop_owner: "sonnesee"

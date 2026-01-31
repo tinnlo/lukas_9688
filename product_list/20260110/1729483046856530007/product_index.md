@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260110/1729483046856530007/product_images/product_image_1.webp"
 product_id: "1729483046856530007"
 product_name: "Azan Muslim Night Light Quran Holy Portable Wireless Caixa De Som Bluetooth Speaker Music Sound Box Blutooth For Mini Baffle Bright Lamp Koran Home Gift"
 shop_owner: "AyeBeau"

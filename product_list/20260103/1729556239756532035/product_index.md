@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260103/1729556239756532035/product_images/product_image_1.webp"
 product_id: "1729556239756532035"
 product_name: "Multifunktionales Kratzbrett für Katzen, Schaukelbett, aus natürlichem Jute für Kratzen und Entspannen, Haustiermöbel für drinnen/draußen 53x33x32 Cm"
 shop_owner: "Pet Sali"
@@ -25,7 +25,7 @@ top_video_url: "https://www.tiktok.com/@xthree330/video/7587680042617031958?is_c
 
 scripts_generated: 3
 has_campaign_summary: true
-last_script_date: "2026-01-08"
+last_script_date: "2026-01-17"
 
 tags:
   - ""
@@ -54,7 +54,7 @@ link: ""
 ## Script Status
 - **Scripts Generated**: 3
 - **Campaign Summary**: ✓
-- **Latest Script**: 2026-01-08
+- **Latest Script**: 2026-01-17
 
 ## Source Files
 - [Product Data](./tabcut_data.json)

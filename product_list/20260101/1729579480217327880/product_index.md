@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260101/1729579480217327880/product_images/product_image_1.webp"
 product_id: "1729579480217327880"
 product_name: "Large Capacity Foldable Storage Bags for Clothes and Quilts - Durable, Dustproof, and Aesthetic Organizer Solution, Perfect for Home or Dorm Use, Moving, and Seasonal Storage, Moving Bag|Decorative Storage|Durable Organizer, Clothes Organizer Storage, Und"
 shop_owner: "Premium Living"

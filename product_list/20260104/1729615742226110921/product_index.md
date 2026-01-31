@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260104/1729615742226110921/product_images/product_image_1.webp"
 product_id: "1729615742226110921"
 product_name: "WiFi Range Extender,2.4GHz Dual Band WiFi,Extender with Ethernet 300Mbps Wireless WiFi Repeater,WiFi Signal Booster for Home Up to 6000 sq.ft with 50 Devices"
 shop_owner: "Wold Vision"

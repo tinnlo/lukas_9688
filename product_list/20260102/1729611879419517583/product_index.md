@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260102/1729611879419517583/product_images/product_image_1.webp"
 product_id: "1729611879419517583"
 product_name: "1PC Stunning Start With Bismillah Metal Islamic Wall Decorative Art Ramadan Home Decoration, Ideal Islamic Piece home and garden"
 shop_owner: "HelloYoung"

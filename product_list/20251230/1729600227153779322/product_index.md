@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251230/1729600227153779322/product_images/product_image_1.webp"
 product_id: "1729600227153779322"
 product_name: "Hzuaneri Kratzbaum groß, 210 cm hoch, Katzenbaum, mit 8 Kratzbäume, 2 Höhlen, groß Plattformen, Waschbare Matte, Hängematte, Plüschbälle, mehrstöckiger katzenkratzbaum"
 shop_owner: "Exsamind Home"

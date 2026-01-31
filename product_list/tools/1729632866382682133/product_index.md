@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/tools/1729632866382682133/product_images/product_image_1.webp"
 product_id: "1729632866382682133"
 product_name: "MAWIRON 1000ML Makita Akku-Farbsprühgerät für Batterien, 1000ml 4-Düsen Bürstenloses Sprühwerkzeug mit großer Kapazität für eine breite Palette von Farben, geeignet für Möbelschränke, Zäune, Stühle"
 shop_owner: "LWtoolbox_Germany"

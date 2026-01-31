@@ -1,36 +1,66 @@
 ---
+cover: "product_list/20260116/1729621910970800644/product_images/product_image_1.webp"
 product_id: "1729621910970800644"
 product_name: "All-Season Pet Sofa Bed | Ultra Soft Warm Dog/Cat Bed - Washable Removable Cover, Non-Slip Bottom for Small to Medium Pets"
-shop: "Nexus Living"
+shop_owner: "Nexus Living"
+category: "20260116"
+scraped_at: "2026-01-16"
+
 total_sales: 10
-scraped_date: 2026-01-16
+sales_revenue_usd: 268.10
+sales_7day: 0
+sales_7day_revenue_usd: 0.00
+conversion_rate: 0.00
+
+video_count: 9
+creator_count: 6
+video_sales: 0
+video_revenue_usd: 0.00
+ad_revenue_percentage: 0.00
+
+top_video_views: 446
+top_video_sales: 0
+top_video_creator: "kodiikoudai"
+top_video_url: "https://www.tiktok.com/@kodiikoudai/video/7595118980554149142?is_copy_url=1&is_from_webapp=v1"
+
+scripts_generated: 3
+has_campaign_summary: true
+last_script_date: "2026-01-16"
+
+tags:
+  - ""
+link: ""
 ---
 
-# All-Season Pet Sofa Bed | Ultra Soft Warm Dog/Cat Bed - Washable Removable Cover, Non-Slip Bottom for Small to Medium Pets
+## Product Overview
+**All-Season Pet Sofa Bed | Ultra Soft Warm Dog/Cat Bed - Washable Removable Cover, Non-Slip Bottom for Small to Medium Pets**
+**Shop**: Nexus Living | **Category**: 20260116 | **ID**: `1729621910970800644`
 
-## Quick Links
+## Sales Performance
+- **Total Sales**: 10 units | $268.10
+- **7-Day Performance**: 0 units | $0.00
+- **Conversion Rate**: 0.00%
 
-### Data Files
-- [[tabcut_data.json]]
-- [[tabcut_data.md]]
+## Video Analytics
+- **Active Videos**: 9 videos by 6 creators
+- **Video Sales**: 0 units | $0.00
+- **Ad Revenue**: 0.00% of total
 
-### Analysis Files
-- [[product_images/image_analysis.md]]
-- [[ref_video/video_synthesis.md]]
+## Top Performing Video
+**Creator**: @kodiikoudai | **Views**: 446 | **Sales**: 0
 
-### Video Analyses
-- [[ref_video/video_1_analysis.md]]
-- [[ref_video/video_2_analysis.md]]
-- [[ref_video/video_4_analysis.md]]
-- [[ref_video/video_5_analysis.md]]
+[Watch Video](https://www.tiktok.com/@kodiikoudai/video/7595118980554149142?is_copy_url=1&is_from_webapp=v1)
 
-### Scripts
-- [[scripts/Campaign_Summary.md]]
+## Script Status
+- **Scripts Generated**: 3
+- **Campaign Summary**: ✓
+- **Latest Script**: 2026-01-16
 
-## Product Stats
+## Source Files
+- [Product Data](./tabcut_data.json)
+- [Product Images](./product_images/)
+- [Reference Videos](./ref_video/)
+- [Scripts](./scripts/)
 
-- **Total Lifetime Sales:** 10 units
-- **Total Revenue:** € 230.30 ($ 268.10)
-- **7-Day Sales:** 0 units
-- **7-Day Conversion:** 0.00%
-- **Shop:** Nexus Living
+---
+*Last updated: 2026-01-16*

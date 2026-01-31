@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251229/1729640573423360215/product_images/product_image_1.webp"
 product_id: "1729640573423360215"
 product_name: "Unknown Product"
 shop_owner: "Unknown Shop"

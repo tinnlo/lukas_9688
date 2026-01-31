@@ -1,9 +1,9 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/samples/1729480477275822538/product_images/product_image_1.webp"
 product_id: "1729480477275822538"
 product_name: "Intelligente digitale Waage, kabelloser Körperzusammensetzungsanalyzer, LED-Anzeige-Körperzusammensetzungsskala mit Smartphone-App (Batterie erforderlich, nicht im Lieferumfang enthalten), Valentinstagsgeschenk #TOP PICKS"
 shop_owner: "Mtgrm"
-category: "20260112"
+category: "samples"
 scraped_at: "2026-01-12"
 
 total_sales: 2643
@@ -23,9 +23,9 @@ top_video_sales: 119
 top_video_creator: "drivenbydestiny2"
 top_video_url: "https://www.tiktok.com/@drivenbydestiny2/video/7591864407953607938?is_copy_url=1&is_from_webapp=v1"
 
-scripts_generated: 0
-has_campaign_summary: false
-last_script_date: ""
+scripts_generated: 3
+has_campaign_summary: true
+last_script_date: "2026-01-17"
 
 tags:
   - "#bestseller"
@@ -36,7 +36,7 @@ link: ""
 
 ## Product Overview
 **Intelligente digitale Waage, kabelloser Körperzusammensetzungsanalyzer, LED-Anzeige-Körperzusammensetzungsskala mit Smartphone-App (Batterie erforderlich, nicht im Lieferumfang enthalten), Valentinstagsgeschenk #TOP PICKS**
-**Shop**: Mtgrm | **Category**: 20260112 | **ID**: `1729480477275822538`
+**Shop**: Mtgrm | **Category**: samples | **ID**: `1729480477275822538`
 
 ## Sales Performance
 - **Total Sales**: 2,643 units | $22,800.00
@@ -54,11 +54,12 @@ link: ""
 [Watch Video](https://www.tiktok.com/@drivenbydestiny2/video/7591864407953607938?is_copy_url=1&is_from_webapp=v1)
 
 ## Script Status
-- **Scripts Generated**: 0
-- **Campaign Summary**: ✗
+- **Scripts Generated**: 3
+- **Campaign Summary**: ✓
+- **Latest Script**: 2026-01-17
 
 ## Source Files
-- [Product Data](product_list/samples/1729480477275822538/tabcut_data.json)
+- [Product Data](./tabcut_data.json)
 - [Product Images](./product_images/)
 - [Reference Videos](./ref_video/)
 - [Scripts](./scripts/)

@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260106/1729480520061918167/product_images/product_image_1.webp"
 product_id: "1729480520061918167"
 product_name: "Ramadan Dekorationen Himmelskaaba 3D Nachbildung, 1 Stück Eid Dekorative Islamische Wohnkultur, Muslimischer Tischkunstschmuck, Eid Geschenk, Eid Mubarak Dekoration, Wohnkultur"
 shop_owner: "Kamary"

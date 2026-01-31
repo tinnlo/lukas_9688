@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260102/1729662867204118895/product_images/product_image_1.webp"
 product_id: "1729662867204118895"
 product_name: "1:24 Scale Remote Control Drift Racing Car, Multi-Player Battle, LED Lights, Rechargeable, Unisex, Ages 8+, Outdoor & Indoor Play"
 shop_owner: "Quirk Toys"

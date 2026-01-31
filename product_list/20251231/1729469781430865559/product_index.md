@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251231/1729469781430865559/product_images/product_image_1.webp"
 product_id: "1729469781430865559"
 product_name: "WOLTU Schminktisch mit Spiegel und LED-Beleuchtung, Einstellbarer Helligkeit, Frisiertisch Kosmetiktisch mit licht und 2 Schubladen, 4 offene Ablagen, 2 USB-Ports, Make-up Tisch für Schlafzimmer, Moderner Schminktisch, Weiß MB6112ws"
 shop_owner: "WOLTU HOME"

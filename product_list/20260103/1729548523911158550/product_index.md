@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260103/1729548523911158550/product_images/product_image_1.webp"
 product_id: "1729548523911158550"
 product_name: "Fashionable Handbag with Charm, Casual Versatile Shoulder Bag for Women, Trendy All-match Commuter Bag for Daily Used"
 shop_owner: "VIMON BAG"

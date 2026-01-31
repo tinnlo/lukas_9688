@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260101/1729480764457261195/product_images/product_image_1.webp"
 product_id: "1729480764457261195"
 product_name: "Geometric Print Duvet Cover Set, 3 Counts/set Including 1 Duvet Cover & 2 Pillowcases without Filler, Soft Comfortable Bedding Set for Home Bedroom Hotel"
 shop_owner: "Dreamfields"

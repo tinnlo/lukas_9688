@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260102/1729677950844115285/product_images/product_image_1.webp"
 product_id: "1729677950844115285"
 product_name: "Fleece Hooded Zipper Jacket, Trendy Design with Textured Fabric, Street & Vintage Style, Warm and Unique Fashion"
 shop_owner: "Next Crest"

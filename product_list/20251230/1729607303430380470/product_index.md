@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251230/1729607303430380470/product_images/product_image_1.webp"
 product_id: "1729607303430380470"
 product_name: "11-In-1 Multifunctional European Standard Power Socket, 5 Ac Outlets, Motion Sensor Night Light, Independent Switches, Portable Design"
 shop_owner: "POWEON"

@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251229/1729507182509333441/product_images/product_image_1.webp"
 product_id: "1729507182509333441"
 product_name: "ROCKBROS Fahrrad-Handytasche  Wasserdicht mit Touchscreen-Folie – Für Smartphones bis 6,8" ️ Schnell & sicher am Lenker montiert  Ideal für Navi, Musik & Fahrten bei jedem Wetter – Perfekt für MTB, Rennrad & E-Bike"
 shop_owner: "ROCKBROS-EU"

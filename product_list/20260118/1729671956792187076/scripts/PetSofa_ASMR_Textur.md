@@ -1,9 +1,8 @@
 ---
 cover: ""
-caption: >-
-  Hör mal wie weich das ist ASMR Unboxing für deinen Hund #hundebett #asmr #unboxing #haustier #weich
+caption: "Hör mal wie weich das ist ASMR Unboxing für deinen Hund #hundebett #asmr #unboxing #haustier #weicha"
 published: 2026-01-18
-duration: "00:38"
+duration: 00:38
 sales:
   - yes
 link: ""
@@ -13,11 +12,11 @@ tags:
   - "#unboxing"
   - "#haustier"
   - "#weich"
-product: "Vier Jahreszeiten Haustiersofa"
+product: Vier Jahreszeiten Haustiersofa
 source_notes:
-  - "product_list/20260118/1729671956792187076/ref_video/video_synthesis.md"
-  - "product_list/20260118/1729671956792187076/product_images/image_analysis.md"
-  - "product_list/20260118/1729671956792187076/tabcut_data.json"
+  - product_list/20260118/1729671956792187076/ref_video/video_synthesis.md
+  - product_list/20260118/1729671956792187076/product_images/image_analysis.md
+  - product_list/20260118/1729671956792187076/tabcut_data.json
 ---
 
 ## Scripts

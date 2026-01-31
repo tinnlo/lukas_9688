@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260103/1729682639037962730/product_images/product_image_1.webp"
 product_id: "1729682639037962730"
 product_name: "【V8 V6 Motor Edelstahl-Kaffeetasse】 Präzises Motorenabbild Design Professionelle Handwäsche erforderlich Auto-Enthusiasten dediziertes Trinkgefäß Perfekt für Väter/Ehemänner/Freunde Ideal für Vatertag/Weihnachten/Valentinstag Feiertags-bedeutet Getränke"
 shop_owner: "Eco Func"

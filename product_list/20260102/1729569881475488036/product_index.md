@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260102/1729569881475488036/product_images/product_image_1.webp"
 product_id: "1729569881475488036"
 product_name: "Rose Gift Box with Heart Necklace, Perfect for Wife Lover Friend Grandma Birthday Valentine Christmas Present"
 shop_owner: "Elegance Gift"

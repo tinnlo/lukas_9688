@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260101/1729607478878640746/product_images/product_image_1.webp"
 product_id: "1729607478878640746"
 product_name: "Mehrschichtiger, erhöhter Katzenfutterspender mit Futternapf, bestehend aus 3 Ständen, einfache Montage & tragbares Design, ideal für mehrere Katzen"
 shop_owner: "SKTOMESHOP"

@@ -1,9 +1,9 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260111/1729602300252691281/product_images/product_image_1.webp"
 product_id: "1729602300252691281"
 product_name: "Damen Ultra Warme Winterstiefel, Schneestiefel mit dicker Sohle für extreme Kälte, Hochdichte-Futter mit Hitzesperre-Technologie, strapazierfähige PVC-Sohle für Outdoor-Wandern und Mode"
 shop_owner: "a Simple girl"
-category: "20260110"
+category: "20260111"
 scraped_at: "2026-01-11"
 
 total_sales: 954
@@ -18,14 +18,14 @@ video_sales: 0
 video_revenue_usd: 0.00
 ad_revenue_percentage: 0.00
 
-top_video_views: 73
+top_video_views: 86
 top_video_sales: 0
-top_video_creator: "mameyanbkonneh"
-top_video_url: "https://www.tiktok.com/@mameyanbkonneh/video/7583850497749159190?is_copy_url=1&is_from_webapp=v1"
+top_video_creator: "malikaafghan06"
+top_video_url: "https://www.tiktok.com/@malikaafghan06/video/7587123483042188566?is_copy_url=1&is_from_webapp=v1"
 
-scripts_generated: 0
-has_campaign_summary: false
-last_script_date: ""
+scripts_generated: 4
+has_campaign_summary: true
+last_script_date: "2026-01-11"
 
 tags:
   - ""
@@ -34,7 +34,7 @@ link: ""
 
 ## Product Overview
 **Damen Ultra Warme Winterstiefel, Schneestiefel mit dicker Sohle für extreme Kälte, Hochdichte-Futter mit Hitzesperre-Technologie, strapazierfähige PVC-Sohle für Outdoor-Wandern und Mode**
-**Shop**: a Simple girl | **Category**: 20260110 | **ID**: `1729602300252691281`
+**Shop**: a Simple girl | **Category**: 20260111 | **ID**: `1729602300252691281`
 
 ## Sales Performance
 - **Total Sales**: 954 units | $11,500.00
@@ -47,13 +47,14 @@ link: ""
 - **Ad Revenue**: 0.00% of total
 
 ## Top Performing Video
-**Creator**: @mameyanbkonneh | **Views**: 73 | **Sales**: 0
+**Creator**: @malikaafghan06 | **Views**: 86 | **Sales**: 0
 
-[Watch Video](https://www.tiktok.com/@mameyanbkonneh/video/7583850497749159190?is_copy_url=1&is_from_webapp=v1)
+[Watch Video](https://www.tiktok.com/@malikaafghan06/video/7587123483042188566?is_copy_url=1&is_from_webapp=v1)
 
 ## Script Status
-- **Scripts Generated**: 0
-- **Campaign Summary**: ✗
+- **Scripts Generated**: 4
+- **Campaign Summary**: ✓
+- **Latest Script**: 2026-01-11
 
 ## Source Files
 - [Product Data](./tabcut_data.json)

@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260109/1729481181751777944/product_images/product_image_1.webp"
 product_id: "1729481181751777944"
 product_name: "Solar/Hand Crank/USB Charging Radio, Multifunctional Outdoor Radio with LED Flashlight, Emergency Radio for Outdoor Camping, Hiking, Climbing, Emergency, Chargeable #TOP PICKS"
 shop_owner: "STONEGO Store"

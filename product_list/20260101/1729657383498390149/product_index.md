@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260101/1729657383498390149/product_images/product_image_1.webp"
 product_id: "1729657383498390149"
 product_name: "Men's Business Fashion Watch & Perfume Set, Including Watch & Perfume & Bracelet, Trendy All-match & Exquisite Watch Set for Birthday Gift"
 shop_owner: "XBang"

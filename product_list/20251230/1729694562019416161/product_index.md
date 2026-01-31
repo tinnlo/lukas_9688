@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251230/1729694562019416161/product_images/product_image_1.webp"
 product_id: "1729694562019416161"
 product_name: "Upgraded Milchaufschäumer/Kaffee-Rührbecher, Intelligente Temperaturmessung, Wiederaufladbarer Automatik-Rührbecher, Geeignet für Kaffee, Tee, Heiße Schokolade"
 shop_owner: "Kitch Ease"

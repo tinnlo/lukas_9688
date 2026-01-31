@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251231/1729483040890984536/product_images/product_image_1.webp"
 product_id: "1729483040890984536"
 product_name: "Shrek Character Design Mug, 1 Count Creative Born To Slay Mug, Ceramic Coffee Cup, Drinking Cup for Home Office Use, Gift for Friend"
 shop_owner: "Yinman Industries"

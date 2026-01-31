@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260101/1729485974225328597/product_images/product_image_1.webp"
 product_id: "1729485974225328597"
 product_name: "Women's Solid Long Sleeve Crop Top & Drawstring Waist Straight Leg Pants Loungewear Set, Casual Comfy Round Neck Top & Trousers PJ Set, Ladies Sleepwear for Spring & Fall"
 shop_owner: "WAKE CLOTHING"

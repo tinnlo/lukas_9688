@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260107/1729480321595120397/product_images/product_image_1.webp"
 product_id: "1729480321595120397"
 product_name: "Waterproof Tarpaulin, 2 Counts Transparent PE Rain Cloth, Multifunctional Rain Cloth for Indoor & Outdoor Coverage"
 shop_owner: "Szeahki"
@@ -25,7 +25,7 @@ top_video_url: "https://www.tiktok.com/@einfach_jacky/video/7590702000749382914?
 
 scripts_generated: 6
 has_campaign_summary: true
-last_script_date: "2026-01-10"
+last_script_date: "2026-01-17"
 
 tags:
   - "#bestseller"
@@ -56,7 +56,7 @@ link: ""
 ## Script Status
 - **Scripts Generated**: 6
 - **Campaign Summary**: ✓
-- **Latest Script**: 2026-01-10
+- **Latest Script**: 2026-01-17
 
 ## Source Files
 - [Product Data](./tabcut_data.json)

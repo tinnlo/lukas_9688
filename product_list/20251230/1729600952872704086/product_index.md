@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251230/1729600952872704086/product_images/product_image_1.webp"
 product_id: "1729600952872704086"
 product_name: "Handdampfreiniger mit 11 Zubehörteilen, 3,2 Bar Druck, 1050W, Mehrzweckreiniger für Böden und Polster, chemikalienfrei und sicher für Haushalte mit Kindern und Haustieren"
 shop_owner: "Phueut-DE"

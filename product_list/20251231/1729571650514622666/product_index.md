@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20251231/1729571650514622666/product_images/product_image_1.webp"
 product_id: "1729571650514622666"
 product_name: "USB Alienförmige Resin-Skulptur Lampe, Heimdekoration für einzigartige Schlafzimmerbeleuchtung, dekorative Außerirdische Figur für Wohnraum"
 shop_owner: "Jinhua Botikun Craft"

@@ -1,5 +1,5 @@
 ---
-cover: "product_images/product_image_1.webp"
+cover: "product_list/20260104/1729624495148014220/product_images/product_image_1.webp"
 product_id: "1729624495148014220"
 product_name: "Electric interactive cat toy, an automatic rotating rubber cat toy suitable for indoor cats. Durable and bite-resistant electric version, an interesting moving toy for bored kittens."
 shop_owner: "Shught shop"
