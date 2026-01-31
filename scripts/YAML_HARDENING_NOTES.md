@@ -2,13 +2,13 @@
 
 ## Summary
 
-Based on `fix_yaml_frontmatter.sh` analysis and TikTok product data patterns, here are all potential YAML frontmatter issues and their fixes.
+Based on `scripts/fix_yaml_frontmatter.sh` analysis and TikTok product data patterns, here are all potential YAML frontmatter issues and their fixes.
 
 ---
 
 ## Issues Identified & Fixed
 
-### ✅ 1. Empty Lines in Frontmatter (FIXED: fix_yaml_frontmatter.sh)
+### ✅ 1. Empty Lines in Frontmatter (FIXED: scripts/fix_yaml_frontmatter.sh)
 
 **Problem:** Empty lines between `---` delimiters break YAML parsing
 ```yaml
@@ -19,9 +19,9 @@ total_sales: 100
 ---
 ```
 
-**Fix:** `fix_yaml_frontmatter.sh` removes empty lines within YAML section
+**Fix:** `scripts/fix_yaml_frontmatter.sh` removes empty lines within YAML section
 
-**Status:** ✅ Fixed by shell script
+**Status:** ✅ Fixed by `scripts/fix_yaml_frontmatter.sh`
 
 ---
 
@@ -263,7 +263,7 @@ done
 
 | Issue | Protected | How |
 |:------|:----------|:----|
-| Empty lines in YAML | ✅ | `fix_yaml_frontmatter.sh` |
+| Empty lines in YAML | ✅ | `scripts/fix_yaml_frontmatter.sh` |
 | Unescaped quotes | ✅ | Backslash escaping |
 | Unescaped backslashes | ✅ | Double backslash |
 | Newlines in values | ✅ | `\n` escaping |
@@ -293,7 +293,7 @@ python3 generate_product_indices.py --force
 
 **Or use fix script for YAML-specific issues:**
 ```bash
-bash fix_yaml_frontmatter.sh
+bash scripts/fix_yaml_frontmatter.sh
 ```
 
 ---

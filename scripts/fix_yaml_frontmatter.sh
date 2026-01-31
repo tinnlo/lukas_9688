@@ -2,12 +2,21 @@
 
 # Script to fix YAML frontmatter in product_index.md files
 # Removes empty lines within the YAML section (between --- markers)
+#
+# Usage:
+#   cd scripts && ./fix_yaml_frontmatter.sh           # From scripts directory
+#   bash scripts/fix_yaml_frontmatter.sh              # From repo root
+
+# Get repo root (parent of scripts directory)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
+PRODUCT_LIST_DIR="$REPO_ROOT/product_list"
 
 # Counter for tracking
 fixed_count=0
 
 # Find all product_index.md files
-find /Users/lxt/Movies/TikTok/WZ/lukas_9688/product_list -name "product_index.md" -type f | while read file; do
+find "$PRODUCT_LIST_DIR" -name "product_index.md" -type f | while read file; do
     # Check if file has empty lines in YAML frontmatter
     has_empty=$(awk '/^---$/ {count++} count==1 && NF==0 {print "yes"; exit}' "$file")
     
