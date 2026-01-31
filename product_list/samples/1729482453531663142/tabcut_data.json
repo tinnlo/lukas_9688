@@ -1,0 +1,96 @@
+{
+  "product_id": "1729482453531663142",
+  "scraped_at": "2026-01-15T17:49:45.007463",
+  "product_info": {
+    "product_name": "Tulpenlampe LED-Simulation Tulpen Nachtlicht mit Vase Tischlampe Dekoration Geeignet für Zuhause, Wohnzimmer, Tischdekoration, Muttertag und andere Feiertagsgeschenke",
+    "shop_owner": "Zhen Wei lighting",
+    "total_sales": 1003,
+    "total_sales_revenue": "€ 9261.36($ 1.08万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 813,
+    "sales_revenue": "$ 8536.97",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "8.57%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 35,
+    "带货视频达人数": 26,
+    "带货视频销量": 813,
+    "带货视频销售额": "$ 8536.97",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#tiktokshop #christmas #tiktokmademebuylt 发现时间：2026.01.12 15:02更新时间：2026.01.14 13:20时长：00:00:14跳转至 TikTok",
+      "creator_username": "ellie55378",
+      "creator_followers": "3977",
+      "publish_date": "2026-01-09 14:59",
+      "estimated_sales": 802,
+      "estimated_revenue": "€ 7234.04($ 8421.46)",
+      "total_views": "124.81万",
+      "video_url": "https://www.tiktok.com/@ellie55378/video/7593361142349614358?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_ellie55378.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#fyp#tiktok发现时间：2026.01.13 09:38更新时间：2026.01.14 08:07时长：00:00:14跳转至 TikTok",
+      "creator_username": "tphlrdd3222",
+      "creator_followers": "1753",
+      "publish_date": "2026-01-12 18:08",
+      "estimated_sales": 10,
+      "estimated_revenue": "€ 90.20($ 105.01)",
+      "total_views": "9327",
+      "video_url": "https://www.tiktok.com/@tphlrdd3222/video/7594484806990269718?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_tphlrdd3222.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADTulpenlampe LED-Simulation #WinterDeals #NewYearNewYou #tiktokshop 发现时间：2026.01.13 06:46更新时间：2026.01.13 06:46时长：00:00:32跳转至 TikTok",
+      "creator_username": "affendeals",
+      "creator_followers": "6.67万",
+      "publish_date": "2026-01-11 22:23",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 9.02($ 10.50)",
+      "total_views": "457",
+      "video_url": "https://www.tiktok.com/@affendeals/video/7594217627560594720?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_affendeals.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADDiese Tulpenlampe macht jeden Raum direkt gemütlicher 🌷 Perfekt fürs Schlafzimmer, Wohnzimmer oder als Geschenk 🙏🏼 #homedecor #cozyhome #dekoideen #lichtdeko #ambientlight 发现时间：2025.12.19 13:56更新时间：2025.12.22 05:56时长：00:00:08跳转至 TikTok",
+      "creator_username": "lifeofogaa",
+      "creator_followers": "26万",
+      "publish_date": "2025-12-18 16:31",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "8402",
+      "video_url": "https://www.tiktok.com/@lifeofogaa/video/7585221026481474838?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_lifeofogaa.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADI’m obsessed with these tulip lamps🌸 #tiktokshopblackfriday #bfcm #giftideas #tulips发现时间：2026.01.09 02:48更新时间：2026.01.12 13:34时长：00:00:12跳转至 TikTok",
+      "creator_username": "salmeron.jadenxbs",
+      "creator_followers": "1.05万",
+      "publish_date": "2026-01-08 07:42",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "769",
+      "video_url": "https://www.tiktok.com/@salmeron.jadenxbs/video/7592877087967481120?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_salmeron.jadenxbs.mp4"
+    }
+  ]
+}

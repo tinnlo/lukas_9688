@@ -1,0 +1,96 @@
+{
+  "product_id": "1729581033272679222",
+  "scraped_at": "2026-01-31T13:50:28.472986",
+  "product_info": {
+    "product_name": "LASTAR Parfümset, Blumiger Duft + Vanille-Holznoten, Langanhaltender Duftspray, Vielseitig für verschiedene Anlässe, Romantisch und Verführerisch, Valentinstagsgeschenk, Dating-Booster,Festgeschenke,Weihnachtsgeschenke,BlackFriday",
+    "shop_owner": "LASTAR perfume",
+    "total_sales": 3550,
+    "total_sales_revenue": "€ 5.51万($ 6.41万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 539,
+    "sales_revenue": "$ 9449.74",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "17.13%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 181,
+    "带货视频达人数": 116,
+    "带货视频销量": 158,
+    "带货视频销售额": "$ 2770.06",
+    "广告成交金额": "$ 718.81",
+    "广告成交占比": "25.95%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#tiktokshop #fyp #videoviral #foryou #viral 发现时间：2026.01.24 08:04更新时间：2026.01.26 01:34时长：00:01:29跳转至 TikTok",
+      "creator_username": "nelly_paldino",
+      "creator_followers": "2.74万",
+      "publish_date": "2026-01-23 10:02",
+      "estimated_sales": 26,
+      "estimated_revenue": "€ 391.56($ 455.83)",
+      "total_views": "1.01万",
+      "video_url": "https://www.tiktok.com/@nelly_paldino/video/7598479633373269280?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_nelly_paldino.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADDie riechen soo gut #fyp #viral #foryoupage #lastar 发现时间：2026.01.12 03:48更新时间：2026.01.12 03:48时长：00:00:15跳转至 TikTok",
+      "creator_username": "chinalinaa",
+      "creator_followers": "8287",
+      "publish_date": "2026-01-11 12:31",
+      "estimated_sales": 23,
+      "estimated_revenue": "€ 346.38($ 403.24)",
+      "total_views": "3.65万",
+      "video_url": "https://www.tiktok.com/@chinalinaa/video/7594065197057248534?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_chinalinaa.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD😭 #tiktokshop #tiktokshopdeutschland #lastarparis #parfüm  发现时间：2026.01.22 14:54更新时间：2026.01.22 14:54时长：00:00:32跳转至 TikTok",
+      "creator_username": "benfastlane",
+      "creator_followers": "3.02万",
+      "publish_date": "2026-01-01 13:53",
+      "estimated_sales": 17,
+      "estimated_revenue": "€ 256.02($ 298.04)",
+      "total_views": "6194",
+      "video_url": "https://www.tiktok.com/@benfastlane/video/7590375434093628694?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_benfastlane.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#anzeige #werbung 发现时间：2026.01.09 10:47更新时间：2026.01.09 10:47时长：00:01:11跳转至 TikTok",
+      "creator_username": "martinjennaaccount",
+      "creator_followers": "35.19万",
+      "publish_date": "2026-01-08 12:12",
+      "estimated_sales": 14,
+      "estimated_revenue": "€ 210.84($ 245.45)",
+      "total_views": "5009",
+      "video_url": "https://www.tiktok.com/@martinjennaaccount/video/7592947131208551702?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_martinjennaaccount.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADwarum klauen wenn es so günstig ist 🤦🏼 #lastar #parfüm #tiktokshopdeutschland 发现时间：2026.01.14 08:47更新时间：2026.01.14 08:47时长：00:00:34跳转至 TikTok",
+      "creator_username": "benfastlane",
+      "creator_followers": "3.02万",
+      "publish_date": "2026-01-13 13:10",
+      "estimated_sales": 12,
+      "estimated_revenue": "€ 180.72($ 210.38)",
+      "total_views": "1.36万",
+      "video_url": "https://www.tiktok.com/@benfastlane/video/7594817338894077206?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_benfastlane.mp4"
+    }
+  ]
+}

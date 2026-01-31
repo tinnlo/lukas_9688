@@ -1,0 +1,96 @@
+{
+  "product_id": "1729487923353459334",
+  "scraped_at": "2026-01-25T10:04:41.698121",
+  "product_info": {
+    "product_name": "Handmade Crochet Flower Bouquet, 1 Bunch Artificial Flowers Bouquet, Decorative Flower for Home Party Wedding Anniversary Festival, Gifts",
+    "shop_owner": "GreatDecor",
+    "total_sales": 280,
+    "total_sales_revenue": "€ 6070.77($ 7067.25)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 146,
+    "sales_revenue": "$ 3720.54",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 43,
+    "带货视频达人数": 21,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD无标题发现时间：2026.01.13 15:17更新时间：2026.01.13 19:40时长：00:00:07跳转至 TikTok",
+      "creator_username": "tonewedabest",
+      "creator_followers": "6.72万",
+      "publish_date": "2026-01-12 22:02",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "782",
+      "video_url": "https://www.tiktok.com/@tonewedabest/video/7594583399260523789?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "ADTag your bf / gf! ✨ #giftidea #fyp #girlyaesthetic #girlfriend #musthave 发现时间：2026.01.12 23:57更新时间：2026.01.12 23:57时长：00:00:12跳转至 TikTok",
+      "creator_username": "tiktokbestpicks1",
+      "creator_followers": "1.35万",
+      "publish_date": "2026-01-12 19:24",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "156",
+      "video_url": "https://www.tiktok.com/@tiktokbestpicks1/video/7594542587617266966?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_tiktokbestpicks1.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#valentinesday #valentine #valentinstag #flowers #fyp 发现时间：2026.01.22 14:44更新时间：2026.01.22 14:44时长：00:00:06跳转至 TikTok",
+      "creator_username": "trendcart77",
+      "creator_followers": "2933",
+      "publish_date": "2026-01-21 20:32",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "36",
+      "video_url": "https://www.tiktok.com/@trendcart77/video/7597899961505762582?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_trendcart77.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#tiktokshop #AY 发现时间：2026.01.10 05:18更新时间：2026.01.10 05:18时长：00:00:07跳转至 TikTok",
+      "creator_username": "desislavavelichkova1",
+      "creator_followers": "3029",
+      "publish_date": "2026-01-09 19:40",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "17",
+      "video_url": "https://www.tiktok.com/@desislavavelichkova1/video/7593433513232256278?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_desislavavelichkova1.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD172 | 💖 #Valentinstag #Geschenkideenfürfrauen #häckelblumen #blumen #tiktokmademebuyit 发现时间：2026.01.21 05:56更新时间：2026.01.21 05:56时长：00:00:08跳转至 TikTok",
+      "creator_username": "shopfluencer_",
+      "creator_followers": "4817",
+      "publish_date": "2026-01-20 11:35",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "235",
+      "video_url": "https://www.tiktok.com/@shopfluencer_/video/7597390516853951766?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

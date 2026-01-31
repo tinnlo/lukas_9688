@@ -1,0 +1,96 @@
+{
+  "product_id": "1729582760298126134",
+  "scraped_at": "2026-01-31T13:47:45.837365",
+  "product_info": {
+    "product_name": "LASTAR holzige Duftnote Eau de Parfum – Herrendüfte & Damendüfte, langanhaltende Duftsprays für jeden Anlass: Party, Geburtstag,Weihnachtsgeschenk,BlackFriday",
+    "shop_owner": "LASTAR perfume",
+    "total_sales": 373,
+    "total_sales_revenue": "€ 5616.01($ 6537.84)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 60,
+    "sales_revenue": "$ 851.44",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "3.64%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 55,
+    "带货视频达人数": 47,
+    "带货视频销量": 5,
+    "带货视频销售额": "$ 70.95",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#fy #trend #goviral 发现时间：2026.01.09 10:39更新时间：2026.01.10 02:47时长：00:01:05跳转至 TikTok",
+      "creator_username": "madinah.acam",
+      "creator_followers": "2.67万",
+      "publish_date": "2026-01-09 10:36",
+      "estimated_sales": 4,
+      "estimated_revenue": "€ 48.76($ 56.76)",
+      "total_views": "1659",
+      "video_url": "https://www.tiktok.com/@madinah.acam/video/7593293277537881366?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_madinah.acam.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADعطر رجالي يفرض وجوده  هدية مميزة و ريحة جذابة #newyearnewme #Winterangebote #laster 发现时间：2026.01.21 05:46更新时间：2026.01.21 05:46时长：00:00:13跳转至 TikTok",
+      "creator_username": "mo4trd",
+      "creator_followers": "9006",
+      "publish_date": "2026-01-20 10:48",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 12.19($ 14.19)",
+      "total_views": "335",
+      "video_url": "https://www.tiktok.com/@mo4trd/video/7597378321927785760?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_mo4trd.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD无标题发现时间：2026.01.17 12:13更新时间：2026.01.18 06:44时长：00:00:15跳转至 TikTok",
+      "creator_username": "maama.nyarko",
+      "creator_followers": "4909",
+      "publish_date": "2026-01-16 19:15",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "78",
+      "video_url": "https://www.tiktok.com/@maama.nyarko/video/7596024845817662742?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_maama.nyarko.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADEin Holziger Süßer Orientalischer Duft | Einfach zum verlieben  #newyearnewyou #lastar #parfüm #orientalischerduft #duftempfehlung 发现时间：2026.01.24 04:45更新时间：2026.01.25 08:32时长：00:00:20跳转至 TikTok",
+      "creator_username": "emirmukbang",
+      "creator_followers": "1.52万",
+      "publish_date": "2026-01-24 03:23",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "264",
+      "video_url": "https://www.tiktok.com/@emirmukbang/video/7598747845373562134?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_emirmukbang.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADDas riecht wie das gelbe von A*e was ich sowieso so mag 😍 es riecht wirklich richtig gut 🥰 #lastar #parfum #parfüm #axe #tiktokshop 发现时间：2026.01.24 13:35更新时间：2026.01.26 05:07时长：00:00:36跳转至 TikTok",
+      "creator_username": "dietisha",
+      "creator_followers": "4.9万",
+      "publish_date": "2026-01-23 18:14",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "346",
+      "video_url": "https://www.tiktok.com/@dietisha/video/7598606668527635734?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_dietisha.mp4"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "product_id": "1729480467952671153",
+  "scraped_at": "2026-01-27T21:50:16.882506",
+  "product_info": {
+    "product_name": "Rose Geschenkbox mit Halskette & Ring, 1 Set Doppel-Tür-Geschenkbox, Partygeschenkbox für Frauen, Geschenk für Mama, Freundin, Ehefrau, Geburtstagsgeschenk",
+    "shop_owner": "Flower City",
+    "total_sales": 70,
+    "total_sales_revenue": "€ 770.04($ 896.44)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 27,
+    "sales_revenue": "$ 339.14",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "2.56%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 39,
+    "带货视频达人数": 27,
+    "带货视频销量": 11,
+    "带货视频销售额": "$ 138.17",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#Valentinstag #Geschenkidee #FürDieLiebste #WowEffekt #fyp 发现时间：2026.01.07 04:28更新时间：2026.01.24 05:20时长：00:00:33跳转至 TikTok",
+      "creator_username": "mirasol7189",
+      "creator_followers": "1.02万",
+      "publish_date": "2026-01-06 20:19",
+      "estimated_sales": 11,
+      "estimated_revenue": "€ 118.69($ 138.17)",
+      "total_views": "2.3万",
+      "video_url": "https://www.tiktok.com/@mirasol7189/video/7592330331408059670?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_mirasol7189.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#newyearnewyou #valentinesday #geschenk #fürsie 发现时间：2026.01.24 19:30更新时间：2026.01.24 19:30时长：00:00:15跳转至 TikTok",
+      "creator_username": "manuel.findz",
+      "creator_followers": "5060",
+      "publish_date": "2026-01-24 15:27",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "227",
+      "video_url": "https://www.tiktok.com/@manuel.findz/video/7598934691022163203?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_manuel.findz.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADDas sieht so toll aus 😍 #valentinstag #frauen #geschenk #dealsfürdich 发现时间：2026.01.24 05:11更新时间：2026.01.24 05:11时长：00:00:30跳转至 TikTok",
+      "creator_username": "entdeckerfuchs26",
+      "creator_followers": "2.97万",
+      "publish_date": "2026-01-23 10:00",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "253",
+      "video_url": "https://www.tiktok.com/@entdeckerfuchs26/video/7598288936863173911?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_entdeckerfuchs26.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#Rose Geschenkbox mit Halskette#tiktokshop #viralvideos #viral #foryou 发现时间：2026.01.11 02:02更新时间：2026.01.11 02:02时长：00:00:15跳转至 TikTok",
+      "creator_username": "tiktok.m375",
+      "creator_followers": "3.25万",
+      "publish_date": "2026-01-10 23:36",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "22",
+      "video_url": "https://www.tiktok.com/@tiktok.m375/video/7593865565035334934?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_tiktok.m375.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "ADDas perfekte Geschenk #tiktokmademebuylt #valentine #rosen #valentinstag #girlfriend 发现时间：2026.01.24 09:49更新时间：2026.01.24 09:49时长：00:00:27跳转至 TikTok",
+      "creator_username": "diegotestet",
+      "creator_followers": "5493",
+      "publish_date": "2026-01-24 09:15",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "71",
+      "video_url": "https://www.tiktok.com/@diegotestet/video/7598706940344093974?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_diegotestet.mp4"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "product_id": "1729688864810769060",
+  "scraped_at": "2026-01-25T10:12:18.026931",
+  "product_info": {
+    "product_name": "1 Stück Plüsch-Teddybär mit Rosenstrauß, weiches Stofftier, perfektes Geschenk für Valentinstag, Jahrestage, Geburtstage, romantische Anlässe",
+    "shop_owner": "Lao Lu store",
+    "total_sales": 176,
+    "total_sales_revenue": "€ 1473.40($ 1715.25)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 168,
+    "sales_revenue": "$ 1644.34",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "10.71%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 28,
+    "带货视频达人数": 21,
+    "带货视频销量": 116,
+    "带货视频销售额": "$ 1176.40",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADEl mejor regalo que puedes hacer este San Valentín 🌹 #sanvalentin #osito #teddybear #AñonuevoVidanueva #RebajasDeInvierno 发现时间：2026.01.19 15:55更新时间：2026.01.24 16:31时长：00:00:10跳转至 TikTok",
+      "creator_username": "chollosttshop1",
+      "creator_followers": "5.72万",
+      "publish_date": "2026-01-18 20:08",
+      "estimated_sales": 109,
+      "estimated_revenue": "€ 950.48($ 1106.50)",
+      "total_views": "140.72万",
+      "video_url": "https://www.tiktok.com/@chollosttshop1/video/7596780482809859350?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "ADEl regalo perfecto para este San Valentín ❤️ #sanvalentin #diadesanvalentín #osito #AñonuevoVidanueva #RebajasDeInvierno 发现时间：2026.01.22 11:39更新时间：2026.01.24 16:43时长：00:00:10跳转至 TikTok",
+      "creator_username": "chollosttshop1",
+      "creator_followers": "5.72万",
+      "publish_date": "2026-01-21 19:50",
+      "estimated_sales": 6,
+      "estimated_revenue": "€ 52.32($ 60.91)",
+      "total_views": "16.76万",
+      "video_url": "https://www.tiktok.com/@chollosttshop1/video/7597889246434741526?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_chollosttshop1.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD1 Stück Plüsch-Teddybär mit Rosenstrauß#tiktikmademebuyit #blackfriday #ai #tiktokshop #Gift #ValentinesDay #Teddybär发现时间：2026.01.08 09:55更新时间：2026.01.09 10:15时长：00:00:15跳转至 TikTok",
+      "creator_username": "zejuxhvk56",
+      "creator_followers": "1.3万",
+      "publish_date": "2026-01-07 10:42",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 7.73($ 9.00)",
+      "total_views": "743",
+      "video_url": "https://www.tiktok.com/@zejuxhvk56/video/7592552663015755030?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "AD#ursulet #valentinesday #myvalentine #happyvalentinesday💞 #tiktokshop 发现时间：2026.01.16 01:48更新时间：2026.01.17 00:55时长：00:00:15跳转至 TikTok",
+      "creator_username": "anna.allecsandra",
+      "creator_followers": "3.47万",
+      "publish_date": "2026-01-15 17:43",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "1098",
+      "video_url": "https://www.tiktok.com/@anna.allecsandra/video/7595629964561550614?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 5,
+      "title": "ADMarkiere jemanden, der dir das schuldet! 👇😏 Ein Teddy mit Rosen ist alles, was ich will. 🥺❤️ #Valentinstag kann kommen! Aigc #aigc #couplegoals #hinweis #beziehung 发现时间：2026.01.24 10:18更新时间：2026.01.24 10:18时长：00:00:14跳转至 TikTok",
+      "creator_username": "fahrraddetect",
+      "creator_followers": "89",
+      "publish_date": "2026-01-21 06:49",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "910",
+      "video_url": "https://www.tiktok.com/@fahrraddetect/video/7597687705102716193?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}

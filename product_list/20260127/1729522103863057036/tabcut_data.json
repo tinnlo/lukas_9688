@@ -1,0 +1,44 @@
+{
+  "product_id": "1729522103863057036",
+  "scraped_at": "2026-01-27T21:56:22.128091",
+  "product_info": {
+    "product_name": "Large Capacity Storage Box, 3 Counts Foldable Clothes Storage Box with Handle, Clothes Storage Organizer, Home Organizer for Bedroom, Living Room",
+    "shop_owner": "Shught shop",
+    "total_sales": 812,
+    "total_sales_revenue": "€ 1.09万($ 1.26万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 76,
+    "sales_revenue": "$ 660.02",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 1,
+    "带货视频达人数": 1,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#tiktokshop #fürdich #france #rückblick2025 发现时间：2026.01.08 07:15更新时间：2026.01.22 13:36时长：00:00:14跳转至 TikTok",
+      "creator_username": "sampson_fa1",
+      "creator_followers": "2.84万",
+      "publish_date": "2026-01-07 07:27",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "1616",
+      "video_url": "https://www.tiktok.com/@sampson_fa1/video/7592502388750093590?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_sampson_fa1.mp4"
+    }
+  ]
+}

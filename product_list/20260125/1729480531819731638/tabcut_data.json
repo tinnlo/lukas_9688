@@ -1,0 +1,96 @@
+{
+  "product_id": "1729480531819731638",
+  "scraped_at": "2026-01-25T10:11:16.872451",
+  "product_info": {
+    "product_name": "2-tier Bathroom Storage Rack, Kitchen Spice Rack, Bathroom Cosmetic Storage Shelf, Home Bathroom Storage Organizer, Easy Installation, Summer for Gift #TOP PICKS",
+    "shop_owner": "SUNME HOME",
+    "total_sales": 49,
+    "total_sales_revenue": "€ 447.29($ 520.71)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 0,
+    "sales_revenue": "$ 0.00",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 5,
+    "带货视频达人数": 5,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0.00",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#Regal #Bad #Küche 发现时间：2026.01.02 13:32更新时间：2026.01.04 02:16时长：00:01:11跳转至 TikTok",
+      "creator_username": "monikamillke",
+      "creator_followers": "6.23万",
+      "publish_date": "2026-01-02 11:54",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "369",
+      "video_url": "https://www.tiktok.com/@monikamillke/video/7590715820498488598?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "ADEs war super einfach aufzubauen indes benötigt kein Werkzeug. #newyearnewyou #winterdeals #regal #küche #platz 发现时间：2026.01.03 00:45更新时间：2026.01.06 23:44时长：00:00:22跳转至 TikTok",
+      "creator_username": "misswi_2",
+      "creator_followers": "3001",
+      "publish_date": "2026-01-02 08:42",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "318",
+      "video_url": "https://www.tiktok.com/@misswi_2/video/7590666337723125014?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_misswi_2.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADEgal ob für Küche,Badezimmer es sieht besser aus #regal #küche #badezimmer #TikTokMadeMeBuyIt #tiktokshop 发现时间：2026.01.05 06:29更新时间：2026.01.06 03:20时长：00:00:14跳转至 TikTok",
+      "creator_username": "pascalgraff2202",
+      "creator_followers": "1.23万",
+      "publish_date": "2026-01-05 05:46",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "316",
+      "video_url": "https://www.tiktok.com/@pascalgraff2202/video/7591734087186992406?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "AD#tiktokshopping #tiktokmadebuythis #tiktokfinnds #hotdeal 发现时间：2025.12.31 06:58更新时间：2026.01.02 06:34时长：00:00:09跳转至 TikTok",
+      "creator_username": "farley.todd",
+      "creator_followers": "1640",
+      "publish_date": "2025-12-30 11:09",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "804",
+      "video_url": "https://www.tiktok.com/@farley.todd/video/7589590872107257120?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_farley.todd.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#regal #stauraum #fyp #tiktokshop 发现时间：2025.12.30 07:31更新时间：2025.12.30 07:31时长：00:00:13跳转至 TikTok",
+      "creator_username": "ossischnalle.empfiehlt",
+      "creator_followers": "1.05万",
+      "publish_date": "2025-12-29 16:20",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "254",
+      "video_url": "https://www.tiktok.com/@ossischnalle.empfiehlt/video/7589300130516323606?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_ossischnalle.empfiehlt.mp4"
+    }
+  ]
+}
