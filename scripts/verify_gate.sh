@@ -14,7 +14,7 @@ Options:
   --base PATH                  Base folder that contains product_id subfolders (e.g. product_list/20260103)
   --csv PATH                   CSV with header product_id (default: scripts/products.csv)
   --product-ids "..."          Space-separated product IDs (overrides --csv)
-  --phase analysis|scripts|all What to verify (default: all)
+  --phase analysis|scripts|index|all What to verify (default: all)
   --image-min-lines N          Min lines for product_images/image_analysis.md (default: 200)
   --synthesis-min-lines N      Min lines for ref_video/video_synthesis.md (default: 150)
 
@@ -55,7 +55,7 @@ if [[ -z "$BASE" ]]; then
   BASE="product_list/$DATE"
 fi
 
-if [[ "$PHASE" != "analysis" && "$PHASE" != "scripts" && "$PHASE" != "all" ]]; then
+if [[ "$PHASE" != "analysis" && "$PHASE" != "scripts" && "$PHASE" != "index" && "$PHASE" != "all" ]]; then
   echo "Invalid --phase: $PHASE" >&2
   usage
   exit 2
@@ -282,6 +282,57 @@ for pid in $PRODUCT_IDS; do
     else
       echo "❌ FAIL: scripts/ folder missing"
       fail=1
+    fi
+  fi
+
+  # Phase 3: Product Index (only check if scripts passed)
+  if [[ "$PHASE" == "index" || "$PHASE" == "all" ]]; then
+    echo ""
+    echo "--- Product Index Check ---"
+
+    # Only require index if scripts gate passed
+    scripts_passed=true
+    
+    # Check if scripts gate would pass
+    if [[ -d "$scripts_dir" ]]; then
+      md_count="$(find "$scripts_dir" -maxdepth 1 -type f -name "*.md" 2>/dev/null | wc -l | tr -d ' ')"
+      if [[ "$md_count" -lt 4 ]] || [[ ! -f "$scripts_dir/Campaign_Summary.md" ]]; then
+        scripts_passed=false
+      fi
+    else
+      scripts_passed=false
+    fi
+
+    if [[ "$scripts_passed" == "true" ]]; then
+      # Scripts passed, so index is required
+      index_file="$product_dir/product_index.md"
+      
+      if [[ ! -f "$index_file" ]]; then
+        echo "❌ FAIL: product_index.md missing (scripts complete, index required)"
+        fail=1
+      else
+        # Check basic structure (YAML frontmatter)
+        if ! head -n 1 "$index_file" | grep -q '^---$'; then
+          echo "❌ FAIL: product_index.md missing YAML frontmatter"
+          fail=1
+        else
+          # Optional: check product_id matches
+          yaml_pid=$(grep -m 1 '^product_id:' "$index_file" | sed 's/product_id: *"\(.*\)"/\1/')
+          if [[ -n "$yaml_pid" && "$yaml_pid" != "$pid" ]]; then
+            echo "❌ FAIL: product_index.md product_id mismatch (expected $pid, got $yaml_pid)"
+            fail=1
+          else
+            echo "✅ product_index.md exists and valid"
+          fi
+        fi
+      fi
+    else
+      # Scripts incomplete, index not required
+      if [[ -f "$product_dir/product_index.md" ]]; then
+        echo "ℹ️  product_index.md exists (scripts incomplete, not enforced)"
+      else
+        echo "⊘ product_index.md not required (scripts incomplete)"
+      fi
     fi
   fi
 done

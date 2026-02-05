@@ -55,64 +55,45 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-Ich hasse Bluetooth.
-[blunt]
-Verbinden. Fehlgeschlagen. Nochmal. Fehlgeschlagen.
-[frustrated]
+[neutral] Ich hasse Bluetooth.
+[blunt] Verbinden. Fehlgeschlagen. Nochmal. Fehlgeschlagen.
 
-Diese Kopplungs-Chaos nervt einfach.
-[dismissive]
+[dismissive] Diese Kopplungs-Chaos nervt einfach.
 
-Aber das hier? Keine Einstellungen. Keine Probleme.
-[revealing]
-PAXA. Einfach Handy drauflegen.
-[matter-of-fact]
+[neutral] Aber das hier? Keine Einstellungen. Keine Probleme.
+[revealing] PAXA. Einfach Handy drauflegen.
 
-Musik spielt sofort. Laut und klar.
-[impressed]
+[impressed] Musik spielt sofort. Laut und klar.
 
-Beim Kochen? Kein Problem.
-[casual]
-Im Bad beim Fertigmachen? Perfekt.
-[satisfied]
+[neutral] Beim Kochen? Kein Problem.
+[casual] Im Bad beim Fertigmachen? Perfekt.
 
-Kein Bluetooth. Kein Kabel. Kein Stress.
-[confident]
-Einfach nur Sound.
-[warm]
+[neutral] Kein Bluetooth. Kein Kabel. Kein Stress.
+[confident] Einfach nur Sound.
 
-Gönn dir das. Link unten.
-[encouraging]
+[encouraging] Gönn dir das. Link unten.
+
+
+---
 
 ---
 
 ### ZH (中文翻译 | 35s)
 
-我讨厌蓝牙。
-[blunt]
-连接。失败。再试。失败。
-[frustrated]
+[neutral] 我讨厌蓝牙。
+[blunt] 连接。失败。再试。失败。
 
-这配对混乱太烦人了。
-[dismissive]
+[dismissive] 这配对混乱太烦人了。
 
-但这个？没有设置。没有问题。
-[revealing]
-PAXA。只需把手机放上去。
-[matter-of-fact]
+[neutral] 但这个？没有设置。没有问题。
+[revealing] PAXA。只需把手机放上去。
 
-音乐立刻播放。响亮清晰。
-[impressed]
+[impressed] 音乐立刻播放。响亮清晰。
 
-做饭时？没问题。
-[casual]
-洗手间准备时？完美。
-[satisfied]
+[neutral] 做饭时？没问题。
+[casual] 洗手间准备时？完美。
 
-无蓝牙。无线缆。无压力。
-[confident]
-只有声音。
-[warm]
+[neutral] 无蓝牙。无线缆。无压力。
+[confident] 只有声音。
 
-买吧。链接在下面。
-[encouraging]
+[encouraging] 买吧。链接在下面。

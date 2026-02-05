@@ -97,13 +97,12 @@ mkdir -p "$OUT"
 **Execute:**
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
-source venv/bin/activate
 
 # Single product
-python run_scraper.py --product-id {product_id} --download-videos --output-dir "$OUT"
+python3 run_scraper.py --product-id {product_id} --download-videos --output-dir "$OUT"
 
 # Batch (from products.csv)
-python run_scraper.py --batch-file products.csv --download-videos --output-dir "$OUT"
+python3 run_scraper.py --batch-file products.csv --download-videos --output-dir "$OUT"
 ```
 
 **Output per product:**
@@ -153,20 +152,19 @@ Run analysis prompts with:
 **Execute with parallelism (up to 5 products at once):**
 ```bash
 cd scripts
-source venv/bin/activate
 
 # Launch 5 products in parallel using Gemini CLI async
 # Product IDs: 1729671956792187076, 1729480049905277853, 1729637085247609526, etc.
 
 # Example: Batch 1 (5 products in parallel)
 for pid in 1729671956792187076 1729480049905277853 1729637085247609526 1729697087571270361 1729630936525936882; do
-  python analyze_video_batch.py $pid --date YYYYMMDD &
+  python3 analyze_video_batch.py $pid --date YYYYMMDD &
 done
 wait
 
 # Batch 2 (remaining 3 products)
 for pid in 1729607303430380470 1729607478878640746 1729489298386491816; do
-  python analyze_video_batch.py $pid --date YYYYMMDD &
+  python3 analyze_video_batch.py $pid --date YYYYMMDD &
 done
 wait
 ```
@@ -375,6 +373,131 @@ For each product, Claude reads analysis files and writes **ALL 4 FILES IN ONE ME
 
 ---
 
+## Phase 4: Product Index Generation
+
+**PURPOSE:** Generate `product_index.md` for Obsidian Database view (ONLY for successful products)
+
+**Executor:** Python script (`scripts/generate_product_indices.py`)
+
+**Strategy:** Incremental, batch-scoped (only update indices for this DATE + CSV, skip stale-check if unchanged)
+
+**Gate:** `--require-scripts` ensures only products with 3+ scripts + Campaign Summary get indices
+
+```bash
+┌────────────────────────────────────────────────────────────────┐
+│  PHASE 4: PRODUCT INDEX (Python)                               │
+│  Script: generate_product_indices.py                           │
+│  Agent: Python script                                          │
+│  Parallel: No (sequential, but fast metadata extraction)       │
+│  Output: product_index.md (Obsidian-ready YAML frontmatter)    │
+│  Scope: ONLY successful products (scripts gate passed)         │
+└────────────────────────────────────────────────────────────────┘
+```
+
+**Execute:**
+```bash
+cd scripts
+
+python3 generate_product_indices.py \
+  --date YYYYMMDD \
+  --csv products.csv \
+  --require-scripts \
+  --incremental
+```
+
+**What it does:**
+1. Load product IDs from `products.csv`
+2. For each product in `product_list/YYYYMMDD/{product_id}/`:
+   - Check scripts gate (3+ scripts + Campaign Summary)
+   - If gate fails: skip (no index required for incomplete products)
+   - If gate passes: extract metadata from `tabcut_data.json`
+   - Check if existing `product_index.md` is current (incremental mode)
+   - If stale or missing: generate/update with YAML frontmatter
+3. Write `product_index.md` with:
+   - Sales metrics (total_sales, revenue, conversion_rate)
+   - Video analytics (video_count, creator_count, top_video_views)
+   - Script status (scripts_generated, has_campaign_summary, last_script_date)
+   - Cover image path (for Obsidian)
+   - Performance tags (#bestseller, #high-conversion, #viral-videos)
+
+**Output per product:**
+```
+product_list/YYYYMMDD/{product_id}/product_index.md
+```
+
+**YAML frontmatter example:**
+```yaml
+---
+cover: "product_list/YYYYMMDD/{product_id}/product_images/product_image_1.webp"
+product_id: "1729616761074981417"
+product_name: "..."
+shop_owner: "..."
+category: "YYYYMMDD"
+scraped_at: "YYYY-MM-DD"
+
+total_sales: 1234
+sales_revenue_usd: 12345.67
+conversion_rate: 6.78
+
+video_count: 42
+creator_count: 18
+top_video_views: 123456
+
+scripts_generated: 3
+has_campaign_summary: true
+last_script_date: "YYYY-MM-DD"
+
+tags:
+  - "#bestseller"
+  - "#high-conversion"
+link: ""
+---
+```
+
+**Incremental behavior:**
+- `--incremental` (default): Only rewrite if `scripts_generated`, `has_campaign_summary`, `last_script_date`, or `cover` changed
+- Skips products where index is already current (saves time)
+- `--force`: Always overwrite (not recommended for batch runs)
+
+**Time estimate:**
+- 6 products: ~5-10 seconds (metadata extraction + YAML generation)
+
+---
+
+## Quality Gate - ENHANCED (includes index)
+
+**Before proceeding to next phase, verify completeness:**
+
+### Phase Gate (Analysis → Scripts → Index)
+
+```bash
+# After Phase 2 (analysis):
+bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase analysis
+
+# After Phase 3 (scripts):
+bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase scripts
+
+# After Phase 4 (index):
+bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase index
+
+# All phases together (recommended final check):
+bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase all
+```
+
+**What `--phase index` checks:**
+1. If scripts gate passed (3+ scripts + Campaign Summary):
+   - ✅ Require `product_index.md` exists
+   - ✅ Require YAML frontmatter present (starts with `---`)
+   - ✅ Require `product_id:` in YAML matches folder name
+2. If scripts incomplete:
+   - ⊘ Index not required (skip check)
+
+**Integration into `--phase all`:**
+- Runs `analysis` → `scripts` → `index` checks in sequence
+- Only enforces index if scripts passed
+
+---
+
 ## Autonomous Batch Execution
 
 **To run the full workflow autonomously:**
@@ -393,15 +516,17 @@ User prompt to Claude:
 1. Run Phase 1 (scraping) - wait for completion
 2. Run Phase 2A (video analysis) - parallel via Python (bash bg, 5 products max)
 3. Run Phase 2B+2C (image + synthesis) - **SEQUENTIAL** via Gemini MCP (per tiktok_product_analysis.md)
-4. Verify quality gate
+4. Verify quality gate (analysis)
 5. Run Phase 3 (scripts) - sequential with batched writes
-6. Report completion status
+6. Run Phase 4 (product indices) - Python (incremental, successful products only)
+7. Verify final gate (all phases including index)
+8. Report completion status
 
 ---
 
 ## Time Estimates
 
-**Updated for v4.4.0 parallel video analysis + v2.3.0 batched scripts**
+**Updated for v4.4.0 parallel video analysis + v2.3.0 batched scripts + v1.6.0 product indices**
 
 | Phase | Single Product | 8 Products | Scaling Notes |
 |:------|:---------------|:-----------|:--------------|
@@ -411,6 +536,7 @@ User prompt to Claude:
 |  - Image (Gemini MCP) | 3 min | - | Parallel with Synthesis ∥ |
 |  - Synthesis (Gemini MCP) | 3 min | - | Parallel with Image ∥ |
 | 3. Scripts | **2-3 min** | **16-24 min** | **Batched Write calls** ⭐ |
+| 4. Product Indices | **~1s** | **~10s** | **Incremental metadata extraction** (Python) |
 | **Total** | **~8-10 min** | **~49-57 min** | Optimized model |
 
 ### Performance Notes
@@ -431,12 +557,13 @@ User prompt to Claude:
 - **New (batched writes):** 8 × 2.5 min = 20 min
 - **Savings:** ~20 minutes ⭐ **2x faster**
 
-**Total Workflow (Optimized v1.5.0):**
+**Total Workflow (Optimized v1.6.0):**
 - **Phase 1:** 5 min
 - **Phase 2A:** 4 min (parallel video analysis)
 - **Phase 2B+2C:** 24 min (parallel image + synthesis per product) ⭐
 - **Phase 3:** 20 min (batched script writes)
-- **Total:** ~53 min for 8 products (was ~61 min)
+- **Phase 4:** 10 sec (product indices)
+- **Total:** ~53 min for 8 products (was ~61 min without indices)
 
 ### Pipeline Strategy (8 Products - PARALLELIZED)
 
@@ -492,6 +619,12 @@ Product 8: [Read all files parallel] → [Write 4 files parallel] → 2.5 min
 Total: ~20 min (was 40 min) ⭐ 2x faster
 ```
 
+**Phase 4: Product Indices (Incremental metadata extraction):**
+```
+python3 generate_product_indices.py --date YYYYMMDD --csv products.csv --require-scripts --incremental
+Total: ~10 sec (only successful products with complete scripts) ⭐ fast
+```
+
 ---
 
 ## Error Handling
@@ -504,6 +637,7 @@ Total: ~20 min (was 40 min) ⭐ 2x faster
 | Image analysis fails | Continue without (not mandatory) |
 | Synthesis fails | BLOCK - retry until success or manual intervention |
 | Script generation fails | Retry, check for generic placeholders |
+| Index generation fails | Skip (non-blocking, can regenerate later) |
 
 ---
 
@@ -520,6 +654,9 @@ Total: ~20 min (was 40 min) ⭐ 2x faster
 
 # Resume from Phase 3 only
 /workflow --batch products.csv --start-phase scripts
+
+# Resume from Phase 4 only (indices)
+python3 scripts/generate_product_indices.py --date YYYYMMDD --csv scripts/products.csv --require-scripts --incremental
 ```
 
 ---
@@ -551,6 +688,12 @@ tiktok_ad_analysis.md (v4.4.0)        tiktok_product_analysis.md (v1.0.0)
     │  Agent: Claude Code
     │  Batched: 4 Write calls per product
     │  Output: Script_1/2/3.md + Campaign_Summary.md
+    │
+    ▼
+    generate_product_indices.py (v1.6.0)
+    │  Agent: Python script
+    │  Output: product_index.md (Obsidian YAML frontmatter)
+    │  Scope: ONLY successful products (scripts gate passed)
 ```
 
 **Agent Assignment Summary:**
@@ -561,6 +704,7 @@ tiktok_ad_analysis.md (v4.4.0)        tiktok_product_analysis.md (v1.0.0)
 | 2B. Image Analysis | Gemini MCP async | Sequential, 5 task limit |
 | 2C. Synthesis | Gemini MCP async | Sequential, 5 task limit |
 | 3. Scripts | Claude Code | Better creative quality |
+| 4. Product Indices | Python | Fast metadata extraction, Obsidian integration |
 
 ---
 
@@ -620,26 +764,57 @@ Claude:
    - Product 8/8: [Read all] → [Write 4 files in parallel] ✅ (2.5 min)
    ✅ All scripts generated (20 min, was 40 min) ⭐ 2x faster
 
+4. Starting Phase 4: Product Index Generation (v1.6.0)...
+   Running: python3 generate_product_indices.py --date YYYYMMDD --csv scripts/products.csv --require-scripts --incremental
+   [1/8] Processing 1729616761074981417... ✓ Generated index (2341 bytes)
+   [2/8] Processing 1729602953248086258... ✓ Generated index (2198 bytes)
+   [3/8] Processing 1729696445885814793... ✓ Generated index (2412 bytes)
+   [4/8] Processing 1729476728478930974... ✓ Generated index (2287 bytes)
+   [5/8] Processing 1729737254364486015... ✓ Generated index (2356 bytes)
+   [6/8] Processing 1729695201566104021... ✓ Generated index (2401 bytes)
+   
+   Summary:
+   ✓ Successful: 6
+   ⊘ Skipped: 0
+   ✗ Failed: 0
+   ✅ All indices generated (~10 sec) ⭐
+
+5. Final Verification Gate...
+   Running: bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase all
+   ✅ 6/6 products PASS (analysis + scripts + index)
+
 === WORKFLOW COMPLETE ===
-Total time: ~61 minutes (corrected model per tiktok_product_analysis.md)
-Products processed: 8/8
-Scripts generated: 24 (3 per product)
-Campaign summaries: 8
+Total time: ~53 minutes
+Products processed: 6/6
+Scripts generated: 18 (3 per product)
+Campaign summaries: 6
+Product indices: 6
 
 Performance Breakdown:
 - Phase 1 (Scraping): 5 min
 - Phase 2A (Videos): 4 min ⭐ (was 16 min - 4x faster via bash parallel batches)
 - Phase 2B+2C (Image+Synthesis): 24 min ⭐ (was 32 min - parallel 2B∥2C optimization)
 - Phase 3 (Scripts): 20 min ⭐ (was 40 min - 2x faster via batched writes)
+- Phase 4 (Indices): 10 sec ⭐ (incremental, successful products only)
 
 Ready for video production!
 ```
 
 ---
 
-**Version:** 1.5.0
-**Last Updated:** 2026-01-21
+**Version:** 1.6.0
+**Last Updated:** 2026-02-05
 **Changelog:**
+- v1.6.0 (2026-02-05): **ADDED PHASE 4: PRODUCT INDEX GENERATION** ⭐
+  - **NEW:** `generate_product_indices.py` creates `product_index.md` for Obsidian
+  - **CLI:** `--date YYYYMMDD --csv PATH --require-scripts --incremental`
+  - **Gate:** `verify_gate.sh --phase index` integrated into `--phase all`
+  - **Scope:** ONLY successful products (3+ scripts + Campaign Summary)
+  - **Incremental:** Skips stale-check if frontmatter unchanged (fast)
+  - **Performance:** ~10 sec for 6 products (metadata extraction + YAML)
+  - Updated workflow diagrams, time tables, and agent assignment map
+  - Updated e2e_workflow_samples.sh to include Phase 4 execution
+  - Total workflow time: ~53 min for 6 products (unchanged, index is negligible)
 - v1.5.0 (2026-01-21): **OPTIMIZED PHASE 2B+2C PARALLEL EXECUTION** ⭐
   - **NEW:** Image analysis and synthesis run in parallel after video analysis
   - **Why:** No dependency between 2B (images) and 2C (synthesis from videos)

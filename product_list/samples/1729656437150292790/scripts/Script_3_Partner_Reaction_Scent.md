@@ -54,86 +54,57 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-Mein Freund kann die Finger nicht von mir lassen, seit ich das trage.
-[playful]
-Kein Witz.
-[serious]
+[neutral] Mein Freund kann die Finger nicht von mir lassen, seit ich das trage.
+[playful] Kein Witz.
 
-Ich habe es heute Morgen aufgesprüht.
-[casual]
-Normal. Routine.
-[matter-of-fact]
+[neutral] Ich habe es heute Morgen aufgesprüht.
+[casual] Normal. Routine.
 
-Eine Stunde später kommt er ins Zimmer.
-[storytelling]
-Schnüffelt. Was ist das?
-[curious]
+[neutral] Eine Stunde später kommt er ins Zimmer.
+[storytelling] Schnüffelt. Was ist das?
 
-Das riecht... unglaublich.
-[impressed]
-Wie warme Vanille und Holz.
-[warm]
+[neutral] Das riecht... unglaublich.
+[impressed] Wie warme Vanille und Holz.
 
-Ich zeige ihm die Flasche. LASTAR.
-[revealing]
-Er sagt: Das riecht wie teure Kosmetik.
-[amused]
+[neutral] Ich zeige ihm die Flasche. LASTAR.
+[revealing] Er sagt: Das riecht wie teure Kosmetik.
 
-Aber es kostet keine 20 Euro.
-[shocked]
-Zwei Flaschen. Eins für mich, eins für ihn.
-[enthusiastic]
+[neutral] Aber es kostet keine 20 Euro.
+[shocked] Zwei Flaschen. Eins für mich, eins für ihn.
 
-Seit dem Tag tragen wir beide das.
-[satisfied]
-Zusammen riechen wir wie ein Dessert.
-[playful]
+[neutral] Seit dem Tag tragen wir beide das.
+[satisfied] Zusammen riechen wir wie ein Dessert.
 
-Das Zeug wirkt wie Magie.
-[confident]
-Hol's dir. Link oben.
-[encouraging]
+[neutral] Das Zeug wirkt wie Magie.
+[confident] Hol's dir. Link oben.
+
+
+---
 
 ---
 
 ### ZH (中文翻译 | 42s)
 
-我男朋友自从我喷这个就离不开我了。
-[playful]
-不开玩笑。
-[serious]
+[neutral] 我男朋友自从我喷这个就离不开我了。
+[playful] 不开玩笑。
 
-我今早喷的。
-[casual]
-正常。日常。
-[matter-of-fact]
+[neutral] 我今早喷的。
+[casual] 正常。日常。
 
-一小时后他进房间。
-[storytelling]
-嗅了嗅。这是什么？
-[curious]
+[neutral] 一小时后他进房间。
+[storytelling] 嗅了嗅。这是什么？
 
-这闻起来...不可思议。
-[impressed]
-像温暖的香草和木头。
-[warm]
+[neutral] 这闻起来...不可思议。
+[impressed] 像温暖的香草和木头。
 
-我给他看瓶子。LASTAR。
-[revealing]
-他说：这闻起来像昂贵的化妆品。
-[amused]
+[neutral] 我给他看瓶子。LASTAR。
+[revealing] 他说：这闻起来像昂贵的化妆品。
 
-但不到 20 欧元。
-[shocked]
-两瓶。一瓶给我，一瓶给他。
-[enthusiastic]
+[neutral] 但不到 20 欧元。
+[shocked] 两瓶。一瓶给我，一瓶给他。
 
-从那天起我们都喷。
-[satisfied]
-我们一起闻起来像甜点。
-[playful]
+[neutral] 从那天起我们都喷。
+[satisfied] 我们一起闻起来像甜点。
 
-这东西像魔法。
-[confident]
-买吧。链接在上面。
-[encouraging]
+[neutral] 这东西像魔法。
+[confident] 买吧。链接在上面。

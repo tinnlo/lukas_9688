@@ -1,18 +1,18 @@
 ---
 cover: ""
 caption: >-
-  Dein Date wird dich fragen, was du trägst 😍 LASTAR Parfüm macht's möglich. Teste es selbst, die Komplimente sind garantiert #tiktokshop #dating #parfüm #lastar #love
+  Jeder fragt mich was für ein Duft das ist 😍 LASTAR holziger Duft bekomme ich täglich Komplimente Riecht wie Luxus kostet fast nichts #tiktokshop #parfüm #lastar #komplimente #duft
 published: 2026-01-31
-duration: "00:45"
+duration: "00:40"
 sales:
   - yes
 link: ""
 tags:
-  - "#Dating"
   - "#Komplimente"
-  - "#Parfüm"
-  - "#Anziehung"
-  - "#TikTok"
+  - "#Duftempfehlung"
+  - "#LASTAR"
+  - "#TikTokShop"
+  - "#SocialProof"
 product: "LASTAR Holzige Duftnote Eau de Parfum"
 source_notes:
   - "product_list/samples/1729582760298126134/ref_video/video_synthesis.md"
@@ -22,113 +22,65 @@ source_notes:
 
 ## Scripts
 
-**Structure: Social Proof + Attraction Narrative**
+**Concept: The "Compliment Magnet" (Social Proof + Emotional Benefit)**
 
-1. **Hook (0-3s):** "I wore this once. My date asked about it immediately."
-2. **Setup (3-10s):** Creator applying scent in mirror or getting ready
-3. **Test Moment (10-25s):** Partner/friend asks "What are you wearing?" with genuine surprise
-4. **Emotional Payoff (25-40s):** Creator smiles, reveals the product—social validation
-5. **CTA (40-45s):** "For €15, this is a cheat code. Get it."
+Leading with real-world social validation to trigger desire for external approval.
 
----
+### Structure (40s)
 
-## Visual Strategy
+- **Hook (0-3s):** Partner/friend smelling neck and gasping - "What are you wearing?!"
+- **Story (3-15s):** "Since I started wearing LASTAR, I get asked every single day"
+- **Features (15-30s):** Woody, sweet, not intrusive but present - "Signature scent material"
+- **Value (30-35s):** "Smells like luxury, costs a fraction"
+- **CTA (35-40s):** "Get compliments too. Link below."
 
-| Shot | Duration | Purpose | Psychology |
-|:---|:---|:---|:---|
-| Creator in mirror (before) | 2s | Anticipation | Sets up the moment |
-| Spray application (ASMR) | 2s | Luxury, ritual | Self-care feeling |
-| Time cut: later in day | 2s | Proof of longevity | Visual passage of time |
-| Partner asks/reacts (POV) | 3s | Authenticity | Real human connection |
-| Creator smiles/reveals bottle | 2s | Satisfaction | The "aha" moment |
-| Bottle beauty shot | 1s | Product trust | High-value visual |
-| Text: "Guarantee" overlay | 2s | Confidence | Risk removal |
-| CTA + link | 1s | Conversion | Clear next step |
+### Visual Strategy
+
+| Seconds | Visual | Purpose |
+|:--------|:-------|:--------|
+| 00-03 | Female partner leans to male's neck, eyes widen, gasps | Hook: Visceral attraction reaction |
+| 03-06 | Text overlay: "Was trägst du?!" (What are you wearing?!) | Social Proof: Verbalized curiosity |
+| 06-10 | Montage: 3 different people asking (friend, colleague, stranger) | Amplification: Multiple validators |
+| 10-13 | Creator spraying LASTAR on wrist, satisfied smile | Product Introduction: Reveal the secret |
+| 13-18 | B-roll: Candle flame, cozy sweater, wood cabin (warmth association) | Sensory: Scent mood board |
+| 18-23 | Close-up: Bottle design (premium glass texture) | Quality: Visual value justification |
+| 23-28 | Creator at office, gym, date (different scenarios, same bottle) | Versatility: All-occasion proof |
+| 28-33 | Split screen: Expensive blurred perfume vs. LASTAR with price gap | Logic: Smart purchase framing |
+| 33-38 | Group of friends, creator in center, all pointing at him/her | Validation: Social acceptance |
+| 38-40 | Product + CTA "Dein Signature-Duft 👇" | Conversion: Identity appeal |
 
 ---
 
 ## Voiceover
 
-### DE (ElevenLabs Prompt | 45s)
-
 > with ElevenLabs v3 (alpha) grammar
 
-Ich trage LASTAR jetzt jeden Tag.
-[confident]
-Nicht, weil ich es muss.
-[reflective]
-Sondern weil ich am nächsten Morgen sofort gefragt werde: Was war das gestern Abend?
-[warm]
+### DE (ElevenLabs Prompt | 40s)
 
-Meine Freundin riecht mich, bevor sie mich sieht.
-[amused]
-Sie fragt: Ist das eine neue Kollegn?
-[curious]
-Nein. Es ist LASTAR.
-[matter-of-fact]
-
-Auf meinem letzten Date war ich nervös.
-[vulnerable]
-Aber dann sagte sie: Wow, du riechst unglaublich.
-[surprised]
-Das war es. Game over.
-[playful]
-
-Das Zeug wirkt wie ein unsichtbarer Magnet.
-[warm]
-Und die beste Sache? Es kostet nur 15 Euro.
-[bright]
-Leute zahlen 100+ Euro für Designer-Marken mit der gleichen Wirkung.
-[firm]
-
-Das ist kein Zufall. Das ist Wissenschaft.
-[confident]
-Holz + Gewürze = Anziehungskraft.
-[enthusiastic]
-
-Mach dir keinen Kopf mehr um deinen ersten Eindruck.
-[reassuring]
-Lass LASTAR für dich sprechen.
-[neutral]
+[curious] Jeder fragt mich: Was für ein Duft ist das?
+[warm] Seit ich LASTAR trage, passiert das jeden Tag.
+[amused] Im Büro. [playful] Beim Sport. [reflective] Sogar beim Einkaufen.
+[confident] Das ist kein Zufall.
+[bright] Der Duft ist holzig, ein bisschen süß, aber nicht aufdringlich.
+[satisfied] Er bleibt den ganzen Tag präsent.
+[impressed] Perfekt für einen Signature-Duft.
+[matter-of-fact] Riecht wie etwas Teures.
+[delighted] Kostet aber fast nichts.
+[encouraging] Wenn du auch Komplimente willst, probier's einfach.
+[neutral] Link ist unten.
 
 ---
 
-### ZH (中文翻译 | 45s)
+### ZH (中文翻译 | 40s)
 
-我现在每天都喷 LASTAR。
-[confident]
-不是因为我必须。
-[reflective]
-而是因为第二天早上我就被问：昨晚是什么香气？
-[warm]
-
-我女朋友闻到我的味道，比看到我还快。
-[amused]
-她问：这是新同事吗？
-[curious]
-不，这是 LASTAR。
-[matter-of-fact]
-
-我上次约会很紧张。
-[vulnerable]
-但后来她说：哇，你闻起来不可思议。
-[surprised]
-就这样。游戏结束。
-[playful]
-
-这个东西就像一个隐形磁铁。
-[warm]
-最棒的是？它只要 15 欧元。
-[bright]
-人们花 100 多欧元买设计师品牌却有同样的效果。
-[firm]
-
-这不是巧合。这是科学。
-[confident]
-木质 + 香料 = 吸引力。
-[enthusiastic]
-
-不要再担心你的第一印象了。
-[reassuring]
-让 LASTAR 为你说话。
-[neutral]
+[curious] 每个人都问我：这是什么香水？
+[warm] 自从我用 LASTAR，每天都有人问。
+[amused] 在办公室。[playful] 在健身房。[reflective] 甚至在购物时。
+[confident] 这不是巧合。
+[bright] 香味是木质的，有点甜，但不刺鼻。
+[satisfied] 一整天都在。
+[impressed] 完美的专属香调。
+[matter-of-fact] 闻起来像昂贵的东西。
+[delighted] 但几乎不花钱。
+[encouraging] 如果你也想收获赞美，试试吧。
+[neutral] 链接在下面。

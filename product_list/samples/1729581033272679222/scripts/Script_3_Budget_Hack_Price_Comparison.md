@@ -54,76 +54,51 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-Warum zahlen Leute 100 Euro für Parfüm?
-[blunt]
-Für den Namen. Nicht für den Duft.
-[dismissive]
+[neutral] Warum zahlen Leute 100 Euro für Parfüm?
+[blunt] Für den Namen. Nicht für den Duft.
 
-Ich habe früher auch Designer-Marken gekauft.
-[reflective]
-Bis ich LASTAR gefunden habe.
-[revealing]
+[neutral] Ich habe früher auch Designer-Marken gekauft.
+[reflective] Bis ich LASTAR gefunden habe.
 
-Das hier ist ein Doppelpack. Zwei Flaschen.
-[educational]
-Einer riecht blumig und frisch.
-[bright]
-Der andere nach Vanille und Holz. Sehr elegant.
-[warm]
+[neutral] Das hier ist ein Doppelpack. Zwei Flaschen.
+[educational] Einer riecht blumig und frisch.
+[bright] Der andere nach Vanille und Holz. Sehr elegant.
 
-Und wisst ihr was? Es hält genauso lange.
-[impressed]
-Den ganzen Tag. Kein Unterschied.
-[confident]
+[neutral] Und wisst ihr was? Es hält genauso lange.
+[impressed] Den ganzen Tag. Kein Unterschied.
 
-Der Sprühnebel? Genauso fein wie bei teuren Marken.
-[satisfied]
-Die Verpackung? Sieht aus wie Luxus.
-[matter-of-fact]
+[neutral] Der Sprühnebel? Genauso fein wie bei teuren Marken.
+[satisfied] Die Verpackung? Sieht aus wie Luxus.
 
-Ich spare so viel Geld. Und rieche genauso gut.
-[enthusiastic]
-Kluges Shopping. Nicht dummes Geld ausgeben.
-[firm]
+[neutral] Ich spare so viel Geld. Und rieche genauso gut.
+[enthusiastic] Kluges Shopping. Nicht dummes Geld ausgeben.
 
-Hol's dir. Link unten.
-[encouraging]
+[encouraging] Hol's dir. Link unten.
+
+
+---
 
 ---
 
 ### ZH (中文翻译 | 40s)
 
-为什么人们要花 100 欧元买香水？
-[blunt]
-为了品牌。不是为了香味。
-[dismissive]
+[neutral] 为什么人们要花 100 欧元买香水？
+[blunt] 为了品牌。不是为了香味。
 
-我以前也买设计师品牌。
-[reflective]
-直到我发现了 LASTAR。
-[revealing]
+[neutral] 我以前也买设计师品牌。
+[reflective] 直到我发现了 LASTAR。
 
-这是双瓶装。两瓶。
-[educational]
-一个闻起来花香清新。
-[bright]
-另一个是香草和木质。非常优雅。
-[warm]
+[neutral] 这是双瓶装。两瓶。
+[educational] 一个闻起来花香清新。
+[bright] 另一个是香草和木质。非常优雅。
 
-你知道吗？它持久度一样。
-[impressed]
-一整天。没有区别。
-[confident]
+[neutral] 你知道吗？它持久度一样。
+[impressed] 一整天。没有区别。
 
-喷雾？和昂贵品牌一样细腻。
-[satisfied]
-包装？看起来像奢侈品。
-[matter-of-fact]
+[neutral] 喷雾？和昂贵品牌一样细腻。
+[satisfied] 包装？看起来像奢侈品。
 
-我省了好多钱。闻起来一样好。
-[enthusiastic]
-聪明购物。不是傻傻花钱。
-[firm]
+[neutral] 我省了好多钱。闻起来一样好。
+[enthusiastic] 聪明购物。不是傻傻花钱。
 
-快买。链接在下面。
-[encouraging]
+[encouraging] 快买。链接在下面。

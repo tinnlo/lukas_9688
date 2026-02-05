@@ -1,18 +1,18 @@
 ---
 cover: ""
 caption: >-
-  Meine Freundin riecht mich von der anderen Seite des Zimmers 😳 LASTAR Parfüm wirkt wie ein Magnet. Holziger Duft mit Muskat. Probier's selbst #tiktokshop #parfüm #dating #anziehung #lastar
+  Meine Freundin riecht mich von der anderen Seite des Zimmers 😳 LASTAR Parfüm wirkt wie ein Magnet Holziger Duft mit Muskat Probier's selbst #tiktokshop #parfüm #dating #anziehung #lastar
 published: 2026-01-31
 duration: "00:45"
 sales:
   - yes
 link: ""
 tags:
-  - "#Dating"
-  - "#Anziehung"
-  - "#Parfüm"
+  - "#PartnerReaction"
   - "#Komplimente"
+  - "#LASTAR"
   - "#TikTokShop"
+  - "#SocialProof"
 product: "LASTAR Herrenparfüm Eau de Parfum"
 source_notes:
   - "product_list/samples/1729578893675305782/ref_video/video_synthesis.md"
@@ -22,134 +22,66 @@ source_notes:
 
 ## Scripts
 
-**Structure: Partner Reaction + Social Proof**
+**Concept: The "Partner Reaction" (Social Proof + Relationship Desire)**
 
-1. **Hook (0-3s):** Partner's genuine reaction from across room
-2. **Setup (3-10s):** Creator applying scent in morning routine
-3. **Reaction Moment (10-25s):** Partner asks "What are you wearing?" with surprise
-4. **Reveal (25-38s):** Show bottle, explain woody/musk notes
-5. **CTA (38-45s):** "Works like a magnet, get it here"
+Leading with visceral attraction reaction to trigger emotional purchase motivation.
 
----
+### Structure (45s)
 
-## Visual Strategy
+- **Hook (0-3s):** Female pulling male shirt/collar - "Mein Freund trägt das und ich flippe aus"
+- **Story (3-15s):** "Since he wears LASTAR, I can't keep my hands off him"
+- **Features (15-30s):** Woody notes, nutmeg, masculine but not overpowering
+- **Social Validation (30-40s):** "All my friends ask what he's wearing"
+- **CTA (40-45s):** "Make her notice. Link below."
+
+### Visual Strategy
 
 | Seconds | Visual | Purpose |
 |:--------|:-------|:--------|
-| 00-03 | Partner (POV) entering room, sniffing air, surprised expression | Authentic social proof |
-| 03-07 | Flashback: Creator spraying LASTAR in mirror | Routine, relatability |
-| 07-12 | Close-up of bottle, "Eau de Parfum" label | Product authority |
-| 12-18 | Partner approaches, leans in to smell neck/collar | Intimacy, attraction trigger |
-| 18-23 | Partner's face reaction (eyes widen, smile) | Emotional validation |
-| 23-28 | Creator reveals bottle, partner looks at it skeptically | Contrast (disbelief at quality) |
-| 28-33 | Text overlay: "Wood + Musk + Nutmeg" | Scent education |
-| 33-38 | Creator smiles confidently, holds bottle | Self-assured close |
-| 38-45 | Product shot + CTA "Get compliments, link below" | Conversion |
+| 00-03 | Female hand pulling male's shirt collar, leaning to neck | Hook: Visceral attraction signal |
+| 03-06 | Female's face: eyes closed, satisfied smile | Emotional: Sensory pleasure |
+| 06-10 | Text overlay: "Was trägst du?!" (What are you wearing?!) | Social Proof: Verbalized curiosity |
+| 10-13 | Male reveals LASTAR bottle from pocket/bag | Product Introduction: The secret |
+| 13-18 | Close-up spray on neck (side angle) | Demonstration: Application |
+| 18-23 | B-roll: Wood cabin, nutmeg spice, warm lighting | Sensory: Scent mood board |
+| 23-28 | Couple close together, female resting head on male's shoulder | Benefit: Intimacy trigger |
+| 28-33 | Group of friends (female) pointing at male, asking questions | Amplification: Multiple validators |
+| 33-38 | Male confident posture, bottle in hand | Authority: Product association |
+| 38-40 | Split screen: Before (alone) vs. After (with partner) | Transformation: Outcome visualization |
+| 40-45 | Product + CTA "Zieh sie an 👇" (Attract her) | Conversion: Desire activation |
 
 ---
 
 ## Voiceover
 
-### DE (ElevenLabs Prompt | 45s)
-
 > with ElevenLabs v3 (alpha) grammar
 
-Ich habe heute Morgen LASTAR aufgetragen.
-[casual]
-Normal. Routine.
-[matter-of-fact]
+### DE (ElevenLabs Prompt | 45s)
 
-Dann kommt meine Freundin ins Zimmer.
-[storytelling]
-Von der anderen Seite. Drei Meter entfernt.
-[descriptive]
-
-Sie schnüffelt. Was ist das?
-[curious]
-Riecht unglaublich. Neu?
-[impressed]
-
-Ich zeige ihr die Flasche. LASTAR.
-[revealing]
-Sie sagt: Das riecht wie 100 Euro.
-[amused]
-
-Kostet aber nur 15.
-[playful]
-Sie glaubt mir nicht.
-[skeptical]
-
-Die Duftnoten? Holz, Moschus, Muskatnuss.
-[educational]
-Männlich. Warm. Einladend.
-[sensual]
-
-Das Zeug wirkt wie ein Magnet.
-[confident]
-Seit ich das trage, bekomme ich ständig Komplimente.
-[satisfied]
-
-Nicht nur von ihr.
-[mischievously]
-Auch bei der Arbeit. Im Gym. Überall.
-[enthusiastic]
-
-Das ist nicht nur ein Duft.
-[reflective]
-Das ist ein Selbstvertrauen-Booster.
-[empowering]
-
-Hol's dir. Link unten.
-[encouraging]
+[playful] Mein Freund trägt das und ich flippe aus.
+[warm] Seit er LASTAR benutzt, kann ich die Finger nicht von ihm lassen.
+[amused] Ich rieche ihn von der anderen Seite des Zimmers.
+[curious] Und ich bin nicht die Einzige.
+[surprised] Meine Freundinnen fragen ständig: Was trägt er?
+[confident] Der Duft ist holzig. [bright] Mit Muskat. [satisfied] Männlich, aber nicht aufdringlich.
+[impressed] Er hält den ganzen Tag.
+[reflective] Morgens aufgetragen, abends noch da.
+[matter-of-fact] Das ist kein Zufall.
+[encouraging] Jungs, wenn ihr wollt, dass sie euch bemerkt, probiert das.
+[neutral] Link ist unten.
 
 ---
 
 ### ZH (中文翻译 | 45s)
 
-我今早喷了 LASTAR。
-[casual]
-正常。日常。
-[matter-of-fact]
-
-然后我女朋友走进房间。
-[storytelling]
-从另一边。三米远。
-[descriptive]
-
-她嗅了嗅。这是什么？
-[curious]
-闻起来不可思议。新的？
-[impressed]
-
-我给她看瓶子。LASTAR。
-[revealing]
-她说：这闻起来像 100 欧元的。
-[amused]
-
-但只要 15 欧元。
-[playful]
-她不信。
-[skeptical]
-
-香调？木质、麝香、肉豆蔻。
-[educational]
-男性化。温暖。诱人。
-[sensual]
-
-这东西就像磁铁。
-[confident]
-自从我喷这个，我一直收到赞美。
-[satisfied]
-
-不只是她。
-[mischievously]
-工作时。健身房。到处都是。
-[enthusiastic]
-
-这不仅仅是香水。
-[reflective]
-这是自信增强剂。
-[empowering]
-
-买吧。链接在下面。
-[encouraging]
+[playful] 我男朋友用这个，我快疯了。
+[warm] 自从他用 LASTAR，我就忍不住想靠近他。
+[amused] 我在房间另一边都能闻到他。
+[curious] 而且不只我一个人。
+[surprised] 我的女性朋友们总是问：他喷的什么？
+[confident] 香味是木质的。[bright] 有肉豆蔻。[satisfied] 男性，但不刺鼻。
+[impressed] 一整天都持久。
+[reflective] 早上喷，晚上还在。
+[matter-of-fact] 这不是巧合。
+[encouraging] 男生们，如果你想让她注意到你，试试这个。
+[neutral] 链接在下面。

@@ -1,5 +1,5 @@
-# Streamlit Web Framework
-streamlit
+# Optional: Streamlit Web Framework (not required for CLI workflow)
+# streamlit
 
 # Web Automation
 playwright==1.48.0
@@ -20,10 +20,23 @@ rich==13.7.0
 httpx==0.26.0
 
 # Video Downloader
-yt-dlp==2024.12.13
+yt-dlp
 
 # Retry Utilities
 tenacity==8.2.3
 
-# Data Processing
-pandas
+# Optional: Data Processing (not required for core workflow)
+# pandas
+
+# Video Processing (OpenCV)
+opencv-python
+
+# Audio Transcription (Whisper)
+faster-whisper
+
+# Image Processing
+Pillow
+numpy
+
+# NOTE: google-generativeai is NOT required
+# This project uses Gemini CLI via MCP for AI analysis

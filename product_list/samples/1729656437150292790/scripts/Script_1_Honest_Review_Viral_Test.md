@@ -54,76 +54,51 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-Ich habe das virale TikTok Parfüm-Set getestet.
-[curious]
-Und ich bin... überrascht.
-[impressed]
+[neutral] Ich habe das virale TikTok Parfüm-Set getestet.
+[curious] Und ich bin... überrascht.
 
-Zwei Flaschen. Eine für morgens, eine für abends.
-[educational]
-Die Idee ist genial.
-[delighted]
+[neutral] Zwei Flaschen. Eine für morgens, eine für abends.
+[educational] Die Idee ist genial.
 
-Morgens? Frisch. Vanille mit einem Hauch Zitrus.
-[bright]
-Abends? Warm. Holzig, süß, gemütlich.
-[warm]
+[neutral] Morgens? Frisch. Vanille mit einem Hauch Zitrus.
+[bright] Abends? Warm. Holzig, süß, gemütlich.
 
-Ich habe das heute Morgen aufgetragen.
-[reflective]
-Jetzt ist es nachmittags und ich rieche es noch.
-[surprised]
+[neutral] Ich habe das heute Morgen aufgetragen.
+[reflective] Jetzt ist es nachmittags und ich rieche es noch.
 
-Der Zerstäuber? Unglaublich fein.
-[satisfied]
-Kein billiges Spray. Das fühlt sich echt an.
-[confident]
+[neutral] Der Zerstäuber? Unglaublich fein.
+[satisfied] Kein billiges Spray. Das fühlt sich echt an.
 
-Für 18 Euro? Zwei Flaschen?
-[shocked]
-Das sind 9 Euro pro Flasche.
-[matter-of-fact]
+[neutral] Für 18 Euro? Zwei Flaschen?
+[shocked] Das sind 9 Euro pro Flasche.
 
-Unschlagbar. Perfekte Geschenkidee.
-[enthusiastic]
-Schnapp's dir. Link oben.
-[encouraging]
+[neutral] Unschlagbar. Perfekte Geschenkidee.
+[enthusiastic] Schnapp's dir. Link oben.
+
+
+---
 
 ---
 
 ### ZH (中文翻译 | 43s)
 
-我测试了这个 TikTok 爆款香水套装。
-[curious]
-我...很惊讶。
-[impressed]
+[neutral] 我测试了这个 TikTok 爆款香水套装。
+[curious] 我...很惊讶。
 
-两瓶。一瓶早上用，一瓶晚上用。
-[educational]
-这个想法很棒。
-[delighted]
+[neutral] 两瓶。一瓶早上用，一瓶晚上用。
+[educational] 这个想法很棒。
 
-早上？清新。香草带点柑橘。
-[bright]
-晚上？温暖。木质、甜美、舒适。
-[warm]
+[neutral] 早上？清新。香草带点柑橘。
+[bright] 晚上？温暖。木质、甜美、舒适。
 
-我今早喷的。
-[reflective]
-现在是下午，我还闻得到。
-[surprised]
+[neutral] 我今早喷的。
+[reflective] 现在是下午，我还闻得到。
 
-喷头？细腻得不可思议。
-[satisfied]
-不是廉价喷雾。这感觉很真实。
-[confident]
+[neutral] 喷头？细腻得不可思议。
+[satisfied] 不是廉价喷雾。这感觉很真实。
 
-18 欧元？两瓶？
-[shocked]
-就是每瓶 9 欧元。
-[matter-of-fact]
+[neutral] 18 欧元？两瓶？
+[shocked] 就是每瓶 9 欧元。
 
-无敌。完美的礼物。
-[enthusiastic]
-快买。链接在上面。
-[encouraging]
+[neutral] 无敌。完美的礼物。
+[enthusiastic] 快买。链接在上面。

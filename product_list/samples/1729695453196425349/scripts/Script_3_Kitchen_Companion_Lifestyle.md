@@ -57,78 +57,53 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-POV: Du kochst und willst deinen Podcast hören.
-[casual]
+[casual] POV: Du kochst und willst deinen Podcast hören.
 
-Aber das Wasser kocht. Die Pfanne brutzelt.
-[storytelling]
-Dein Handy? Viel zu leise.
-[frustrated]
+[neutral] Aber das Wasser kocht. Die Pfanne brutzelt.
+[storytelling] Dein Handy? Viel zu leise.
 
-Ich hasse das.
-[blunt]
+[blunt] Ich hasse das.
 
-Aber dann habe ich das hier gefunden. PAXA.
-[revealing]
-Kein Bluetooth. Einfach Handy drauf.
-[matter-of-fact]
+[neutral] Aber dann habe ich das hier gefunden. PAXA.
+[revealing] Kein Bluetooth. Einfach Handy drauf.
 
-Und plötzlich? Kristallklar.
-[impressed]
-Höre jedes Wort. Auch beim Kochen.
-[satisfied]
+[neutral] Und plötzlich? Kristallklar.
+[impressed] Höre jedes Wort. Auch beim Kochen.
 
-Im Bad beim Schminken? Auch perfekt.
-[bright]
-Im Bett TikToks gucken? Läuft.
-[playful]
-Video-Calls am Schreibtisch? Super Winkel.
-[confident]
+[neutral] Im Bad beim Schminken? Auch perfekt.
+[bright] Im Bett TikToks gucken? Läuft.
+[playful] Video-Calls am Schreibtisch? Super Winkel.
 
-Küche. Bad. Büro. Überall.
-[educational]
+[educational] Küche. Bad. Büro. Überall.
 
-Das ist mein neuer bester Freund.
-[warm]
-Hol ihn dir. Link unten.
-[encouraging]
+[neutral] Das ist mein neuer bester Freund.
+[warm] Hol ihn dir. Link unten.
+
+
+---
 
 ---
 
 ### ZH (中文翻译 | 40s)
 
-POV：你做饭想听播客。
-[casual]
+[casual] POV：你做饭想听播客。
 
-但水在沸腾。锅在滋滋作响。
-[storytelling]
-你的手机？太小声了。
-[frustrated]
+[neutral] 但水在沸腾。锅在滋滋作响。
+[storytelling] 你的手机？太小声了。
 
-我讨厌这样。
-[blunt]
+[blunt] 我讨厌这样。
 
-但后来我发现了这个。PAXA。
-[revealing]
-无蓝牙。只需把手机放上去。
-[matter-of-fact]
+[neutral] 但后来我发现了这个。PAXA。
+[revealing] 无蓝牙。只需把手机放上去。
 
-突然？水晶般清晰。
-[impressed]
-每个字都听得到。即使在做饭。
-[satisfied]
+[neutral] 突然？水晶般清晰。
+[impressed] 每个字都听得到。即使在做饭。
 
-洗手间化妆时？也完美。
-[bright]
-床上看TikTok？没问题。
-[playful]
-书桌视频通话？完美角度。
-[confident]
+[neutral] 洗手间化妆时？也完美。
+[bright] 床上看TikTok？没问题。
+[playful] 书桌视频通话？完美角度。
 
-厨房。浴室。办公室。到处都行。
-[educational]
+[educational] 厨房。浴室。办公室。到处都行。
 
-这是我的新好朋友。
-[warm]
-买吧。链接在下面。
-[encouraging]
+[neutral] 这是我的新好朋友。
+[warm] 买吧。链接在下面。

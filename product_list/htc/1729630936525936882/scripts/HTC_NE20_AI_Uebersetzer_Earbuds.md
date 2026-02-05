@@ -1,6 +1,6 @@
 ---
 cover: ""
-caption: "Ich teste die HTC NE20: Live-Übersetzung im Ohr — und sie sind sogar wasserdicht."
+caption: "Ich teste die HTC NE20: Live-Übersetzung im Ohr — und sie sind sogar wasserdicht. #techgadgets #übersetzung #reisen #kopfhörer #bluetooth"
 published: 2025-12-22
 duration: 00:40
 sales:

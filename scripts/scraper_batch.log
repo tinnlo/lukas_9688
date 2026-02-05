@@ -1,0 +1,267 @@
+
+TikTok Shop Product Scraper
+Data source: TABCUT
+
+[32m11:25:45[0m | [1mINFO    [0m | [1mLoaded 5 product IDs from products.csv[0m
+Batch mode: 5 products from tabcut
+Video downloads: ENABLED
+
+[32m11:25:45[0m | [1mINFO    [0m | [1mStarting browser...[0m
+[32m11:25:47[0m | [1mINFO    [0m | [1mCreating browser context with Chinese locale...[0m
+[32m11:25:47[0m | [1mINFO    [0m | [1mBrowser started successfully[0m
+[32m11:25:47[0m | [1mINFO    [0m | [1mStarting scrape for product ID: 1729476728478930974[0m
+[32m11:25:47[0m | [1mINFO    [0m | [1mAlready authenticated[0m
+[32m11:25:47[0m | [1mINFO    [0m | [1mNavigating to Chinese workbench...[0m
+[32m11:25:53[0m | [1mINFO    [0m | [1mNavigating to: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729476728478930974&region=DE[0m
+[32m11:26:02[0m | [1mINFO    [0m | [1mLogin modal detected, handling authentication...[0m
+[32m11:26:04[0m | [1mINFO    [0m | [1mLooking for '密码登录' tab in modal...[0m
+[32m11:26:04[0m | [1mINFO    [0m | [1mFound '密码登录' tab[0m
+[32m11:26:05[0m | [1mINFO    [0m | [1mFilling in credentials in modal...[0m
+[32m11:26:06[0m | [1mINFO    [0m | [1mClicked login button[0m
+[32m11:26:11[0m | [32m[1mSUCCESS [0m | [32m[1mSuccessfully logged in via modal[0m
+[32m11:26:11[0m | [1mINFO    [0m | [1mCurrent URL: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729476728478930974&region=DE[0m
+[32m11:26:11[0m | [1mINFO    [0m | [1mExtracting product information...[0m
+[32m11:26:11[0m | [1mINFO    [0m | [1mProduct: [Black Friday] SONGMICSHOME Wäschekorb 2 Fächer, Wäschesammler mit Ablage, Wäschebox, Wäschesack aus Oxford-Gewebe ausziehbar abnehmbar, Metallrahmen, 2 x 46 L, 73 x 33 x 72 cm, Shop: SONGMICS HOME DE PRO[0m
+[32m11:26:15[0m | [1mINFO    [0m | [1mExtracting sales data...[0m
+[32m11:26:15[0m | [1mINFO    [0m | [1mSwitching to 商品分析 tab...[0m
+[32m11:26:17[0m | [1mINFO    [0m | [1m商品分析 tab loaded successfully[0m
+[32m11:26:17[0m | [1mINFO    [0m | [1mUsing 30-day date range (7-day requires premium)[0m
+[32m11:26:18[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: 关联直播New[0m
+[32m11:26:23[0m | [1mINFO    [0m | [1mExtracting video analysis data...[0m
+[32m11:26:23[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m11:26:25[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m11:26:29[0m | [1mINFO    [0m | [1mExtracting top 5 videos...[0m
+[32m11:26:29[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m11:26:31[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m11:26:36[0m | [1mINFO    [0m | [1mSuccessfully extracted 5 videos[0m
+[32m11:26:36[0m | [32m[1mSUCCESS [0m | [32m[1mProduct data saved to: ../product_list/20260205/1729476728478930974/tabcut_data.json[0m
+[32m11:26:36[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m11:26:36[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m11:26:36[0m | [1mINFO    [0m | [1mCollecting initial images...[0m
+[32m11:26:36[0m | [1mINFO    [0m | [1mInitial: 5 images[0m
+[32m11:26:37[0m | [1mINFO    [0m | [1mFound carousel arrow at (590, 500)[0m
+[32m11:26:39[0m | [1mINFO    [0m | [1mClick 1: +4 new images (total: 9)[0m
+[32m11:26:41[0m | [1mINFO    [0m | [1mClick 2: +0 new images (total: 9)[0m
+[32m11:26:41[0m | [1mINFO    [0m | [1mAfter carousel navigation: 9 total images[0m
+[32m11:26:41[0m | [1mINFO    [0m | [1mFound 9 unique product images[0m
+[32m11:26:41[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded 9/9 product images[0m
+[32m11:26:41[0m | [32m[1mSUCCESS [0m | [32m[1mDownloaded 9 product images[0m
+[32m11:26:41[0m | [1mINFO    [0m | [1mDownloading top 5 videos...[0m
+[32m11:26:41[0m | [1mINFO    [0m | [1mCleaned old video files[0m
+[32m11:26:41[0m | [1mINFO    [0m | [1mDownloading 5 videos to ../product_list/20260205/1729476728478930974/ref_video[0m
+[32m11:26:41[0m | [1mINFO    [0m | [1mDownloading video 1: ADKrass #tiktokshop #viral #wäsche #korb #zuhause 发现时间：2026.01.20 06:29更新时间：2026.01.24 04:52时长：00:00:07跳转至 TikTok[0m
+[32m11:26:41[0m | [1mINFO    [0m | [1mDownloading video 2: AD#kloschrank 发现时间：2026.01.24 16:48更新时间：2026.02.02 07:24时长：00:00:43跳转至 TikTok[0m
+[32m11:26:41[0m | [1mINFO    [0m | [1mDownloading video 3: ADLet’s fix our laundry situation in 2026! Separate removable bags you can grab and take to the wash, sturdy metal frame for durability, and a clean look if you want to add some fresh aesthetics to your home. #Tiktokmademebuyit #laundryhacks #momtok #TiktokShopDE #getorganized 发现时间：2026.01.23 05:13更新时间：2026.02.02 09:28时长：00:00:19跳转至 TikTok[0m
+[32m11:26:44[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_3_colleenskaanah.mp4[0m
+[32m11:26:44[0m | [1mINFO    [0m | [1mDownloading video 4: ADسلات غسيل وتوفير مساحات😍发现时间：2026.01.24 06:05更新时间：2026.01.26 07:38时长：00:00:57跳转至 TikTok[0m
+[32m11:26:45[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_1_produktpilot.de.mp4[0m
+[32m11:26:45[0m | [1mINFO    [0m | [1mDownloading video 5: ADWas sagst du zu dem? #tiktokmademebuyit #viral #wäsche #korb #zuhause 发现时间：2026.01.08 07:14更新时间：2026.01.08 18:09时长：00:00:08跳转至 TikTok[0m
+[32m11:26:45[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_2_naturonkel.mp4[0m
+[32m11:26:47[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_4_m7md_salaho.mp4[0m
+[32m11:26:51[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_5_produktpilot.de.mp4[0m
+[32m11:26:51[0m | [1mINFO    [0m | [1mDownloaded 5/5 videos successfully[0m
+[32m11:26:51[0m | [32m[1mSUCCESS [0m | [32m[1mVideos downloaded and data updated[0m
+✓ Product 1729476728478930974 completed
+[32m11:26:51[0m | [1mINFO    [0m | [1mStarting scrape for product ID: 1729592938206960369[0m
+[32m11:26:51[0m | [1mINFO    [0m | [1mAlready authenticated[0m
+[32m11:26:51[0m | [1mINFO    [0m | [1mNavigating to Chinese workbench...[0m
+[32m11:26:55[0m | [1mINFO    [0m | [1mNavigating to: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729592938206960369&region=DE[0m
+[32m11:27:01[0m | [1mINFO    [0m | [1mCurrent URL: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729592938206960369&region=DE[0m
+[32m11:27:01[0m | [1mINFO    [0m | [1mExtracting product information...[0m
+[32m11:27:01[0m | [1mINFO    [0m | [1mProduct: Rose Jewelry Gift Box With Heart Rose Mom Pendant Necklace, Mom Necklace for Mama Aunt Nana Grandma Birthday Mother's Day Jewelry Gift, Shop: MouLin Charm Jewelry[0m
+[32m11:27:03[0m | [1mINFO    [0m | [1mExtracting sales data...[0m
+[32m11:27:03[0m | [1mINFO    [0m | [1mSwitching to 商品分析 tab...[0m
+[32m11:27:05[0m | [1mINFO    [0m | [1m商品分析 tab loaded successfully[0m
+[32m11:27:05[0m | [1mINFO    [0m | [1mUsing 30-day date range (7-day requires premium)[0m
+[32m11:27:07[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: 关联直播New[0m
+[32m11:27:11[0m | [1mINFO    [0m | [1mExtracting video analysis data...[0m
+[32m11:27:11[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m11:27:14[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m11:27:18[0m | [1mINFO    [0m | [1mExtracting top 5 videos...[0m
+[32m11:27:18[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m11:27:20[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m11:27:25[0m | [1mINFO    [0m | [1mSuccessfully extracted 5 videos[0m
+[32m11:27:25[0m | [32m[1mSUCCESS [0m | [32m[1mProduct data saved to: ../product_list/20260205/1729592938206960369/tabcut_data.json[0m
+[32m11:27:25[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m11:27:25[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m11:27:25[0m | [1mINFO    [0m | [1mCollecting initial images...[0m
+[32m11:27:25[0m | [1mINFO    [0m | [1mInitial: 5 images[0m
+[32m11:27:26[0m | [1mINFO    [0m | [1mFound carousel arrow at (590, 500)[0m
+[32m11:27:28[0m | [1mINFO    [0m | [1mClick 1: +4 new images (total: 9)[0m
+[32m11:27:30[0m | [1mINFO    [0m | [1mClick 2: +0 new images (total: 9)[0m
+[32m11:27:30[0m | [1mINFO    [0m | [1mAfter carousel navigation: 9 total images[0m
+[32m11:27:30[0m | [1mINFO    [0m | [1mFound 9 unique product images[0m
+[32m11:27:30[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded 9/9 product images[0m
+[32m11:27:30[0m | [32m[1mSUCCESS [0m | [32m[1mDownloaded 9 product images[0m
+[32m11:27:30[0m | [1mINFO    [0m | [1mDownloading top 5 videos...[0m
+[32m11:27:30[0m | [1mINFO    [0m | [1mCleaned old video files[0m
+[32m11:27:30[0m | [1mINFO    [0m | [1mDownloading 5 videos to ../product_list/20260205/1729592938206960369/ref_video[0m
+[32m11:27:30[0m | [1mINFO    [0m | [1mDownloading video 1: AD无标题发现时间：2026.01.14 03:58更新时间：2026.01.14 18:26时长：00:00:59跳转至 TikTok[0m
+[32m11:27:30[0m | [1mINFO    [0m | [1mDownloading video 2: AD#fy #wintersale #winterdeals #unboxyourdeal #tiktokmademebuyit 发现时间：2026.01.26 08:15更新时间：2026.02.01 08:44时长：00:00:27跳转至 TikTok[0m
+[32m11:27:30[0m | [1mINFO    [0m | [1mDownloading video 3: AD#fy #tiktokmademebuyit #unboxyourdeals #tiktokshopsale #fürdich 发现时间：2026.02.03 00:52更新时间：2026.02.03 00:52时长：00:00:29跳转至 TikTok[0m
+[32m11:27:33[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_2_nxouurrr.mp4[0m
+[32m11:27:33[0m | [1mINFO    [0m | [1mDownloading video 4: AD#2026 #newyear #valentinstag #romantisch 发现时间：2026.01.17 16:48更新时间：2026.01.19 10:40时长：00:00:17跳转至 TikTok[0m
+[32m11:27:34[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_3_nxouurrr.mp4[0m
+[32m11:27:34[0m | [1mINFO    [0m | [1mDownloading video 5: AD#newyearnewyou #tiktokmademebuyit #toppick #هدية 发现时间：2026.01.27 10:45更新时间：2026.01.27 10:45时长：00:00:39跳转至 TikTok[0m
+[32m11:27:36[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_4_lorelei_yin0.mp4[0m
+[32m11:27:39[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_1_favouronyeka2.mp4[0m
+[32m11:27:47[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_5_mohamad_hejazi_.mp4[0m
+[32m11:27:47[0m | [1mINFO    [0m | [1mDownloaded 5/5 videos successfully[0m
+[32m11:27:47[0m | [32m[1mSUCCESS [0m | [32m[1mVideos downloaded and data updated[0m
+✓ Product 1729592938206960369 completed
+[32m11:27:47[0m | [1mINFO    [0m | [1mStarting scrape for product ID: 1729616761074981417[0m
+[32m11:27:47[0m | [1mINFO    [0m | [1mAlready authenticated[0m
+[32m11:27:47[0m | [1mINFO    [0m | [1mNavigating to Chinese workbench...[0m
+[32m11:27:50[0m | [1mINFO    [0m | [1mNavigating to: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729616761074981417&region=DE[0m
+[32m11:27:57[0m | [1mINFO    [0m | [1mCurrent URL: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729616761074981417&region=DE[0m
+[32m11:27:57[0m | [1mINFO    [0m | [1mExtracting product information...[0m
+[32m11:27:57[0m | [1mINFO    [0m | [1mProduct: 360° drehbarer Make-up Pinselhalter Organizer, Make-up Organizer für Schminktisch, Make-up-Organisation und Hautpflege-Aufbewahrung mit Geschenkverpackung für Kommode, Schreibtisch, Badezimmer (Schwarz), Shop: Elite Bazaar[0m
+[32m11:27:59[0m | [1mINFO    [0m | [1mExtracting sales data...[0m
+[32m11:27:59[0m | [1mINFO    [0m | [1mSwitching to 商品分析 tab...[0m
+[32m11:28:01[0m | [1mINFO    [0m | [1m商品分析 tab loaded successfully[0m
+[32m11:28:01[0m | [1mINFO    [0m | [1mUsing 30-day date range (7-day requires premium)[0m
+[32m11:28:02[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: 关联直播New[0m
+[32m11:28:04[0m | [1mINFO    [0m | [1mExtracting video analysis data...[0m
+[32m11:28:04[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m11:28:06[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m11:28:09[0m | [1mINFO    [0m | [1mExtracting top 5 videos...[0m
+[32m11:28:09[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m11:28:11[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m11:28:16[0m | [1mINFO    [0m | [1mSuccessfully extracted 5 videos[0m
+[32m11:28:16[0m | [32m[1mSUCCESS [0m | [32m[1mProduct data saved to: ../product_list/20260205/1729616761074981417/tabcut_data.json[0m
+[32m11:28:16[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m11:28:16[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m11:28:16[0m | [1mINFO    [0m | [1mCollecting initial images...[0m
+[32m11:28:16[0m | [1mINFO    [0m | [1mInitial: 5 images[0m
+[32m11:28:17[0m | [1mINFO    [0m | [1mFound carousel arrow at (590, 500)[0m
+[32m11:28:19[0m | [1mINFO    [0m | [1mClick 1: +1 new images (total: 6)[0m
+[32m11:28:21[0m | [1mINFO    [0m | [1mClick 2: +0 new images (total: 6)[0m
+[32m11:28:21[0m | [1mINFO    [0m | [1mAfter carousel navigation: 6 total images[0m
+[32m11:28:21[0m | [1mINFO    [0m | [1mFound 6 unique product images[0m
+[32m11:28:21[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded 6/6 product images[0m
+[32m11:28:21[0m | [32m[1mSUCCESS [0m | [32m[1mDownloaded 6 product images[0m
+[32m11:28:21[0m | [1mINFO    [0m | [1mDownloading top 5 videos...[0m
+[32m11:28:21[0m | [1mINFO    [0m | [1mCleaned old video files[0m
+[32m11:28:21[0m | [1mINFO    [0m | [1mDownloading 5 videos to ../product_list/20260205/1729616761074981417/ref_video[0m
+[32m11:28:21[0m | [1mINFO    [0m | [1mDownloading video 1: ADsuper przydatna rzecz 发现时间：2026.01.31 15:03更新时间：2026.02.04 07:47时长：00:00:25跳转至 TikTok[0m
+[32m11:28:21[0m | [1mINFO    [0m | [1mDownloading video 2: AD#elitebazaar #organizator 发现时间：2026.01.31 06:02更新时间：2026.02.03 23:24时长：00:00:44跳转至 TikTok[0m
+[32m11:28:21[0m | [1mINFO    [0m | [1mDownloading video 3: AD无标题发现时间：2026.01.14 20:16更新时间：2026.01.20 20:54时长：00:00:59跳转至 TikTok[0m
+[32m11:28:24[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_1_magnolia..69.mp4[0m
+[32m11:28:24[0m | [1mINFO    [0m | [1mDownloading video 4: ADMakeup brush holder. #tiktokshop #fyp 发现时间：2026.01.30 04:56更新时间：2026.02.04 16:43时长：00:00:08跳转至 TikTok[0m
+[32m11:28:27[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_2_tanasieancuta.mp4[0m
+[32m11:28:27[0m | [1mINFO    [0m | [1mDownloading video 5: AD#salvaspazio#schminken #truccare #💄 #✅ 发现时间：2026.01.21 02:16更新时间：2026.01.21 02:16时长：00:00:18跳转至 TikTok[0m
+[32m11:28:27[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_3_magnolia..69.mp4[0m
+[32m11:28:28[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_4_pocobel49.mp4[0m
+[32m11:28:30[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_5_tortorellaveronica.mp4[0m
+[32m11:28:30[0m | [1mINFO    [0m | [1mDownloaded 5/5 videos successfully[0m
+[32m11:28:30[0m | [32m[1mSUCCESS [0m | [32m[1mVideos downloaded and data updated[0m
+✓ Product 1729616761074981417 completed
+[32m11:28:30[0m | [1mINFO    [0m | [1mStarting scrape for product ID: 1729661395592386734[0m
+[32m11:28:30[0m | [1mINFO    [0m | [1mAlready authenticated[0m
+[32m11:28:30[0m | [1mINFO    [0m | [1mNavigating to Chinese workbench...[0m
+[32m11:28:34[0m | [1mINFO    [0m | [1mNavigating to: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729661395592386734&region=DE[0m
+[32m11:28:43[0m | [1mINFO    [0m | [1mCurrent URL: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729661395592386734&region=DE[0m
+[32m11:28:43[0m | [1mINFO    [0m | [1mExtracting product information...[0m
+[32m11:28:43[0m | [1mINFO    [0m | [1mProduct: Valentinstags-Dekorationsset, Herzballons & Ich Liebe Dich Schild, Romantische Hochzeits- und Jubiläumsanträge, Perfektes Geschenk für Paare, Shop: Yiwu Baopai Toys Co. , Ltd.[0m
+[32m11:28:45[0m | [1mINFO    [0m | [1mExtracting sales data...[0m
+[32m11:28:45[0m | [1mINFO    [0m | [1mSwitching to 商品分析 tab...[0m
+[32m11:28:47[0m | [1mINFO    [0m | [1m商品分析 tab loaded successfully[0m
+[32m11:28:47[0m | [1mINFO    [0m | [1mUsing 30-day date range (7-day requires premium)[0m
+[32m11:28:49[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: 关联直播New[0m
+[32m11:28:51[0m | [1mINFO    [0m | [1mExtracting video analysis data...[0m
+[32m11:28:51[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m11:28:53[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m11:28:57[0m | [1mINFO    [0m | [1mExtracting top 5 videos...[0m
+[32m11:28:57[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m11:28:59[0m | [1mINFO    [0m | [1m关联视频 tab loaded successfully[0m
+[32m11:29:04[0m | [1mINFO    [0m | [1mSuccessfully extracted 5 videos[0m
+[32m11:29:04[0m | [32m[1mSUCCESS [0m | [32m[1mProduct data saved to: ../product_list/20260205/1729661395592386734/tabcut_data.json[0m
+[32m11:29:04[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m11:29:04[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m11:29:04[0m | [1mINFO    [0m | [1mCollecting initial images...[0m
+[32m11:29:04[0m | [1mINFO    [0m | [1mInitial: 5 images[0m
+[32m11:29:05[0m | [1mINFO    [0m | [1mFound carousel arrow at (590, 500)[0m
+[32m11:29:07[0m | [1mINFO    [0m | [1mClick 1: +1 new images (total: 6)[0m
+[32m11:29:09[0m | [1mINFO    [0m | [1mClick 2: +0 new images (total: 6)[0m
+[32m11:29:09[0m | [1mINFO    [0m | [1mAfter carousel navigation: 6 total images[0m
+[32m11:29:09[0m | [1mINFO    [0m | [1mFound 6 unique product images[0m
+[32m11:29:09[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded 6/6 product images[0m
+[32m11:29:09[0m | [32m[1mSUCCESS [0m | [32m[1mDownloaded 6 product images[0m
+[32m11:29:09[0m | [1mINFO    [0m | [1mDownloading top 5 videos...[0m
+[32m11:29:09[0m | [1mINFO    [0m | [1mCleaned old video files[0m
+[32m11:29:09[0m | [1mINFO    [0m | [1mDownloading 5 videos to ../product_list/20260205/1729661395592386734/ref_video[0m
+[32m11:29:09[0m | [1mINFO    [0m | [1mDownloading video 1: AD#BavarianVibe #BerlinLife #MünchenTrend #DeutscherKaffee #BrotUndWurst​   发现时间：2026.01.28 07:47更新时间：2026.02.03 08:01时长：00:00:15跳转至 TikTok[0m
+[32m11:29:09[0m | [1mINFO    [0m | [1mDownloading video 2: ADValentine's Day is around the corner and you have NO plan? Grab this decoration set. It arrives fast and saves the day. #valentinesday2026 #romanticdecor #couplesurprise #relationshipgoals #tiktokmademebuyit 发现时间：2026.01.23 15:50更新时间：2026.01.23 15:50时长：00:00:08跳转至 TikTok[0m
+[32m11:29:09[0m | [1mINFO    [0m | [1mDownloading video 3: ADValentinstags-Dekorationsset#tiktikmademebuyit #tiktokshop #ai #ValentinesDay发现时间：2026.01.19 08:32更新时间：2026.01.22 09:13时长：00:00:20跳转至 TikTok[0m
+[32m11:29:11[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_2_rollerrushdaily222.mp4[0m
+[32m11:29:11[0m | [1mINFO    [0m | [1mDownloading video 4: ADValentinstags-Dekorationsset#tiktikmademebuyit #blackfriday #ai #tiktokshop #Gift 发现时间：2026.02.03 16:01更新时间：2026.02.04 08:19时长：00:00:14跳转至 TikTok[0m
+[32m11:29:12[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_1_ninidresen.mp4[0m
+[32m11:29:12[0m | [1mINFO    [0m | [1mDownloading video 5: ADValentine's Day is around the corner and you have NO plan? Grab this decoration set. It arrives fast and saves the day. #valentinesday2026 #romanticdecor #couplesurprise #relationshipgoals #tiktokmademebuyit 发现时间：2026.01.28 14:44更新时间：2026.01.28 14:44时长：00:00:13跳转至 TikTok[0m
+[32m11:29:13[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_3_zejuxhvk56.mp4[0m
+[32m11:29:14[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_4_zfuvj.mp4[0m
+[32m11:29:15[0m | [32m[1mSUCCESS [0m | [32m[1m✓ Downloaded: video_5_jorden0808.mp4[0m
+[32m11:29:15[0m | [1mINFO    [0m | [1mDownloaded 5/5 videos successfully[0m
+[32m11:29:15[0m | [32m[1mSUCCESS [0m | [32m[1mVideos downloaded and data updated[0m
+✓ Product 1729661395592386734 completed
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/playwright/_impl/_connection.py:539: RuntimeWarning: coroutine 'Page.wait_for_event' was never awaited
+  for key, value in payload.items():
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/inspect.py:958: RuntimeWarning: coroutine 'Page.wait_for_event' was never awaited
+  if any(filename.endswith(s) for s in all_bytecode_suffixes):
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/inspect.py:1686: RuntimeWarning: coroutine 'Page.wait_for_event' was never awaited
+  return next(itertools.islice(positions_gen, instruction_index // 2, None))
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+[32m11:29:15[0m | [1mINFO    [0m | [1mStarting scrape for product ID: 1729737254364486015[0m
+[32m11:29:15[0m | [1mINFO    [0m | [1mAlready authenticated[0m
+[32m11:29:15[0m | [1mINFO    [0m | [1mNavigating to Chinese workbench...[0m
+[32m11:29:19[0m | [1mINFO    [0m | [1mNavigating to: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729737254364486015&region=DE[0m
+[32m11:29:25[0m | [1mINFO    [0m | [1mCurrent URL: https://www.tabcut.com/zh-CN/ranking/goods/detail?id=1729737254364486015&region=DE[0m
+[32m11:29:25[0m | [1mINFO    [0m | [1mExtracting product information...[0m
+[32m11:29:25[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: -[0m
+[32m11:29:25[0m | [1mINFO    [0m | [1mProduct: Unknown Product, Shop: Unknown Shop[0m
+[32m11:29:29[0m | [1mINFO    [0m | [1mExtracting sales data...[0m
+[32m11:29:29[0m | [1mINFO    [0m | [1mSwitching to 商品分析 tab...[0m
+[32m11:30:33[0m | [33m[1mWARNING [0m | [33m[1mCould not click 商品分析 tab[0m
+[32m11:30:33[0m | [33m[1mWARNING [0m | [33m[1mFailed to switch to 商品分析 tab, using current page data[0m
+[32m11:30:33[0m | [1mINFO    [0m | [1mUsing 30-day date range (7-day requires premium)[0m
+[32m11:31:07[0m | [33m[1mWARNING [0m | [33m[1mFailed to click 近30天, using current page data[0m
+[32m11:31:07[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: -[0m
+[32m11:31:07[0m | [33m[1mWARNING [0m | [33m[1mFailed to parse number: 关联直播New[0m
+[32m11:31:10[0m | [1mINFO    [0m | [1mExtracting video analysis data...[0m
+[32m11:31:10[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m11:32:14[0m | [33m[1mWARNING [0m | [33m[1mCould not click 关联视频 tab[0m
+[32m11:32:14[0m | [33m[1mWARNING [0m | [33m[1mFailed to switch to 关联视频 tab[0m
+[32m11:32:18[0m | [1mINFO    [0m | [1mExtracting top 5 videos...[0m
+[32m11:32:18[0m | [1mINFO    [0m | [1mSwitching to 关联视频 tab...[0m
+[32m11:33:23[0m | [33m[1mWARNING [0m | [33m[1mCould not click 关联视频 tab[0m
+[32m11:33:25[0m | [1mINFO    [0m | [1mSuccessfully extracted 4 videos[0m
+[32m11:33:25[0m | [32m[1mSUCCESS [0m | [32m[1mProduct data saved to: ../product_list/20260205/1729737254364486015/tabcut_data.json[0m
+[32m11:33:25[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m11:33:25[0m | [1mINFO    [0m | [1mDownloading product images...[0m
+[32m11:33:25[0m | [1mINFO    [0m | [1mCollecting initial images...[0m
+[32m11:33:25[0m | [1mINFO    [0m | [1mInitial: 0 images[0m
+[32m11:33:26[0m | [1mINFO    [0m | [1mNo carousel arrow found, using initial images only[0m
+[32m11:33:26[0m | [33m[1mWARNING [0m | [33m[1mNo product images found[0m
+[32m11:33:26[0m | [32m[1mSUCCESS [0m | [32m[1mDownloaded 0 product images[0m
+[32m11:33:26[0m | [1mINFO    [0m | [1mDownloading top 4 videos...[0m
+[32m11:33:26[0m | [1mINFO    [0m | [1mCleaned old video files[0m
+[32m11:33:26[0m | [1mINFO    [0m | [1mDownloading 4 videos to ../product_list/20260205/1729737254364486015/ref_video[0m
+[32m11:33:26[0m | [33m[1mWARNING [0m | [33m[1mNo video URL for video 1: ●直播[0m
+[32m11:33:26[0m | [33m[1mWARNING [0m | [33m[1mNo video URL for video 2: ●其它[0m
+[32m11:33:26[0m | [33m[1mWARNING [0m | [33m[1mNo video URL for video 4: ●商家自营账号[0m
+[32m11:33:26[0m | [33m[1mWARNING [0m | [33m[1mNo video URL for video 5: ●达人账号[0m
+[32m11:33:26[0m | [1mINFO    [0m | [1mDownloaded 0/4 videos successfully[0m
+[32m11:33:26[0m | [32m[1mSUCCESS [0m | [32m[1mVideos downloaded and data updated[0m
+✓ Product 1729737254364486015 completed
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/linecache.py:52: RuntimeWarning: coroutine 'Page.wait_for_event' was never awaited
+  def checkcache(filename=None):
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+[32m11:33:26[0m | [1mINFO    [0m | [1mClosing browser...[0m
+[32m11:33:26[0m | [1mINFO    [0m | [1mSession saved to config/session.json[0m
+[32m11:33:26[0m | [1mINFO    [0m | [1mBrowser closed[0m
+  Product 5/5: 1729737254364486015 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100%
+
+Batch Scraping Summary:
+✓ Completed: 5
+✗ Failed: 0

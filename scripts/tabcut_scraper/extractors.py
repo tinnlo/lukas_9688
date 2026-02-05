@@ -42,7 +42,9 @@ class DataExtractor:
             logger.debug(f"Failed to extract text from {selector}: {e}")
             return default
 
-    async def _safe_get_attribute(self, selector: str, attribute: str, default: str = "") -> str:
+    async def _safe_get_attribute(
+        self, selector: str, attribute: str, default: str = ""
+    ) -> str:
         """
         Safely extract attribute from element.
 
@@ -75,7 +77,7 @@ class DataExtractor:
 
         try:
             # Use JavaScript to extract data with specific selectors
-            data = await self.page.evaluate('''() => {
+            data = await self.page.evaluate("""() => {
                 // Product name - specific chakra-text class
                 const productNameEl = document.querySelector('p.chakra-text.css-1cdjl0i');
                 const productName = productNameEl?.textContent?.trim() || '';
@@ -117,13 +119,13 @@ class DataExtractor:
                     totalSales,
                     totalRevenue
                 };
-            }''')
+            }""")
 
-            product_name = data.get('productName', '') or "Unknown Product"
-            shop_owner = data.get('shopOwner', '') or "Unknown Shop"
-            total_sales_text = data.get('totalSales', '')
+            product_name = data.get("productName", "") or "Unknown Product"
+            shop_owner = data.get("shopOwner", "") or "Unknown Shop"
+            total_sales_text = data.get("totalSales", "")
             total_sales = format_number(total_sales_text) if total_sales_text else None
-            total_sales_revenue = data.get('totalRevenue', '') or None
+            total_sales_revenue = data.get("totalRevenue", "") or None
 
             logger.info(f"Product: {product_name}, Shop: {shop_owner}")
 
@@ -131,19 +133,21 @@ class DataExtractor:
                 product_name=product_name,
                 shop_owner=shop_owner,
                 total_sales=total_sales,
-                total_sales_revenue=total_sales_revenue
+                total_sales_revenue=total_sales_revenue,
             )
 
         except Exception as e:
             logger.error(f"Failed to extract product info: {e}")
             import traceback
+
             traceback.print_exc()
             return ProductInfo(
-                product_name="Unknown Product",
-                shop_owner="Unknown Shop"
+                product_name="Unknown Product", shop_owner="Unknown Shop"
             )
 
-    async def _click_tab(self, tab_name: str, wait_selector: Optional[str] = None) -> bool:
+    async def _click_tab(
+        self, tab_name: str, wait_selector: Optional[str] = None
+    ) -> bool:
         """
         Click on a tab and wait for content to load.
 
@@ -168,11 +172,17 @@ class DataExtractor:
             tab_clicked = False
             for selector in tab_selectors:
                 try:
+                    # Fast fail: try to find element with 2s timeout
+                    await self.page.wait_for_selector(
+                        selector, timeout=2000, state="attached"
+                    )
                     tab_element = await self.page.query_selector(selector)
                     if tab_element:
                         await tab_element.click()
                         tab_clicked = True
-                        logger.debug(f"Clicked {tab_name} tab using selector: {selector}")
+                        logger.debug(
+                            f"Clicked {tab_name} tab using selector: {selector}"
+                        )
                         break
                 except:
                     continue
@@ -215,6 +225,10 @@ class DataExtractor:
 
             for selector in range_selectors:
                 try:
+                    # Fast fail: try to find element with 2s timeout
+                    await self.page.wait_for_selector(
+                        selector, timeout=2000, state="attached"
+                    )
                     button = await self.page.query_selector(selector)
                     if button:
                         await button.click()
@@ -245,30 +259,31 @@ class DataExtractor:
         try:
             # Click on 商品分析 tab
             if not await self._click_tab("商品分析"):
-                logger.warning("Failed to switch to 商品分析 tab, using current page data")
+                logger.warning(
+                    "Failed to switch to 商品分析 tab, using current page data"
+                )
 
-            # Try 7-day data first
-            await self._click_date_range("近7天")
-            sales_data = await self._extract_sales_data_from_page("7day")
+            # Use 30-day data by default (7-day is premium feature)
+            logger.info("Using 30-day date range (7-day requires premium)")
+            click_success = await self._click_date_range("近30天")
 
-            # Check if data is empty and try 30-day fallback
-            if try_30day_fallback and self._is_sales_data_empty(sales_data):
-                logger.info("7-day data is empty, trying 30-day data...")
-                await self._click_date_range("近30天")
-                sales_data = await self._extract_sales_data_from_page("30day")
+            if not click_success:
+                logger.warning("Failed to click 近30天, using current page data")
+
+            sales_data = await self._extract_sales_data_from_page("30day")
 
             return sales_data
 
         except Exception as e:
             logger.error(f"Failed to extract sales data: {e}")
-            return SalesData(date_range="7day")
+            return SalesData(date_range="30day")
 
     def _is_sales_data_empty(self, sales_data: SalesData) -> bool:
         """Check if sales data is empty."""
         return (
-            sales_data.sales_count is None and
-            sales_data.sales_revenue is None and
-            sales_data.related_videos is None
+            sales_data.sales_count is None
+            and sales_data.sales_revenue is None
+            and sales_data.related_videos is None
         )
 
     async def _extract_sales_data_from_page(self, date_range: str) -> SalesData:
@@ -283,7 +298,7 @@ class DataExtractor:
         """
         try:
             # Use JavaScript to find data values in the 商品数据统计 section
-            data = await self.page.evaluate('''() => {
+            data = await self.page.evaluate("""() => {
                 // Helper function to find value next to a label
                 const findValueByLabel = (labelText) => {
                     const labels = Array.from(document.querySelectorAll('*'));
@@ -320,15 +335,21 @@ class DataExtractor:
                     conversionRate: findValueByLabel('视频出单率'),
                     creatorConversionRate: findValueByLabel('达人出单率')
                 };
-            }''')
+            }""")
 
             return SalesData(
                 date_range=date_range,
-                sales_count=format_number(data.get('salesCount')) if data.get('salesCount') else None,
-                sales_revenue=data.get('salesRevenue') or None,
-                related_videos=format_number(data.get('relatedVideos')) if data.get('relatedVideos') else None,
-                related_creators=format_number(data.get('relatedCreators')) if data.get('relatedCreators') else None,
-                conversion_rate=data.get('conversionRate') or None
+                sales_count=format_number(data.get("salesCount"))
+                if data.get("salesCount")
+                else None,
+                sales_revenue=data.get("salesRevenue") or None,
+                related_videos=format_number(data.get("relatedVideos"))
+                if data.get("relatedVideos")
+                else None,
+                related_creators=format_number(data.get("relatedCreators"))
+                if data.get("relatedCreators")
+                else None,
+                conversion_rate=data.get("conversionRate") or None,
             )
         except Exception as e:
             logger.error(f"Failed to extract sales data: {e}")
@@ -349,7 +370,7 @@ class DataExtractor:
                 logger.warning("Failed to switch to 关联视频 tab")
 
             # Use JavaScript to extract video analysis data
-            data = await self.page.evaluate('''() => {
+            data = await self.page.evaluate("""() => {
                 const findValueByLabel = (labelText) => {
                     const labels = Array.from(document.querySelectorAll('*'));
                     const label = labels.find(el =>
@@ -384,15 +405,21 @@ class DataExtractor:
                     adRevenue: findValueByLabel('广告成交金额'),
                     adRatio: findValueByLabel('广告成交占比')
                 };
-            }''')
+            }""")
 
             return VideoAnalysis(
-                带货视频数=format_number(data.get('videoCount')) if data.get('videoCount') else None,
-                带货视频达人数=format_number(data.get('creatorCount')) if data.get('creatorCount') else None,
-                带货视频销量=format_number(data.get('videoSales')) if data.get('videoSales') else None,
-                带货视频销售额=data.get('videoRevenue') or None,
-                广告成交金额=data.get('adRevenue') or None,
-                广告成交占比=data.get('adRatio') or None
+                带货视频数=format_number(data.get("videoCount"))
+                if data.get("videoCount")
+                else None,
+                带货视频达人数=format_number(data.get("creatorCount"))
+                if data.get("creatorCount")
+                else None,
+                带货视频销量=format_number(data.get("videoSales"))
+                if data.get("videoSales")
+                else None,
+                带货视频销售额=data.get("videoRevenue") or None,
+                广告成交金额=data.get("adRevenue") or None,
+                广告成交占比=data.get("adRatio") or None,
             )
 
         except Exception as e:
@@ -418,8 +445,33 @@ class DataExtractor:
             # Wait for video list to load
             await asyncio.sleep(2)
 
+            # IMPORTANT: Sort by "预估销量" (Estimated Sales) to get top performing videos
+            # Click the "预估销量" column header to sort descending
+            try:
+                logger.info("Sorting videos by 预估销量 (Estimated Sales)...")
+                # Try to find and click the "预估销量" column header
+                sales_header = await self.page.query_selector(
+                    'th:has-text("预估销量"), div:has-text("预估销量")'
+                )
+                if sales_header:
+                    await sales_header.click()
+                    await asyncio.sleep(1)
+
+                    # Click again to ensure descending order (highest sales first)
+                    await sales_header.click()
+                    await asyncio.sleep(1)
+                    logger.info("✓ Sorted by estimated sales (descending)")
+                else:
+                    logger.warning(
+                        "Could not find '预估销量' column header, using default sort"
+                    )
+            except Exception as e:
+                logger.warning(
+                    f"Failed to sort by estimated sales: {e}, using default sort"
+                )
+
             # Find video rows - try multiple patterns
-            all_rows = await self.page.query_selector_all('tr')
+            all_rows = await self.page.query_selector_all("tr")
 
             if not all_rows:
                 logger.warning("No video rows found")
@@ -443,9 +495,8 @@ class DataExtractor:
                     logger.warning(f"Failed to extract video {rank}: {e}")
                     continue
 
-            # Re-number videos sequentially to avoid gaps/duplicates
-            for idx, video in enumerate(videos, start=1):
-                video.rank = idx
+            # Don't re-number - keep original ranks from table
+            # This preserves the correct ranking from tabcut
 
             logger.info(f"Successfully extracted {len(videos)} videos")
             return videos
@@ -467,7 +518,7 @@ class DataExtractor:
         """
         try:
             # Use JavaScript to extract data from specific cell positions
-            data = await row.evaluate('''(row) => {
+            data = await row.evaluate("""(row) => {
                 const cells = Array.from(row.querySelectorAll('td'));
 
                 if (cells.length < 4) return null;
@@ -513,7 +564,7 @@ class DataExtractor:
                     estimatedRevenue,
                     totalViews
                 };
-            }''')
+            }""")
 
             if not data:
                 return None
@@ -523,25 +574,31 @@ class DataExtractor:
 
             return VideoData(
                 rank=rank,
-                title=data.get('title', f"Video {rank}"),
-                creator_username=data.get('creatorUsername', 'unknown'),
-                creator_followers=data.get('creatorFollowers'),
-                publish_date=data.get('publishDate'),
-                estimated_sales=format_number(data.get('estimatedSales')) if data.get('estimatedSales') else None,
-                estimated_revenue=data.get('estimatedRevenue'),
-                total_views=data.get('totalViews'),
-                video_url=video_url
+                title=data.get("title", f"Video {rank}"),
+                creator_username=data.get("creatorUsername", "unknown"),
+                creator_followers=data.get("creatorFollowers"),
+                publish_date=data.get("publishDate"),
+                estimated_sales=format_number(data.get("estimatedSales"))
+                if data.get("estimatedSales")
+                else None,
+                estimated_revenue=data.get("estimatedRevenue"),
+                total_views=data.get("totalViews"),
+                video_url=video_url,
             )
 
         except Exception as e:
             logger.debug(f"Error extracting video data from row: {e}")
             import traceback
+
             traceback.print_exc()
             return None
 
     async def _extract_video_url_from_row(self, row, rank: int) -> Optional[str]:
         """
-        Extract video URL by clicking the "跳转至 TikTok" button and capturing popup.
+        Extract video URL by clicking the "跳转至" button (TikTok logo is an image).
+
+        Note: "跳转至 TikTok" button has "TikTok" as an <img> logo, not text.
+        So we search for buttons/links containing "跳转" text only.
 
         Args:
             row: Playwright element handle for the row
@@ -551,28 +608,51 @@ class DataExtractor:
             TikTok video URL or None
         """
         try:
-            # Find the "跳转至 TikTok" button in the row
-            tiktok_button = await row.query_selector('button:has-text("跳转至 TikTok"), a:has-text("跳转至 TikTok"), :text("跳转至 TikTok")')
+            # Find the "跳转至 [TikTok logo]" button/link in the row
+            # Note: TikTok is an image, not text, so we only search for "跳转"
+            tiktok_button = await row.query_selector(
+                'button:has-text("跳转"), a:has-text("跳转"), span:has-text("跳转")'
+            )
 
             if not tiktok_button:
-                logger.debug(f"No '跳转至 TikTok' button found for video {rank}")
-                return None
+                logger.debug(
+                    f"No '跳转' button found for video {rank}, trying alternative selectors"
+                )
+                # Try broader selector - any element with "跳转至" text
+                tiktok_button = await row.evaluate_handle("""(row) => {
+                    const allElements = Array.from(row.querySelectorAll('button, a, span, div'));
+                    return allElements.find(el => el.textContent.includes('跳转'));
+                }""")
+
+                if not tiktok_button or await tiktok_button.evaluate(
+                    "el => el === null"
+                ):
+                    logger.warning(f"Could not find '跳转' button for video {rank}")
+                    return None
 
             # Set up popup listener before clicking
-            popup_promise = self.page.wait_for_event("popup", timeout=5000)
+            try:
+                popup_promise = self.page.wait_for_event("popup", timeout=5000)
 
-            # Click the button
-            await tiktok_button.click()
+                # Click the button
+                await tiktok_button.click()
 
-            # Wait for popup
-            popup = await popup_promise
-            video_url = popup.url
+                # Wait for popup
+                popup = await popup_promise
+                video_url = popup.url
 
-            # Close the popup
-            await popup.close()
+                # Close the popup
+                await popup.close()
 
-            logger.debug(f"Extracted video URL for rank {rank}: {video_url}")
-            return video_url
+                logger.debug(
+                    f"Extracted video URL for rank {rank} via popup: {video_url}"
+                )
+                return video_url
+
+            except Exception as popup_error:
+                logger.debug(f"Popup method failed for rank {rank}: {popup_error}")
+                # If popup fails, return None and we'll skip this video
+                return None
 
         except Exception as e:
             logger.debug(f"Failed to extract video URL for rank {rank}: {e}")

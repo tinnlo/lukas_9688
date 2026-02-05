@@ -61,6 +61,7 @@ views:
         - file.name == "product_index"
         - file.ext == "md"
         - file.path.startsWith("product_list")
+        - file.path.contains("samples")
     order:
       - product_name
       - shop_owner
@@ -72,6 +73,7 @@ views:
         direction: DESC
     imageAspectRatio: 1
     image: note.cover
+    cardSize: 170
   - type: table
     name: All Products
     filters:

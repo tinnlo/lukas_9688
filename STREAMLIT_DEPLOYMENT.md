@@ -74,8 +74,7 @@ Share the URL: `https://your-app-name.streamlit.app`
 
 ```bash
 cd scripts
-source venv/bin/activate
-python run_scraper.py --batch-file products.csv --download-videos
+python3 run_scraper.py --batch-file products.csv --download-videos
 ```
 
 Results saved to: `product_list/{product_id}/tabcut_data.json`

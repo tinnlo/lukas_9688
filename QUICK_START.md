@@ -92,8 +92,7 @@ Contact your administrator to:
 1. **Run the scraper locally:**
    ```bash
    cd scripts
-   source venv/bin/activate
-   python run_scraper.py --batch-file products.csv --download-videos
+   python3 run_scraper.py --batch-file products.csv --download-videos
    ```
 
 2. **Share results:**
@@ -115,13 +114,13 @@ Contact your administrator to:
 
 ```bash
 # Single product
-python run_scraper.py --product-id 1729630936525936882
+python3 run_scraper.py --product-id 1729630936525936882
 
 # Batch with videos
-python run_scraper.py --batch-file products.csv --download-videos
+python3 run_scraper.py --batch-file products.csv --download-videos
 
 # Resume interrupted batch
-python run_scraper.py --batch-file products.csv --resume
+python3 run_scraper.py --batch-file products.csv --resume
 ```
 
 ---

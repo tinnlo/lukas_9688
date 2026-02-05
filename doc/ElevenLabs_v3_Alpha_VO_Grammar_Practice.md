@@ -4,7 +4,7 @@ Goal: make German TikTok UGC ads sound **energetic, engaging, and attention-grab
 
 This is a practical writing guide for the text you feed into ElevenLabs (not a linguistics primer).
 
-**Source**: Official ElevenLabs v3 documentation + UGC TikTok workflow customizations
+**Source**: Official ElevenLabs v3 documentation (Updated Feb 2026) + UGC TikTok workflow customizations
 
 ---
 
@@ -225,6 +225,44 @@ In `product_list/{vendor}/{product_id}/script/*.md`:
 ```
 
 **Every line MUST have 1-2 cues.**
+
+---
+
+## Multi-Speaker Dialogue (NEW in v3)
+
+ElevenLabs v3 supports multi-speaker dialogue using **Speaker labels**.
+
+### Format:
+
+```text
+Speaker 1: [excited] First speaker's line here.
+
+Speaker 2: [curious] Second speaker's line here.
+
+Speaker 1: [happy] First speaker responds.
+```
+
+### Key Rules:
+
+- Use `Speaker 1:`, `Speaker 2:`, etc. (can also use character names like `Woman:`, `Man:`)
+- Each speaker can have their own voice assigned in the ElevenLabs interface
+- Audio tags work the same as single-speaker format
+- Leave blank lines between speakers for clarity (optional but recommended)
+- You can have unlimited speakers in one dialogue
+
+### Example (UGC TikTok Dialogue):
+
+```text
+Customer: [curious] Entschuldigung, die Uhr ist richtig stylisch. Welche Marke ist das?
+
+Creator: [confident] Danke! Schau mal, das Display ist 1,85 Zoll. HD.
+
+Creator: [excited] 710 Milliamperestunden Akku. Hält fast eine Woche!
+
+Creator: [enthusiastic] Link ist unten. Schnapp sie dir!
+```
+
+**Important**: In the ElevenLabs UI or API, you assign different voices to each speaker. The format tells the system WHEN to switch voices.
 
 ---
 

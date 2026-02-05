@@ -1,0 +1,96 @@
+{
+  "product_id": "1729585963126987574",
+  "scraped_at": "2026-02-03T23:34:51.428324",
+  "product_info": {
+    "product_name": "LASTAR Herrenparfum, Eau de Cologne, Eau de Parfum, langanhaltendes Duftspray, perfekt als Festivalgeschenk, eine angenehme Überraschung für deinen Freund, Weihnachtsgeschenk, BlackFriday",
+    "shop_owner": "LASTAR perfume",
+    "total_sales": 71,
+    "total_sales_revenue": "€ 1012.12($ 1178.25)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "7day",
+    "sales_count": 6,
+    "sales_revenue": "$ 95.48",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "7.69%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 13,
+    "带货视频达人数": 12,
+    "带货视频销量": 1,
+    "带货视频销售额": "$ 15.91",
+    "广告成交金额": "$ 0.00",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADErlebe die erfrischende Kraft der Küste mit LASTAR Azure Coastal. Dieses hochwertige Herren Eau de Parfum vereint frische, maritime Noten mit eleganter Maskulinität. Der Duft ist langanhaltend, modern und perfekt für Alltag, Büro oder besondere Anlässe. Azure Coastal überzeugt durch sein stilvolles Design und seine angenehme Duftkomposition – ideal als Geschenk für deinen Freund, Ehemann oder Bruder. Ein Duft, der Selbstbewusstsein und Frische ausstrahlt. ✔ Lang anhaltender Duft ✔ Frisch & maskulin ✔ Perfekt als Geschenk ✔ Für Alltag & besondere Anlässe #Herrenparfum  #AzureCoastal  #LastarParfum  #FrischerDuft  #GeschenkFürIhn 发现时间：2026.01.18 03:37更新时间：2026.01.23 11:39时长：00:01:21跳转至 TikTok",
+      "creator_username": "modinosaurus",
+      "creator_followers": "4.7万",
+      "publish_date": "2026-01-17 13:26",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 13.67($ 15.91)",
+      "total_views": "934",
+      "video_url": "https://www.tiktok.com/@modinosaurus/video/7596305743087815958?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_modinosaurus.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD无标题发现时间：2026.01.27 04:19更新时间：2026.02.01 08:39时长：00:00:13跳转至 TikTok",
+      "creator_username": "dictator__24",
+      "creator_followers": "13.36万",
+      "publish_date": "2026-01-26 11:51",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "3399",
+      "video_url": "https://www.tiktok.com/@dictator__24/video/7599621120941198614?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_dictator__24.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD无标题发现时间：2026.01.12 11:20更新时间：2026.01.16 07:00时长：00:00:12跳转至 TikTok",
+      "creator_username": "our_history_in_flames",
+      "creator_followers": "3.58万",
+      "publish_date": "2026-01-12 09:01",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "291",
+      "video_url": "https://www.tiktok.com/@our_history_in_flames/video/7594382171482279171?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_our_history_in_flames.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADEin Duft, der Präsenz zeigt. #newyearnewme #Winterangebote #laster 发现时间：2026.01.20 21:38更新时间：2026.01.20 21:38时长：00:00:18跳转至 TikTok",
+      "creator_username": "mo4trd",
+      "creator_followers": "9656",
+      "publish_date": "2026-01-20 00:26",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "260",
+      "video_url": "https://www.tiktok.com/@mo4trd/video/7597218015779818785?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_mo4trd.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD无标题发现时间：2026.01.15 08:26更新时间：2026.01.15 08:26时长：00:00:26跳转至 TikTok",
+      "creator_username": "4k_best_song",
+      "creator_followers": "9万",
+      "publish_date": "2026-01-14 10:36",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0.00($ 0.00)",
+      "total_views": "756",
+      "video_url": "https://www.tiktok.com/@4k_best_song/video/7595148725018840342?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_4k_best_song.mp4"
+    }
+  ]
+}

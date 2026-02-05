@@ -55,74 +55,49 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-Ich habe 60 Parfüms zu Hause.
-[matter-of-fact]
-Kein Witz. Ich teste ständig neue Düfte.
-[confident]
+[neutral] Ich habe 60 Parfüms zu Hause.
+[matter-of-fact] Kein Witz. Ich teste ständig neue Düfte.
 
-Aber wisst ihr, welches ich wirklich jeden Tag nutze?
-[curious]
-Dieses hier. LASTAR.
-[revealing]
+[neutral] Aber wisst ihr, welches ich wirklich jeden Tag nutze?
+[curious] Dieses hier. LASTAR.
 
-Es ist ein Doppelpack. Zwei Düfte in einem Set.
-[educational]
-Morgens nehme ich den blumigen. Frisch, wie frisch geduscht.
-[bright]
-Abends den anderen. Vanille und Holz. Warm und gemütlich.
-[warm]
+[neutral] Es ist ein Doppelpack. Zwei Düfte in einem Set.
+[educational] Morgens nehme ich den blumigen. Frisch, wie frisch geduscht.
+[bright] Abends den anderen. Vanille und Holz. Warm und gemütlich.
 
-Und das Beste? Es hält wirklich.
-[impressed]
-Ich sprühe es morgens auf. Nachmittags rieche ich es noch.
-[surprised]
+[neutral] Und das Beste? Es hält wirklich.
+[impressed] Ich sprühe es morgens auf. Nachmittags rieche ich es noch.
 
-Ich habe früher viel Geld für teure Marken ausgegeben.
-[reflective]
-Das hier riecht genauso gut.
-[satisfied]
-Aber kostet einen Bruchteil.
-[blunt]
+[neutral] Ich habe früher viel Geld für teure Marken ausgegeben.
+[reflective] Das hier riecht genauso gut.
+[satisfied] Aber kostet einen Bruchteil.
 
-Für den Preis? Unschlagbar.
-[enthusiastic]
-Hol's dir. Link unten.
-[encouraging]
+[neutral] Für den Preis? Unschlagbar.
+[enthusiastic] Hol's dir. Link unten.
+
+
+---
 
 ---
 
 ### ZH (中文翻译 | 45s)
 
-我家里有 60 瓶香水。
-[matter-of-fact]
-不开玩笑。我一直在测试新香水。
-[confident]
+[neutral] 我家里有 60 瓶香水。
+[matter-of-fact] 不开玩笑。我一直在测试新香水。
 
-但你知道我每天真正用的是哪个吗？
-[curious]
-就是这个。LASTAR。
-[revealing]
+[neutral] 但你知道我每天真正用的是哪个吗？
+[curious] 就是这个。LASTAR。
 
-这是双瓶装。一套两种香味。
-[educational]
-早上我用花香的。清新，像刚洗完澡。
-[bright]
-晚上用另一个。香草和木质。温暖舒适。
-[warm]
+[neutral] 这是双瓶装。一套两种香味。
+[educational] 早上我用花香的。清新，像刚洗完澡。
+[bright] 晚上用另一个。香草和木质。温暖舒适。
 
-最棒的是？真的很持久。
-[impressed]
-我早上喷。下午还能闻到。
-[surprised]
+[neutral] 最棒的是？真的很持久。
+[impressed] 我早上喷。下午还能闻到。
 
-我以前花很多钱买昂贵的品牌。
-[reflective]
-这个闻起来一样好。
-[satisfied]
-但只需要一小部分价格。
-[blunt]
+[neutral] 我以前花很多钱买昂贵的品牌。
+[reflective] 这个闻起来一样好。
+[satisfied] 但只需要一小部分价格。
 
-这个价格？无敌。
-[enthusiastic]
-快买。链接在下面。
-[encouraging]
+[neutral] 这个价格？无敌。
+[enthusiastic] 快买。链接在下面。

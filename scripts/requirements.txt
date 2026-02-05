@@ -13,11 +13,24 @@ loguru==0.7.2
 # CLI Progress & Display
 rich==13.7.0
 
-# HTTP Client (for video downloads)
+# HTTP Client
 httpx==0.26.0
 
 # Video Downloader for TikTok
-yt-dlp==2024.12.13
+yt-dlp
 
 # Retry Utilities
 tenacity==8.2.3
+
+# Video Processing (OpenCV)
+opencv-python
+
+# Audio Transcription (Whisper)
+faster-whisper
+
+# Image Processing
+Pillow
+numpy
+
+# NOTE: google-generativeai is NOT required
+# This project uses Gemini CLI via MCP for AI analysis

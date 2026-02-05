@@ -137,10 +137,14 @@ echo ""
 # ========================================
 echo "=== PHASE 4: PRODUCT INDEX GENERATION ==="
 echo ""
-echo "Generating product_index.md for all products..."
+echo "Generating product_index.md for successful products..."
 echo ""
 
-python generate_product_indices.py --force
+python3 generate_product_indices.py \
+  --base "$OUT_DIR" \
+  --product-ids "${PRODUCT_IDS[*]}" \
+  --require-scripts \
+  --incremental
 
 echo ""
 echo "✅ Phase 4 complete"

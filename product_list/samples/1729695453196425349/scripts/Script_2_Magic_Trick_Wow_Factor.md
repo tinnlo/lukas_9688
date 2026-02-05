@@ -56,68 +56,47 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-Wetten, du wusstest nicht, dass dein Handy DAS kann?
-[mischievous]
+[mischievous] Wetten, du wusstest nicht, dass dein Handy DAS kann?
 
-Achte genau hin.
-[whisper]
+[whisper] Achte genau hin.
 
-Musik ist leise. Handy drauf. BOOM.
-[excited]
-Wieder runter. Still.
-[neutral]
-Drauf. Laut.
-[impressed]
+[neutral] Musik ist leise. Handy drauf. BOOM.
+[excited] Wieder runter. Still.
+[neutral] Drauf. Laut.
 
-Wie geht das? Magie?
-[curious]
-Nein. Induktion.
-[revealing]
+[neutral] Wie geht das? Magie?
+[curious] Nein. Induktion.
 
-PAXA nutzt Schall-Übertragung. Kein Bluetooth.
-[educational]
-Funktioniert mit jedem Handy.
-[confident]
+[neutral] PAXA nutzt Schall-Übertragung. Kein Bluetooth.
+[educational] Funktioniert mit jedem Handy.
 
-iPhone? Ja. Samsung? Ja. Mit Hülle? Auch ja.
-[matter-of-fact]
+[matter-of-fact] iPhone? Ja. Samsung? Ja. Mit Hülle? Auch ja.
 
-Das Ding ist der Wahnsinn.
-[enthusiastic]
-Schnapp's dir. Jetzt.
-[encouraging]
+[neutral] Das Ding ist der Wahnsinn.
+[enthusiastic] Schnapp's dir. Jetzt.
+
+
+---
 
 ---
 
 ### ZH (中文翻译 | 30s)
 
-打赌你不知道你的手机能做到这个？
-[mischievous]
+[mischievous] 打赌你不知道你的手机能做到这个？
 
-仔细看。
-[whisper]
+[whisper] 仔细看。
 
-音乐很小声。放上去。轰。
-[excited]
-拿下来。安静。
-[neutral]
-放上去。大声。
-[impressed]
+[neutral] 音乐很小声。放上去。轰。
+[excited] 拿下来。安静。
+[neutral] 放上去。大声。
 
-怎么做到的？魔法？
-[curious]
-不。感应。
-[revealing]
+[neutral] 怎么做到的？魔法？
+[curious] 不。感应。
 
-PAXA 使用声音传输。无蓝牙。
-[educational]
-适用于所有手机。
-[confident]
+[neutral] PAXA 使用声音传输。无蓝牙。
+[educational] 适用于所有手机。
 
-iPhone？是的。三星？是的。带壳？也是的。
-[matter-of-fact]
+[matter-of-fact] iPhone？是的。三星？是的。带壳？也是的。
 
-这东西太疯狂了。
-[enthusiastic]
-快抢。现在。
-[encouraging]
+[neutral] 这东西太疯狂了。
+[enthusiastic] 快抢。现在。

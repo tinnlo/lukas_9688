@@ -33,22 +33,27 @@ Automated scraper for extracting TikTok shop product data from tabcut.com, inclu
 
 **Prerequisites:**
 1. Valid tabcut.com account credentials in `scripts/config/.env`
-2. Python 3.8+ with virtual environment
+2. Python 3.8+ (uses system/global Python environment)
+3. Required packages installed globally (see `scripts/requirements.txt`)
 
 **Quick Start:**
 ```bash
 cd scripts
-source venv/bin/activate
 DATE=YYYYMMDD
 
 # Single product
-python run_scraper.py --product-id 1729630936525936882 --output-dir "../product_list/$DATE"
+python3 run_scraper.py --product-id 1729630936525936882 --output-dir "../product_list/$DATE"
 
 # Batch scraping
-python run_scraper.py --batch-file products.csv --download-videos --output-dir "../product_list/$DATE"
+python3 run_scraper.py --batch-file products.csv --download-videos --output-dir "../product_list/$DATE"
 
 # Resume interrupted batch
-python run_scraper.py --batch-file products.csv --resume --output-dir "../product_list/$DATE"
+python3 run_scraper.py --batch-file products.csv --resume --output-dir "../product_list/$DATE"
+```
+
+**Note:** This project uses the system Python environment. Install dependencies globally with:
+```bash
+pip3 install -r scripts/requirements.txt
 ```
 
 **Output Structure:**

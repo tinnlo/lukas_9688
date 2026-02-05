@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Das perfekte Valentinstagsgeschenk für unter 20€ 💝 LASTAR Vanille Set für Paare. Er liebt es, sie auch. Schnell sein #tiktokshop #valentinstag #geschenk #parfüm #couple
+  Das perfekte Valentinstagsgeschenk für unter 20€ 💝 LASTAR Vanille Set für Paare. Sie liebt es, ich auch. Schnell sein #tiktokshop #valentinstag #geschenk #parfüm #couple
 published: 2026-01-31
 duration: "00:40"
 sales:
@@ -54,76 +54,51 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-Valentinstag steht vor der Tür.
-[urgent]
-Keine Ahnung, was du schenken sollst?
-[helpful]
+[neutral] Valentinstag steht vor der Tür.
+[urgent] Keine Ahnung, was du schenken sollst?
 
-Rosen? Langweilig.
-[dismissive]
-Schokolade? Schon gegessen.
-[blunt]
+[neutral] Rosen? Langweilig.
+[dismissive] Schokolade? Schon gegessen.
 
-Schau mal hier.
-[excited]
-Das LASTAR Parfüm-Set. Zwei Flaschen.
-[enthusiastic]
+[neutral] Schau mal hier.
+[excited] Das LASTAR Parfüm-Set. Zwei Flaschen.
 
-Eins für ihn. Eins für sie.
-[clear]
-Vanille. Warm. Gemütlich.
-[warm]
+[neutral] Eins für ihn. Eins für sie.
+[clear] Vanille. Warm. Gemütlich.
 
-Mein Freund trägt das jetzt jeden Tag.
-[satisfied]
-Und ich auch. Wir riechen zusammen gut.
-[playful]
+[neutral] Meine Freundin trägt das jetzt jeden Tag.
+[satisfied] Und ich auch. Wir riechen zusammen gut.
 
-Das Beste? Kostet keine 20 Euro.
-[shocked]
-Perfektes Geschenk. Einfach.
-[confident]
+[neutral] Das Beste? Kostet keine 20 Euro.
+[shocked] Perfektes Geschenk. Einfach.
 
-Schnell sein, bevor es weg ist.
-[urgent]
-Link oben. Jetzt sichern.
-[encouraging]
+[neutral] Schnell sein, bevor es weg ist.
+[urgent] Link oben. Jetzt sichern.
+
+
+---
 
 ---
 
 ### ZH (中文翻译 | 40s)
 
-情人节快到了。
-[urgent]
-不知道送什么？
-[helpful]
+[neutral] 情人节快到了。
+[urgent] 不知道送什么？
 
-玫瑰？无聊。
-[dismissive]
-巧克力？已经吃过了。
-[blunt]
+[neutral] 玫瑰？无聊。
+[dismissive] 巧克力？已经吃过了。
 
-看这个。
-[excited]
-LASTAR 香水套装。两瓶。
-[enthusiastic]
+[neutral] 看这个。
+[excited] LASTAR 香水套装。两瓶。
 
-一瓶给他。一瓶给她。
-[clear]
-香草。温暖。舒适。
-[warm]
+[neutral] 一瓶给他。一瓶给她。
+[clear] 香草。温暖。舒适。
 
-我男朋友现在每天都喷。
-[satisfied]
-我也是。我们一起闻起来很好。
-[playful]
+[neutral] 我女朋友现在每天都喷。
+[satisfied] 我也是。我们一起闻起来很好。
 
-最棒的是？不到 20 欧元。
-[shocked]
-完美的礼物。简单。
-[confident]
+[neutral] 最棒的是？不到 20 欧元。
+[shocked] 完美的礼物。简单。
 
-赶紧买，不然就没了。
-[urgent]
-链接在上面。现在抢购。
-[encouraging]
+[neutral] 赶紧买，不然就没了。
+[urgent] 链接在上面。现在抢购。

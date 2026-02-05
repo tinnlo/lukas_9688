@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Mein Freund dachte ich hätte eine Affäre 😂 Nur wegen diesem Parfüm. LASTAR riecht SO gut. Probier's aus #tiktokshop #couple #parfüm #lastar #prank
+  Meine Freundin dachte ich hätte eine Affäre 😂 Nur wegen diesem Parfüm. LASTAR riecht SO gut. Probier's aus #tiktokshop #couple #parfüm #lastar #prank
 published: 2026-01-31
 duration: "00:42"
 sales:
@@ -24,7 +24,7 @@ source_notes:
 
 **Structure: Relationship Drama Hook**
 
-1. **Hook (0-3s):** Boyfriend accusing: "Whose perfume is this?!"
+1. **Hook (0-3s):** Girlfriend accusing: "Whose perfume is this?!"
 2. **Conflict (3-12s):** Drama escalation, "Did you meet someone else?"
 3. **Reveal (12-25s):** It's just LASTAR, show the double pack
 4. **Resolution (25-37s):** Partner smells it, approves, wants one too
@@ -36,13 +36,13 @@ source_notes:
 
 | Seconds | Visual | Purpose |
 |:--------|:-------|:--------|
-| 00-03 | POV: Angry boyfriend holding "strange" perfume bottle, accusatory face | Hook: Conflict stop-scroll |
+| 00-03 | POV: Angry girlfriend holding "strange" perfume bottle, accusatory face | Hook: Conflict stop-scroll |
 | 03-07 | Creator defensive, hands up, "It's not what you think!" | Tension: Relationship drama |
-| 07-12 | Boyfriend: "Who gave you this? You smell different!" | Escalation: Heightened emotion |
+| 07-12 | Girlfriend: "Who gave you this? You smell different!" | Escalation: Heightened emotion |
 | 12-17 | Creator reveals LASTAR double pack from bag, relieved expression | Reveal: Problem resolution |
-| 17-22 | Show both bottles, explain floral + vanilla-wood scents | Education: Product features |
-| 22-27 | Boyfriend skeptically smells creator's neck, eyes widen with surprise | Social Proof: Genuine reaction |
-| 27-32 | Boyfriend sprays the vanilla-wood scent on himself, nods approvingly | Application: Male appeal |
+| 17-22 | Show both bottles, explain vanilla-wood + floral scents | Education: Product features |
+| 22-27 | Girlfriend skeptically smells creator's neck, eyes widen with surprise | Social Proof: Genuine reaction |
+| 27-32 | Girlfriend sprays the floral scent on herself, nods approvingly | Application: Female appeal |
 | 32-37 | Couple together, both holding bottles, smiling | Resolution: Couples positioning |
 | 37-42 | Text overlay: "Für Paare perfekt" + TikTok Shop basket | Conversion |
 
@@ -54,86 +54,55 @@ source_notes:
 
 > with ElevenLabs v3 (alpha) grammar
 
-Wessen Parfüm ist das?
-[suspicious]
-Mein Freund war total sauer.
-[storytelling]
+[neutral] Wessen Parfüm ist das?
+[suspicious] Meine Freundin war total sauer.
 
-Er dachte, ich hätte jemand anderen getroffen.
-[amused]
-Weil ich anders rieche als sonst.
-[playful]
+[neutral] Sie dachte, ich hätte jemand anderen getroffen.
+[amused] Weil ich anders rieche als sonst.
 
-Schatz, beruhig dich. Das ist nur mein neues Parfüm.
-[reassuring]
-LASTAR. Ein Doppelpack.
-[matter-of-fact]
+[neutral] Schatz, beruhig dich. Das ist nur mein neues Parfüm.
+[reassuring] LASTAR. Ein Doppelpack.
 
-Es sind zwei Düfte. Einer blumig für den Tag.
-[bright]
-Einer mit Vanille und Holz für den Abend.
-[warm]
+[neutral] Es sind zwei Düfte. Einer mit Vanille und Holz für den Tag.
+[bright] Einer blumig für den Abend.
 
-Er war immer noch skeptisch.
-[storytelling]
-Also habe ich ihn schnüffeln lassen.
-[mischievous]
+[neutral] Sie war immer noch skeptisch.
+[storytelling] Also habe ich sie schnüffeln lassen.
 
-Sein Gesicht... er war beeindruckt.
-[satisfied]
-Das riecht wirklich gut. Kann ich das auch tragen?
-[curious]
+[neutral] Ihr Gesicht... sie war beeindruckt.
+[satisfied] Das riecht wirklich gut. Kann ich das auch tragen?
 
-Jetzt tragen wir beide LASTAR.
-[playful]
-Ich den blumigen, er den holzigen.
-[warm]
+[neutral] Jetzt tragen wir beide LASTAR.
+[playful] Ich den holzigen, sie den blumigen.
 
-Perfekt für Paare.
-[confident]
-Schnapp's dir. Link unten.
-[encouraging]
+[neutral] Perfekt für Paare.
+[confident] Schnapp's dir. Link unten.
+
 
 ---
 
 ### ZH (中文翻译 | 42s)
 
-这是谁的香水？
-[suspicious]
-我男朋友超级生气。
-[storytelling]
+[neutral] 这是谁的香水？
+[suspicious] 我女朋友超级生气。
 
-他以为我见了别人。
-[amused]
-因为我闻起来和平时不一样。
-[playful]
+[neutral] 她以为我见了别人。
+[amused] 因为我闻起来和平时不一样。
 
-宝贝，冷静。这只是我的新香水。
-[reassuring]
-LASTAR。双瓶装。
-[matter-of-fact]
+[neutral] 宝贝，冷静。这只是我的新香水。
+[reassuring] LASTAR。双瓶装。
 
-有两种香味。一种花香的白天用。
-[bright]
-一种香草木质的晚上用。
-[warm]
+[neutral] 有两种香味。一种香草木质的白天用。
+[bright] 一种花香的晚上用。
 
-他还是半信半疑。
-[storytelling]
-所以我让他闻了闻。
-[mischievous]
+[neutral] 她还是半信半疑。
+[storytelling] 所以我让她闻了闻。
 
-他的表情...被征服了。
-[satisfied]
-这闻起来真的很好。我也能用吗？
-[curious]
+[neutral] 她的表情...被征服了。
+[satisfied] 这闻起来真的很好。我也能用吗？
 
-现在我们都喷 LASTAR。
-[playful]
-我用花香的，他用木质的。
-[warm]
+[neutral] 现在我们都喷 LASTAR。
+[playful] 我用木质的，她用花香的。
 
-情侣完美之选。
-[confident]
-快买。链接在下面。
-[encouraging]
+[neutral] 情侣完美之选。
+[confident] 快买。链接在下面。

@@ -48,7 +48,7 @@ class VideoDownloader:
 
         async def collect_current_images():
             """Collect images currently in the DOM."""
-            imgs = await self.page.evaluate('''() => {
+            imgs = await self.page.evaluate("""() => {
                 const images = Array.from(document.querySelectorAll('img'));
                 const productImages = images
                     .filter(img =>
@@ -72,12 +72,12 @@ class VideoDownloader:
                     }
                 }
                 return Array.from(uniqueImages.entries()).map(([filename, url]) => ({filename, url}));
-            }''')
+            }""")
 
             new_count = 0
             for img in imgs:
-                if img['filename'] not in all_image_urls:
-                    all_image_urls[img['filename']] = img['url']
+                if img["filename"] not in all_image_urls:
+                    all_image_urls[img["filename"]] = img["url"]
                     new_count += 1
             return new_count
 
@@ -89,18 +89,18 @@ class VideoDownloader:
         # Navigate carousel to collect all images
         try:
             # Scroll the carousel into view first
-            await self.page.evaluate('''() => {
+            await self.page.evaluate("""() => {
                 const productImages = Array.from(document.querySelectorAll('img')).filter(img =>
                     img.src && img.src.includes('cdn.tabcut.com/dataservice/media/item/')
                 );
                 if (productImages.length > 0) {
                     productImages[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
-            }''')
+            }""")
             await asyncio.sleep(1)  # Wait for scroll to complete
 
             # Find the right arrow position
-            arrow_pos = await self.page.evaluate('''() => {
+            arrow_pos = await self.page.evaluate("""() => {
                 const productImages = Array.from(document.querySelectorAll('img')).filter(img =>
                     img.src && img.src.includes('cdn.tabcut.com/dataservice/media/item/')
                 );
@@ -132,22 +132,28 @@ class VideoDownloader:
                     x: rect.x + rect.width / 2,
                     y: rect.y + rect.height / 2
                 };
-            }''')
+            }""")
 
             if arrow_pos:
-                logger.info(f"Found carousel arrow at ({arrow_pos['x']}, {arrow_pos['y']})")
+                logger.info(
+                    f"Found carousel arrow at ({arrow_pos['x']}, {arrow_pos['y']})"
+                )
 
                 # Click the arrow multiple times to collect all images
                 for click_num in range(5):  # Max 5 clicks
-                    await self.page.mouse.click(arrow_pos['x'], arrow_pos['y'])
+                    await self.page.mouse.click(arrow_pos["x"], arrow_pos["y"])
                     await asyncio.sleep(2)  # Wait for lazy loading
 
                     new_added = await collect_current_images()
-                    logger.info(f"Click {click_num + 1}: +{new_added} new images (total: {len(all_image_urls)})")
+                    logger.info(
+                        f"Click {click_num + 1}: +{new_added} new images (total: {len(all_image_urls)})"
+                    )
                     if new_added == 0:
                         break  # No new images, we've seen them all
 
-                logger.info(f"After carousel navigation: {len(all_image_urls)} total images")
+                logger.info(
+                    f"After carousel navigation: {len(all_image_urls)} total images"
+                )
             else:
                 logger.info("No carousel arrow found, using initial images only")
 
@@ -171,7 +177,7 @@ class VideoDownloader:
                     full_res_url = self._convert_to_full_resolution_url(img_url)
 
                     # Determine file extension
-                    ext = 'webp' if '.webp' in full_res_url else 'jpg'
+                    ext = "webp" if ".webp" in full_res_url else "jpg"
                     filename = f"product_image_{idx}.{ext}"
                     output_path = images_dir / filename
 
@@ -182,7 +188,9 @@ class VideoDownloader:
                         continue
 
                     # Download image at full resolution
-                    logger.debug(f"Downloading image {idx}/{len(image_urls)}: {filename}")
+                    logger.debug(
+                        f"Downloading image {idx}/{len(image_urls)}: {filename}"
+                    )
                     response = await client.get(full_res_url)
                     response.raise_for_status()
 
@@ -195,7 +203,9 @@ class VideoDownloader:
                     logger.warning(f"Failed to download image {idx}: {e}")
                     continue
 
-        logger.success(f"✓ Downloaded {len(saved_paths)}/{len(image_urls)} product images")
+        logger.success(
+            f"✓ Downloaded {len(saved_paths)}/{len(image_urls)} product images"
+        )
         return saved_paths
 
     def _convert_to_full_resolution_url(self, url: str) -> str:
@@ -209,8 +219,8 @@ class VideoDownloader:
             Full-resolution image URL
         """
         # If URL has Aliyun OSS parameters
-        if '?x-oss-process=' in url:
-            base_url = url.split('?')[0]
+        if "?x-oss-process=" in url:
+            base_url = url.split("?")[0]
             # Return base URL with only format parameter (no resize)
             return f"{base_url}?x-oss-process=image/format,webp"
 
@@ -218,11 +228,7 @@ class VideoDownloader:
         return url
 
     @retry_async(max_attempts=3, delay=3.0)
-    async def download_video(
-        self,
-        video: VideoData,
-        output_dir: Path
-    ) -> bool:
+    async def download_video(self, video: VideoData, output_dir: Path) -> bool:
         """
         Download a single video with retry logic.
 
@@ -255,30 +261,22 @@ class VideoDownloader:
 
         # Strategy 1: yt-dlp (most reliable for TikTok)
         if not success:
-            success = await self._download_via_ytdlp(
-                video.video_url,
-                output_path
-            )
+            success = await self._download_via_ytdlp(video.video_url, output_path)
 
         # Strategy 2: Playwright network intercept
         if not success:
             success = await self._download_via_playwright_intercept(
-                video.video_url,
-                output_path
+                video.video_url, output_path
             )
 
         # Strategy 3: Direct HTTP download
         if not success:
-            success = await self._download_via_http(
-                video.video_url,
-                output_path
-            )
+            success = await self._download_via_http(video.video_url, output_path)
 
         # Strategy 4: Extract video source from page
         if not success:
             success = await self._download_from_embedded_video(
-                video.video_url,
-                output_path
+                video.video_url, output_path
             )
 
         if success:
@@ -289,11 +287,7 @@ class VideoDownloader:
 
         return success
 
-    async def _download_via_ytdlp(
-        self,
-        video_url: str,
-        output_path: Path
-    ) -> bool:
+    async def _download_via_ytdlp(self, video_url: str, output_path: Path) -> bool:
         """
         Download video using yt-dlp (most reliable for TikTok).
 
@@ -308,21 +302,24 @@ class VideoDownloader:
             logger.debug("Trying yt-dlp strategy...")
 
             # yt-dlp command with options
+            # Use python3 -m yt_dlp since yt-dlp is not in PATH
             cmd = [
-                'yt-dlp',
-                '-f', 'best',  # Download best quality
-                '--no-playlist',  # Don't download playlists
-                '-o', str(output_path),  # Output path
-                '--quiet',  # Less verbose
-                '--no-warnings',  # Suppress warnings
-                video_url
+                "python3",
+                "-m",
+                "yt_dlp",
+                "-f",
+                "best",  # Download best quality
+                "--no-playlist",  # Don't download playlists
+                "-o",
+                str(output_path),  # Output path
+                "--quiet",  # Less verbose
+                "--no-warnings",  # Suppress warnings
+                video_url,
             ]
 
             # Run yt-dlp in subprocess
             process = await asyncio.create_subprocess_exec(
-                *cmd,
-                stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE
+                *cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
             )
 
             stdout, stderr = await process.communicate()
@@ -340,9 +337,7 @@ class VideoDownloader:
             return False
 
     async def _download_via_playwright_intercept(
-        self,
-        video_url: str,
-        output_path: Path
+        self, video_url: str, output_path: Path
     ) -> bool:
         """
         Download video by intercepting network requests.
@@ -363,12 +358,19 @@ class VideoDownloader:
             async def handle_response(response):
                 """Handle network responses to capture video."""
                 try:
-                    content_type = response.headers.get('content-type', '')
+                    content_type = response.headers.get("content-type", "")
 
                     # Look for video content
-                    if any(t in content_type.lower() for t in ['video/mp4', 'video/quicktime', 'application/octet-stream']):
+                    if any(
+                        t in content_type.lower()
+                        for t in [
+                            "video/mp4",
+                            "video/quicktime",
+                            "application/octet-stream",
+                        ]
+                    ):
                         # Check if it's a significant video file (not a thumbnail)
-                        content_length = response.headers.get('content-length')
+                        content_length = response.headers.get("content-length")
                         if content_length and int(content_length) > 100000:  # > 100KB
                             logger.debug(f"Capturing video response: {response.url}")
                             body = await response.body()
@@ -378,11 +380,13 @@ class VideoDownloader:
                     logger.debug(f"Error in response handler: {e}")
 
             # Set up response handler
-            self.page.on('response', handle_response)
+            self.page.on("response", handle_response)
 
             try:
                 # Navigate to video page
-                await self.page.goto(video_url, wait_until="networkidle", timeout=self.timeout)
+                await self.page.goto(
+                    video_url, wait_until="networkidle", timeout=self.timeout
+                )
 
                 # Wait a bit for video to load
                 await asyncio.sleep(3)
@@ -396,7 +400,7 @@ class VideoDownloader:
 
                 # Save the captured video
                 if video_data:
-                    with open(output_path, 'wb') as f:
+                    with open(output_path, "wb") as f:
                         f.write(video_data[0])
                     logger.debug(f"Saved video via intercept: {output_path.name}")
                     return True
@@ -405,17 +409,13 @@ class VideoDownloader:
 
             finally:
                 # Remove response handler
-                self.page.remove_listener('response', handle_response)
+                self.page.remove_listener("response", handle_response)
 
         except Exception as e:
             logger.debug(f"Playwright intercept failed: {e}")
             return False
 
-    async def _download_via_http(
-        self,
-        video_url: str,
-        output_path: Path
-    ) -> bool:
+    async def _download_via_http(self, video_url: str, output_path: Path) -> bool:
         """
         Download video via direct HTTP request.
 
@@ -431,15 +431,15 @@ class VideoDownloader:
 
             async with httpx.AsyncClient(
                 follow_redirects=True,
-                timeout=self.timeout / 1000  # Convert to seconds
+                timeout=self.timeout / 1000,  # Convert to seconds
             ) as client:
                 response = await client.get(video_url)
 
                 if response.status_code == 200:
-                    content_type = response.headers.get('content-type', '')
+                    content_type = response.headers.get("content-type", "")
 
-                    if 'video' in content_type.lower():
-                        with open(output_path, 'wb') as f:
+                    if "video" in content_type.lower():
+                        with open(output_path, "wb") as f:
                             f.write(response.content)
                         logger.debug(f"Saved video via HTTP: {output_path.name}")
                         return True
@@ -452,9 +452,7 @@ class VideoDownloader:
             return False
 
     async def _download_from_embedded_video(
-        self,
-        video_url: str,
-        output_path: Path
+        self, video_url: str, output_path: Path
     ) -> bool:
         """
         Download video by extracting source from embedded video element.
@@ -470,24 +468,26 @@ class VideoDownloader:
             logger.debug("Trying embedded video extraction strategy...")
 
             # Navigate to page
-            await self.page.goto(video_url, wait_until="domcontentloaded", timeout=self.timeout)
+            await self.page.goto(
+                video_url, wait_until="domcontentloaded", timeout=self.timeout
+            )
             await asyncio.sleep(3)
 
             # Find video element
-            video_element = await self.page.query_selector('video')
+            video_element = await self.page.query_selector("video")
 
             if not video_element:
                 logger.debug("No video element found")
                 return False
 
             # Get video source
-            video_src = await video_element.get_attribute('src')
+            video_src = await video_element.get_attribute("src")
 
             if not video_src:
                 # Try to find source element
-                source_element = await video_element.query_selector('source')
+                source_element = await video_element.query_selector("source")
                 if source_element:
-                    video_src = await source_element.get_attribute('src')
+                    video_src = await source_element.get_attribute("src")
 
             if not video_src:
                 logger.debug("No video source found")
@@ -503,10 +503,7 @@ class VideoDownloader:
             return False
 
     async def download_videos_batch(
-        self,
-        videos: List[VideoData],
-        output_dir: Path,
-        max_concurrent: int = 3
+        self, videos: List[VideoData], output_dir: Path, max_concurrent: int = 3
     ) -> List[VideoData]:
         """
         Download multiple videos in batch.
@@ -535,11 +532,13 @@ class VideoDownloader:
         # Download all videos
         results = await asyncio.gather(
             *[download_with_semaphore(video) for video in videos],
-            return_exceptions=True
+            return_exceptions=True,
         )
 
         # Count successes
-        successful = sum(1 for r in results if not isinstance(r, Exception) and r.local_path)
+        successful = sum(
+            1 for r in results if not isinstance(r, Exception) and r.local_path
+        )
         logger.info(f"Downloaded {successful}/{len(videos)} videos successfully")
 
         return videos

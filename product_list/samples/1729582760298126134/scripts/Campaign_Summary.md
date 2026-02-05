@@ -1,201 +1,135 @@
 ---
-cover: "product_images/product_image_1.webp"
-category: "samples"
-tags:
-  - "#TikTokShop"
-  - "#Parfüm"
-  - "#Herrenduft"
-  - "#Duftempfehlung"
-  - "#Angebot"
 product: "LASTAR Holzige Duftnote Eau de Parfum"
-published: 2026-01-31
+campaign_date: 2026-01-31
+total_scripts: 3
+tags:
+  - Herrenparfüm
+  - Holzig
+  - TikTok Shop
+  - Budget Luxus
+  - Unisex Duft
 ---
 
-# LASTAR Holzige Duftnote | Campaign Summary | 活动摘要
+# Campaign Summary | 活动总结
 
-## Product Overview | 产品概述
+## 1. Product Overview | 产品概述
 
-**Product (产品):** LASTAR Holzige Duftnote Eau de Parfum (Unisex) | LASTAR 木质调香水（中性）
+**LASTAR holzige Duftnote Eau de Parfum** is a budget-friendly unisex fragrance positioned as a "designer dupe" in the German TikTok Shop market.
 
-**Key USP (核心卖点):** Affordable luxury fragrance (~€15) with 8+ hour longevity, marketed as a masculine-leaning unisex scent targeting budget-conscious Gen-Z and millennial German consumers.
+**DE:** LASTAR ist ein langanhaltender, holzig-orientalischer Duft (Eau de Parfum Konzentration) für Männer und Frauen. Obwohl als Unisex gekennzeichnet, wird er überwiegend als maskulin wahrgenommen (Emberwood, Toffee, Kardamom-Noten).
 
-**Price Point (价格):** €15.00 estimated | ~6537 RMB estimated retail equivalent
+**ZH:** LASTAR 是一款持久的木质东方调香水（浓香水级别），适合男女。虽然标注为中性香，但主要被认为是男性香调（余烬木、太妃糖、豆蔻香调）。
 
-**Performance (销售表现):** 373 total sales | 60 sales in 7-day period | €851 revenue (7-day) | 3.64% conversion rate
-
----
-
-## Campaign Strategy | 活动策略 | 活动战略
-
-Three complementary angles to maximize reach and conversion:
-
-| Script (脚本) | Angle (角度) | Target Audience (目标受众) | Emotional Arc (情感弧线) |
-|:---|:---|:---|:---|
-| **Script 1: Honest Review** | Skepticism → Trust | Cold traffic, budget-conscious | Doubt → Discovery → Confidence |
-| **Script 2: Feature Demo** | Authority → Challenge | Masculine-identifying males | Curiosity → Education → Pride |
-| **Script 3: Social Proof** | Aspiration → Validation | Dating/romance oriented | Insecurity → Realization → Satisfaction |
-
-**Campaign Phases (分阶段推进):**
-1. **Phase A (Cold):** Script 1 → Hook skeptics with honesty (highest CTR expected)
-2. **Phase B (Warm):** Script 2 → Convert with technical proof (feature benefits)
-3. **Phase C (Retarget):** Script 3 → Close with social proof (FOMO, romance)
+**Key Stats (from tabcut_data.json):**
+- Total Sales: 373 units | 总销量：373 件
+- Revenue: €5,616 (~€15/unit) | 收入：€5,616（约 €15/件）
+- 7-Day Performance: 60 sales, 3.64% conversion rate | 7 天表现：60 销量，3.64% 转化率
+- Category: Beauty & Personal Care / Fragrances | 类别：美妆个护 / 香水
 
 ---
 
-## Key Selling Points | 核心卖点 | 核心销售点
+## 2. Campaign Strategy | 活动策略
 
-1. **Price-to-Quality Ratio (价格质量比):** €15 for Eau de Parfum concentration (normally €50+)
-   - DE: "Warum zahlen für Designer-Marken?"
-   - ZH: "为什么要付设计师品牌的价格？"
+### Strategic Pillars (from video_synthesis.md):
 
-2. **Longevity (持久度):** 8+ hours proven in creator tests vs. cheaper alternatives (2-3 hours)
-   - DE: "Hält den ganzen Tag"
-   - ZH: "一整天都保持"
+1. **Controversy Hook (Label Lie Pattern)**
+   - DE: "Steht Unisex drauf, ist aber eine Lüge" – Direkter Widerspruch zur Produktbeschreibung schafft Neugier.
+   - ZH: "标注中性，实际是谎言" —— 直接矛盾产品描述，制造好奇心。
+   - **Why it works:** German consumers trust honesty over marketing fluff (Synthesis §6: Skepticism of Hyperbole).
 
-3. **Specific Scent Notes (特定香调):** Woody + Toffee + Cardamom = warm, masculine, luxe perception
-   - DE: "Holz, Toffee, Cardamom—kein billiger Duft"
-   - ZH: "木质、太妃糖、小豆蔻——不是便宜香水"
+2. **Technical Proof (Ingredient Deep Dive)**
+   - DE: Spezifische Duftnoten benennen (Emberwood, Toffee, Kardamom) statt generische Aussagen ("riecht gut").
+   - ZH: 具体香调命名（余烬木、太妃糖、豆蔻）而非泛泛而谈（"香气好"）。
+   - **Why it works:** Germans read labels and trust specs (Synthesis §6: Need for Technical Proof).
 
-4. **Unisex with Masculine Lean (中性偏男性):** Challenges category expectations = controversy hook
-   - DE: "Es steht Unisex drauf, aber es ist 100% maskulin"
-   - ZH: "写的是中性，但 100% 男人味"
+3. **Social Validation (Compliment Magnet)**
+   - DE: Echte Reaktionen von Partnern/Freunden zeigen (nicht behaupten, sondern demonstrieren).
+   - ZH: 展示伴侣/朋友的真实反应（不只是声称，而是演示）。
+   - **Why it works:** Visualizes the invisible benefit (attraction/approval) and removes purchase anxiety.
 
-5. **Social Validation (社交认可):** Creator and partner reactions prove invisible benefit (attraction/compliments)
-   - DE: "Dein Date fragt, was du trägst"
-   - ZH: "你的约会对象会问你喷的什么"
-
----
-
-## Target Audience Segments | 目标受众 | 目标观众
-
-| Segment | Motivation | Hook | Script |
-|:---|:---|:---|:---|
-| **Budget-Conscious Gen-Z (18-25)** | Save money, trend-proof | "€15 for Eau de Parfum?" | Script 1 (Honest Review) |
-| **Masculine-Identity Males (18-40)** | Quality proof, authority | "Wood + Spice = Real Duft" | Script 2 (Feature Demo) |
-| **Romance/Dating Seekers (20-35)** | Attraction, confidence | "Your date will notice" | Script 3 (Social Proof) |
-| **Budget Luxury Shoppers (25-45)** | Perceived quality at low price | Designer dupe positioning | All scripts (emphasize value) |
+### Target Audience (from image_analysis.md §9):
+- **Primary (主要受众):** Young Adults 18-35, budget-conscious but style-oriented | 年轻人 18-35 岁，注重性价比和风格
+- **Secondary (次要受众):** Gift shoppers (partners buying for each other) | 礼品购买者（互送礼物的情侣）
+- **Pain Point (痛点):** Designer perfumes too expensive (€80+); need a daily driver that smells expensive | 设计师香水太贵（€80+）；需要一款闻起来昂贵的日常香水
 
 ---
 
-## Scripts Summary | 脚本摘要 | 脚本摘要
+## 3. Key Selling Points | 核心卖点
 
-### Script 1: Honest Review (15s-45s) | 脚本 1：诚实评测
-- **Emotional Arc:** Doubt → Discovery → Confidence
-- **Hook:** "I thought it was a scam, but then I smelled it"
-- **Key Moment:** Spray test + ingredient callout (woody, spicy)
-- **CTA:** "For €15, this is insane. Link below."
-- **German VO:** 45s, focuses on skepticism flip + friend reactions
-- **Chinese VO:** 45s, mirrors German structure with Chinese-friendly phrasing
+**Referenced from video_synthesis.md (§5 Copy Bank, §3 Proof Mechanics):**
 
-### Script 2: Feature Demo (15s-45s) | 脚本 2：功能演示
-- **Emotional Arc:** Curiosity → Education → Pride
-- **Hook:** "It says Unisex. But it's 100% masculine."
-- **Key Moment:** Ingredient breakdown (Holz, Toffee, Cardamom) + confidence close-up
-- **CTA:** "This isn't for shy men. Link in bio."
-- **German VO:** 45s, authority tone + commanding language
-- **Chinese VO:** 45s, maintains masculine positioning, cultural adaptation for "shy men" → decision-makers
-
-### Script 3: Social Proof (15s-45s) | 脚本 3：社交证明
-- **Emotional Arc:** Insecurity → Realization → Satisfaction
-- **Hook:** "I wore this once. My date asked immediately."
-- **Key Moment:** Partner reaction (gasp) + creator smile + bottle reveal
-- **CTA:** "For €15, this is a cheat code. Get it."
-- **German VO:** 45s, warm tone + romance framing
-- **Chinese VO:** 45s, emphasizes "invisibility" (undetectable benefit) + attraction science
-
----
-
-## Production Notes | 制作说明 | 制作指南
-
-### Visual Assets Required (所需视觉资源)
-
-1. **Bottle + Box Shots (30+ takes)**
-   - Hero shot (clean background)
-   - Spray action (atomizer fineness visible)
-   - Label close-ups (Unisex label, Eau de Parfum text)
-   - Packaging detail (box art, ingredients, warnings)
-
-2. **Lifestyle Moments (20+ takes)**
-   - Getting ready (mirror, applying scent, confident pose)
-   - Reaction shots (partner reacting, friend surprised)
-   - Confidence moments (smile, hand through hair, cologne dab check)
-   - Time-lapse (morning prep → evening validation)
-
-3. **Mood/ASMR Shots (15+ takes)**
-   - Spray mist (against light or dark background)
-   - Cap click (emphasize magnetic/heavy feel)
-   - Hand holding (scale reference, luxury feel)
-   - Textured closeups (glass, label, cap)
-
-### Audio Requirements (音频要求)
-
-- **German VO:** Professional TTS (ElevenLabs v3 German model) or native speaker
-  - Tone: Conversational, casual, relatable, with authority undertones
-  - Pacing: Medium tempo (not too slow, not rushed)
-  - Emotion density: 8-10 cues per script (variety: skeptical → confident → warm → commanding)
-
-- **Chinese VO:** Professional TTS (ElevenLabs v3 Mandarin model) or native speaker
-  - Tone: Mirror German but adapt for Chinese idioms (e.g., "科学" instead of "chemistry")
-  - Pacing: Slightly slower than German (natural for Mandarin)
-  - Emotion density: 8-10 cues, adapted for cultural nuance
-
-- **Music/SFX:** Upbeat, modern (trending audio preferred), 30-45s track suitable for all three scripts
-
-### Compliance Notes (合规性说明)
-
-⚠️ **Claims to Verify:**
-- "8+ hour longevity" — Supported by creator tests, safe to claim
-- "€15 for Eau de Parfum" — Factual based on retail analysis
-- "Attracts compliments" — Frame as "people notice" not "guaranteed attraction"
-- "Unisex but masculine" — Accurate positioning, not a false claim
-
-✅ **Safe Phrasing:**
-- Use: "Menschen fragen, was du trägst" (People ask what you're wearing)
-- Avoid: "Garantierte Anziehung" (Guaranteed attraction) — too strong
-
-✅ **Warnings Required:**
-- Flammable (standard for perfume)
-- Patch test recommended
-- Keep away from eyes
-
----
-
-## Performance Projections | 性能预测 | 性能预期
-
-Based on product metrics (373 total sales, €5,616 revenue, 3.64% conversion):
-
-| Metric | Current Baseline | Optimistic Projection (with 3-script campaign) |
+| DE Selling Point | ZH 卖点 | Evidence Source |
 |:---|:---|:---|
-| **Estimated Videos Required** | ~55 carrying videos | 3 hero scripts (12-15 video iterations) |
-| **Expected Reach** | ~1,600 impressions per video | ~4,000-6,000 impressions per hero script |
-| **Estimated Conversion Rate** | 3.64% | 4.5-5.5% (improved with social proof) |
-| **Revenue Impact (7-day)** | €851 | €1,200-1,600 (optimistic) |
-| **ROI per Script** | N/A | 8-12x (if video production cost ~€100/hero script) |
+| Holzige & orientalische Duftnote (Emberwood, Toffee, Kardamom) | 木质东方调（余烬木、太妃糖、豆蔻） | Synthesis §1 Pattern B |
+| Hält 8+ Stunden (Eau de Parfum Konzentration) | 持久 8+ 小时（浓香水级别） | Synthesis §3 "Day Wear Test" |
+| Feiner Zerstäuber (keine großen Tropfen) | 细腻喷头（无大水珠） | Image Analysis §4 "Fine Mist Spray" |
+| Riecht wie Luxus, kostet Bruchteil (€15 vs €100+) | 闻起来像奢侈品，价格只是零头（€15 vs €100+） | Synthesis §6 "Preis-Leistungs-Verhältnis" |
+| Unisex-Duft, aber überwiegend maskulin | 中性香，但主要偏男性 | Synthesis §1 Pattern A "Label Lie" |
 
 ---
 
-## Source Files | 源文件 | 源文件
+## 4. Scripts Summary | 脚本摘要
 
-| File | Purpose | Status |
-|:---|:---|:---|
-| `tabcut_data.json` | Product metadata, sales analytics | ✓ Complete |
-| `product_images/image_analysis.md` | Visual catalog + scent notes | ✓ Complete (9 images, 300+ lines) |
-| `ref_video/video_synthesis.md` | Hook patterns, copy bank, objections | ✓ Complete (300+ lines, 80+ copy lines) |
-| `ref_video/video_*_analysis.md` | Individual video insights (5 videos) | ✓ Complete (5 × ~10KB) |
-| `scripts/Script_1_*.md` | Honest Review angle | ✓ Ready for VO |
-| `scripts/Script_2_*.md` | Feature Demo angle | ✓ Ready for VO |
-| `scripts/Script_3_*.md` | Social Proof angle | ✓ Ready for VO |
+### Script 1: Honest Review (Skeptic to Believer)
+**Angle (角度):** Budget fragrance skepticism → quality revelation
+**Hook (钩子):** "I thought cheap perfumes are scams" | "我以前觉得便宜香水都是骗人的"
+**Core Message (核心信息):** Long-lasting woody scent at unbeatable value | 持久木质香调，无与伦比的性价比
+**Duration (时长):** 45s | 45 秒
+**Target (目标受众):** Budget-conscious perfume buyers | 注重性价比的香水买家
+
+### Script 2: Feature Demo (Masculine Authority)
+**Angle (角度):** "Unisex label is a lie" controversy
+**Hook (钩子):** Close-up on label → "Das ist eine Lüge" | 标签特写 → "这是谎言"
+**Core Message (核心信息):** 100% masculine scent with technical proof (notes breakdown) | 100% 男性香调，技术证明（香调分解）
+**Duration (时长):** 42s | 42 秒
+**Target (目标受众):** Men seeking masculine fragrances | 寻求男性香调的男士
+
+### Script 3: Social Proof (Compliment Magnet)
+**Angle (角度):** Real-world validation through compliments
+**Hook (钩子):** Partner smelling neck, gasping "What are you wearing?!" | 伴侣闻脖子，惊呼"你喷的什么？！"
+**Core Message (核心信息):** Daily compliments from wearing LASTAR | 每天因使用 LASTAR 获得赞美
+**Duration (时长):** 40s | 40 秒
+**Target (目标受众):** Social validation seekers | 寻求社会认可者
 
 ---
 
-## Next Steps | 下一步 | 后续步骤
+## 5. Production Notes | 制作说明
 
-1. **Voice Recording:** Record German + Chinese VO using ElevenLabs v3 with frontmatter emotion cues
-2. **Video Assembly:** Cut 12-15 video iterations from B-roll (combining hero shots across 3 scripts)
-3. **A/B Testing:** Launch Script 1 first (highest CTR expected), then 2 + 3 after 48 hours
-4. **Optimization:** Monitor 7-day performance, adjust based on conversion + engagement metrics
-5. **Scaling:** If >4% conversion, increase daily budget; if <3%, shift to Script 3 (social proof)
+### Visual Requirements (from image_analysis.md §11 Shot List):
+- Spray test in slow-mo against dark background (fine mist visible) | 深色背景下的慢动作喷雾测试（细腻雾气可见）
+- B-roll: wood logs, toffee candy, cardamom spices (scent visualization) | B-roll：木块、太妃糖、豆蔻香料（气味可视化）
+- Partner/friend reaction shots (genuine surprise expressions) | 伴侣/朋友反应镜头（真实惊讶表情）
+- Split-screen comparisons: expensive (blurred) vs. LASTAR | 分屏对比：昂贵品（模糊）vs. LASTAR
+
+### Audio (ElevenLabs v3):
+- **Critical:** All emotion cues must be INLINE format: `[emotion] Text.`
+- **DE Cue Variety:** skeptical, curious, confident, warm, amused, matter-of-fact, encouraging, neutral
+- **ZH Cue Variety:** Same emotions translated appropriately for Chinese delivery
+
+### Compliance Notes (from Synthesis §12):
+- ❌ **Avoid:** Direct brand comparisons (e.g., "copy of Axe") | 避免：直接品牌对比（如"Axe 的复制品"）
+- ✅ **Use:** "Reminds me of..." or "Similar to..." | 使用："让我想起..." 或 "类似于..."
+- ❌ **Avoid:** Exact prices with urgency ("Nur 15€!") | 避免：带紧迫感的精确价格（"只要 15 欧！"）
+- ✅ **Use:** "Erschwinglicher Preis" / "Für kleines Geld" | 使用："实惠价格" / "花点小钱"
 
 ---
 
-*Generated: 2026-01-31 | Campaign Status: Ready for Production*
+## 6. Source Files | 源文件
+
+All scripts reference the following analysis materials:
+
+1. **video_synthesis.md**
+   - Path: `product_list/samples/1729582760298126134/ref_video/video_synthesis.md`
+   - Used for: Hook patterns, copy bank (80+ German lines), German market psychology, creative formats
+
+2. **image_analysis.md**
+   - Path: `product_list/samples/1729582760298126134/product_images/image_analysis.md`
+   - Used for: Visual selling points, shot list, text overlays, trust elements
+
+3. **tabcut_data.json**
+   - Path: `product_list/samples/1729582760298126134/tabcut_data.json`
+   - Used for: Sales data, pricing, product name verification, top video performance
+
+---
+
+**Campaign Ready (活动准备就绪):** All scripts comply with TikTok advertising policies and ElevenLabs v3 format requirements.

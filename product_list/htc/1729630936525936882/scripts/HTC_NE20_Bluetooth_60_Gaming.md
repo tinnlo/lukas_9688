@@ -1,8 +1,8 @@
 ---
 cover: ""
-caption: "Bluetooth 6.0 ist angekommen 🎮 #bluetooth60 #gaming #htc #techgadgets #tiktokshop"
+caption: "Bluetooth 6.0 ist angekommen 🎮 #bluetooth6 #gaming #htc #techgadgets #tiktokshop"
 published:
-duration: "00:33"
+duration: 00:33
 sales:
   - yes
 link: ""
@@ -12,11 +12,11 @@ tags:
   - "#htc"
   - "#techgadgets"
   - "#tiktokshop"
-product: "HTC NE20 Translator Bluetooth 6.0 Ohrhörer"
+product: HTC NE20 Translator Bluetooth 6.0 Ohrhörer
 source_notes:
-  - "product_list/1729630936525936882/video_analysis.md"
-  - "product_list/1729630936525936882/tabcut_data.json"
-  - "product_list/1729630936525936882/product_images/"
+  - product_list/1729630936525936882/video_analysis.md
+  - product_list/1729630936525936882/tabcut_data.json
+  - product_list/1729630936525936882/product_images/
 ---
 
 ## Scripts
