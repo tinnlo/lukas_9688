@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Sie wird denken, du hast viel ausgegeben 😏 Edle Verpackung, zwei Luxus-Düfte, unglaublich günstig. Valentinstag gerettet #valentinstag #geschenk #lastar #parfüm #tiktokshop
+  Sie wird denken, du hast viel ausgegeben 😏 Edle Verpackung, zwei Luxus-Düfte, unglaublich günstig. Valentinstag gerettet #valentinstag #geschenk #lastar #parfüm #tiktokshop #Valentinstag #Geschenk #LASTAR #Parfüm #TikTokShop
 published: 2026-02-02
 duration: "00:48"
 sales:

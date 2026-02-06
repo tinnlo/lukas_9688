@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Wohin mit Winterdecken? Das hier frisst Volumen."
+caption: >-
+  Wohin mit Winterdecken? Das hier frisst Volumen. #tiktokshopde #aufbewahrung #winterdecken #ordnung #haushalt
 published: 2026-01-05
 duration: "00:37"
 sales:
@@ -59,4 +60,3 @@ Saisonwechsel-Hook → Volumen-Demo → Stapeln → CTA.
 [matter-of-fact] 我直接塞进这个收纳箱——好几条被子、枕头，外套也能放。
 [curious] 重点是：它很稳，还能叠放。
 [firm] 想要衣柜有空间：点下面购物车。
-

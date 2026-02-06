@@ -13,6 +13,14 @@ This repository is an Obsidian vault for a TikTok affiliate/ad promotion account
 - `scripts_dashboard.base` — Obsidian Base view for listing scripts (do not edit unless requested).
 - `.obsidian/` — local Obsidian settings (avoid editing unless necessary).
 
+## Automation Environment (Python/Playwright)
+
+- Use the system `python3` (global environment) for all scripts under `scripts/`.
+- Playwright browser binaries are pinned to a fixed location to avoid cleanup tools deleting them:
+  - `/Users/lxt/.local/share/ms-playwright/`
+  - `/Users/lxt/Library/Caches/ms-playwright` is a symlink to that folder
+  - `scripts/config/.env` sets `PLAYWRIGHT_BROWSERS_PATH=/Users/lxt/.local/share/ms-playwright`
+
 ## Script Note Naming
 
 - Filenames: `Product_Model_KeyAngle.md` (use underscores, keep it short and descriptive).

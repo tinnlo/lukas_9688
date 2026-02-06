@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Keine Geschenkidee? Panik? Schau mal hier! LASTAR Vanille Set sieht teuer aus, ist super günstig. Kommt in edler Box. Rettung garantiert #geschenkidee #lastminute #parfüm #geschenkset #tiktokshop
+  Keine Geschenkidee? Panik? Schau mal hier! LASTAR Vanille Set sieht teuer aus, ist super günstig. Kommt in edler Box. Rettung garantiert #geschenkidee #lastminute #parfüm #geschenkset #tiktokshop #Geschenkidee #LastMinute #ParfümSet #GiftReady #TikTokShop
 published: 2026-02-02
 duration: "00:40"
 sales:

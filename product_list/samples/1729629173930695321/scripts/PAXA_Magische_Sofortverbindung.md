@@ -19,7 +19,7 @@ source_notes:
   - "product_list/samples/1729629173930695321/product_images/image_analysis.md"
   - "product_list/samples/1729629173930695321/tabcut_data.json"
 ---
-
+  
 ## Scripts
 
 "Magic trick" demonstration showcasing the wireless, cable-free operation through rapid lift/place actions. Emphasizes the "wow factor" and instant response time to create curiosity and desire.

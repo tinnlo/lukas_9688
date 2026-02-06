@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "WLAN tot im Schlafzimmer? Das hier ist die schnelle Lösung."
+caption: >-
+  WLAN tot im Schlafzimmer? Das hier ist die schnelle Lösung. #tiktokshopde #wlan #smarthome #technik #haushalt
 published: 2026-01-05
 duration: "00:40"
 sales:
@@ -59,4 +60,3 @@ Dead-Spot Hook → Repeater einstecken → vorher/nachher Proof → CTA.
 [bright] 插上插座，连一下就行。
 [confident] 之后这个房间的网络明显更稳——看视频、打电话都舒服很多。
 [firm] 如果你也有死角：点下面购物车。
-

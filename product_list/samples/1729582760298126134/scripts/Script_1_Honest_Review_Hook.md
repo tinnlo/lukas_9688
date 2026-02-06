@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Ich dachte es ist Scam aber dann habe ich es gerochen 😍 Langanhaltender Holzduft zum Bruchteil des Preises Link im Shop #tiktokshop #parfüm #duft #lastar #fyp
+  Ich dachte es ist Scam aber dann habe ich es gerochen 😍 Langanhaltender Holzduft zum Bruchteil des Preises Link im Shop #tiktokshop #parfüm #duft #lastar #fyp #TikTokShop #Parfüm #Herrenduft #Luxus #Angebot
 published: 2026-01-31
 duration: "00:45"
 sales:

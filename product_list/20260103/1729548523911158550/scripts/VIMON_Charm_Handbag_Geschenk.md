@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Das Magnet-Klick-Geschenk."
+caption: >-
+  Das Magnet-Klick-Geschenk. #handtasche #outfit #geschenkidee #tiktokshop #accessoires
 published: 2026-01-03
 duration: "00:38"
 sales:

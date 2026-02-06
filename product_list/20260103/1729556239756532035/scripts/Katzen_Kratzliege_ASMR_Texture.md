@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Dieses Kratz-Geräusch…"
+caption: >-
+  Dieses Kratz-Geräusch… #katzentok #katzenliebe #kratzmöbel #haustierbedarf #tiktokshop
 published: 2026-01-03
 duration: "00:40"
 sales:

@@ -1,32 +1,27 @@
 ---
-cover: ""
+cover: product_list/20260102/1729698782485387393/product_images/product_image_1.jpg
 product_id: "1729698782485387393"
-product_name: "Unknown Product"
-shop_owner: "Unknown Shop"
+product_name: Unknown Product
+shop_owner: Unknown Shop
 category: "20260102"
-scraped_at: "2026-01-02"
-
+scraped_at: 2026-01-02
 total_sales: 0
-sales_revenue_usd: 0.00
+sales_revenue_usd: 0
 sales_7day: 0
-sales_7day_revenue_usd: 0.00
-conversion_rate: 0.00
-
+sales_7day_revenue_usd: 0
+conversion_rate: 0
 video_count: 0
 creator_count: 0
 video_sales: 0
-video_revenue_usd: 0.00
-ad_revenue_percentage: 0.00
-
+video_revenue_usd: 0
+ad_revenue_percentage: 0
 top_video_views: 0
 top_video_sales: 0
 top_video_creator: ""
 top_video_url: ""
-
 scripts_generated: 3
 has_campaign_summary: true
-last_script_date: "2026-01-02"
-
+last_script_date: 2026-01-02
 tags:
   - "#no-sales-data"
 link: ""

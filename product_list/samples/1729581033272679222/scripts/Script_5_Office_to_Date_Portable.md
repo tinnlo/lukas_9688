@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  POV: Von der Deadline direkt zum Dinner Date 💼➡️💋 Einfach im Café schnell auffrischen. LASTAR passt in jede Tasche #tiktokshop #parfüm #lastar #office #datenight
+  POV: Von der Deadline direkt zum Dinner Date 💼➡️💋 Einfach im Café schnell auffrischen. LASTAR passt in jede Tasche #tiktokshop #parfüm #lastar #office #datenight #Parfüm #LASTAR #OfficeToDate #BeautyHack #TikTokShop
 published: 2026-02-02
 duration: "00:38"
 sales:

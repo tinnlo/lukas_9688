@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Kleines Zimmer, großes Glow-up."
+caption: >-
+  Kleines Zimmer, großes Glow-up. #schminktisch #zimmerdeko #beautysetup #organisation #tiktokshop
 published: 2026-01-03
 duration: "00:40"
 sales:

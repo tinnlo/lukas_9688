@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Ich habe 60 Parfüms, aber dieses hier nutze ich jeden Tag 😳 LASTAR Doppelpack mit Blumen und Vanille-Holz Noten. Super günstig #tiktokshop #parfüm #lastar #duft #beauty
+  Ich habe 60 Parfüms, aber dieses hier nutze ich jeden Tag 😳 LASTAR Doppelpack mit Blumen und Vanille-Holz Noten. Super günstig #tiktokshop #parfüm #lastar #duft #beauty #ParfümSammlung #LASTAR #BeautyHack #Duft #TikTokShop
 published: 2026-01-31
 duration: "00:45"
 sales:

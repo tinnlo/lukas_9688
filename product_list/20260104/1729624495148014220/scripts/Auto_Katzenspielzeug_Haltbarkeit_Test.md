@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Hält das Katzenspielzeug wirklich Krallen aus?"
+caption: >-
+  Hält das Katzenspielzeug wirklich Krallen aus? #tiktokshopde #katzenspielzeug #katzenbedarf #produkttest #haustiere
 published: 2026-01-05
 duration: "00:40"
 sales:
@@ -61,4 +62,3 @@ Skeptischer Hook → Krallen/Beiß-Test → Proof → CTA.
 [matter-of-fact] 它居然还能继续跑。
 [soft] 你能看到它一直想把布下面的“老鼠”抓出来。
 [firm] 如果你家也有小破坏王：点下面购物车。
-

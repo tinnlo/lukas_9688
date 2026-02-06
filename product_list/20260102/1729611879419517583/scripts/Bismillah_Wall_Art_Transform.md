@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Leere Wand? Ein Satz aendert alles."
+caption: >-
+  Leere Wand? Ein Satz aendert alles. #wanddeko #islamicdecor #ramadan #zuhause #geschenkidee
 published: 2026-01-02
 duration: "00:36"
 sales:

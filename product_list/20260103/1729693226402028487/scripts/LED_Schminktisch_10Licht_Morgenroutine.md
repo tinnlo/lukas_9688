@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Licht macht den Unterschied."
+caption: >-
+  Licht macht den Unterschied. #schminktisch #zimmerdeko #beautysetup #organisation #tiktokshop
 published: 2026-01-03
 duration: "00:38"
 sales:

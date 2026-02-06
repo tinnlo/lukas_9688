@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Ein Set für alles: Morgens blumig-frisch ins Büro, abends warm-sinnlich zum Date 🌸✨ LASTAR macht es möglich #tiktokshop #parfüm #lastar #daytonight #versatility
+  Ein Set für alles: Morgens blumig-frisch ins Büro, abends warm-sinnlich zum Date 🌸✨ LASTAR macht es möglich #tiktokshop #parfüm #lastar #daytonight #versatility #Parfüm #LASTAR #DayToNight #BeautyHack #TikTokShop
 published: 2026-02-02
 duration: "00:42"
 sales:

@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Meine Freundin dachte ich hätte eine Affäre 😂 Nur wegen diesem Parfüm. LASTAR riecht SO gut. Probier's aus #tiktokshop #couple #parfüm #lastar #prank
+  Meine Freundin dachte ich hätte eine Affäre 😂 Nur wegen diesem Parfüm. LASTAR riecht SO gut. Probier's aus #tiktokshop #couple #parfüm #lastar #prank #CoupleGoals #ParfümPrank #LASTAR #Relationship #TikTokShop
 published: 2026-01-31
 duration: "00:42"
 sales:

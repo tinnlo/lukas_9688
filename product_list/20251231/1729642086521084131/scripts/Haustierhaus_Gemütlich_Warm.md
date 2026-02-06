@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Der perfekte Rückzugsort für ängstliche Fellnasen. 🐾💤 #Hundebett #Katzenbett #AnxietyRelief #tiktokshop #SafeHaven"
+caption: >-
+  Der perfekte Rückzugsort für ängstliche Fellnasen. 🐾💤 #Hundebett #Katzenbett #AnxietyRelief #tiktokshop #SafeHaven #Geborgenheit #tiktokmakemebuyit
 published:
 duration: "00:35"
 sales:

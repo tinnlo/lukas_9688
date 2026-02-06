@@ -1,7 +1,7 @@
 ---
 cover: "product_list/20260111/1729747783426349401/product_images/product_image_1.jpg"
 caption: >-
-  Endlich klare Sicht im Winter. Kein Beschlagen mehr. Link unten #winter #outdoor #arbeit #schutz #warm
+  Endlich klare Sicht im Winter. Kein Beschlagen mehr. Link unten #winter #outdoor #arbeit #schutz #warm #brille
 published: 2026-01-11
 duration: "00:28"
 sales:

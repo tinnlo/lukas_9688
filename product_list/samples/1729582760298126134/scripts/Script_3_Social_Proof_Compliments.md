@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Jeder fragt mich was für ein Duft das ist 😍 LASTAR holziger Duft bekomme ich täglich Komplimente Riecht wie Luxus kostet fast nichts #tiktokshop #parfüm #lastar #komplimente #duft
+  Jeder fragt mich was für ein Duft das ist 😍 LASTAR holziger Duft bekomme ich täglich Komplimente Riecht wie Luxus kostet fast nichts #tiktokshop #parfüm #lastar #komplimente #duft #Komplimente #Duftempfehlung #LASTAR #TikTokShop #SocialProof
 published: 2026-01-31
 duration: "00:40"
 sales:

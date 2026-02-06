@@ -36,6 +36,20 @@ Automated scraper for extracting TikTok shop product data from tabcut.com, inclu
 2. Python 3.8+ (uses system/global Python environment)
 3. Required packages installed globally (see `scripts/requirements.txt`)
 
+### Playwright Browsers (Important)
+
+This project uses the system Python + Playwright. The *large* browser binaries are stored in a fixed location to avoid accidental cleanup of `~/Library/Caches/`.
+
+- Fixed browsers dir: `/Users/lxt/.local/share/ms-playwright/`
+- Compatibility symlink: `/Users/lxt/Library/Caches/ms-playwright` -> `/Users/lxt/.local/share/ms-playwright`
+- Persisted via: `scripts/config/.env` (`PLAYWRIGHT_BROWSERS_PATH=/Users/lxt/.local/share/ms-playwright`)
+
+If Playwright errors with missing executables, reinstall to the fixed dir:
+
+```bash
+PLAYWRIGHT_BROWSERS_PATH="/Users/lxt/.local/share/ms-playwright" python3 -m playwright install chromium
+```
+
 **Quick Start:**
 ```bash
 cd scripts

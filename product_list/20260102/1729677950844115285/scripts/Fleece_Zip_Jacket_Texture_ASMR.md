@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Hoer den Reissverschluss. Fuehl den Fleece."
+caption: >-
+  Hoer den Reissverschluss. Fuehl den Fleece. #asmr #fleece #jacke #soft #streetwear
 published: 2026-01-02
 duration: "00:32"
 sales:

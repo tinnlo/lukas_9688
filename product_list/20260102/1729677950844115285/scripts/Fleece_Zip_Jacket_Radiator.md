@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Fuehlt sich an wie eine Heizung."
+caption: >-
+  Fuehlt sich an wie eine Heizung. #jacke #fleece #winterstyle #streetwear #tiktokshop
 published: 2026-01-02
 duration: "00:33"
 sales:

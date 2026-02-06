@@ -1,7 +1,7 @@
 ---
 cover: "product_list/20260111/1729747783426349401/product_images/product_image_2.jpg"
 caption: >-
-  6 Stunden draußen. Minus 10 Grad. Ein Gesicht friert nicht. Link unten #winter #arbeit #delivery #schutz
+  6 Stunden draußen. Minus 10 Grad. Ein Gesicht friert nicht. Link unten #winter #arbeit #delivery #schutz #outdoor
 published: 2026-01-11
 duration: "00:32"
 sales:

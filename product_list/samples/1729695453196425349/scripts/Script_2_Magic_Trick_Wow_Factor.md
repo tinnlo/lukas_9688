@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Wetten du wusstest nicht dass dein Handy DAS kann 😱 PAXA macht aus jedem Handy einen krassen Lautsprecher. Keine App nötig probiers #tiktokshop #paxa #magic #gadget #viral
+  Wetten du wusstest nicht dass dein Handy DAS kann 😱 PAXA macht aus jedem Handy einen krassen Lautsprecher. Keine App nötig probiers #tiktokshop #paxa #magic #gadget #viral #MagicGadget #PAXA #PhoneHack #TechMagie #TikTokShop
 published: 2026-01-31
 duration: "00:30"
 sales:

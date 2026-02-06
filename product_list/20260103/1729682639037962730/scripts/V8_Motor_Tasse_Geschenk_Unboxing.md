@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Geschenk für den „schwer zu beschenkenden“ Typ."
+caption: >-
+  Geschenk für den „schwer zu beschenkenden“ Typ. #geschenkidee #autoliebe #kaffeebecher #gadgets #tiktokshop
 published: 2026-01-03
 duration: "00:38"
 sales:

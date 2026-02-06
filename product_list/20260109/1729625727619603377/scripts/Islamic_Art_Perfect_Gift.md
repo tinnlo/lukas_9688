@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Das Geschenk, das niemand vergisst. Für Hochzeiten, Eid, Einzüge. Elegante Bismillah-Kunst in Premium-Metall. #EidGift #IslamisheKunst #Hochzeitgeschenk #TikTokShop
+  Das Geschenk, das niemand vergisst. Für Hochzeiten, Eid, Einzüge. Elegante Bismillah-Kunst in Premium-Metall. #EidGift #IslamisheKunst #Hochzeitgeschenk #TikTokShop #GiftIdea
 published: 2026-01-09
 duration: "00:32"
 sales:

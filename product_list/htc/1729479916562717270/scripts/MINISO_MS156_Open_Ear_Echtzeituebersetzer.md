@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: Kein Englisch? Diese offenen Earbuds übersetzen live.
+caption: >-
+  Kein Englisch? Diese offenen Earbuds übersetzen live. #technik #ki #kopfhoerer #uebersetzer #reise
 published: 2025-12-22
 duration: 00:35
 sales:

@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Sofa endlich safe."
+caption: >-
+  Sofa endlich safe. #katzentok #katzenliebe #kratzmöbel #haustierbedarf #tiktokshop
 published: 2026-01-03
 duration: "00:38"
 sales:

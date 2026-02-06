@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Wirf diese alten Adapter weg! Diese sichere 11-in-1 Steckdose ist besser ⚡🔒"
+caption: >-
+  Wirf diese alten Adapter weg: Diese 11-in-1 Steckdose ist sicherer und spart Platz. #Sicherheit #Stromsparen #Geschenkidee #TikTokShopDE #SmartHome
 published: 2026-01-01
 duration: "00:35"
 sales:
@@ -20,7 +21,7 @@ source_notes:
 
 # Script 3: Safety First (Social Proof)
 
-## Visual Storyboard
+## Scripts
 
 | Time | Visual Action |
 |:-----|:--------------|
@@ -31,24 +32,28 @@ source_notes:
 | **00:22-00:28** | **[GIFT/USE CASE]** Shows it wrapping up or being plugged in a kid's room (safe night light). |
 | **00:28-00:35** | **[CTA]** Host holds the product close to camera. "Bestseller" sticker overlay. Points down. |
 
-## Voiceover / Text
+## Voiceover
 
-### German (Original)
-**Voiceover (Authoritative but friendly):**
-(00:00) [serious/urgent] Ganz ehrlich? Wirf diese alten Dinger sofort in den Müll!
-(00:05) [concerned] Sie sind unsicher und verschwenden nur Platz.
-(00:08) [bright/relieved] Tausch sie lieber gegen DAS hier.
-(00:12) [confident] Ein echter Alleskönner. Robust, sicher und mit Überspannungsschutz.
-(00:17) [emphasize] Und das Beste: Mit diesen Schaltern sparst du bares Geld, weil du Geräte komplett abschalten kannst.
-(00:24) [warm] Sicher, ordentlich und genial. Ein Muss für jeden deutschen Haushalt.
-(00:30) [commanding] Sicherheit geht vor. Bestell es dir jetzt hier unten!
+> with ElevenLabs v3 (alpha) grammar
 
-### Chinese (Translation)
-**Voiceover (Translation):**
-(00:00) [serious/urgent] 说真的？赶紧把这些旧东西扔进垃圾桶！
-(00:05) [concerned] 它们不安全，还浪费空间。
-(00:08) [bright/relieved] 最好把它换成这个。
-(00:12) [confident] 一个真正的全能选手。结实、安全，还有过载保护。
-(00:17) [emphasize] 最棒的是：有了这些开关，你可以彻底切断电源，省下真金白银。
-(00:24) [warm] 安全、整洁又天才。每一个德国家庭的必备品。
-(00:30) [commanding] 安全第一。现在就在下面下单吧！
+### DE (ElevenLabs Prompt | 30–45s)
+
+[serious] [urgent] Ganz ehrlich? Wirf diese alten Dinger sofort in den Müll!
+[concerned] Sie sind unsicher und verschwenden nur Platz.
+[bright] [relieved] Tausch sie lieber gegen DAS hier.
+[confident] Ein echter Alleskönner. Robust, sicher und mit Überspannungsschutz.
+[emphatic] Und das Beste: Mit diesen Schaltern sparst du bares Geld, weil du Geräte komplett abschalten kannst.
+[warm] Sicher, ordentlich und genial. Ein Muss für jeden deutschen Haushalt.
+[firm] Sicherheit geht vor. Bestell es dir jetzt hier unten!
+
+---
+
+### CN (中文翻译 | 仅供参考)
+
+[serious] [urgent] 说真的？赶紧把这些旧东西扔进垃圾桶！
+[concerned] 它们不安全，还浪费空间。
+[bright] [relieved] 最好把它换成这个。
+[confident] 一个真正的全能选手。结实、安全，还有过载保护。
+[emphatic] 最棒的是：有了这些开关，你可以彻底切断电源，省下真金白银。
+[warm] 安全、整洁又天才。每一个德国家庭的必备品。
+[firm] 安全第一。现在就在下面下单吧！

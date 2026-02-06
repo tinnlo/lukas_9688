@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "WLAN verstärken in 30 Sekunden."
+caption: >-
+  WLAN verstärken in 30 Sekunden. #tiktokshopde #wlan #homeoffice #technik #smarthome
 published: 2026-01-05
 duration: "00:38"
 sales:
@@ -59,4 +60,3 @@ source_notes:
 [pause 200ms] 第三步：完成。
 [confident] 死角立刻变好——信号更稳。
 [firm] 需要的话：点下面购物车。
-

@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Wenn das eine Person hält, hält es auch deine Winterdecke."
+caption: >-
+  Wenn das eine Person hält, hält es auch deine Winterdecke. #tiktokshopde #aufbewahrung #ordnung #kleiderschrank #haushalt
 published: 2026-01-05
 duration: "00:40"
 sales:
@@ -61,4 +62,3 @@ Härtetest-Hook (Human Fit) → Kapazität → Reißverschluss/Griffe → Vorher
 [bright] 塞进去，拉链一拉…
 [soft] 衣柜立刻安静整齐。
 [firm] 想要收纳变简单：点下面购物车。
-

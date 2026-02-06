@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Und das Beste? Die 32GB Karte ist schon dabei! 💾🎁 #DashcamDeal #InklusiveSpeicher #tiktokshop #SchnaeppchenJager"
+caption: >-
+  Und das Beste? Die 32GB Karte ist schon dabei! 💾🎁 #DashcamDeal #InklusiveSpeicher #tiktokshop #SchnaeppchenJager #tiktokmakemebuyit
 published:
 duration: "00:35"
 sales:

@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Das perfekte Geschenk für vierbeinige Freunde. 🎁🐾 #Hundegeschenk #Katzenbeschenken #PetLoverGift #tiktokshop #PerfectGift"
+caption: >-
+  Das perfekte Geschenk für vierbeinige Freunde. 🎁🐾 #Hundegeschenk #Katzenbeschenken #PetLoverGift #tiktokshop #PerfectGift #tiktokmakemebuyit
 published:
 duration: "00:32"
 sales:

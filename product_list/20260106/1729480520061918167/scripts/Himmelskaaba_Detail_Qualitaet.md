@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Detailverliebt und respektvoll: Kaaba-Deko fuer dein Zuhause."
+caption: >-
+  Detailverliebt und respektvoll: Kaaba-Deko fuer dein Zuhause. #ramadan #eid #islamischedeko #geschenkidee #wohnkultur
 published: 2026-01-06
 duration: "00:35"
 sales:

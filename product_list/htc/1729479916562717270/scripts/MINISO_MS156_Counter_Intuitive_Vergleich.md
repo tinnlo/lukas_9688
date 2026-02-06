@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: Diese Kopfhörer können mehr als du denkst. #MINISO #AI #Kopfhörer #Übersetzung #Tech
+caption: >-
+  Diese Kopfhörer können mehr als du denkst. #MINISO #AI #Kopfhörer #Übersetzung #Tech
 published: 2025-12-29
 duration: "00:32"
 sales:

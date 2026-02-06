@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Kleines Geschenk, grosse Winterhilfe."
+caption: >-
+  Kleines Geschenk, grosse Winterhilfe. #geschenkidee #handschuhe #winter #outdoor #tiktokshop
 published: 2026-01-02
 duration: "00:34"
 sales:

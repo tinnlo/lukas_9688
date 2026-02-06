@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Arbeite im Café am Laptop, Mädchen fragt nach meiner Smartwatch 😳 Zeig ihr alle Features, sie ist total begeistert. Jetzt bestellt sie auch eine #smartwatch #tiktokshop #cafélife #digitalnomad #technik
+  Arbeite im Café am Laptop, Mädchen fragt nach meiner Smartwatch 😳 Zeig ihr alle Features, sie ist total begeistert. Jetzt bestellt sie auch eine #smartwatch #tiktokshop #cafélife #digitalnomad #technik #Smartwatch #CaféLife #TikTokShop #DigitalNomad #Technik
 published: 2026-02-02
 duration: "00:40"
 sales:

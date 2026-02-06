@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "In 30 Sekunden installiert. Einstecken, fertig. 📹⚡ #Dashcam #EinfachInstallieren #Autosicherheit #tiktokshop #PlugAndPlay"
+caption: >-
+  In 30 Sekunden installiert. Einstecken, fertig. 📹⚡ #Dashcam #EinfachInstallieren #Autosicherheit #tiktokshop #PlugAndPlay #tiktokmakemebuyit
 published:
 duration: "00:32"
 sales:

@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Ich habe 4 Parfüms getestet Dieses ist der Gewinner 🏆 LASTAR Herrenparfüm überzeugt durch Qualität und Haltbarkeit Link im Shop #tiktokshop #parfüm #herrenduft #lastar #produkttest
+  Ich habe 4 Parfüms getestet Dieses ist der Gewinner 🏆 LASTAR Herrenparfüm überzeugt durch Qualität und Haltbarkeit Link im Shop #tiktokshop #parfüm #herrenduft #lastar #produkttest #Herrenparfüm #Parfümtest #Duftvergleich #TikTokShop #Qualität
 published: 2026-01-31
 duration: "00:45"
 sales:

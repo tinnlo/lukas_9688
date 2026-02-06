@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Warme Schuhe sind meistens hässlich... Aber die hier? Nein! 😍❄️"
+caption: >-
+  Warme Schuhe sind meistens hässlich... Aber die hier? Nein! 😍❄️ #Fashion #WinterMode #Sneakers #TikTokShopDE #Beinverlängerung
 published: 2026-01-01
 duration: "00:38"
 sales:

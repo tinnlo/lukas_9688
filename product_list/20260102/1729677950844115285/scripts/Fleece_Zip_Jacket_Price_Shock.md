@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Preis droppt gerade. Echt jetzt."
+caption: >-
+  Preis droppt gerade. Echt jetzt. #sale #jacke #streetwear #winter #deal
 published: 2026-01-02
 duration: "00:32"
 sales:

@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Alles was du für deinen Style brauchst in einer Box! 📦 3-in-1 Set für den modernen Mann. #herrenstyle #parfüm #uhr #geschenk #männersache"
+caption: >-
+  Alles was du für deinen Style brauchst in einer Box! 📦 3-in-1 Set für den modernen Mann. #herrenstyle #parfüm #uhr #geschenk #männersache #lifestyle
 published: 2026-01-01
 duration: 00:30
 sales:

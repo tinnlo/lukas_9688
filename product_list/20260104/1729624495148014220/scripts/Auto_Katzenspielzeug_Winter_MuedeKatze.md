@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Wenn deine Katze im Winter nur schläft: probier das hier."
+caption: >-
+  Wenn deine Katze im Winter nur schläft: probier das hier. #tiktokshopde #katzenspielzeug #katzenliebe #wohnungskatze #haustiere
 published: 2026-01-05
 duration: "00:36"
 sales:
@@ -63,4 +64,3 @@ source_notes:
 [matter-of-fact] 布下面像“猎物”在动——捕猎本能一下就被激活。
 [soft] 最爽的是：它还能自己玩一会儿。
 [firm] 想试试的话：点下面购物车。
-

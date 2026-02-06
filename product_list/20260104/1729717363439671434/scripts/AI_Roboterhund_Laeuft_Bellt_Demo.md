@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Roboterhund Demo: laufen, bellen, reagieren."
+caption: >-
+  Roboterhund Demo: laufen, bellen, reagieren. #tiktokshopde #gadget #roboterhund #technik #geschenkidee
 published: 2026-01-05
 duration: "00:38"
 sales:
@@ -56,4 +57,3 @@ source_notes:
 [matter-of-fact] 走、转、停…
 [energetic] 还会叫。
 [firm] 想要一个超有趣的小伙伴：点下面购物车。
-

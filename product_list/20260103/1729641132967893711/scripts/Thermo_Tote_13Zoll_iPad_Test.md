@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "13-Zoll Test: passt."
+caption: >-
+  13-Zoll Test: passt. #schultasche #arbeitstasche #organisation #mamaalltag #tiktokshop
 published: 2026-01-03
 duration: "00:40"
 sales:

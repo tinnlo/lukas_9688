@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Hoer den Metallton. Kein Plastik."
+caption: >-
+  Hoer den Metallton. Kein Plastik. #islamicdecor #metalart #wanddeko #ramadan #home
 published: 2026-01-02
 duration: "00:34"
 sales:

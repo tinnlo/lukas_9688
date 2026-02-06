@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Hoer auf, Sprit im Stand zu verbrennen."
+caption: >-
+  Hoer auf, Sprit im Stand zu verbrennen. #auto #sprit #winter #autozubehoer #spartrick
 published: 2026-01-02
 duration: "00:34"
 sales:

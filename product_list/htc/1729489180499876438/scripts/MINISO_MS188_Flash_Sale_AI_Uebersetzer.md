@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: Offene AI-Übersetzer-Earbuds mit Touchscreen — sogar wasserdicht.
+caption: >-
+  Offene AI-Übersetzer-Earbuds mit Touchscreen — sogar wasserdicht. #technik #ki #kopfhoerer #uebersetzer #deals
 published: 2025-12-22
 duration: 00:35
 sales:

@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Homeoffice? Dieses Katzenspielzeug beschäftigt sie sofort."
+caption: >-
+  Homeoffice? Dieses Katzenspielzeug beschäftigt sie sofort. #tiktokshopde #katzenspielzeug #katzenbedarf #wohnungskatze #haustiere
 published: 2026-01-05
 duration: "00:38"
 sales:
@@ -63,4 +64,3 @@ Homeoffice-Hook → Katze nervt → Spielzeug an → Katze spielt allein → „
 [matter-of-fact] 布下面像有“猎物”在动——它每次都会扑上去。
 [soft] 我终于能工作了，它也不无聊。
 [firm] 如果你家猫也容易无聊：点下面购物车。
-

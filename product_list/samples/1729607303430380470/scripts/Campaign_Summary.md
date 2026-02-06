@@ -1,15 +1,15 @@
 ---
 campaign: "11-In-1 Multifunctional Power Socket - TikTok Shop DE Campaign"
 product_id: 1729607303430380470
-scripts_generated: 3
-date: 2026-01-01
+scripts_generated: 6
+date: 2026-02-05
 market: Germany (TikTok Shop DE)
 ---
 
 # Campaign Summary | 营销活动摘要
 
-**Version:** v1.7.0
-**Date:** 2026-01-01
+**Version:** v2.0.0
+**Date:** 2026-02-05
 **Product ID:** 1729607303430380470
 
 ---
@@ -43,43 +43,69 @@ The campaign will focus on the transformation from **Chaos to Order**. For the G
 
 ## 3. Scripts Overview | 脚本概览
 
-Based on video analysis, the following script angles have been identified as high-potential.
-基于视频分析，以下脚本角度已被确定为高潜力。
+Based on video analysis, the following script angles have been identified as high-potential. The campaign now features **6 room-specific scripts** for comprehensive market coverage.
+基于视频分析，以下脚本角度已被确定为高潜力。该活动现在包含 **6 个特定房间的脚本**，以实现全面的市场覆盖。
 
-### Script 1: The "Kitchen Chaos" Solver | “厨房混乱”终结者
+### Script 1: Kitchen Chaos Solver | 厨房混乱终结者
 *   **Hook:** "Nervt dich dieser Kabelsalat?" (Does this cable clutter annoy you?)
 *   **Focus:** High-utility, showing multiple appliances (toaster, coffee maker) plugged in at once.
-*   **Goal:** Demonstrate capacity and organization.
-*   **钩子：** “厨房里的这些乱线让你心烦吗？”
+*   **Target:** Home cooks, busy kitchens, appliance users.
+*   **钩子：** "厨房里的这些乱线让你心烦吗？"
 *   **重点：** 高实用性，展示多个电器（烤面包机、咖啡机）同时插入。
-*   **目标：** 展示容量和整洁度。
+*   **目标人群：** 家庭厨师、繁忙厨房、电器使用者。
 
-### Script 2: The Safety Upgrade | 安全升级
+### Script 2: Nightstand Upgrade | 床头柜升级
+*   **Hook:** Dark room, motion sensor light activates cinematically.
+*   **Focus:** Lifestyle/Comfort. Charging phone on the dedicated shelf while sleeping.
+*   **Target:** Tech enthusiasts, bedroom upgraders, young professionals.
+*   **钩子：** 黑暗的房间，运动感应灯以电影般的方式激活。
+*   **重点：** 生活方式/舒适度。睡觉时在专用架子上给手机充电。
+*   **目标人群：** 科技爱好者、卧室升级者、年轻专业人士。
+
+### Script 3: Safety First | 安全第一
 *   **Hook:** Throwing an old, cheap adapter into the trash ("Weg damit!" - Get rid of it!).
 *   **Focus:** Fear of fire/sparks vs. the safety of the new device (switches, robust build).
-*   **Goal:** Conversion through trust and safety concerns.
-*   **钩子：** 将旧的廉价适配器扔进垃圾桶（“把它扔了！”）。
+*   **Target:** Safety-conscious parents, families, quality-focused buyers.
+*   **钩子：** 将旧的廉价适配器扔进垃圾桶（"把它扔了！"）。
 *   **重点：** 对火灾/火花的恐惧 vs 新设备的安全（开关、坚固的做工）。
-*   **目标：** 通过信任和安全顾虑实现转化。
+*   **目标人群：** 注重安全的父母、家庭、注重质量的买家。
 
-### Script 3: The Nightstand Replacement | 床头柜替代品
-*   **Hook:** Dark room, motion sensor light activates.
-*   **Focus:** Lifestyle/Comfort. Charging phone on the dedicated shelf while sleeping.
-*   **Goal:** Appeal to younger demographics and bedroom usage.
-*   **钩子：** 黑暗的房间，运动感应灯激活。
-*   **重点：** 生活方式/舒适度。睡觉时在专用架子上给手机充电。
-*   **目标：** 吸引年轻人群和卧室使用场景。
+### Script 4: Motion Sensor Night Light Hero | 运动感应夜灯英雄
+*   **Hook:** Person stumbling in dark hallway at night ("AUTSCH!" - OUCH!).
+*   **Focus:** Motion sensor as hero feature. Automatic lighting for hallways, bathrooms, kids' rooms.
+*   **Target:** Night owls, parents with young children, elderly users.
+*   **钩子：** 人在夜晚黑暗的走廊中绊倒（"哎哟！"）。
+*   **重点：** 运动感应器作为英雄功能。走廊、浴室、儿童房的自动照明。
+*   **目标人群：** 夜猫子、有小孩的父母、老年用户。
+
+### Script 5: Living Room Cable Chaos Killer | 客厅线缆混乱终结者
+*   **Hook:** Camera pans behind TV stand showing total cable disaster ("KABELCHAOS!").
+*   **Focus:** Entertainment center organization. TV + Soundbar + Gaming console + Streaming devices.
+*   **Target:** Gamers, streamers, smart home enthusiasts, entertainment lovers.
+*   **钩子：** 镜头扫过电视柜后面，展示完全混乱的线缆（"线缆混乱！"）。
+*   **重点：** 娱乐中心整理。电视 + 音响 + 游戏机 + 流媒体设备。
+*   **目标人群：** 游戏玩家、主播、智能家居爱好者、娱乐爱好者。
+
+### Script 6: Productive Desk Upgrade | 高效办公桌升级
+*   **Hook:** Zoom call with messy desk background. Chat notification: "😬 Messy desk!"
+*   **Focus:** Home office professionalism. Monitor + Laptop + Desk lamp organization.
+*   **Target:** Remote workers, students, freelancers, content creators.
+*   **钩子：** Zoom 通话时背景是凌乱的桌子。聊天通知："😬 桌子好乱！"
+*   **重点：** 家庭办公室专业性。显示器 + 笔记本 + 台灯整理。
+*   **目标人群：** 远程工作者、学生、自由职业者、内容创作者。
 
 ---
 
 ## 4. Audience Segmentation | 受众细分
 
-| Segment | Description | 描述 | Motivation | 动机 |
-|:---|:---|:---|:---|:---|
-| **Renters (Flat Dwellers)** | People living in older apartments with few wall outlets. | 居住在插座较少的老式公寓的人。 | Need to maximize limited space without drilling holes. | 需要在不钻孔的情况下最大化有限空间。 |
-| **Tech-Savvy Youth** | Students/Gamers with many USB devices (Phone, Watch, Headphones). | 拥有许多USB设备（手机、手表、耳机）的学生/游戏玩家。 | Need fast charging (USB-C) and desk organization. | 需要快速充电（USB-C）和桌面整理。 |
-| **Safety-Conscious Parents** | Families concerned about loose cables or child safety. | 担心线缆松动或儿童安全的家庭。 | Want "Child Protection Shutters" and "Off Switches". | 想要“儿童保护门”和“关闭开关”。 |
-
+| Segment | Description | 描述 | Motivation | 动机 | Script Match | 脚本匹配 |
+|:---|:---|:---|:---|:---|:---|:---|
+| **Renters (Flat Dwellers)** | People living in older apartments with few wall outlets. | 居住在插座较少的老式公寓的人。 | Need to maximize limited space without drilling holes. | 需要在不钻孔的情况下最大化有限空间。 | Script 1, 5 | 脚本 1, 5 |
+| **Tech-Savvy Youth** | Students/Gamers with many USB devices (Phone, Watch, Headphones). | 拥有许多USB设备（手机、手表、耳机）的学生/游戏玩家。 | Need fast charging (USB-C) and desk organization. | 需要快速充电（USB-C）和桌面整理。 | Script 2, 5, 6 | 脚本 2, 5, 6 |
+| **Safety-Conscious Parents** | Families concerned about loose cables or child safety. | 担心线缆松动或儿童安全的家庭。 | Want "Child Protection Shutters" and "Off Switches". | 想要"儿童保护门"和"关闭开关"。 | Script 3, 4 | 脚本 3, 4 |
+| **Remote Workers** | Home office professionals who need clean, organized workspace. | 需要整洁有序工作空间的家庭办公专业人士。 | Professional Zoom background and cable management. | 专业的 Zoom 背景和线缆管理。 | Script 6 | 脚本 6 |
+| **Entertainment Enthusiasts** | Living room setup with multiple devices (TV, gaming, streaming). | 客厅设置有多个设备（电视、游戏、流媒体）。 | Organize entertainment center, reduce standby power. | 整理娱乐中心，减少待机功耗。 | Script 5 | 脚本 5 |
+| **Night Safety Seekers** | Elderly, parents, anyone navigating home at night. | 老年人、父母、任何夜间在家走动的人。 | Automatic motion-sensing light for safety. | 自动运动感应灯以确保安全。 | Script 4 | 脚本 4 |
 ---
 
 ## 5. Key Selling Points | 核心卖点
@@ -117,10 +143,14 @@ Based on video analysis, the following script angles have been identified as hig
 
 ## 7. Performance Predictions | 表现预测
 
-*   **Winning Angle Prediction:** The "Kitchen/Household Organization" angle will likely have a higher conversion rate than the "Viral/Funny" angle because it addresses a daily pain point.
-    *   **获胜角度预测：** “厨房/家庭整理”角度的转化率可能会高于“病毒/搞笑”角度，因为它解决了一个日常痛点。
-*   **Market Specifics:** Dubbing to **German** is expected to increase CVR significantly (currently relying on Spanish content in non-Spanish markets is a leak).
-    *   **市场特性：** 配音成**德语**预计将显著提高转化率（目前在非西班牙语市场依赖西班牙语内容是一个漏洞）。
+*   **Winning Angle Prediction:** The "Kitchen/Household Organization" (Script 1) and "Home Office" (Script 6) angles will likely have the highest conversion rates because they address daily pain points with clear before/after visualization.
+    *   **获胜角度预测：** "厨房/家庭整理"（脚本1）和"家庭办公室"（脚本6）角度的转化率可能最高，因为它们通过清晰的前后对比可视化解决日常痛点。
+*   **Market Specifics:** All scripts are in **German** targeting the German market specifically, which is expected to significantly increase CVR compared to language-mismatched content.
+    *   **市场特性：** 所有脚本均为**德语**，专门针对德国市场，预计与语言不匹配的内容相比，转化率会显著提高。
+*   **Testing Strategy:** Run all 6 scripts simultaneously with €50 budget each. Analyze 3-day performance to identify winners for scaling.
+    *   **测试策略：** 同时运行所有 6 个脚本，每个预算 €50。分析 3 天的表现以确定扩大规模的获胜者。
+*   **Room-Based Coverage:** The 6-script portfolio ensures no major use case is missed, maximizing total addressable market.
+    *   **基于房间的覆盖：** 6 个脚本的组合确保没有错过主要使用场景，最大化总目标市场。
 
 ---
 
@@ -156,10 +186,14 @@ Based on video analysis, the following script angles have been identified as hig
 
 ## 11. Source Materials | 素材来源
 
-*   `ref_video/video_1_lescousinsasmr.mp4` (Top Viral - Spanish)
-*   `ref_video/video_2_chotas.ttshop.mp4` (Aggressive Hook)
-*   `ref_video/video_3_nathanloveit.mp4` (German Feature Demo)
+*   `ref_video/video_1_analysis.md` (Top Viral - ASMR Style)
+*   `ref_video/video_2_analysis.md` (Spanish - Motion Sensor Focus)
+*   `ref_video/video_3_analysis.md` (Feature Demo)
+*   `ref_video/video_4_analysis.md` (Use Case Demonstration)
+*   `ref_video/video_5_analysis.md` (German - Energy Saving Emphasis)
+*   `ref_video/video_synthesis.md` (Market Intelligence Summary)
 *   `tabcut_data.json` (Sales Metadata)
+*   `product_images/` (Product Photography 1-8)
 
 ---
 
@@ -170,8 +204,23 @@ Based on video analysis, the following script angles have been identified as hig
 
 ---
 
-## 13. Footer | 页脚
+## 13. Script Performance Matrix | 脚本表现矩阵
 
-**Generated by:** Gemini Agent
-**Based on:** Tabcut Data & Video Analysis
-**Next Steps:** Generate German scripts based on "Kitchen Chaos" and "Nightstand" angles.
+| Script | Room | Hook Type | Duration | Unique Feature | Production Complexity | Expected CVR |
+|:-------|:-----|:----------|:---------|:---------------|:---------------------|:-------------|
+| Script 1 | Kitchen | Pain Point | 30s | Appliance chaos → order | Low | High ⭐⭐⭐ |
+| Script 2 | Bedroom | Cinematic | 30s | Motion sensor reveal | Medium | Medium ⭐⭐ |
+| Script 3 | General | Fear-based | 35s | Safety upgrade | Low | High ⭐⭐⭐ |
+| Script 4 | Hallway/Bath | Accident scenario | 38s | Night safety hero | Medium | Medium ⭐⭐ |
+| Script 5 | Living Room | Embarrassment | 42s | Entertainment center | Low | High ⭐⭐⭐ |
+| Script 6 | Home Office | Social proof | 40s | Zoom background shame | Medium | Very High ⭐⭐⭐⭐ |
+
+---
+
+## 14. Footer | 页脚
+
+**Generated by:** OpenCode AI Agent
+**Based on:** Tabcut Data & Video Analysis (video_2_analysis.md, video_5_analysis.md)
+**Campaign Version:** v2.0.0 (6-Script Full Coverage)
+**Last Updated:** 2026-02-05
+**Status:** ✅ Production Ready - All 6 scripts complete with German VO and Chinese translations

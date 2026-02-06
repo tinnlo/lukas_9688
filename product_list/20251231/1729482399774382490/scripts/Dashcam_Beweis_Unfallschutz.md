@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Ein Unfall ohne Dashcam = dein Wort gegen seins. 🚗💥 #Dashcam #Autokamera #Versicherungsschutz #tiktokshop #BeweisSicher"
+caption: >-
+  Ein Unfall ohne Dashcam = dein Wort gegen seins. 🚗💥 #Dashcam #Autokamera #Versicherungsschutz #tiktokshop #BeweisSicher #tiktokmakemebuyit
 published:
 duration: "00:35"
 sales:

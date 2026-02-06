@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Morgens aufgedunsen? Diese Brennnessel-Kapseln haben mir geholfen, Wassereinlagerungen loszuwerden."
+caption: >-
+  Morgens aufgedunsen? Diese Brennnessel-Kapseln haben mir geholfen, Wassereinlagerungen loszuwerden. #entwässern #debloat #morgenroutine #gesundheit #wohlfühlen
 published: 2025-12-26
 duration: "00:38"
 sales:

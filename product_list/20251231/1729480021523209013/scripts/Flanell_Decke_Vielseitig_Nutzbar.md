@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Ich verlasse dieses Bett nie wieder. 🛋️✨ #Kuscheldecke #Winterhingucker #tiktokshop #CozyVibes #BurritoMode"
+caption: >-
+  Ich verlasse dieses Bett nie wieder. 🛋️✨ #Kuscheldecke #Winterhingucker #tiktokshop #CozyVibes #BurritoMode #Winterdecke #SelfCare #tiktokmakemebuyit
 published:
 duration: "00:38"
 sales:

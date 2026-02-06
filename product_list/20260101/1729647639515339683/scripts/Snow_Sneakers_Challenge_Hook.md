@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Stopp! Hör auf, deine Füße im Winter zu quälen! Diese warmen Sneakers sind dein Hack 🥶👟"
+caption: >-
+  Stopp! Hör auf, deine Füße im Winter zu quälen! Diese warmen Sneakers sind dein Hack 🥶👟 #WinterSchuhe #Sneakers #WarmeFüße #TikTokShopDE #Winterhack
 published: 2026-01-01
 duration: "00:35"
 sales:

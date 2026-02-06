@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Morgens Eis innen? Nicht mehr."
+caption: >-
+  Morgens Eis innen? Nicht mehr. #auto #winterauto #scheibenenteiser #autozubehoer #tiktokshop
 published: 2026-01-02
 duration: "00:35"
 sales:

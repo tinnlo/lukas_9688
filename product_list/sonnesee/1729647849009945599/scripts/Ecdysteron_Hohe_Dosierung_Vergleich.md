@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Viel höher dosiert und günstiger: 1200mg Ecdysteron für natürlichen Muskelaufbau. Diese Dosierung macht den Unterschied."
+caption: >-
+  Viel höher dosiert und günstiger: 1200mg Ecdysteron für natürlichen Muskelaufbau. Diese Dosierung macht den Unterschied. #muskelaufbau #ecdysterone #supplements #gym #deals
 published: 2025-12-27
 duration: "00:35"
 sales:

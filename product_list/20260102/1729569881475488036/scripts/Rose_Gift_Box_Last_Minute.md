@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Geschenk vergessen? Rettung in 15 Sekunden."
+caption: >-
+  Geschenk vergessen? Rettung in 15 Sekunden. #geschenk #lastminute #valentinstag #romantik #tiktokshop
 published: 2026-01-02
 duration: "00:34"
 sales:

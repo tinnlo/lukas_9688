@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Der Roboterhund, der wirklich läuft und bellt – als Geschenk mega."
+caption: >-
+  Der Roboterhund, der wirklich läuft und bellt – als Geschenk mega. #tiktokshopde #geschenkidee #gadget #roboter #technik
 published: 2026-01-05
 duration: "00:39"
 sales:
@@ -59,4 +60,3 @@ Geschenk-Hook → Unboxing → „läuft & bellt“ Proof → Reaktionen → CTA
 [energetic] 它真的会走——还会叫。
 [matter-of-fact] 拿出来就有“哇”的那种惊喜感。
 [firm] 想要的话：点下面购物车。
-

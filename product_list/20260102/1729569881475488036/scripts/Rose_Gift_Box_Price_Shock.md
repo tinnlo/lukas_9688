@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Sieht nach 100 aus, kostet unter 20."
+caption: >-
+  Sieht nach 100 aus, kostet unter 20. #geschenk #halskette #valentinstag #romantik #tiktokshop
 published: 2026-01-02
 duration: "00:36"
 sales:

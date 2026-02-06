@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  POV du kochst und hörst endlich deine Podcasts richtig 🎧 PAXA macht Küchen Chaos zu Musik Genuss. Hände frei laut genug perfekt #tiktokshop #paxa #küche #podcast #lifehack
+  POV du kochst und hörst endlich deine Podcasts richtig 🎧 PAXA macht Küchen Chaos zu Musik Genuss. Hände frei laut genug perfekt #tiktokshop #paxa #küche #podcast #lifehack #KüchenGadget #PAXA #Podcast #Kochen #TikTokShop
 published: 2026-01-31
 duration: "00:40"
 sales:

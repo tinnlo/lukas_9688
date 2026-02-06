@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Makita Besitzer aufgepasst - kompatibles Gebläse gefunden! Funktioniert mit deinen Akkus. Tolle Alternative entdeckt! #makita #werkzeug #diy #alternative #tiktokshop
+  Makita Besitzer aufgepasst - kompatibles Gebläse gefunden! Funktioniert mit deinen Akkus. Tolle Alternative entdeckt! #makita #werkzeug #diy #alternative #tiktokshop #deal
 published: 2026-01-21
 duration: "00:40"
 sales:

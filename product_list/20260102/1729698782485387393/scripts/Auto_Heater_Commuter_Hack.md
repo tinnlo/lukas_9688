@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Pendler-Hack: warm, klar, schnell."
+caption: >-
+  Pendler-Hack: warm, klar, schnell. #pendler #auto #winter #heizung #tiktokshop
 published: 2026-01-02
 duration: "00:34"
 sales:

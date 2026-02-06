@@ -1,7 +1,7 @@
 ---
 cover: "product_list/20260111/1729747783426349401/product_images/product_image_1.jpg"
 caption: >-
-  Winter Essentials Collection: Tactical Balaclava mit Anti-Beschlag Technologie
+  Winter Essentials Collection: Tactical Balaclava mit Anti-Beschlag Technologie #winter #campaign #outdoor #arbeit #taktisch
 published: 2026-01-11
 duration: "00:00"
 sales:

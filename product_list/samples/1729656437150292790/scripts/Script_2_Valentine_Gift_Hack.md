@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Das perfekte Valentinstagsgeschenk für unter 20€ 💝 LASTAR Vanille Set für Paare. Sie liebt es, ich auch. Schnell sein #tiktokshop #valentinstag #geschenk #parfüm #couple
+  Das perfekte Valentinstagsgeschenk für unter 20€ 💝 LASTAR Vanille Set für Paare. Sie liebt es, ich auch. Schnell sein #tiktokshop #valentinstag #geschenk #parfüm #couple #Valentinstag #Geschenkidee #Couple #Budget #TikTokShop
 published: 2026-01-31
 duration: "00:40"
 sales:

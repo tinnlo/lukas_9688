@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Nie wieder schlechte Nächte! 😴 10cm dicker Matratzentopper - kühlend, weich, waschbar! #bessersch lafen #matratzentopper #schlafkomfort #bettupgrade #traumschlaf
+  Nie wieder schlechte Nächte! 😴 10cm dicker Matratzentopper - kühlend, weich, waschbar! #bessersch lafen #matratzentopper #schlafkomfort #bettupgrade #traumschlaf #besserschlafen
 published: 2026-01-15
 duration: "00:35"
 sales:

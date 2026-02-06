@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Wusstest du, dass du Parfüms mischen kannst? Kaffee-Vanille-Kombi ist genial! LASTAR Layering-Hack für deinen einzigartigen Duft #parfüm #layering #vanille #kaffee #beautyhack
+  Wusstest du, dass du Parfüms mischen kannst? Kaffee-Vanille-Kombi ist genial! LASTAR Layering-Hack für deinen einzigartigen Duft #parfüm #layering #vanille #kaffee #beautyhack #ParfümLayering #BeautyHack #VanilleDuft #KaffeeNoten #TikTokShop
 published: 2026-02-02
 duration: "00:42"
 sales:

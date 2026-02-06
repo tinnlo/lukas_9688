@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Kino an der Decke? Ja, bitte! Netflix im Bett schauen mit diesem 130-Zoll Mini-Beamer. Android 14, WiFi 6, 180° drehbar. #Beamer #HomecinEma #Netflix #Cozy #Lifestyle
+  Kino an der Decke? Ja, bitte! Netflix im Bett schauen mit diesem 130-Zoll Mini-Beamer. Android 14, WiFi 6, 180° drehbar. #Beamer #HomecinEma #Netflix #Cozy #Lifestyle #Homecinema
 published: 2026-01-17
 duration: "00:35"
 sales: [yes]

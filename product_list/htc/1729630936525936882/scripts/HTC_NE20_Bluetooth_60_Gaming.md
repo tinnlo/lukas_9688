@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Bluetooth 6.0 ist angekommen 🎮 #bluetooth6 #gaming #htc #techgadgets #tiktokshop"
+caption: >-
+  Bluetooth 6.0 ist angekommen 🎮 #bluetooth6 #gaming #htc #techgadgets #tiktokshop #bluetooth60
 published:
 duration: 00:33
 sales:

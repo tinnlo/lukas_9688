@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Das schoenste Ramadan-Geschenk fuer Zuhause."
+caption: >-
+  Das schoenste Ramadan-Geschenk fuer Zuhause. #ramadan #geschenkidee #islamicdecor #wanddeko #zuhause
 published: 2026-01-02
 duration: "00:35"
 sales:

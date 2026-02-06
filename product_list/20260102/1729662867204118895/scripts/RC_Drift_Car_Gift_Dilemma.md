@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Ich habe ein Problem... Dieses Geschenk ist zu gut zum Verschenken! 🎁😅"
+caption: >-
+  Ich habe ein Problem... Dieses Geschenk ist zu gut zum Verschenken! 🎁😅 #Geschenkidee #RCCar #TikTokShopDE #Weihnachten #Spielzeug
 published: 2026-01-01
 duration: "00:38"
 sales:

@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: Campaign Summary - Schnelltrocknender Hundebademantel
+caption: >-
+  Campaign Summary - Schnelltrocknender Hundebademantel #campaign #summary
 published: 2026-01-20
 duration: "N/A"
 sales:

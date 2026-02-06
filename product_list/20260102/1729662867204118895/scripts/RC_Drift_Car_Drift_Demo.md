@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "20+ km/h Drift-Action? Diese RC-Drift-Maschine ist perfekt für Anfänger und Profis! 🏎️✨"
+caption: >-
+  20+ km/h Drift-Action? Diese RC-Drift-Maschine ist perfekt für Anfänger und Profis! 🏎️✨ #RCCar #DriftCar #Geschenkidee #TikTokShopDE #Spielzeug
 published: 2026-01-01
 duration: "00:35"
 sales:

@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: Du sprichst kein Englisch? Kein Problem. #MINISO #Kopfhörer #Übersetzung #Reisen #Sprachenlernen
+caption: >-
+  Du sprichst kein Englisch? Kein Problem. #MINISO #Kopfhörer #Übersetzung #Reisen #Sprachenlernen
 published: 2025-12-29
 duration: "00:35"
 sales:

@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "POV: Shopping in Paris wird plötzlich easy 🛍️ #aiübersetzung #shopping #miniso #tiktokshop"
+caption: >-
+  POV: Shopping in Paris wird plötzlich easy 🛍️ #aiübersetzung #shopping #miniso #tiktokshop #reisen #sprachbarriere
 published:
 duration: "00:38"
 sales:

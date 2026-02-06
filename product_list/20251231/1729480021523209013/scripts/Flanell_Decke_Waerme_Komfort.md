@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Heizung aus? Kein Problem. Diese Decke hält mich wärmer als jeder Radiator."
+caption: >-
+  Heizung aus? Kein Problem. Diese Decke hält mich wärmer als jeder Radiator. #Winterdecke #Kuscheldecke #EnergieSparen #tiktokshop #tiktokmakemebuyit
 published:
 duration: "00:35"
 sales:

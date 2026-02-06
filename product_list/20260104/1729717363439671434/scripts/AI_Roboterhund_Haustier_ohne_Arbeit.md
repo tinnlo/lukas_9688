@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Haustier-Vibes ohne Gassi gehen."
+caption: >-
+  Haustier-Vibes ohne Gassi gehen. #tiktokshopde #gadget #roboter #technik #geschenkidee
 published: 2026-01-05
 duration: "00:40"
 sales:
@@ -59,4 +60,3 @@ Problem: „Will ein Haustier, aber keine Arbeit“ → Lösung: Roboterhund →
 [matter-of-fact] 机器狗会走，会反应——还会叫。
 [soft] 送礼很合适，在家当个小科技玩具也很爽。
 [firm] 想要这个“哇”一下：点下面购物车。
-

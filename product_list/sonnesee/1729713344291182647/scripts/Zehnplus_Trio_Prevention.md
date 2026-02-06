@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Ich warte nicht auf Probleme. Ich investiere jetzt. Präventivmedizin für Haare, Haut, Nägel. #prävention #wohlbefinden #langlebigkeit #zehnplus"
+caption: >-
+  Ich warte nicht auf Probleme. Ich investiere jetzt. Präventivmedizin für Haare, Haut, Nägel. #prävention #wohlbefinden #langlebigkeit #zehnplus #anti-aging
 published: 2026-01-09
 duration: "00:36"
 sales:

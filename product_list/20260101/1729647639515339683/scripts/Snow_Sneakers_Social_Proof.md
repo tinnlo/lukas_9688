@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Meine Schwester dachte, ich habe 100€ ausgegeben... Aber rate mal! 😂"
+caption: >-
+  Meine Schwester dachte, ich habe 100€ ausgegeben... Aber rate mal! 😂 #SocialProof #WinterSchuhe #PreisLeistung #TikTokShopDE #Geschwister
 published: 2026-01-01
 duration: "00:35"
 sales:

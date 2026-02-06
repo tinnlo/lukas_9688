@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Hör auf, billige Wandsticker zu kaufen. Das ist echtes Metall. Massive Qualität. Zeitlos elegant. #IslamicArt #Qualität #TikTokShop #Wandkunst
+  Hör auf, billige Wandsticker zu kaufen. Das ist echtes Metall. Massive Qualität. Zeitlos elegant. #IslamicArt #Qualität #TikTokShop #Wandkunst #MassivMetall #Premium
 published: 2026-01-09
 duration: "00:28"
 sales:

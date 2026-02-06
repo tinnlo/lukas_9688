@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Warum teure Marken zahlen wenn es das hier gibt 💸 LASTAR Parfüm bietet Luxusqualität zum fairen Preis Holzige Noten langanhaltend Jetzt testen #tiktokshop #parfüm #preiswert #duft #lastar
+  Warum teure Marken zahlen wenn es das hier gibt 💸 LASTAR Parfüm bietet Luxusqualität zum fairen Preis Holzige Noten langanhaltend Jetzt testen #tiktokshop #parfüm #preiswert #duft #lastar #PreisLeistung #Parfüm #BudgetLuxus #TikTokShop #LASTAR
 published: 2026-01-31
 duration: "00:42"
 sales:

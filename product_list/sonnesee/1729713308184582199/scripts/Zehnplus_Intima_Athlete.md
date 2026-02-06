@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Ich kompromittiere nicht. Nicht beim Training. Nicht bei meiner Gesundheit. #athlete #performance #wohlbefinden #zehnplus #intima"
+caption: >-
+  Ich kompromittiere nicht. Nicht beim Training. Nicht bei meiner Gesundheit. #athlete #performance #wohlbefinden #zehnplus #intima #fitness
 published: 2026-01-09
 duration: "00:36"
 sales:

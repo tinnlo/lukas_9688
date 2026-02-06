@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Ich habe das virale TikTok Parfüm getestet 😳 LASTAR Vanille Set überzeugt mich total. Zwei Düfte für Tag und Abend. Geschenkidee perfekt #tiktokshop #parfüm #vanille #geschenkidee #couple
+  Ich habe das virale TikTok Parfüm getestet 😳 LASTAR Vanille Set überzeugt mich total. Zwei Düfte für Tag und Abend. Geschenkidee perfekt #tiktokshop #parfüm #vanille #geschenkidee #couple #TikTokViral #ParfümTest #Vanille #Geschenkset #TikTokShop
 published: 2026-01-31
 duration: "00:43"
 sales:

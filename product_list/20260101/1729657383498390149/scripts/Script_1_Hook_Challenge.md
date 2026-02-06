@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Sieht aus wie Luxus, kostet aber fast nichts! ✨ Das perfekte Upgrade für deinen Style. #uhren #herrenmode #geschenkidee #business #tiktokshop"
+caption: >-
+  Sieht aus wie Luxus, kostet aber fast nichts! ✨ Das perfekte Upgrade für deinen Style. #uhren #herrenmode #geschenkidee #business #tiktokshop #style
 published: 2026-01-01
 duration: 00:28
 sales:

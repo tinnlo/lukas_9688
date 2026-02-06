@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Weiße Wand? Ramadan nicht! Verwandle dein Zuhause in eine Oase der Ruhe. Wunderschöne Bismillah-Kunst. Link unten. #RamadanDeko #IslamicArt #TikTokShop
+  Weiße Wand? Ramadan nicht! Verwandle dein Zuhause in eine Oase der Ruhe. Wunderschöne Bismillah-Kunst. Link unten. #RamadanDeko #IslamicArt #TikTokShop #Wandkunst #Barakah
 published: 2026-01-09
 duration: "00:30"
 sales:

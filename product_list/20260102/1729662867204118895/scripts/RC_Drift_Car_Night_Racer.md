@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "LED-Drift-Action im Dunkeln? Diese RC-Car leuchtet wie ein echtes Rennwagen! 💡🏎️"
+caption: >-
+  LED-Drift-Action im Dunkeln? Diese RC-Car leuchtet wie ein echtes Rennwagen! 💡🏎️ #RCCar #LEDLights #NachtRennen #TikTokShopDE #DriftCar
 published: 2026-01-01
 duration: "00:32"
 sales:

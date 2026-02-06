@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Gewicht-Check: fühlt sich massiv an."
+caption: >-
+  Gewicht-Check: fühlt sich massiv an. #geschenkidee #autoliebe #kaffeebecher #gadgets #tiktokshop
 published: 2026-01-03
 duration: "00:40"
 sales:

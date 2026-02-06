@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Ein Stueck Mekka fuer dein Zuhause."
+caption: >-
+  Ein Stueck Mekka fuer dein Zuhause. #ramadan #eid #islamischedeko #geschenkidee #wohnkultur
 published: 2026-01-06
 duration: "00:35"
 sales:

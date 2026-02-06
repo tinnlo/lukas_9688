@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Wie viel passt rein? Test."
+caption: >-
+  Wie viel passt rein? Test. #schminktisch #zimmerdeko #beautysetup #organisation #tiktokshop
 published: 2026-01-03
 duration: "00:41"
 sales:

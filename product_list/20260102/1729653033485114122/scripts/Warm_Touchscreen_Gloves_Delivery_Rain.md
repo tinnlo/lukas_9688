@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Lieferfahrten im Regen? Nicht mit nassen Fingern."
+caption: >-
+  Lieferfahrten im Regen? Nicht mit nassen Fingern. #lieferdienst #regen #handschuhe #touchscreen #winter
 published: 2026-01-02
 duration: "00:35"
 sales:

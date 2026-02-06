@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Ein Bag. Drei Outfits."
+caption: >-
+  Ein Bag. Drei Outfits. #handtasche #outfit #geschenkidee #tiktokshop #accessoires
 published: 2026-01-03
 duration: "00:40"
 sales:

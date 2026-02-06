@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Verwandle dein Bett in eine Traum-Oase! ✨ 10cm Matratzentopper = pure Erholung! #traumschlaf #bettupgrade #schlafkomfort #erholung #cozybed room
+  Verwandle dein Bett in eine Traum-Oase! ✨ 10cm Matratzentopper = pure Erholung! #traumschlaf #bettupgrade #schlafkomfort #erholung #cozybed room #cozybedroom
 published: 2026-01-15
 duration: "00:33"
 sales:

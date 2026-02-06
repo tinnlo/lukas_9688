@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Günstig, aber richtig nützlich."
+caption: >-
+  Günstig, aber richtig nützlich. #katzentok #katzenliebe #kratzmöbel #haustierbedarf #tiktokshop
 published: 2026-01-03
 duration: "00:36"
 sales:

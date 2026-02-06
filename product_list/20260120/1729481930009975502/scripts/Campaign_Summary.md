@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: Campaign Summary - Raised Ceramic Cat Bowl
+caption: >-
+  Campaign Summary - Raised Ceramic Cat Bowl #campaign #summary
 published: 2026-01-20
 duration: "N/A"
 sales:

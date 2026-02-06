@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Morgenroutine… aber V8."
+caption: >-
+  Morgenroutine… aber V8. #geschenkidee #autoliebe #kaffeebecher #gadgets #tiktokshop
 published: 2026-01-03
 duration: "00:35"
 sales:

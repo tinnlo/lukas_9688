@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Endlich ein Bett, das auch auf dem Balkon trocken bleibt. 🏠🌿 #IndoorOutdoor #Hundehütte #BalkonHund #tiktokshop #WeatherReady"
+caption: >-
+  Endlich ein Bett, das auch auf dem Balkon trocken bleibt. 🏠🌿 #IndoorOutdoor #Hundehütte #BalkonHund #tiktokshop #WeatherReady #tiktokmakemebuyit
 published:
 duration: "00:35"
 sales:

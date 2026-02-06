@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Passt mehr als du denkst."
+caption: >-
+  Passt mehr als du denkst. #handtasche #outfit #geschenkidee #tiktokshop #accessoires
 published: 2026-01-03
 duration: "00:37"
 sales:

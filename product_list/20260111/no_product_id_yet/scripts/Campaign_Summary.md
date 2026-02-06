@@ -1,7 +1,7 @@
 ---
 cover: "../product_images/2026_01_11_14_38_57_IMG_0052.jpg"
 caption: >-
-  Winter Essentials Collection: Ausziehbare Schneeschaufel - Dein Rücken wird es dir danken
+  Winter Essentials Collection: Ausziehbare Schneeschaufel - Dein Rücken wird es dir danken #winter #campaign #schneeschaufel #auto #rücken
 published: 2026-01-11
 duration: "00:00"
 sales:

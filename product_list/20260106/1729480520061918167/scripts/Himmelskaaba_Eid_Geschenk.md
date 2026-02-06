@@ -1,6 +1,7 @@
 ---
 cover: ""
-caption: "Das Eid-Geschenk, das wirklich von Herzen kommt."
+caption: >-
+  Das Eid-Geschenk, das wirklich von Herzen kommt. #ramadan #eid #islamischedeko #geschenkidee #wohnkultur
 published: 2026-01-06
 duration: "00:35"
 sales:

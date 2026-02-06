@@ -1,7 +1,7 @@
 ---
 cover: ""
 caption: >-
-  Warum 100€ für Parfüm zahlen wenn du so gut riechen kannst? 😳 LASTAR Doppelpack spart dir so viel Geld. Luxus für wenig #tiktokshop #parfüm #spartipp #lastar #beauty
+  Warum 100€ für Parfüm zahlen wenn du so gut riechen kannst? 😳 LASTAR Doppelpack spart dir so viel Geld. Luxus für wenig #tiktokshop #parfüm #spartipp #lastar #beauty #Spartipp #LASTAR #BudgetBeauty #ParfümDupe #TikTokShop
 published: 2026-01-31
 duration: "00:40"
 sales:
