@@ -75,51 +75,65 @@ Target word counts for UGC TikTok Ad style (fast-paced):
 
 ## ElevenLabs v3 Audio Tags
 
-### Voice-related Tags (⭐ = UGC Favorites)
+### Credible Emotion Cues (⭐ = Recommended for Authentic TikTok Delivery)
 
-**Laughter:**
-- `[laughs]` - Full laugh ⭐
-- `[giggles]` - Light laugh ⭐
-- `[chuckles]` - Quiet laugh
-
-**Breath:**
-- `[whispers]` - Quiet, intimate ⭐
-- `[sighs]` - Exhale of frustration/relief ⭐
-- `[exhales]` - Sharp breath out
-- `[inhales deeply]` - Deep breath in
-
-**Emotions:**
-- `[sarcastic]` - Sarcastic tone ⭐
-- `[curious]` - Questioning, interested ⭐
-- `[excited]` - High enthusiasm ⭐
+**Natural emotions (use frequently):**
+- `[curious]` - Natural interest ⭐
+- `[interested]` - Engaged attention ⭐
+- `[confident]` - Self-assured without arrogance ⭐
+- `[impressed]` - Genuine reaction ⭐
+- `[happy]` - Authentic joy ⭐
+- `[cheerfully]` - Upbeat energy ⭐
+- `[excited]` - Enthusiasm (not over-the-top) ⭐
+- `[warm]` - Friendly, approachable ⭐
+- `[matter-of-fact]` - Straightforward, credible ⭐
+- `[reassured]` - Confident reassurance ⭐
+- `[thoughtful]` - Considered opinion ⭐
+- `[surprised]` - Natural surprise (not shock) ⭐
+- `[frustrated]` - Relatable annoyance ⭐
 - `[annoyed]` - Irritated ⭐
-- `[surprised]` - Caught off-guard ⭐
-- `[frustrated]` - Annoyed ⭐
-- `[shocked]` - Stunned ⭐
-- `[happy]` - Joyful delivery ⭐
-- `[cheerfully]` - Upbeat ⭐
-- `[elated]` - Very pleased ⭐
-- `[delighted]` - Very happy ⭐
-- `[dramatically]` - Theatrical ⭐
-- `[mischievously]` - Sly, knowing ⭐
+
+**Less common / dramatic (use sparingly):**
+- `[delighted]` - Very happy (can feel performed if overused)
+- `[elated]` - Very pleased (use rarely)
+- `[shocked]` - Stunned (theatrical - prefer `[surprised]`)
+- `[dramatically]` - Theatrical (avoid - too performative)
+- `[mischievously]` - Sly, knowing (okay for playful moments)
+- `[sarcastic]` - Sarcastic tone (okay sparingly)
+
+**Action cues (max 1 per line, selective use):**
+- `[laughs]` - Natural laughter (okay)
+- `[giggles]` - Light laugh (okay sparingly)
+- `[sighs]` - Relief/frustration (okay)
+- `[whispers]` - Intimate moments (okay)
+- `[chuckles]` - Quiet laugh (okay)
+- `[exhales]` - Sharp breath out (okay)
+- `[inhales deeply]` - Deep breath in (okay)
 
 **Special:**
-- `[strong X accent]` - Replace X with accent ⭐
-- `[sings]` - Melodic delivery ⭐
+- `[strong X accent]` - Replace X with accent
+- `[sings]` - Melodic delivery
 
 ### UGC Workflow Density Requirements
 
 - **MANDATORY:** 1-2 cues per line (NO uncued lines allowed)
 - **FORMAT:** Cues MUST be inline: `[emotion] Text.` NOT on separate lines!
-- Hook: 2 cues per line for instant grab
-- Middle: 1-2 cues per line for dynamic flow
-- CTA: 2 cues for confident close
-- Variety: Use diverse emotion chains (Curious → Excited → Happy → Delighted)
+- **PHILOSOPHY:** Natural, convincing delivery over theatrical performance
+- Hook: 1-2 cues per line for authentic grab
+- Middle: 1-2 cues per line for natural flow
+- CTA: 1-2 cues for confident close
+- Variety: Use natural emotion progression (Curious → Interested → Impressed → Confident)
 
-**Combination examples:**
-- `[excited] [gasps] Das ist WIRKLICH gut!`
-- `[shocked] [laughs] Was?!`
-- `[curious] [whispers] Schau mal hier.`
+**Natural combination examples:**
+- `[curious] Kennst du das Problem?`
+- `[interested] Schau mal—diese Lösung funktioniert.`
+- `[impressed] Das funktioniert wirklich gut.`
+- `[confident] Link ist unten.`
+
+**AVOID theatrical stacking:**
+- ❌ `[excited] [gasps] Das ist WIRKLICH gut!` (too dramatic)
+- ❌ `[shocked] [laughs] Was?!` (over-acted)
+- ❌ `[elated] [giggles] Ich bin TOTAL begeistert!` (theatrical)
 
 ---
 
@@ -131,12 +145,12 @@ Target word counts for UGC TikTok Ad style (fast-paced):
 - Use **em-dash (`—`)** for interruptions/pivots
 - Use **CAPS** for emphasis on key words (official v3 technique)
 
-**UGC Fast Pacing:**
+**UGC Natural Pacing:**
 - Avoid "slow list delivery": don't write long ingredient lists as many 1-word lines
 - Prefer 1–2 tight lines with commas and em-dash:
-  - `[excited] Das ist WIRKLICH gut!`
-  - `[shocked] [gasps] Was?! Das gibt's NICHT!`
+  - `[impressed] Das funktioniert wirklich gut.`
   - `[curious] Und dazu: BCAA, Ashwagandha, Rhodiola—als Bonus im Stack.`
+  - `[confident] Genau das, was ich gebraucht hab.`
 
 **Tag Placement:**
 - Start of line: `[curious] What is this?`

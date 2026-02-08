@@ -1,0 +1,44 @@
+{
+  "product_id": "1729763073600690585",
+  "scraped_at": "2026-02-08T09:22:43.385533",
+  "product_info": {
+    "product_name": "Sleepy Easy Clean mit Duft Reinigungstücher",
+    "shop_owner": "Lubaliba",
+    "total_sales": 108,
+    "total_sales_revenue": "€ 647.89($ 754.24)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "30day",
+    "sales_count": 11,
+    "sales_revenue": "$ 89.13",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "100.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 1,
+    "带货视频达人数": 1,
+    "带货视频销量": 4,
+    "带货视频销售额": "$ 32.41",
+    "广告成交金额": "$ 0",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADSleepy sind los !  NEU Feuchttücher xxl Pack  #sleepy #tiktokshop #loveisintheair #lubaliba 发现时间：2026.02.05 07:33更新时间：2026.02.07 05:11时长：00:00:37跳转至 TikTok",
+      "creator_username": "lubaliba.de",
+      "creator_followers": "6.14万",
+      "publish_date": "2026-02-04 16:09",
+      "estimated_sales": 4,
+      "estimated_revenue": "€ 27.84($ 32.41)",
+      "total_views": "4269",
+      "video_url": "https://www.tiktok.com/@lubaliba.de/video/7603027451522059522?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_lubaliba.de.mp4"
+    }
+  ]
+}

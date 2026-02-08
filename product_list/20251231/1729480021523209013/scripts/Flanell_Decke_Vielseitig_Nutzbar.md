@@ -1,9 +1,8 @@
 ---
 cover: ""
-caption: >-
-  Ich verlasse dieses Bett nie wieder. 🛋️✨ #Kuscheldecke #Winterhingucker #tiktokshop #CozyVibes #BurritoMode #Winterdecke #SelfCare #tiktokmakemebuyit
+caption: "Ich verlasse dieses Bett nie wieder. 🛋️✨ #Kuscheldecke #Winterhingucker #tiktokshop #CozyVibes #Winterdecke"
 published:
-duration: "00:38"
+duration: 00:38
 sales:
   - no
 link: ""
@@ -13,10 +12,10 @@ tags:
   - "#SelfCare"
   - "#tiktokshop"
   - "#tiktokmakemebuyit"
-product: "Doppellagige Flanell-Plüschdecke"
+product: Doppellagige Flanell-Plüschdecke
 source_notes:
-  - "product_list/1729480021523209013/tabcut_data.md"
-  - "product_list/1729480021523209013/image_analysis.md"
+  - product_list/1729480021523209013/tabcut_data.md
+  - product_list/1729480021523209013/image_analysis.md
 ---
 
 ## Scripts

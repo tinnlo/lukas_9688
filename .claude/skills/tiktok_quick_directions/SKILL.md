@@ -1,8 +1,8 @@
 # Skill: TikTok Quick Directions (Lightweight Product Analysis)
 
-**Version:** 1.1.0
+**Version:** 1.2.0
 **Purpose:** Quick analysis of tabcut/fastmoss data + product images to generate 3 short script direction titles
-**Last Updated:** 2025-12-30
+**Last Updated:** 2026-02-08
 
 ---
 
@@ -14,6 +14,14 @@ This skill provides a fast way to analyze product data and generate 3 TikTok sho
 - Script direction planning
 
 **NEW:** Auto-fallback to FastMoss when Tabcut data is insufficient or missing.
+
+---
+
+## Core Script Lock (MANDATORY)
+
+Use core scripts and execution rules from `.claude/skills/CORE_SCRIPTS.md`.
+Use system `python3` for commands in this skill.
+
 
 ---
 
@@ -37,11 +45,12 @@ This skill provides a fast way to analyze product data and generate 3 TikTok sho
 │  1. Read product data (sales, videos, product info)             │
 │  2. Read product images (visual analysis)                        │
 │  3. Generate 3 script direction titles                           │
+│  4. Save to scripts/Quick_Directions.md 🆕                      │
 │                                                                  │
-│  Output: 3 Direction Titles                                      │
-│  ├── Title 1: [Angle] - Duration, Target Audience               │
-│  ├── Title 2: [Angle] - Duration, Target Audience               │
-│  └── Title 3: [Angle] - Duration, Target Audience               │
+│  Output: Quick_Directions.md File 🆕                            │
+│  ├── Direction 1: [Angle] - Duration, Target, Caption          │
+│  ├── Direction 2: [Angle] - Duration, Target, Caption          │
+│  └── Direction 3: [Angle] - Duration, Target, Caption          │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -84,11 +93,10 @@ If Tabcut data is insufficient, retry with FastMoss:
 ```bash
 # Retry scraping with FastMoss source
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
-source venv/bin/activate
-python run_scraper.py --product-id {product_id} --source fastmoss --output-dir ../product_list/YYYYMMDD
+python3 run_scraper.py --product-id {product_id} --source fastmoss --output-dir ../product_list/YYYYMMDD
 
 # Convert to markdown
-python3 ../scripts/convert_json_to_md.py {product_id} --date YYYYMMDD
+python3 convert_json_to_md.py --product-id {product_id} --date YYYYMMDD
 
 # Now use fastmoss_data.md instead of tabcut_data.md
 cat product_list/YYYYMMDD/{product_id}/fastmoss_data.md
@@ -147,29 +155,70 @@ Product images: $(ls product_images/ | head -5)"
 
 ### Step 4: Output Format
 
-The final output should be:
+The final output should be structured as:
 
 ```markdown
-## 3 Script Directions for [Product Name]
+# 3 Script Directions — [Product Name]
 
-### Direction 1: [German Title]
-- Angle: [Strategy Type]
-- Duration: 30-40s
-- Target: [Audience]
-- Caption & Hashtags:
+**Product:** [Full product name]
+**Shop:** [Shop name]
+**Data:** [Sales summary]
+**Generated:** YYYY-MM-DD
+
+---
+
+## Direction 1: [German Title]
+
+- **Angle:** [Strategy Type]
+- **Hook Type:** [1-8 from Golden 3 Seconds]
+- **Duration:** 30–40s
+- **Target:** [Audience description]
+- **Caption & Hashtags:**
   [German caption 15-25 words with emoji]
   #hashtag1 #hashtag2 #hashtag3 #hashtag4 #hashtag5
-- Why it works: [Market-based reasoning]
+- **Why:** [Market-based reasoning]
+
+---
+
+## Direction 2: [German Title]
+[Same format...]
+
+---
+
+## Direction 3: [German Title]
+[Same format...]
 ```
 
 **CRITICAL:** Hashtags must be space-separated (NO commas) for direct copy-paste to TikTok.
 
+### Step 5: Save Output to File
+
+**MANDATORY:** After generating directions, save them to a markdown file:
+
+1. **Create scripts directory** if it doesn't exist:
+   ```bash
+   mkdir -p product_list/YYYYMMDD/{product_id}/scripts
+   ```
+
+2. **Write output to file:**
+   - Filename: `Quick_Directions.md`
+   - Location: `product_list/YYYYMMDD/{product_id}/scripts/Quick_Directions.md`
+
+3. **Confirm file creation:**
+   ```bash
+   ls -la product_list/YYYYMMDD/{product_id}/scripts/Quick_Directions.md
+   ```
+
+**Purpose:** This file serves as a reference for script writers and preserves the research for future use. The user expects MD files to be created automatically, not just chat output.
+
 ---
 
-## Quick Command
+## Quick Command (Terminal Only)
+
+**NOTE:** This bash function is for terminal/manual use only and outputs to stdout. When using this skill through Claude Code, **always save results to `scripts/Quick_Directions.md`** as specified in Step 5.
 
 ```bash
-# One-liner for quick directions
+# One-liner for quick directions (terminal output only)
 quick_directions() {
     local product_id=$1
     local date="YYYYMMDD"
@@ -177,9 +226,11 @@ quick_directions() {
     gemini-cli "Analyze this TikTok product data and suggest 3 short video direction titles for German market. Format: Title, Angle, Duration, Target, Why. Data: $(cat tabcut_data.md 2>/dev/null || jq '.' tabcut_data.json) Images: $(ls product_images/)"
 }
 
-# Usage
+# Usage (outputs to terminal, does NOT create MD file)
 quick_directions 1729479916562717270
 ```
+
+**When invoked as a skill:** Claude Code will automatically save to `scripts/Quick_Directions.md` per Step 5.
 
 ---
 
@@ -239,3 +290,24 @@ quick_directions 1729479916562717270
 ```
 
 **Copy-Paste Format:** Each direction includes caption + space-separated hashtags ready for TikTok.
+
+---
+
+## Version History
+
+**v1.2.0** (2026-02-08)
+- **BREAKING CHANGE:** Added mandatory Step 5 - Save Output to File
+- Directions must now be saved to `scripts/Quick_Directions.md` (not just chat output)
+- Updated workflow diagram to reflect file creation step
+- Added Hook Type field to output format (references Golden 3 Seconds doc)
+- Clarified that MD file creation is automatic/required, matching user expectations
+
+**v1.1.0** (2025-12-30)
+- Added FastMoss fallback when Tabcut data is insufficient
+- Added data quality check criteria
+- Step 1.5 for FastMoss retry workflow
+
+**v1.0.0** (Initial)
+- Quick analysis of product data + images
+- 3 direction titles with captions/hashtags
+- Gemini-based analysis

@@ -133,7 +133,8 @@ source_notes:
 Use these sections in order:
 
 1. `## Scripts` — Structure/beat sheet (hook → proof → payoff → CTA)
-2. `## Voiceover` — Final VO text for TTS/recording
+2. `## On-Screen Text` — Bilingual (DE/ZH) text overlay table with strategy rationale (max 3 overlays, hook overlay ≤10 words, timed to video beats)
+3. `## Voiceover` — Final VO text for TTS/recording
 
 ## Voiceover Standards
 
@@ -190,6 +191,7 @@ Then use delivery cues in **square brackets**, one cue per line:
 - [ ] VO fits 30–50s read time with clear CTA
 - [ ] Tags ≤ 5 and meaningful for discovery/commerce
 - [ ] `source_notes` links point to exact reference files used
+- [ ] On-Screen Text section present with strategy rationale
 - [ ] ElevenLabs v3 grammar marker present
 - [ ] Delivery cues are valid and minimal (not over-directed)
 

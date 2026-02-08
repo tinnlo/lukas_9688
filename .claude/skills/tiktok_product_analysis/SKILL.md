@@ -14,6 +14,13 @@ execution_agent: Gemini CLI MCP (async)
 
 ---
 
+## Core Script Lock (MANDATORY)
+
+Use only maintained phase scripts from `.claude/skills/CORE_SCRIPTS.md` for this workflow.
+
+
+---
+
 ## Compliance & Policy Notes (DE Market) - ENHANCED
 
 ### Safety Matrix with Concrete Examples

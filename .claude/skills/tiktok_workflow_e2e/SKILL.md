@@ -1,14 +1,28 @@
 ---
 name: tiktok-workflow-e2e
 description: End-to-end orchestration of TikTok content creation. Single entry point for batch processing multiple products from scraping to production-ready scripts.
-version: 1.4.0
+version: 1.8.0
 author: Claude
-updated: 2026-01-20 (aligned with underlying skills - corrected concurrency model)
+updated: 2026-02-08 (core script lockdown + deprecated wrapper removal)
 ---
 
 # TikTok E2E Workflow
 
 **Single command to process products from start to finish.**
+
+---
+
+## Core Script Lock (MANDATORY)
+
+Use only the canonical workflow scripts listed in `.claude/skills/CORE_SCRIPTS.md`.
+
+Execution baseline:
+- Use system `python3` for all script commands.
+- Treat `venv` activation snippets in legacy examples as historical only.
+
+Data availability guardrail:
+- If products have no usable `top_videos[*].video_url`, mark video-dependent phases blocked and skip to feasible steps.
+
 
 ---
 
@@ -73,8 +87,8 @@ updated: 2026-01-20 (aligned with underlying skills - corrected concurrency mode
 │  Skill: tiktok_script_generator.md                             │
 │  Agent: Claude (direct writing from synthesis)                 │
 │  Parallel: Yes - batch Write calls (3 scripts + summary/product)│
-│  Output: 3 scripts + Campaign_Summary.md                       │
-│  OPTIMIZED v2.3.0: 2-3 min/product (was 5-8 min) - 2x faster  │
+│  Output: 3 scripts with OST + Campaign_Summary.md              │
+│  OPTIMIZED v2.4.0: 2-3 min/product (was 5-8 min) - 2x faster  │
 └────────────────────────────────────────────────────────────────┘
 ```
 
@@ -226,12 +240,12 @@ Then proceed to next product...
 # Process products sequentially with optimized pipeline
 for product_id in $products; do
   # Stage 1: Launch 5 video analyses (parallel, fills 5 MCP slots)
-  python analyze_video_batch.py $product_id --date YYYYMMDD &
+  python3 analyze_video_batch.py $product_id --date YYYYMMDD &
   wait  # Wait for video analysis to complete
   
   # Stage 2+3: Launch image + synthesis in parallel (uses 2 slots)
-  python analyze_product_images.py $product_id --date YYYYMMDD &
-  python create_video_synthesis.py $product_id --date YYYYMMDD &
+  python3 analyze_product_images.py $product_id --date YYYYMMDD &
+  python3 create_video_synthesis.py $product_id --date YYYYMMDD &
   wait  # Wait for both to complete
 done
 ```
@@ -268,6 +282,7 @@ The enhanced gate now validates:
   - `video_synthesis.md` (150+ lines, no meta preamble)
   - Video analysis files count
   - Script files count (4+)
+  - `## On-Screen Text` section present in each script (v2.4.0)
 
 - **Phase 2: Quality Standards** (NEW)
   - **Bilingual Coverage**: DE/ZH pairs (30+), bilingual headers (10+), Chinese ratio (8-25%)
@@ -341,9 +356,9 @@ python3 scripts/validate_elevenlabs_cues.py product_list/YYYYMMDD/{product_id}/s
 **Execute (Claude Code with batch Write calls):**
 
 For each product, Claude reads analysis files and writes **ALL 4 FILES IN ONE MESSAGE**:
-1. `Script_1_[Angle].md` - Hook/Challenge angle
-2. `Script_2_[Angle].md` - Feature Demo angle
-3. `Script_3_[Angle].md` - Social Proof angle
+1. `Script_1_[Angle].md` - Hook/Challenge angle (with OST section)
+2. `Script_2_[Angle].md` - Feature Demo angle (with OST section)
+3. `Script_3_[Angle].md` - Social Proof angle (with OST section)
 4. `Campaign_Summary.md` - Executive summary
 
 **CRITICAL OPTIMIZATION:** Use 4 parallel Write tool calls in a single message:
@@ -684,10 +699,10 @@ tiktok_ad_analysis.md (v4.4.0)        tiktok_product_analysis.md (v1.0.0)
     │  Output: video_synthesis.md (CRITICAL)
     │
     ▼
-    tiktok_script_generator.md (v2.3.0)
+    tiktok_script_generator.md (v2.4.0)
     │  Agent: Claude Code
     │  Batched: 4 Write calls per product
-    │  Output: Script_1/2/3.md + Campaign_Summary.md
+    │  Output: Script_1/2/3.md (with OST) + Campaign_Summary.md
     │
     ▼
     generate_product_indices.py (v1.6.0)
@@ -802,9 +817,18 @@ Ready for video production!
 
 ---
 
-**Version:** 1.6.0
-**Last Updated:** 2026-02-05
+**Version:** 1.8.0
+**Last Updated:** 2026-02-08 (hardening patch)
 **Changelog:**
+- v1.8.0 (2026-02-08): CORE SCRIPT LOCKDOWN ⭐
+  - Added mandatory core script contract reference (`.claude/skills/CORE_SCRIPTS.md`)
+  - Added data-availability guardrail for missing `top_videos[*].video_url`
+  - Removed stale reference to removed sample wrapper script
+- v1.7.0 (2026-02-08): **ADDED ON-SCREEN TEXT (OST) TO PHASE 3** ⭐
+  - Phase 3 output is now "3 scripts with OST + Campaign_Summary.md"
+  - Quality gate `--phase scripts` checks for `## On-Screen Text` in each script
+  - Aligned with tiktok_script_generator v2.4.0
+  - Updated skill dependency map (script generator v2.4.0)
 - v1.6.0 (2026-02-05): **ADDED PHASE 4: PRODUCT INDEX GENERATION** ⭐
   - **NEW:** `generate_product_indices.py` creates `product_index.md` for Obsidian
   - **CLI:** `--date YYYYMMDD --csv PATH --require-scripts --incremental`
@@ -813,12 +837,11 @@ Ready for video production!
   - **Incremental:** Skips stale-check if frontmatter unchanged (fast)
   - **Performance:** ~10 sec for 6 products (metadata extraction + YAML)
   - Updated workflow diagrams, time tables, and agent assignment map
-  - Updated e2e_workflow_samples.sh to include Phase 4 execution
   - Total workflow time: ~53 min for 6 products (unchanged, index is negligible)
 - v1.5.0 (2026-01-21): **OPTIMIZED PHASE 2B+2C PARALLEL EXECUTION** ⭐
   - **NEW:** Image analysis and synthesis run in parallel after video analysis
   - **Why:** No dependency between 2B (images) and 2C (synthesis from videos)
-  - **Execution:** `python analyze_product_images.py $pid & python create_video_synthesis.py $pid & wait`
+  - **Execution:** `python3 analyze_product_images.py $pid & python3 create_video_synthesis.py $pid & wait`
   - **Performance:** ~3 min savings per product (5 min vs 8 min)
   - **8 products:** ~53 min (was ~61 min) - saves ~8 minutes total
   - Updated all workflow diagrams, time tables, and execution examples

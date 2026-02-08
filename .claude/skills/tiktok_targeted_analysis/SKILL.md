@@ -110,21 +110,19 @@ targeted_analysis/YYYYMMDD/{video_id}/
 # Ensure you're at repo root
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688
 
-# Virtual environment with dependencies
+# System python3 dependencies
 cd scripts
-source venv/bin/activate
-
 # Required tools
 which yt-dlp    # Video downloading
 which ffmpeg    # Frame/audio extraction
 which gemini    # Analysis
-python -c "from faster_whisper import WhisperModel" # Transcription
+python3 -c "from faster_whisper import WhisperModel" # Transcription
 ```
 
 ### Single Video Analysis
 
 ```bash
-python scripts/analyze_targeted_video.py \
+python3 scripts/analyze_targeted_video.py \
   --url "https://www.tiktok.com/@username/video/1234567890" \
   --product-name "Your Product Name" \
   --output-dir "targeted_analysis/20260114"
@@ -147,7 +145,7 @@ https://www.tiktok.com/@user3/video/333,Product C,spring_2026
 **2. Run batch:**
 
 ```bash
-python scripts/analyze_targeted_batch.py \
+python3 scripts/analyze_targeted_batch.py \
   --csv targeted_videos.csv \
   --output-dir "targeted_analysis/20260114" \
   --max-workers 3
@@ -161,7 +159,7 @@ python scripts/analyze_targeted_batch.py \
 If a phase fails or you want to regenerate later phases:
 
 ```bash
-python scripts/analyze_targeted_video.py \
+python3 scripts/analyze_targeted_video.py \
   --url "..." \
   --product-name "..." \
   --output-dir "..." \

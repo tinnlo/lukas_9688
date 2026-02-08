@@ -15,6 +15,17 @@ execution: n8n workflow node → Bash commands
 
 ---
 
+## Core Script Lock (MANDATORY)
+
+This skill is constrained by `.claude/skills/CORE_SCRIPTS.md`.
+
+Execution baseline:
+- Use system `python3` for all commands in this skill.
+- `venv` activation examples are legacy and should not be required.
+
+
+---
+
 ## Overview
 
 This skill scrapes TikTok Shop product data from **multiple sources** with automatic fallback:
@@ -36,7 +47,7 @@ This skill scrapes TikTok Shop product data from **multiple sources** with autom
 
 **Example:**
 ```bash
-python run_scraper.py --product-id 1729724699406473785 --download-videos
+python3 run_scraper.py --product-id 1729724699406473785 --download-videos
 
 # Tabcut attempt...
 ⚠️ Tabcut data quality check failed:
@@ -65,19 +76,17 @@ python run_scraper.py --product-id 1729724699406473785 --download-videos
 
 ## Prerequisites
 
-✅ **Python 3.8+** with virtual environment
+✅ **Python 3.8+** (system `python3`)
 ✅ **Data source credentials** in `scripts/config/.env`
    - **Tabcut**: `TABCUT_USERNAME`, `TABCUT_PASSWORD`
    - **FastMoss**: `FASTMOSS_USERNAME`, `FASTMOSS_PASSWORD`
 ✅ **Playwright browser** installed (`playwright install chromium`)
-✅ **Dependencies installed** (`pip install -r requirements.txt`)
+✅ **Dependencies installed** (`python3 -m pip install -r requirements.txt`)
 
 **Setup (one-time):**
 ```bash
 cd scripts/
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 playwright install chromium
 
 # Configure credentials
@@ -93,16 +102,15 @@ cp config/.env.example config/.env
 
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
-source venv/bin/activate
 DATE=YYYYMMDD
 OUT="../product_list/$DATE"
-python run_scraper.py \
+python3 run_scraper.py \
   --product-id {{$json.product_id}} \
   --download-videos \
   --output-dir "$OUT"
 
 # Or explicitly specify tabcut (it's the default)
-python run_scraper.py \
+python3 run_scraper.py \
   --product-id {{$json.product_id}} \
   --source tabcut \
   --download-videos \
@@ -113,17 +121,16 @@ python run_scraper.py \
 
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
-source venv/bin/activate
 DATE=YYYYMMDD
 OUT="../product_list/$DATE"
-python run_scraper.py \
+python3 run_scraper.py \
   --product-id {{$json.product_id}} \
   --source fastmoss \
   --download-videos \
   --output-dir "$OUT"
 
 # Generate human-readable MD
-python -c "
+python3 -c "
 import json
 import sys
 sys.path.append('.')
@@ -144,29 +151,27 @@ print('✅ Created tabcut_data.md')
 
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
-source venv/bin/activate
 DATE=YYYYMMDD
 OUT="../product_list/$DATE"
-python run_scraper.py --product-id {{$json.product_id}} --output-dir "$OUT"
+python3 run_scraper.py --product-id {{$json.product_id}} --output-dir "$OUT"
 
 # Generate MD (same as above)
-python -c "..."
+python3 -c "..."
 ```
 
 ### Option C: Batch Products from CSV
 
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
-source venv/bin/activate
 DATE=YYYYMMDD
 OUT="../product_list/$DATE"
-python run_scraper.py \
+python3 run_scraper.py \
   --batch-file {{$json.csv_file_path}} \
   --download-videos \
   --output-dir "$OUT"
 
 # Generate MD for all products in batch
-python -c "
+python3 -c "
 import json, os, glob
 import sys
 sys.path.append('.')
@@ -194,8 +199,7 @@ for json_file in glob.glob(f'../product_list/{date}/*/tabcut_data.json'):
 **Command:**
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts && \
-source venv/bin/activate && \
-python run_scraper.py --product-id {{$json.product_id}} {{$json.download_videos && '--download-videos' || ''}} --output-dir ../product_list/{{$json.date}}
+python3 run_scraper.py --product-id {{$json.product_id}} {{$json.download_videos && '--download-videos' || ''}} --output-dir ../product_list/{{$json.date}}
 ```
 
 **Parameters:**
@@ -321,11 +325,10 @@ print(json.dumps({
 
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
-source venv/bin/activate
 DATE=YYYYMMDD
 
 # Scrape + download videos
-python run_scraper.py \
+python3 run_scraper.py \
   --product-id 1729630936525936882 \
   --download-videos \
   --output-dir "../product_list/$DATE"
@@ -338,11 +341,10 @@ python3 ../scripts/convert_json_to_md.py 1729630936525936882 --date "$DATE"
 
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
-source venv/bin/activate
 DATE=YYYYMMDD
 
 # Scrape metadata only
-python run_scraper.py --product-id 1729630936525936882 --output-dir "../product_list/$DATE"
+python3 run_scraper.py --product-id 1729630936525936882 --output-dir "../product_list/$DATE"
 
 # Convert to MD
 python3 ../scripts/convert_json_to_md.py 1729630936525936882 --date "$DATE"
@@ -352,7 +354,6 @@ python3 ../scripts/convert_json_to_md.py 1729630936525936882 --date "$DATE"
 
 ```bash
 cd /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts
-source venv/bin/activate
 DATE=YYYYMMDD
 
 # Create CSV with product IDs
@@ -364,7 +365,7 @@ product_id
 EOF
 
 # Scrape all (with videos)
-python run_scraper.py \
+python3 run_scraper.py \
   --batch-file products.csv \
   --download-videos \
   --output-dir "../product_list/$DATE"
@@ -475,7 +476,7 @@ def json_to_markdown(data):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python convert_json_to_md.py <product_id> [--date YYYYMMDD]")
+        print("Usage: python3 convert_json_to_md.py <product_id> [--date YYYYMMDD]")
         sys.exit(1)
 
     product_id = sys.argv[1]
@@ -522,9 +523,9 @@ chmod +x /Users/lxt/Movies/TikTok/WZ/lukas_9688/scripts/convert_json_to_md.py
 
 **Option 1: Tabcut (default)**
 ```bash
-python run_scraper.py --product-id <id>
+python3 run_scraper.py --product-id <id>
 # OR explicitly
-python run_scraper.py --product-id <id> --source tabcut
+python3 run_scraper.py --product-id <id> --source tabcut
 ```
 - Comprehensive data coverage
 - Well-tested data extraction
@@ -532,7 +533,7 @@ python run_scraper.py --product-id <id> --source tabcut
 
 **Option 2: FastMoss**
 ```bash
-python run_scraper.py --product-id <id> --source fastmoss
+python3 run_scraper.py --product-id <id> --source fastmoss
 ```
 - Alternative data source
 - Different authentication method (phone + password with "密码登录")
@@ -550,7 +551,7 @@ python run_scraper.py --product-id <id> --source fastmoss
 
 **Command:**
 ```bash
-python run_scraper.py --product-id <id> --download-videos --source <tabcut|fastmoss>
+python3 run_scraper.py --product-id <id> --download-videos --source <tabcut|fastmoss>
 ```
 
 **Output:** JSON + MD + 5 video files (~50-200 MB)
@@ -564,7 +565,7 @@ python run_scraper.py --product-id <id> --download-videos --source <tabcut|fastm
 
 **Command:**
 ```bash
-python run_scraper.py --product-id <id> --source <tabcut|fastmoss>
+python3 run_scraper.py --product-id <id> --source <tabcut|fastmoss>
 ```
 
 **Output:** JSON + MD only (~10 KB)
@@ -615,8 +616,7 @@ Before proceeding to Step 2 (Ad Analysis):
 ```bash
 # Run in headed mode to see browser
 cd scripts/
-source venv/bin/activate
-python run_scraper.py --product-id <id> --headed
+python3 run_scraper.py --product-id <id> --headed
 ```
 
 Check for:
@@ -634,7 +634,7 @@ Check for:
 **Solution:**
 ```bash
 # Retry with longer timeout
-python run_scraper.py --product-id <id> --download-videos
+python3 run_scraper.py --product-id <id> --download-videos
 ```
 
 ### Issue: Empty/incomplete data

@@ -1,4 +1,4 @@
-# ElevenLabs v3 (alpha) — VO Grammar & Prompting Practice (UGC TikTok Ads)
+# ElevenLabs v3 (alpha) — Prompting Techniques for UGC TikTok Ads
 
 Goal: make German TikTok UGC ads sound **energetic, engaging, and attention-grabbing** (fast-paced, dynamic emotions, infectious delivery) using **ElevenLabs v3 (alpha)**.
 
@@ -8,33 +8,65 @@ This is a practical writing guide for the text you feed into ElevenLabs (not a l
 
 ---
 
+## ⚠️ CRITICAL: v3 Does NOT Support "Grammar" Parameter
+
+**Key Differences from v2 Models:**
+
+ElevenLabs' Eleven v3 model **does not support** the traditional "grammar" parameter used in Turbo v2 or Flash v2 models for phonetic control or pronunciation rules. Instead, v3 relies on:
+
+- **Audio tags** (e.g., `[whispers]`, `[laughs]`, `[excited]`)
+- **Punctuation** (ellipses `…`, em-dashes `—`)
+- **Capitalization** for emphasis (CAPS)
+- **Precise prompting** for delivery, emotion, and pronunciation
+
+| Feature | Turbo/Flash v2 | Eleven v3 |
+|---------|----------------|-----------|
+| **Grammar Parameter** | ✅ Yes (phonetic control) | ❌ No |
+| **SSML Support** | ✅ Phoneme tags, break tags | ❌ No SSML |
+| **Control Method** | SSML phonemes, aliases | Audio tags, punctuation |
+| **Multi-Speaker** | ❌ No | ❌ No (despite API docs claiming yes)* |
+| **Best For** | Precise pronunciation | Emotional dialogue |
+
+**\*Multi-Speaker Status (Feb 2026):** While ElevenLabs documentation mentions "Text to Dialogue API" with multi-speaker support, **this feature is not yet functional in practice**. Use single-speaker format with visual markers instead.
+
+### What "v3 Grammar" Actually Means
+
+When this guide refers to "ElevenLabs v3 (alpha) grammar," it means **prompting style and text formatting techniques** (not an API parameter). Think of it as the "grammar" of how you write prompts for v3's emotional engine.
+
+For v3, use:
+- Ellipses `…` for pauses (instead of SSML `<break>` tags)
+- CAPS for stress/emphasis (instead of phoneme tags)
+- Audio tags for emotion (instead of SSML prosody)
+
+---
+
 ## What v3 (alpha) is great at (UGC TikTok style)
 
 v3 (alpha) is optimized for **emotionally rich, expressive delivery** and performance.
 
-For UGC TikTok ads, maximize emotional impact:
+For UGC TikTok ads, aim for authentic emotional impact:
 - **Every line MUST have 1-2 emotion/action cues** (mandatory for this workflow)
-- Use **dynamic, engaging emotion chains** for attention-grabbing delivery
-- Fast-paced, energetic tempo (no slow pacing)
-- **Action cues for drama** (laughs, giggles, gasps, sighs, whispers)
+- Use **natural, convincing delivery** for credible TikTok engagement
+- Energetic tempo with authentic emotion progression
+- **Action cues selectively** (max 1 per line, used strategically)
 
 Critical rules:
 - NEVER leave a line without emotion cues
-- Prefer infectious and dynamic over flat delivery
-- Use rapid emotion shifts to maintain engagement
+- Prefer convincing energy over theatrical performance
+- Use natural emotion progression to maintain engagement (Curious → Interested → Impressed → Confident)
 
 ---
 
-## Maximum emotion cueing (UGC ad philosophy)
+## Natural emotion cueing (UGC ad philosophy)
 
 **MANDATORY**: Every line must have 1-2 emotion/action cues.
 
 Distribution:
-- Hook: 2 cues per line for instant grab
-- Middle: 1-2 cues per line for dynamic flow
-- CTA: 2 cues for confident close
+- Hook: 1-2 cues per line for authentic grab
+- Middle: 1-2 cues per line for natural flow
+- CTA: 1-2 cues for confident close
 
-Never remove cues - add more for energy if needed.
+**Key principle:** Keep emotion curves for engagement, but avoid theatrical stacking and over-acting.
 
 ---
 
@@ -86,60 +118,68 @@ Target: Fast, energetic pace for TikTok UGC ads.
 
 **Source: ElevenLabs official documentation**
 
-### Voice-related Tags (Delivery & Emotion)
+### Credible Emotion Cues (⭐ = Recommended for Authentic TikTok Delivery)
 
-**Official tags from ElevenLabs:**
-- `[laughs]` - Full laugh ⭐
-- `[laughs harder]` - Intensified laughter
-- `[starts laughing]` - Gradual laughter
-- `[wheezing]` - Breathless laughter
-- `[giggles]` - Light laugh ⭐
-- `[chuckles]` - Quiet laugh
-- `[whispers]` - Quiet, intimate ⭐
-- `[sighs]` - Exhale of frustration/relief ⭐
-- `[exhales]` - Sharp breath out
-- `[inhales deeply]` - Deep breath in
-- `[exhales sharply]` - Quick breath out
-- `[clears throat]` - Throat clearing
-- `[sarcastic]` - Sarcastic tone ⭐
-- `[curious]` - Questioning, interested ⭐
-- `[excited]` - High enthusiasm ⭐
-- `[crying]` - Tearful delivery
-- `[snorts]` - Dismissive sound
-- `[mischievously]` - Sly, knowing ⭐
+**Natural emotions (use frequently):**
+- `[curious]` - Natural interest ⭐
+- `[interested]` - Engaged attention ⭐
+- `[confident]` - Self-assured without arrogance ⭐
+- `[impressed]` - Genuine reaction ⭐
+- `[happy]` - Authentic joy ⭐
+- `[cheerfully]` - Upbeat energy ⭐
+- `[excited]` - Enthusiasm (not over-the-top) ⭐
+- `[warm]` - Friendly, approachable ⭐
+- `[warmly]` - Kind/friendly ⭐
+- `[matter-of-fact]` - Straightforward, credible ⭐
+- `[reassuring]` - Confident reassurance ⭐
+- `[thoughtful]` - Considered opinion ⭐
+- `[surprised]` - Natural surprise ⭐
+- `[frustrated]` - Relatable annoyance ⭐
+- `[annoyed]` - Irritated ⭐
+- `[professional]` - Formal tone ⭐
+
+**Less common / dramatic (use sparingly):**
+- `[delighted]` - Very happy (can feel performed if overused)
+- `[elated]` - Very pleased (use rarely)
+- `[shocked]` - Stunned (theatrical - prefer `[surprised]`)
+- `[dramatically]` - Theatrical (avoid - too performative)
+- `[mischievously]` - Playful/sly (okay for playful moments)
+- `[sarcastic]` - Sarcastic tone (okay sparingly)
+- `[appalled]` - Shocked/disgusted (dramatic)
+- `[desperately]` - Urgent (dramatic)
+- `[panicking]` - Frantic (dramatic)
+- `[alarmed]` - Startled (dramatic)
+
+**Action cues (max 1 per line, selective use):**
+- `[laughs]` - Natural laughter (okay) ⭐
+- `[giggles]` - Light laugh (okay sparingly)
+- `[chuckles]` - Quiet laugh (okay)
+- `[sighs]` - Relief/frustration (okay) ⭐
+- `[whispers]` - Intimate moments (okay) ⭐
+- `[exhales]` - Sharp breath out (okay)
+- `[inhales deeply]` - Deep breath in (okay)
+- `[clears throat]` - Throat clearing (okay)
+- `[laughs harder]` - Intensified laughter (use rarely)
+- `[starts laughing]` - Gradual laughter (use rarely)
+- `[wheezing]` - Breathless laughter (dramatic)
+- `[exhales sharply]` - Quick breath out (okay)
+- `[snorts]` - Dismissive sound (use rarely)
+- `[crying]` - Tearful delivery (dramatic)
+- `[cracking up]` - Breaking into laughter (use rarely)
 
 **Additional validated emotion/delivery tags:**
-- `[happy]` - Joyful delivery ⭐
 - `[sad]` - Melancholy tone
 - `[angry]` - Frustrated/upset
-- `[annoyed]` - Irritated ⭐
-- `[appalled]` - Shocked/disgusted
-- `[thoughtful]` - Reflective
-- `[surprised]` - Caught off-guard ⭐
-- `[elated]` - Very pleased ⭐
 - `[cautiously]` - Careful delivery
-- `[cheerfully]` - Upbeat ⭐
 - `[quizzically]` - Puzzled
 - `[indecisive]` - Uncertain
 - `[jumping in]` - Interrupting
 - `[stuttering]` - Hesitant speech
-- `[professional]` - Formal tone
 - `[sympathetic]` - Understanding
 - `[questioning]` - Asking
-- `[reassuring]` - Comforting
 - `[nervously]` - Anxious
-- `[alarmed]` - Startled
 - `[sheepishly]` - Embarrassed
-- `[frustrated]` - Annoyed ⭐
-- `[desperately]` - Urgent
-- `[cracking up]` - Breaking into laughter
 - `[deadpan]` - Flat delivery
-- `[panicking]` - Frantic
-- `[mischievously]` - Playful/sly
-- `[warmly]` - Kind/friendly
-- `[impressed]` - Admiring
-- `[dramatically]` - Theatrical ⭐
-- `[delighted]` - Very happy ⭐
 
 ### Sound Effects Tags
 
@@ -180,18 +220,22 @@ Target: Fast, energetic pace for TikTok UGC ads.
 
 **For this workflow:**
 - 1-2 cues per line (MANDATORY)
-- Combine emotion + action cues for maximum impact: `[excited] [gasps]`
-- Fast emotion shifts = high engagement
-- Variety > Repetition (but maximize emotional range)
-- Match engaging emotional arc (Surprised → Excited → Curious → Delighted → Confident)
-- **UGC TikTok ads prefer engaging and dynamic over flat delivery**
-- Use action cues generously for dramatic effect
-- ⭐ = High-impact cues for UGC
+- Prioritize natural, convincing delivery over theatrical performance
+- Natural emotion progression = believability (Curious → Interested → Impressed → Confident)
+- Variety > Repetition (use diverse emotion curves)
+- **UGC TikTok ads prefer authentic energy over flat delivery**
+- Action cues: Max 1 per line, used selectively (no stacking like `[excited] [gasps]`)
+- ⭐ = Recommended for credible delivery
 
 **Tag placement** (official best practice):
 - Place tags at the start of the line: `[curious] What is this?`
-- Or immediately after for reactions: `This is amazing! [laughs]`
+- Or immediately after for reactions: `This is amazing. [laughs]`
 - Or mid-sentence at natural pauses: `Well, [sighs] I'm not sure what to say.`
+
+**AVOID theatrical stacking:**
+- ❌ `[excited] [gasps]` - Over-acted
+- ❌ `[shocked] [dramatically]` - Theatrical
+- ❌ `[elated] [giggles]` - Too performative
 
 ---
 
@@ -213,56 +257,74 @@ In `product_list/{vendor}/{product_id}/script/*.md`:
 ```text
 ## Voiceover
 
-> with ElevenLabs v3 (alpha) grammar
+> with ElevenLabs v3 (alpha) prompting techniques
 
 ### DE (ElevenLabs Prompt | 40–50s)
 
-[excited] [gasps] …
 [curious] …
-[playful] [giggles] …
-[shocked] …
-[confident] [emphatic] …
+[interested] …
+[impressed] …
+[confident] …
 ```
 
 **Every line MUST have 1-2 cues.**
 
+**Note:** "v3 grammar" refers to prompting style (audio tags + punctuation), not an API parameter.
+
 ---
 
-## Multi-Speaker Dialogue (NEW in v3)
+## Multi-Speaker Dialogue: Current Status
 
-ElevenLabs v3 supports multi-speaker dialogue using **Speaker labels**.
+**⚠️ NOT SUPPORTED (Feb 2026)**
 
-### Format:
+Despite ElevenLabs documentation mentioning "Text to Dialogue API" with multi-speaker support using speaker labels (`Woman:`, `Man:`), **this feature is not yet functional in production**.
 
-```text
-Speaker 1: [excited] First speaker's line here.
+### Workaround for UGC TikTok Ads
 
-Speaker 2: [curious] Second speaker's line here.
-
-Speaker 1: [happy] First speaker responds.
-```
-
-### Key Rules:
-
-- Use `Speaker 1:`, `Speaker 2:`, etc. (can also use character names like `Woman:`, `Man:`)
-- Each speaker can have their own voice assigned in the ElevenLabs interface
-- Audio tags work the same as single-speaker format
-- Leave blank lines between speakers for clarity (optional but recommended)
-- You can have unlimited speakers in one dialogue
-
-### Example (UGC TikTok Dialogue):
+Use **single-speaker voiceover** with **visual markers** for dialogue scenes:
 
 ```text
-Customer: [curious] Entschuldigung, die Uhr ist richtig stylisch. Welche Marke ist das?
+## Voiceover
 
-Creator: [confident] Danke! Schau mal, das Display ist 1,85 Zoll. HD.
+> with ElevenLabs v3 (alpha) prompting techniques
 
-Creator: [excited] 710 Milliamperestunden Akku. Hält fast eine Woche!
+### DE (ElevenLabs Prompt | 40s)
 
-Creator: [enthusiastic] Link ist unten. Schnapp sie dir!
+Woman: [curious] Entschuldigung, mir ist deine Uhr aufgefallen. Die ist richtig stylisch!
+
+Woman: [interested] Ist die teuer?
+
+[reassured] Nicht wirklich. Gutes Design, solide gebaut, aber super Preis.
+
+[confident] Schau mal, das Display ist 1,85 Zoll. HD.
+[impressed] Massiv groß und super klar.
+[excited] 710 Milliamperestunden Akku. Hält fast eine Woche!
+
+[enthusiastic] Über 100 Sportmodi direkt am Handgelenk.
+
+Woman: [delighted] Wo kann man die kaufen?
+
+[enthusiastic] Im TikTok Shop. Einfach Link klicken!
 ```
 
-**Important**: In the ElevenLabs UI or API, you assign different voices to each speaker. The format tells the system WHEN to switch voices.
+**How this works:**
+- **`Woman:`** = Visual marker for video editing (shows when woman speaks on screen)
+- **Regular lines** = Single TTS voice speaks entire script
+- **Production:** Show woman's face when `Woman:` marker appears, show product/hands for other lines
+
+### Alternative: Voice Acting
+
+For true dialogue effect:
+1. Generate TTS for main voice (creator/narrator)
+2. Record woman's lines separately (voice actor or different TTS session)
+3. Mix in post-production with video
+
+### When Multi-Speaker Might Work (Future)
+
+Monitor ElevenLabs changelog for "Text to Dialogue API" availability. If/when functional:
+- Format: `Speaker: [emotion] Text`
+- Voice assignment in API/UI
+- Non-deterministic (generate 2-3 versions)
 
 ---
 
@@ -283,15 +345,40 @@ If it sounds flat:
 
 ---
 
-## Rewrite moves to maximize UGC energy (use ALL)
+## Natural Delivery Checklist (for Credible TikTok Scripts)
 
-1) Add engaging reactions: "[shocked] [gasps] Was?! Das gibt's NICHT!"
-2) Add dramatic contrast: "Sieht billig aus—aber kostet 200 Euro!"
-3) Inject action cues: "[giggles] Ich hab's getestet—"
-4) Add exclamations: "Krass! Kein Witz!"
-5) Fast emotion shifts: Shocked → Excited → Confident (within 10s)
-6) Use CAPS for emphasis: "Das ist WIRKLICH gut!"
-7) Crisp, punchy CTA: "[confident] [emphatic] Link. Jetzt."
+**TARGET:** Convincing energy with authentic emotion curve (not theatrical)
+
+**Balance check:**
+- ❌ **NOT this (too flat):** All `[matter-of-fact]` with no emotion variety
+- ❌ **NOT this (theatrical):** Stacked action cues, `[shocked] [gasps]`, excessive `[elated]`
+- ✅ **YES this (credible curve):** Natural progression like `[curious] → [interested] → [impressed] → [confident]`
+
+**Rewrite moves for authentic energy:**
+1) Use natural reactions: `[curious] Kennst du das Problem?`
+2) Add relatable contrast: `Sieht billig aus—aber funktioniert richtig gut.`
+3) Selective action cues (max 1 per line): `[impressed] Ich hab's getestet. [confident] Überzeugt.`
+4) Natural emphasis: `Das funktioniert wirklich gut!`
+5) Emotion progression (not whiplash): Curious → Interested → Impressed → Confident (natural flow)
+6) Use CAPS for emphasis: `Das ist WIRKLICH gut!`
+7) Confident CTA: `[confident] Link ist unten.`
+
+**Examples showing the difference:**
+
+**Theatrical (AVOID):**
+```
+[shocked] [gasps] Oh mein GOTT!
+[excited] [dramatically] Das ist UNGLAUBLICH!
+[elated] [giggles] Ich bin TOTAL begeistert!
+```
+
+**Credible (TARGET):**
+```
+[curious] Kennst du das Problem? [frustrated] Nie findest du, was du suchst.
+[interested] Schau mal—diese Box hat ein Sichtfenster.
+[impressed] Ein Blick, und du weißt sofort, was drin ist.
+[confident] Das ist genau, was ich gebraucht hab. [warm] Link ist unten.
+```
 
 ---
 

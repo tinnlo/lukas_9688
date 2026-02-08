@@ -21,6 +21,21 @@
 *.flac
 *.ogg
 
+# Compressed archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.tgz
+*.tar.gz
+*.gz
+*.bz2
+*.xz
+*.zst
+*.lz
+*.lz4
+*.cab
+
 # Optional: rendered/exports
 *.mpg
 *.mpeg

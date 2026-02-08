@@ -16,6 +16,17 @@ orchestration: tiktok_product_analysis.md (for batch parallelism - 5 products ma
 
 ---
 
+## Core Script Lock (MANDATORY)
+
+This skill must use core scripts from `.claude/skills/CORE_SCRIPTS.md`.
+
+Execution baseline:
+- Use system `python3` for script execution.
+- Skip analysis when no local `.mp4` files exist in `ref_video/`.
+
+
+---
+
 ## Compliance & Policy Notes (DE Market)
 
 This is an *analysis* skill, but it should proactively flag compliance-risk claims found in source videos so the script generator can avoid them.
@@ -84,7 +95,7 @@ if [ -d "$base/ref_video" ]; then
   if [ $video_count -gt 0 ]; then
     echo "✅ AUTO-TRIGGER: Found $video_count videos"
     # Automatically run video analysis
-    python analyze_video_batch.py {product_id} --date "$date"
+    python3 analyze_video_batch.py {product_id} --date "$date"
   else
     echo "⏭️ SKIP: No videos found"
   fi
@@ -100,28 +111,28 @@ fi
 cd scripts
 
 # Activate virtual environment
-source venv/bin/activate
+# use system python3 (no venv activation needed)
 
 # Single product (sequential)
-python analyze_video_batch.py 1729479916562717270 --date YYYYMMDD
+python3 analyze_video_batch.py 1729479916562717270 --date YYYYMMDD
 
 # PARALLEL EXECUTION (v4.4.0 - RECOMMENDED for multiple products)
 # Launch up to 5 products simultaneously (Gemini CLI thread limit)
 
 # Batch 1: 5 products in parallel
 for pid in 1729671956792187076 1729480049905277853 1729637085247609526 1729697087571270361 1729630936525936882; do
-  python analyze_video_batch.py $pid --date YYYYMMDD &
+  python3 analyze_video_batch.py $pid --date YYYYMMDD &
 done
 wait  # Wait for all 5 to complete
 
 # Batch 2: Remaining products in parallel
 for pid in 1729607303430380470 1729607478878640746 1729489298386491816; do
-  python analyze_video_batch.py $pid --date YYYYMMDD &
+  python3 analyze_video_batch.py $pid --date YYYYMMDD &
 done
 wait
 
 # Or analyze a single video
-python analyze_single_video.py 1729479916562717270 2 --date YYYYMMDD
+python3 analyze_single_video.py 1729479916562717270 2 --date YYYYMMDD
 ```
 
 **Output:**
@@ -132,10 +143,10 @@ python analyze_single_video.py 1729479916562717270 2 --date YYYYMMDD
 
 ## Prerequisites
 
-✅ **Python 3.8+** with virtual environment
+✅ **Python 3.8+** (system `python3`)
 ✅ **ffmpeg** installed (for keyframe/audio extraction)
-✅ **faster-whisper** installed (`pip install faster-whisper`)
-✅ **yt-dlp** installed (`pip install yt-dlp`)
+✅ **faster-whisper** installed (`python3 -m pip install faster-whisper`)
+✅ **yt-dlp** installed (`python3 -m pip install yt-dlp`)
 ✅ **gemini-cli** installed and configured
 ✅ **Local video files** in `product_list/YYYYMMDD/{product_id}/ref_video/`
 ✅ **tabcut_data.json** available (contains performance metadata)
@@ -176,7 +187,7 @@ python analyze_single_video.py 1729479916562717270 2 --date YYYYMMDD
 
 **Usage:**
 ```bash
-python analyze_video_batch.py <product_id>
+python3 analyze_video_batch.py <product_id>
 ```
 
 **What it does:**
@@ -204,12 +215,12 @@ product_list/YYYYMMDD/{product_id}/ref_video/
 
 **Usage:**
 ```bash
-python analyze_single_video.py <product_id> <video_number>
+python3 analyze_single_video.py <product_id> <video_number>
 ```
 
 **Example:**
 ```bash
-python analyze_single_video.py 1729479916562717270 2
+python3 analyze_single_video.py 1729479916562717270 2
 ```
 
 **What it does:** Same workflow as batch, but for a single video
@@ -384,17 +395,9 @@ Translate for Chinese-speaking German residents, not Mainland China audience.
 ## Installation
 
 ```bash
-# Create virtual environment
-cd scripts
-python3 -m venv venv
-
-# Activate
-source venv/bin/activate  # On macOS/Linux
-# or
-venv\Scripts\activate  # On Windows
-
 # Install dependencies
-pip install faster-whisper yt-dlp
+cd scripts
+python3 -m pip install faster-whisper yt-dlp
 
 # Verify ffmpeg is installed
 ffmpeg -version
@@ -403,7 +406,7 @@ ffmpeg -version
 yt-dlp --version
 
 # Test Whisper
-python -c "from faster_whisper import WhisperModel; print('OK')"
+python3 -c "from faster_whisper import WhisperModel; print('OK')"
 ```
 
 ---

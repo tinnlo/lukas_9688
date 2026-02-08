@@ -19,7 +19,7 @@ source_notes:
   - "product_list/samples/1729695453196425349/product_images/image_analysis.md"
   - "product_list/samples/1729695453196425349/tabcut_data.json"
 ---
-
+ 
 ## Scripts
 
 **Structure: Magic Trick Entertainment**
@@ -47,6 +47,18 @@ source_notes:
 | 22-25 | Show iPhone, Samsung, Huawei logos - "Funktioniert mit allen" | Trust: Universal compatibility |
 | 25-28 | Show phone with thick case working on PAXA | Objection Handling: Case compatible |
 | 28-30 | Point down, "Link ist hier" | Conversion |
+
+---
+
+## On-Screen Text
+
+**Strategy:** Curiosity Question — triggers scroll-stop curiosity for muted viewers, matching the counter-intuitive "Wetten du wusstest nicht" verbal hook
+
+| Timing | DE Text                               | ZH Text             | Placement     |
+| :----- | :------------------------------------ | :------------------ | :------------ |
+| 0–3s   | **"Wetten, dein Handy kann DAS? 😱"** | **"打赌你的手机能做这个？😱"** | Center        |
+| 16–19s | Induktions-Technologie 🔊             | 感应技术 🔊             | Top           |
+| 22–25s | Funktioniert mit JEDEM Handy          | 所有手机通用              | Center-bottom |
 
 ---
 

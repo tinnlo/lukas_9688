@@ -1,20 +1,28 @@
 ---
 name: tiktok-script-generator
 description: Generates 3 TikTok short video scripts (40–50s UGC ad style) in German with MANDATORY Chinese translation, plus a bilingual Campaign Summary. Uses official ElevenLabs v3 audio tags (every line MUST have 1-2 cues). References pre-existing analysis files (does NOT duplicate content). Outputs Obsidian-ready notes to product_list/YYYYMMDD/{product_id}/scripts/ with required frontmatter and sections. OPTIMIZED with batched Write calls.
-version: 2.3.0
+version: 2.4.0
 author: Claude
 execution_agent: Claude Code (direct writing with parallel tool calls)
 prerequisite: tiktok-product-analysis
 ---
 
-# TikTok Script Generator Skill v2.3
+# TikTok Script Generator Skill v2.4
 
 **PURPOSE:** Generate production-ready UGC TikTok ad scripts with official ElevenLabs v3 audio tags (German VO + mandatory Chinese translation)
 **EXECUTOR:** Claude Code (for quality creative writing)
 **INPUT:** Analysis files from `tiktok-product-analysis` skill
 **OUTPUT:** 3 scripts + Campaign Summary (references analysis, no duplication)
-**STYLE:** Fast-paced UGC ads with mandatory emotion cues (1-2 per line), engaging delivery, dynamic performance
+**STYLE:** Natural UGC ads with mandatory emotion cues (1-2 per line), authentic delivery, convincing tone
 **OPTIMIZATION:** Batched Write calls (4 files per product in single message) ⭐ **2x faster**
+
+---
+
+## Core Script Lock (MANDATORY)
+
+Read inputs only from analysis artifacts produced by core scripts in `.claude/skills/CORE_SCRIPTS.md`.
+Do not rely on deprecated wrapper outputs.
+
 
 ⚠️ **CRITICAL FORMAT RULE - READ THIS FIRST:**
 - **INLINE CUES ONLY:** `[emotion] Text here.` (cue + text on SAME LINE)
@@ -145,6 +153,7 @@ All 3 files read simultaneously in ~2-3 seconds (was 6-9 seconds sequential).
 - 3 recommended script angles
 - German terminology from packaging
 - Visual filming instructions
+- **Identify which of the 8 Golden 3 Seconds hook types fits each planned script angle** (needed for OST strategy selection in Step 2-3)
 
 ---
 
@@ -165,12 +174,48 @@ Total: ~2-3 minutes per product ⭐ 2x faster
 ```
 
 **Implementation:**
-1. After reading analysis files, generate complete content for all 4 files
-2. In a SINGLE MESSAGE, make 4 Write tool calls in parallel:
+1. After reading analysis files, **select OST strategy for each script** (see OST Strategy table below)
+2. Generate complete content for all 4 files (each script includes `## On-Screen Text` section)
+3. In a SINGLE MESSAGE, make 4 Write tool calls in parallel:
    - Write Script 1
    - Write Script 2
    - Write Script 3
    - Write Campaign Summary
+
+### OST Strategy Selection (NEW v2.4.0)
+
+Before writing each script, map the script's Golden 3 Seconds hook type to an OST strategy:
+
+| Hook Type (Golden 3 Seconds) | OST Strategy |
+|:------------------------------|:-------------|
+| 1. Urgency | Solution Reveal or Social Proof Tease |
+| 2. Pain Point Resonance | Hook Overlay or Bold Claim |
+| 3. Counter-Intuitive | Curiosity Question or Bold Claim |
+| 4. Documentary / Authentic | Product Label (minimal) |
+| 5. Wrong Demonstration | Curiosity Question |
+| 6. Result-First | Solution Reveal or Bold Claim |
+| 7. Emotional Whisper | Emotional / Lifestyle |
+| 8. Visual-First / ASMR | Product Label (minimal) |
+
+**OST Strategy Descriptions:**
+
+| # | Strategy | Description | Hook overlay rules |
+|:--|:---------|:------------|:-------------------|
+| 1 | **Hook Overlay** | Bold full-frame text mirroring/amplifying the verbal hook | ≤10 words DE, center placement, 0–3s |
+| 2 | **Curiosity Question** | On-screen question that triggers scroll-stop curiosity | Question format, center, 0–3s |
+| 3 | **Bold Claim** | Strong positioning statement with em-dash or colon | Em-dash or colon structure |
+| 4 | **Solution Reveal** | Compact "X = solved" or "[Problem]. [Solved]." | Short declarative format |
+| 5 | **Emotional / Lifestyle** | Personal, gifting, or aspirational vibe statement | Warm/aspirational tone |
+| 6 | **Product Label** | Minimal product name / category only | No emotion, just label |
+| 7 | **Social Proof Tease** | Trending/popularity signal | Viral/trending framing |
+
+**OST Rules (all strategies):**
+- Max 3 overlays per video (no clutter)
+- Hook overlay text ≤ 10 words (DE); ZH translation follows
+- Must work muted-only: if viewer only sees text, they still get hooked
+- Emoji: limit 1–2 per overlay for emotional signal
+- Hook overlay appears in first 0–3s (golden zone)
+- Bilingual table: DE column is production text; ZH column is for creator reference/handoff
 
 **Each script must have:**
 
@@ -362,6 +407,16 @@ done
 - **Conversion:** CTA/Urgency
 
 **Minimum:** 8-10 shots for 40-50s, each with clear psychological purpose
+
+## On-Screen Text
+
+**Strategy:** [Strategy name] — [1-sentence rationale linked to this script's hook type]
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"[Hook overlay ≤10 words]"** | **"[ZH translation]"** | Center |
+| [Xs–Ys] | [Mid-video overlay] | [ZH] | [Top/Center-bottom] |
+| [Xs–Ys] | [CTA or product label] | [ZH] | [Center-bottom] |
 ```
 
 ### Voiceover Sections
@@ -447,6 +502,12 @@ for script in "$scripts_dir"/*.md; do
     # Caption should use YAML block scalar so hashtags don't break YAML parsing
     if ! awk 'BEGIN{in=0} /^---$/{in=!in} in && /^caption: >-/{ok=1} END{exit !ok}' "$script"; then
         echo "⚠️ WARNING: $(basename $script) caption is not using 'caption: >-' (hashtags may break YAML)"
+    fi
+
+    # Check for On-Screen Text section
+    if ! grep -q "## On-Screen Text" "$script"; then
+        echo "❌ FAIL: $(basename $script) missing ## On-Screen Text section"
+        exit 1
     fi
 done
 echo "✅ Script quality verified"
@@ -534,6 +595,10 @@ Du kennst das?
 ### ❌ Mistake 6: Skipping Chinese translations
 **Fix:** Chinese translation is mandatory for every script (DE + ZH sections required)
 
+### ❌ Mistake 7: Missing OST section or wrong strategy for hook type
+**Symptoms:** No `## On-Screen Text` section, or using "Product Label" strategy for a Pain Point hook
+**Fix:** Always select OST strategy from the hook-type mapping table in Step 2-3. Every script needs an OST section with bilingual table.
+
 ---
 
 ## File Structure After Completion
@@ -573,14 +638,13 @@ ls product_list/$date/$product_id/ref_video/video_synthesis.md  # Must exist
 
 ---
 
-**Version:** 2.3.0
-**Last Updated:** 2026-01-31
-**Changes from v2.2:**
-- **MAJOR PERFORMANCE OPTIMIZATION:** Batched Write calls ⭐ **2x faster**
-- Parallel Read tool calls (all analysis files fetched at once)
-- Parallel Write tool calls (4 files written simultaneously in one message)
-- Workflow reduced from 5 steps to 4 steps (Steps 2-3 merged)
-- Time per product: 2-3 min (was 5-8 min)
-- 8 products: 16-24 min (was 40-64 min)
-- **Template extraction:** Moved frontmatter, voiceover format, and campaign summary to separate template files
-- Added template references throughout skill for better maintainability
+**Version:** 2.4.0
+**Last Updated:** 2026-02-08
+**Changes from v2.3:**
+- **NEW: On-Screen Text (OST) section** added to every script ⭐
+- OST strategy selection table (7 strategies mapped to 8 Golden 3 Seconds hook types)
+- `## On-Screen Text` required section with bilingual DE/ZH table
+- Quality gate now checks for `## On-Screen Text` in every script
+- Step 1 extract: identify hook type per planned angle
+- Common Mistake 7: missing/wrong OST strategy
+- Workflow reduced: OST strategy selected before writing, included in batched Write calls

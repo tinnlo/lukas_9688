@@ -29,6 +29,13 @@ This orchestrates all 4 skills in proper order with quality gates.
 
 ---
 
+## Core Script Lock (MANDATORY)
+
+Follow `.claude/skills/CORE_SCRIPTS.md` for the canonical script list, execution baseline (`python3`), and deprecated wrapper blocklist.
+
+
+---
+
 ## Skill Overview
 
 | Skill | Phase | Purpose | Agent |
@@ -233,11 +240,11 @@ Total:               ~53-61 min (50%+ faster)
 ### Single Product
 ```bash
 # Step 1: Scrape
-cd scripts && source venv/bin/activate
-python run_scraper.py --product-id 1729607303430380470 --download-videos
+cd scripts
+python3 run_scraper.py --product-id 1729607303430380470 --download-videos
 
 # Step 2: Analyze (auto-triggered or manual)
-python analyze_video_batch.py 1729607303430380470
+python3 analyze_video_batch.py 1729607303430380470
 
 # Step 3: Generate scripts (Claude Code)
 /tiktok-script-generator
@@ -246,7 +253,7 @@ python analyze_video_batch.py 1729607303430380470
 ### Batch Processing
 ```bash
 # Step 1: Scrape all products
-python run_scraper.py --batch-file products.csv --download-videos
+python3 run_scraper.py --batch-file products.csv --download-videos
 
 # Step 2: Parallel analysis
 /tiktok-product-analysis
