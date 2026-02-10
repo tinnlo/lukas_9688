@@ -1,9 +1,30 @@
-# TikTok Shop Product Scraper
+# TikTok Shop Product Scraper & Link Resolver
 
-A Python-based web scraper for extracting TikTok shop product data from tabcut.com, including product information, sales analytics, and video performance data.
+A Python-based toolkit for TikTok Shop product data extraction and link resolution.
+
+## Tools
+
+### 1. Link Resolver (Pre-Step)
+Resolves TikTok product links (shortened vm.tiktok.com links, direct shop links) to extract product IDs.
+- **Script**: `resolve_product_link.py`
+- **Module**: `link_resolver/`
+- **Documentation**: `link_resolver/README.md`
+
+### 2. Product Scraper (Step 1)
+Scrapes product data from tabcut.com, including product information, sales analytics, and video performance data.
+- **Script**: `run_scraper.py`
+- **Modules**: `tabcut_scraper/`, `fastmoss_scraper/`
 
 ## Features
 
+### Link Resolver
+- **Mobile User Agent**: Bypasses desktop browser blocking for vm.tiktok.com links
+- **Multiple Link Formats**: Handles shortened, direct, and mobile-only links
+- **Batch Processing**: Resolve multiple links from text file
+- **CSV Output**: Generates products.csv ready for scraper
+- **JSON Output**: Detailed results with redirect chains
+
+### Product Scraper
 - **Product Information**: Extract product name, shop owner, and sales metrics
 - **Sales Analytics**: 7-day sales data with automatic 30-day fallback
 - **Video Analysis**: Top performing videos with detailed metrics
@@ -52,7 +73,54 @@ A Python-based web scraper for extracting TikTok shop product data from tabcut.c
 
 ## Usage
 
-### Single Product
+### Complete Workflow: Links → Product Data
+
+```bash
+# Step 0: Resolve TikTok product links to product IDs
+python resolve_product_link.py --links-file examples/links.txt --output products.csv
+
+# Step 1: Scrape product data using the resolved IDs
+python run_scraper.py --batch-file products.csv --download-videos
+```
+
+---
+
+### Link Resolver (Step 0)
+
+#### Single Link Resolution
+
+Resolve a single TikTok product link:
+
+```bash
+python resolve_product_link.py --url "https://vm.tiktok.com/ZG9JyURsD9J92-xzLFK/"
+
+# Output:
+# Product ID: 1729491166267284154
+```
+
+#### Batch Link Resolution
+
+Create a text file with links (one per line):
+
+```bash
+# examples/links.txt
+https://vm.tiktok.com/ZG9JyURsD9J92-xzLFK/
+https://vm.tiktok.com/ZG9abc123def456/
+```
+
+Resolve all links and save to CSV:
+
+```bash
+python resolve_product_link.py --links-file examples/links.txt --output products.csv
+```
+
+See `link_resolver/README.md` for detailed documentation.
+
+---
+
+### Product Scraper (Step 1)
+
+#### Single Product
 
 Scrape a single product by ID:
 

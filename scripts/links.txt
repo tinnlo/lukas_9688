@@ -1,0 +1,5 @@
+# TikTok Product Links
+# Add one link per line, comments (lines starting with #) are ignored
+
+# Test with a valid product link (from earlier tests)
+https://vm.tiktok.com/ZG9JyURsD9J92-xzLFK/

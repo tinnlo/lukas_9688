@@ -1,9 +1,8 @@
 ---
 cover: ""
-caption: >-
-  Name zahlen oder Duft genießen LASTAR liefert holzige Noten und langanhaltende Performance für den Alltag Jetzt testen #tiktokshop #parfüm #preiswert #duft #lastar #PreisLeistung #Parfüm #BudgetLuxus #TikTokShop #LASTAR
+caption: "Name zahlen oder Duft genießen LASTAR liefert holzige Noten und langanhaltende Performance für den Alltag Jetzt testen #parfüm #preiswert #lastar #PreisLeistung #BudgetLuxus"
 published: 2026-01-31
-duration: "00:42"
+duration: 00:42
 sales:
   - yes
 link: ""
@@ -13,11 +12,11 @@ tags:
   - "#BudgetLuxus"
   - "#TikTokShop"
   - "#LASTAR"
-product: "LASTAR Herrenparfüm Eau de Parfum"
+product: LASTAR Herrenparfüm Eau de Parfum
 source_notes:
-  - "product_list/samples/1729578893675305782/ref_video/video_synthesis.md"
-  - "product_list/samples/1729578893675305782/product_images/image_analysis.md"
-  - "product_list/samples/1729578893675305782/tabcut_data.json"
+  - product_list/samples/1729578893675305782/ref_video/video_synthesis.md
+  - product_list/samples/1729578893675305782/product_images/image_analysis.md
+  - product_list/samples/1729578893675305782/tabcut_data.json
 ---
 
 ## Scripts
@@ -55,11 +54,11 @@ Clear value framing without exact price points: focus on scent profile, concentr
 
 **Strategy:** Curiosity Question — Name vs. Wirkung
 
-| Timing | DE Text                    | ZH Text          | Placement     |
-| :----- | :------------------------- | :--------------- | :------------ |
+| Timing | DE Text                    | ZH Text        | Placement     |
+| :----- | :------------------------- | :------------- | :------------ |
 | 0–3s   | **"Name oder Wirkung?"**   | **"要名字还是效果？"** | Center        |
-| 25–30s | Holzig • Muskat • Männlich | 木质 • 肉豆蔻 • 男性    | Center-bottom |
-| 35–42s | Smarte Wahl                | 聪明选择             | Center        |
+| 25–30s | Holzig • Muskat • Männlich | 木质 • 肉豆蔻 • 男性  | Center-bottom |
+| 35–42s | Smarte Wahl                | 聪明选择           | Center        |
 
 
 ## Voiceover

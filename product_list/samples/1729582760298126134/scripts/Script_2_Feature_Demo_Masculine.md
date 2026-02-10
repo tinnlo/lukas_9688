@@ -1,9 +1,8 @@
 ---
 cover: ""
-caption: >-
-  Steht Unisex drauf aber riecht zu 100 Prozent maskulin 🔥 Holzige Note mit Toffee Hammer Duft für Männer Link im Shop #parfüm #herrenduft #lastar #tiktokshop #männerduft #Herrenduft #Maskulin #LASTAR #TikTokShop #Holzig
+caption: "Steht Unisex drauf aber riecht zu 100 Prozent maskulin 🔥 Holzige Note mit Toffee Hammer Duft für Männer Link im Shop #parfüm #herrenduft #männerduft #Maskulin #Holzig"
 published: 2026-01-31
-duration: "00:42"
+duration: 00:42
 sales:
   - yes
 link: ""
@@ -13,11 +12,11 @@ tags:
   - "#LASTAR"
   - "#TikTokShop"
   - "#Holzig"
-product: "LASTAR Holzige Duftnote Eau de Parfum"
+product: LASTAR Holzige Duftnote Eau de Parfum
 source_notes:
-  - "product_list/samples/1729582760298126134/ref_video/video_synthesis.md"
-  - "product_list/samples/1729582760298126134/product_images/image_analysis.md"
-  - "product_list/samples/1729582760298126134/tabcut_data.json"
+  - product_list/samples/1729582760298126134/ref_video/video_synthesis.md
+  - product_list/samples/1729582760298126134/product_images/image_analysis.md
+  - product_list/samples/1729582760298126134/tabcut_data.json
 ---
 
 ## Scripts
@@ -55,11 +54,11 @@ Direct confrontation of the label claim to establish expertise and masculine app
 
 **Strategy:** Curiosity Question — Challenges unisex label to position as masculine alpha scent
 
-| Timing | DE Text | ZH Text | Placement |
-|:-------|:--------|:--------|:----------|
-| 0–3s | **"Unisex = Lüge?"** | **"中性=谎言？"** | Center |
+| Timing | DE Text                  | ZH Text        | Placement     |
+| :----- | :----------------------- | :------------- | :------------ |
+| 0–3s   | **"Unisex = Lüge?"**     | **"中性=谎言？"**   | Center        |
 | 10–15s | Holz • Toffee • Kardamom | 木质 • 太妃糖 • 小豆蔻 | Center-bottom |
-| 35–42s | Männer zuerst | 男士优先 | Center |
+| 35–42s | Männer zuerst            | 男士优先           | Center        |
 
 
 ## Voiceover
