@@ -38,6 +38,16 @@ source_notes:
 | 23-26 | Tech spec overlays appearing: "LED Licht" → "Keramikmahlwerk" → "USB Aufladbar" → "2er Set" | FEATURE DENSITY overwhelm |
 | 26-30 | Product hero shot on modern kitchen counter, sleek aesthetic, text: "Gönn dir das Upgrade" + finger pointing to cart | CTA with premium tech positioning |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — LED feature as unique wow factor
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Mühle mit Licht?"** | **"带灯的研磨器？"** | Center |
+| 10–13s | Perfekte Dosierung im Dunkeln | 黑暗中完美调味 | Center-bottom |
+| 26–30s | Gönn dir das Upgrade | 给自己升级 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -49,12 +59,12 @@ source_notes:
 [impressed] Integriertes LED-Licht für perfekte Dosierung!
 [confident] Auch im Dunkeln siehst du genau, wie viel du würzt.
 [matter-of-fact] Perfekt fürs romantische Dinner.
-[enthusiastic] Und die Grobheit? Stufenlos einstellbar!
-[firm] Von superfein bis extra grob.
-[satisfied] Hochwertiges Keramikmahlwerk für lange Haltbarkeit.
+[cheerfully] Und die Grobheit? Stufenlos einstellbar!
+[confident] Von superfein bis extra grob.
+[happy] Hochwertiges Keramikmahlwerk für lange Haltbarkeit.
 [impressed] Und das Beste? Mit Ladestation!
-[playful] Einfach draufstellen – immer bereit.
-[direct] Gönn dir das Upgrade – link in der Bio!
+[warm] Einfach draufstellen – immer bereit.
+[cheerfully] Gönn dir das Upgrade – link in der Bio!
 
 ### ZH (中文翻译 | 30–50s)
 
@@ -63,9 +73,9 @@ source_notes:
 [impressed] 内置LED灯，完美剂量！
 [confident] 即使在黑暗中也能准确看到调味量。
 [matter-of-fact] 非常适合浪漫晚餐。
-[enthusiastic] 粗细呢？无级可调！
-[firm] 从超细到超粗。
-[satisfied] 高品质陶瓷研磨芯，经久耐用。
+[cheerfully] 粗细呢？无级可调！
+[confident] 从超细到超粗。
+[happy] 高品质陶瓷研磨芯，经久耐用。
 [impressed] 最棒的是？带充电站！
-[playful] 直接放上去——随时准备好。
-[direct] 给自己升个级——链接在简介里！
+[warm] 直接放上去——随时准备好。
+[cheerfully] 给自己升个级——链接在简介里！

@@ -90,6 +90,16 @@ Data availability guardrail:
 │  Output: 3 scripts with OST + Campaign_Summary.md              │
 │  OPTIMIZED v2.4.0: 2-3 min/product (was 5-8 min) - 2x faster  │
 └────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌────────────────────────────────────────────────────────────────┐
+│  🚨 COMPLIANCE VALIDATION GATE 🚨 (MANDATORY BLOCKING)         │
+│  Validator: validate_compliance_flags.py                       │
+│  Check: ALL scripts against TikTok advertising policies        │
+│  Block: Cannot mark workflow complete if ANY script violates   │
+│  Fix: Edit violations → Re-validate → Pass before proceeding   │
+│  Time: ~10 seconds validation + fix time if violations found   │
+└────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -353,6 +363,8 @@ python3 scripts/validate_elevenlabs_cues.py product_list/YYYYMMDD/{product_id}/s
 - **CORRECT:** `[frustrated] Du kennst das?` on same line ✅
 - See `tiktok_script_generator.md` lines 285-311 for full format specification
 
+### Step 3.1: Script Writing
+
 **Execute (Claude Code with batch Write calls):**
 
 For each product, Claude reads analysis files and writes **ALL 4 FILES IN ONE MESSAGE**:
@@ -380,6 +392,74 @@ For each product, Claude reads analysis files and writes **ALL 4 FILES IN ONE ME
 - Read ALL analysis files in parallel (5+ Read calls at once)
 - Write ALL 4 files in parallel (4 Write calls in one message)
 - Campaign Summary references files (no duplication)
+
+### Step 3.2: 🚨 COMPLIANCE VALIDATION GATE 🚨 (MANDATORY)
+
+**THIS STEP IS NON-NEGOTIABLE. DO NOT PROCEED TO PHASE 4 UNTIL ALL SCRIPTS PASS.**
+
+After writing scripts in Step 3.1, **IMMEDIATELY** validate against TikTok advertising policies.
+
+```bash
+product_id="{product_id}"
+date="YYYYMMDD"
+scripts_dir="product_list/$date/$product_id/scripts"
+
+echo "=== 🚨 COMPLIANCE VALIDATION GATE 🚨 ==="
+echo "Validating all scripts for: $product_id"
+echo ""
+
+compliance_fail=0
+violation_files=()
+
+for script in "$scripts_dir"/*.md; do
+    [[ "$(basename "$script")" == "Campaign_Summary.md" ]] && continue
+    [[ -e "$script" ]] || continue
+
+    if ! python3 scripts/validate_compliance_flags.py "$script"; then
+        echo "❌ VIOLATION: $(basename "$script")"
+        compliance_fail=1
+        violation_files+=("$script")
+    else
+        echo "✅ PASS: $(basename "$script")"
+    fi
+done
+
+if [ "$compliance_fail" -eq 1 ]; then
+    echo ""
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "⚠️ WORKFLOW BLOCKED: COMPLIANCE VIOLATIONS ⚠️"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+    echo "Files with violations:"
+    for file in "${violation_files[@]}"; do
+        echo "  - $(basename "$file")"
+    done
+    echo ""
+    echo "REQUIRED ACTIONS:"
+    echo "1. Fix violations using compliant alternatives"
+    echo "2. Re-validate until ALL scripts pass"
+    echo "3. DO NOT proceed to next product until clear"
+    echo ""
+    echo "See tiktok_script_generator/SKILL.md 'TikTok Policy Compliance' section"
+    exit 1
+fi
+
+echo "✅ COMPLIANCE GATE PASSED: $product_id"
+echo ""
+```
+
+**Common violations to fix:**
+- **Exact prices:** "15€" → "günstig" or "gutes Angebot"
+- **Absolute claims:** "100%", "perfekt", "immer" → Use qualified alternatives
+- **Exaggerated promotions:** "unglaublich", "genial", "Preisglitch" → "praktisch", "gut", "Deal"
+
+**If violations found:**
+1. Use Edit tool to fix each violation
+2. Re-run validation immediately after each fix
+3. Do not batch fixes - validate incrementally
+4. Only proceed when ALL scripts pass
+
+**Historical Note:** In February 2026, this gate was skipped, resulting in 5/9 scripts with policy violations. User caught violations after workflow marked complete. This gate is now MANDATORY and BLOCKING.
 
 ### Retry / Stop Rules
 
@@ -532,10 +612,11 @@ User prompt to Claude:
 2. Run Phase 2A (video analysis) - parallel via Python (bash bg, 5 products max)
 3. Run Phase 2B+2C (image + synthesis) - **SEQUENTIAL** via Gemini MCP (per tiktok_product_analysis.md)
 4. Verify quality gate (analysis)
-5. Run Phase 3 (scripts) - sequential with batched writes
-6. Run Phase 4 (product indices) - Python (incremental, successful products only)
-7. Verify final gate (all phases including index)
-8. Report completion status
+5. Run Phase 3.1 (script writing) - sequential with batched writes
+6. **Run Phase 3.2 (compliance validation) - MANDATORY BLOCKING GATE** 🚨
+7. Run Phase 4 (product indices) - Python (incremental, successful products only)
+8. Verify final gate (all phases including index)
+9. Report completion status
 
 ---
 
@@ -550,9 +631,10 @@ User prompt to Claude:
 | 2B+2C. Image+Synthesis | **~3 min** | **~24 min** | **PARALLEL 2B∥2C** (v1.5.0 optimized) ⭐ |
 |  - Image (Gemini MCP) | 3 min | - | Parallel with Synthesis ∥ |
 |  - Synthesis (Gemini MCP) | 3 min | - | Parallel with Image ∥ |
-| 3. Scripts | **2-3 min** | **16-24 min** | **Batched Write calls** ⭐ |
+| 3.1. Script Writing | **2-3 min** | **16-24 min** | **Batched Write calls** ⭐ |
+| 3.2. Compliance Validation | **10-30s** | **1-4 min** | **MANDATORY gate** 🚨 (v2.4.1) |
 | 4. Product Indices | **~1s** | **~10s** | **Incremental metadata extraction** (Python) |
-| **Total** | **~8-10 min** | **~49-57 min** | Optimized model |
+| **Total** | **~8-10 min** | **~50-58 min** | Optimized model |
 
 ### Performance Notes
 
@@ -652,6 +734,7 @@ Total: ~10 sec (only successful products with complete scripts) ⭐ fast
 | Image analysis fails | Continue without (not mandatory) |
 | Synthesis fails | BLOCK - retry until success or manual intervention |
 | Script generation fails | Retry, check for generic placeholders |
+| **Compliance validation fails** | **BLOCK - fix violations, re-validate until pass** 🚨 |
 | Index generation fails | Skip (non-blocking, can regenerate later) |
 
 ---
@@ -768,7 +851,7 @@ Claude:
 3. Quality Gate...
    ✅ 8/8 products have valid synthesis files
 
-4. Starting Phase 3: Script Generation (BATCHED v2.3.0)...
+4. Starting Phase 3.1: Script Generation (BATCHED v2.3.0)...
    - Product 1/8: [Read all] → [Write 4 files in parallel] ✅ (2.5 min)
    - Product 2/8: [Read all] → [Write 4 files in parallel] ✅ (2 min)
    - Product 3/8: [Read all] → [Write 4 files in parallel] ✅ (2.5 min)
@@ -779,7 +862,18 @@ Claude:
    - Product 8/8: [Read all] → [Write 4 files in parallel] ✅ (2.5 min)
    ✅ All scripts generated (20 min, was 40 min) ⭐ 2x faster
 
-4. Starting Phase 4: Product Index Generation (v1.6.0)...
+   === 🚨 Phase 3.2: COMPLIANCE VALIDATION GATE 🚨 ===
+   Validating Product 1/8... ✅ All scripts pass (3 scripts validated)
+   Validating Product 2/8... ✅ All scripts pass (3 scripts validated)
+   Validating Product 3/8... ✅ All scripts pass (3 scripts validated)
+   Validating Product 4/8... ✅ All scripts pass (3 scripts validated)
+   Validating Product 5/8... ✅ All scripts pass (3 scripts validated)
+   Validating Product 6/8... ✅ All scripts pass (3 scripts validated)
+   Validating Product 7/8... ✅ All scripts pass (3 scripts validated)
+   Validating Product 8/8... ✅ All scripts pass (3 scripts validated)
+   ✅ All 24 scripts pass TikTok policy compliance (2 min)
+
+5. Starting Phase 4: Product Index Generation (v1.6.0)...
    Running: python3 generate_product_indices.py --date YYYYMMDD --csv scripts/products.csv --require-scripts --incremental
    [1/8] Processing 1729616761074981417... ✓ Generated index (2341 bytes)
    [2/8] Processing 1729602953248086258... ✓ Generated index (2198 bytes)
@@ -794,12 +888,12 @@ Claude:
    ✗ Failed: 0
    ✅ All indices generated (~10 sec) ⭐
 
-5. Final Verification Gate...
+6. Final Verification Gate...
    Running: bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase all
-   ✅ 6/6 products PASS (analysis + scripts + index)
+   ✅ 6/6 products PASS (analysis + scripts + compliance + index)
 
 === WORKFLOW COMPLETE ===
-Total time: ~53 minutes
+Total time: ~55 minutes
 Products processed: 6/6
 Scripts generated: 18 (3 per product)
 Campaign summaries: 6
@@ -809,7 +903,8 @@ Performance Breakdown:
 - Phase 1 (Scraping): 5 min
 - Phase 2A (Videos): 4 min ⭐ (was 16 min - 4x faster via bash parallel batches)
 - Phase 2B+2C (Image+Synthesis): 24 min ⭐ (was 32 min - parallel 2B∥2C optimization)
-- Phase 3 (Scripts): 20 min ⭐ (was 40 min - 2x faster via batched writes)
+- Phase 3.1 (Script Writing): 20 min ⭐ (was 40 min - 2x faster via batched writes)
+- Phase 3.2 (Compliance Validation): 2 min 🚨 (MANDATORY blocking gate - v2.4.1)
 - Phase 4 (Indices): 10 sec ⭐ (incremental, successful products only)
 
 Ready for video production!
@@ -817,9 +912,20 @@ Ready for video production!
 
 ---
 
-**Version:** 1.8.0
-**Last Updated:** 2026-02-08 (hardening patch)
+**Version:** 1.9.0
+**Last Updated:** 2026-02-10 (compliance gate enforcement)
 **Changelog:**
+- v1.9.0 (2026-02-10): **ADDED MANDATORY COMPLIANCE VALIDATION GATE** 🚨
+  - **NEW Phase 3.2:** Compliance validation is now a separate, BLOCKING step after script writing
+  - Updated workflow diagram to show compliance gate as critical checkpoint
+  - Phase 3 split into: 3.1 (Script Writing) + 3.2 (Compliance Validation - MANDATORY)
+  - Added validation commands, fix workflow, and common violations to Phase 3.2
+  - Updated time estimates: +2 min for compliance validation (8 products)
+  - Error handling: Compliance validation fails → BLOCK workflow until fixed
+  - Example batch run: Shows compliance validation in action with pass/fail output
+  - Historical note: Documents February 2026 incident where gate was skipped
+  - Aligned with tiktok_script_generator v2.4.1 (Step 3.5 compliance gate)
+  - Total workflow: ~55 min (was ~53 min, +2 min for compliance validation)
 - v1.8.0 (2026-02-08): CORE SCRIPT LOCKDOWN ⭐
   - Added mandatory core script contract reference (`.claude/skills/CORE_SCRIPTS.md`)
   - Added data-availability guardrail for missing `top_videos[*].video_url`

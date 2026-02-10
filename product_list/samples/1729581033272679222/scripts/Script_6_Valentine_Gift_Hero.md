@@ -50,6 +50,17 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Social Proof Tease — Valentine's urgency creates gift panic then reveals smart solution
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Valentinstag bald"** | **"情人节快到了"** | Center |
+| 23–28s | Sieht teuer aus • Super günstig | 看起来很贵 • 超便宜 | Center-bottom |
+| 43–48s | Sei der Held | 做英雄 | Center |
+
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 48s)
@@ -64,7 +75,7 @@ source_notes:
 [amused] Schokolade? Bitte nicht schon wieder.
 
 [confident] Ich habe die Lösung.
-[bright] LASTAR Parfümset.
+[cheerfully] LASTAR Parfümset.
 
 [educational] Es sind zwei Flaschen in einer edlen Box.
 [impressed] Die Verpackung sieht richtig hochwertig aus.
@@ -72,17 +83,17 @@ source_notes:
 [neutral] Aber super günstig im TikTok Shop.
 [reassuring] Sie wird beeindruckt sein.
 
-[soft] Blumiger Duft für den Tag.
-[enthusiastic] Vanille und Holz für den Abend.
+[warm] Blumiger Duft für den Tag.
+[cheerfully] Vanille und Holz für den Abend.
 
-[satisfied] Sie wird es lieben.
-[playful] Und du bist der Held.
+[happy] Sie wird es lieben.
+[warm] Und du bist der Held.
 
 [neutral] Du musst es nicht mal einpacken.
 [matter-of-fact] Die Box ist schon perfekt.
 
 [confident] Valentinstag gerettet.
-[bright] Link unten. Schnell sein.
+[cheerfully] Link unten. Schnell sein.
 
 ---
 
@@ -98,7 +109,7 @@ source_notes:
 [amused] 巧克力？拜托别又是这个。
 
 [confident] 我有解决方案。
-[bright] LASTAR 香水套装。
+[cheerfully] LASTAR 香水套装。
 
 [educational] 精美盒子里有两瓶。
 [impressed] 包装看起来非常高档。
@@ -106,14 +117,14 @@ source_notes:
 [neutral] 但在 TikTok Shop 超级便宜。
 [reassuring] 她会被打动的。
 
-[soft] 花香适合白天。
-[enthusiastic] 香草木质适合晚上。
+[warm] 花香适合白天。
+[cheerfully] 香草木质适合晚上。
 
-[satisfied] 她会喜欢的。
-[playful] 你就是英雄。
+[happy] 她会喜欢的。
+[warm] 你就是英雄。
 
 [neutral] 你甚至不需要包装。
 [matter-of-fact] 盒子已经很完美了。
 
 [confident] 情人节得救了。
-[bright] 链接在下面。要快。
+[cheerfully] 链接在下面。要快。

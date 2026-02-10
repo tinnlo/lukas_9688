@@ -37,6 +37,17 @@ source_notes:
 | 25-28 | Math overlay: "1x Masseur = 5x Gerät kaufen" | VALUE CALCULATION |
 | 28-32 | Text: "Dein persönlicher Massage-Helfer" + product + cart | OWNERSHIP CTA |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Cost savings alternative
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Masseur zu teuer?"** | **"按摩师太贵？"** | Center |
+| 13–19s | Profi-Technik • Tiefenmassage | 专业技术 • 深层按摩 | Center-bottom |
+| 25–32s | Dein persönlicher Massage-Helfer | 你的私人按摩助手 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -46,27 +57,27 @@ source_notes:
 [shocked] Beim Masseur zahlst du richtig viel?!
 [frustrated] Jede Woche das gleiche Geld weg!
 [resigned] Meine Schultern sind so verspannt!
-[intrigued] Aber was, wenn es anders geht?
+[curious] Aber was, wenn es anders geht?
 [excited] Dieses Gerät ist super günstig!
 [impressed] 4D-Massage wie beim Profi!
 [confident] Tiefenmassage zu Hause!
-[satisfied] Wärme löst Verspannungen!
-[amazed] Funktioniert wirklich!
+[happy] Wärme löst Verspannungen!
+[impressed] Funktioniert wirklich!
 [matter-of-fact] Einmal zahlen, immer nutzen!
-[enthusiastic] Dein persönlicher Massage-Helfer!
-[direct] Investiere in deine Gesundheit – link unten!
+[cheerfully] Dein persönlicher Massage-Helfer!
+[cheerfully] Investiere in deine Gesundheit – link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
 [shocked] 按摩一次要花很多钱？！
 [frustrated] 每周同样的钱都花光了！
 [resigned] 我的肩膀还是紧绷！
-[intrigued] 但如果有不同的方法呢？
+[curious] 但如果有不同的方法呢？
 [excited] 这个设备价格很友好！
 [impressed] 4D按摩像专业人士！
 [confident] 家里深层按摩！
-[satisfied] 热量释放紧张感！
-[amazed] 真的有效！
+[happy] 热量释放紧张感！
+[impressed] 真的有效！
 [matter-of-fact] 一次支付，永远使用！
-[enthusiastic] 你的私人按摩助手！
-[direct] 投资你的健康——链接在下方！
+[cheerfully] 你的私人按摩助手！
+[cheerfully] 投资你的健康——链接在下方！

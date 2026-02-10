@@ -48,6 +48,17 @@ Split-screen Problem/Solution hook showcasing the Bluetooth pairing frustration 
 | 37-40 | Close-up of product in matte black and white variants with blue LED glow | Product: Final product shot showing quality and color options |
 | 40-45 | Text overlay: "Link in Bio" with hand pointing to bio area of screen | CTA: Direct conversion action |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Pairing frustration
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Bluetooth dauert EWIG?"** | **"蓝牙连接永远？"** | Center |
+| 13–22s | Magnetisch • 0,1s Verbindung | 磁力 • 0.1秒连接 | Center-bottom |
+| 32–40s | Perfekter Winkel • Freihändig | 完美角度 • 解放双手 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar

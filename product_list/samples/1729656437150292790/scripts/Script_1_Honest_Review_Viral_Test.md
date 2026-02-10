@@ -48,32 +48,42 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Solution Reveal — Shows the viral test outcome as a scroll-stopping "I tested this" moment with quick value proof.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Virales TikTok Parfüm getestet"** | **"测试了TikTok爆款香水"** | Center |
+| 12–17s | Spray-Qualität: Fein | 喷雾质量：细腻 | Center-bottom |
+| 28–33s | 2 Flaschen • Preiswert | 2瓶 • 价格友好 | Center |
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 43s)
 
 > with ElevenLabs v3 (alpha) grammar
 
-[neutral] Ich habe das virale TikTok Parfüm-Set getestet.
-[curious] Und ich bin... überrascht.
+[curious] Ich habe das virale TikTok Parfüm-Set getestet.
+[surprised] Und ich bin... überrascht.
 
-[neutral] Zwei Flaschen. Eine für morgens, eine für abends.
-[educational] Die Idee ist genial.
+[interested] Zwei Flaschen. Eine für morgens, eine für abends.
+[impressed] Die Idee ist genial.
 
-[neutral] Morgens? Frisch. Vanille mit einem Hauch Zitrus.
-[bright] Abends? Warm. Holzig, süß, gemütlich.
+[matter-of-fact] Morgens? Frisch. Vanille mit einem Hauch Zitrus.
+[warm] Abends? Warm. Holzig, süß, gemütlich.
 
-[neutral] Ich habe das heute Morgen aufgetragen.
-[reflective] Jetzt ist es nachmittags und ich rieche es noch.
+[confident] Ich habe das heute Morgen aufgetragen.
+[thoughtful] Jetzt ist es nachmittags und ich rieche es noch.
 
-[neutral] Der Zerstäuber? Unglaublich fein.
-[satisfied] Kein billiges Spray. Das fühlt sich echt an.
+[impressed] Der Zerstäuber? Unglaublich fein.
+[happy] Kein billiges Spray. Das fühlt sich echt an.
 
-[neutral] Für 18 Euro? Zwei Flaschen?
-[shocked] Das sind 9 Euro pro Flasche.
+[curious] Zwei Flaschen?
+[surprised] Tolles Preis-Leistungs-Verhältnis.
 
-[neutral] Unschlagbar. Perfekte Geschenkidee.
-[enthusiastic] Schnapp's dir. Link oben.
+[confident] Unschlagbar. Perfekte Geschenkidee.
+[cheerfully] Schnapp's dir. Link ist unten.
 
 
 ---
@@ -82,23 +92,23 @@ source_notes:
 
 ### ZH (中文翻译 | 43s)
 
-[neutral] 我测试了这个 TikTok 爆款香水套装。
-[curious] 我...很惊讶。
+[curious] 我测试了这个 TikTok 爆款香水套装。
+[surprised] 我...很惊讶。
 
-[neutral] 两瓶。一瓶早上用，一瓶晚上用。
-[educational] 这个想法很棒。
+[interested] 两瓶。一瓶早上用，一瓶晚上用。
+[impressed] 这个想法很棒。
 
-[neutral] 早上？清新。香草带点柑橘。
-[bright] 晚上？温暖。木质、甜美、舒适。
+[matter-of-fact] 早上？清新。香草带点柑橘。
+[warm] 晚上？温暖。木质、甜美、舒适。
 
-[neutral] 我今早喷的。
-[reflective] 现在是下午，我还闻得到。
+[confident] 我今早喷的。
+[thoughtful] 现在是下午，我还闻得到。
 
-[neutral] 喷头？细腻得不可思议。
-[satisfied] 不是廉价喷雾。这感觉很真实。
+[impressed] 喷头？细腻得不可思议。
+[happy] 不是廉价喷雾。这感觉很真实。
 
-[neutral] 18 欧元？两瓶？
-[shocked] 就是每瓶 9 欧元。
+[curious] 两瓶？
+[surprised] 性价比很高。
 
-[neutral] 无敌。完美的礼物。
-[enthusiastic] 快买。链接在上面。
+[confident] 无敌。完美的礼物。
+[cheerfully] 快买。链接在下面。

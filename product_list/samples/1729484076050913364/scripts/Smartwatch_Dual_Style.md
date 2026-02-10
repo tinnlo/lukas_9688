@@ -39,6 +39,16 @@ source_notes:
 | 24-28 | Top-down product shot: watch in center, metal strap on left, silicone on right, tool + cable below, "2-in-1 Set" text overlay | BUNDLE VALUE emphasis - you get everything |
 | 28-33 | Creator wearing metal strap in casual outfit, confident smile, pointing to TikTok cart with "Upgrade dein Leben" overlay | ASPIRATIONAL CTA - positioning as lifestyle upgrade |
 
+## On-Screen Text
+
+**Strategy:** Solution Reveal — Solves "one watch doesn't fit all" pain with dual-strap transformation demo.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Eine Uhr • Zwei Styles"** | **"一表 • 两种风格"** | Center |
+| 09–12s | Schneller Wechsel! | 快速更换！ | Center |
+| 24–28s | 2-in-1 Set | 2合1套装 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -47,34 +57,34 @@ source_notes:
 
 [curious] Kennst du das Problem?
 [frustrated] Eine Uhr passt nie zu allem.
-[intrigued] Aber was wäre, wenn eine Uhr zwei Styles hätte?
+[interested] Aber was wäre, wenn eine Uhr zwei Styles hätte?
 [confident] Morgens im Büro – elegantes Metallarmband.
 [impressed] Sieht aus wie eine teure Marke!
 [excited] Abends im Gym – sportliches Silikonband.
-[playful] Wechseln dauert nur Sekunden!
-[enthusiastic] Über 100 Sportmodi für jedes Training.
+[warm] Wechseln dauert nur Sekunden!
+[cheerfully] Über 100 Sportmodi für jedes Training.
 [matter-of-fact] Laufen, Radfahren, Yoga – alles trackbar.
-[amazed] Und während du trainierst, kannst du sogar telefonieren!
+[impressed] Und während du trainierst, kannst du sogar telefonieren!
 [reassured] Komplett freihändig über Bluetooth.
-[delighted] Herzfrequenz, Kalorien, Schlaf – alles überwacht.
-[firm] Das 1,85-Zoll-Display ist riesig und gestochen scharf!
-[satisfied] Eine Uhr, zwei Armbänder, unendliche Möglichkeiten.
-[direct] Hol dir jetzt dein 2-in-1-Set – link unten!
+[happy] Herzfrequenz, Kalorien, Schlaf – alles überwacht.
+[confident] Das 1,85-Zoll-Display ist riesig und gestochen scharf!
+[happy] Eine Uhr, zwei Armbänder, unendliche Möglichkeiten.
+[cheerfully] Hol dir jetzt dein 2-in-1-Set – link ist unten!
 
-### ZH (中文翻译 | 30–50s)
+### ZH (中文翻译 | 30-50s)
 
 [curious] 你知道这个问题吗？
 [frustrated] 一块表永远不能适配所有场合。
-[intrigued] 但如果一块表有两种风格呢？
+[interested] 但如果一块表有两种风格呢？
 [confident] 早上在办公室——优雅的金属表带。
 [impressed] 看起来像昂贵的品牌！
 [excited] 晚上在健身房——运动硅胶表带。
-[playful] 更换只需几秒钟！
-[enthusiastic] 超过100种运动模式适配每次训练。
+[warm] 更换只需几秒钟！
+[cheerfully] 超过100种运动模式适配每次训练。
 [matter-of-fact] 跑步、骑行、瑜伽——全都能追踪。
-[amazed] 而且训练时你甚至可以打电话！
+[impressed] 而且训练时你甚至可以打电话！
 [reassured] 通过蓝牙完全解放双手。
-[delighted] 心率、卡路里、睡眠——全部监测。
-[firm] 1.85英寸大屏超大超清晰！
-[satisfied] 一块表，两条表带，无限可能。
-[direct] 现在就拿下你的2合1套装——链接在下方！
+[happy] 心率、卡路里、睡眠——全部监测。
+[confident] 1.85英寸大屏超大超清晰！
+[happy] 一块表，两条表带，无限可能。
+[cheerfully] 现在就拿下你的2合1套装——链接在下面！

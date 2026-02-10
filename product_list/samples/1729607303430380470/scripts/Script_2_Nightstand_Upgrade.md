@@ -32,26 +32,36 @@ source_notes:
 | **00:20-00:25** | Hand toggles the "Auto/On/Off" switch for the night light. Shows the light dimming and brightening. |
 | **00:25-00:30** | **[CTA]** Camera pans out to show a perfectly organized bedside setup. Text overlay: **"50% RABATT HEUTE"**. Finger taps the screen. |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Motion sensor night light is counter-intuitive (power socket with sensor), triggering curiosity.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–4s | **"Nachttisch-Upgrade nötig?"** | **"床头柜需要升级？"** | Center |
+| 08–15s | USB-C Schnellladung | USB-C 快充 | Center-bottom |
+| 20–25s | Bewegungssensor • Auto/Manuell | 运动感应器 • 自动/手动 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–40s)
 
-[whisper] [mysterious] Dein Nachttisch braucht dringend dieses Upgrade.
-[clear] Das ist nicht einfach nur eine Steckdose. Das ist ein Gamechanger.
-[energetic] Du hast USB-C Schnellladung für all deine Geräte...
-[satisfied] ...und diese geniale Ablage. Endlich keine Kabel mehr auf dem Boden!
-[soft] Aber mein Highlight: Das integrierte Nachtlicht mit Bewegungssensor. Perfekt, wenn du nachts mal raus musst.
-[punchy] Hol dir das Gadget, bevor es weg ist. Klick auf den gelben Korb!
+[whispers] [curious] Dein Nachttisch braucht dringend dieses Upgrade.
+[confident] Das ist nicht einfach nur eine Steckdose. Das ist ein Gamechanger.
+[excited] Du hast USB-C Schnellladung für all deine Geräte...
+[happy] ...und diese geniale Ablage. Endlich keine Kabel mehr auf dem Boden!
+[warm] Aber mein Highlight: Das integrierte Nachtlicht mit Bewegungssensor. Perfekt, wenn du nachts mal raus musst.
+[cheerfully] Hol dir das Gadget, bevor es weg ist. Klick auf den gelben Korb!
 
 ---
 
-### CN (中文翻译 | 仅供参考)
+### ZH (中文翻译 | 30-40s)
 
-[whisper] [mysterious] 你的床头柜急需这个升级。
-[clear] 这不仅仅是一个插座。这是个颠覆性的神器。
-[energetic] 它有 USB-C 快充，适合你所有的设备...
-[satisfied] ...还有这个天才般的置物架。终于不用把线扔在地上了！
-[soft] 但我的最爱是：带运动传感器的内置夜灯。半夜起床简直完美。
-[punchy] 趁还没卖完赶紧入手。点击黄色购物车！
+[whispers] [curious] 你的床头柜急需这个升级。
+[confident] 这不仅仅是一个插座。这是个颠覆性的神器。
+[excited] 它有 USB-C 快充，适合你所有的设备...
+[happy] ...还有这个天才般的置物架。终于不用把线扔在地上了！
+[warm] 但我的最爱是：带运动传感器的内置夜灯。半夜起床简直完美。
+[cheerfully] 趁还没卖完赶紧入手。点击黄色购物车！

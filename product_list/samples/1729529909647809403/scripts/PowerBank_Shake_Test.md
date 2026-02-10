@@ -36,34 +36,45 @@ source_notes:
 | 18-21 | Screen showing charging icon still active, battery percentage increased during test | FUNCTIONAL CONTINUITY - it didn't just hold, it kept charging |
 | 21-25 | Creator's impressed face, thumbs up, text: "Test bestanden!" + finger pointing to cart | TRUST EARNED - social proof through creator endorsement |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Addresses #1 viewer fear through extreme physical stress test demonstration
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Fällt das runter?"** | **"会掉下来吗？"** | Center |
+| 16–18s | Bombenfest • Hält immer | 超级牢固 • 永不掉落 | Center-bottom |
+| 21–25s | Test bestanden! | 测试通过！ | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[skeptical] Mein Freund meinte, das fällt sofort runter.
-[challenging] Okay, testen wir das mal!
+[curious] Mein Freund meinte, das fällt sofort runter.
+[confident] Okay, testen wir das mal!
 [confident] Magnet dran – klickt perfekt!
-[playful] Leichtes Schütteln? Kein Problem.
+[warm] Leichtes Schütteln? Kein Problem.
 [excited] Jetzt wird's ernst!
 [intense] Brutales Schütteln über dem Bett!
-[amazed] Was?! Hält immer noch!
+[impressed] Was?! Hält immer noch!
 [impressed] Sogar beim Drehen wie ein Lenkrad!
-[satisfied] Das Ding ist bombenfest!
+[happy] Das Ding ist bombenfest!
 [reassured] Und lädt währenddessen weiter!
-[direct] Test bestanden – Link unten, hol's dir!
+[cheerfully] Test bestanden – Link unten, hol's dir!
 
 ### ZH (中文翻译 | 30–50s)
 
-[skeptical] 我朋友说这会马上掉下来。
-[challenging] 好，我们来测试一下！
+[curious] 我朋友说这会马上掉下来。
+[confident] 好，我们来测试一下！
 [confident] 磁铁吸上——完美咔哒！
-[playful] 轻轻摇晃？没问题。
+[warm] 轻轻摇晃？没问题。
 [excited] 现在来真的了！
 [intense] 在床上方疯狂摇晃！
-[amazed] 什么？！还是牢牢的！
+[impressed] 什么？！还是牢牢的！
 [impressed] 甚至像方向盘一样旋转也不掉！
-[satisfied] 这东西超级牢固！
+[happy] 这东西超级牢固！
 [reassured] 而且还在继续充电！
-[direct] 测试通过——链接在下方，拿下它！
+[cheerfully] 测试通过——链接在下方，拿下它！

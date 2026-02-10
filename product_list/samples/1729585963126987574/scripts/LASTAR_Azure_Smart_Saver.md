@@ -50,96 +50,107 @@ Rationaler Value-Ansatz für preisbewusste junge Männer. Nutzt die "Smart Saver
 | 36-40 | Student/Young Professional im Business-Casual Look + LASTAR | Aspiration: "Rieche wie Chef, Budget wie Student" |
 | 40-43 | TikTok Shop Screenshot, gelber Korb, Finger-Tap | CTA: Kaufprozess initiieren |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Positions smart shopping as intelligent choice for budget-conscious buyers
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Zu teuer für Parfüm?"** | **"香水太贵？"** | Center |
+| 15–22s | Eau de Parfum • 8h Haltbarkeit | 浓香水 • 8小时持久 | Center-bottom |
+| 30–40s | Gut für den Geldbeutel | 对钱包友好 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE
 
-[skeptical] Warum so viel für Parfum ausgeben?
+[curious] Warum so viel für Parfum ausgeben?
 [matter-of-fact] Du zahlst für das Logo.
 [confident] Nicht für den Duft.
 
-[firm] Ich zeige dir die smarte Alternative.
-[bright] LASTAR Azure Coastal.
+[confident] Ich zeige dir die smarte Alternative.
+[cheerfully] LASTAR Azure Coastal.
 
 [neutral] Sehr erschwinglich.
 [confident] Aber riecht hochwertig.
 
 [matter-of-fact] Frisch, maskulin, ozeanisch.
 [warm] Nicht süß, nicht aufdringlich.
-[firm] Genau richtig.
+[confident] Genau richtig.
 
 [reflective] Und weißt du was?
 [confident] Es ist Eau de Parfum.
 [matter-of-fact] Nicht Eau de Cologne.
 
 [neutral] Das heißt: Höhere Ölkonzentration.
-[firm] Hält länger.
+[confident] Hält länger.
 [confident] Riecht intensiver.
 
-[bright] Ich sprühe es morgens.
+[cheerfully] Ich sprühe es morgens.
 [matter-of-fact] Nach acht Stunden Uni?
 [confident] Riecht noch.
 
 [warm] Für Studenten ist das perfekt.
-[playful] Der CEO-Duft für kleines Geld.
+[warm] Der CEO-Duft für kleines Geld.
 
 [matter-of-fact] Sehr gutes Preis-Leistungs-Verhältnis.
 [confident] Hält aber Wochen.
 
 [reflective] Preis-Leistung?
-[firm] Unschlagbar.
+[confident] Unschlagbar.
 
 [warm] Passt in jede Sporttasche.
-[bright] Gut fürs Büro, fürs Date.
+[cheerfully] Gut fürs Büro, fürs Date.
 [confident] Für jeden Tag.
 
 [matter-of-fact] Warum mehr zahlen, wenn das reicht?
-[firm] Sei smart.
-[bright] Link ist unten.
+[confident] Sei smart.
+[cheerfully] Link ist unten.
 
 ### ZH
 
-[skeptical] 为什么要花那么多钱买香水？
+[curious] 为什么要花那么多钱买香水？
 [matter-of-fact] 你是在为品牌付费。
 [confident] 不是为香味。
 
-[firm] 我给你看聪明的选择。
-[bright] LASTAR Azure Coastal。
+[confident] 我给你看聪明的选择。
+[cheerfully] LASTAR Azure Coastal。
 
 [neutral] 非常实惠。
 [confident] 但闻起来很高级。
 
 [matter-of-fact] 清新、阳刚、海洋调。
 [warm] 不甜腻，不刺鼻。
-[firm] 恰到好处。
+[confident] 恰到好处。
 
 [reflective] 你知道吗？
 [confident] 这是淡香精。
 [matter-of-fact] 不是古龙水。
 
 [neutral] 意思是：精油浓度更高。
-[firm] 留香更久。
+[confident] 留香更久。
 [confident] 味道更浓。
 
-[bright] 我早上喷。
+[cheerfully] 我早上喷。
 [matter-of-fact] 上完八小时课？
 [confident] 还有味道。
 
 [warm] 对学生来说完美。
-[playful] CEO的香味，学生的预算。
+[warm] CEO的香味，学生的预算。
 
 [matter-of-fact] 性价比很高。
 [confident] 但能用几周。
 
 [reflective] 性价比？
-[firm] 无可匹敌。
+[confident] 无可匹敌。
 
 [warm] 能放进任何运动包。
-[bright] 办公室、约会都适合。
+[cheerfully] 办公室、约会都适合。
 [confident] 每天都能用。
 
 [matter-of-fact] 为什么要多花钱，如果这就够了？
-[firm] 聪明点。
-[bright] 链接在下面。
+[confident] 聪明点。
+[cheerfully] 链接在下面。

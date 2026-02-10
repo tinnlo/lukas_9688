@@ -48,6 +48,17 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Emotional/Lifestyle — Day-to-night transformation shows one set solving multiple occasions
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Büro & Date"** | **"办公室 & 约会"** | Center |
+| 18–23s | Blumig & Frisch • Fürs Büro | 花香清新 • 办公用 | Center-bottom |
+| 38–42s | 2 Düfte, 1 Preis | 2种香水，1个价格 | Center |
+
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 42s)
@@ -60,20 +71,20 @@ source_notes:
 [curious] Aber wer kann sich 10 verschiedene Parfüms leisten?
 [confident] Ich nicht.
 
-[bright] Deswegen liebe ich dieses Set hier.
+[cheerfully] Deswegen liebe ich dieses Set hier.
 [educational] LASTAR Doppelpack. Zwei Düfte in einem.
 
 [neutral] Morgens der blumige. Frisch und dezent.
 [matter-of-fact] Perfekt fürs Büro. Nicht penetrant.
 
-[soft] Abends der andere. Vanille und Holz.
-[enthusiastic] Warm, sinnlich. Perfekt für lange Nächte.
+[warm] Abends der andere. Vanille und Holz.
+[cheerfully] Warm, sinnlich. Perfekt für lange Nächte.
 
 [neutral] Beide passen in meine Handtasche.
-[satisfied] Ein Kauf. Alles abgedeckt.
+[happy] Ein Kauf. Alles abgedeckt.
 
 [confident] Für den Preis? Wahnsinn.
-[bright] Link unten. Probier's aus.
+[cheerfully] Link unten. Probier's aus.
 
 ---
 
@@ -87,17 +98,17 @@ source_notes:
 [curious] 但谁能买得起 10 种不同的香水？
 [confident] 反正我不行。
 
-[bright] 所以我喜欢这套。
+[cheerfully] 所以我喜欢这套。
 [educational] LASTAR 双瓶装。一套两种香味。
 
 [neutral] 早上用花香的。清新淡雅。
 [matter-of-fact] 很适合办公室。不刺鼻。
 
-[soft] 晚上用另一个。香草和木质。
-[enthusiastic] 温暖，性感。适合漫长夜晚。
+[warm] 晚上用另一个。香草和木质。
+[cheerfully] 温暖，性感。适合漫长夜晚。
 
 [neutral] 两瓶都能放进我的手提包。
-[satisfied] 买一次。全搞定。
+[happy] 买一次。全搞定。
 
 [confident] 这个价格？太疯狂了。
-[bright] 链接在下面。试试看。
+[cheerfully] 链接在下面。试试看。

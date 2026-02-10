@@ -66,52 +66,62 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Social Proof Tease — FOMO with urgent pricing
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"NUR HEUTE! 🚨"** | **"仅限今天！🚨"** | Center |
+| 7–15s | So bekommst du den Rabatt | 这样获得折扣 | Center-bottom |
+| 23–27s | Sale endet HEUTE Nacht! ⏰ | 促销今晚结束！⏰ | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 28–32s)
 
-[urgent] Nur heute.
-[firm] Verrückte Preise wie diese.
-[bright] Neunundneunzig statt neunzehn.
+[cheerfully] Nur heute.
+[confident] Verrückte Preise wie diese.
+[cheerfully] Neunundneunzig statt neunzehn.
 
 [warm] Sieht aus wie echte Tulpen.
 [confident] Aber leuchtet nachts.
-[bright] Magisch.
+[cheerfully] Magisch.
 
 [matter-of-fact] So bekommst du den Rabatt.
-[firm] Warenkorb. Checkout.
+[confident] Warenkorb. Checkout.
 [confident] TikTok wendet den Gutschein automatisch an.
 
-[bright] Keine Batterien ständig wechseln.
+[cheerfully] Keine Batterien ständig wechseln.
 [warm] Drei Tulpen. Mehrere Farben.
 [confident] Perfektes Geschenk.
 
-[urgent] Sale endet heute Nacht.
-[firm] Jetzt holen.
+[cheerfully] Sale endet heute Nacht.
+[confident] Jetzt holen.
 [confident] Nicht warten.
 
 ---
 
 ### ZH (中文翻译 | 28–32s)
 
-[urgent] 仅限今天。
-[firm] 这样疯狂的价格。
-[bright] 9.99欧元而非19.99欧元。
+[cheerfully] 仅限今天。
+[confident] 这样疯狂的价格。
+[cheerfully] 9.99欧元而非19.99欧元。
 
 [warm] 看起来像真郁金香。
 [confident] 但晚上会发光。
-[bright] 神奇。
+[cheerfully] 神奇。
 
 [matter-of-fact] 这样获得折扣。
-[firm] 加入购物车。结账。
+[confident] 加入购物车。结账。
 [confident] TikTok会自动应用优惠券。
 
-[bright] 无需经常换电池。
+[cheerfully] 无需经常换电池。
 [warm] 三朵郁金香。多种颜色。
 [confident] 完美礼物。
 
-[urgent] 促销今晚结束。
-[firm] 现在就入手。
+[cheerfully] 促销今晚结束。
+[confident] 现在就入手。
 [confident] 不要等待。

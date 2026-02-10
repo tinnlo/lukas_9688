@@ -36,6 +36,17 @@ source_notes:
 | 23-27 | Cycling through rain/snow, hands protected and using GPS | REAL-WORLD usage |
 | 27-30 | Text: "Nie wieder kalte Hände!" + product shot | WINTER CTA |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Addresses universal winter commuter pain with dual solution
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Eiskalte Hände?"** | **"冰冷的手？"** | Center |
+| 16–20s | Fleece-gefüttert • Winddicht | 抓绒内衬 • 防风 | Center-bottom |
+| 23–30s | Nie wieder kalte Hände! | 再也不冷手了！ | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -50,8 +61,8 @@ source_notes:
 [confident] Wischen, tippen, alles geht!
 [warm] Innen mit Fleece gefüttert – super warm!
 [reassured] Wasserabweisend bei Regen!
-[satisfied] Endlich warme Hände beim Pendeln!
-[direct] Perfekt für den Winter – link unten!
+[happy] Endlich warme Hände beim Pendeln!
+[cheerfully] Perfekt für den Winter – link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
@@ -63,5 +74,5 @@ source_notes:
 [confident] 滑动、点击，全都可以！
 [warm] 内衬羊毛——超级暖和！
 [reassured] 下雨也防泼水！
-[satisfied] 通勤时终于手暖了！
-[direct] 冬季必备——链接在下方！
+[happy] 通勤时终于手暖了！
+[cheerfully] 冬季必备——链接在下方！

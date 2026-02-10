@@ -48,6 +48,16 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — The layering technique is counter-intuitive (mixing perfumes), triggering "how does that work?" curiosity.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Wusstest du: Parfüms mischen?"** | **"你知道吗：混合香水？"** | Center |
+| 13–18s | Beide Handgelenke • Neue Kombi | 两个手腕 • 新组合 | Center-bottom |
+| 33–37s | 2 Flaschen = 10+ Kombinationen | 2瓶 = 10+种组合 | Center |
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 42s)
@@ -55,51 +65,51 @@ source_notes:
 > with ElevenLabs v3 (alpha) grammar
 
 [curious] Wusstest du, dass du Parfüms mischen kannst?
-[bright] Scent Layering ist der neue Trend.
+[excited] Scent Layering ist der neue Trend.
 
-[neutral] Dieses Set von LASTAR ist perfekt dafür.
-[educational] Bernsteinfarbene Flasche: Kaffee, Vanille, Holz.
-[educational] Rosa Flasche: Rose, Jasmin, Vanille.
+[interested] Dieses Set von LASTAR ist perfekt dafür.
+[matter-of-fact] Bernsteinfarbene Flasche: Kaffee, Vanille, Holz.
+[confident] Rosa Flasche: Rose, Jasmin, Vanille.
 
-[matter-of-fact] Beide haben Vanille. Das ist der Schlüssel.
-[confident] Die Noten verschmelzen dadurch harmonisch.
+[thoughtful] Beide haben Vanille. Das ist der Schlüssel.
+[impressed] Die Noten verschmelzen dadurch harmonisch.
 
-[neutral] Ich sprühe "For One Night" auf das eine Handgelenk.
-[neutral] Dann "Forever Love" auf das andere.
-[playful] Und jetzt? Beide zusammen.
+[confident] Ich sprühe "For One Night" auf das eine Handgelenk.
+[happy] Dann "Forever Love" auf das andere.
+[curious] Und jetzt? Beide zusammen.
 
-[impressed] Oh. Das riecht wie ein komplett neuer Duft.
-[enthusiastic] Warm, blumig, ein bisschen mysteriös.
+[surprised] Oh. Das riecht wie ein komplett neuer Duft.
+[cheerfully] Warm, blumig, ein bisschen mysteriös.
 
-[neutral] Für unter 20 Euro bekommst du zwei Düfte.
+[impressed] Preiswert bekommst du zwei Düfte.
 [confident] Aber eigentlich zehn verschiedene Kombinationen.
 
-[encouraging] Probier's aus. Experimentiere.
-[bright] Link im Profil. Hol dir das Set.
+[warm] Probier's aus. Experimentiere.
+[cheerfully] Link ist unten. Hol dir das Set.
 
 ---
 
 ### ZH (中文翻译 | 42s)
 
 [curious] 你知道香水可以混合吗？
-[bright] 香水叠加是新趋势。
+[excited] 香水叠加是新趋势。
 
-[neutral] LASTAR 的这个套装非常完美。
-[educational] 琥珀色瓶：咖啡、香草、木质。
-[educational] 粉色瓶：玫瑰、茉莉、香草。
+[interested] LASTAR 的这个套装非常完美。
+[matter-of-fact] 琥珀色瓶：咖啡、香草、木质。
+[confident] 粉色瓶：玫瑰、茉莉、香草。
 
-[matter-of-fact] 两者都有香草。这是关键。
-[confident] 所以香调能和谐融合。
+[thoughtful] 两者都有香草。这是关键。
+[impressed] 所以香调能和谐融合。
 
-[neutral] 我把"For One Night"喷在一侧手腕。
-[neutral] 然后把"Forever Love"喷在另一侧。
-[playful] 现在呢？两个一起闻。
+[confident] 我把"For One Night"喷在一侧手腕。
+[happy] 然后把"Forever Love"喷在另一侧。
+[curious] 现在呢？两个一起闻。
 
-[impressed] 哦。这闻起来像全新的香水。
-[enthusiastic] 温暖、花香、有点神秘。
+[surprised] 哦。这闻起来像全新的香水。
+[cheerfully] 温暖、花香、有点神秘。
 
-[neutral] 不到 20 欧元你能得到两种香水。
+[impressed] 价格很友好你能得到两种香水。
 [confident] 但实际上是十种不同的组合。
 
-[encouraging] 试试看。实验一下。
-[bright] 简介里的链接。快买这个套装。
+[warm] 试试看。实验一下。
+[cheerfully] 链接在下面。快买这个套装。

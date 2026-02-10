@@ -39,6 +39,16 @@ source_notes:
 | 28-31 | Split screen: left = expensive TV cramped on small desk, right = this compact projector creating cinema | PRICE ANCHOR - rational purchase justification |
 | 31-35 | Creator pointing to TikTok cart, overlayed text: "Dein Schlafzimmer braucht dieses Upgrade" | DIRECT CTA with lifestyle positioning |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Lifestyle transformation with ceiling cinema hook
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Kino an der Decke?"** | **"天花板上的电影院？"** | Center |
+| 10–13s | Android 14 • Netflix direkt | Android 14 • 直接看Netflix | Center-bottom |
+| 28–31s | Dein Schlafzimmer braucht das | 你的卧室需要这个 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -46,37 +56,37 @@ source_notes:
 ### DE (ElevenLabs Prompt | 30–50s)
 
 [curious] Ich gehe nie wieder ins Kino.
-[playful] Warum? Schau mal.
-[amazed] Ich habe mein Kino jetzt an der Decke!
+[warm] Warum? Schau mal.
+[impressed] Ich habe mein Kino jetzt an der Decke!
 [excited] Dieser kleine Beamer kann sich um 180 Grad drehen.
-[satisfied] Stell ihn einfach auf den Nachttisch, richte ihn nach oben.
+[happy] Stell ihn einfach auf den Nachttisch, richte ihn nach oben.
 [impressed] Boom – 100 Zoll Kino direkt über meinem Bett!
 [confident] Und das Beste? Android 14 ist schon integriert.
-[enthusiastic] Netflix, YouTube – alles ohne extra Stick!
+[cheerfully] Netflix, YouTube – alles ohne extra Stick!
 [matter-of-fact] Verbinde dich mit WiFi und leg los.
 [reassured] Bei Licht ist es etwas schwächer, aber im Dunkeln?
 [delighted] Absolut perfekt!
 [cozy] Kuschel dich ein, mach dir einen Tee.
 [warm] Das ist der gemütlichste Filmabend ever.
-[skeptical] Denkst du, das kostet ein Vermögen?
+[curious] Denkst du, das kostet ein Vermögen?
 [surprised] Für einen richtig guten Preis im TikTok Shop!
-[direct] Link ist unten – gönn dir das Upgrade!
+[cheerfully] Link ist unten – gönn dir das Upgrade!
 
 ### ZH (中文翻译 | 30–50s)
 
 [curious] 我再也不去电影院了。
-[playful] 为什么？看这里。
-[amazed] 我现在把电影院搬到天花板了！
+[warm] 为什么？看这里。
+[impressed] 我现在把电影院搬到天花板了！
 [excited] 这个小投影仪可以旋转180度。
-[satisfied] 只需把它放在床头柜上，对准上方。
+[happy] 只需把它放在床头柜上，对准上方。
 [impressed] 嘭——100英寸影院直接在我床上方！
 [confident] 最棒的是？安卓14已经内置了。
-[enthusiastic] Netflix、YouTube——全都不需要额外的棒子！
+[cheerfully] Netflix、YouTube——全都不需要额外的棒子！
 [matter-of-fact] 连上WiFi就可以开始了。
 [reassured] 开灯时稍微弱一点，但在黑暗中呢？
 [delighted] 绝对完美！
 [cozy] 窝在被子里，泡杯茶。
 [warm] 这是最舒适的电影之夜。
-[skeptical] 你以为这要很贵？
+[curious] 你以为这要很贵？
 [surprised] TikTok商店价格很划算！
-[direct] 链接在下方——给自己升个级吧！
+[cheerfully] 链接在下方——给自己升个级吧！

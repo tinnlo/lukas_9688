@@ -34,6 +34,16 @@ source_notes:
 | **BENEFIT** | 00:32-00:37 | Wide shot: Clean, organized entertainment center. Person sits on sofa with coffee, smiling. Everything looks zen. | **Lifestyle Upgrade** |
 | **CTA** | 00:37-00:42 | Person holds product toward camera. Text overlay: "Mach Schluss mit Kabelsalat!" Finger points to orange cart. | **Call to Action** |
 
+## On-Screen Text
+
+**Strategy:** Hook Overlay — TV cable chaos behind entertainment center creates relatable frustration hook.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–5s | **"Kabelchaos hinter TV?"** | **"电视后面线缆乱？"** | Center |
+| 14–20s | 5 Steckdosen + USB + USB-C | 5插座 + USB + USB-C | Center-bottom |
+| 26–32s | Einzelschalter = Geld sparen | 独立开关 = 省钱 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -44,42 +54,42 @@ source_notes:
 
 [annoyed] Fernseher, Soundbar, PlayStation, Apple TV – und keine Steckdose ist mehr frei!
 
-[bright] Dann brauchst du genau DAS hier.
+[cheerfully] Dann brauchst du genau DAS hier.
 
 [confident] Diese 11-in-1 Steckdose macht Schluss mit dem Kabelsalat.
 
 [matter-of-fact] Du hast fünf normale Steckdosen, plus USB und USB-C für dein Handy.
 
-[satisfied] Und diese Ablage oben? Perfekt für die Fernbedienung oder dein Tablet.
+[happy] Und diese Ablage oben? Perfekt für die Fernbedienung oder dein Tablet.
 
-[firm] Das Geniale: Jede Steckdose hat einen eigenen Schalter.
+[confident] Das Geniale: Jede Steckdose hat einen eigenen Schalter.
 
-[emphasize] PlayStation aus? Klick. Soundbar aus? Klick. Kein Standby-Strom mehr.
+[excited] PlayStation aus? Klick. Soundbar aus? Klick. Kein Standby-Strom mehr.
 
 [warm] Endlich Ordnung im Wohnzimmer, und du sparst auch noch Geld.
 
-[urgent] Hol sie dir jetzt – der Link ist direkt hier unten!
+[cheerfully] Hol sie dir jetzt – der Link ist direkt hier unten!
 
 ---
 
-### CN (中文翻译 | 仅供参考)
+### ZH (中文翻译 | 42s)
 
 [frustrated] 说实话,你的电视后面是不是也这么乱?
 
 [annoyed] 电视、音响、PlayStation、Apple TV——插座根本不够用!
 
-[bright] 那你就需要这个。
+[cheerfully] 那你就需要这个。
 
 [confident] 这款11合1插座彻底解决线缆混乱问题。
 
 [matter-of-fact] 你有五个标准插座,还有USB和USB-C可以给手机充电。
 
-[satisfied] 而且上面这个置物架?放遥控器或平板电脑完美。
+[happy] 而且上面这个置物架?放遥控器或平板电脑完美。
 
-[firm] 最巧妙的是:每个插座都有独立开关。
+[confident] 最巧妙的是:每个插座都有独立开关。
 
-[emphasize] PlayStation不用了?咔哒。音响关掉?咔哒。再也不用待机耗电。
+[excited] PlayStation不用了?咔哒。音响关掉?咔哒。再也不用待机耗电。
 
 [warm] 客厅终于整洁了,还能省钱。
 
-[urgent] 现在就入手——链接就在下面!
+[cheerfully] 现在就入手——链接就在下面!

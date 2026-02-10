@@ -51,6 +51,17 @@ Leading with real-world social validation to trigger desire for external approva
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Social Proof Tease — Daily compliments create social validation and purchase desire
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Was für ein Duft?"** | **"什么香味？"** | Center |
+| 13–18s | Holzig • Süß • Nicht aufdringlich | 木质 • 甜 • 不刺鼻 | Center-bottom |
+| 33–40s | Dein Signature-Duft | 你的专属香味 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -59,14 +70,14 @@ Leading with real-world social validation to trigger desire for external approva
 
 [curious] Jeder fragt mich: Was für ein Duft ist das?
 [warm] Seit ich LASTAR trage, passiert das jeden Tag.
-[amused] Im Büro. [playful] Beim Sport. [reflective] Sogar beim Einkaufen.
+[amused] Im Büro. [warm] Beim Sport. [reflective] Sogar beim Einkaufen.
 [confident] Das ist kein Zufall.
-[bright] Der Duft ist holzig, ein bisschen süß, aber nicht aufdringlich.
-[satisfied] Er bleibt den ganzen Tag präsent.
+[cheerfully] Der Duft ist holzig, ein bisschen süß, aber nicht aufdringlich.
+[happy] Er bleibt den ganzen Tag präsent.
 [impressed] Perfekt für einen Signature-Duft.
 [matter-of-fact] Riecht wie etwas Teures.
 [delighted] Kostet aber fast nichts.
-[encouraging] Wenn du auch Komplimente willst, probier's einfach.
+[warm] Wenn du auch Komplimente willst, probier's einfach.
 [neutral] Link ist unten.
 
 ---
@@ -75,12 +86,12 @@ Leading with real-world social validation to trigger desire for external approva
 
 [curious] 每个人都问我：这是什么香水？
 [warm] 自从我用 LASTAR，每天都有人问。
-[amused] 在办公室。[playful] 在健身房。[reflective] 甚至在购物时。
+[amused] 在办公室。[warm] 在健身房。[reflective] 甚至在购物时。
 [confident] 这不是巧合。
-[bright] 香味是木质的，有点甜，但不刺鼻。
-[satisfied] 一整天都在。
+[cheerfully] 香味是木质的，有点甜，但不刺鼻。
+[happy] 一整天都在。
 [impressed] 完美的专属香调。
 [matter-of-fact] 闻起来像昂贵的东西。
 [delighted] 但几乎不花钱。
-[encouraging] 如果你也想收获赞美，试试吧。
+[warm] 如果你也想收获赞美，试试吧。
 [neutral] 链接在下面。

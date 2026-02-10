@@ -35,6 +35,17 @@ source_notes:
 | 22-27 | Multiple bottles on table creating layered lighting effect | AESTHETIC DEPTH |
 | 27-30 | Text: "Romantik auf Knopfdruck" with product | ROMANCE CTA |
 
+## On-Screen Text
+
+**Strategy:** Emotional/Lifestyle — Positions lamp as instant romance creator for date night ambiance
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Perfekte Date Night?"** | **"完美约会之夜？"** | Center |
+| 10–15s | RGB Modi • Stufenlos dimmbar | RGB模式 • 无级调光 | Center-bottom |
+| 27–30s | Romantik auf Knopfdruck | 一键浪漫 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -46,11 +57,11 @@ source_notes:
 [excited] Aber mit dieser Weinflaschenlampe?
 [impressed] Ein Touch – sofort romantisch!
 [warm] Weiches, warmes Licht wie Kerzenschein!
-[playful] RGB für verschiedene Stimmungen!
-[satisfied] Dimmen für perfekte Atmosphäre!
+[warm] RGB für verschiedene Stimmungen!
+[happy] Dimmen für perfekte Atmosphäre!
 [confident] Kein Kabel, kein Chaos!
-[enthusiastic] Einfach magisch!
-[direct] Romantik auf Knopfdruck – jetzt holen!
+[cheerfully] Einfach magisch!
+[cheerfully] Romantik auf Knopfdruck – jetzt holen!
 
 ### ZH (中文翻译 | 30–50s)
 
@@ -59,8 +70,8 @@ source_notes:
 [excited] 但有了这款酒瓶灯呢？
 [impressed] 一触——立刻浪漫！
 [warm] 柔和温暖的光线像烛光！
-[playful] RGB适应不同情绪！
-[satisfied] 调光创造完美氛围！
+[warm] RGB适应不同情绪！
+[happy] 调光创造完美氛围！
 [confident] 无线，无混乱！
-[enthusiastic] 简直神奇！
-[direct] 一键浪漫——现在就拿！
+[cheerfully] 简直神奇！
+[cheerfully] 一键浪漫——现在就拿！

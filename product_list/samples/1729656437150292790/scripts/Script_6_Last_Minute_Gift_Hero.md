@@ -1,9 +1,8 @@
 ---
 cover: ""
-caption: >-
-  Keine Geschenkidee? Panik? Schau mal hier! LASTAR Vanille Set sieht teuer aus, ist super günstig. Kommt in edler Box. Rettung garantiert #geschenkidee #lastminute #parfüm #geschenkset #tiktokshop #Geschenkidee #LastMinute #ParfümSet #GiftReady #TikTokShop
+caption: "Keine Geschenkidee? Panik? Schau mal hier! LASTAR Vanille Set sieht teuer aus, ist super günstig. Kommt in edler Box. Rettung garantiert #geschenkidee #parfüm #geschenkset #tiktokshop  #ParfümSet"
 published: 2026-02-02
-duration: "00:40"
+duration: 00:40
 sales:
   - yes
 link: ""
@@ -13,11 +12,11 @@ tags:
   - "#ParfümSet"
   - "#GiftReady"
   - "#TikTokShop"
-product: "LASTAR Vanille Parfüm Geschenkbox"
+product: LASTAR Vanille Parfüm Geschenkbox
 source_notes:
-  - "product_list/samples/1729656437150292790/ref_video/video_synthesis.md"
-  - "product_list/samples/1729656437150292790/product_images/image_analysis.md"
-  - "product_list/samples/1729656437150292790/tabcut_data.json"
+  - product_list/samples/1729656437150292790/ref_video/video_synthesis.md
+  - product_list/samples/1729656437150292790/product_images/image_analysis.md
+  - product_list/samples/1729656437150292790/tabcut_data.json
 ---
 
 ## Scripts
@@ -49,60 +48,70 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Solution Reveal — Urgency hook with immediate relief, showing gift-ready packaging as the hero solution.
+
+| Timing | DE Text                          | ZH Text       | Placement     |
+| :----- | :------------------------------- | :------------ | :------------ |
+| 0–3s   | **"Keine Geschenkidee? Panik?"** | **"没礼物？慌了？"** | Center        |
+| 20–25s | Kein Einpacken nötig!            | 不需要包装！        | Center-bottom |
+| 30–35s | Sieht teuer aus • Ist preiswert  | 看起来很贵 • 价格友好  | Center        |
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 40s)
 
 > with ElevenLabs v3 (alpha) grammar
 
-[urgent] Keine Geschenkidee? Ich kenne das.
-[stressed] Geburtstag. Morgen. Panik.
+[frustrated] Keine Geschenkidee? Ich kenne das.
+[annoyed] Geburtstag. Morgen. Panik.
 
-[relieved] Aber ich habe die Lösung gefunden.
+[happy] Aber ich habe die Lösung gefunden.
 [confident] Dieses Parfüm-Set von LASTAR.
 
-[neutral] Es kommt in dieser edlen Box.
+[interested] Es kommt in dieser edlen Box.
 [impressed] Weiß, Gold, sieht hochwertig aus.
-[reassuring] Kein Einpacken nötig. Einfach überreichen.
+[reassured] Kein Einpacken nötig. Einfach überreichen.
 
-[educational] Zwei Düfte. Einer für sie, einer für ihn.
-[neutral] Oder beide für eine Person.
-[matter-of-fact] Vanille, Rose, Kaffee, Holz.
+[matter-of-fact] Zwei Düfte. Einer für sie, einer für ihn.
+[confident] Oder beide für eine Person.
+[warm] Vanille, Rose, Kaffee, Holz.
 
-[confident] Das Beste?
-[satisfied] Sieht teuer aus. Ist es aber nicht.
-[bright] Super günstig für zwei komplette Flaschen.
+[curious] Das Beste?
+[impressed] Sieht teuer aus. Ist es aber nicht.
+[cheerfully] Super günstig für zwei komplette Flaschen.
 
-[neutral] Universell beliebt. Kein Risiko.
-[encouraging] Niemand wird enttäuscht sein.
+[confident] Universell beliebt. Kein Risiko.
+[warm] Niemand wird enttäuscht sein.
 
-[urgent] Rette deinen Geschenktag.
-[bright] Link oben. Bestell jetzt.
+[excited] Rette deinen Geschenktag.
+[cheerfully] Link ist unten. Bestell jetzt.
 
 ---
 
 ### ZH (中文翻译 | 40s)
 
-[urgent] 没有礼物主意？我懂。
-[stressed] 生日。明天。慌了。
+[frustrated] 没有礼物主意？我懂。
+[annoyed] 生日。明天。慌了。
 
-[relieved] 但我找到了解决方案。
+[happy] 但我找到了解决方案。
 [confident] LASTAR 的这个香水套装。
 
-[neutral] 装在这个精致的盒子里。
+[interested] 装在这个精致的盒子里。
 [impressed] 白色、金色，看起来很高级。
-[reassuring] 不需要包装。直接送出。
+[reassured] 不需要包装。直接送出。
 
-[educational] 两种香水。一种给她，一种给他。
-[neutral] 或者两种都给一个人。
-[matter-of-fact] 香草、玫瑰、咖啡、木质。
+[matter-of-fact] 两种香水。一种给她，一种给他。
+[confident] 或者两种都给一个人。
+[warm] 香草、玫瑰、咖啡、木质。
 
-[confident] 最棒的是什么？
-[satisfied] 看起来很贵。其实不贵。
-[bright] 两整瓶超便宜。
+[curious] 最棒的是什么？
+[impressed] 看起来很贵。其实不贵。
+[cheerfully] 两整瓶超便宜。
 
-[neutral] 普遍受欢迎。没有风险。
-[encouraging] 没人会失望的。
+[confident] 普遍受欢迎。没有风险。
+[warm] 没人会失望的。
 
-[urgent] 拯救你的礼物日。
-[bright] 上面的链接。现在订购。
+[excited] 拯救你的礼物日。
+[cheerfully] 链接在下面。现在订购。

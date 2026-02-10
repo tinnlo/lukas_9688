@@ -39,6 +39,16 @@ source_notes:
 | 22-26 | Inset graphic from image_analysis (LED chip on circuit board) with tech spec overlay: "XHP LED Chip" | COMPONENT QUALITY proof |
 | 26-30 | Clean product hero shot on black background with floating text specs, finger pointing to TikTok cart | CTA with premium positioning |
 
+## On-Screen Text
+
+**Strategy:** Product Label — Tech specs showcase for gadget enthusiasts
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"4 Cores • Pure Power"** | **"4核 • 纯粹力量"** | Center |
+| 10–13s | Spritzwassergeschützt | 防泼水 | Center-bottom |
+| 22–26s | XHP LED Chip | XHP LED 芯片 | Top-right |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -48,27 +58,27 @@ source_notes:
 [excited] Vier Kerne – pure Power!
 [impressed] Das ist keine normale Taschenlampe.
 [confident] Schau dir diese LED-Technologie an!
-[enthusiastic] Jeder Kern ist ein Hochleistungs-Chip.
+[cheerfully] Jeder Kern ist ein Hochleistungs-Chip.
 [matter-of-fact] COB-Seitenlicht zum Arbeiten oder Lesen.
-[intrigued] Zwei Lampen in einer!
-[amazed] Und sie ist spritzwassergeschützt!
+[curious] Zwei Lampen in einer!
+[impressed] Und sie ist spritzwassergeschützt!
 [reassured] Regen, Schnee – egal.
 [pumped] Der Lichtstrahl geht bis zu 300 Meter weit!
-[firm] USB-aufladbar mit intelligentem Akku-Display.
-[playful] Vier Modi – High, Low, Strobe, Seitenlicht.
-[direct] Hol dir das Upgrade! Link in der Bio!
+[confident] USB-aufladbar mit intelligentem Akku-Display.
+[warm] Vier Modi – High, Low, Strobe, Seitenlicht.
+[cheerfully] Hol dir das Upgrade! Link in der Bio!
 
 ### ZH (中文翻译 | 30–50s)
 
 [excited] 四核——纯粹的力量！
 [impressed] 这不是普通的手电筒。
 [confident] 看看这LED技术！
-[enthusiastic] 每个核心都是高性能芯片。
+[cheerfully] 每个核心都是高性能芯片。
 [matter-of-fact] COB侧灯用于工作或阅读。
-[intrigued] 二合一！
-[amazed] 而且防溅水！
+[curious] 二合一！
+[impressed] 而且防溅水！
 [reassured] 雨、雪——无所谓。
 [pumped] 光束可达300米远！
-[firm] USB充电，智能电池显示。
-[playful] 四种模式——高、低、频闪、侧灯。
-[direct] 拿下升级版！链接在简介里！
+[confident] USB充电，智能电池显示。
+[warm] 四种模式——高、低、频闪、侧灯。
+[cheerfully] 拿下升级版！链接在简介里！

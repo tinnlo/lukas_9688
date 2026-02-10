@@ -44,52 +44,62 @@ The "App Sync Demo" format - highest converting angle per video synthesis analys
 | 25-28 | Return to full body shot holding phone, satisfied expression | Lifestyle: Relatable usage |
 | 28-35 | Holding scale to camera with "super günstig" sticker overlay, pointing down | Conversion: Value emphasis + clear CTA |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Price-value shock with tech appeal
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Super günstig"** | **"超级便宜"** | Center |
+| 14–18s | 13+ Körperwerte | 13+种身体数据 | Center-bottom |
+| 28–35s | Für diesen Preis nirgendwo anders | 这个价格哪都没有 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[amazed] Diese Waage kann alles.
+[impressed] Diese Waage kann alles.
 [deadpan] Kostet aber weniger als ein Döner.
 
 [curious] Schau mal, ich steig drauf.
 [matter-of-fact] Sofort synchronisiert sich mein Handy.
 
 [impressed] Wow, die Zahlen erscheinen live!
-[intrigued] Punkt für Punkt, präzise.
+[curious] Punkt für Punkt, präzise.
 
-[enthusiastic] Körperfett, Muskelmasse, Wasser.
+[cheerfully] Körperfett, Muskelmasse, Wasser.
 [excited] BMI, Knochenmasse, alles drin!
 
-[concerned] Oh, mein Körperfett ist zu hoch.
+[frustrated] Oh, mein Körperfett ist zu hoch.
 [thoughtful] Aber jetzt kann ich das täglich tracken.
 
 [confident] Dreizehn verschiedene Werte.
 [warm] Direkt in der App gespeichert.
 
 [persuasive] Für den Preis kriegst du das nirgendwo anders.
-[firm] Link ist unten!
+[confident] Link ist unten!
 
 ### ZH (中文翻译 | 30–50s)
 
-[amazed] 这个秤什么都能测。
+[impressed] 这个秤什么都能测。
 [deadpan] 但价格比一个烤肉卷还便宜。
 
 [curious] 看，我站上去。
 [matter-of-fact] 我的手机立刻同步了。
 
 [impressed] 哇，数字实时出现！
-[intrigued] 一点一点，精确无误。
+[curious] 一点一点，精确无误。
 
-[enthusiastic] 体脂、肌肉量、水分。
+[cheerfully] 体脂、肌肉量、水分。
 [excited] BMI、骨量，全都有！
 
-[concerned] 哦，我的体脂太高了。
+[frustrated] 哦，我的体脂太高了。
 [thoughtful] 但现在我可以每天追踪它。
 
 [confident] 十三种不同的数值。
 [warm] 直接存储在App里。
 
 [persuasive] 这个价格，你在哪里都找不到这样的。
-[firm] 链接在下面！
+[confident] 链接在下面！

@@ -53,6 +53,17 @@ Before/After transformation showcasing the dramatic sound upgrade from tinny pho
 | 42-45 | Product shot: Stand in white variant with sleek minimalist aesthetic | Product: Final beauty shot |
 | 45-48 | Text overlay: "LINK IN BIO" with excited person pointing to bio | CTA: Conversion action |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Sound upgrade need
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Handy-Sound zu dünn?"** | **"手机声音太薄？"** | Center |
+| 12–22s | 200% lauter • Sofort | 200%更响 • 立即 | Center-bottom |
+| 39–45s | 2-in-1: Lautsprecher + Ständer | 2合1：扬声器+支架 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar

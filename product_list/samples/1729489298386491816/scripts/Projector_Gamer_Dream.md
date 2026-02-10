@@ -40,6 +40,16 @@ source_notes:
 | 26-28 | Product closeup: projector rotating to show all angles, compact size emphasized | PORTABILITY - can bring to LAN parties |
 | 28-33 | Creator with controller, pointing to cart, text overlay: "Riesenbild zum kleinen Preis" | DIRECT CTA with price/size hook |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Gaming immersion with size shock
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"3 Meter Größe!"** | **"3米大屏！"** | Center |
+| 10–13s | HDMI • Alle Konsolen | HDMI • 所有游戏机 | Center-bottom |
+| 28–33s | Riesenbild • Kleiner Preis | 巨屏 • 小价格 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -47,29 +57,29 @@ source_notes:
 ### DE (ElevenLabs Prompt | 30–50s)
 
 [excited] Mario Kart auf drei Metern Größe!
-[amazed] Schau dir diese Leinwand an!
-[intrigued] Und das kommt von diesem kleinen Ding hier.
+[impressed] Schau dir diese Leinwand an!
+[curious] Und das kommt von diesem kleinen Ding hier.
 [impressed] Der Magcubic HY300 Pro Plus – komplett unterschätzt.
 [confident] Einfach HDMI rein, Switch oder Playstation dran.
-[enthusiastic] Zwei Meter Abstand – 100 Zoll Bild!
+[cheerfully] Zwei Meter Abstand – 100 Zoll Bild!
 [matter-of-fact] Kein Lag, keine Verzögerung.
-[playful] Ich teste es gerade – siehst du?
-[satisfied] Button drücken, Reaktion instant!
+[warm] Ich teste es gerade – siehst du?
+[happy] Button drücken, Reaktion instant!
 [pumped] Das ist Gaming auf dem nächsten Level!
-[casual] Und für weniger als ein Gaming-Monitor?
-[direct] Bruder, hol dir das! Link unten!
+[happy] Und für weniger als ein Gaming-Monitor?
+[cheerfully] Bruder, hol dir das! Link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
 [excited] 三米大小的马里奥赛车！
-[amazed] 看看这个屏幕！
-[intrigued] 而且这来自这个小东西。
+[impressed] 看看这个屏幕！
+[curious] 而且这来自这个小东西。
 [impressed] Magcubic HY300 Pro Plus——被完全低估了。
 [confident] 只需插入HDMI，连上Switch或PlayStation。
-[enthusiastic] 两米距离——100英寸画面！
+[cheerfully] 两米距离——100英寸画面！
 [matter-of-fact] 没有延迟，没有卡顿。
-[playful] 我现在正在测试——看到了吗？
-[satisfied] 按下按钮，瞬间反应！
+[warm] 我现在正在测试——看到了吗？
+[happy] 按下按钮，瞬间反应！
 [pumped] 这是下一级别的游戏体验！
-[casual] 而且比游戏显示器还便宜？
-[direct] 兄弟，拿下它！链接在下方！
+[happy] 而且比游戏显示器还便宜？
+[cheerfully] 兄弟，拿下它！链接在下方！

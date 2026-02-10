@@ -64,15 +64,15 @@ source_notes:
 [curious] Hey, Blumen im Winter?
 
 [warm] Für dich.
-[soft] Moment.
+[warm] Moment.
 [warm] Das ist hier ein Geschenk.
 
 [warm] Ich mag das wirklich sehr.
-[bright] Diese Blumen-Deko ist so schön, die sieht aus wie echte Tulpen.
+[cheerfully] Diese Blumen-Deko ist so schön, die sieht aus wie echte Tulpen.
 
 [confident] Perfekt fürs Schlafzimmer, Wohnzimmer oder auch als kleines Geschenk.
 [warm] Ich liebe solche Lichter.
-[soft] Abends sind sie einfach so entspannt.
+[warm] Abends sind sie einfach so entspannt.
 
 ---
 
@@ -81,12 +81,12 @@ source_notes:
 [curious] 嘿，冬天里的花？
 
 [warm] 给你的。
-[soft] 等等。
+[warm] 等等。
 [warm] 这是一个礼物。
 
 [warm] 我真的很喜欢。
-[bright] 这个花卉装饰太美了，看起来就像真郁金香。
+[cheerfully] 这个花卉装饰太美了，看起来就像真郁金香。
 
 [confident] 完美适合卧室、客厅，也可作为小礼物。
 [warm] 我喜欢这样的灯。
-[soft] 晚上看着它特别放松。
+[warm] 晚上看着它特别放松。

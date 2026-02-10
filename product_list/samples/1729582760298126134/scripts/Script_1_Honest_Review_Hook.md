@@ -51,36 +51,47 @@ Opening with skepticism to build instant credibility, then revealing the surpris
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Budget fragrance skepticism converts to quality validation through honest test
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Billige Parfüms = Betrug?"** | **"便宜香水=骗局？"** | Center |
+| 15–20s | Holzig • Würzig • Männlich | 木质 • 辛辣 • 男性 | Center-bottom |
+| 38–43s | Freunde fragen ständig | 朋友总问 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 45s)
 
-[skeptical] Ich dachte immer, billige Parfüms sind Betrug.
+[curious] Ich dachte immer, billige Parfüms sind Betrug.
 [curious] Aber dann bin ich auf TikTok Shop auf LASTAR gestoßen.
 [hesitant] Für kleines Geld habe ich es einfach versucht.
 [warm] Und jetzt... bin ich schockiert.
 [confident] Die Spritztechnik ist unglaublich fein.
-[bright] Der Duft hält tatsächlich den ganzen Tag.
-[firm] Holzige Noten, ein bisschen würzig—es riecht wie etwas, das viel mehr kosten sollte.
+[cheerfully] Der Duft hält tatsächlich den ganzen Tag.
+[confident] Holzige Noten, ein bisschen würzig—es riecht wie etwas, das viel mehr kosten sollte.
 [amused] Meine Freunde fragen jeden Tag: Was trägst du denn?
 [matter-of-fact] Und ich sage einfach: LASTAR. [reflective] Punkt.
-[encouraging] Wenn du auch sparen willst, ohne auf Qualität zu verzichten, probier's.
-[neutral] Der Link ist oben.
+[warm] Wenn du auch sparen willst, ohne auf Qualität zu verzichten, probier's.
+[neutral] Der Link ist unten.
 
 ---
 
 ### ZH (中文翻译 | 45s)
 
-[skeptical] 我以前觉得便宜香水都是骗人的。
+[curious] 我以前觉得便宜香水都是骗人的。
 [curious] 但后来我在 TikTok Shop 上发现了 LASTAR。
 [hesitant] 花了点小钱，我就试了试。
 [warm] 现在...我震惊了。
 [confident] 喷雾技术细腻得不可思议。
-[bright] 香气确实一整天都持久。
-[firm] 木质调，一点辛辣感——闻起来像应该贵很多的东西。
+[cheerfully] 香气确实一整天都持久。
+[confident] 木质调，一点辛辣感——闻起来像应该贵很多的东西。
 [amused] 我朋友每天都问：你喷的什么？
 [matter-of-fact] 我就说：LASTAR。[reflective] 就这样。
-[encouraging] 如果你也想省钱但不牺牲质量，试试吧。
-[neutral] 链接在上面。
+[warm] 如果你也想省钱但不牺牲质量，试试吧。
+[neutral] 链接在下面。

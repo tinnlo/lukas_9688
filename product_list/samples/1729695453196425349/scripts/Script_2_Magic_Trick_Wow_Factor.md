@@ -85,7 +85,7 @@ source_notes:
 [matter-of-fact] iPhone? Ja. Samsung? Ja. Mit Hülle? Auch ja.
 
 [neutral] Das Ding ist der Wahnsinn.
-[enthusiastic] Schnapp's dir. Jetzt.
+[cheerfully] Schnapp's dir. Jetzt.
 
 
 ---
@@ -111,4 +111,4 @@ source_notes:
 [matter-of-fact] iPhone？是的。三星？是的。带壳？也是的。
 
 [neutral] 这东西太疯狂了。
-[enthusiastic] 快抢。现在。
+[cheerfully] 快抢。现在。

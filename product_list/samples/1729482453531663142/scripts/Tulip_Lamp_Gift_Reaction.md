@@ -66,6 +66,16 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Emotional/Lifestyle — Gift reaction social proof
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Ihre Reaktion... 🥹"** | **"她的反应...🥹"** | Center |
+| 8–15s | Sind das echte Blumen?! | 这些是真花吗？！ | Center-bottom |
+| 22–28s | Wunderschön & pflegeleicht | 美丽又省心 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -73,53 +83,53 @@ source_notes:
 ### DE (ElevenLabs Prompt | 30–35s)
 
 [warm] Ich schenkte ihr diese Tulpenlampe.
-[soft] Ihre Reaktion. Wunderbar.
+[warm] Ihre Reaktion. Wunderbar.
 
 [curious] Sie öffnet die Box.
-[bright] Schaut genau hin.
+[cheerfully] Schaut genau hin.
 [curious] Sind das echte Blumen?
 
 [warm] Sie berührt die Blütenblätter.
-[soft] So realistisch.
+[warm] So realistisch.
 [confident] Aber sie bleiben schön.
 
-[bright] Sie drückt den Knopf.
+[cheerfully] Sie drückt den Knopf.
 [warm] Magisches LED-Licht.
-[soft] Ihr Gesicht leuchtet.
+[warm] Ihr Gesicht leuchtet.
 
 [cheerful] Kein Wasser. Keine Pflege.
 [warm] Nur Schönheit. Jeden Tag.
 
 [confident] Tolles Preis-Leistungs-Verhältnis.
-[bright] Wunderschön & pflegeleicht.
+[cheerfully] Wunderschön & pflegeleicht.
 
 [warm] Ideal für Mama. Freundin. Schwester.
-[bright] Jetzt schenken.
+[cheerfully] Jetzt schenken.
 
 ---
 
 ### ZH (中文翻译 | 30–35s)
 
 [warm] 我送给她这盏郁金香灯。
-[soft] 她的反应。太棒了。
+[warm] 她的反应。太棒了。
 
 [curious] 她打开盒子。
-[bright] 仔细看。
+[cheerfully] 仔细看。
 [curious] 这些是真花吗?
 
 [warm] 她触摸花瓣。
-[soft] 如此逼真。
+[warm] 如此逼真。
 [confident] 但它们一直美丽。
 
-[bright] 她按下按钮。
+[cheerfully] 她按下按钮。
 [warm] 神奇的LED灯光。
-[soft] 她的脸亮了起来。
+[warm] 她的脸亮了起来。
 
 [cheerful] 无需浇水。无需照料。
 [warm] 只有美丽。每一天。
 
 [confident] 性价比极高。
-[bright] 美丽又省心。
+[cheerfully] 美丽又省心。
 
 [warm] 很适合送给妈妈。女友。姐妹。
-[bright] 现在就送礼。
+[cheerfully] 现在就送礼。

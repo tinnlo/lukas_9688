@@ -51,28 +51,39 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Emotional/Lifestyle — Kitchen companion
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Kochen mit Musik"** | **"边做饭边听音乐"** | Center |
+| 16–22s | Klar & Laut • Über Lärm | 清晰响亮 • 超越噪音 | Center-bottom |
+| 31–40s | Küche • Bad • Büro • Überall | 厨房 • 浴室 • 办公室 • 到处 | Center |
+
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 40s)
 
 > with ElevenLabs v3 (alpha) grammar
 
-[casual] POV: Du kochst und willst deinen Podcast hören.
+[happy] POV: Du kochst und willst deinen Podcast hören.
 
 [neutral] Aber das Wasser kocht. Die Pfanne brutzelt.
-[storytelling] Dein Handy? Viel zu leise.
+[curious] Dein Handy? Viel zu leise.
 
 [blunt] Ich hasse das.
 
 [neutral] Aber dann habe ich das hier gefunden. PAXA.
-[revealing] Kein Bluetooth. Einfach Handy drauf.
+[surprised] Kein Bluetooth. Einfach Handy drauf.
 
 [neutral] Und plötzlich? Kristallklar.
 [impressed] Höre jedes Wort. Auch beim Kochen.
 
 [neutral] Im Bad beim Schminken? Auch perfekt.
-[bright] Im Bett TikToks gucken? Läuft.
-[playful] Video-Calls am Schreibtisch? Super Winkel.
+[cheerfully] Im Bett TikToks gucken? Läuft.
+[warm] Video-Calls am Schreibtisch? Super Winkel.
 
 [educational] Küche. Bad. Büro. Überall.
 
@@ -86,22 +97,22 @@ source_notes:
 
 ### ZH (中文翻译 | 40s)
 
-[casual] POV：你做饭想听播客。
+[happy] POV：你做饭想听播客。
 
 [neutral] 但水在沸腾。锅在滋滋作响。
-[storytelling] 你的手机？太小声了。
+[curious] 你的手机？太小声了。
 
 [blunt] 我讨厌这样。
 
 [neutral] 但后来我发现了这个。PAXA。
-[revealing] 无蓝牙。只需把手机放上去。
+[surprised] 无蓝牙。只需把手机放上去。
 
 [neutral] 突然？水晶般清晰。
 [impressed] 每个字都听得到。即使在做饭。
 
 [neutral] 洗手间化妆时？也完美。
-[bright] 床上看TikTok？没问题。
-[playful] 书桌视频通话？完美角度。
+[cheerfully] 床上看TikTok？没问题。
+[warm] 书桌视频通话？完美角度。
 
 [educational] 厨房。浴室。办公室。到处都行。
 

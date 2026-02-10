@@ -51,6 +51,16 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Emotional / Lifestyle — Stranger compliment hook creates aspirational appeal and social proof.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Die Uhr ist stylisch!"** | **"手表很时尚！"** | Center |
+| 10–15s | 1.85" HD • Riesig & Klar | 1.85" 高清 • 超大超清 | Center-bottom |
+| 24–28s | Metall + Silikon | 金属 + 硅胶 | Center-bottom |
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 40s)
@@ -66,16 +76,16 @@ Woman: [interested] Ist die teuer?
 [impressed] Massiv groß und super klar.
 [excited] 710 Milliamperestunden Akku. Hält fast eine Woche!
 
-[enthusiastic] Über 100 Sportmodi direkt am Handgelenk.
-[firm] Herzfrequenz, Schlaf, Schritte – alles im Blick.
+[cheerfully] Über 100 Sportmodi direkt am Handgelenk.
+[confident] Herzfrequenz, Schlaf, Schritte – alles im Blick.
 
-[bright] Zwei Armbänder inklusive!
+[cheerfully] Zwei Armbänder inklusive!
 [confident] Metall fürs Büro, Silikon fürs Gym.
 [reassured] IP67 wasserdicht – keine Angst vor Regen.
 
 Woman: [delighted] Wo kann man die kaufen?
 
-[enthusiastic] Im TikTok Shop. Einfach Link klicken!
+[cheerfully] Im TikTok Shop. Link ist unten!
 
 ---
 
@@ -91,13 +101,13 @@ Woman: [interested] 这个贵吗?
 [impressed] 超大尺寸,超级清晰。
 [excited] 710毫安时电池。续航近一周!
 
-[enthusiastic] 超过100种运动模式,直接在手腕上。
-[firm] 心率、睡眠、步数——全部掌握。
+[cheerfully] 超过100种运动模式,直接在手腕上。
+[confident] 心率、睡眠、步数——全部掌握。
 
-[bright] 包含两条表带!
+[cheerfully] 包含两条表带!
 [confident] 金属表带适合办公,硅胶表带适合健身。
 [reassured] IP67防水——不怕下雨。
 
 Woman: [delighted] 在哪里可以买?
 
-[enthusiastic] 在TikTok Shop。点击链接就行!
+[cheerfully] 在TikTok Shop。链接在下面!

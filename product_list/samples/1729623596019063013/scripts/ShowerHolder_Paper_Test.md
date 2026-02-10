@@ -38,36 +38,47 @@ source_notes:
 | 25-27 | Comparing wet exterior vs. bone-dry interior paper | PROOF contrast |
 | 27-30 | Text: "Dein iPhone ist sicher!" + product + cart | TRUST CTA |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Water test proof
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Wirklich spritzwassergeschützt?"** | **"真的防水吗？"** | Center |
+| 13–19s | Volle Dusche • Untertauchen | 全水淋 • 浸水 | Center-bottom |
+| 25–30s | Dein iPhone ist sicher! | 你的iPhone安全！ | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[skeptical] Wirklich spritzwassergeschützt? Ich glaub's nicht!
-[challenging] Lass uns das testen!
+[curious] Wirklich spritzwassergeschützt? Ich glaub's nicht!
+[confident] Lass uns das testen!
 [confident] Papier rein statt Handy!
 [matter-of-fact] Wenn das Papier nass wird, ist es Schrott!
 [intense] Volle Dusche drauf!
 [daring] Sogar untertauchen!
-[playful] Schütteln und testen!
+[warm] Schütteln und testen!
 [suspenseful] Moment der Wahrheit...
-[amazed] Was?! Komplett trocken!
+[impressed] Was?! Komplett trocken!
 [impressed] Nicht ein Tropfen drin!
-[satisfied] Dein iPhone ist absolut sicher!
-[direct] Hol's dir – link unten!
+[happy] Dein iPhone ist absolut sicher!
+[cheerfully] Hol's dir – link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
-[skeptical] 真的防溅水吗？我不信！
-[challenging] 我们来测试！
+[curious] 真的防溅水吗？我不信！
+[confident] 我们来测试！
 [confident] 放纸进去代替手机！
 [matter-of-fact] 如果纸湿了，就是垃圾！
 [intense] 全力淋浴冲击！
 [daring] 甚至浸入水中！
-[playful] 摇晃并测试！
+[warm] 摇晃并测试！
 [suspenseful] 真相时刻...
-[amazed] 什么？！完全干燥！
+[impressed] 什么？！完全干燥！
 [impressed] 里面一滴水都没有！
-[satisfied] 你的iPhone绝对安全！
-[direct] 拿下它——链接在下方！
+[happy] 你的iPhone绝对安全！
+[cheerfully] 拿下它——链接在下方！

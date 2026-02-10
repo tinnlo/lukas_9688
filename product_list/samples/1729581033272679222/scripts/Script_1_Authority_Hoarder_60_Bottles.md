@@ -49,6 +49,17 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Perfume collector authority validates budget choice over 60 expensive alternatives
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"60 Parfüms zu Hause"** | **"家里有60瓶香水"** | Center |
+| 23–28s | Morgens: Blumig • Abends: Vanille | 早晨：花香 • 晚上：香草 | Center-bottom |
+| 38–42s | Für den Preis? Unschlagbar | 这个价格？无敌 | Center |
+
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 45s)
@@ -63,17 +74,17 @@ source_notes:
 
 [neutral] Es ist ein Doppelpack. Zwei Düfte in einem Set.
 [educational] Morgens nehme ich den blumigen. Frisch, wie frisch geduscht.
-[bright] Abends den anderen. Vanille und Holz. Warm und gemütlich.
+[cheerfully] Abends den anderen. Vanille und Holz. Warm und gemütlich.
 
 [neutral] Und das Beste? Es hält wirklich.
 [impressed] Ich sprühe es morgens auf. Nachmittags rieche ich es noch.
 
 [neutral] Ich habe früher viel Geld für teure Marken ausgegeben.
 [reflective] Das hier riecht genauso gut.
-[satisfied] Aber kostet einen Bruchteil.
+[happy] Aber kostet einen Bruchteil.
 
 [neutral] Für den Preis? Unschlagbar.
-[enthusiastic] Hol's dir. Link unten.
+[cheerfully] Hol's dir. Link unten.
 
 
 ---
@@ -90,14 +101,14 @@ source_notes:
 
 [neutral] 这是双瓶装。一套两种香味。
 [educational] 早上我用花香的。清新，像刚洗完澡。
-[bright] 晚上用另一个。香草和木质。温暖舒适。
+[cheerfully] 晚上用另一个。香草和木质。温暖舒适。
 
 [neutral] 最棒的是？真的很持久。
 [impressed] 我早上喷。下午还能闻到。
 
 [neutral] 我以前花很多钱买昂贵的品牌。
 [reflective] 这个闻起来一样好。
-[satisfied] 但只需要一小部分价格。
+[happy] 但只需要一小部分价格。
 
 [neutral] 这个价格？无敌。
-[enthusiastic] 快买。链接在下面。
+[cheerfully] 快买。链接在下面。

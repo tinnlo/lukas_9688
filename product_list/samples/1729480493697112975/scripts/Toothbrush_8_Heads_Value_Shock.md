@@ -44,64 +44,74 @@ The "Value Shock" pattern - most successful format per video synthesis. Physical
 | 28-32 | Math overlay: "1 head every 3 months = 2 years" | Value: Long-term savings visualization |
 | 32-36 | Holding box to camera with all contents visible, pointing down | CTA: Complete package reveal |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Physical counting creates value shock
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"8 Bürstenköpfe!"** | **"8个刷头！"** | Center |
+| 12–16s | Markenköpfe: teuer | 品牌刷头：贵 | Top-left |
+| 28–32s | 1 Kopf / 3 Monate = 2 Jahre! | 1个刷头/3个月=2年！ | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[amazed] Schaut euch das an!
+[impressed] Schaut euch das an!
 [excited] Acht Bürstenköpfe inklusive!
 
-[enthusiastic] Eins, zwei, drei, vier.
+[cheerfully] Eins, zwei, drei, vier.
 [counting] Fünf, sechs, sieben, acht!
 
 [matter-of-fact] Jeder einzeln verpackt.
 [impressed] Das ist hygienisch und sauber.
 
-[skeptical] Moment, was kosten die bei Marken?
+[curious] Moment, was kosten die bei Marken?
 [shocked] So viel nur für Ersatzköpfe?
 
 [persuasive] Hier kriegst du alles für einen fairen Preis.
 [confident] Die ganze Bürste plus acht Köpfe!
 
 [curious] Ist das billig? Schau mal.
-[firm] USB-C Laden, solide Verarbeitung.
+[confident] USB-C Laden, solide Verarbeitung.
 
-[playful] Der Motor? Stark genug für Wasserfontänen!
-[satisfied] Fühlt sich massiv an.
+[warm] Der Motor? Stark genug für Wasserfontänen!
+[happy] Fühlt sich massiv an.
 
 [warm] Ein Kopf alle drei Monate.
 [impressed] Das sind zwei Jahre Vorrat!
 
-[urgent] Fast geschenkt, Leute.
-[firm] Link unten, solange Vorrat reicht!
+[cheerfully] Fast geschenkt, Leute.
+[confident] Link unten, solange Vorrat reicht!
 
 ### ZH (中文翻译 | 30–50s)
 
-[amazed] 看看这个！
+[impressed] 看看这个！
 [excited] 包含八个刷头！
 
-[enthusiastic] 一、二、三、四。
+[cheerfully] 一、二、三、四。
 [counting] 五、六、七、八！
 
 [matter-of-fact] 每个都单独包装。
 [impressed] 这很卫生干净。
 
-[skeptical] 等等，大品牌的要多少钱？
+[curious] 等等，大品牌的要多少钱？
 [shocked] 仅替换刷头就要这么贵？
 
 [persuasive] 这里全套价格很划算。
 [confident] 整个牙刷加八个刷头！
 
 [curious] 这是便宜货吗？看看。
-[firm] USB-C充电，做工扎实。
+[confident] USB-C充电，做工扎实。
 
-[playful] 马达？强到能喷水！
-[satisfied] 感觉很厚重。
+[warm] 马达？强到能喷水！
+[happy] 感觉很厚重。
 
 [warm] 每三个月一个刷头。
 [impressed] 这是两年的用量！
 
-[urgent] 几乎白送，各位。
-[firm] 链接在下面，售完为止！
+[cheerfully] 几乎白送，各位。
+[confident] 链接在下面，售完为止！

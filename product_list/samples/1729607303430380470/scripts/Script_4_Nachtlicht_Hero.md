@@ -34,6 +34,16 @@ source_notes:
 | **SOCIAL PROOF** | 00:28-00:33 | Quick cut: Product in 3 different rooms (bedroom, hallway, bathroom). Text: "Überall perfekt!" | **Versatility** |
 | **CTA** | 00:33-00:38 | Return to the glowing night light scene. Host smiles. Finger points to orange cart below. | **Call to Action** |
 
+## On-Screen Text
+
+**Strategy:** Solution Reveal — Pain point (dark hallway stumble) with immediate relief from motion sensor light.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–4s | **"Im Dunkeln tappen?"** | **"在黑暗中摸索？"** | Center |
+| 08–13s | Bewegungssensor • Sanftes Licht | 运动感应器 • 柔和灯光 | Center |
+| 23–28s | Einzelschalter = Kein Standby | 独立开关 = 无待机 | Center-bottom |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -44,34 +54,34 @@ source_notes:
 
 [annoyed] Und dann trittst du auch noch auf das Ladekabel.
 
-[bright] Schluss damit! Diese Steckdose hat einen eingebauten Bewegungssensor.
+[cheerfully] Schluss damit! Diese Steckdose hat einen eingebauten Bewegungssensor.
 
-[amazed] Komm einfach in die Nähe, und zack – sanftes Licht. Automatisch oder manuell, wie du willst.
+[impressed] Komm einfach in die Nähe, und zack – sanftes Licht. Automatisch oder manuell, wie du willst.
 
 [matter-of-fact] Gleichzeitig kannst du hier dein Handy laden, die elektrische Zahnbürste aufladen, und alles bleibt schön aufgeräumt auf der Ablage.
 
-[firm] Das Beste? Jede Steckdose hat einen eigenen Schalter. Kein Standby-Verbrauch mehr.
+[confident] Das Beste? Jede Steckdose hat einen eigenen Schalter. Kein Standby-Verbrauch mehr.
 
-[confident] Flur, Bad, Kinderzimmer – überall perfekt.
+[happy] Flur, Bad, Kinderzimmer – überall perfekt.
 
-[urgent] Hol sie dir jetzt! Der Link ist direkt hier unten.
+[cheerfully] Hol sie dir jetzt! Der Link ist direkt hier unten.
 
 ---
 
-### CN (中文翻译 | 仅供参考)
+### ZH (中文翻译 | 38s)
 
 [frustrated] 你有过这种经历吗？半夜起床在黑暗中找电灯开关？
 
 [annoyed] 然后还踩到了充电线。
 
-[bright] 受够了！这款插座内置了运动感应器。
+[cheerfully] 受够了！这款插座内置了运动感应器。
 
-[amazed] 只要靠近它，就会自动亮起柔和的灯光。自动或手动模式，随你选。
+[impressed] 只要靠近它，就会自动亮起柔和的灯光。自动或手动模式，随你选。
 
 [matter-of-fact] 同时你可以在这里给手机充电、给电动牙刷充电,所有东西都整齐地放在置物架上。
 
-[firm] 最棒的是什么？每个插座都有独立开关。再也不用待机耗电了。
+[confident] 最棒的是什么？每个插座都有独立开关。再也不用待机耗电了。
 
-[confident] 走廊、浴室、儿童房——哪里都完美适用。
+[happy] 走廊、浴室、儿童房——哪里都完美适用。
 
-[urgent] 现在就入手吧！链接就在下面。
+[cheerfully] 现在就入手吧！链接就在下面。

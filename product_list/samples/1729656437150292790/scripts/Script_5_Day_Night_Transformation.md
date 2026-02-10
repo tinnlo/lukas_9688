@@ -51,64 +51,74 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Product Label — Documentary/authentic transformation works with minimal text overlay, letting visuals drive the story.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 03–08s | 7:00 Uhr • Frisch | 7:00 • 清新 | Top |
+| 18–23s | 19:00 Uhr • Warm | 19:00 • 温暖 | Top |
+| 33–38s | 1 Set = Alle Anlässe | 1套 = 所有场合 | Center |
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 45s)
 
 > with ElevenLabs v3 (alpha) grammar
 
-[bright] Von Büro zu Date. Mit nur einem Set.
-[neutral] So geht's.
+[excited] Von Büro zu Date. Mit nur einem Set.
+[confident] So geht's.
 
-[neutral] Morgens um sieben sprühe ich "Forever Love".
-[educational] Das ist die rosa Flasche.
-[soft] Rose, Jasmin, ein Hauch Vanille.
-[bright] Frisch, leicht, perfekt für den Tag.
+[interested] Morgens um sieben sprühe ich "Forever Love".
+[matter-of-fact] Das ist die rosa Flasche.
+[warm] Rose, Jasmin, ein Hauch Vanille.
+[cheerfully] Frisch, leicht, perfekt für den Tag.
 
-[neutral] Ich gehe zur Arbeit. Meetings. Der Duft bleibt.
+[confident] Ich gehe zur Arbeit. Meetings. Der Duft bleibt.
 [matter-of-fact] Nicht aufdringlich, aber präsent.
 
-[neutral] Abends um sieben. Date-Vorbereitung.
+[curious] Abends um sieben. Date-Vorbereitung.
 [confident] Jetzt kommt "For One Night".
-[educational] Die bernsteinfarbene Flasche.
-[firm] Kaffee, Holz, tiefe Vanille.
-[enthusiastic] Warm, sinnlich, intensiver.
+[matter-of-fact] Die bernsteinfarbene Flasche.
+[impressed] Kaffee, Holz, tiefe Vanille.
+[cheerfully] Warm, sinnlich, intensiver.
 
-[reflective] Ein Set. Zwei Stimmungen. Alle Anlässe.
-[satisfied] Ich brauche nichts anderes.
+[thoughtful] Ein Set. Zwei Stimmungen. Alle Anlässe.
+[happy] Ich brauche nichts anderes.
 
-[neutral] Und das Beste?
-[excited] Super günstig für zwei komplette Düfte.
+[curious] Und das Beste?
+[surprised] Super günstig für zwei komplette Düfte.
 
-[encouraging] Hol dir das Set.
-[bright] Link oben. Klick drauf.
+[warm] Hol dir das Set.
+[cheerfully] Link ist unten. Klick drauf.
 
 ---
 
 ### ZH (中文翻译 | 45s)
 
-[bright] 从办公室到约会。只需一个套装。
-[neutral] 就是这样。
+[excited] 从办公室到约会。只需一个套装。
+[confident] 就是这样。
 
-[neutral] 早上七点我喷"Forever Love"。
-[educational] 这是粉色瓶子。
-[soft] 玫瑰、茉莉、一点香草。
-[bright] 清新、轻盈、白天完美。
+[interested] 早上七点我喷"Forever Love"。
+[matter-of-fact] 这是粉色瓶子。
+[warm] 玫瑰、茉莉、一点香草。
+[cheerfully] 清新、轻盈、白天完美。
 
-[neutral] 我去上班。开会。香味持续。
+[confident] 我去上班。开会。香味持续。
 [matter-of-fact] 不张扬，但存在。
 
-[neutral] 晚上七点。约会准备。
+[curious] 晚上七点。约会准备。
 [confident] 现在用"For One Night"。
-[educational] 琥珀色瓶子。
-[firm] 咖啡、木质、深层香草。
-[enthusiastic] 温暖、性感、更浓郁。
+[matter-of-fact] 琥珀色瓶子。
+[impressed] 咖啡、木质、深层香草。
+[cheerfully] 温暖、性感、更浓郁。
 
-[reflective] 一个套装。两种心情。所有场合。
-[satisfied] 我不需要别的了。
+[thoughtful] 一个套装。两种心情。所有场合。
+[happy] 我不需要别的了。
 
-[neutral] 最棒的是什么？
-[excited] 两种完整香水超便宜。
+[curious] 最棒的是什么？
+[surprised] 两种完整香水超便宜。
 
-[encouraging] 买这个套装。
-[bright] 上面的链接。点击它。
+[warm] 买这个套装。
+[cheerfully] 链接在下面。点击它。

@@ -43,6 +43,16 @@ source_notes:
 | 24-26 | Shaving sensitive area (neck/Adam's apple) without hesitation | Trust: Ultimate safety test |
 | 26-33 | Smiling confidently holding trimmer, touching smooth face | Payoff: Problem solved emotion |
 
+## On-Screen Text
+
+**Strategy:** Solution Reveal — Pain point to solution, ceramic safety focus
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Rasierbrand?"** | **"剃须灼伤？"** | Center |
+| 12–16s | Keramik = Kein Schneiden | 陶瓷 = 不会割伤 | Center |
+| 26–33s | Nie mehr Angst | 不再害怕 | Center-bottom |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -50,49 +60,49 @@ source_notes:
 ### DE (ElevenLabs Prompt | 30–50s)
 
 [frustrated] Wer liebt Rasieren, aber hasst die Pickel?
-[concerned] Und die Schnitte an empfindlichen Stellen?
+[frustrated] Und die Schnitte an empfindlichen Stellen?
 
 [disgusted] Normale Rasierer sind Müll.
 [blunt] Schauen Sie sich das an: stumpf und blutig.
 
-[intrigued] Aber dieser hier ist anders.
+[curious] Aber dieser hier ist anders.
 [confident] Keramikklingen, nicht Metall.
 
 [matter-of-fact] Keramik ist sanft zur Haut.
 [impressed] Das ist der ganze Unterschied.
 
 [curious] Schau mal, gegen den Strich.
-[satisfied] Glatt und viel angenehmer.
+[happy] Glatt und viel angenehmer.
 
-[amazed] Sogar am Hals, wo es heikel ist.
-[relieved] Kein Problem.
+[impressed] Sogar am Hals, wo es heikel ist.
+[happy] Kein Problem.
 
 [warm] Endlich keine Angst mehr beim Rasieren.
 [persuasive] Das ändert alles.
 
-[firm] Hol dir den Link unten!
+[confident] Hol dir den Link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
 [frustrated] 谁喜欢刮胡子，但讨厌长痘？
-[concerned] 还有敏感部位的割伤？
+[frustrated] 还有敏感部位的割伤？
 
 [disgusted] 普通剃刀是垃圾。
 [blunt] 看看这个：钝了还流血。
 
-[intrigued] 但这个不同。
+[curious] 但这个不同。
 [confident] 陶瓷刀片，不是金属。
 
 [matter-of-fact] 陶瓷对皮肤更温和。
 [impressed] 这就是全部区别。
 
 [curious] 看，逆着毛发方向。
-[satisfied] 光滑，而且更舒服。
+[happy] 光滑，而且更舒服。
 
-[amazed] 即使在脖子这种敏感地方。
-[relieved] 没问题。
+[impressed] 即使在脖子这种敏感地方。
+[happy] 没问题。
 
 [warm] 终于刮胡子不再害怕了。
 [persuasive] 这改变了一切。
 
-[firm] 去下面拿链接！
+[confident] 去下面拿链接！

@@ -43,6 +43,16 @@ The "Habit Challenge" pattern targeting manual brush users. Opens with immediate
 | 24-28 | Plugging USB-C cable into handle, modern charging visual | Convenience: No weird charging bases |
 | 28-34 | Before/after teeth comparison (or smile reveal), holding brush proudly | Result: Visual payoff + CTA |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Habit challenge with upgrade framing
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Noch manuell?"** | **"还在手动刷牙？"** | Center |
+| 16–20s | Intelligenter Timer | 智能计时器 | Center-bottom |
+| 24–28s | USB-C laden | USB-C充电 | Center-bottom |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -50,7 +60,7 @@ The "Habit Challenge" pattern targeting manual brush users. Opens with immediate
 ### DE (ElevenLabs Prompt | 30–50s)
 
 [questioning] Putzt du immer noch manuell?
-[skeptical] Im Jahr zweitausendsechsundzwanzig?
+[curious] Im Jahr zweitausendsechsundzwanzig?
 
 [blunt] Ich war auch skeptisch.
 [earnest] Aber google mal die Unterschiede.
@@ -59,24 +69,24 @@ The "Habit Challenge" pattern targeting manual brush users. Opens with immediate
 [impressed] Erreicht Stellen, die du verpasst.
 
 [curious] Schau, der intelligente Timer.
-[enthusiastic] Alle dreißig Sekunden vibriert er!
+[cheerfully] Alle dreißig Sekunden vibriert er!
 
 [warm] Wechsel zum nächsten Quadranten.
-[satisfied] So putzt du gleichmäßig.
+[happy] So putzt du gleichmäßig.
 
-[playful] Drei Modi: Clean, Sensitive, Whitening.
+[warm] Drei Modi: Clean, Sensitive, Whitening.
 [confident] Für jeden Zahn das Richtige.
 
 [casually] Und laden? USB-C, wie dein Handy.
-[relieved] Kein nerviger Ständer mehr.
+[happy] Kein nerviger Ständer mehr.
 
 [persuasive] Für den Preis machst du nichts falsch.
-[firm] Upgrade deine Zahnpflege jetzt!
+[confident] Upgrade deine Zahnpflege jetzt!
 
 ### ZH (中文翻译 | 30–50s)
 
 [questioning] 你还在用手动刷牙？
-[skeptical] 在2026年？
+[curious] 在2026年？
 
 [blunt] 我也曾怀疑。
 [earnest] 但去谷歌搜一下区别。
@@ -85,16 +95,16 @@ The "Habit Challenge" pattern targeting manual brush users. Opens with immediate
 [impressed] 能到达你刷不到的地方。
 
 [curious] 看，智能定时器。
-[enthusiastic] 每三十秒震动一次！
+[cheerfully] 每三十秒震动一次！
 
 [warm] 提醒你换到下一个区域。
-[satisfied] 这样刷得更均匀。
+[happy] 这样刷得更均匀。
 
-[playful] 三种模式：清洁、敏感、美白。
+[warm] 三种模式：清洁、敏感、美白。
 [confident] 为每颗牙齿提供合适护理。
 
 [casually] 充电？USB-C，和你的手机一样。
-[relieved] 不再需要烦人的充电座。
+[happy] 不再需要烦人的充电座。
 
 [persuasive] 这个价格，你不会错。
-[firm] 现在就升级你的口腔护理！
+[confident] 现在就升级你的口腔护理！

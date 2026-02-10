@@ -49,6 +49,17 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Hassle-free wireless
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Kein Bluetooth nötig"** | **"不需要蓝牙"** | Center |
+| 13–20s | Einfach drauflegen • Fertig | 直接放上去 • 完成 | Center-bottom |
+| 28–35s | Kein Bluetooth • Kein Stress | 无蓝牙 • 无压力 | Center |
+
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 35s)
@@ -61,17 +72,17 @@ source_notes:
 [dismissive] Diese Kopplungs-Chaos nervt einfach.
 
 [neutral] Aber das hier? Keine Einstellungen. Keine Probleme.
-[revealing] PAXA. Einfach Handy drauflegen.
+[surprised] PAXA. Einfach Handy drauflegen.
 
 [impressed] Musik spielt sofort. Laut und klar.
 
 [neutral] Beim Kochen? Kein Problem.
-[casual] Im Bad beim Fertigmachen? Perfekt.
+[happy] Im Bad beim Fertigmachen? Perfekt.
 
 [neutral] Kein Bluetooth. Kein Kabel. Kein Stress.
 [confident] Einfach nur Sound.
 
-[encouraging] Gönn dir das. Link unten.
+[warm] Gönn dir das. Link unten.
 
 
 ---
@@ -86,14 +97,14 @@ source_notes:
 [dismissive] 这配对混乱太烦人了。
 
 [neutral] 但这个？没有设置。没有问题。
-[revealing] PAXA。只需把手机放上去。
+[surprised] PAXA。只需把手机放上去。
 
 [impressed] 音乐立刻播放。响亮清晰。
 
 [neutral] 做饭时？没问题。
-[casual] 洗手间准备时？完美。
+[happy] 洗手间准备时？完美。
 
 [neutral] 无蓝牙。无线缆。无压力。
 [confident] 只有声音。
 
-[encouraging] 买吧。链接在下面。
+[warm] 买吧。链接在下面。

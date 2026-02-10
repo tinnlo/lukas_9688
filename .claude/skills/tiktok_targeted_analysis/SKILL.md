@@ -322,6 +322,24 @@ This skill generates **replication scripts** based on competitor videos. Key poi
 
 ---
 
+## TikTok Advertising Policy Compliance
+
+⚠️ **IMPORTANT:** While replicating competitor videos, the generated script may still violate TikTok's advertising policies.
+
+**Common issues to check:**
+- **Exact prices:** Competitor video may show "€15" but TikTok Shop policies prohibit this for ads
+- **Absolute claims:** Original video may say "100% wasserdicht" which violates policy
+- **Exaggerated promotions:** Phrases like "Preisglitch" or "unglaublich" may need softening
+
+**Before production:**
+1. Review generated `replication_script.md` for policy violations
+2. Run `python3 scripts/validate_compliance_flags.py targeted_analysis/YYYYMMDD/{video_id}/replication_script.md`
+3. Fix any violations using compliant alternatives (see `tiktok_script_generator/SKILL.md` policy tables)
+
+**Note:** Just because a competitor's video is live doesn't mean it complies with TikTok Shop advertising policies. User-generated content (UGC) has different review standards than paid ads.
+
+---
+
 ## File Structure After Completion
 
 ```

@@ -62,6 +62,16 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Solution Reveal — Transformation promise with before/after contrast
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Tristes Zimmer → Gemütlich"** | **"单调房间 → 温馨"** | Center |
+| 8–13s | Tagsüber: Echte Blumen? Nein! | 白天：真花？不是！ | Center-bottom |
+| 20–25s | Dein Rückzugsort | 你的避风港 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -71,19 +81,19 @@ source_notes:
 [matter-of-fact] Tristes Zimmer?
 [confident] Fünf Sekunden.
 
-[soft] Tagsüber sehen sie aus wie echte Tulpen.
+[warm] Tagsüber sehen sie aus wie echte Tulpen.
 [curious] Sind sie aber nicht.
 [warm] Perfektion simuliert.
 
 [whisper] Nachts.
 [warm] Schalte sie ein.
-[soft] Warmes Licht füllt den Raum.
+[warm] Warmes Licht füllt den Raum.
 
 [warm] Sofort gemütlich.
 [confident] Dein Rückzugsort.
-[soft] Entspannung pur.
+[warm] Entspannung pur.
 
-[bright] Verwandle dein Zimmer.
+[cheerfully] Verwandle dein Zimmer.
 [confident] Jetzt holen.
 
 ---
@@ -93,19 +103,19 @@ source_notes:
 [matter-of-fact] 单调的房间?
 [confident] 五秒钟。
 
-[soft] 白天看起来像真郁金香。
+[warm] 白天看起来像真郁金香。
 [curious] 但其实不是。
 [warm] 完美模拟。
 
 [whisper] 晚上。
 [warm] 打开它们。
-[soft] 温暖的光线充满房间。
+[warm] 温暖的光线充满房间。
 
 [warm] 立刻温馨。
 [confident] 你的避风港。
-[soft] 纯粹放松。
+[warm] 纯粹放松。
 
-[bright] 改造你的房间。
+[cheerfully] 改造你的房间。
 [confident] 现在就入手。
 
 ---

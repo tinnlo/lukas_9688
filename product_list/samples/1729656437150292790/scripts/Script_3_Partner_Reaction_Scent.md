@@ -48,35 +48,45 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Emotional / Lifestyle — Plays into the aspirational couple/attraction angle with warm, personal framing.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Er kann die Finger nicht lassen"** | **"他离不开我"** | Center |
+| 18–23s | Warme Vanille • Holz | 温暖香草 • 木质 | Center-bottom |
+| 37–42s | Wirkt wie Magie ✨ | 像魔法一样 ✨ | Center |
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 42s)
 
 > with ElevenLabs v3 (alpha) grammar
 
-[neutral] Mein Freund kann die Finger nicht von mir lassen, seit ich das trage.
-[playful] Kein Witz.
+[curious] Mein Freund kann die Finger nicht von mir lassen, seit ich das trage.
+[warm] Kein Witz.
 
-[neutral] Ich habe es heute Morgen aufgesprüht.
-[casual] Normal. Routine.
+[matter-of-fact] Ich habe es heute Morgen aufgesprüht.
+[happy] Normal. Routine.
 
-[neutral] Eine Stunde später kommt er ins Zimmer.
-[storytelling] Schnüffelt. Was ist das?
+[interested] Eine Stunde später kommt er ins Zimmer.
+[curious] Schnüffelt. Was ist das?
 
-[neutral] Das riecht... unglaublich.
-[impressed] Wie warme Vanille und Holz.
+[impressed] Das riecht... unglaublich.
+[warm] Wie warme Vanille und Holz.
 
-[neutral] Ich zeige ihm die Flasche. LASTAR.
-[revealing] Er sagt: Das riecht wie teure Kosmetik.
+[confident] Ich zeige ihm die Flasche. LASTAR.
+[surprised] Er sagt: Das riecht wie teure Kosmetik.
 
-[neutral] Aber es kostet keine 20 Euro.
-[shocked] Zwei Flaschen. Eins für mich, eins für ihn.
+[impressed] Aber es ist preiswert.
+[cheerfully] Zwei Flaschen. Eins für mich, eins für ihn.
 
-[neutral] Seit dem Tag tragen wir beide das.
-[satisfied] Zusammen riechen wir wie ein Dessert.
+[happy] Seit dem Tag tragen wir beide das.
+[cheerfully] Zusammen riechen wir wie ein Dessert.
 
-[neutral] Das Zeug wirkt wie Magie.
-[confident] Hol's dir. Link oben.
+[confident] Das Zeug wirkt wie Magie.
+[warm] Hol's dir. Link ist unten.
 
 
 ---
@@ -85,26 +95,26 @@ source_notes:
 
 ### ZH (中文翻译 | 42s)
 
-[neutral] 我男朋友自从我喷这个就离不开我了。
-[playful] 不开玩笑。
+[curious] 我男朋友自从我喷这个就离不开我了。
+[warm] 不开玩笑。
 
-[neutral] 我今早喷的。
-[casual] 正常。日常。
+[matter-of-fact] 我今早喷的。
+[happy] 正常。日常。
 
-[neutral] 一小时后他进房间。
-[storytelling] 嗅了嗅。这是什么？
+[interested] 一小时后他进房间。
+[curious] 嗅了嗅。这是什么？
 
-[neutral] 这闻起来...不可思议。
-[impressed] 像温暖的香草和木头。
+[impressed] 这闻起来...不可思议。
+[warm] 像温暖的香草和木头。
 
-[neutral] 我给他看瓶子。LASTAR。
-[revealing] 他说：这闻起来像昂贵的化妆品。
+[confident] 我给他看瓶子。LASTAR。
+[surprised] 他说：这闻起来像昂贵的化妆品。
 
-[neutral] 但不到 20 欧元。
-[shocked] 两瓶。一瓶给我，一瓶给他。
+[impressed] 但价格很友好。
+[cheerfully] 两瓶。一瓶给我，一瓶给他。
 
-[neutral] 从那天起我们都喷。
-[satisfied] 我们一起闻起来像甜点。
+[happy] 从那天起我们都喷。
+[cheerfully] 我们一起闻起来像甜点。
 
-[neutral] 这东西像魔法。
-[confident] 买吧。链接在上面。
+[confident] 这东西像魔法。
+[warm] 买吧。链接在下面。

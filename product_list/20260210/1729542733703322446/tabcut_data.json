@@ -1,0 +1,96 @@
+{
+  "product_id": "1729542733703322446",
+  "scraped_at": "2026-02-10T16:13:58.357584",
+  "product_info": {
+    "product_name": "REDHUT Tragbarer Dampfreiniger 12 Zubehörteile, hoher Druck und umweltfreundlich, Desodorierung und Desinfektion im Haushalt, Küche und Bad",
+    "shop_owner": "REDHUT-DE",
+    "total_sales": 51500,
+    "total_sales_revenue": "€ 179.58万($ 209.05万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "30day",
+    "sales_count": 9544,
+    "sales_revenue": "$ 28.88万",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "4.30%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 419,
+    "带货视频达人数": 160,
+    "带货视频销量": 86,
+    "带货视频销售额": "$ 2602.02",
+    "广告成交金额": "$ 2450.74",
+    "广告成交占比": "94.19%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADобзор на пароочиститель 🧖‍♀️🧹 #пароочиститель #уборка #окна #помошникподому 发现时间：2026.02.06 02:13更新时间：2026.02.07 22:12时长：00:01:03跳转至 TikTok",
+      "creator_username": "dobro_alina",
+      "creator_followers": "1.73万",
+      "publish_date": "2026-02-05 14:00",
+      "estimated_sales": 27,
+      "estimated_revenue": "€ 701.73($ 816.91)",
+      "total_views": "2.2万",
+      "video_url": "https://www.tiktok.com/@dobro_alina/video/7603365134743948566?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_dobro_alina.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#dampfreiniger #redhut #blackfridaydeals #blackfriday #tiktokmademebuylt发现时间：2026.01.27 11:10更新时间：2026.02.09 05:09时长：00:01:33跳转至 TikTok",
+      "creator_username": "mahintahiri3",
+      "creator_followers": "1.12万",
+      "publish_date": "2026-01-26 18:53",
+      "estimated_sales": 16,
+      "estimated_revenue": "€ 415.84($ 484.1)",
+      "total_views": "8.75万",
+      "video_url": "https://www.tiktok.com/@mahintahiri3/video/7599729983610735894?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_mahintahiri3.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADعالیترین ماشین بخار برای ضد عفونی کنی و از بین برنده لکه های سابقه تمام سطوح خانه #tiktokshop #اکسپلور_تیک_تاک #tiktoker #fyp #viralvideos 发现时间：2026.01.30 15:15更新时间：2026.02.05 23:40时长：00:02:15跳转至 TikTok",
+      "creator_username": "badakhshancuisine",
+      "creator_followers": "7.83万",
+      "publish_date": "2026-01-29 20:19",
+      "estimated_sales": 6,
+      "estimated_revenue": "€ 155.94($ 181.54)",
+      "total_views": "2.38万",
+      "video_url": "https://www.tiktok.com/@badakhshancuisine/video/7600865376330648854?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_badakhshancuisine.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#cleaning #steamcleaner #cleantok #tiktokshop #Redhut 发现时间：2026.02.03 13:37更新时间：2026.02.08 14:36时长：00:00:33跳转至 TikTok",
+      "creator_username": "redhut_de",
+      "creator_followers": "1.03万",
+      "publish_date": "2026-02-03 09:42",
+      "estimated_sales": 6,
+      "estimated_revenue": "€ 155.94($ 181.54)",
+      "total_views": "3928",
+      "video_url": "https://www.tiktok.com/@redhut_de/video/7602556633461345558?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_redhut_de.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD💢Dampfreiniger Redhut❤️ richtig sauber ohne Chemie..auch stark eingebranntes +empfindliche Flächen..bin wirklich begeistert💢 #dampfreiniger #reinigung  #sauber #redhut #heim 发现时间：2026.02.04 07:22更新时间：2026.02.09 05:22时长：00:01:39跳转至 TikTok",
+      "creator_username": "ugc.ibuco",
+      "creator_followers": "2万",
+      "publish_date": "2026-02-02 18:42",
+      "estimated_sales": 4,
+      "estimated_revenue": "€ 103.96($ 121.02)",
+      "total_views": "5715",
+      "video_url": "https://www.tiktok.com/@ugc.ibuco/video/7602324625346891030?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_ugc.ibuco.mp4"
+    }
+  ]
+}

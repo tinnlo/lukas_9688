@@ -46,6 +46,16 @@ The "Box Reveal" pattern building curiosity and "insider" status. Raw, authentic
 | 30-34 | Holding everything spread out on table, satisfied smile | Value: Full reveal |
 | 34-38 | Leaning into camera conspiratorially, pointing down | CTA: Sharing "insider" tip |
 
+## On-Screen Text
+
+**Strategy:** Hook Overlay — ASMR unboxing with insider tip framing
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Paket ist da!"** | **"包裹到了！"** | Center |
+| 14–18s | 8 Köpfe inklusive! | 包含8个刷头！ | Center-bottom |
+| 26–30s | Tipp: 2 kaufen = gratis Versand | 小贴士：买2个=免费配送 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -55,55 +65,55 @@ The "Box Reveal" pattern building curiosity and "insider" status. Raw, authentic
 [excited] Leute, schaut mal was angekommen ist!
 [curious] Ich hab diesen Geheimtipp auf TikTok gefunden.
 
-[playful] Hört ihr das?
+[warm] Hört ihr das?
 [whisper] ASMR-Unboxing Zeit!
 
-[enthusiastic] Okay, ich mach's auf.
-[amazed] Wow, das fühlt sich solide an!
+[cheerfully] Okay, ich mach's auf.
+[impressed] Wow, das fühlt sich solide an!
 
 [impressed] Moment, wie viele Köpfe sind das?
 [counting] Eins, zwei, drei... acht Stück!
 
 [delighted] USB-C Kabel auch dabei.
-[satisfied] Sogar eine Anleitung auf Deutsch!
+[happy] Sogar eine Anleitung auf Deutsch!
 
-[intrigued] Warte, hier steht ein Tipp.
+[curious] Warte, hier steht ein Tipp.
 [mischievously] Nimm zwei für kostenlosen Versand!
 
-[enthusiastic] Das ist schlauer als einzeln.
+[cheerfully] Das ist schlauer als einzeln.
 [persuasive] Eine für dich, eine für deinen Partner.
 
 [warm] Für den Preis ist das ganze Set mega.
 [confident] Das ist wirklich kein Scherz.
 
 [cheerful] Gönn dir, bevor es weg ist!
-[firm] Link ist unten, dankt mir später!
+[confident] Link ist unten, dankt mir später!
 
 ### ZH (中文翻译 | 30–50s)
 
 [excited] 各位，看看收到了什么！
 [curious] 我在TikTok上发现了这个秘密。
 
-[playful] 听到了吗？
+[warm] 听到了吗？
 [whisper] ASMR开箱时间！
 
-[enthusiastic] 好，我现在打开。
-[amazed] 哇，手感很扎实！
+[cheerfully] 好，我现在打开。
+[impressed] 哇，手感很扎实！
 
 [impressed] 等等，有多少个刷头？
 [counting] 一、二、三……八个！
 
 [delighted] 还有USB-C线。
-[satisfied] 甚至还有德语说明书！
+[happy] 甚至还有德语说明书！
 
-[intrigued] 等等，这里有个提示。
+[curious] 等等，这里有个提示。
 [mischievously] 买两个免运费！
 
-[enthusiastic] 这比单买更聪明。
+[cheerfully] 这比单买更聪明。
 [persuasive] 一个给你，一个给你伴侣。
 
 [warm] 整套价格很划算。
 [confident] 这真的不是开玩笑。
 
 [cheerful] 趁没卖完赶紧买！
-[firm] 链接在下面，一会儿感谢我！
+[confident] 链接在下面，一会儿感谢我！

@@ -36,36 +36,47 @@ source_notes:
 | 22-26 | Creator smug face: "Ich hab's gewusst!" | REDEMPTION ARC complete |
 | 26-30 | Text: "Das Geschenk, das alle lieben" + product + cart | GIFTING CTA |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Gift fail turned win
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Schlimmstes Geschenk?"** | **"最糟糕的礼物？"** | Center |
+| 13–19s | Beste Geschenk ever | 史上最佳礼物 | Center-bottom |
+| 22–30s | Alle kämpfen darum | 大家抢着用 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[embarrassed] Ich habe das schlimmste Geschenk gemacht!
+[frustrated] Ich habe das schlimmste Geschenk gemacht!
 [cringing] Ein Massagegerät... peinlich, oder?
 [defensive] Aber ich dachte, es hilft!
 [surprised] Eine Woche später – die Nachricht!
 [impressed] "Das ist das beste Geschenk ever!"
 [amused] Mama benutzt es täglich!
-[satisfied] Papa auch!
-[playful] Sogar Oma will eins!
+[happy] Papa auch!
+[warm] Sogar Oma will eins!
 [proud] Jetzt kämpfen sie darum!
 [confident] Ich hab's gewusst!
-[enthusiastic] Perfekt für Mütter, Väter, Großeltern!
-[direct] Das Geschenk, das alle lieben – jetzt holen!
+[cheerfully] Perfekt für Mütter, Väter, Großeltern!
+[cheerfully] Das Geschenk, das alle lieben – jetzt holen!
 
 ### ZH (中文翻译 | 30–50s)
 
-[embarrassed] 我送了最糟糕的礼物！
+[frustrated] 我送了最糟糕的礼物！
 [cringing] 一个按摩器...尴尬吧？
 [defensive] 但我以为有帮助！
 [surprised] 一周后——收到信息！
 [impressed] "这是最好的礼物！"
 [amused] 妈妈每天都用！
-[satisfied] 爸爸也是！
-[playful] 连奶奶都想要一个！
+[happy] 爸爸也是！
+[warm] 连奶奶都想要一个！
 [proud] 现在他们在抢！
 [confident] 我早就知道！
-[enthusiastic] 非常适合妈妈、爸爸、祖父母！
-[direct] 每个人都喜欢的礼物——现在就拿！
+[cheerfully] 非常适合妈妈、爸爸、祖父母！
+[cheerfully] 每个人都喜欢的礼物——现在就拿！

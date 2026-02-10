@@ -52,36 +52,47 @@ Leading with visceral attraction reaction to trigger emotional purchase motivati
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Emotional/Lifestyle — Female partner testimonial creates social proof through attraction validation
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Ich flippe aus"** | **"我疯了"** | Center |
+| 18–23s | Holzig • Muskat • Männlich | 木质 • 肉豆蔻 • 男性 | Center-bottom |
+| 38–43s | Zieh sie an | 吸引她 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 45s)
 
-[playful] Mein Freund trägt das und ich flippe aus.
+[warm] Mein Freund trägt das und ich flippe aus.
 [warm] Seit er LASTAR benutzt, kann ich die Finger nicht von ihm lassen.
 [amused] Ich rieche ihn von der anderen Seite des Zimmers.
 [curious] Und ich bin nicht die Einzige.
 [surprised] Meine Freundinnen fragen ständig: Was trägt er?
-[confident] Der Duft ist holzig. [bright] Mit Muskat. [satisfied] Männlich, aber nicht aufdringlich.
+[confident] Der Duft ist holzig. [cheerfully] Mit Muskat. [happy] Männlich, aber nicht aufdringlich.
 [impressed] Er hält den ganzen Tag.
 [reflective] Morgens aufgetragen, abends noch da.
 [matter-of-fact] Das ist kein Zufall.
-[encouraging] Jungs, wenn ihr wollt, dass sie euch bemerkt, probiert das.
+[warm] Jungs, wenn ihr wollt, dass sie euch bemerkt, probiert das.
 [neutral] Link ist unten.
 
 ---
 
 ### ZH (中文翻译 | 45s)
 
-[playful] 我男朋友用这个，我快疯了。
+[warm] 我男朋友用这个，我快疯了。
 [warm] 自从他用 LASTAR，我就忍不住想靠近他。
 [amused] 我在房间另一边都能闻到他。
 [curious] 而且不只我一个人。
 [surprised] 我的女性朋友们总是问：他喷的什么？
-[confident] 香味是木质的。[bright] 有肉豆蔻。[satisfied] 男性，但不刺鼻。
+[confident] 香味是木质的。[cheerfully] 有肉豆蔻。[happy] 男性，但不刺鼻。
 [impressed] 一整天都持久。
 [reflective] 早上喷，晚上还在。
 [matter-of-fact] 这不是巧合。
-[encouraging] 男生们，如果你想让她注意到你，试试这个。
+[warm] 男生们，如果你想让她注意到你，试试这个。
 [neutral] 链接在下面。

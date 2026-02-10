@@ -51,6 +51,17 @@ Direct confrontation of the label claim to establish expertise and masculine app
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Challenges unisex label to position as masculine alpha scent
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Unisex = Lüge?"** | **"中性=谎言？"** | Center |
+| 10–15s | Holz • Toffee • Kardamom | 木质 • 太妃糖 • 小豆蔻 | Center-bottom |
+| 35–42s | Männer zuerst | 男士优先 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -59,15 +70,15 @@ Direct confrontation of the label claim to establish expertise and masculine app
 
 [blunt] Steht Unisex drauf.
 [dismissive] Das ist die größte Lüge im TikTok Shop.
-[firm] Das hier ist hundert Prozent maskulin.
-[confident] Emberwood. [bright] Toffee. [warm] Kardamom.
+[confident] Das hier ist hundert Prozent maskulin.
+[confident] Emberwood. [cheerfully] Toffee. [warm] Kardamom.
 [impressed] Das ist keine Spielerei—das ist ein Winter-Duft-Hammer.
 [matter-of-fact] Ich habe das heute Morgen um acht aufgetragen.
 [surprised] Jetzt ist es achtzehn Uhr und ich rieche es noch.
-[satisfied] Eau de Parfum konzentriert. [firm] Das Zeug ist real.
-[playful] Meine Freundin will es mir ständig klauen.
+[happy] Eau de Parfum konzentriert. [confident] Das Zeug ist real.
+[warm] Meine Freundin will es mir ständig klauen.
 [amused] Aber nein. [confident] Das ist meins.
-[encouraging] Männer, holt euch das, bevor die Frauen es wegkaufen.
+[warm] Männer, holt euch das, bevor die Frauen es wegkaufen.
 [neutral] Link ist unten.
 
 ---
@@ -76,13 +87,13 @@ Direct confrontation of the label claim to establish expertise and masculine app
 
 [blunt] 瓶子上写着中性。
 [dismissive] 这是 TikTok Shop 最大的谎言。
-[firm] 这百分百是男性香。
-[confident] 余烬木。[bright] 太妃糖。[warm] 豆蔻。
+[confident] 这百分百是男性香。
+[confident] 余烬木。[cheerfully] 太妃糖。[warm] 豆蔻。
 [impressed] 这不是闹着玩的——这是冬季香水王牌。
 [matter-of-fact] 我今天早上八点喷的。
 [surprised] 现在都晚上六点了，还能闻到。
-[satisfied] 浓香水级别。[firm] 这东西是真的。
-[playful] 我女朋友老想偷我的。
+[happy] 浓香水级别。[confident] 这东西是真的。
+[warm] 我女朋友老想偷我的。
 [amused] 但不行。[confident] 这是我的。
-[encouraging] 男士们，趁女士们抢光之前快买。
+[warm] 男士们，趁女士们抢光之前快买。
 [neutral] 链接在下面。

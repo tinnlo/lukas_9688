@@ -40,38 +40,48 @@ source_notes:
 | 26-30 | Person taking bite of steak, eyes closing in satisfaction, chef's kiss gesture | EMOTIONAL PAYOFF - taste satisfaction |
 | 30-35 | Product on BBQ table with grill in background, text: "Mach dein BBQ perfekt" + cart pointer | CTA with lifestyle positioning |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Fresh pepper upgrade for better taste
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Steak langweilig?"** | **"牛排无聊？"** | Center |
+| 16–20s | Frisch gemahlen = Mehr Geschmack | 现磨 = 更多味道 | Center-bottom |
+| 30–35s | Mach dein BBQ perfekt | 让你的烧烤完美 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[skeptical] Dein Steak schmeckt langweilig? Hier ist warum.
+[curious] Dein Steak schmeckt langweilig? Hier ist warum.
 [disappointed] Alter, vorgemahlener Pfeffer ist geschmacklos.
-[firm] Die Öle sind längst verflogen.
-[intrigued] Aber frisch gemahlen?
+[confident] Die Öle sind längst verflogen.
+[curious] Aber frisch gemahlen?
 [excited] Das ist ein kompletter Gamechanger!
 [impressed] Diese elektrische Mühle zerkleinert Pfefferkörner perfekt.
 [confident] Ein Knopfdruck – fertig!
-[enthusiastic] Und du kannst die Grobheit einstellen!
+[cheerfully] Und du kannst die Grobheit einstellen!
 [matter-of-fact] Fein für Salat, grob für Steak.
-[satisfied] Frisch gemahlener Pfeffer setzt ätherische Öle frei.
+[happy] Frisch gemahlener Pfeffer setzt ätherische Öle frei.
 [warm] Das schmeckst du sofort.
-[playful] Deine Gäste werden nach dem Rezept fragen!
-[direct] Mach dein BBQ perfekt – link unten!
+[warm] Deine Gäste werden nach dem Rezept fragen!
+[cheerfully] Mach dein BBQ perfekt – link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
-[skeptical] 你的牛排味道很无聊？原因在这里。
+[curious] 你的牛排味道很无聊？原因在这里。
 [disappointed] 老式预磨胡椒毫无味道。
-[firm] 精油早就挥发了。
-[intrigued] 但新鲜研磨呢？
+[confident] 精油早就挥发了。
+[curious] 但新鲜研磨呢？
 [excited] 这完全改变游戏规则！
 [impressed] 这款电动研磨器完美粉碎胡椒粒。
 [confident] 按一下按钮——搞定！
-[enthusiastic] 而且你可以调节粗细！
+[cheerfully] 而且你可以调节粗细！
 [matter-of-fact] 沙拉用细的，牛排用粗的。
-[satisfied] 新鲜研磨的胡椒释放芳香油。
+[happy] 新鲜研磨的胡椒释放芳香油。
 [warm] 你能立刻尝到。
-[playful] 你的客人会问你的秘方！
-[direct] 让你的烧烤完美——链接在下方！
+[warm] 你的客人会问你的秘方！
+[cheerfully] 让你的烧烤完美——链接在下方！

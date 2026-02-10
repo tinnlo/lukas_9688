@@ -18,6 +18,32 @@ prerequisite: tiktok-product-analysis
 
 ---
 
+## ⚠️ MANDATORY COMPLIANCE GATE ⚠️
+
+**CRITICAL:** All generated scripts MUST pass TikTok policy compliance validation before workflow completion.
+
+**YOU WILL SKIP THIS AT YOUR PERIL.** This step is NON-NEGOTIABLE.
+
+```bash
+# Run IMMEDIATELY after writing scripts (Step 3)
+for script in product_list/YYYYMMDD/{product_id}/scripts/*.md; do
+  [[ "$(basename "$script")" == "Campaign_Summary.md" ]] && continue
+  python3 scripts/validate_compliance_flags.py "$script" || exit 1
+done
+```
+
+**If ANY script fails:** STOP. Fix violations using the TikTok Policy Compliance tables. Re-validate until ALL scripts pass.
+
+**Common violations to watch for:**
+- Exact € prices ("15€", "€9.99")
+- Absolute claims ("100%", "perfekt", "immer")
+- Exaggerated promotions ("unglaublich", "genial", "Preisglitch")
+- Medical claims without qualification
+
+See **Step 3.5: MANDATORY Compliance Validation Gate** for complete process.
+
+---
+
 ## Core Script Lock (MANDATORY)
 
 Read inputs only from analysis artifacts produced by core scripts in `.claude/skills/CORE_SCRIPTS.md`.
@@ -44,10 +70,10 @@ Do not rely on deprecated wrapper outputs.
 
 ---
 
-## Workflow (4 Steps - OPTIMIZED)
+## Workflow (5 Steps - OPTIMIZED)
 
 ```
-[Step 0: Pre-Check] → GATE
+[Step 0: Pre-Check] → GATE (analysis files exist)
         │
         ▼
 [Step 1: Read Analysis Files in Parallel] → Extract key insights
@@ -59,10 +85,17 @@ Do not rely on deprecated wrapper outputs.
 [Step 3: Write All Files in Parallel] → 4 Write calls simultaneously
         │                                ⭐ 2x faster
         ▼
+[Step 3.5: 🚨 COMPLIANCE VALIDATION GATE 🚨] → MANDATORY BLOCKING STEP
+        │                                       Run validate_compliance_flags.py
+        │                                       Fix ALL violations before proceeding
+        │                                       ⚠️ DO NOT SKIP THIS STEP ⚠️
+        ▼
 [Step 4: Quality Gate] → Verify completeness
 ```
 
 **Key Optimization (v2.3.0):** Steps 2-3 now execute in ONE MESSAGE with parallel Write tool calls, eliminating sequential overhead.
+
+**CRITICAL CHANGE (v2.4.1):** Step 3.5 is a NEW MANDATORY gate that validates TikTok policy compliance. This step is BLOCKING and CANNOT be skipped.
 
 ---
 
@@ -370,6 +403,179 @@ done
 
 ---
 
+#### **CTA Language: TikTok Shopping Cart (NEW)**
+
+**CRITICAL:** TikTok now uses orange shopping cart (not external bio/profile links).
+
+**Required CTA format:**
+
+| ✅ REQUIRED | ❌ NEVER USE |
+|:------------|:-------------|
+| `Link ist unten` (DE) | `Link oben` |
+| `链接在下面` (ZH) | `Link im Profil` |
+| | `Link im Bio` |
+| | `链接在上面` |
+| | `简介里的链接` |
+
+**CTA examples:**
+- `[confident] Link ist unten.`
+- `[cheerfully] Link ist unten. Jetzt sichern.`
+- `[warm] Hol's dir. Link ist unten.`
+
+**Rule:** Always direct users to the TikTok shopping cart below the video, not profile/bio links.
+
+---
+
+## Step 3.5: 🚨 MANDATORY COMPLIANCE VALIDATION GATE 🚨 (BLOCKING)
+
+**THIS STEP IS NON-NEGOTIABLE. DO NOT PROCEED TO STEP 4 UNTIL ALL SCRIPTS PASS.**
+
+After writing all scripts in Step 3, you MUST immediately validate them against TikTok advertising policies.
+
+### Why This Gate Exists
+
+- **Real incident:** In February 2026, scripts were generated with policy violations ("price glitch" narrative, exact € amounts, "unglaublich" exaggerations)
+- **User discovery:** User caught violations AFTER script generation completed
+- **Root cause:** Compliance validation was embedded in Step 4 but not emphasized enough
+- **Solution:** This is now a separate, mandatory gate that BLOCKS workflow completion
+
+### Validation Process
+
+```bash
+product_id="{product_id}"
+date="YYYYMMDD"
+scripts_dir="product_list/$date/$product_id/scripts"
+
+echo "=== 🚨 STEP 3.5: COMPLIANCE VALIDATION GATE 🚨 ==="
+echo "Validating all scripts against TikTok advertising policies..."
+echo ""
+
+compliance_fail=0
+violation_files=()
+
+for script in "$scripts_dir"/*.md; do
+    [[ "$(basename "$script")" == "Campaign_Summary.md" ]] && continue
+    [[ -e "$script" ]] || continue
+
+    echo "Checking: $(basename "$script")"
+
+    if ! python3 scripts/validate_compliance_flags.py "$script"; then
+        echo "❌ VIOLATION DETECTED in $(basename "$script")"
+        compliance_fail=1
+        violation_files+=("$script")
+    else
+        echo "✅ PASS: $(basename "$script")"
+    fi
+    echo ""
+done
+
+if [ "$compliance_fail" -eq 1 ]; then
+    echo ""
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "⚠️ WORKFLOW BLOCKED: COMPLIANCE VIOLATIONS DETECTED ⚠️"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+    echo "Files with violations:"
+    for file in "${violation_files[@]}"; do
+        echo "  - $(basename "$file")"
+    done
+    echo ""
+    echo "REQUIRED ACTIONS:"
+    echo "1. Review each violation in the TikTok Policy Compliance section"
+    echo "2. Use the compliant alternatives table to fix violations"
+    echo "3. Re-run this validation until ALL scripts pass"
+    echo "4. DO NOT proceed to Step 4 until this gate is clear"
+    echo ""
+    echo "Common fixes:"
+    echo "  - Exact prices → Remove € amounts, use 'günstig' or 'gutes Angebot'"
+    echo "  - 'perfekt', '100%', 'immer' → Use qualified alternatives"
+    echo "  - 'unglaublich', 'genial' → Use 'praktisch', 'gut', 'hilfreich'"
+    echo "  - 'Preisglitch' → Use 'Deal', 'Angebot', 'Schnäppchen'"
+    echo ""
+    exit 1
+fi
+
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "✅ COMPLIANCE GATE PASSED: ALL SCRIPTS CLEAN"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "You may now proceed to Step 4."
+echo ""
+```
+
+### Manual Validation (If Automated Script Unavailable)
+
+If `validate_compliance_flags.py` is not available, manually check EVERY script for:
+
+**POLICY 1: No Exact Low Price Bait** 🚫
+- [ ] No € symbols anywhere (caption, voiceover, on-screen text)
+- [ ] No exact amounts: "9€", "€9.99", "15 Euro", "50% Rabatt"
+- [ ] No comparison math: "statt €50", "von €X auf €Y"
+
+**POLICY 2: No Absolute Effect Claims** 🚫
+- [ ] No "100%", "komplett", "total", "pure"
+- [ ] No "perfekt", "genauso gut", "besser als [Brand]"
+- [ ] No "immer", "nie", "sofort", "instant"
+
+**POLICY 3: No Exaggerated Promotions** 🚫
+- [ ] No "unglaublich", "unbezahlbar", "genial"
+- [ ] No "Preisglitch", "price error", "Fehler im System"
+- [ ] No false urgency: "letzte Chance", "nur noch 3 Stück", "bevor es weg ist"
+
+**POLICY 4: Medical & Health Claims** 🚫
+- [ ] No "heilt", "Schmerzlinderung", "Therapie"
+- [ ] Use wellness language: "Entspannung", "Wohlbefinden", "angenehm"
+
+**POLICY 5: Waterproof & Tech Specs** 🚫
+- [ ] No "100% wasserdicht" without IP rating proof
+- [ ] Use qualified terms: "spritzwassergeschützt", "wasserabweisend"
+
+### Fixing Violations
+
+When violations are found:
+
+1. **Identify the specific policy violated** (see tables in TikTok Policy Compliance section)
+2. **Find the compliant alternative** from the provided tables
+3. **Edit the script** using the Edit tool
+4. **Re-validate immediately** after each fix
+5. **Do not batch fixes** - validate after each script edit to ensure no new violations introduced
+
+**Example fix workflow:**
+
+```
+❌ Found: "Nur 15€ im Angebot!"
+✅ Fix to: "Super günstig im Angebot!"
+
+❌ Found: "Das ist unglaublich gut!"
+✅ Fix to: "Das ist wirklich gut!"
+
+❌ Found: "Perfektes Geschenk für jeden"
+✅ Fix to: "Schönes Geschenk für jeden"
+```
+
+### Common Mistake: Introducing New Violations While Fixing
+
+**WARNING:** When editing scripts to fix violations, be careful not to introduce NEW violations.
+
+**Example of what NOT to do:**
+- Fixing "15€" by changing to "unglaublich günstig" → NEW violation (exaggerated promotion)
+- Fixing "100% wasserdicht" by changing to "komplett geschützt" → NEW violation (absolute claim)
+
+**Always re-validate after EVERY edit.**
+
+### When This Gate is Complete
+
+You will see:
+```
+✅ COMPLIANCE GATE PASSED: ALL SCRIPTS CLEAN
+You may now proceed to Step 4.
+```
+
+Only then may you continue to Step 4: Quality Gate.
+
+**IF YOU SKIP THIS STEP, YOU HAVE FAILED THE WORKFLOW.**
+
+---
+
 ### Required Sections
 
 ```markdown
@@ -455,7 +661,9 @@ Product_Model_KeyAngle.md   # e.g., HTC_NE20_AI_Uebersetzer_Earbuds.md
 
 ---
 
-## Step 4: Quality Gate (Post-Write Validation)
+## Step 4: Quality Gate (Final Validation)
+
+**PREREQUISITE:** Step 3.5 Compliance Validation Gate MUST be complete and passed.
 
 ```bash
 product_id="{product_id}"
@@ -463,6 +671,14 @@ date="YYYYMMDD"
 scripts_dir="product_list/$date/$product_id/scripts"
 
 echo "=== QUALITY GATE: $product_id ==="
+
+# Verify Step 3.5 compliance gate was completed
+if [ ! -f "$scripts_dir/.compliance_validated" ]; then
+    echo "❌ BLOCKED: Step 3.5 Compliance Validation Gate not completed"
+    echo "   You must run compliance validation before this step"
+    echo "   Run: Step 3.5 validation commands"
+    exit 1
+fi
 
 # Check script count (exclude Campaign_Summary.md)
 script_count=$(ls -1 "$scripts_dir"/*.md 2>/dev/null | grep -v 'Campaign_Summary.md' | wc -l | tr -d ' ')
@@ -512,29 +728,8 @@ for script in "$scripts_dir"/*.md; do
 done
 echo "✅ Script quality verified"
 
-# CRITICAL: TikTok Policy Compliance Validation
-echo ""
-echo "=== TIKTOK POLICY COMPLIANCE CHECK ==="
-echo "Validating scripts against TikTok advertising policies..."
-compliance_fail=0
-for script in "$scripts_dir"/*.md; do
-    [[ "$(basename "$script")" == "Campaign_Summary.md" ]] && continue
-    [[ -e "$script" ]] || continue
-
-    if ! python3 scripts/validate_compliance_flags.py "$script" >/dev/null 2>&1; then
-        echo "❌ FAIL: $(basename "$script") has compliance violations"
-        echo "   Run: python3 scripts/validate_compliance_flags.py \"$script\""
-        compliance_fail=1
-    fi
-done
-
-if [ "$compliance_fail" -eq 1 ]; then
-    echo ""
-    echo "⚠️ COMPLIANCE VIOLATIONS DETECTED"
-    echo "Fix violations before proceeding. See 'TikTok Policy Compliance' section for safe alternatives."
-    exit 1
-fi
-echo "✅ All scripts pass TikTok policy compliance"
+# NOTE: TikTok Policy Compliance validation is now done in Step 3.5
+# This gate focuses on structural quality only
 
 echo ""
 echo "=== QUALITY GATE PASSED ==="
@@ -599,6 +794,17 @@ Du kennst das?
 **Symptoms:** No `## On-Screen Text` section, or using "Product Label" strategy for a Pain Point hook
 **Fix:** Always select OST strategy from the hook-type mapping table in Step 2-3. Every script needs an OST section with bilingual table.
 
+### ❌ Mistake 8: **SKIPPING COMPLIANCE VALIDATION (CRITICAL)**
+**Symptoms:** Generating scripts, declaring completion, moving to next product WITHOUT running Step 3.5
+**Why this happens:** Compliance gate is "one more step" that feels bureaucratic when you're in flow
+**Consequences:** Scripts published with policy violations → TikTok ad rejection → wasted production effort
+**Fix:**
+- Step 3.5 is MANDATORY, not optional
+- Run `validate_compliance_flags.py` on ALL scripts immediately after writing
+- Fix ALL violations before proceeding to Step 4
+- Create a mental checkpoint: "Scripts written → Compliance validated → Quality gate → Done"
+**Real incident:** February 2026 - multiple scripts generated with "price glitch" narrative, exact € amounts, "unglaublich" exaggerations. User caught violations after workflow marked complete.
+
 ---
 
 ## File Structure After Completion
@@ -638,8 +844,54 @@ ls product_list/$date/$product_id/ref_video/video_synthesis.md  # Must exist
 
 ---
 
-**Version:** 2.4.0
-**Last Updated:** 2026-02-08
+## Compliance Validation: Lessons Learned
+
+### February 2026 Incident
+
+**What happened:**
+- Workflow executed for 3 products, generating 9 scripts total
+- Scripts were written with batched Write calls (Step 3)
+- User discovered Policy violations AFTER workflow marked complete
+- 5/9 scripts failed compliance (exact prices, "Preisglitch", absolute claims)
+
+**Root cause:**
+- Compliance validation existed in Step 4 but was not emphasized enough
+- Easy to miss when executing workflow quickly
+- No separate gate between script generation and completion
+- Agent declared workflow complete without running compliance checks
+
+**What we learned:**
+- Compliance validation must be a SEPARATE, BLOCKING gate (Step 3.5)
+- Visual emphasis is critical (🚨 emojis, all-caps warnings)
+- Validation must happen IMMEDIATELY after script generation
+- Cannot be buried in a larger "quality gate" step
+- Need clear incident documentation so future agents understand WHY this matters
+
+**Changes made (v2.4.1):**
+- Created Step 3.5 as dedicated compliance gate
+- Updated workflow diagram to show compliance as critical checkpoint
+- Added prominent warning at top of skill file
+- Documented common violations and fixes in Step 3.5
+- Added "Mistake 8: Skipping compliance validation" to common errors
+- Changed language from "CRITICAL" to "MANDATORY BLOCKING GATE"
+
+**For future agents:**
+If you're reading this, you're generating TikTok scripts. When you finish writing scripts (Step 3), your next action MUST be running compliance validation (Step 3.5). No exceptions. This is not negotiable.
+
+---
+
+**Version:** 2.4.1
+**Last Updated:** 2026-02-10
+**Changes from v2.4.0:**
+- **NEW: Step 3.5 - MANDATORY Compliance Validation Gate** ⚠️
+- Separated compliance validation from Step 4 quality gate
+- Added prominent compliance warning at top of file
+- Updated workflow diagram to show 5 steps (was 4)
+- Documented February 2026 incident and lessons learned
+- Added Common Mistake 8: Skipping compliance validation
+- Enhanced Step 3.5 with detailed validation process and fix workflow
+- Moved compliance checks OUT of Step 4 (now prerequisite)
+
 **Changes from v2.3:**
 - **NEW: On-Screen Text (OST) section** added to every script ⭐
 - OST strategy selection table (7 strategies mapped to 8 Golden 3 Seconds hook types)

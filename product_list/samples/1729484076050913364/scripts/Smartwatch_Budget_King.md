@@ -37,38 +37,48 @@ source_notes:
 | 28-30 | Top-down shot: watch + 2 straps + charging cable + tool + box laid out | Reinforces COMPLETE BUNDLE value |
 | 30-35 | Direct POV: finger pointing at bottom-left TikTok cart icon, then creator's confident face | DIRECT COMMAND with social proof (creator approval) |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Price gap shock statement positioning premium look vs. budget reality.
+
+| Timing | DE Text                             | ZH Text           | Placement     |
+| :----- | :---------------------------------- | :---------------- | :------------ |
+| 0–3s   | **"Teuer aussehen • Günstig sein"** | **"看起来贵 • 价格友好"** | Center        |
+| 13–18s | 2 Armbänder inklusive!              | 包含2条表带！           | Center-bottom |
+| 28–30s | Komplettes Set                      | 全套装备              | Center        |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[skeptical] Sieht aus wie eine teure Marken-Uhr, oder?
+[curious] Sieht aus wie eine teure Marken-Uhr, oder?
 [surprised] Kostet aber super wenig!
 [impressed] 1,85 Zoll HD-Display – massiv groß.
 [excited] 710 Milliamperestunden Akku, hält fast eine Woche!
-[enthusiastic] Über 100 Sportmodi direkt am Handgelenk.
-[intrigued] Und warte mal – zwei Armbänder inklusive!
+[cheerfully] Über 100 Sportmodi direkt am Handgelenk.
+[curious] Und warte mal – zwei Armbänder inklusive!
 [confident] Metall fürs Büro, Silikon fürs Gym.
-[amazed] Du kannst sogar telefonieren – komplett freihändig!
+[impressed] Du kannst sogar telefonieren – komplett freihändig!
 [matter-of-fact] WhatsApp, Anrufe, alles auf der Uhr.
 [reassured] IP67 wasserdicht – keine Angst vor Regen.
-[firm] Herzfrequenz, Schlaf, Schritte – alles im Blick.
-[urgent] Für den Preis einer Pizza bekommst du das komplette Set!
-[direct] Klick jetzt auf den gelben Korb, bevor der Preis steigt!
+[confident] Herzfrequenz, Schlaf, Schritte – alles im Blick.
+[impressed] Für den Preis einer Pizza bekommst du das komplette Set!
+[cheerfully] Link ist unten, hol's dir jetzt!
 
-### ZH (中文翻译 | 30–50s)
+### ZH (中文翻译 | 30-50s)
 
-[skeptical] 看起来像大牌手表，对吧？
+[curious] 看起来像大牌手表，对吧？
 [surprised] 但价格真的很友好！
 [impressed] 1.85英寸高清大屏——超大尺寸。
 [excited] 710毫安时电池，续航近一周！
-[enthusiastic] 超过100种运动模式，直接在手腕上。
-[intrigued] 等等——还包含两条表带！
+[cheerfully] 超过100种运动模式，直接在手腕上。
+[curious] 等等——还包含两条表带！
 [confident] 金属表带适合办公，硅胶表带适合健身。
-[amazed] 你甚至可以打电话——完全解放双手！
+[impressed] 你甚至可以打电话——完全解放双手！
 [matter-of-fact] WhatsApp、电话，全都在手表上。
 [reassured] IP67防水——不怕下雨。
-[firm] 心率、睡眠、步数——全部掌握。
-[urgent] 一个披萨的价格就能得到整套装备！
-[direct] 现在点击黄色购物车，趁价格还没涨！
+[confident] 心率、睡眠、步数——全部掌握。
+[impressed] 一个披萨的价格就能得到整套装备！
+[cheerfully] 链接在下面，现在就买！

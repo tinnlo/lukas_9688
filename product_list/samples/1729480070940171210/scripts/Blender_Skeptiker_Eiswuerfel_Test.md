@@ -44,16 +44,26 @@ A skeptic/proof angle that addresses the common objection: "Portable blenders ar
 | 28-33 | Pour into glass, perfect creamy consistency | Sensory: Make viewer thirsty |
 | 33-38 | Point to bottom of screen, holding bottle to camera | Conversion: Clear CTA |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Skeptic challenge creates intrigue
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Kaputt nach 1 Tag?"** | **"用一天就坏？"** | Center |
+| 10–18s | Eiswürfel zerquetscht | 冰块粉碎 | Center-bottom |
+| 25–28s | Akku: 93% | 电量：93% | Top-right |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[skeptical] Mein Mixer soll nach einem Tag kaputt gehen?
+[curious] Mein Mixer soll nach einem Tag kaputt gehen?
 [defiant] Das testen wir jetzt.
 
-[firm] Ich gebe extra harte Eiswürfel dazu.
+[confident] Ich gebe extra harte Eiswürfel dazu.
 [curious] Und gefrorene Beeren.
 [matter-of-fact] Schaut mal, der Akku steht bei 95 Prozent.
 
@@ -61,22 +71,22 @@ A skeptic/proof angle that addresses the common objection: "Portable blenders ar
 [impressed] In zwanzig Sekunden ist alles klein.
 
 [surprised] Wow, schaut euch diese Textur an!
-[amazed] Perfekt cremig.
+[impressed] Perfekt cremig.
 
 [proud] Und der Akku? Immer noch bei 93 Prozent.
 [sarcastic] Tja, Hater...
 
-[enthusiastic] Die 12 Edelstahlklingen sind wirklich stark.
+[cheerfully] Die 12 Edelstahlklingen sind wirklich stark.
 [warm] Ich nutze das jetzt jeden Tag.
 
-[direct] Hol dir das Original hier unten im Sale!
+[cheerfully] Hol dir das Original hier unten im Sale!
 
 ### ZH (中文翻译 | 30–50s)
 
-[skeptical] 有人说这个搅拌机用一天就坏了?
+[curious] 有人说这个搅拌机用一天就坏了?
 [defiant] 我们现在来测试一下。
 
-[firm] 我特意加入超硬的冰块。
+[confident] 我特意加入超硬的冰块。
 [curious] 还有冷冻浆果。
 [matter-of-fact] 看，电量显示95%。
 
@@ -84,12 +94,12 @@ A skeptic/proof angle that addresses the common objection: "Portable blenders ar
 [impressed] 二十秒就全部打碎了。
 
 [surprised] 哇，看看这个质地!
-[amazed] 完美细腻。
+[impressed] 完美细腻。
 
 [proud] 电量呢？还有93%。
 [sarcastic] 所以，那些黑粉们……
 
-[enthusiastic] 12个不锈钢刀片真的很强大。
+[cheerfully] 12个不锈钢刀片真的很强大。
 [warm] 我现在每天都用。
 
-[direct] 快去下面的促销链接买吧！
+[cheerfully] 快去下面的促销链接买吧！

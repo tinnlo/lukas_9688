@@ -159,6 +159,28 @@ Target word counts for UGC TikTok Ad style (fast-paced):
 
 ---
 
+## CTA Language (TikTok Shopping Cart)
+
+**CRITICAL:** TikTok now uses orange shopping cart (not external bio/profile links).
+
+**Required CTA format:**
+- ✅ **German:** `Link ist unten` (Link is below)
+- ✅ **Chinese:** `链接在下面` (Link is below)
+
+**NEVER use:**
+- ❌ `Link oben` (Link above)
+- ❌ `Link im Profil` (Link in profile)
+- ❌ `Link im Bio` (Link in bio)
+- ❌ `链接在上面` (Link above)
+- ❌ `简介里的链接` (Link in profile)
+
+**CTA examples:**
+- `[confident] Link ist unten.`
+- `[cheerfully] Link ist unten. Jetzt sichern.`
+- `[warm] Hol's dir. Link ist unten.`
+
+---
+
 ## Complete Reference
 
 See `doc/ElevenLabs_v3_Alpha_VO_Grammar_Practice.md` for full vocabulary and UGC best practices.

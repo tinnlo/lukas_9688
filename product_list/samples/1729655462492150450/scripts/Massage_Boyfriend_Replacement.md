@@ -38,36 +38,47 @@ source_notes:
 | 28-31 | Split screen: Left = asking boyfriend for massage (annoyed face), Right = using device independently (happy) | INDEPENDENCE benefit |
 | 31-35 | Text: "Total entspannt in 10 Minuten" + product + cart | RELAXATION CTA |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Humorous replacement hook
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Freund ersetzt!"** | **"替换了男友！"** | Center |
+| 16–22s | 4D Knetmassage • Wärmefunktion | 4D揉捏 • 加热功能 | Center-bottom |
+| 28–35s | Total entspannt in 10 Minuten | 10分钟完全放松 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[playful] Ich habe meinen Freund ersetzt!
+[warm] Ich habe meinen Freund ersetzt!
 [giggles] ...mit diesem Massagegerät!
 [pained] Mein Nacken ist so verspannt vom Büro!
 [frustrated] Niemand will ständig massieren!
 [excited] Aber dieses Ding hier?
 [impressed] 4D-Knetmassage wie echte Hände!
-[satisfied] Mit Wärmefunktion – so entspannend!
-[amazed] Nacken, Schultern, Rücken – überall!
-[relieved] Total entspannt nach zehn Minuten!
+[happy] Mit Wärmefunktion – so entspannend!
+[impressed] Nacken, Schultern, Rücken – überall!
+[happy] Total entspannt nach zehn Minuten!
 [confident] Wireless und tragbar!
-[enthusiastic] Ich bin unabhängig!
-[direct] Gönn dir pure Entspannung – jetzt holen!
+[cheerfully] Ich bin unabhängig!
+[cheerfully] Gönn dir pure Entspannung – jetzt holen!
 
 ### ZH (中文翻译 | 30–50s)
 
-[playful] 我把男朋友换掉了！
+[warm] 我把男朋友换掉了！
 [giggles] ...换成这个按摩器！
 [pained] 办公室让我脖子好紧！
 [frustrated] 没人想一直按摩！
 [excited] 但这个东西呢？
 [impressed] 4D揉捏按摩像真手！
-[satisfied] 带加热功能——超放松！
-[amazed] 脖子、肩膀、背部——到处都行！
-[relieved] 十分钟后完全放松！
+[happy] 带加热功能——超放松！
+[impressed] 脖子、肩膀、背部——到处都行！
+[happy] 十分钟后完全放松！
 [confident] 无线便携！
-[enthusiastic] 我独立了！
-[direct] 给自己纯放松——现在就拿！
+[cheerfully] 我独立了！
+[cheerfully] 给自己纯放松——现在就拿！

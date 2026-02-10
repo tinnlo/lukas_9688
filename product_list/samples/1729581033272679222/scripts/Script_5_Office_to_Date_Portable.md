@@ -48,6 +48,17 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Emotional/Lifestyle — POV narrative shows portable solution for last-minute date transitions
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Vom Büro zum Date"** | **"从办公室到约会"** | Center |
+| 23–28s | Klein • Wirkungsvoll | 小巧 • 有效 | Center-bottom |
+| 33–38s | Immer vorbereitet | 时刻准备 | Center |
+
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 38s)
@@ -60,19 +71,19 @@ source_notes:
 [curious] Was machst du dann?
 [confident] Ich hab immer das hier dabei.
 
-[bright] LASTAR. Ein Doppelpack. Passt in jede Handtasche.
+[cheerfully] LASTAR. Ein Doppelpack. Passt in jede Handtasche.
 [educational] Morgens nutze ich den blumigen. Frisch und leicht.
 
-[soft] Jetzt fürs Date? Der Vanille-Holz Duft.
+[warm] Jetzt fürs Date? Der Vanille-Holz Duft.
 [reassuring] Warm, aber nicht aufdringlich.
 
 [impressed] Beide halten wirklich gut.
 [matter-of-fact] Den ganzen Tag über angenehm.
 
 [neutral] So bin ich immer vorbereitet.
-[satisfied] Egal was kommt.
+[happy] Egal was kommt.
 
-[enthusiastic] Link unten. Gönn dir das.
+[cheerfully] Link unten. Gönn dir das.
 
 ---
 
@@ -86,16 +97,16 @@ source_notes:
 [curious] 那你怎么办？
 [confident] 我总是带着这个。
 
-[bright] LASTAR。双瓶装。能装进任何手提包。
+[cheerfully] LASTAR。双瓶装。能装进任何手提包。
 [educational] 早上我用花香的。清新淡雅。
 
-[soft] 现在约会？香草木质香调。
+[warm] 现在约会？香草木质香调。
 [reassuring] 温暖，但不刺鼻。
 
 [impressed] 两款都很持久。
 [matter-of-fact] 全天都很舒适。
 
 [neutral] 所以我总是有准备。
-[satisfied] 不管发生什么。
+[happy] 不管发生什么。
 
-[enthusiastic] 链接在下面。犒劳一下自己。
+[cheerfully] 链接在下面。犒劳一下自己。

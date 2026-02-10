@@ -17,6 +17,18 @@ This skill provides a fast way to analyze product data and generate 3 TikTok sho
 
 ---
 
+## ⚠️ Compliance Note
+
+These directions include suggested captions. When expanding into full scripts via `tiktok_script_generator`, ensure captions comply with TikTok advertising policies:
+
+- ❌ No exact € prices or discount percentages
+- ❌ No absolute claims ("100%", "perfekt", "komplett", "immer")
+- ❌ No exaggerated promotions ("unglaublich", "genial", "Preisglitch")
+
+**These are ideation outputs.** Final scripts must pass `validate_compliance_flags.py` validation.
+
+---
+
 ## Core Script Lock (MANDATORY)
 
 Use core scripts and execution rules from `.claude/skills/CORE_SCRIPTS.md`.

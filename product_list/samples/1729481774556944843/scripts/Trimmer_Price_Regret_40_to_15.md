@@ -43,6 +43,16 @@ source_notes:
 | 26-30 | Holding trimmer with LED charge indicator visible | Quality: Premium features at budget price |
 | 30-35 | Leaning into camera seriously, pointing down emphatically | CTA: Authentic recommendation |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Regret hook with price comparison
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Ich bin so sauer!"** | **"我好生气！"** | Center |
+| 08–14s | Früher: zu teuer → Jetzt: viel günstiger | 以前：太贵 → 现在：便宜很多 | Center |
+| 14–18s | 3-in-1 Köpfe | 3合1刷头 | Center-bottom |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -56,21 +66,21 @@ source_notes:
 [disgusted] Rostig, stumpf, nutzlos.
 
 [shocked] Und jetzt ist der hier super günstig.
-[emphatic] Für ein besseres Gerät!
+[confident] Für ein besseres Gerät!
 
 [impressed] Drei Köpfe inklusive.
-[enthusiastic] Trimmer, Rasierer, Detailschneider!
+[cheerfully] Trimmer, Rasierer, Detailschneider!
 
 [curious] Ist der wirklich spritzwassergeschützt?
-[satisfied] Schau mal, direkt unter die Dusche.
+[happy] Schau mal, direkt unter die Dusche.
 
-[amazed] Perfekt. Kein Problem.
-[playful] Eine glatte Rasur in einer Bewegung.
+[impressed] Perfekt. Kein Problem.
+[warm] Eine glatte Rasur in einer Bewegung.
 
 [earnest] Macht nicht meinen Fehler.
 [persuasive] Spart euch das Geld und holt den hier.
 
-[firm] Link ist unten, dankt mir später!
+[confident] Link ist unten, dankt mir später!
 
 ### ZH (中文翻译 | 30–50s)
 
@@ -81,18 +91,18 @@ source_notes:
 [disgusted] 生锈、钝了、没用了。
 
 [shocked] 现在这个价格很友好。
-[emphatic] 而且设备更好！
+[confident] 而且设备更好！
 
 [impressed] 包含三个头。
-[enthusiastic] 修剪器、剃须刀、精修刀！
+[cheerfully] 修剪器、剃须刀、精修刀！
 
 [curious] 真的防溅水吗？
-[satisfied] 看，直接在淋浴下。
+[happy] 看，直接在淋浴下。
 
-[amazed] 完美。没问题。
-[playful] 一次划过就光滑了。
+[impressed] 完美。没问题。
+[warm] 一次划过就光滑了。
 
 [earnest] 别犯我的错误。
 [persuasive] 省钱，买这个。
 
-[firm] 链接在下面，一会儿感谢我！
+[confident] 链接在下面，一会儿感谢我！

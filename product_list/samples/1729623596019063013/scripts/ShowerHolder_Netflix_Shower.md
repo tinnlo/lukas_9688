@@ -37,6 +37,17 @@ source_notes:
 | 25-28 | Text: "Verwandle deine Dusche in ein Kino" | ASPIRATIONAL benefit |
 | 28-32 | Product shot with cart pointer, "Nie wieder Langeweile!" | ENTERTAINMENT CTA |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Entertainment solution
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Langweilig unter der Dusche?"** | **"淋浴无聊？"** | Center |
+| 13–19s | Netflix • YouTube • Bluetooth | Netflix • YouTube • 蓝牙 | Center-bottom |
+| 25–32s | Nie wieder Langeweile! | 再也不无聊！ | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -48,11 +59,11 @@ source_notes:
 [impressed] Spritzwassergeschützter Handyhalter mit Bluetooth!
 [confident] Einfach an die Wand saugen!
 [reassured] Spritzwassergeschützt – kein Stress!
-[amazed] Netflix, YouTube, alles läuft perfekt!
-[enthusiastic] Mit Lautsprecher für mega Sound!
-[playful] 360 Grad drehen für den besten Winkel!
-[satisfied] Nie wieder langweilige Duschen!
-[direct] Verwandle deine Dusche – link unten!
+[impressed] Netflix, YouTube, alles läuft perfekt!
+[cheerfully] Mit Lautsprecher für mega Sound!
+[warm] 360 Grad drehen für den besten Winkel!
+[happy] Nie wieder langweilige Duschen!
+[cheerfully] Verwandle deine Dusche – link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
@@ -61,8 +72,8 @@ source_notes:
 [impressed] 防溅水手机支架带蓝牙！
 [confident] 简单吸在墙上！
 [reassured] 防溅水——无压力！
-[amazed] Netflix、YouTube，一切完美运行！
-[enthusiastic] 带扬声器，音质超棒！
-[playful] 360度旋转找最佳角度！
-[satisfied] 再也没有无聊的淋浴！
-[direct] 改造你的淋浴——链接在下方！
+[impressed] Netflix、YouTube，一切完美运行！
+[cheerfully] 带扬声器，音质超棒！
+[warm] 360度旋转找最佳角度！
+[happy] 再也没有无聊的淋浴！
+[cheerfully] 改造你的淋浴——链接在下方！

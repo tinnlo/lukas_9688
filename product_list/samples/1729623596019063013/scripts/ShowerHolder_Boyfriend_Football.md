@@ -36,6 +36,17 @@ source_notes:
 | 22-25 | Happy couple: one watching sports, other appreciates peaceful wait | WIN-WIN outcome |
 | 25-28 | Text: "Das perfekte Geschenk für ihn" + product | GIFT CTA |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Absurd but relatable scenario creates humor-driven product positioning
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Fußball in der Dusche!"** | **"淋浴里看足球！"** | Center |
+| 13–16s | Spritzwasserschutz • Bluetooth | 防水 • 蓝牙 | Center-bottom |
+| 22–28s | Das perfekte Geschenk für ihn | 送他的完美礼物 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -45,23 +56,23 @@ source_notes:
 [amused] Mein Freund guckt jetzt Fußball in der Dusche!
 [exasperated] Er ist immer ewig drin!
 [resigned] Jetzt weiß ich warum!
-[playful] Dieser spritzwassergeschützte Halter macht's möglich!
+[warm] Dieser spritzwassergeschützte Halter macht's möglich!
 [impressed] Handy rein, an die Wand – fertig!
-[satisfied] Er kann duschen UND das Spiel sehen!
+[happy] Er kann duschen UND das Spiel sehen!
 [confident] Bluetooth-Lautsprecher für guten Sound!
 [matter-of-fact] Kein Tor wird verpasst!
 [warm] Wenigstens ist er happy!
-[direct] Perfektes Geschenk für Sportfans – jetzt holen!
+[cheerfully] Perfektes Geschenk für Sportfans – jetzt holen!
 
 ### ZH (中文翻译 | 30–50s)
 
 [amused] 我男朋友现在在淋浴时看足球！
 [exasperated] 他总是永远在里面！
 [resigned] 现在我知道为什么了！
-[playful] 这个防溅水支架让这成为可能！
+[warm] 这个防溅水支架让这成为可能！
 [impressed] 手机放进去，吸在墙上——搞定！
-[satisfied] 他可以淋浴同时看比赛！
+[happy] 他可以淋浴同时看比赛！
 [confident] 蓝牙扬声器提供好音质！
 [matter-of-fact] 不会错过任何进球！
 [warm] 至少他开心！
-[direct] 运动迷的完美礼物——现在就拿！
+[cheerfully] 运动迷的完美礼物——现在就拿！

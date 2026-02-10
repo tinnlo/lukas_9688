@@ -44,6 +44,16 @@ A value/savings angle that appeals to budget-conscious Germans. Uses clear math 
 | 26-30 | Dual screen: LEFT shows "Laden: richtig teuer/Monat" RIGHT shows "Zuhause: viel günstiger/Monat" with arrow pointing right | Decision: Visual savings impact |
 | 30-33 | Drinking smoothie contentedly, pointing to shop link with money bag emoji | Conversion: Smart purchase framing |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Clear savings calculation with concrete numbers
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Smoothie: teuer"** | **"冰沙：太贵"** | Center |
+| 22–26s | Pro Smoothie: super günstig | 每杯：超便宜 | Center-bottom |
+| 30–33s | Einmal zahlen, immer sparen | 付一次，一直省 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -51,45 +61,45 @@ A value/savings angle that appeals to budget-conscious Germans. Uses clear math 
 ### DE (ElevenLabs Prompt | 30–50s)
 
 [frustrated] Hör auf, jedes Mal teuer Smoothies zu kaufen!
-[emphatic] Das ist rausgeschmissenes Geld.
+[confident] Das ist rausgeschmissenes Geld.
 
 [matter-of-fact] 20 Smoothies pro Monat?
 [shocked] Das läppert sich im Monat richtig!
 
-[intrigued] Aber was wäre, wenn...
+[curious] Aber was wäre, wenn...
 [persuasive] Du kaufst diesen Mixer einmal für einen kleinen Betrag.
 
-[enthusiastic] Frische Früchte sind pro Smoothie super günstig.
-[amazed] Und zu Hause ist es im Monat viel günstiger!
+[cheerfully] Frische Früchte sind pro Smoothie super günstig.
+[impressed] Und zu Hause ist es im Monat viel günstiger!
 
 [cheerful] Erdbeeren, Banane, Spinat rein.
-[satisfied] 30 Sekunden später: Perfekt.
+[happy] 30 Sekunden später: Perfekt.
 
 [confident] Du sparst jeden Monat richtig viel.
 [proud] Nach einem Monat hat sich das schon bezahlt gemacht.
 
 [warm] Gesund essen muss nicht teuer sein.
-[firm] Hol dir deinen hier unten!
+[confident] Hol dir deinen hier unten!
 
 ### ZH (中文翻译 | 30–50s)
 
 [frustrated] 别再花那么多钱买冰沙了！
-[emphatic] 这真的很浪费。
+[confident] 这真的很浪费。
 
 [matter-of-fact] 每月20杯冰沙？
 [shocked] 一个月下来可是一大笔！
 
-[intrigued] 但如果……
+[curious] 但如果……
 [persuasive] 你只需花一次小钱买这个搅拌机。
 
-[enthusiastic] 新鲜水果每杯都超级便宜。
-[amazed] 在家做每月便宜太多！
+[cheerfully] 新鲜水果每杯都超级便宜。
+[impressed] 在家做每月便宜太多！
 
 [cheerful] 加草莓、香蕉、菠菜。
-[satisfied] 30秒后：完美。
+[happy] 30秒后：完美。
 
 [confident] 每月能省下一大笔。
 [proud] 一个月就回本了。
 
 [warm] 健康饮食不必昂贵。
-[firm] 快去下面链接买吧！
+[confident] 快去下面链接买吧！

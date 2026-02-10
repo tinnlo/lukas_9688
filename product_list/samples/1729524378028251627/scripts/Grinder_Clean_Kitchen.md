@@ -40,6 +40,16 @@ source_notes:
 | 25-28 | Final shot: pristine white counter, grinders on base, NO crumbs visible anywhere | AESTHETIC SATISFACTION - the "after" payoff |
 | 28-32 | Text: "Halt deine Küche sauber" with product on base + pointing finger to cart | CTA with cleanliness positioning |
 
+## On-Screen Text
+
+**Strategy:** Solution Reveal — Mess problem with clean base solution
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Salz überall?"** | **"盐到处都是？"** | Center |
+| 16–19s | Einhandbedienung | 单手操作 | Center-bottom |
+| 28–32s | Halt deine Küche sauber | 保持厨房整洁 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -48,28 +58,28 @@ source_notes:
 
 [frustrated] Ich hasse es, wenn Salz überall liegt!
 [annoyed] Alte Mühlen machen nur Chaos.
-[firm] Krümel hier, Flecken da – nervig!
-[intrigued] Aber diese elektrische Mühle?
+[confident] Krümel hier, Flecken da – nervig!
+[curious] Aber diese elektrische Mühle?
 [impressed] Kommt mit einer praktischen Basis!
-[satisfied] Einfach draufstellen – fertig.
+[happy] Einfach draufstellen – fertig.
 [confident] Keine Ringe mehr auf der Arbeitsplatte!
-[enthusiastic] Und du kannst sie mit einer Hand bedienen!
-[playful] Rühren mit links, würzen mit rechts.
+[cheerfully] Und du kannst sie mit einer Hand bedienen!
+[warm] Rühren mit links, würzen mit rechts.
 [matter-of-fact] Perfekt beim Kochen.
-[relieved] Meine Küche bleibt endlich sauber!
-[direct] Hol dir Ordnung in die Küche – link unten!
+[happy] Meine Küche bleibt endlich sauber!
+[cheerfully] Hol dir Ordnung in die Küche – link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
 [frustrated] 我讨厌盐到处都是！
 [annoyed] 旧研磨器只会制造混乱。
-[firm] 到处是碎屑，到处是污渍——烦人！
-[intrigued] 但这款电动研磨器呢？
+[confident] 到处是碎屑，到处是污渍——烦人！
+[curious] 但这款电动研磨器呢？
 [impressed] 配有实用的底座！
-[satisfied] 直接放上去——搞定。
+[happy] 直接放上去——搞定。
 [confident] 台面上再也没有印记了！
-[enthusiastic] 而且你可以单手操作！
-[playful] 左手搅拌，右手调味。
+[cheerfully] 而且你可以单手操作！
+[warm] 左手搅拌，右手调味。
 [matter-of-fact] 烹饪时完美。
-[relieved] 我的厨房终于保持干净了！
-[direct] 让厨房井井有条——链接在下方！
+[happy] 我的厨房终于保持干净了！
+[cheerfully] 让厨房井井有条——链接在下方！

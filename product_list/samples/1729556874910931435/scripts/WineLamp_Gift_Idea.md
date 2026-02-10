@@ -35,6 +35,17 @@ source_notes:
 | 21-24 | Multiple gifting scenarios: birthday party, Christmas tree nearby | UNIVERSAL OCCASIONS |
 | 24-28 | Wrapped gift box with price tag "preiswert", amazed face | PRICE VALUE + CTA |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Challenges boring gift conventions to position lamp as creative solution
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Blumen sind langweilig"** | **"花太无聊了"** | Center |
+| 18–21s | Kreativ • Praktisch • Günstig | 有创意 • 实用 • 便宜 | Center-bottom |
+| 24–28s | Perfektes Geschenk | 完美礼物 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -46,11 +57,11 @@ source_notes:
 [excited] Ich habe die Lösung!
 [impressed] Diese Weinflaschen-Lampe ist genial!
 [confident] Touch-Control, RGB, super stylisch!
-[satisfied] Kreativ, praktisch und günstig!
-[enthusiastic] Und der Preis ist echt fair!
-[playful] Funktioniert mit jeder Flasche!
+[happy] Kreativ, praktisch und günstig!
+[cheerfully] Und der Preis ist echt fair!
+[warm] Funktioniert mit jeder Flasche!
 [warm] Jeder freut sich darüber!
-[direct] Perfektes Geschenk – link unten!
+[cheerfully] Perfektes Geschenk – link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
@@ -59,8 +70,8 @@ source_notes:
 [excited] 我有解决方案！
 [impressed] 这款酒瓶灯太棒了！
 [confident] 触控、RGB、超时尚！
-[satisfied] 有创意、实用又便宜！
-[enthusiastic] 价格也很划算！
-[playful] 适用任何瓶子！
+[happy] 有创意、实用又便宜！
+[cheerfully] 价格也很划算！
+[warm] 适用任何瓶子！
 [warm] 每个人都会喜欢！
-[direct] 完美礼物——链接在下方！
+[cheerfully] 完美礼物——链接在下方！

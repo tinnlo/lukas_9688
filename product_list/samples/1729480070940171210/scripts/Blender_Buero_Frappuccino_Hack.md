@@ -45,6 +45,16 @@ A lifestyle/relatability angle targeting office workers during summer. Shows por
 | 25-30 | Drinking contentedly, colleague glancing over with "jealous" expression | Social proof: Others want it |
 | 30-35 | Holding bottle with logo visible, pointing down to shop link | Conversion: Product placement + CTA |
 
+## On-Screen Text
+
+**Strategy:** Hook Overlay — Relatable office scenario with lifestyle aspiration
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"30°C im Büro"** | **"办公室30度"** | Center |
+| 13–16s | Super leise | 超级安静 | Center-bottom |
+| 30–35s | Link ist unten! | 链接在下面！ | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -58,10 +68,10 @@ A lifestyle/relatability angle targeting office workers during summer. Shows por
 [blunt] Nein danke.
 
 [mischievously] Ich habe eine bessere Idee.
-[playful] Mein Geheimnis: dieser Mini-Mixer.
+[warm] Mein Geheimnis: dieser Mini-Mixer.
 
 [casually] Milch, Eiswürfel, Instantkaffee rein.
-[satisfied] Fertig in 30 Sekunden.
+[happy] Fertig in 30 Sekunden.
 
 [whisper] Super leise – keiner merkt's.
 [giggles] Alle Kollegen sind neidisch.
@@ -70,7 +80,7 @@ A lifestyle/relatability angle targeting office workers during summer. Shows por
 [warm] Und kostet dich pro Drink nur wenig.
 
 [cheerful] Dein Sommer-Retter für's Büro!
-[firm] Link ist unten!
+[confident] Link ist unten!
 
 ### ZH (中文翻译 | 30–50s)
 
@@ -81,10 +91,10 @@ A lifestyle/relatability angle targeting office workers during summer. Shows por
 [blunt] 不，谢谢。
 
 [mischievously] 我有更好的主意。
-[playful] 我的秘密：这个迷你搅拌机。
+[warm] 我的秘密：这个迷你搅拌机。
 
 [casually] 加牛奶、冰块、速溶咖啡。
-[satisfied] 30秒搞定。
+[happy] 30秒搞定。
 
 [whisper] 超级安静——没人注意到。
 [giggles] 同事们都很嫉妒。
@@ -93,4 +103,4 @@ A lifestyle/relatability angle targeting office workers during summer. Shows por
 [warm] 而且每杯只花很少。
 
 [cheerful] 你夏天办公室的救星！
-[firm] 链接在下面！
+[confident] 链接在下面！

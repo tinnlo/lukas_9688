@@ -44,6 +44,16 @@ Size-focused angle targeting students and small apartment dwellers (Berlin, Muni
 | 24-28 | Finger tapping "Skip" button, showing free features still work | Proof: No payment required |
 | 28-33 | Holding scale in one hand (showing lightness), other hand pointing to link | Portability + CTA |
 
+## On-Screen Text
+
+**Strategy:** Solution Reveal — Compact size as benefit for small apartments
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Zu wenig Platz?"** | **"空间太小？"** | Center |
+| 06–10s | Nur 26x26 cm | 只有26x26厘米 | Center-bottom |
+| 20–24s | App ist KOSTENLOS | App完全免费 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -53,49 +63,49 @@ Size-focused angle targeting students and small apartment dwellers (Berlin, Muni
 [frustrated] Meine alte Waage nimmt den ganzen Platz weg.
 [annoyed] In meiner WG ist das Badezimmer winzig.
 
-[intrigued] Diese hier ist anders.
+[curious] Diese hier ist anders.
 [impressed] Nur sechsundzwanzig mal sechsundzwanzig Zentimeter.
 
-[satisfied] Passt unter den Schrank.
+[happy] Passt unter den Schrank.
 [cheerful] Passt sogar in meine Sporttasche!
 
 [matter-of-fact] Steig drauf, drei Sekunden warten.
 [surprised] Zeigt sogar die Raumtemperatur an!
 
-[enthusiastic] Und jetzt kommt das Beste.
+[cheerfully] Und jetzt kommt das Beste.
 [excited] Bluetooth an, App verbinden, fertig!
 
-[skeptical] Warte, kostet die App Geld?
+[curious] Warte, kostet die App Geld?
 [reassuring] Nein! Die Grundfunktionen sind kostenlos.
 
 [blunt] Wenn das Abo-Fenster kommt, einfach wegklicken.
 [warm] Alle wichtigen Daten kriegst du gratis.
 
-[playful] Klein, smart, und ehrlich günstig.
-[firm] Link unten, perfekt für kleine Wohnungen!
+[warm] Klein, smart, und ehrlich günstig.
+[confident] Link unten, perfekt für kleine Wohnungen!
 
 ### ZH (中文翻译 | 30–50s)
 
 [frustrated] 我的旧秤占了太多空间。
 [annoyed] 我合租公寓的浴室超级小。
 
-[intrigued] 这个不一样。
+[curious] 这个不一样。
 [impressed] 只有26x26厘米。
 
-[satisfied] 能放在柜子下面。
+[happy] 能放在柜子下面。
 [cheerful] 甚至能放进我的运动包！
 
 [matter-of-fact] 站上去，等三秒。
 [surprised] 甚至显示室温！
 
-[enthusiastic] 现在是最棒的部分。
+[cheerfully] 现在是最棒的部分。
 [excited] 打开蓝牙，连接App，搞定！
 
-[skeptical] 等等，App要收费吗？
+[curious] 等等，App要收费吗？
 [reassuring] 不！基本功能免费。
 
 [blunt] 订阅窗口弹出时，直接关掉。
 [warm] 所有重要数据都免费。
 
-[playful] 小巧、智能、而且真的便宜。
-[firm] 链接在下面，非常适合小公寓！
+[warm] 小巧、智能、而且真的便宜。
+[confident] 链接在下面，非常适合小公寓！

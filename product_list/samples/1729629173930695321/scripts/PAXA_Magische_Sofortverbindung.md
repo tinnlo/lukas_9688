@@ -49,6 +49,17 @@ source_notes:
 | 35-38 | Product shot: Both black and white variants side by side with LED glow | Product: Final beauty shot |
 | 38-42 | Text overlay: "LINK IN BIO" with animated arrow pointing up | CTA: Drive conversion |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Wireless instant magic
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Wo ist das Kabel? KEINS!"** | **"线在哪？没有！"** | Center |
+| 13–20s | 0,1s • An & Aus | 0.1秒 • 开关 | Center-bottom |
+| 28–38s | Alle Handys • Laut & Klar | 所有手机 • 响亮清晰 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar

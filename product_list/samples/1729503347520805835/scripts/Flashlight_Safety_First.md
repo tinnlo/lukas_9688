@@ -41,6 +41,16 @@ source_notes:
 | 28-30 | Confident face in flashlight glow, relaxed expression (vs scared opening) | EMOTIONAL TRANSFORMATION |
 | 30-35 | Product on table with house key, leash, creating "safety kit" vibe, text: "Hol dir Sicherheit hier" | CTA with lifestyle positioning |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Safety fear with strobe defense feature
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Fühlst du dich nachts sicher?"** | **"晚上你觉得安全吗？"** | Center |
+| 16–19s | Stroboskop zur Abwehr | 频闪用于防御 | Center-bottom |
+| 30–35s | Hol dir Sicherheit | 获得安全感 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -50,31 +60,31 @@ source_notes:
 [worried] Fühlst du dich nachts wirklich sicher?
 [anxious] Dunkle Wege, komische Geräusche.
 [tense] Ist da jemand?
-[concerned] Ohne Licht bist du schutzlos.
-[relieved] Aber mit dieser Taschenlampe?
+[frustrated] Ohne Licht bist du schutzlos.
+[happy] Aber mit dieser Taschenlampe?
 [confident] Vier LED-Kerne machen die Nacht zum Tag!
 [impressed] Alles ist plötzlich sichtbar.
-[firm] Und wenn es ernst wird?
+[confident] Und wenn es ernst wird?
 [assertive] Stroboskop-Modus aktivieren!
 [matter-of-fact] Blendet jeden potenziellen Angreifer.
 [reassured] Perfekt für Gassi gehen im Dunkeln.
 [warm] Du und dein Hund seid sicher.
-[satisfied] Das COB-Seitenlicht leuchtet den ganzen Weg aus.
-[direct] Sicherheit gibt's hier – link unten!
+[happy] Das COB-Seitenlicht leuchtet den ganzen Weg aus.
+[cheerfully] Sicherheit gibt's hier – link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
 [worried] 你晚上真的感到安全吗？
 [anxious] 黑暗的道路，奇怪的声音。
 [tense] 那里有人吗？
-[concerned] 没有光你就毫无防备。
-[relieved] 但有了这款手电筒呢？
+[frustrated] 没有光你就毫无防备。
+[happy] 但有了这款手电筒呢？
 [confident] 四个LED核心把黑夜变成白天！
 [impressed] 一切突然都可见了。
-[firm] 如果情况严重呢？
+[confident] 如果情况严重呢？
 [assertive] 激活频闪模式！
 [matter-of-fact] 让任何潜在攻击者失明。
 [reassured] 非常适合在黑暗中遛狗。
 [warm] 你和你的狗都很安全。
-[satisfied] COB侧灯照亮整条路。
-[direct] 安全在这里——链接在下方！
+[happy] COB侧灯照亮整条路。
+[cheerfully] 安全在这里——链接在下方！

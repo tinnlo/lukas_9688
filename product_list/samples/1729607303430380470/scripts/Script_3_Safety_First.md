@@ -32,28 +32,38 @@ source_notes:
 | **00:22-00:28** | **[GIFT/USE CASE]** Shows it wrapping up or being plugged in a kid's room (safe night light). |
 | **00:28-00:35** | **[CTA]** Host holds the product close to camera. "Bestseller" sticker overlay. Points down. |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Safety positioning statement with strong "throw away old adapters" message.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Alte Adapter = GEFÄHRLICH"** | **"旧适配器 = 危险"** | Center |
+| 08–15s | Robust • Überspannungsschutz | 结实 • 过载保护 | Center-bottom |
+| 22–28s | Einzelschalter = Geld sparen | 独立开关 = 省钱 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–45s)
 
-[serious] [urgent] Ganz ehrlich? Wirf diese alten Dinger sofort in den Müll!
-[concerned] Sie sind unsicher und verschwenden nur Platz.
-[bright] [relieved] Tausch sie lieber gegen DAS hier.
+[matter-of-fact] Ganz ehrlich? Wirf diese alten Dinger sofort in den Müll!
+[frustrated] Sie sind unsicher und verschwenden nur Platz.
+[cheerfully] [happy] Tausch sie lieber gegen DAS hier.
 [confident] Ein echter Alleskönner. Robust, sicher und mit Überspannungsschutz.
-[emphatic] Und das Beste: Mit diesen Schaltern sparst du bares Geld, weil du Geräte komplett abschalten kannst.
+[excited] Und das Beste: Mit diesen Schaltern sparst du bares Geld, weil du Geräte komplett abschalten kannst.
 [warm] Sicher, ordentlich und genial. Ein Muss für jeden deutschen Haushalt.
-[firm] Sicherheit geht vor. Bestell es dir jetzt hier unten!
+[confident] Sicherheit geht vor. Bestell es dir jetzt hier unten!
 
 ---
 
-### CN (中文翻译 | 仅供参考)
+### ZH (中文翻译 | 30-45s)
 
-[serious] [urgent] 说真的？赶紧把这些旧东西扔进垃圾桶！
-[concerned] 它们不安全，还浪费空间。
-[bright] [relieved] 最好把它换成这个。
+[matter-of-fact] 说真的？赶紧把这些旧东西扔进垃圾桶！
+[frustrated] 它们不安全，还浪费空间。
+[cheerfully] [happy] 最好把它换成这个。
 [confident] 一个真正的全能选手。结实、安全，还有过载保护。
-[emphatic] 最棒的是：有了这些开关，你可以彻底切断电源，省下真金白银。
+[excited] 最棒的是：有了这些开关，你可以彻底切断电源，省下真金白银。
 [warm] 安全、整洁又天才。每一个德国家庭的必备品。
-[firm] 安全第一。现在就在下面下单吧！
+[confident] 安全第一。现在就在下面下单吧！

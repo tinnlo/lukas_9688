@@ -44,6 +44,16 @@ The "Health Check Narrative" format focusing on the *meaning* of data, not just 
 | 28-33 | Sitting on floor with kettlebells, looking motivated with phone | Lifestyle: Fitness context integration |
 | 33-38 | Holding scale + phone together, determined expression, pointing to link | Empowerment: Take control CTA |
 
+## On-Screen Text
+
+**Strategy:** Emotional/Lifestyle — Vulnerability creates trust, tracking = empowerment
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Ich dachte ich bin fit"** | **"我以为我很健康"** | Center |
+| 08–12s | Körperfett: 28% ⚠️ | 体脂：28% ⚠️ | Center |
+| 28–33s | Jeden Tag tracken | 每天追踪 | Center-bottom |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -56,23 +66,23 @@ The "Health Check Narrative" format focusing on the *meaning* of data, not just 
 [surprised] Dann hab ich auf diese Waage geschaut.
 [shocked] Fünfundsechzig Kilo, alles normal, oder?
 
-[concerned] Aber schau mal die App.
+[frustrated] Aber schau mal die App.
 [worried] Mein Körperfett: achtundzwanzig Prozent!
 
 [frustrated] Das ist viel zu hoch für meine Größe.
 [earnest] Die normale Waage hat mich angelogen.
 
-[intrigued] Diese hier zeigt mir alles.
-[amazed] Muskelmasse, Wasser, sogar Viszeralfett.
+[curious] Diese hier zeigt mir alles.
+[impressed] Muskelmasse, Wasser, sogar Viszeralfett.
 
 [thoughtful] Jetzt verstehe ich, warum ich mich schlapp fühle.
-[relieved] Endlich kann ich das richtig angehen.
+[happy] Endlich kann ich das richtig angehen.
 
 [motivated] Jeden Tag tracken, die Fortschritte sehen.
-[determined] Das ist mein Neujahrsvorsatz, der wirklich klappt.
+[confident] Das ist mein Neujahrsvorsatz, der wirklich klappt.
 
 [warm] Hol dir die Kontrolle über deinen Körper.
-[firm] Link unten – super günstig!
+[confident] Link unten – super günstig!
 
 ### ZH (中文翻译 | 30–50s)
 
@@ -82,20 +92,20 @@ The "Health Check Narrative" format focusing on the *meaning* of data, not just 
 [surprised] 然后我看了这个秤。
 [shocked] 六十五公斤，一切正常，对吧？
 
-[concerned] 但看看这个App。
+[frustrated] 但看看这个App。
 [worried] 我的体脂：百分之二十八！
 
 [frustrated] 对我的身高来说太高了。
 [earnest] 普通秤骗了我。
 
-[intrigued] 这个能显示所有数据。
-[amazed] 肌肉量、水分，甚至内脏脂肪。
+[curious] 这个能显示所有数据。
+[impressed] 肌肉量、水分，甚至内脏脂肪。
 
 [thoughtful] 现在我明白为什么总感觉疲惫了。
-[relieved] 终于可以正确应对了。
+[happy] 终于可以正确应对了。
 
 [motivated] 每天追踪，看到进步。
-[determined] 这是我真正能实现的新年决心。
+[confident] 这是我真正能实现的新年决心。
 
 [warm] 掌控你的身体吧。
-[firm] 链接在下面——价格很友好！
+[confident] 链接在下面——价格很友好！

@@ -50,6 +50,17 @@ Starting with criticism builds trust, then the transformation proves genuine qua
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Hook Overlay — Authority positioning
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Ich teste ständig"** | **"我一直在测试"** | Center |
+| 15–25s | Holzige Noten • Moschus | 木质调 • 麝香 | Center-bottom |
+| 35–40s | Das ist mein Nummer eins | 这是我的首选 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -58,7 +69,7 @@ Starting with criticism builds trust, then the transformation proves genuine qua
 
 [critical] Ich teste ständig Parfüms.
 [matter-of-fact] Ich habe vier Flaschen zu Hause.
-[skeptical] Auf der Packung sieht dieses hier... okay aus.
+[curious] Auf der Packung sieht dieses hier... okay aus.
 [dismissive] Das erste Sprühen? Etwas scharf. Typisch billig.
 [curious] Aber dann... warte fünf Minuten.
 [warm] Das ist nicht zu aggressiv—das ist männlich.
@@ -66,8 +77,8 @@ Starting with criticism builds trust, then the transformation proves genuine qua
 [reflective] Ich habe das heute Morgen aufgetragen.
 [surprised] Jetzt ist es achtzehn Uhr und ich rieche es noch.
 [confident] Eau de Parfum konzentriert. Das Zeug ist real.
-[playful] Meine vier Flaschen? Vergessen.
-[firm] Das ist jetzt mein Nummer eins.
+[warm] Meine vier Flaschen? Vergessen.
+[confident] Das ist jetzt mein Nummer eins.
 [delighted] Für kleines Geld? Absoluter No-Brainer.
 
 ---
@@ -76,7 +87,7 @@ Starting with criticism builds trust, then the transformation proves genuine qua
 
 [critical] 我经常测试香水。
 [matter-of-fact] 我家里有四瓶。
-[skeptical] 包装看起来...还好。
+[curious] 包装看起来...还好。
 [dismissive] 第一喷？有点刺鼻。典型的便宜货。
 [curious] 但等五分钟再看。
 [warm] 这不是太刺激——这是男性感。
@@ -84,6 +95,6 @@ Starting with criticism builds trust, then the transformation proves genuine qua
 [reflective] 我今天早上喷的。
 [surprised] 现在都晚上六点了还能闻到。
 [confident] 浓香水级别。这东西是真的。
-[playful] 我那四瓶？忘了吧。
-[firm] 这现在是我的首选。
+[warm] 我那四瓶？忘了吧。
+[confident] 这现在是我的首选。
 [delighted] 花点小钱？绝对划算。

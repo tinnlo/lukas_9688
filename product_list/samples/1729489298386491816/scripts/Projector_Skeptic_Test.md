@@ -42,44 +42,54 @@ source_notes:
 | 31-35 | Spec overlay montage: "Android 14" → "WiFi 6" → "290 ANSI" → "720P Native" → "4K Dekodierung" | FEATURE DENSITY overwhelms doubt |
 | 35-38 | Creator's shocked/impressed face, pointing to cart, text: "Ich bin überzeugt - bist du es auch?" | CTA with social proof (creator endorsement) |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Skeptic challenge with proof sequence
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Günstiger Beamer = Schrott?"** | **"便宜投影仪=垃圾？"** | Center |
+| 12–18s | Mit Licht: Okay → Ohne Licht: WOW | 开灯：还行 → 关灯：哇 | Center |
+| 35–38s | Ich bin überzeugt | 我信服了 | Center-bottom |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[doubtful] Kann ein günstiger Beamer wirklich gut sein?
-[skeptical] Ich war extrem skeptisch.
+[curious] Kann ein günstiger Beamer wirklich gut sein?
+[curious] Ich war extrem skeptisch.
 [curious] Also habe ich ihn getestet.
 [impressed] Schau dir die Schärfe an – komm näher ran!
 [surprised] Die Schrift ist gestochen scharf!
 [matter-of-fact] Native 720P, kein Scherz.
-[challenging] Okay, Test Nummer zwei – Helligkeit.
+[confident] Okay, Test Nummer zwei – Helligkeit.
 [honest] Mit Licht? Geht so.
-[amazed] Aber Licht aus? Absolut krass!
-[intrigued] Jetzt wird's spannend – Android 14 integriert.
+[impressed] Aber Licht aus? Absolut krass!
+[curious] Jetzt wird's spannend – Android 14 integriert.
 [confident] Netflix läuft ohne Fire Stick.
-[enthusiastic] Streaming über WiFi 6 – null Ruckeln!
+[cheerfully] Streaming über WiFi 6 – null Ruckeln!
 [reassured] Sound ist okay, aber verbind einfach deine Box via Bluetooth.
-[satisfied] Das Ding ist super günstig.
-[firm] 290 ANSI, unterstützt 4K Dekodierung, wiegt fast nichts.
-[direct] Ich bin überzeugt – Link unten, schnapp ihn dir!
+[happy] Das Ding ist super günstig.
+[confident] 290 ANSI, unterstützt 4K Dekodierung, wiegt fast nichts.
+[cheerfully] Ich bin überzeugt – Link unten, schnapp ihn dir!
 
 ### ZH (中文翻译 | 30–50s)
 
-[doubtful] 便宜投影仪真的能好吗？
-[skeptical] 我极度怀疑。
+[curious] 便宜投影仪真的能好吗？
+[curious] 我极度怀疑。
 [curious] 所以我测试了它。
 [impressed] 看看这清晰度——靠近点！
 [surprised] 文字超级锐利！
 [matter-of-fact] 原生720P，不开玩笑。
-[challenging] 好，第二轮测试——亮度。
+[confident] 好，第二轮测试——亮度。
 [honest] 开灯？还行。
-[amazed] 但关灯呢？绝对惊艳！
-[intrigued] 现在有趣了——内置安卓14。
+[impressed] 但关灯呢？绝对惊艳！
+[curious] 现在有趣了——内置安卓14。
 [confident] Netflix不需要Fire Stick就能跑。
-[enthusiastic] 通过WiFi 6串流——完全不卡！
+[cheerfully] 通过WiFi 6串流——完全不卡！
 [reassured] 音质还行，但直接用蓝牙连你的音箱就行。
-[satisfied] 这东西超便宜。
-[firm] 290 ANSI，支持4K解码，几乎不重。
-[direct] 我信服了——链接在下方，拿下它！
+[happy] 这东西超便宜。
+[confident] 290 ANSI，支持4K解码，几乎不重。
+[cheerfully] 我信服了——链接在下方，拿下它！

@@ -33,6 +33,16 @@ source_notes:
 | **00:20-00:25** | Close up on the **Individual Switches** being clicked off. Visual cue: Green/Blue light goes off. |
 | **00:25-00:30** | **[CTA]** Split screen: Left side (Messy Old Way) vs Right side (New Organized Way). Finger points to the orange cart icon below. |
 
+## On-Screen Text
+
+**Strategy:** Hook Overlay — Amplifies the kitchen cable chaos pain point to create scroll-stop relatability.
+
+| Timing | DE Text                           | ZH Text          | Placement     |
+| :----- | :-------------------------------- | :--------------- | :------------ |
+| 0–3s   | **"Kabelsalat nervt dich auch?"** | **"线缆乱糟糟也让你烦？"** | Center        |
+| 15–20s | Handy auf Ablage • Sauber         | 手机在架子上 • 干净      | Center-bottom |
+| 25–30s | Einzelschalter = Strom sparen     | 独立开关 = 省电        | Center        |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -41,18 +51,18 @@ source_notes:
 
 [annoyed] Mal ehrlich, nervt dich dieser ständige Kabelsalat in der Küche auch so sehr?
 [confident] Schluss damit! Ich habe endlich die perfekte Lösung gefunden.
-[fast-paced] Schau mal: Kaffeemaschine, Toaster und mein Handy - alles gleichzeitig!
-[amazed] Und der Hammer? Diese Ablage hier! Mein Handy liegt nicht mehr im Dreck.
+[excited] Schau mal: Kaffeemaschine, Toaster und mein Handy - alles gleichzeitig!
+[impressed] Und der Hammer? Diese Ablage hier! Mein Handy liegt nicht mehr im Dreck.
 [matter-of-fact] Plus: Mit diesen Schaltern sparst du sogar Strom. Klick - und aus.
-[urgent] Mach endlich Ordnung zuhause. Der Link ist direkt hier unten!
+[cheerfully] Mach endlich Ordnung zuhause. Der Link ist direkt hier unten!
 
 ---
 
-### CN (中文翻译 | 仅供参考)
+### ZH (中文翻译 | 30-40s)
 
 [annoyed] 说实话，厨房里这种乱糟糟的线缆是不是也让你很烦？
 [confident] 够了！我终于找到了完美的解决方案。
-[fast-paced] 看：咖啡机、烤面包机还有我的手机——全都能同时用！
-[amazed] 最棒的是什么？这个置物架！我的手机再也不会沾到脏东西了。
+[excited] 看：咖啡机、烤面包机还有我的手机——全都能同时用！
+[impressed] 最棒的是什么？这个置物架！我的手机再也不会沾到脏东西了。
 [matter-of-fact] 还有：用这些开关你还能省电。咔哒——就关了。
-[urgent] 给家里整理一下吧。链接就在下面！
+[cheerfully] 给家里整理一下吧。链接就在下面！

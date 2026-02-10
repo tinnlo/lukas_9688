@@ -48,6 +48,17 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Challenges luxury pricing to position budget alternative as smart choice
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Warum 100€ für Parfüm?"** | **"为什么香水要100欧？"** | Center |
+| 27–32s | Blumig + Vanille-Holz • Hält lang | 花香+香草木质 • 持久 | Center-bottom |
+| 35–40s | Kluges Shopping | 聪明购物 | Center |
+
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 40s)
@@ -62,18 +73,18 @@ source_notes:
 
 [neutral] Das hier ist ein Doppelpack. Zwei Flaschen.
 [educational] Einer riecht blumig und frisch.
-[bright] Der andere nach Vanille und Holz. Sehr elegant.
+[cheerfully] Der andere nach Vanille und Holz. Sehr elegant.
 
 [neutral] Und wisst ihr was? Es hält genauso lange.
 [impressed] Den ganzen Tag. Kein Unterschied.
 
 [neutral] Der Sprühnebel? Genauso fein wie bei teuren Marken.
-[satisfied] Die Verpackung? Sieht aus wie Luxus.
+[happy] Die Verpackung? Sieht aus wie Luxus.
 
 [neutral] Ich spare so viel Geld. Und rieche genauso gut.
-[enthusiastic] Kluges Shopping. Nicht dummes Geld ausgeben.
+[cheerfully] Kluges Shopping. Nicht dummes Geld ausgeben.
 
-[encouraging] Hol's dir. Link unten.
+[warm] Hol's dir. Link unten.
 
 
 ---
@@ -90,15 +101,15 @@ source_notes:
 
 [neutral] 这是双瓶装。两瓶。
 [educational] 一个闻起来花香清新。
-[bright] 另一个是香草和木质。非常优雅。
+[cheerfully] 另一个是香草和木质。非常优雅。
 
 [neutral] 你知道吗？它持久度一样。
 [impressed] 一整天。没有区别。
 
 [neutral] 喷雾？和昂贵品牌一样细腻。
-[satisfied] 包装？看起来像奢侈品。
+[happy] 包装？看起来像奢侈品。
 
 [neutral] 我省了好多钱。闻起来一样好。
-[enthusiastic] 聪明购物。不是傻傻花钱。
+[cheerfully] 聪明购物。不是傻傻花钱。
 
-[encouraging] 快买。链接在下面。
+[warm] 快买。链接在下面。

@@ -48,6 +48,17 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Emotional/Lifestyle — Relationship drama hook creates engagement through jealousy prank narrative
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Wessen Parfüm ist das?"** | **"这是谁的香水？"** | Center |
+| 17–22s | 2 Düfte in 1 Set | 1套2种香味 | Center-bottom |
+| 37–42s | Für Paare perfekt | 情侣完美选择 | Center |
+
+
 ## Voiceover
 
 ### DE (ElevenLabs Prompt | 42s)
@@ -64,16 +75,16 @@ source_notes:
 [reassuring] LASTAR. Ein Doppelpack.
 
 [neutral] Es sind zwei Düfte. Einer mit Vanille und Holz für den Tag.
-[bright] Einer blumig für den Abend.
+[cheerfully] Einer blumig für den Abend.
 
 [neutral] Sie war immer noch skeptisch.
-[storytelling] Also habe ich sie schnüffeln lassen.
+[curious] Also habe ich sie schnüffeln lassen.
 
 [neutral] Ihr Gesicht... sie war beeindruckt.
-[satisfied] Das riecht wirklich gut. Kann ich das auch tragen?
+[happy] Das riecht wirklich gut. Kann ich das auch tragen?
 
 [neutral] Jetzt tragen wir beide LASTAR.
-[playful] Ich den holzigen, sie den blumigen.
+[warm] Ich den holzigen, sie den blumigen.
 
 [neutral] Perfekt für Paare.
 [confident] Schnapp's dir. Link unten.
@@ -93,16 +104,16 @@ source_notes:
 [reassuring] LASTAR。双瓶装。
 
 [neutral] 有两种香味。一种香草木质的白天用。
-[bright] 一种花香的晚上用。
+[cheerfully] 一种花香的晚上用。
 
 [neutral] 她还是半信半疑。
-[storytelling] 所以我让她闻了闻。
+[curious] 所以我让她闻了闻。
 
 [neutral] 她的表情...被征服了。
-[satisfied] 这闻起来真的很好。我也能用吗？
+[happy] 这闻起来真的很好。我也能用吗？
 
 [neutral] 现在我们都喷 LASTAR。
-[playful] 我用木质的，她用花香的。
+[warm] 我用木质的，她用花香的。
 
 [neutral] 情侣完美之选。
 [confident] 快买。链接在下面。

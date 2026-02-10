@@ -34,48 +34,58 @@ source_notes:
 | **BENEFIT** | 00:29-00:35 | Split screen: Left = Old messy desk with "❌". Right = New clean setup with "✅". Person looks happy, productive. | **Before/After** |
 | **CTA** | 00:35-00:40 | Person gives thumbs up on a new Zoom call. Background is clean and professional. Finger points to orange cart. | **Call to Action** |
 
+## On-Screen Text
+
+**Strategy:** Emotional / Lifestyle — Embarrassment hook (messy Zoom background) with aspirational professional upgrade.
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–4s | **"Zoom-Call Kabelsalat?"** | **"Zoom视频线缆乱？"** | Center |
+| 14–20s | USB-C + USB-A • Alles hier | USB-C + USB-A • 全在这 | Center-bottom |
+| 29–35s | Vorher ❌ → Nachher ✅ | 之前 ❌ → 之后 ✅ | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 40s)
 
-[embarrassed] Hast du auch schon mal im Zoom-Call gedacht: "Hoffentlich sieht keiner meinen Kabelsalat"?
+[frustrated] Hast du auch schon mal im Zoom-Call gedacht: "Hoffentlich sieht keiner meinen Kabelsalat"?
 
-[frustrated] Monitor, Laptop, Schreibtischlampe, Handy – und ständig musst du unter den Tisch kriechen, um etwas umzustecken.
+[annoyed] Monitor, Laptop, Schreibtischlampe, Handy – und ständig musst du unter den Tisch kriechen, um etwas umzustecken.
 
-[bright] Vergiss das! Diese Steckdose bringt Ordnung auf deinen Schreibtisch.
+[cheerfully] Vergiss das! Diese Steckdose bringt Ordnung auf deinen Schreibtisch.
 
 [confident] Alle deine Geräte an einem Ort. Kein Kabelgewirr mehr.
 
 [matter-of-fact] USB-C für dein Handy, USB-A für Maus und Tastatur – alles direkt hier.
 
-[satisfied] Und auf dieser Ablage? Dein Handy bleibt immer griffbereit, kein Kabel liegt mehr rum.
+[happy] Und auf dieser Ablage? Dein Handy bleibt immer griffbereit, kein Kabel liegt mehr rum.
 
-[firm] Feierabend? Einfach Monitor und Lampe per Schalter aus. Der Laptop läuft weiter.
+[confident] Feierabend? Einfach Monitor und Lampe per Schalter aus. Der Laptop läuft weiter.
 
 [warm] Produktiver arbeiten mit einem aufgeräumten Arbeitsplatz – das ist wissenschaftlich bewiesen.
 
-[urgent] Mach dein Home-Office endlich professionell. Link ist unten!
+[cheerfully] Mach dein Home-Office endlich professionell. Link ist unten!
 
 ---
 
-### CN (中文翻译 | 仅供参考)
+### ZH (中文翻译 | 40s)
 
-[embarrassed] 你是不是也在Zoom会议时想过："希望没人看到我乱糟糟的线缆"？
+[frustrated] 你是不是也在Zoom会议时想过："希望没人看到我乱糟糟的线缆"？
 
-[frustrated] 显示器、笔记本、台灯、手机——你总得钻到桌子底下去换插头。
+[annoyed] 显示器、笔记本、台灯、手机——你总得钻到桌子底下去换插头。
 
-[bright] 忘掉这些吧！这款插座能让你的书桌井井有条。
+[cheerfully] 忘掉这些吧！这款插座能让你的书桌井井有条。
 
 [confident] 你所有的设备都在一个地方。再也不用理乱七八糟的线了。
 
 [matter-of-fact] USB-C给手机充电，USB-A给鼠标和键盘——全都在这里。
 
-[satisfied] 而这个置物架呢？你的手机随时可拿，线缆不会再散落在桌上。
+[happy] 而这个置物架呢？你的手机随时可拿，线缆不会再散落在桌上。
 
-[firm] 下班了？只需用开关关掉显示器和台灯。笔记本继续运行。
+[confident] 下班了？只需用开关关掉显示器和台灯。笔记本继续运行。
 
 [warm] 整洁的工作空间让你更高效——这可是科学证明的。
 
-[urgent] 让你的家庭办公室专业起来。链接在下面！
+[cheerfully] 让你的家庭办公室专业起来。链接在下面！

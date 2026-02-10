@@ -40,6 +40,16 @@ source_notes:
 | 26-28 | Blue battery indicator close-up showing 4 bars (100% charged) | TRUST ELEMENT - smart battery management |
 | 28-32 | Side-by-side: Left = pile of batteries + "teuer" text, Right = USB flashlight + "keine Folgekosten" | FINAL VALUE PROPOSITION with CTA overlay |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Battery cost pain point with USB solution
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Hör auf, Batterien zu kaufen!"** | **"别再买电池了！"** | Center |
+| 13–16s | 4-Kern LED • Superhell | 4核LED • 超亮 | Center-bottom |
+| 28–32s | Einmal kaufen • Keine Folgekosten | 买一次 • 无后续费用 | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -48,28 +58,28 @@ source_notes:
 
 [frustrated] Hör auf, Batterien zu kaufen!
 [annoyed] Jedes Mal das gleiche – wieder leer, wieder Geld weg.
-[firm] Alte Taschenlampen sind teuer und schwach.
-[intrigued] Aber diese hier?
+[confident] Alte Taschenlampen sind teuer und schwach.
+[curious] Aber diese hier?
 [excited] USB-aufladbar – einfach rein, fertig!
-[amazed] Vier LED-Kerne – extrem hell!
+[impressed] Vier LED-Kerne – extrem hell!
 [impressed] Wie Tageslicht, selbst im Dunkeln.
 [matter-of-fact] Ein Knopfdruck – und du hast vier Modi.
 [confident] Hauptlicht, gedimmtes Licht, Stroboskop, Seitenlicht.
 [delighted] Perfekt zum Lesen oder fürs Auto!
 [reassured] Die Batterieanzeige zeigt dir immer, wie viel Power noch da ist.
-[direct] Einmal kaufen, für immer nutzen. Link unten!
+[cheerfully] Einmal kaufen, für immer nutzen. Link unten!
 
 ### ZH (中文翻译 | 30–50s)
 
 [frustrated] 别再买电池了！
 [annoyed] 每次都一样——又没电了，又浪费钱。
-[firm] 旧手电筒又贵又弱。
-[intrigued] 但这个呢？
+[confident] 旧手电筒又贵又弱。
+[curious] 但这个呢？
 [excited] USB充电——插上就行！
-[amazed] 四个LED核心——超级亮！
+[impressed] 四个LED核心——超级亮！
 [impressed] 像白天一样，即使在黑暗中。
 [matter-of-fact] 一键按下——你有四种模式。
 [confident] 主灯，调光，频闪，侧灯。
 [delighted] 非常适合阅读或汽车！
 [reassured] 电量显示总是告诉你还剩多少电。
-[direct] 买一次，永远用。链接在下方！
+[cheerfully] 买一次，永远用。链接在下方！

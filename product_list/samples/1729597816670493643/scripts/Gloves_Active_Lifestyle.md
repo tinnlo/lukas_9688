@@ -37,32 +37,43 @@ source_notes:
 | 22-25 | Multiple sports montage: cycling, hiking, walking dog | VERSATILITY appeal |
 | 25-28 | Text: "Dein Winter-Trainingspartner" + product | ESSENTIAL CTA |
 
+## On-Screen Text
+
+**Strategy:** Bold Claim — Positions gloves as essential gear for winter athletes who won't compromise
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Winter stoppt nicht"** | **"冬天不停歇"** | Center |
+| 11–17s | Touchscreen • Wasserfest | 触屏 • 防水 | Center-bottom |
+| 22–28s | Dein Winter-Trainingspartner | 你的冬季训练伙伴 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE (ElevenLabs Prompt | 30–50s)
 
-[determined] Winter stoppt mein Training nicht!
+[confident] Winter stoppt mein Training nicht!
 [frustrated] Aber kalte Hände? Das nervt!
 [annoyed] Musik ändern? Unmöglich ohne Handschuhe!
 [excited] Diese hier lösen das Problem!
 [impressed] Touchscreen funktioniert perfekt!
 [confident] Spotify, Strava – alles steuerbar!
-[satisfied] Und meine Hände bleiben warm!
+[happy] Und meine Hände bleiben warm!
 [reassured] Auch bei Regen – wasserabweisend!
-[enthusiastic] Perfekt für Joggen, Radfahren, Wandern!
-[direct] Dein Winter-Must-Have – jetzt holen!
+[cheerfully] Perfekt für Joggen, Radfahren, Wandern!
+[cheerfully] Dein Winter-Must-Have – jetzt holen!
 
 ### ZH (中文翻译 | 30–50s)
 
-[determined] 冬天阻止不了我的训练！
+[confident] 冬天阻止不了我的训练！
 [frustrated] 但手冷呢？太烦人了！
 [annoyed] 换歌？不戴手套不可能！
 [excited] 这款解决了问题！
 [impressed] 触屏完美运作！
 [confident] Spotify、Strava——全都能控制！
-[satisfied] 而且手保持温暖！
+[happy] 而且手保持温暖！
 [reassured] 即使下雨——防泼水！
-[enthusiastic] 非常适合跑步、骑行、徒步！
-[direct] 你的冬季必备——现在就拿！
+[cheerfully] 非常适合跑步、骑行、徒步！
+[cheerfully] 你的冬季必备——现在就拿！

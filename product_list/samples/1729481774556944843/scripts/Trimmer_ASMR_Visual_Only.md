@@ -43,6 +43,16 @@ source_notes:
 | 22-24 | Shaking water off trimmer, droplets flying in slow-mo | Aesthetic: Premium feel |
 | 24-30 | Product on clean white surface, text overlay: "Link unten ⬇️" | CTA: Minimal distraction |
 
+## On-Screen Text
+
+**Strategy:** Product Label — ASMR/satisfying visual focus, minimal text
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–2s | **"Schau das an..."** | **"看这个..."** | Center |
+| 10–14s | So glatt | 如此光滑 | Center-bottom |
+| 24–30s | Link unten ⬇️ | 链接在下面 ⬇️ | Center |
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar

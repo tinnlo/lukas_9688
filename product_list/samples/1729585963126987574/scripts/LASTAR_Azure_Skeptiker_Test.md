@@ -49,22 +49,33 @@ Ein ehrlicher Test-Ansatz, der Skepsis in Überzeugung verwandelt. Nutzt die bew
 | 35-40 | Schnitt: Parfum wird in Sporttasche gepackt | Usage: Praktischer Begleiter |
 | 40-42 | Finger zeigt auf Kamera, Lächeln, gelber Korb-Pfeil einblenden | CTA: Direkter Handlungsaufruf |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Tests budget perfume skepticism through real-time longevity proof
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Billig = Schlecht?"** | **"便宜=不好？"** | Center |
+| 12–15s | 08:00 morgens • Test beginnt | 早8点 • 测试开始 | Center-bottom |
+| 20–30s | 17:00 - Riecht noch! | 17点 - 还能闻到！ | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
 
 ### DE
 
-[skeptical] Ich habe überall dieses günstige Parfum gesehen.
+[curious] Ich habe überall dieses günstige Parfum gesehen.
 [curious] LASTAR Azure Coastal.
 [matter-of-fact] Und ich dachte: So erschwinglich, kann das nur Müll sein.
 
 [neutral] Also teste ich es.
-[bright] Unboxing.
+[cheerfully] Unboxing.
 [surprised] Okay, sieht schon mal nicht billig aus.
 
 [curious] Deckel auf.
-[soft] Erster Spray.
+[warm] Erster Spray.
 [impressed] Whoa.
 
 [reflective] Riecht... frisch.
@@ -72,7 +83,7 @@ Ein ehrlicher Test-Ansatz, der Skepsis in Überzeugung verwandelt. Nutzt die bew
 [confident] Nicht nach Axe.
 
 [matter-of-fact] Aber die echte Frage ist: Hält es?
-[firm] Ich sprühe es morgens auf.
+[confident] Ich sprühe es morgens auf.
 [neutral] Und checke in fünf Stunden.
 
 [understated] So.
@@ -83,32 +94,32 @@ Ein ehrlicher Test-Ansatz, der Skepsis in Überzeugung verwandelt. Nutzt die bew
 [confident] Aber definitiv noch da.
 [warm] Für kleines Geld?
 
-[firm] Das ist wild.
-[bright] Eau de Parfum Konzentration.
+[confident] Das ist wild.
+[cheerfully] Eau de Parfum Konzentration.
 [matter-of-fact] Nicht Eau de Cologne.
 
 [reflective] Heißt: Mehr Öl, hält länger.
 [confident] Und das merkt man.
 
 [warm] Riecht maskulin, nicht aufdringlich.
-[bright] Perfekt fürs Büro oder Date.
+[cheerfully] Perfekt fürs Büro oder Date.
 
-[firm] Für den Preis kann man nichts falsch machen.
+[confident] Für den Preis kann man nichts falsch machen.
 [confident] Link ist unten.
-[bright] Probier es aus.
+[cheerfully] Probier es aus.
 
 ### ZH
 
-[skeptical] 我到处都看到这款便宜的香水。
+[curious] 我到处都看到这款便宜的香水。
 [curious] LASTAR Azure Coastal。
 [matter-of-fact] 我想：这么便宜，肯定是垃圾。
 
 [neutral] 所以我测试一下。
-[bright] 开箱。
+[cheerfully] 开箱。
 [surprised] 好吧，看起来还不错。
 
 [curious] 打开盖子。
-[soft] 第一次喷。
+[warm] 第一次喷。
 [impressed] 哇哦。
 
 [reflective] 闻起来...很清新。
@@ -116,7 +127,7 @@ Ein ehrlicher Test-Ansatz, der Skepsis in Überzeugung verwandelt. Nutzt die bew
 [confident] 不是那种廉价除臭剂的味道。
 
 [matter-of-fact] 但真正的问题是：能持久吗？
-[firm] 我早上喷上。
+[confident] 我早上喷上。
 [neutral] 五个小时后检查。
 
 [understated] 好。
@@ -127,16 +138,16 @@ Ein ehrlicher Test-Ansatz, der Skepsis in Überzeugung verwandelt. Nutzt die bew
 [confident] 但绝对还在。
 [warm] 这个价格？
 
-[firm] 这太厉害了。
-[bright] 淡香精浓度。
+[confident] 这太厉害了。
+[cheerfully] 淡香精浓度。
 [matter-of-fact] 不是古龙水。
 
 [reflective] 意思是：精油更多，留香更久。
 [confident] 你能感觉到。
 
 [warm] 闻起来很阳刚，不刺鼻。
-[bright] 办公室或约会都完美。
+[cheerfully] 办公室或约会都完美。
 
-[firm] 这个价格买不了吃亏。
+[confident] 这个价格买不了吃亏。
 [confident] 链接在下面。
-[bright] 试试看。
+[cheerfully] 试试看。

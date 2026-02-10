@@ -51,6 +51,17 @@ POV einer Freundin, die ein tolles Geschenk gefunden hat. Nutzt die "Partner Val
 | 38-42 | Hand greift zum Handy, TikTok Shop öffnen (Screen-Recording) | Action: Kaufprozess zeigen |
 | 42-45 | Gelber Korb-Button, Finger tippt, Text "Jetzt sichern" | CTA: Direkter Call-to-Action |
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Solves boring gift dilemma with smart budget-luxury alternative
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Geschenk finden schwer?"** | **"找礼物难？"** | Center |
+| 13–16s | Hochwertig • Geschenkfertig | 高档 • 可送礼 | Center-bottom |
+| 30–38s | Er denkt, du hast viel ausgegeben | 他以为你花了很多钱 | Center |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar
@@ -60,20 +71,20 @@ POV einer Freundin, die ein tolles Geschenk gefunden hat. Nutzt die "Partner Val
 [frustrated] Mädels, hört auf ihm Socken zu kaufen.
 [confident] Ich zeige euch ein tolles Geschenk.
 
-[bright] LASTAR Azure Coastal.
+[cheerfully] LASTAR Azure Coastal.
 [warm] Ein Herrenparfum, das aussieht wie Luxus.
 
 [matter-of-fact] Aber sehr erschwinglich.
 [amused] Ja, wirklich.
 
-[soft] Die Verpackung ist edel.
+[warm] Die Verpackung ist edel.
 [curious] Blaue Flasche, schweres Glas.
 [confident] Sieht teuer aus.
 
 [warm] Ich habe es meinem Freund gegeben.
 [excited] Schau dir seine Reaktion an.
 
-[playful] Er dachte, ich hab ein Vermögen ausgegeben.
+[warm] Er dachte, ich hab ein Vermögen ausgegeben.
 [amused] Spoiler: Hab ich nicht.
 
 [matter-of-fact] Der Duft ist frisch und maskulin.
@@ -81,20 +92,20 @@ POV einer Freundin, die ein tolles Geschenk gefunden hat. Nutzt die "Partner Val
 [confident] Nicht aufdringlich.
 
 [reflective] Parfum für Männer ist oft so teuer.
-[bright] Aber das hier ist preiswert.
+[cheerfully] Aber das hier ist preiswert.
 
-[firm] Und es hält den ganzen Tag.
+[confident] Und es hält den ganzen Tag.
 [confident] Eau de Parfum Konzentration.
 
 [warm] Perfekt für Valentinstag.
-[bright] Geburtstag.
+[cheerfully] Geburtstag.
 [matter-of-fact] Oder einfach nur so.
 
-[playful] Er wird dich fragen: Wo hast du das gefunden?
+[warm] Er wird dich fragen: Wo hast du das gefunden?
 [amused] Sag ihm nicht, wie günstig es war.
 
 [confident] Link ist unten links.
-[bright] Schnapp es dir.
+[cheerfully] Schnapp es dir.
 [warm] Dankt mir später.
 
 ### ZH
@@ -102,20 +113,20 @@ POV einer Freundin, die ein tolles Geschenk gefunden hat. Nutzt die "Partner Val
 [frustrated] 姐妹们，别再给他买袜子了。
 [confident] 我给你们看完美的礼物。
 
-[bright] LASTAR Azure Coastal。
+[cheerfully] LASTAR Azure Coastal。
 [warm] 一款男士香水，看起来像奢侈品。
 
 [matter-of-fact] 但非常实惠。
 [amused] 是的，真的。
 
-[soft] 包装很精致。
+[warm] 包装很精致。
 [curious] 蓝色瓶身，厚重玻璃。
 [confident] 看起来很贵。
 
 [warm] 我送给我男朋友了。
 [excited] 看他的反应。
 
-[playful] 他以为我花了大价钱。
+[warm] 他以为我花了大价钱。
 [amused] 剧透：并没有。
 
 [matter-of-fact] 香味清新又阳刚。
@@ -123,18 +134,18 @@ POV einer Freundin, die ein tolles Geschenk gefunden hat. Nutzt die "Partner Val
 [confident] 不刺鼻。
 
 [reflective] 男士香水通常很贵。
-[bright] 但这款价格很友好。
+[cheerfully] 但这款价格很友好。
 
-[firm] 而且持香一整天。
+[confident] 而且持香一整天。
 [confident] 淡香精浓度。
 
 [warm] 情人节完美。
-[bright] 生日。
+[cheerfully] 生日。
 [matter-of-fact] 或者就是想送。
 
-[playful] 他会问你：在哪儿买的？
+[warm] 他会问你：在哪儿买的？
 [amused] 别告诉他有多便宜。
 
 [confident] 链接在左下角。
-[bright] 赶紧下单。
+[cheerfully] 赶紧下单。
 [warm] 稍后感谢我。
