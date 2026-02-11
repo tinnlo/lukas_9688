@@ -32,5 +32,8 @@ faster-whisper
 Pillow
 numpy
 
+# Audio Processing
+pydub>=0.25.1
+
 # NOTE: google-generativeai is NOT required
 # This project uses Gemini CLI via MCP for AI analysis

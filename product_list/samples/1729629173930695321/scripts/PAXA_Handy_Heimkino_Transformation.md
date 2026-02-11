@@ -74,17 +74,17 @@ Before/After transformation showcasing the dramatic sound upgrade from tinny pho
 [annoyed] Film gucken? Viel zu leise für den ganzen Raum.
 [curious] Aber SCHAU mal...
 [excited] [gasps] Handy auf den Ständer—und BOOM!
-[shocked] WAS?! Das ist ja WAHNSINN!
-[cheerfully] 200% lauter als dein Telefon allein!
-[happy] Und siehst du? Perfekter Handyständer gleichzeitig!
-[delighted] Filme gucken mit Heimkino-Sound—einfach so.
-[excited] Videoanrufe? Laut und klar, freihändig!
-[cheerfully] Kochen in der Küche? Musik ohne Fummelei.
-[happy] Magnetische Induktion—keine Bluetooth-Verbindung nötig.
-[excited] 0.1 Sekunden und der Sound ist DA!
-[delighted] Doppelte Graphenmembran, 360-Grad-Klang.
-[cheerfully] Lautsprecher PLUS Ständer—2-in-1 Deal!
-[excited] Link in Bio—verwandle dein Handy JETZT!
+[surprised] WAS?! Das ist ja WAHNSINN!
+[impressed] 200% lauter als dein Telefon allein!
+[interested] Und siehst du? Perfekter Handyständer gleichzeitig!
+[happy] Filme gucken mit Heimkino-Sound—einfach so.
+[cheerfully] Videoanrufe? Laut und klar, freihändig!
+[warm] Kochen in der Küche? Musik ohne Fummelei.
+[matter-of-fact] Magnetische Induktion—keine Bluetooth-Verbindung nötig.
+[impressed] 0.1 Sekunden und der Sound ist DA!
+[confident] Doppelte Graphenmembran, 360-Grad-Klang.
+[reassuring] Lautsprecher PLUS Ständer—2-in-1 Deal!
+[confident] Link ist unten—verwandle dein Handy JETZT!
 
 ### ZH (中文翻译 | 40–50s)
 
@@ -92,14 +92,14 @@ Before/After transformation showcasing the dramatic sound upgrade from tinny pho
 [annoyed] 看电影？对整个房间来说太安静了。
 [curious] 但是看这个...
 [excited] [gasps] 把手机放在支架上——然后BOOM！
-[shocked] 什么？！这太疯狂了！
-[cheerfully] 比你的手机单独播放大200%！
-[happy] 看到了吗？同时还是完美的手机支架！
-[delighted] 用家庭影院音效看电影——就这么简单。
-[excited] 视频通话？大声清晰，免提！
-[cheerfully] 在厨房做饭？音乐无需摆弄。
-[happy] 磁感应——不需要蓝牙连接。
-[excited] 0.1秒声音就出现了！
-[delighted] 双石墨烯振膜，360度音场。
-[cheerfully] 扬声器加支架——2合1优惠！
-[excited] 简介中的链接——现在就转变你的手机！
+[surprised] 什么？！这太疯狂了！
+[impressed] 比你的手机单独播放大200%！
+[interested] 看到了吗？同时还是完美的手机支架！
+[happy] 用家庭影院音效看电影——就这么简单。
+[cheerfully] 视频通话？大声清晰，免提！
+[warm] 在厨房做饭？音乐无需摆弄。
+[matter-of-fact] 磁感应——不需要蓝牙连接。
+[impressed] 0.1秒声音就出现了！
+[confident] 双石墨烯振膜，360度音场。
+[reassuring] 扬声器加支架——2合1优惠！
+[confident] 链接在下面——现在就转变你的手机！

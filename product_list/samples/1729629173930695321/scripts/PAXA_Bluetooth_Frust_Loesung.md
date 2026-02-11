@@ -68,29 +68,29 @@ Split-screen Problem/Solution hook showcasing the Bluetooth pairing frustration 
 [frustrated] [sighs] Kennst du das? Bluetooth-Lautsprecher verbinden dauert EWIG.
 [annoyed] Suchen, Passwort eingeben, "Verbindung fehlgeschlagen"...
 [curious] Was, wenn es einen einfacheren Weg gibt?
-[excited] [gasps] Das ist magnetische Induktion!
+[surprised] [gasps] Das ist magnetische Induktion!
 [cheerfully] Einfach Handy hinlegen—fertig. KEINE Bluetooth-Verbindung nötig!
-[happy] 0.1 Sekunden und der Sound ist DA.
-[mischievously] Keine Einstellungen, keine App, kein Chaos.
-[delighted] Funktioniert mit JEDEM Handy—iPhone, Android, Tablet.
+[impressed] 0.1 Sekunden und der Sound ist DA.
+[matter-of-fact] Keine Einstellungen, keine App, kein Chaos.
+[interested] Funktioniert mit JEDEM Handy—iPhone, Android, Tablet.
 [excited] Und schau—es ist gleichzeitig ein Handyständer!
-[cheerfully] Perfekt für Küche, Schreibtisch, überall.
-[happy] Doppelte Graphenmembran für klaren Sound.
-[excited] 200% lauter als dein Telefon allein!
-[cheerfully] Link in Bio—vergiss Bluetooth-Frust für immer!
+[warm] Perfekt für Küche, Schreibtisch, überall.
+[impressed] Doppelte Graphenmembran für klaren Sound.
+[happy] 200% lauter als dein Telefon allein!
+[confident] Link ist unten—vergiss Bluetooth-Frust für immer!
 
 ### ZH (中文翻译 | 40–50s)
 
 [frustrated] [sighs] 你知道吗？连接蓝牙扬声器要花很长时间。
 [annoyed] 搜索、输入密码、"连接失败"...
 [curious] 如果有更简单的方法呢？
-[excited] [gasps] 这就是磁感应技术！
+[surprised] [gasps] 这就是磁感应技术！
 [cheerfully] 只需放下手机——完成。不需要蓝牙连接！
-[happy] 0.1秒声音就来了。
-[mischievously] 没有设置、没有应用、没有混乱。
-[delighted] 适用于任何手机——iPhone、Android、平板。
+[impressed] 0.1秒声音就来了。
+[matter-of-fact] 没有设置、没有应用、没有混乱。
+[interested] 适用于任何手机——iPhone、Android、平板。
 [excited] 看——它同时还是手机支架！
-[cheerfully] 非常适合厨房、书桌、任何地方。
-[happy] 双石墨烯振膜带来清晰音质。
-[excited] 比你的手机单独播放大200%！
-[cheerfully] 简介中的链接——永远告别蓝牙挫折！
+[warm] 非常适合厨房、书桌、任何地方。
+[impressed] 双石墨烯振膜带来清晰音质。
+[happy] 比你的手机单独播放大200%！
+[confident] 链接在下面——永远告别蓝牙挫折！

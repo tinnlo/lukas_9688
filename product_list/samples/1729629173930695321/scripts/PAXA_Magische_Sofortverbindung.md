@@ -70,15 +70,15 @@ source_notes:
 [surprised] [gasps] Es gibt KEINS!
 [excited] Keine Kabel. Kein Bluetooth. Das ist REINE Magie!
 [cheerfully] Einfach Handy hinlegen—BOOM, Musik!
-[mischievously] Heb es hoch—Stille.
-[excited] Leg es wieder hin—Musik ist SOFORT da!
+[interested] Heb es hoch—Stille.
+[impressed] Leg es wieder hin—Musik ist SOFORT da!
 [happy] 0.1 Sekunden. Schneller geht's nicht!
 [curious] Wie funktioniert das? Magnetische Induktion!
-[cheerfully] Das Gerät spürt dein Handy und verstärkt den Sound automatisch.
-[delighted] 360-Grad-Klang, überall im Raum!
-[excited] Funktioniert mit iPhone, Android, Tablet—ALLEM!
-[happy] Doppelte Graphenmembran—kristallklarer Sound.
-[cheerfully] Link in Bio. Erlebe die Magie selbst!
+[matter-of-fact] Das Gerät spürt dein Handy und verstärkt den Sound automatisch.
+[impressed] 360-Grad-Klang, überall im Raum!
+[cheerfully] Funktioniert mit iPhone, Android, Tablet—ALLEM!
+[confident] Doppelte Graphenmembran—kristallklarer Sound.
+[warm] Link ist unten. Erlebe die Magie selbst!
 
 ### ZH (中文翻译 | 40–50s)
 
@@ -86,12 +86,12 @@ source_notes:
 [surprised] [gasps] 根本没有！
 [excited] 没有电缆。没有蓝牙。这就是纯粹的魔法！
 [cheerfully] 只需放下手机——BOOM，音乐响起！
-[mischievously] 拿起它——安静。
-[excited] 再放下——音乐立即出现！
+[interested] 拿起它——安静。
+[impressed] 再放下——音乐立即出现！
 [happy] 0.1秒。不能更快了！
 [curious] 这是怎么工作的？磁感应！
-[cheerfully] 设备感应到你的手机并自动放大声音。
-[delighted] 360度音场，房间里到处都有！
-[excited] 适用于iPhone、Android、平板——所有设备！
-[happy] 双石墨烯振膜——音质清晰如水晶。
-[cheerfully] 简介中的链接。亲自体验这个魔法！
+[matter-of-fact] 设备感应到你的手机并自动放大声音。
+[impressed] 360度音场，房间里到处都有！
+[cheerfully] 适用于iPhone、Android、平板——所有设备！
+[confident] 双石墨烯振膜——音质清晰如水晶。
+[warm] 链接在下面。亲自体验这个魔法！
