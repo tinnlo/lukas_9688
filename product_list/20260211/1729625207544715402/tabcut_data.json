@@ -1,0 +1,96 @@
+{
+  "product_id": "1729625207544715402",
+  "scraped_at": "2026-02-11T17:10:54.842408",
+  "product_info": {
+    "product_name": "Cat Scratching Toy for Indoor Play, Protects Furniture, Natural Jute Cat Scratch Board, Pet Training Accessory, Ideal for Kittens",
+    "shop_owner": "Egolp",
+    "total_sales": 453,
+    "total_sales_revenue": "€ 4240.08($ 4936.06)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "30day",
+    "sales_count": 82,
+    "sales_revenue": "$ 893.5",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "10.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 10,
+    "带货视频达人数": 6,
+    "带货视频销量": 1,
+    "带货视频销售额": "$ 10.9",
+    "广告成交金额": "$ 0",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#katze #kitten #spielzeug 发现时间：2026.01.14 08:18更新时间：2026.01.18 04:02时长：00:00:18跳转至 TikTok",
+      "creator_username": "mascha5209",
+      "creator_followers": "1.69万",
+      "publish_date": "2026-01-13 18:15",
+      "estimated_sales": 1,
+      "estimated_revenue": "€ 9.36($ 10.9)",
+      "total_views": "835",
+      "video_url": "https://www.tiktok.com/@mascha5209/video/7594896017758211361?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_mascha5209.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADKratzspielzeug für Katzen zum Indoor-Spiel, Schutz für Möbel, natürliches Jute-Kratzbrett, Trainingszubehör für Haustiere, ideal für Kätzchen#tiktokshop #freeshipping #sale 发现时间：2026.01.18 07:26更新时间：2026.01.19 08:46时长：00:00:10跳转至 TikTok",
+      "creator_username": "jetztshop_deals",
+      "creator_followers": "7811",
+      "publish_date": "2026-01-17 13:20",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "757",
+      "video_url": "https://www.tiktok.com/@jetztshop_deals/video/7596304352277499158?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_jetztshop_deals.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADNie wieder Langeweile für deine Katze!#cat #fyp #catlover #spotlightfinds #tiktokshopsale发现时间：2026.01.21 03:55更新时间：2026.01.21 03:55时长：00:00:18跳转至 TikTok",
+      "creator_username": "jannik0686",
+      "creator_followers": "2.12万",
+      "publish_date": "2026-01-20 12:15",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "483",
+      "video_url": "https://www.tiktok.com/@jannik0686/video/7597400721843129622?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_jannik0686.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADKratzspielzeug für Katzen zum Indoor-Spiel, Schutz von Möbeln, Natürliches Jute-Kratzbrett, Trainingszubehör für Haustiere, Ideal für Kätzchen#cat #fyp #catlover #spotlightfinds #tiktokshopsale发现时间：2026.01.19 22:50更新时间：2026.01.19 22:50时长：00:00:21跳转至 TikTok",
+      "creator_username": "jannik0686",
+      "creator_followers": "2.12万",
+      "publish_date": "2026-01-19 17:41",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "268",
+      "video_url": "https://www.tiktok.com/@jannik0686/video/7597113655460711683?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_jannik0686.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD无标题发现时间：2026.01.21 09:02更新时间：2026.01.21 09:02时长：00:00:15跳转至 TikTok",
+      "creator_username": "fitjess00",
+      "creator_followers": "6.53万",
+      "publish_date": "2026-01-20 20:54",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "380",
+      "video_url": "https://www.tiktok.com/@fitjess00/video/7597534560200559894?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_fitjess00.mp4"
+    }
+  ]
+}

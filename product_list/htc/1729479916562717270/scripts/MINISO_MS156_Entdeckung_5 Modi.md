@@ -30,6 +30,17 @@ source_notes:
 - Feature: Open-ear design, lanyard included, 40h battery
 - CTA: Link below
 
+## On-Screen Text
+
+**Strategy:** Product Label (minimal) — Documentary first-impression style works best with subtle, product-focused overlays that don't distract from the authentic unboxing experience.
+
+| Timing | DE Text                                         | ZH Text                 | Placement     |
+| :----- | :---------------------------------------------- | :---------------------- | :------------ |
+| 0–3s   | **"MINISO MS156 AI Kopfhörer"**                 | **"MINISO MS156 AI耳机"** | Center        |
+| 15–20s | 5 Modi: AI-Dialog • Übersetzer • Dual-Kopfhörer | 五种模式：AI对话 • 翻译 • 双人模式   | Top           |
+| 34–38s | Top Qualität • Fairer Preis 🛒                  | 高品质 • 性价比高 🛒           | Center-bottom |
+
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar

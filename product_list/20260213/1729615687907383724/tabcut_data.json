@@ -1,0 +1,96 @@
+{
+  "product_id": "1729615687907383724",
+  "scraped_at": "2026-02-13T00:59:30.203560",
+  "product_info": {
+    "product_name": "Women's Casual Sneakers, 6 Colors Available, Fashionable Walking Shoes, Comfortable Daily Wear Design, All Season Footwear",
+    "shop_owner": "Budget Style Nook",
+    "total_sales": 34200,
+    "total_sales_revenue": "€ 32.97万($ 38.38万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "30day",
+    "sales_count": 29300,
+    "sales_revenue": "$ 34.03万",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "13.33%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 60,
+    "带货视频达人数": 42,
+    "带货视频销量": 331,
+    "带货视频销售额": "$ 3845.61",
+    "广告成交金额": "$ 2951.01",
+    "广告成交占比": "76.74%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#tiktokshop #momlife #momsoftiktok #schuhe 发现时间：2026.01.20 14:00更新时间：2026.02.12 08:29时长：00:00:31跳转至 TikTok",
+      "creator_username": "nastjaselina",
+      "creator_followers": "5044",
+      "publish_date": "2026-01-20 10:50",
+      "estimated_sales": 254,
+      "estimated_revenue": "€ 2534.92($ 2951.01)",
+      "total_views": "49.02万",
+      "video_url": "https://www.tiktok.com/@nastjaselina/video/7597378793413578006?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_nastjaselina.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADLas zapatillas más vendidas en TikTok😳#zapatillas #outfit 发现时间：2026.02.01 15:16更新时间：2026.02.02 14:10时长：00:00:14跳转至 TikTok",
+      "creator_username": "outfitlab1",
+      "creator_followers": "4229",
+      "publish_date": "2026-01-28 09:42",
+      "estimated_sales": 48,
+      "estimated_revenue": "€ 479.04($ 557.67)",
+      "total_views": "18万",
+      "video_url": "https://www.tiktok.com/@outfitlab1/video/7600260509270641942?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_outfitlab1.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD无标题发现时间：2026.01.29 04:32更新时间：2026.02.03 01:45时长：00:00:20跳转至 TikTok",
+      "creator_username": "calitigri04",
+      "creator_followers": "7.03万",
+      "publish_date": "2026-01-28 09:54",
+      "estimated_sales": 20,
+      "estimated_revenue": "€ 199.6($ 232.36)",
+      "total_views": "4.51万",
+      "video_url": "https://www.tiktok.com/@calitigri04/video/7600333179156778262?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_calitigri04.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADtiktok Shop intens发现时间：2026.01.25 10:16更新时间：2026.02.12 09:47时长：00:00:34跳转至 TikTok",
+      "creator_username": "promovari.ana",
+      "creator_followers": "15.99万",
+      "publish_date": "2026-01-17 06:40",
+      "estimated_sales": 4,
+      "estimated_revenue": "€ 39.92($ 46.47)",
+      "total_views": "2.64万",
+      "video_url": "https://www.tiktok.com/@promovari.ana/video/7596201214879173911?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_promovari.ana.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#tiktokmademebuylt #tiktokshopdeutschland #shoe 发现时间：2026.01.19 16:36更新时间：2026.01.25 12:22时长：00:00:47跳转至 TikTok",
+      "creator_username": "flawlessm2",
+      "creator_followers": "2.49万",
+      "publish_date": "2026-01-19 10:35",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 19.96($ 23.24)",
+      "total_views": "1942",
+      "video_url": "https://www.tiktok.com/@flawlessm2/video/7597003869905800481?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_flawlessm2.mp4"
+    }
+  ]
+}

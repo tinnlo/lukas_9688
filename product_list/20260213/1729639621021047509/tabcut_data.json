@@ -1,0 +1,96 @@
+{
+  "product_id": "1729639621021047509",
+  "scraped_at": "2026-02-13T10:49:49.499375",
+  "product_info": {
+    "product_name": "Regal Küchenarbeitsplattenregal Multifunktionsständer integrierte Halterung Elektrobackofen Aufbewahrungsregal Etagenregal",
+    "shop_owner": "Baumarkt",
+    "total_sales": 1821,
+    "total_sales_revenue": "€ 4.57万($ 5.32万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "30day",
+    "sales_count": 254,
+    "sales_revenue": "$ 6645.07",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "13.51%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 37,
+    "带货视频达人数": 27,
+    "带货视频销量": 76,
+    "带货视频销售额": "$ 1603.82",
+    "广告成交金额": "$ 1603.82",
+    "广告成交占比": "100.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#2026 #newyear #tiktokshop #aufbewahrungsregal 发现时间：2026.02.06 04:47更新时间：2026.02.11 19:59时长：00:00:21跳转至 TikTok",
+      "creator_username": "lorelei_yin0",
+      "creator_followers": "2.97万",
+      "publish_date": "2026-02-05 12:54",
+      "estimated_sales": 60,
+      "estimated_revenue": "€ 1036.24($ 1206.33)",
+      "total_views": "11.11万",
+      "video_url": "https://www.tiktok.com/@lorelei_yin0/video/7603348269892209922?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_lorelei_yin0.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "AD#tiktokmademebuylt #unboxyourdeals #dealsfürdich #küche #regal 发现时间：2026.02.12 04:55更新时间：2026.02.12 04:55时长：00:00:23跳转至 TikTok",
+      "creator_username": "dietestmaus",
+      "creator_followers": "2135",
+      "publish_date": "2026-02-11 15:30",
+      "estimated_sales": 8,
+      "estimated_revenue": "€ 135.84($ 158.14)",
+      "total_views": "4974",
+      "video_url": "https://www.tiktok.com/@dietestmaus/video/7605363462251760928?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_dietestmaus.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "AD#küche #regal #tiktokshop #werbung 发现时间：2026.01.28 09:11更新时间：2026.02.03 05:13时长：00:04:07跳转至 TikTok",
+      "creator_username": "nicklustighauptaccount",
+      "creator_followers": "1.12万",
+      "publish_date": "2026-01-26 18:43",
+      "estimated_sales": 3,
+      "estimated_revenue": "€ 77.1($ 89.76)",
+      "total_views": "5834",
+      "video_url": "https://www.tiktok.com/@nicklustighauptaccount/video/7599727264036588822?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_nicklustighauptaccount.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#مطبخي #titokshop #viralvideos #f #foryoupage❤️❤️ 发现时间：2026.01.17 02:40更新时间：2026.01.22 07:12时长：00:00:52跳转至 TikTok",
+      "creator_username": "safaa.10_10",
+      "creator_followers": "3.63万",
+      "publish_date": "2026-01-16 19:33",
+      "estimated_sales": 3,
+      "estimated_revenue": "€ 77.1($ 89.76)",
+      "total_views": "4706",
+      "video_url": "https://www.tiktok.com/@safaa.10_10/video/7596029375171153174?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_safaa.10_10.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD无标题发现时间：2026.01.24 03:19更新时间：2026.01.30 03:22时长：00:00:25跳转至 TikTok",
+      "creator_username": "muzhdasafi7",
+      "creator_followers": "3.3万",
+      "publish_date": "2026-01-23 17:25",
+      "estimated_sales": 2,
+      "estimated_revenue": "€ 51.4($ 59.84)",
+      "total_views": "2156",
+      "video_url": "https://www.tiktok.com/@muzhdasafi7/video/7598593886872800534?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_muzhdasafi7.mp4"
+    }
+  ]
+}

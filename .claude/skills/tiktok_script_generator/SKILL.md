@@ -111,26 +111,37 @@ base="product_list/$date/$product_id"
 
 echo "=== PRE-CHECK: $product_id ==="
 
-# MANDATORY: Video synthesis must exist
-if [ ! -f "$base/ref_video/video_synthesis.md" ]; then
-    echo "❌ BLOCKED: video_synthesis.md missing"
-    echo "Run tiktok-product-analysis skill first"
-    exit 1
+# Check if video synthesis exists (PREFERRED but not MANDATORY)
+if [ -f "$base/ref_video/video_synthesis.md" ]; then
+    lines=$(wc -l < "$base/ref_video/video_synthesis.md" | tr -d ' ')
+    if [ "$lines" -lt 150 ]; then
+        echo "⚠️ WARNING: video_synthesis.md short ($lines lines, recommended 150+)"
+    else
+        echo "✅ Video synthesis available ($lines lines)"
+    fi
+
+    # Verify synthesis has properly flagged compliance risks
+    echo "Checking compliance flagging in analysis..."
+    if ! python3 scripts/validate_compliance_flags.py "$base/ref_video/video_synthesis.md" >/dev/null 2>&1; then
+        echo "⚠️ WARNING: video_synthesis.md has compliance risks not properly flagged"
+        echo "   Review and ensure risks are documented in 'Compliance & Trust Signals' section"
+        # Don't block, but warn - analysis files can have flagged risks
+    fi
+else
+    echo "⚠️ No video_synthesis.md found"
+    echo "   Will generate scripts from image analysis + product metadata only"
 fi
 
-lines=$(wc -l < "$base/ref_video/video_synthesis.md" | tr -d ' ')
-if [ "$lines" -lt 150 ]; then
-    echo "❌ BLOCKED: video_synthesis.md too short ($lines lines, need 150+)"
-    exit 1
-fi
-
-# CRITICAL: Verify synthesis has properly flagged compliance risks
-echo "Checking compliance flagging in analysis..."
-if ! python3 scripts/validate_compliance_flags.py "$base/ref_video/video_synthesis.md" >/dev/null 2>&1; then
-    echo "⚠️ WARNING: video_synthesis.md has compliance risks not properly flagged"
-    echo "   Review and ensure risks are documented in 'Compliance & Trust Signals' section"
-    echo "   Run: python3 scripts/validate_compliance_flags.py \"$base/ref_video/video_synthesis.md\""
-    # Don't block, but warn - analysis files can have flagged risks
+# Check image analysis (REQUIRED if no video synthesis)
+if [ ! -f "$base/product_images/image_analysis.md" ]; then
+    if [ ! -f "$base/ref_video/video_synthesis.md" ]; then
+        echo "❌ BLOCKED: Neither image_analysis.md nor video_synthesis.md available"
+        echo "Run tiktok-product-analysis skill first"
+        exit 1
+    fi
+    echo "⚠️ No image_analysis.md - relying solely on video synthesis"
+else
+    echo "✅ Image analysis available"
 fi
 
 echo "✅ Pre-check passed. Ready for script generation."
@@ -150,41 +161,53 @@ bash scripts/verify_gate.sh --date YYYYMMDD --csv scripts/products.csv --phase a
 
 **CRITICAL OPTIMIZATION:** Use parallel Read tool calls to fetch ALL files in ONE MESSAGE.
 
-**Files to read (make 4-5 parallel Read calls):**
+**Files to read (make 3-5 parallel Read calls):**
 
-1. **`ref_video/video_synthesis.md`** (CRITICAL)
+1. **`tabcut_data.json`** (REQUIRED - product metadata)
+   - Product name, price, shop
+   - Sales data, conversion rate
+
+2. **`product_images/image_analysis.md`** (REQUIRED - if no video synthesis)
+   - Visual hooks (Section 10, Section 13)
+   - German text from packaging
+   - Color/variant recommendations
+   - Script angle recommendations
+
+3. **`ref_video/video_synthesis.md`** (PREFERRED - if available)
    - Hook patterns, selling points, replication strategy
    - Target audience, production patterns
    - DO's and DON'Ts
-
-2. **`product_images/image_analysis.md`** (if exists)
-   - Visual hooks (Section 10)
-   - German text from packaging
-   - Color/variant recommendations
-
-3. **`tabcut_data.json`** (product metadata)
-   - Product name, price, shop
-   - Sales data, conversion rate
 
 4. **`fastmoss_data.json`** (fallback if tabcut data is missing/unknown)
    - Use if product_name is "Unknown Product" or key sales metrics are null
 
 5. **Individual `video_N_analysis.md` files** (optional, for deep dive)
-   - Use if video_synthesis.md lacks detail
+   - Use if video_synthesis.md available but lacks detail
 
 **Example parallel execution:**
 ```
-<Read file_path="product_list/YYYYMMDD/{product_id}/ref_video/video_synthesis.md" />
-<Read file_path="product_list/YYYYMMDD/{product_id}/product_images/image_analysis.md" />
 <Read file_path="product_list/YYYYMMDD/{product_id}/tabcut_data.json" />
+<Read file_path="product_list/YYYYMMDD/{product_id}/product_images/image_analysis.md" />
+<Read file_path="product_list/YYYYMMDD/{product_id}/ref_video/video_synthesis.md" />
 ```
-All 3 files read simultaneously in ~2-3 seconds (was 6-9 seconds sequential).
+All files read simultaneously in ~2-3 seconds (was 6-9 seconds sequential).
 
 **Extract these key elements:**
+
+**If video_synthesis.md available:**
 - Top 3 hook patterns from synthesis
 - Top 5 selling points (ranked)
 - 3 recommended script angles
-- German terminology from packaging
+- DO's and DON'Ts from Section 7
+
+**If image_analysis.md only (no video synthesis):**
+- Visual hooks from Section 10
+- 3 recommended script angles from Section 13
+- On-Screen Text suggestions from Section 12
+- German terminology from packaging (Section 3)
+
+**Always extract:**
+- Product metadata (name, price, sales) from tabcut_data.json
 - Visual filming instructions
 - **Identify which of the 8 Golden 3 Seconds hook types fits each planned script angle** (needed for OST strategy selection in Step 2-3)
 

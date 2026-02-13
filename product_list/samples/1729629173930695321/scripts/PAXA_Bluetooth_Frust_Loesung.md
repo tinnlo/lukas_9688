@@ -52,11 +52,11 @@ Split-screen Problem/Solution hook showcasing the Bluetooth pairing frustration 
 
 **Strategy:** Curiosity Question — Pairing frustration
 
-| Timing | DE Text | ZH Text | Placement |
-|:-------|:--------|:--------|:----------|
-| 0–3s | **"Bluetooth dauert EWIG?"** | **"蓝牙连接永远？"** | Center |
-| 13–22s | Magnetisch • 0,1s Verbindung | 磁力 • 0.1秒连接 | Center-bottom |
-| 32–40s | Perfekter Winkel • Freihändig | 完美角度 • 解放双手 | Center |
+| Timing | DE Text                       | ZH Text       | Placement     |
+| :----- | :---------------------------- | :------------ | :------------ |
+| 0–3s   | **"Bluetooth dauert EWIG?"**  | **"蓝牙连接永远？"** | Center        |
+| 13–22s | Magnetisch • 0,1s Verbindung  | 磁力 • 0.1秒连接   | Center-bottom |
+| 32–40s | Perfekter Winkel • Freihändig | 完美角度 • 解放双手   | Center        |
 
 
 ## Voiceover

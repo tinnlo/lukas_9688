@@ -1,9 +1,8 @@
 ---
 cover: ""
-caption: >-
-  Ich dachte es ist Scam aber dann habe ich es gerochen 😍 Langanhaltender Holzduft zum Bruchteil des Preises Link im Shop #tiktokshop #parfüm #duft #lastar #fyp #TikTokShop #Parfüm #Herrenduft #Luxus #Angebot
+caption: "Ich dachte es ist Scam aber dann habe ich es gerochen 😍 Langanhaltender Holzduft zum Bruchteil des Preises Link im Shop #tiktokshop #parfüm #lastar #Herrenduft #Angebot"
 published: 2026-01-31
-duration: "00:45"
+duration: 00:45
 sales:
   - yes
 link: ""
@@ -13,11 +12,11 @@ tags:
   - "#Herrenduft"
   - "#Luxus"
   - "#Angebot"
-product: "LASTAR Holzige Duftnote Eau de Parfum"
+product: LASTAR Holzige Duftnote Eau de Parfum
 source_notes:
-  - "product_list/samples/1729582760298126134/ref_video/video_synthesis.md"
-  - "product_list/samples/1729582760298126134/product_images/image_analysis.md"
-  - "product_list/samples/1729582760298126134/tabcut_data.json"
+  - product_list/samples/1729582760298126134/ref_video/video_synthesis.md
+  - product_list/samples/1729582760298126134/product_images/image_analysis.md
+  - product_list/samples/1729582760298126134/tabcut_data.json
 ---
 
 ## Scripts
@@ -55,11 +54,11 @@ Opening with skepticism to build instant credibility, then revealing the surpris
 
 **Strategy:** Curiosity Question — Budget fragrance skepticism converts to quality validation through honest test
 
-| Timing | DE Text | ZH Text | Placement |
-|:-------|:--------|:--------|:----------|
-| 0–3s | **"Billige Parfüms = Betrug?"** | **"便宜香水=骗局？"** | Center |
-| 15–20s | Holzig • Würzig • Männlich | 木质 • 辛辣 • 男性 | Center-bottom |
-| 38–43s | Freunde fragen ständig | 朋友总问 | Center |
+| Timing | DE Text                         | ZH Text        | Placement     |
+| :----- | :------------------------------ | :------------- | :------------ |
+| 0–3s   | **"Billige Parfüms = Betrug?"** | **"便宜香水=骗局？"** | Center        |
+| 15–20s | Holzig • Würzig • Männlich      | 木质 • 辛辣 • 男性   | Center-bottom |
+| 38–43s | Freunde fragen ständig          | 朋友总问           | Center        |
 
 
 ## Voiceover

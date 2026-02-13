@@ -1,0 +1,83 @@
+{
+  "product_id": "1729480100460534646",
+  "scraped_at": "2026-02-13T00:58:29.141085",
+  "product_info": {
+    "product_name": "3 Tier Fruit Basket, 1 Count Large Capacity Tiered Fruit Basket Stand, Bamboo Fruit Basket Fruit Tray Snack Nuts Bread Candy Storage Rack #TOP PICKS",
+    "shop_owner": "BILIFUHOME",
+    "total_sales": 14300,
+    "total_sales_revenue": "€ 22.34万($ 26.01万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "30day",
+    "sales_count": 12900,
+    "sales_revenue": "$ 23.71万",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 4,
+    "带货视频达人数": 4,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0",
+    "广告成交金额": "$ 0",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD3‑stufiger Obstkorb mit großem Fassungsvermögen#fyp #tiktokshop #ki发现时间：2026.02.05 08:07更新时间：2026.02.05 08:07时长：00:00:15跳转至 TikTok",
+      "creator_username": "wgevav36",
+      "creator_followers": "1.24万",
+      "publish_date": "2026-02-03 15:29",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "10",
+      "video_url": "https://www.tiktok.com/@wgevav36/video/7602645901353422102?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_wgevav36.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADEtagen Services #deals #tiktokshop #kitcheninspo #kitchen #homeinspo 发现时间：2026.02.09 16:09更新时间：2026.02.10 07:46时长：00:00:09跳转至 TikTok",
+      "creator_username": "sokakttv",
+      "creator_followers": "7.17万",
+      "publish_date": "2026-02-08 19:10",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "220",
+      "video_url": "https://www.tiktok.com/@sokakttv/video/7604558407214976278?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_sokakttv.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADDas Produkt liegt bereits im Warenkorb, cheers!  #tiktokmadebuyit #sale #tiktokshop #aihost发现时间：2026.01.28 06:35更新时间：2026.01.30 07:35时长：00:00:24跳转至 TikTok",
+      "creator_username": "hannah.tarot50",
+      "creator_followers": "2344",
+      "publish_date": "2026-01-27 18:31",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "1695",
+      "video_url": "https://www.tiktok.com/@hannah.tarot50/video/7600095322454478102?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_hannah.tarot50.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "AD#goviral #viral #fürdich #tiktokshopcreator #tiktokshop 发现时间：2026.01.27 02:58更新时间：2026.01.27 02:58时长：00:00:54跳转至 TikTok",
+      "creator_username": "bloodymary_e",
+      "creator_followers": "4651",
+      "publish_date": "2026-01-25 15:47",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "276",
+      "video_url": "https://www.tiktok.com/@bloodymary_e/video/7599310970896354582?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_bloodymary_e.mp4"
+    }
+  ]
+}

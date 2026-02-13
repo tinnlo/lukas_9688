@@ -313,24 +313,30 @@ products="1729607303430380470 1729607478878640746 ..."  # Your product IDs
 for pid in $products; do
   echo "=== $pid ==="
 
-  # MANDATORY: Synthesis must exist
-  if [ ! -f "product_list/$date/$pid/ref_video/video_synthesis.md" ]; then
-    echo "❌ BLOCKED: video_synthesis.md missing"
+  # Check if video synthesis exists (PREFERRED but not MANDATORY)
+  if [ -f "product_list/$date/$pid/ref_video/video_synthesis.md" ]; then
+    lines=$(wc -l < "product_list/$date/$pid/ref_video/video_synthesis.md" | tr -d ' ')
+    if [ "$lines" -lt 150 ]; then
+      echo "⚠️ WARNING: synthesis only $lines lines (recommended 150+)"
+    else
+      echo "✅ Video synthesis available ($lines lines)"
+    fi
+
+    # Quality validators for synthesis
+    echo "Checking quality standards..."
+    python3 scripts/validate_bilingual_coverage.py "product_list/$date/$pid/ref_video/video_synthesis.md" || echo "⚠️ Bilingual coverage below standards"
+    python3 scripts/validate_compliance_flags.py "product_list/$date/$pid/ref_video/video_synthesis.md" || echo "⚠️ Compliance issues found"
+  else
+    echo "⚠️ No video_synthesis.md - will generate scripts from image analysis only"
+  fi
+
+  # Check image analysis (REQUIRED for image-only products)
+  if [ ! -f "product_list/$date/$pid/product_images/image_analysis.md" ]; then
+    echo "❌ BLOCKED: No image_analysis.md and no video_synthesis.md"
     exit 1
   fi
 
-  lines=$(wc -l < "product_list/$date/$pid/ref_video/video_synthesis.md" | tr -d ' ')
-  if [ "$lines" -lt 150 ]; then
-    echo "❌ BLOCKED: synthesis only $lines lines (need 150+)"
-    exit 1
-  fi
-
-  # NEW: Quality validators (optional but recommended)
-  echo "Checking quality standards..."
-  python3 scripts/validate_bilingual_coverage.py "product_list/$date/$pid/ref_video/video_synthesis.md" || echo "⚠️ Bilingual coverage below standards"
-  python3 scripts/validate_compliance_flags.py "product_list/$date/$pid/ref_video/video_synthesis.md" || echo "⚠️ Compliance issues found"
-
-  echo "✅ Ready for scripts"
+  echo "✅ Ready for scripts (image analysis available)"
 done
 
 echo ""

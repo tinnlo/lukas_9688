@@ -59,11 +59,11 @@ Ein Mann, zwei Stimmungen, zwei Düfte. Nutzt die bewährte Split-Screen-Technik
 
 **Strategy:** Dual Identity Positioning — Day persona vs. Night persona, unified by strategic thinking
 
-| Timing | DE Text | ZH Text | Placement |
-|:-------|:--------|:--------|:----------|
-| 3–9s | **Azure = Büro ✓** | **Azure = 办公室 ✓** | Left side |
+| Timing | DE Text                  | ZH Text               | Placement  |
+| :----- | :----------------------- | :-------------------- | :--------- |
+| 3–9s   | **Azure = Büro ✓**       | **Azure = 办公室 ✓**     | Left side  |
 | 15–21s | **Invincible = Power ✓** | **Invincible = 力量 ✓** | Right side |
-| 24–28s | Beide = Komplettes Spiel | 两款 = 完整配置 | Center |
+| 24–28s | Beide = Komplettes Spiel | 两款 = 完整配置             | Center     |
 
 
 ## Voiceover

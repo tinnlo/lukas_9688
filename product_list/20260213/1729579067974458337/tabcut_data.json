@@ -1,0 +1,70 @@
+{
+  "product_id": "1729579067974458337",
+  "scraped_at": "2026-02-13T01:01:14.979061",
+  "product_info": {
+    "product_name": "No-drill Bathroom Shelves, Shower Shelves for Shampoo, Cosmetics and Soap Storage, Space-saving Storage Box, Easy to Install, Utility Shelves",
+    "shop_owner": "mylogo.",
+    "total_sales": 1085,
+    "total_sales_revenue": "€ 5776.62($ 6724.82)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "30day",
+    "sales_count": 385,
+    "sales_revenue": "$ 1806.22",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 3,
+    "带货视频达人数": 2,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0",
+    "广告成交金额": "$ 0",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "ADNo Drill bathroom shelves  shower shelves . For Cosmetics  and shampoos . Click the shopping basket to make order here on tiktok shop .发现时间：2026.02.04 05:32更新时间：2026.02.04 05:32时长：00:00:24跳转至 TikTok",
+      "creator_username": "cookingwithsandraobas",
+      "creator_followers": "6305",
+      "publish_date": "2026-02-03 06:19",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "259",
+      "video_url": "https://www.tiktok.com/@cookingwithsandraobas/video/7602504177809394966?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_cookingwithsandraobas.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADWandregal ohne Bohrung#AI #WinterDeals #tiktokshop #fyp发现时间：2026.02.05 08:06更新时间：2026.02.11 03:17时长：00:00:15跳转至 TikTok",
+      "creator_username": "saltwitt9675",
+      "creator_followers": "1.01万",
+      "publish_date": "2026-02-04 14:46",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "123",
+      "video_url": "https://www.tiktok.com/@saltwitt9675/video/7603006121003060502?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_saltwitt9675.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADNo Drill bathroom shelves  shower shelves . For Cosmetics  and shampoos . Click the shopping basket to make order here on tiktok shop .发现时间：2026.02.03 05:43更新时间：2026.02.03 05:43时长：00:00:24跳转至 TikTok",
+      "creator_username": "cookingwithsandraobas",
+      "creator_followers": "6305",
+      "publish_date": "2026-02-02 20:59",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "189",
+      "video_url": "https://www.tiktok.com/@cookingwithsandraobas/video/7602360056029383958?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_cookingwithsandraobas.mp4"
+    }
+  ]
+}

@@ -70,11 +70,11 @@ source_notes:
 
 **Strategy:** Emotional/Lifestyle — Gift reaction social proof
 
-| Timing | DE Text | ZH Text | Placement |
-|:-------|:--------|:--------|:----------|
-| 0–3s | **"Ihre Reaktion... 🥹"** | **"她的反应...🥹"** | Center |
-| 8–15s | Sind das echte Blumen?! | 这些是真花吗？！ | Center-bottom |
-| 22–28s | Wunderschön & pflegeleicht | 美丽又省心 | Center |
+| Timing | DE Text                    | ZH Text         | Placement     |
+| :----- | :------------------------- | :-------------- | :------------ |
+| 0–3s   | **"Ihre Reaktion... 🥹"**  | **"她的反应...🥹"** | Center        |
+| 8–15s  | Sind das echte Blumen?!    | 这些是真花吗？！        | Center-bottom |
+| 22–28s | Wunderschön & pflegeleicht | 美丽又省心           | Center        |
 
 ## Voiceover
 
