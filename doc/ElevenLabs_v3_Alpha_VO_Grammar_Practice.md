@@ -45,28 +45,38 @@ For v3, use:
 v3 (alpha) is optimized for **emotionally rich, expressive delivery** and performance.
 
 For UGC TikTok ads, aim for authentic emotional impact:
-- **Every line MUST have 1-2 emotion/action cues** (mandatory for this workflow)
+- **Every line MUST have 1-2 EMOTION cues** (mandatory for this workflow)
+- **Action cues: 0-2 per script** (optional, for energizing tone at strategic moments)
 - Use **natural, convincing delivery** for credible TikTok engagement
 - Energetic tempo with authentic emotion progression
-- **Action cues selectively** (max 1 per line, used strategically)
 
 Critical rules:
 - NEVER leave a line without emotion cues
+- Action cues are OPTIONAL (0-2 per script, not per line)
 - Prefer convincing energy over theatrical performance
 - Use natural emotion progression to maintain engagement (Curious → Interested → Impressed → Confident)
+- NEVER stack emotion + action on same line (e.g., avoid `[excited] [gasps]`)
 
 ---
 
 ## Natural emotion cueing (UGC ad philosophy)
 
-**MANDATORY**: Every line must have 1-2 emotion/action cues.
+**MANDATORY (every line):**
+- 1-2 EMOTION cues per line (e.g., [curious], [confident], [warm])
+- Inline format: `[emotion] Text.` (NEVER broken lines)
+
+**OPTIONAL (0-2 per script):**
+- Action/movement cues for tone energy (e.g., [laughs], [sighs], [whispers])
+- Use strategically to energize delivery at 0-2 places in script
+- 0 means NOT mandatory - use only when needed
 
 Distribution:
-- Hook: 1-2 cues per line for authentic grab
-- Middle: 1-2 cues per line for natural flow
-- CTA: 1-2 cues for confident close
+- Hook: 1-2 emotion cues per line for authentic grab
+- Middle: 1-2 emotion cues per line for natural flow
+- CTA: 1-2 emotion cues for confident close
+- Actions: 0-2 total across entire script (optional)
 
-**Key principle:** Keep emotion curves for engagement, but avoid theatrical stacking and over-acting.
+**Key principle:** Keep emotion curves for engagement, but avoid theatrical stacking (NEVER use emotion + action on same line like `[excited] [gasps]`).
 
 ---
 
@@ -216,26 +226,37 @@ Target: Fast, energetic pace for TikTok UGC ads.
 
 ---
 
-## UGC TikTok Usage Guidelines
+## UGC TikTok Usage Guidelines (ALIGNED v2.5)
 
 **For this workflow:**
-- 1-2 cues per line (MANDATORY)
+
+**MANDATORY (every line):**
+- 1-2 EMOTION cues per line (e.g., [curious], [confident], [warm])
+- Inline format only: `[emotion] Text.` (NEVER broken lines)
+
+**OPTIONAL (0-2 per script):**
+- Action cues for tone energy (e.g., [laughs], [sighs], [whispers])
+- Use strategically at 0-2 places to energize delivery
+- 0 means NOT mandatory
+
+**Delivery philosophy:**
 - Prioritize natural, convincing delivery over theatrical performance
 - Natural emotion progression = believability (Curious → Interested → Impressed → Confident)
 - Variety > Repetition (use diverse emotion curves)
 - **UGC TikTok ads prefer authentic energy over flat delivery**
-- Action cues: Max 1 per line, used selectively (no stacking like `[excited] [gasps]`)
-- ⭐ = Recommended for credible delivery
+- ⭐ = Recommended emotion cues for credible delivery
 
 **Tag placement** (official best practice):
-- Place tags at the start of the line: `[curious] What is this?`
-- Or immediately after for reactions: `This is amazing. [laughs]`
-- Or mid-sentence at natural pauses: `Well, [sighs] I'm not sure what to say.`
+- Start of line: `[curious] What is this?`
+- End for reactions: `This is amazing. [laughs]`
+- Mid-sentence at pauses: `Well, [sighs] I'm not sure what to say.`
 
 **AVOID theatrical stacking:**
-- ❌ `[excited] [gasps]` - Over-acted
-- ❌ `[shocked] [dramatically]` - Theatrical
-- ❌ `[elated] [giggles]` - Too performative
+- ❌ `[excited] [gasps]` - Stacked on same line (over-acted)
+- ❌ `[shocked] [dramatically]` - Stacked (theatrical)
+- ❌ `[elated] [giggles]` - Stacked (too performative)
+- ✅ `[excited] This is great!` - Emotion only (natural)
+- ✅ `[confident] Link ist unten. [laughs]` - Action at end (okay if needed)
 
 ---
 
@@ -267,7 +288,8 @@ In `product_list/{vendor}/{product_id}/script/*.md`:
 [confident] …
 ```
 
-**Every line MUST have 1-2 cues.**
+**MANDATORY:** Every line MUST have 1-2 EMOTION cues.
+**OPTIONAL:** 0-2 ACTION cues per script for tone energy.
 
 **Note:** "v3 grammar" refers to prompting style (audio tags + punctuation), not an API parameter.
 

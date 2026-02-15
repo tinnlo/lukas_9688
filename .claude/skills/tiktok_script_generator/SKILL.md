@@ -13,7 +13,7 @@ prerequisite: tiktok-product-analysis
 **EXECUTOR:** Claude Code (for quality creative writing)
 **INPUT:** Analysis files from `tiktok-product-analysis` skill
 **OUTPUT:** 3 scripts + Campaign Summary (references analysis, no duplication)
-**STYLE:** Natural UGC ads with mandatory emotion cues (1-2 per line), authentic delivery, convincing tone
+**STYLE:** Natural UGC ads with mandatory emotion cues (1-2 per line) + optional action cues (0-2 per script), authentic delivery, convincing tone
 **OPTIMIZATION:** Batched Write calls (4 files per product in single message) ⭐ **2x faster**
 
 ---
@@ -53,7 +53,8 @@ Do not rely on deprecated wrapper outputs.
 ⚠️ **CRITICAL FORMAT RULE - READ THIS FIRST:**
 - **INLINE CUES ONLY:** `[emotion] Text here.` (cue + text on SAME LINE)
 - **NEVER BROKEN LINES:** Do NOT write `[emotion]` on one line followed by text on the next line
-- **EVERY LINE NEEDS CUES:** No orphan text without emotion tags
+- **EVERY LINE NEEDS EMOTION CUES:** 1-2 emotion cues mandatory (e.g., [curious], [confident])
+- **ACTION CUES OPTIONAL:** 0-2 action cues per script for energy (e.g., [laughs], [sighs])
 - See `templates/voiceover_format.md` for complete format specification
 
 ---

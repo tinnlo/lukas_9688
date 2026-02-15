@@ -48,33 +48,45 @@ class VideoDownloader:
             image_urls = await self.page.evaluate("""() => {
                 const images = [];
 
-                // Strategy 1: Look for carousel/swiper images
+                // Strategy 1: Look for carousel/swiper images from product CDN
                 const carouselImages = document.querySelectorAll('.swiper-slide img, [class*="swiper"] img, [class*="carousel"] img, [class*="slider"] img');
                 carouselImages.forEach(img => {
-                    if (img.src && img.naturalWidth > 150 && !img.src.includes('avatar')) {
+                    // FastMoss product images are hosted on: s.500fd.com (TikTok product CDN) or tiktokcdn.com
+                    if (img.src && 
+                        (img.src.includes('s.500fd.com') || img.src.includes('tiktokcdn.com')) &&
+                        img.naturalWidth > 150 && 
+                        !img.src.includes('avatar') &&
+                        !img.src.includes('logo') &&
+                        !img.src.includes('icon')) {
                         images.push(img.src);
                     }
                 });
 
-                // Strategy 2: Look for large images in the upper portion (product gallery)
+                // Strategy 2: Look for large images from product CDN (if Strategy 1 found nothing)
                 if (images.length === 0) {
                     const allImages = Array.from(document.querySelectorAll('img'))
                         .filter(img => {
+                            // POSITIVE INCLUSION: Only images from product CDNs (s.500fd.com or tiktokcdn.com)
+                            // Note: cdn.500fd.com is for UI elements (icons), NOT product images
+                            if (!img.src || 
+                                !(img.src.includes('s.500fd.com') || img.src.includes('tiktokcdn.com'))) {
+                                return false;
+                            }
+                            
                             const rect = img.getBoundingClientRect();
                             const aspectRatio = img.naturalWidth / img.naturalHeight;
                             
                             // Reject banners (very wide/short) and vertical ads (very tall/narrow)
                             const isReasonableAspect = aspectRatio >= 0.4 && aspectRatio <= 3.0;
                             
-                            return img.src &&
-                                   img.naturalWidth > 300 &&
+                            return img.naturalWidth > 300 &&
                                    img.naturalHeight > 300 &&
-                                   isReasonableAspect &&  // NEW: Reject banners & weird ratios
+                                   isReasonableAspect &&
                                    rect.top < 1000 &&  // In upper portion
                                    !img.src.includes('avatar') &&
                                    !img.src.includes('logo') &&
                                    !img.src.includes('icon') &&
-                                   !img.src.includes('banner');  // NEW: Explicit banner rejection
+                                   !img.src.includes('banner');
                         })
                         .map(img => img.src);
                     images.push(...allImages);
@@ -170,11 +182,17 @@ class VideoDownloader:
         if not success:
             success = await self._download_via_ytdlp(video.video_url, output_path)
 
-        # Strategy 2: Direct HTTP download
+        # Strategy 2: Playwright network intercept (proven Tabcut strategy)
+        if not success:
+            success = await self._download_via_playwright_intercept(
+                video.video_url, output_path
+            )
+
+        # Strategy 3: Direct HTTP download
         if not success:
             success = await self._download_via_http(video.video_url, output_path)
 
-        # Strategy 3: Extract video source from page
+        # Strategy 4: Extract video source from page
         if not success:
             success = await self._download_from_embedded_video(
                 video.video_url, output_path
@@ -202,8 +220,11 @@ class VideoDownloader:
         try:
             logger.debug("Trying yt-dlp strategy...")
 
+            # Use python3 -m yt_dlp since yt-dlp is not in PATH
             cmd = [
-                "yt-dlp",
+                "python3",
+                "-m",
+                "yt_dlp",
                 "-f",
                 "best",
                 "--no-playlist",
@@ -230,6 +251,85 @@ class VideoDownloader:
 
         except Exception as e:
             logger.debug(f"yt-dlp strategy failed: {e}")
+            return False
+
+    async def _download_via_playwright_intercept(
+        self, video_url: str, output_path: Path
+    ) -> bool:
+        """
+        Download video by intercepting network requests (proven Tabcut strategy).
+
+        Args:
+            video_url: URL to the video page
+            output_path: Path to save the video
+
+        Returns:
+            True if successful, False otherwise
+        """
+        try:
+            logger.debug("Trying Playwright network intercept strategy...")
+
+            video_data = []
+            video_captured = asyncio.Event()
+
+            async def handle_response(response):
+                """Handle network responses to capture video."""
+                try:
+                    content_type = response.headers.get("content-type", "")
+
+                    # Look for video content
+                    if any(
+                        t in content_type.lower()
+                        for t in [
+                            "video/mp4",
+                            "video/quicktime",
+                            "application/octet-stream",
+                        ]
+                    ):
+                        # Check if it's a significant video file (not a thumbnail)
+                        content_length = response.headers.get("content-length")
+                        if content_length and int(content_length) > 100000:  # > 100KB
+                            logger.debug(f"Capturing video response: {response.url}")
+                            body = await response.body()
+                            video_data.append(body)
+                            video_captured.set()
+                except Exception as e:
+                    logger.debug(f"Error in response handler: {e}")
+
+            # Set up response handler
+            self.page.on("response", handle_response)
+
+            try:
+                # Navigate to video page
+                await self.page.goto(
+                    video_url, wait_until="networkidle", timeout=self.timeout
+                )
+
+                # Wait a bit for video to load
+                await asyncio.sleep(3)
+
+                # Wait for video capture (with timeout)
+                try:
+                    await asyncio.wait_for(video_captured.wait(), timeout=10)
+                except asyncio.TimeoutError:
+                    logger.debug("No video captured via intercept")
+                    return False
+
+                # Save the captured video
+                if video_data:
+                    with open(output_path, "wb") as f:
+                        f.write(video_data[0])
+                    logger.debug(f"Saved video via intercept: {output_path.name}")
+                    return True
+
+                return False
+
+            finally:
+                # Remove response handler
+                self.page.remove_listener("response", handle_response)
+
+        except Exception as e:
+            logger.debug(f"Playwright intercept failed: {e}")
             return False
 
     async def _download_via_http(self, video_url: str, output_path: Path) -> bool:

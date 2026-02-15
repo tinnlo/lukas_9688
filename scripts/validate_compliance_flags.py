@@ -121,9 +121,9 @@ def validate_compliance_flags(filepath: str, is_analysis: bool = True) -> dict:
                 if is_analysis:
                     # Check if flagged in compliance section
                     compliance_section = re.search(
-                        r"##.*(?:Risk|Compliance|Trust Signal).*\n(.*?)(?=\n##|\Z)",
+                        r"##.*(?:Risk|Compliance|Trust Signal).*\n([\s\S]+?)(?=\n##|\Z)",
                         content,
-                        re.S | re.I,
+                        re.I,
                     )
                     if not compliance_section:
                         violations.append(

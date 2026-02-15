@@ -1,0 +1,111 @@
+{
+  "product_id": "1729755662202542792",
+  "scraped_at": "2026-02-15T14:00:53.738746",
+  "product_info": {
+    "product_name": "PIKPAKA RED BULL ENERGY DRINK Vacuum Flasks 40oz Stainless Steel Tumbler with Handle & Straw, Vacuum Insulated Travel Mug Keeps Drinks Cold Up to 34 Hours, Leak-Resistant Cup for Iced Coffee, Water, Office, Gym or Travel",
+    "shop_owner": "Unknown Shop",
+    "total_sales": 30,
+    "total_sales_revenue": "€2392.54",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "28day",
+    "sales_count": 30,
+    "sales_revenue": "€276",
+    "related_videos": 7,
+    "related_creators": null,
+    "conversion_rate": null,
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 5,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "Video by startergain",
+      "creator_username": "startergain",
+      "creator_followers": null,
+      "publish_date": "2026-02-08",
+      "estimated_sales": 108,
+      "estimated_revenue": "€940.8",
+      "total_views": 87200,
+      "likes": 302,
+      "comments": 1,
+      "engagement_rate": "0.5%",
+      "video_url": "https://www.tiktok.com/@startergain/video/7604468303259569430?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_startergain.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "Video by armin250",
+      "creator_username": "armin250",
+      "creator_followers": null,
+      "publish_date": "2026-02-10",
+      "estimated_sales": 57,
+      "estimated_revenue": "€488.91",
+      "total_views": 457800,
+      "likes": 2121,
+      "comments": 44,
+      "engagement_rate": "0.7%",
+      "video_url": "https://www.tiktok.com/@armin250/video/7605213034323119392?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_armin250.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "Video by hannah91313",
+      "creator_username": "hannah91313",
+      "creator_followers": null,
+      "publish_date": "2026-02-11",
+      "estimated_sales": 9,
+      "estimated_revenue": "€77.62",
+      "total_views": 47500,
+      "likes": 236,
+      "comments": 4,
+      "engagement_rate": "0.6%",
+      "video_url": "https://www.tiktok.com/@hannah91313/video/7605414677702528288?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_hannah91313.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "Video by selina.zohner",
+      "creator_username": "selina.zohner",
+      "creator_followers": null,
+      "publish_date": "2026-02-11",
+      "estimated_sales": 3,
+      "estimated_revenue": "€26.46",
+      "total_views": 2205,
+      "likes": 5,
+      "comments": 1,
+      "engagement_rate": "0.3%",
+      "video_url": "https://www.tiktok.com/@selina.zohner/video/7605523544025500930?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4_selina.zohner.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "Video by renee.laplante6",
+      "creator_username": "renee.laplante6",
+      "creator_followers": null,
+      "publish_date": "2026-02-11",
+      "estimated_sales": 2,
+      "estimated_revenue": "€17.21",
+      "total_views": 16300,
+      "likes": 56,
+      "comments": 0,
+      "engagement_rate": "0.5%",
+      "video_url": "https://www.tiktok.com/@renee.laplante6/video/7605492384465538337?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_renee.laplante6.mp4"
+    }
+  ]
+}

@@ -114,26 +114,42 @@ Target word counts for UGC TikTok Ad style (fast-paced):
 - `[strong X accent]` - Replace X with accent
 - `[sings]` - Melodic delivery
 
-### UGC Workflow Density Requirements
+### UGC Workflow Cue Requirements (ALIGNED v2.5)
 
-- **MANDATORY:** 1-2 cues per line (NO uncued lines allowed)
-- **FORMAT:** Cues MUST be inline: `[emotion] Text.` NOT on separate lines!
-- **PHILOSOPHY:** Natural, convincing delivery over theatrical performance
-- Hook: 1-2 cues per line for authentic grab
-- Middle: 1-2 cues per line for natural flow
-- CTA: 1-2 cues for confident close
+**MANDATORY (every line):**
+- 1-2 EMOTION cues per line (NO uncued lines allowed)
+- Examples: `[curious]`, `[confident]`, `[warm]`, `[impressed]`
+- Format: Inline only - `[emotion] Text.` NOT on separate lines!
+
+**OPTIONAL (0-2 per script):**
+- Action/movement cues for tone energy (e.g., `[laughs]`, `[sighs]`, `[whispers]`)
+- Use strategically at 0-2 places in script to energize delivery
+- 0 means NOT mandatory - use only when authentically needed
+- NEVER stack emotion + action on same line (avoid theatrical effect)
+
+**PHILOSOPHY:** Natural, convincing delivery over theatrical performance
+- Hook: 1-2 emotion cues for authentic grab
+- Middle: 1-2 emotion cues for natural flow
+- CTA: 1-2 emotion cues for confident close
 - Variety: Use natural emotion progression (Curious → Interested → Impressed → Confident)
 
-**Natural combination examples:**
+**Correct examples:**
+
+✅ **Emotion only (most common):**
 - `[curious] Kennst du das Problem?`
 - `[interested] Schau mal—diese Lösung funktioniert.`
 - `[impressed] Das funktioniert wirklich gut.`
 - `[confident] Link ist unten.`
 
-**AVOID theatrical stacking:**
-- ❌ `[excited] [gasps] Das ist WIRKLICH gut!` (too dramatic)
-- ❌ `[shocked] [laughs] Was?!` (over-acted)
-- ❌ `[elated] [giggles] Ich bin TOTAL begeistert!` (theatrical)
+✅ **With optional action for energy (0-2 per script):**
+- `[curious] Kennst du das Problem?`
+- `[impressed] Das funktioniert wirklich gut.`
+- `[confident] Link ist unten. [laughs]`
+
+❌ **WRONG - stacking on same line:**
+- `[excited] [gasps] Das ist WIRKLICH gut!` (theatrical)
+- `[shocked] [laughs] Was?!` (over-acted)
+- `[impressed] [giggles] Toll!` (stacked)
 
 ---
 

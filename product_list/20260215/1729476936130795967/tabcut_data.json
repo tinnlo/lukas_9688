@@ -1,0 +1,96 @@
+{
+  "product_id": "1729476936130795967",
+  "scraped_at": "2026-02-15T08:48:01.377780",
+  "product_info": {
+    "product_name": "Feelso Filter-Duschkopf, 18-Schicht-Filtrations-Hochdruck-Handbrause, 1,5 m Schlauch, 3 Strahltypen, preiswerter Duschkopf zur Entfernung von Restchlor, Bakterien und Schwermetall",
+    "shop_owner": "FEELSO",
+    "total_sales": 4727,
+    "total_sales_revenue": "€ 6.27万($ 7.3万)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "30day",
+    "sales_count": 502,
+    "sales_revenue": "$ 3532.07",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "26.15%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 65,
+    "带货视频达人数": 46,
+    "带货视频销量": 239,
+    "带货视频销售额": "$ 1678.04",
+    "广告成交金额": "$ 0",
+    "广告成交占比": "0.00%"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD#душ #duschkopf #filter #фильтр #feelso 发现时间：2026.01.19 10:41更新时间：2026.02.14 16:43时长：00:03:02跳转至 TikTok",
+      "creator_username": "provance_travel",
+      "creator_followers": "18.89万",
+      "publish_date": "2026-01-19 10:27",
+      "estimated_sales": 196,
+      "estimated_revenue": "€ 1180.86($ 1374.69)",
+      "total_views": "58.56万",
+      "video_url": "https://www.tiktok.com/@provance_travel/video/7597001801417657622?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_provance_travel.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "ADDeine Dusche kann mehr. Nicht nur gepflegter sondern auch gesünder duschen. #tiktokshopprodukte #tiktokshoptest #tiktokshopde #produktbewertung #filterduschkopf 发现时间：2026.01.19 17:29更新时间：2026.01.21 03:34时长：00:02:04跳转至 TikTok",
+      "creator_username": "bora.kabaca",
+      "creator_followers": "3493",
+      "publish_date": "2026-01-19 12:37",
+      "estimated_sales": 15,
+      "estimated_revenue": "€ 90.9($ 105.82)",
+      "total_views": "7702",
+      "video_url": "https://www.tiktok.com/@bora.kabaca/video/7597035362417970454?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_2_bora.kabaca.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "ADفلتر الماء لتصفية المي من الرواسب #shaverkit #vacuumcleaner #boschhome #kitchenessentials #bathroomfinds 发现时间：2026.01.24 21:02更新时间：2026.02.01 02:26时长：00:00:16跳转至 TikTok",
+      "creator_username": "ahmed___alawayed",
+      "creator_followers": "1.02万",
+      "publish_date": "2026-01-24 12:28",
+      "estimated_sales": 5,
+      "estimated_revenue": "€ 30.3($ 35.27)",
+      "total_views": "1.4万",
+      "video_url": "https://www.tiktok.com/@ahmed___alawayed/video/7598888411218627862?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_3_ahmed___alawayed.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "ADGönn dir das Spa-Gefühl direkt zuhause! Unser Filter-Duschkopf sorgt für weicheres Wasser und ein angenehmes Duscherlebnis – ideal für Haut und Haar. Einfach montieren und den Unterschied spüren #beautytools #duschen #tiktokmademebuyit #tiktokshopdeutschland #duschkopf 发现时间：2026.01.23 07:57更新时间：2026.02.02 09:53时长：00:00:28跳转至 TikTok",
+      "creator_username": "_gowithflo_",
+      "creator_followers": "2568",
+      "publish_date": "2026-01-21 21:19",
+      "estimated_sales": 4,
+      "estimated_revenue": "€ 24.24($ 28.22)",
+      "total_views": "2819",
+      "video_url": "https://www.tiktok.com/@_gowithflo_/video/7597911974743166241?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_4__gowithflo_.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "AD#latinoseneuropa #latinosenespaña #latinosenalemania #latinosensuiza #filtrodeducha 发现时间：2026.01.26 10:02更新时间：2026.01.28 09:24时长：00:01:33跳转至 TikTok",
+      "creator_username": "estefaniaandrades6",
+      "creator_followers": "2852",
+      "publish_date": "2026-01-24 09:38",
+      "estimated_sales": 3,
+      "estimated_revenue": "€ 18.18($ 21.16)",
+      "total_views": "4365",
+      "video_url": "https://www.tiktok.com/@estefaniaandrades6/video/7598844673834241312?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_5_estefaniaandrades6.mp4"
+    }
+  ]
+}

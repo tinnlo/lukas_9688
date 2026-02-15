@@ -11,9 +11,16 @@ Resolves TikTok product links (shortened vm.tiktok.com links, direct shop links)
 - **Documentation**: `link_resolver/README.md`
 
 ### 2. Product Scraper (Step 1)
-Scrapes product data from tabcut.com, including product information, sales analytics, and video performance data.
+Scrapes product data from tabcut.com and fastmoss.com, including product information, sales analytics, and video performance data.
 - **Script**: `run_scraper.py`
 - **Modules**: `tabcut_scraper/`, `fastmoss_scraper/`
+
+**FastMoss Scraper Improvements (2026-02-15):**
+- ✅ Fixed yt-dlp video downloads (now uses `python3 -m yt_dlp`)
+- ✅ Added network-intercept strategy for video downloads (Playwright route interception)
+- ✅ Fixed image CDN filtering (now correctly filters `s.500fd.com` and `tiktokcdn.com`)
+- ✅ Fixed creator username extraction (parses from TikTok URLs)
+- ✅ Added numeric parsing for K/M/万/亿 suffixes in view counts
 
 ## Features
 
@@ -28,11 +35,13 @@ Scrapes product data from tabcut.com, including product information, sales analy
 - **Product Information**: Extract product name, shop owner, and sales metrics
 - **Sales Analytics**: 7-day sales data with automatic 30-day fallback
 - **Video Analysis**: Top performing videos with detailed metrics
-- **Video Downloads**: Download top 5 reference videos to `ref_video/` folder
+- **Video Downloads**: Download top 5 reference videos to `ref_video/` folder (yt-dlp + network-intercept)
+- **Image Downloads**: Product images with correct CDN filtering
 - **Batch Processing**: Scrape multiple products from CSV file
 - **Resume Capability**: Resume interrupted batch jobs
 - **Error Handling**: Automatic retries with exponential backoff
 - **Progress Tracking**: Real-time progress bars and detailed logging
+- **Dual Source Support**: Works with both Tabcut and FastMoss
 
 ## Installation
 
@@ -57,8 +66,12 @@ Scrapes product data from tabcut.com, including product information, sales analy
 3. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
-   playwright install chromium
+   
+   # Install Playwright browsers to fixed location (prevents cache cleanup issues)
+   PLAYWRIGHT_BROWSERS_PATH="/Users/lxt/.local/share/ms-playwright" python3 -m playwright install chromium
    ```
+   
+   **Note**: Playwright browsers are stored in `/Users/lxt/.local/share/ms-playwright` to avoid accidental deletion during system cleanups.
 
 4. **Configure credentials:**
    ```bash
@@ -356,6 +369,17 @@ This guide covers:
 - Error handling and best practices
 
 The Vertex AI integration enables AI-powered content generation for TikTok video scripts and visual assets.
+
+## Debug Tools
+
+Development and diagnostic tools are located in `scripts/debug/`:
+
+- **`fastmoss_diagnostic.py`** - FastMoss DOM structure analyzer (outputs screenshots and JSON report)
+- **`debug_video_table.py`** - Video table structure debugger
+- **`test_date_range.py`** - Date range parsing tester
+- **`test_link_resolution.py`** - Link resolution tester
+
+These tools are for development/debugging only and are not part of the production workflow.
 
 ## License
 

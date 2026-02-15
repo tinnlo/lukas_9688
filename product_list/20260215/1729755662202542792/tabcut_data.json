@@ -1,0 +1,83 @@
+{
+  "product_id": "1729755662202542792",
+  "scraped_at": "2026-02-15T08:45:27.826884",
+  "product_info": {
+    "product_name": "Unknown Product",
+    "shop_owner": "Unknown Shop",
+    "total_sales": null,
+    "total_sales_revenue": "-(-)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "30day",
+    "sales_count": null,
+    "sales_revenue": "-",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "-",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": null,
+    "带货视频达人数": null,
+    "带货视频销量": null,
+    "带货视频销售额": null,
+    "广告成交金额": null,
+    "广告成交占比": null
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "●直播",
+      "creator_username": "unknown",
+      "creator_followers": null,
+      "publish_date": "-",
+      "estimated_sales": 0,
+      "estimated_revenue": null,
+      "total_views": null,
+      "video_url": null,
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 2,
+      "title": "●其它",
+      "creator_username": "unknown",
+      "creator_followers": null,
+      "publish_date": "-",
+      "estimated_sales": 0,
+      "estimated_revenue": null,
+      "total_views": null,
+      "video_url": null,
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 4,
+      "title": "●商家自营账号",
+      "creator_username": "unknown",
+      "creator_followers": null,
+      "publish_date": "-",
+      "estimated_sales": 0,
+      "estimated_revenue": null,
+      "total_views": null,
+      "video_url": null,
+      "video_id": null,
+      "local_path": null
+    },
+    {
+      "rank": 5,
+      "title": "●达人账号",
+      "creator_username": "unknown",
+      "creator_followers": null,
+      "publish_date": "-",
+      "estimated_sales": 0,
+      "estimated_revenue": null,
+      "total_views": null,
+      "video_url": null,
+      "video_id": null,
+      "local_path": null
+    }
+  ]
+}
