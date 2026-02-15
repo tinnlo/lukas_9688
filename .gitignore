@@ -69,3 +69,4 @@ video_*_analysis_temp/
 # Streamlit
 .streamlit/secrets.toml
 logs/
+scripts/config/.fastmoss_session.json
