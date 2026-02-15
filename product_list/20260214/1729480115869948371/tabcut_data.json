@@ -1,0 +1,44 @@
+{
+  "product_id": "1729480115869948371",
+  "scraped_at": "2026-02-14T22:26:06.897458",
+  "product_info": {
+    "product_name": "Wandmontiertes Katzenspielzeug/Leiter, 1 Stück Katzenwandregal, Modernes Katzengestell, Haustiermöbel zum Schlafen, Spielen, Klettern und Ausruhen",
+    "shop_owner": "Petravel",
+    "total_sales": 23,
+    "total_sales_revenue": "€ 327.98($ 381.82)",
+    "product_rating": null,
+    "category": null
+  },
+  "sales_data": {
+    "date_range": "30day",
+    "sales_count": 22,
+    "sales_revenue": "$ 362.8",
+    "related_videos": null,
+    "related_creators": null,
+    "conversion_rate": "0.00%",
+    "click_through_rate": null
+  },
+  "video_analysis": {
+    "带货视频数": 1,
+    "带货视频达人数": 1,
+    "带货视频销量": 0,
+    "带货视频销售额": "$ 0",
+    "广告成交金额": "$ 0",
+    "广告成交占比": "-"
+  },
+  "top_videos": [
+    {
+      "rank": 1,
+      "title": "AD\"Praktisches Möbel für deine Katze 🛏️\"#Katzenmöbel #Katzenschlafplatz #Katzentreppen #Katzenzubehör #ModerneKatzenmöbel 发现时间：2026.01.31 05:24更新时间：2026.02.06 07:22时长：00:00:09跳转至 TikTok",
+      "creator_username": "duimgdii",
+      "creator_followers": "2212",
+      "publish_date": "2026-01-31 04:12",
+      "estimated_sales": 0,
+      "estimated_revenue": "€ 0($ 0)",
+      "total_views": "1184",
+      "video_url": "https://www.tiktok.com/@duimgdii/video/7601358038716452118?is_copy_url=1&is_from_webapp=v1",
+      "video_id": null,
+      "local_path": "ref_video/video_1_duimgdii.mp4"
+    }
+  ]
+}

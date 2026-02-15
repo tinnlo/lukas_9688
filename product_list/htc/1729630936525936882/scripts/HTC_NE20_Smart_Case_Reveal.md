@@ -34,6 +34,18 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Curiosity Question — Triggers scroll-stop with unexpected case feature reveal
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Touchscreen im Kopfhörer-Case? 😳"** | **"耳机盒有触摸屏？😳"** | Center |
+| 14–17s | 134 Sprachen • Echtzeit | 134 种语言 • 实时 | Top |
+| 30–33s | HTC — keine Kopie | HTC — 不是山寨 | Center-bottom |
+
+---
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar

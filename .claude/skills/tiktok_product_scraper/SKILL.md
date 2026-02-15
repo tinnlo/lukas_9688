@@ -608,6 +608,37 @@ Before proceeding to Step 2 (Ad Analysis):
 
 ---
 
+## Known Limitations
+
+### FastMoss Data Availability
+
+**⚠️ Not all products are available on FastMoss**
+
+FastMoss may return "no data available" for products that:
+- Have been removed from TikTok Shop
+- Are region-restricted or require premium access
+- Never existed on FastMoss database
+
+**Validation added (v2.0.1):**
+- Scraper now detects "Access Restricted" or "暂无数据" pages
+- Fails gracefully with clear error message instead of downloading invalid data
+- Image downloads include aspect ratio filtering (0.4-3.0) to reject banner/ad images
+
+**Example failure (expected behavior):**
+```bash
+python3 run_scraper.py --product-id 1729708832283597812 --source fastmoss
+
+⚠️ Product 1729708832283597812 has no data available on FastMoss
+❌ ERROR: Product has no data available - may have been removed or never existed
+```
+
+**Recommended workflow:**
+1. Try Tabcut first (more reliable)
+2. Use FastMoss only when Tabcut auto-fallback triggers
+3. If both sources fail, product likely doesn't exist or requires manual research
+
+---
+
 ## Troubleshooting
 
 ### Issue: Scraper fails to login

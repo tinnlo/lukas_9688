@@ -28,37 +28,37 @@ Leading with visceral attraction reaction to trigger emotional purchase motivati
 
 ### Structure (45s)
 
-- **Hook (0-3s):** Female pulling male shirt/collar - "Mein Freund trägt das und ich flippe aus"
-- **Story (3-15s):** "Since he wears LASTAR, I can't keep my hands off him"
+- **Hook (0-3s):** Male perspective - "Meine Freundin riecht mich von der anderen Seite des Zimmers"
+- **Story (3-15s):** "Since I wear LASTAR, she can't keep her hands off me"
 - **Features (15-30s):** Woody notes, nutmeg, masculine but not overpowering
-- **Social Validation (30-40s):** "All my friends ask what he's wearing"
-- **CTA (40-45s):** "Make her notice. Link below."
+- **Social Validation (30-40s):** "Her friends keep asking what I'm wearing"
+- **CTA (40-45s):** "Make her notice you. Link below."
 
 ### Visual Strategy
 
 | Seconds | Visual | Purpose |
 |:--------|:-------|:--------|
-| 00-03 | Female hand pulling male's shirt collar, leaning to neck | Hook: Visceral attraction signal |
-| 03-06 | Female's face: eyes closed, satisfied smile | Emotional: Sensory pleasure |
+| 00-03 | Male POV: Girlfriend pulling his shirt collar, leaning to his neck | Hook: Visceral attraction signal |
+| 03-06 | Girlfriend's face: eyes closed, satisfied smile | Emotional: Sensory pleasure |
 | 06-10 | Text overlay: "Was trägst du?!" (What are you wearing?!) | Social Proof: Verbalized curiosity |
 | 10-13 | Male reveals LASTAR bottle from pocket/bag | Product Introduction: The secret |
-| 13-18 | Close-up spray on neck (side angle) | Demonstration: Application |
+| 13-18 | Male applies spray on neck (mirror/selfie angle) | Demonstration: Application |
 | 18-23 | B-roll: Wood cabin, nutmeg spice, warm lighting | Sensory: Scent mood board |
-| 23-28 | Couple close together, female resting head on male's shoulder | Benefit: Intimacy trigger |
-| 28-33 | Group of friends (female) pointing at male, asking questions | Amplification: Multiple validators |
+| 23-28 | Couple close together, girlfriend resting head on his shoulder | Benefit: Intimacy trigger |
+| 28-33 | Her friends pointing at him, asking questions (his POV) | Amplification: Multiple validators |
 | 33-38 | Male confident posture, bottle in hand | Authority: Product association |
-| 38-40 | Split screen: Before (alone) vs. After (with partner) | Transformation: Outcome visualization |
+| 38-40 | Split screen: Before (alone) vs. After (with girlfriend) | Transformation: Outcome visualization |
 | 40-45 | Product + CTA "Zieh sie an 👇" (Attract her) | Conversion: Desire activation |
 
 ---
 
 ## On-Screen Text
 
-**Strategy:** Emotional/Lifestyle — Female partner testimonial creates social proof through attraction validation
+**Strategy:** Emotional/Lifestyle — Male narrator shares his girlfriend's reaction, creating social proof through attraction validation
 
 | Timing | DE Text | ZH Text | Placement |
 |:-------|:--------|:--------|:----------|
-| 0–3s | **"Ich flippe aus"** | **"我疯了"** | Center |
+| 0–3s | **"Sie flippt aus"** | **"她疯了"** | Center |
 | 18–23s | Holzig • Muskat • Männlich | 木质 • 肉豆蔻 • 男性 | Center-bottom |
 | 38–43s | Zieh sie an | 吸引她 | Center |
 
@@ -69,11 +69,11 @@ Leading with visceral attraction reaction to trigger emotional purchase motivati
 
 ### DE (ElevenLabs Prompt | 45s)
 
-[warm] Mein Freund trägt das und ich flippe aus.
-[warm] Seit er LASTAR benutzt, kann ich die Finger nicht von ihm lassen.
-[amused] Ich rieche ihn von der anderen Seite des Zimmers.
-[curious] Und ich bin nicht die Einzige.
-[surprised] Meine Freundinnen fragen ständig: Was trägt er?
+[warm] Meine Freundin flippt aus, wenn ich das trage.
+[warm] Seit ich LASTAR benutze, kann sie die Finger nicht von mir lassen.
+[amused] Sie riecht mich von der anderen Seite des Zimmers.
+[curious] Und sie ist nicht die Einzige.
+[surprised] Ihre Freundinnen fragen ständig: Was trägt er?
 [confident] Der Duft ist holzig. [cheerfully] Mit Muskat. [happy] Männlich, aber nicht aufdringlich.
 [impressed] Er hält den ganzen Tag.
 [reflective] Morgens aufgetragen, abends noch da.
@@ -85,11 +85,11 @@ Leading with visceral attraction reaction to trigger emotional purchase motivati
 
 ### ZH (中文翻译 | 45s)
 
-[warm] 我男朋友用这个，我快疯了。
-[warm] 自从他用 LASTAR，我就忍不住想靠近他。
-[amused] 我在房间另一边都能闻到他。
-[curious] 而且不只我一个人。
-[surprised] 我的女性朋友们总是问：他喷的什么？
+[warm] 我女朋友看到我用这个，她疯了。
+[warm] 自从我用 LASTAR，她就忍不住想靠近我。
+[amused] 她在房间另一边都能闻到我。
+[curious] 而且不只她一个人。
+[surprised] 她的女性朋友们总是问：他喷的什么？
 [confident] 香味是木质的。[cheerfully] 有肉豆蔻。[happy] 男性，但不刺鼻。
 [impressed] 一整天都持久。
 [reflective] 早上喷，晚上还在。

@@ -45,7 +45,7 @@ class VideoDownloader:
 
         try:
             # Extract product images from carousel/gallery
-            image_urls = await self.page.evaluate('''() => {
+            image_urls = await self.page.evaluate("""() => {
                 const images = [];
 
                 // Strategy 1: Look for carousel/swiper images
@@ -61,13 +61,20 @@ class VideoDownloader:
                     const allImages = Array.from(document.querySelectorAll('img'))
                         .filter(img => {
                             const rect = img.getBoundingClientRect();
+                            const aspectRatio = img.naturalWidth / img.naturalHeight;
+                            
+                            // Reject banners (very wide/short) and vertical ads (very tall/narrow)
+                            const isReasonableAspect = aspectRatio >= 0.4 && aspectRatio <= 3.0;
+                            
                             return img.src &&
                                    img.naturalWidth > 300 &&
                                    img.naturalHeight > 300 &&
+                                   isReasonableAspect &&  // NEW: Reject banners & weird ratios
                                    rect.top < 1000 &&  // In upper portion
                                    !img.src.includes('avatar') &&
                                    !img.src.includes('logo') &&
-                                   !img.src.includes('icon');
+                                   !img.src.includes('icon') &&
+                                   !img.src.includes('banner');  // NEW: Explicit banner rejection
                         })
                         .map(img => img.src);
                     images.push(...allImages);
@@ -75,7 +82,7 @@ class VideoDownloader:
 
                 // Remove duplicates
                 return [...new Set(images)];
-            }''')
+            }""")
 
             if not image_urls:
                 logger.warning("No product images found in gallery")
@@ -88,7 +95,11 @@ class VideoDownloader:
                 for idx, img_url in enumerate(image_urls, start=1):
                     try:
                         # Determine file extension
-                        ext = 'webp' if '.webp' in img_url else ('png' if '.png' in img_url else 'jpg')
+                        ext = (
+                            "webp"
+                            if ".webp" in img_url
+                            else ("png" if ".png" in img_url else "jpg")
+                        )
                         filename = f"product_image_{idx}.{ext}"
                         output_path = images_dir / filename
 
@@ -99,7 +110,9 @@ class VideoDownloader:
                             continue
 
                         # Download image
-                        logger.debug(f"Downloading image {idx}/{len(image_urls)}: {filename}")
+                        logger.debug(
+                            f"Downloading image {idx}/{len(image_urls)}: {filename}"
+                        )
                         response = await client.get(img_url)
                         response.raise_for_status()
 
@@ -112,7 +125,9 @@ class VideoDownloader:
                         logger.warning(f"Failed to download image {idx}: {e}")
                         continue
 
-            logger.success(f"✓ Downloaded {len(saved_paths)}/{len(image_urls)} product images")
+            logger.success(
+                f"✓ Downloaded {len(saved_paths)}/{len(image_urls)} product images"
+            )
             return saved_paths
 
         except Exception as e:
@@ -120,11 +135,7 @@ class VideoDownloader:
             return []
 
     @retry_async(max_attempts=3, delay=3.0)
-    async def download_video(
-        self,
-        video: VideoData,
-        output_dir: Path
-    ) -> bool:
+    async def download_video(self, video: VideoData, output_dir: Path) -> bool:
         """
         Download a single video with retry logic.
 
@@ -157,23 +168,16 @@ class VideoDownloader:
 
         # Strategy 1: yt-dlp (most reliable for TikTok)
         if not success:
-            success = await self._download_via_ytdlp(
-                video.video_url,
-                output_path
-            )
+            success = await self._download_via_ytdlp(video.video_url, output_path)
 
         # Strategy 2: Direct HTTP download
         if not success:
-            success = await self._download_via_http(
-                video.video_url,
-                output_path
-            )
+            success = await self._download_via_http(video.video_url, output_path)
 
         # Strategy 3: Extract video source from page
         if not success:
             success = await self._download_from_embedded_video(
-                video.video_url,
-                output_path
+                video.video_url, output_path
             )
 
         if success:
@@ -184,11 +188,7 @@ class VideoDownloader:
 
         return success
 
-    async def _download_via_ytdlp(
-        self,
-        video_url: str,
-        output_path: Path
-    ) -> bool:
+    async def _download_via_ytdlp(self, video_url: str, output_path: Path) -> bool:
         """
         Download video using yt-dlp.
 
@@ -203,19 +203,19 @@ class VideoDownloader:
             logger.debug("Trying yt-dlp strategy...")
 
             cmd = [
-                'yt-dlp',
-                '-f', 'best',
-                '--no-playlist',
-                '-o', str(output_path),
-                '--quiet',
-                '--no-warnings',
-                video_url
+                "yt-dlp",
+                "-f",
+                "best",
+                "--no-playlist",
+                "-o",
+                str(output_path),
+                "--quiet",
+                "--no-warnings",
+                video_url,
             ]
 
             process = await asyncio.create_subprocess_exec(
-                *cmd,
-                stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE
+                *cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
             )
 
             stdout, stderr = await process.communicate()
@@ -232,11 +232,7 @@ class VideoDownloader:
             logger.debug(f"yt-dlp strategy failed: {e}")
             return False
 
-    async def _download_via_http(
-        self,
-        video_url: str,
-        output_path: Path
-    ) -> bool:
+    async def _download_via_http(self, video_url: str, output_path: Path) -> bool:
         """
         Download video via direct HTTP request.
 
@@ -251,16 +247,15 @@ class VideoDownloader:
             logger.debug("Trying direct HTTP download strategy...")
 
             async with httpx.AsyncClient(
-                follow_redirects=True,
-                timeout=self.timeout / 1000
+                follow_redirects=True, timeout=self.timeout / 1000
             ) as client:
                 response = await client.get(video_url)
 
                 if response.status_code == 200:
-                    content_type = response.headers.get('content-type', '')
+                    content_type = response.headers.get("content-type", "")
 
-                    if 'video' in content_type.lower():
-                        with open(output_path, 'wb') as f:
+                    if "video" in content_type.lower():
+                        with open(output_path, "wb") as f:
                             f.write(response.content)
                         logger.debug(f"Saved video via HTTP: {output_path.name}")
                         return True
@@ -273,9 +268,7 @@ class VideoDownloader:
             return False
 
     async def _download_from_embedded_video(
-        self,
-        video_url: str,
-        output_path: Path
+        self, video_url: str, output_path: Path
     ) -> bool:
         """
         Download video by extracting source from embedded video element.
@@ -291,24 +284,26 @@ class VideoDownloader:
             logger.debug("Trying embedded video extraction strategy...")
 
             # Navigate to page
-            await self.page.goto(video_url, wait_until="domcontentloaded", timeout=self.timeout)
+            await self.page.goto(
+                video_url, wait_until="domcontentloaded", timeout=self.timeout
+            )
             await asyncio.sleep(3)
 
             # Find video element
-            video_element = await self.page.query_selector('video')
+            video_element = await self.page.query_selector("video")
 
             if not video_element:
                 logger.debug("No video element found")
                 return False
 
             # Get video source
-            video_src = await video_element.get_attribute('src')
+            video_src = await video_element.get_attribute("src")
 
             if not video_src:
                 # Try to find source element
-                source_element = await video_element.query_selector('source')
+                source_element = await video_element.query_selector("source")
                 if source_element:
-                    video_src = await source_element.get_attribute('src')
+                    video_src = await source_element.get_attribute("src")
 
             if not video_src:
                 logger.debug("No video source found")
@@ -324,10 +319,7 @@ class VideoDownloader:
             return False
 
     async def download_videos_batch(
-        self,
-        videos: List[VideoData],
-        output_dir: Path,
-        max_concurrent: int = 3
+        self, videos: List[VideoData], output_dir: Path, max_concurrent: int = 3
     ) -> List[VideoData]:
         """
         Download multiple videos in batch.
@@ -356,11 +348,13 @@ class VideoDownloader:
         # Download all videos
         results = await asyncio.gather(
             *[download_with_semaphore(video) for video in videos],
-            return_exceptions=True
+            return_exceptions=True,
         )
 
         # Count successes
-        successful = sum(1 for r in results if not isinstance(r, Exception) and r.local_path)
+        successful = sum(
+            1 for r in results if not isinstance(r, Exception) and r.local_path
+        )
         logger.info(f"Downloaded {successful}/{len(videos)} videos successfully")
 
         return videos

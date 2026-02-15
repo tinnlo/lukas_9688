@@ -35,6 +35,18 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Product Label — Minimal tech-focused overlays for documentary-style presentation
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Bluetooth 6.0 ist da"** | **"蓝牙 6.0 来了"** | Center |
+| 12–15s | Gaming: Schnelle Reaktion | 游戏：反应快速 | Top |
+| 28–31s | HTC NE20 | HTC NE20 | Center-bottom |
+
+---
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar

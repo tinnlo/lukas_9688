@@ -1,47 +1,47 @@
 ---
 cover: ""
 caption: >-
-  Endlich ein aufgeräumter Schreibtisch! Diese 11-in-1 Steckdose ist perfekt fürs Home-Office 💻✨ #HomeOffice #Schreibtisch #Produktivität #Ordnung #TikTokShopDE
+  Schreibtisch aufgeräumt in 1 Minute 💡✨ #schreibtisch #ordnung #desksetup #lifehack #tiktokshop
 published: 2026-02-05
 duration: "00:40"
 sales:
   - yes
 link: ""
 tags:
-  - "#HomeOffice"
-  - "#Schreibtisch"
-  - "#Produktivität"
-  - "#Ordnung"
-  - "#TikTokShopDE"
+  - "#schreibtisch"
+  - "#ordnung"
+  - "#desksetup"
+  - "#lifehack"
+  - "#tiktokshop"
 product: "11-In-1 Multifunctional Power Socket"
 source_notes:
   - "product_list/samples/1729607303430380470/ref_video/video_2_analysis.md"
   - "product_list/samples/1729607303430380470/ref_video/video_5_analysis.md"
 ---
 
-# Script 6: The Productive Desk Upgrade
+# Script 6: The Organized Desk Solution
 
 ## Scripts
 
 | Beat | Time | Visual Action | Purpose |
 |:-----|:-----|:--------------|:--------|
-| **HOOK** | 00:00-00:04 | Zoom call screen recording. Person's background shows messy desk with cables hanging everywhere. Chat notification: "😬 Messy desk!" | **Embarrassment Hook** |
-| **AGITATION** | 00:04-00:08 | Cut to desk POV: Laptop charger, monitor cable, desk lamp, phone charger all fighting for one power strip under desk. Person crawling under desk frustrated. | **Relatable Pain** |
-| **REVEAL** | 00:08-00:13 | Time-lapse or snap cut: Same desk, now clean. Multi-Function Socket mounted neatly. All cables organized. | **The Solution** |
-| **FEATURE 1** | 00:13-00:19 | Close-up: Plugging in devices one by one: Monitor → Laptop charger → Desk lamp → USB hub. Text overlay: "Alles an einem Platz!" | **Capacity Demo** |
-| **FEATURE 2** | 00:19-00:24 | Hand plugs phone into USB-C while it's placed on the top shelf. Wireless earbuds on shelf too. Text: "Keine Ladekabel auf dem Tisch!" | **Clean Aesthetic** |
-| **FEATURE 3** | 00:24-00:29 | End of workday: Hand clicks off monitor and lamp switches individually. Laptop stays on. Green lights toggle. Text: "Feierabend? Alles aus!" | **Energy Control** |
-| **BENEFIT** | 00:29-00:35 | Split screen: Left = Old messy desk with "❌". Right = New clean setup with "✅". Person looks happy, productive. | **Before/After** |
-| **CTA** | 00:35-00:40 | Person gives thumbs up on a new Zoom call. Background is clean and professional. Finger points to orange cart. | **Call to Action** |
+| **HOOK** | 00:00-00:04 | Camera follows person bending down to look under desk. Camera reveals massive cable chaos underneath. Person's shocked/disgusted face. | **Shock Hook** |
+| **AGITATION** | 00:04-00:08 | Close-up under desk: Monitor cable, laptop charger, lamp, tablet, phone charger all tangled together on overloaded power strip. Dust and mess visible. | **Cable Nightmare** |
+| **REVEAL** | 00:08-00:13 | Person stands up, holds Multi-Function Socket. Confident smile. Text overlay: "Ich hab die Lösung!" | **The Recommendation** |
+| **FEATURE 1** | 00:13-00:19 | Close-up: Plugging in devices one by one: Monitor → Laptop → Lamp → Tablet. Text overlay: "11 Geräte. Ein Platz!" | **Capacity Demo** |
+| **FEATURE 2** | 00:19-00:24 | Hand plugs phone into USB-C, places it on top shelf. Earbuds charging on shelf too. Text: "Alles griffbereit!" | **Clean Aesthetic** |
+| **FEATURE 3** | 00:24-00:29 | Evening routine: Hand clicks off monitor and lamp switches individually. Other devices stay on. Green indicator lights toggle. Text: "Einzeln steuerbar!" | **Individual Control** |
+| **BENEFIT** | 00:29-00:35 | Split screen: Left = Old messy cables under desk with "❌". Right = New clean organized setup with "✅". Person looks satisfied. | **Before/After** |
+| **CTA** | 00:35-00:40 | Person sits at clean desk with organized setup. Relaxed, satisfied. Finger points to orange cart. | **Call to Action** |
 
 ## On-Screen Text
 
-**Strategy:** Emotional / Lifestyle — Embarrassment hook (messy Zoom background) with aspirational professional upgrade.
+**Strategy:** Hook Overlay — Shocking visual discovery of cable chaos creates immediate scroll-stop with horror/curiosity
 
 | Timing | DE Text | ZH Text | Placement |
 |:-------|:--------|:--------|:----------|
-| 0–4s | **"Zoom-Call Kabelsalat?"** | **"Zoom视频线缆乱？"** | Center |
-| 14–20s | USB-C + USB-A • Alles hier | USB-C + USB-A • 全在这 | Center-bottom |
+| 0–4s | **"Was ist das unter meinem Tisch?! 😱"** | **"我桌子底下怎么这么乱？！😱"** | Center |
+| 14–20s | 11 Geräte • Eine Steckdose | 11 设备 • 一个插座 | Center-bottom |
 | 29–35s | Vorher ❌ → Nachher ✅ | 之前 ❌ → 之后 ✅ | Center |
 
 ## Voiceover
@@ -50,42 +50,46 @@ source_notes:
 
 ### DE (ElevenLabs Prompt | 40s)
 
-[frustrated] Hast du auch schon mal im Zoom-Call gedacht: "Hoffentlich sieht keiner meinen Kabelsalat"?
+[curious] Moment mal. Ich schau mal unter meinen Schreibtisch.
 
-[annoyed] Monitor, Laptop, Schreibtischlampe, Handy – und ständig musst du unter den Tisch kriechen, um etwas umzustecken.
+[shocked] Oh Gott. Was ist das für ein Kabelsalat?
 
-[cheerfully] Vergiss das! Diese Steckdose bringt Ordnung auf deinen Schreibtisch.
+[annoyed] Monitor, Laptop, Lampe, Handy, Tablet – alle Kabel verheddert. Das ist eine Katastrophe.
 
-[confident] Alle deine Geräte an einem Ort. Kein Kabelgewirr mehr.
+[bright] Okay. Ich zeig dir was. Diese Steckdose hier. Elf Geräte. Ein Platz.
 
-[matter-of-fact] USB-C für dein Handy, USB-A für Maus und Tastatur – alles direkt hier.
+[confident] Alles schön organisiert. Kein Kabelgewirr mehr.
 
-[happy] Und auf dieser Ablage? Dein Handy bleibt immer griffbereit, kein Kabel liegt mehr rum.
+[matter-of-fact] USB-C für dein Handy, USB-A für andere Geräte – direkt griffbereit.
 
-[confident] Feierabend? Einfach Monitor und Lampe per Schalter aus. Der Laptop läuft weiter.
+[happy] Und diese Ablage? Handy drauf, lädt auf, keine Kabel liegen rum.
 
-[warm] Produktiver arbeiten mit einem aufgeräumten Arbeitsplatz – das ist wissenschaftlich bewiesen.
+[confident] Abends etwas ausschalten? Jedes Gerät einzeln per Schalter. Der Rest läuft weiter.
 
-[cheerfully] Mach dein Home-Office endlich professionell. Link ist unten!
+[warm] Siehst du? Alles aufgeräumt. Und ich hab mehr Platz.
+
+[cheerfully] Probier das aus. Link ist unten!
 
 ---
 
 ### ZH (中文翻译 | 40s)
 
-[frustrated] 你是不是也在Zoom会议时想过："希望没人看到我乱糟糟的线缆"？
+[curious] 等等。我看看桌子底下。
 
-[annoyed] 显示器、笔记本、台灯、手机——你总得钻到桌子底下去换插头。
+[shocked] 天啊。怎么这么乱？
 
-[cheerfully] 忘掉这些吧！这款插座能让你的书桌井井有条。
+[annoyed] 显示器、笔记本、台灯、手机、平板——所有线缆缠在一起。简直是灾难。
 
-[confident] 你所有的设备都在一个地方。再也不用理乱七八糟的线了。
+[bright] 好。我给你看个东西。这个插座。十一个设备。一个位置。
 
-[matter-of-fact] USB-C给手机充电，USB-A给鼠标和键盘——全都在这里。
+[confident] 一切都整齐了。再也没有乱糟糟的线了。
 
-[happy] 而这个置物架呢？你的手机随时可拿，线缆不会再散落在桌上。
+[matter-of-fact] USB-C给手机充电，USB-A给其他设备——触手可及。
 
-[confident] 下班了？只需用开关关掉显示器和台灯。笔记本继续运行。
+[happy] 这个置物架？手机放上去，充电中，没有线缆散落。
 
-[warm] 整洁的工作空间让你更高效——这可是科学证明的。
+[confident] 晚上想关点什么？每个设备单独开关。其余继续运行。
 
-[cheerfully] 让你的家庭办公室专业起来。链接在下面！
+[warm] 看到了吗？一切都整理好了。而且有更多空间。
+
+[cheerfully] 试试看。链接在下面！

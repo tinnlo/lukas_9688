@@ -52,11 +52,11 @@ source_notes:
 
 **Strategy:** Emotional/Lifestyle — Day-to-night transformation shows one set solving multiple occasions
 
-| Timing | DE Text | ZH Text | Placement |
-|:-------|:--------|:--------|:----------|
-| 0–3s | **"Büro & Date"** | **"办公室 & 约会"** | Center |
-| 18–23s | Blumig & Frisch • Fürs Büro | 花香清新 • 办公用 | Center-bottom |
-| 38–42s | 2 Düfte, 1 Preis | 2种香水，1个价格 | Center |
+| Timing | DE Text                     | ZH Text        | Placement     |
+| :----- | :-------------------------- | :------------- | :------------ |
+| 0–3s   | **"Büro & Date"**           | **"办公室 & 约会"** | Center        |
+| 18–23s | Blumig & Frisch • Fürs Büro | 花香清新 • 办公用     | Center-bottom |
+| 38–42s | 2 Düfte, 1 Preis            | 2种香水，1个价格      | Center        |
 
 
 ## Voiceover

@@ -34,6 +34,18 @@ source_notes:
 
 ---
 
+## On-Screen Text
+
+**Strategy:** Hook Overlay — Amplifies the relatable travel pain point to create immediate scroll-stop resonance
+
+| Timing | DE Text | ZH Text | Placement |
+|:-------|:--------|:--------|:----------|
+| 0–3s | **"Niemand versteht dich im Ausland 😰"** | **"在国外没人听懂你 😰"** | Center |
+| 14–17s | Echtzeit-Übersetzung direkt ins Ohr | 实时翻译直接到耳朵 | Top |
+| 32–35s | HTC NE20 • 134 Sprachen | HTC NE20 • 134 种语言 | Center-bottom |
+
+---
+
 ## Voiceover
 
 > with ElevenLabs v3 (alpha) grammar

@@ -1,7 +1,6 @@
 ---
 cover: ""
-caption: >-
-  Ich teste die HTC NE20: Live-Übersetzung im Ohr — und sie sind sogar wasserdicht. #techgadgets #übersetzung #reisen #kopfhörer #bluetooth #technik #ki #kopfhoerer #uebersetzer #tiktokdeals
+caption: "Ich teste die HTC NE20: Live-Übersetzung im Ohr — und sie sind sogar wasserdicht. #techgadgets #übersetzung #reisen #kopfhörer #ki"
 published: 2025-12-22
 duration: 00:40
 sales:
@@ -28,6 +27,20 @@ Structure (30–50s):
 - Komfort: Over-ear Sitz + keine Ermüdung
 - Alltag: wasserfest + Sport/Dusche
 - CTA: Link unten
+
+---
+
+## On-Screen Text
+
+**Strategy:** Social Proof Tease — Leverages TikTok deal urgency and FOMO to drive immediate interest
+
+| Timing | DE Text                                  | ZH Text              | Placement     |
+| :----- | :--------------------------------------- | :------------------- | :------------ |
+| 0–3s   | **"TikTok-Preise komplett verrückt 🤯"** | **"TikTok 价格疯了 🤯"** | Center        |
+| 15–18s | 140+ Sprachen — live im Ohr              | 140+ 种语言 — 实时翻译      | Top           |
+| 35–38s | HTC NE20 • Wasserdicht                   | HTC NE20 • 防水        | Center-bottom |
+
+---
 
 ## Voiceover
 

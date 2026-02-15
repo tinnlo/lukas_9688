@@ -52,12 +52,10 @@ class FastMossScraper:
         # Create context with Chinese locale
         logger.info("Creating browser context with Chinese locale...")
         self.context = await self.browser.new_context(
-            viewport={'width': 1920, 'height': 1080},
-            user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
-            locale='zh-CN',
-            extra_http_headers={
-                'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8'
-            }
+            viewport={"width": 1920, "height": 1080},
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+            locale="zh-CN",
+            extra_http_headers={"Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8"},
         )
 
         self.page = await self.context.new_page()
@@ -77,7 +75,7 @@ class FastMossScraper:
             await self.context.close()
         if self.browser:
             await self.browser.close()
-        if hasattr(self, 'playwright'):
+        if hasattr(self, "playwright"):
             await self.playwright.stop()
 
         logger.info("Browser closed")
@@ -85,8 +83,7 @@ class FastMossScraper:
     async def _random_delay(self) -> None:
         """Add random delay to avoid detection."""
         delay = random.uniform(
-            self.config.random_delay_min,
-            self.config.random_delay_max
+            self.config.random_delay_min, self.config.random_delay_max
         )
         logger.debug(f"Random delay: {delay:.2f}s")
         await asyncio.sleep(delay)
@@ -103,7 +100,7 @@ class FastMossScraper:
         self,
         product_id: str,
         output_dir: Optional[str] = None,
-        download_videos: bool = False
+        download_videos: bool = False,
     ) -> ProductData:
         """
         Scrape data for a single product.
@@ -135,7 +132,7 @@ class FastMossScraper:
 
             # Check if we got redirected to login
             current_url = self.page.url
-            if 'login' in current_url.lower():
+            if "login" in current_url.lower():
                 logger.info("Redirected to login, handling authentication...")
                 if await self.auth_handler.login(self.page):
                     logger.success("Successfully logged in")
@@ -146,6 +143,63 @@ class FastMossScraper:
                     raise Exception("Failed to login")
 
             logger.info(f"Current URL: {current_url}")
+
+            # Validate page loaded correctly (check for "no data" or access restrictions)
+            page_status = await self.page.evaluate("""() => {
+                const text = document.body.innerText || document.body.textContent || '';
+                const title = document.title || '';
+                
+                // Check for various error/empty states
+                const hasNoData = text.includes('暂无数据') || 
+                                 text.includes('No data') ||
+                                 text.includes('Product not found') ||
+                                 text.includes('404');
+                                 
+                const hasAccessRestricted = title.includes('Access Restricted') ||
+                                           text.includes('Access Restricted') ||
+                                           text.includes('403 Forbidden');
+                
+                const hasLoginRequired = text.includes('Please log in') ||
+                                        text.includes('登录') && text.includes('访问');
+                
+                return {
+                    hasNoData,
+                    hasAccessRestricted,
+                    hasLoginRequired,
+                    title,
+                    bodyLength: text.length
+                };
+            }""")
+
+            if page_status["hasAccessRestricted"]:
+                logger.error(f"Access restricted for product {product_id}")
+                raise Exception(
+                    f"FastMoss returned 'Access Restricted' - product may not exist or requires premium access"
+                )
+
+            if page_status["hasNoData"]:
+                logger.warning(
+                    f"Product {product_id} has no data available on FastMoss"
+                )
+                raise Exception(
+                    f"Product has no data available - may have been removed or never existed"
+                )
+
+            if page_status["hasLoginRequired"]:
+                logger.warning(
+                    f"Product {product_id} requires login (authentication may have failed)"
+                )
+                raise Exception(f"Login required but authentication failed")
+
+            # Additional check: if page body is suspiciously short, it's likely an error page
+            if page_status["bodyLength"] < 500:
+                logger.warning(
+                    f"Product {product_id} returned minimal content (only {page_status['bodyLength']} chars)"
+                )
+                logger.warning(f"Page title: {page_status['title']}")
+                raise Exception(
+                    f"Product page returned minimal content - likely does not exist"
+                )
 
             # Create extractor
             extractor = DataExtractor(self.page)
@@ -172,7 +226,7 @@ class FastMossScraper:
                 product_info=product_info,
                 sales_data=sales_data,
                 video_analysis=video_analysis,
-                top_videos=top_videos
+                top_videos=top_videos,
             )
 
             # Save to file
@@ -183,12 +237,16 @@ class FastMossScraper:
             product_data.save_to_file(str(json_path))
             logger.success(f"Product data saved to: {json_path}")
 
-            downloader = VideoDownloader(self.page, timeout=self.config.download_timeout)
+            downloader = VideoDownloader(
+                self.page, timeout=self.config.download_timeout
+            )
 
             # Download product images if we have a valid product name
             product_name = (product_info.product_name or "").strip()
             if not product_name or product_name == "Unknown Product":
-                logger.warning(f"Product {product_id} not found on FastMoss - skipping image downloads")
+                logger.warning(
+                    f"Product {product_id} not found on FastMoss - skipping image downloads"
+                )
                 logger.info("No product images downloaded (product does not exist)")
                 image_paths = []
             else:
@@ -208,6 +266,7 @@ class FastMossScraper:
                 # Clean old videos to prevent duplicates
                 if video_output_dir.exists():
                     import shutil
+
                     shutil.rmtree(video_output_dir)
                     logger.info("Cleaned old video files")
 
@@ -228,7 +287,7 @@ class FastMossScraper:
         product_ids: list[str],
         output_dir: Optional[str] = None,
         download_videos: bool = False,
-        resume: bool = False
+        resume: bool = False,
     ) -> dict:
         """
         Scrape multiple products.
@@ -244,26 +303,21 @@ class FastMossScraper:
         """
         logger.info(f"Starting batch scrape for {len(product_ids)} products")
 
-        results = {
-            'completed': [],
-            'failed': []
-        }
+        results = {"completed": [], "failed": []}
 
         for i, product_id in enumerate(product_ids, 1):
             logger.info(f"Processing product {i}/{len(product_ids)}: {product_id}")
 
             try:
                 product_data = await self.scrape_product(
-                    product_id,
-                    output_dir=output_dir,
-                    download_videos=download_videos
+                    product_id, output_dir=output_dir, download_videos=download_videos
                 )
-                results['completed'].append(product_id)
+                results["completed"].append(product_id)
                 logger.success(f"✓ Product {product_id} completed")
 
             except Exception as e:
                 logger.error(f"✗ Product {product_id} failed: {e}")
-                results['failed'].append({'product_id': product_id, 'error': str(e)})
+                results["failed"].append({"product_id": product_id, "error": str(e)})
 
             # Random delay between products
             if i < len(product_ids):
