@@ -32,19 +32,18 @@ Every line has inline cue!
 ```markdown
 ## Voiceover
 
-> with ElevenLabs v3 (alpha) grammar
+ ### DE
+ > with ElevenLabs v3 (alpha) grammar
 
-### DE (ElevenLabs Prompt | 40–50s)
+ [emotion1] German voiceover line 1.
+ [emotion2] [action1] German voiceover line 2.
+ [emotion3] German voiceover line 3.
+ ### ZH
+ > with ElevenLabs v3 (alpha) grammar
 
-[emotion1] German voiceover line 1.
-[emotion2] [action1] German voiceover line 2.
-[emotion3] German voiceover line 3.
-
-### ZH (中文翻译 | 40–50s)
-
-[emotion1] Chinese translation line 1.
-[emotion2] [action1] Chinese translation line 2.
-[emotion3] Chinese translation line 3.
+ [emotion1] Chinese translation line 1.
+ [emotion2] [action1] Chinese translation line 2.
+ [emotion3] Chinese translation line 3.
 ```
 
 ---
@@ -55,6 +54,7 @@ Every line has inline cue!
 - ❌ **NEVER:** Emotion cue on separate line followed by orphan text
 - ✅ **EVERY LINE:** Every single line MUST have 1-2 audio tags (emotion + optional action)
 - ❌ **NO ORPHANS:** No text lines without emotion cues
+- ✅ **SPACING:** EXACTLY one empty line after `> with ElevenLabs v3 (alpha) grammar`, then NO empty lines between voiceover lines
 - ✅ **CHINESE REQUIRED:** Chinese translation is mandatory for every script
 
 ---

@@ -38,11 +38,11 @@ source_notes:
 
 **Strategy:** Hook Overlay — Shocking visual discovery of cable chaos creates immediate scroll-stop with horror/curiosity
 
-| Timing | DE Text | ZH Text | Placement |
-|:-------|:--------|:--------|:----------|
-| 0–4s | **"Was ist das unter meinem Tisch?! 😱"** | **"我桌子底下怎么这么乱？！😱"** | Center |
-| 14–20s | 11 Geräte • Eine Steckdose | 11 设备 • 一个插座 | Center-bottom |
-| 29–35s | Vorher ❌ → Nachher ✅ | 之前 ❌ → 之后 ✅ | Center |
+| Timing | DE Text                                   | ZH Text              | Placement     |
+| :----- | :---------------------------------------- | :------------------- | :------------ |
+| 0–4s   | **"Was ist das unter meinem Tisch?! 😱"** | **"我桌子底下怎么这么乱？！😱"** | Center        |
+| 14–20s | 11 Geräte • Eine Steckdose                | 11 设备 • 一个插座         | Center-bottom |
+| 29–35s | Vorher ❌ → Nachher ✅                      | 之前 ❌ → 之后 ✅          | Center        |
 
 ## Voiceover
 

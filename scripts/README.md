@@ -74,14 +74,16 @@ Scrapes product data from tabcut.com and fastmoss.com, including product informa
    **Note**: Playwright browsers are stored in `/Users/lxt/.local/share/ms-playwright` to avoid accidental deletion during system cleanups.
 
 4. **Configure credentials:**
+   
+   Edit `.env` in the repository root and add your credentials:
    ```bash
-   cp config/.env.example config/.env
-   ```
-
-   Edit `config/.env` and add your tabcut.com credentials:
-   ```bash
+   # Tabcut.com Credentials
    TABCUT_USERNAME=your_username_here
    TABCUT_PASSWORD=your_password_here
+   
+   # FastMoss.com Credentials (if using)
+   FASTMOSS_USERNAME=your_username_here
+   FASTMOSS_PASSWORD=your_password_here
    ```
 
 ## Usage
@@ -252,7 +254,7 @@ The `tabcut_data.json` file contains:
 
 ## Configuration
 
-Configuration can be set via `config/.env`:
+Configuration can be set via `.env` in the repository root:
 
 ```bash
 # Authentication
@@ -296,7 +298,7 @@ Logs are saved to `logs/`:
 
 If login fails:
 
-1. Verify credentials in `config/.env`
+1. Verify credentials in `.env` (repository root)
 2. Run in headed mode to see the browser:
    ```bash
    python run_scraper.py --product-id 1729630936525936882 --headed

@@ -53,6 +53,7 @@ Do not rely on deprecated wrapper outputs.
 ⚠️ **CRITICAL FORMAT RULE - READ THIS FIRST:**
 - **INLINE CUES ONLY:** `[emotion] Text here.` (cue + text on SAME LINE)
 - **NEVER BROKEN LINES:** Do NOT write `[emotion]` on one line followed by text on the next line
+- **VOICEOVER SPACING:** Keep EXACTLY one empty line after `> with ElevenLabs v3 (alpha) grammar`, then NO empty lines between voiceover lines
 - **EVERY LINE NEEDS EMOTION CUES:** 1-2 emotion cues mandatory (e.g., [curious], [confident])
 - **ACTION CUES OPTIONAL:** 0-2 action cues per script for energy (e.g., [laughs], [sighs])
 - See `templates/voiceover_format.md` for complete format specification

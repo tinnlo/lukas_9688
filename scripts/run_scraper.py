@@ -68,38 +68,34 @@ class ProgressTracker:
         """Load existing progress or create new."""
         if Path(self.progress_file).exists():
             try:
-                with open(self.progress_file, 'r') as f:
+                with open(self.progress_file, "r") as f:
                     return json.load(f)
             except Exception as e:
                 logger.warning(f"Failed to load progress file: {e}")
 
-        return {
-            'completed': [],
-            'failed': [],
-            'pending': []
-        }
+        return {"completed": [], "failed": [], "pending": []}
 
     def save_progress(self) -> None:
         """Save current progress to file."""
         try:
-            with open(self.progress_file, 'w') as f:
+            with open(self.progress_file, "w") as f:
                 json.dump(self.progress, f, indent=2)
         except Exception as e:
             logger.error(f"Failed to save progress: {e}")
 
     def mark_completed(self, product_id: str) -> None:
         """Mark product as completed."""
-        if product_id in self.progress['pending']:
-            self.progress['pending'].remove(product_id)
-        if product_id not in self.progress['completed']:
-            self.progress['completed'].append(product_id)
+        if product_id in self.progress["pending"]:
+            self.progress["pending"].remove(product_id)
+        if product_id not in self.progress["completed"]:
+            self.progress["completed"].append(product_id)
         self.save_progress()
 
     def mark_failed(self, product_id: str, error: str) -> None:
         """Mark product as failed."""
-        if product_id in self.progress['pending']:
-            self.progress['pending'].remove(product_id)
-        self.progress['failed'].append({'product_id': product_id, 'error': error})
+        if product_id in self.progress["pending"]:
+            self.progress["pending"].remove(product_id)
+        self.progress["failed"].append({"product_id": product_id, "error": error})
         self.save_progress()
 
     def get_remaining(self, all_ids: List[str]) -> List[str]:
@@ -112,12 +108,12 @@ class ProgressTracker:
         Returns:
             List of product IDs to process
         """
-        completed_ids = set(self.progress['completed'])
+        completed_ids = set(self.progress["completed"])
         return [pid for pid in all_ids if pid not in completed_ids]
 
     def is_completed(self, product_id: str) -> bool:
         """Check if product is already completed."""
-        return product_id in self.progress['completed']
+        return product_id in self.progress["completed"]
 
 
 def load_product_ids_from_csv(csv_file: str) -> List[str]:
@@ -133,11 +129,11 @@ def load_product_ids_from_csv(csv_file: str) -> List[str]:
     product_ids = []
 
     try:
-        with open(csv_file, 'r') as f:
+        with open(csv_file, "r") as f:
             reader = csv.reader(f)
             for i, row in enumerate(reader):
                 # Skip header row
-                if i == 0 and row[0].lower() == 'product_id':
+                if i == 0 and row[0].lower() == "product_id":
                     continue
 
                 if row and row[0].strip():
@@ -155,7 +151,7 @@ async def scrape_single_product(
     product_id: str,
     config: ScraperConfig,
     download_videos: bool = False,
-    source: str = 'tabcut'
+    source: str = "tabcut",
 ) -> bool:
     """
     Scrape a single product.
@@ -171,13 +167,10 @@ async def scrape_single_product(
     """
     try:
         # Select appropriate scraper
-        ScraperClass = FastMossScraper if source == 'fastmoss' else TabcutScraper
+        ScraperClass = FastMossScraper if source == "fastmoss" else TabcutScraper
 
         async with ScraperClass(config) as scraper:
-            await scraper.scrape_product(
-                product_id,
-                download_videos=download_videos
-            )
+            await scraper.scrape_product(product_id, download_videos=download_videos)
         return True
 
     except Exception as e:
@@ -190,7 +183,7 @@ async def scrape_batch(
     config: ScraperConfig,
     download_videos: bool = False,
     resume: bool = False,
-    source: str = 'tabcut'
+    source: str = "tabcut",
 ) -> dict:
     """
     Scrape multiple products with progress tracking.
@@ -211,19 +204,18 @@ async def scrape_batch(
     # Filter out completed IDs if resuming
     if resume and tracker:
         product_ids = tracker.get_remaining(product_ids)
-        console.print(f"[yellow]Resuming: {len(product_ids)} products remaining[/yellow]")
+        console.print(
+            f"[yellow]Resuming: {len(product_ids)} products remaining[/yellow]"
+        )
 
     if not product_ids:
         console.print("[green]All products already completed![/green]")
-        return {'completed': [], 'failed': []}
+        return {"completed": [], "failed": []}
 
-    results = {
-        'completed': [],
-        'failed': []
-    }
+    results = {"completed": [], "failed": []}
 
     # Select appropriate scraper
-    ScraperClass = FastMossScraper if source == 'fastmoss' else TabcutScraper
+    ScraperClass = FastMossScraper if source == "fastmoss" else TabcutScraper
 
     # Progress bar
     with Progress(
@@ -231,26 +223,24 @@ async def scrape_batch(
         TextColumn("[progress.description]{task.description}"),
         BarColumn(),
         TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
-        console=console
+        console=console,
     ) as progress:
         task = progress.add_task(
-            f"[cyan]Scraping products from {source}...",
-            total=len(product_ids)
+            f"[cyan]Scraping products from {source}...", total=len(product_ids)
         )
 
         async with ScraperClass(config) as scraper:
             for i, product_id in enumerate(product_ids, 1):
                 progress.update(
                     task,
-                    description=f"[cyan]Product {i}/{len(product_ids)}: {product_id}"
+                    description=f"[cyan]Product {i}/{len(product_ids)}: {product_id}",
                 )
 
                 try:
                     await scraper.scrape_product(
-                        product_id,
-                        download_videos=download_videos
+                        product_id, download_videos=download_videos
                     )
-                    results['completed'].append(product_id)
+                    results["completed"].append(product_id)
 
                     if tracker:
                         tracker.mark_completed(product_id)
@@ -259,12 +249,16 @@ async def scrape_batch(
 
                 except Exception as e:
                     error_msg = str(e)
-                    results['failed'].append({'product_id': product_id, 'error': error_msg})
+                    results["failed"].append(
+                        {"product_id": product_id, "error": error_msg}
+                    )
 
                     if tracker:
                         tracker.mark_failed(product_id, error_msg)
 
-                    console.print(f"[red]✗ Product {product_id} failed: {error_msg}[/red]")
+                    console.print(
+                        f"[red]✗ Product {product_id} failed: {error_msg}[/red]"
+                    )
 
                 progress.advance(task)
 
@@ -282,31 +276,30 @@ def analyze_product_videos(product_ids: List[str], output_base_dir: str) -> dict
     Returns:
         Analysis results summary
     """
-    results = {
-        'analyzed': [],
-        'failed': []
-    }
+    results = {"analyzed": [], "failed": []}
 
     output_dir = Path(output_base_dir)
 
     for product_id in product_ids:
-        product_dir = output_dir / product_id / 'ref_video'
+        product_dir = output_dir / product_id / "ref_video"
 
         if not product_dir.exists():
             console.print(f"[yellow]No videos found for {product_id}[/yellow]")
             continue
 
         # Find all MP4 files
-        videos = list(product_dir.glob('*.mp4'))
+        videos = list(product_dir.glob("*.mp4"))
 
         if not videos:
             console.print(f"[yellow]No MP4 videos found for {product_id}[/yellow]")
             continue
 
-        console.print(f"[cyan]Analyzing {len(videos)} videos for {product_id}...[/cyan]")
+        console.print(
+            f"[cyan]Analyzing {len(videos)} videos for {product_id}...[/cyan]"
+        )
 
         # Create analysis output directory
-        analysis_dir = product_dir / 'analysis'
+        analysis_dir = product_dir / "analysis"
         analysis_dir.mkdir(exist_ok=True)
 
         for video in videos:
@@ -314,11 +307,13 @@ def analyze_product_videos(product_ids: List[str], output_base_dir: str) -> dict
                 console.print(f"  - {video.name}...", end="")
                 analyze_video.analyze_video(str(video), str(analysis_dir))
                 console.print(" [green]✓[/green]")
-                results['analyzed'].append(f"{product_id}/{video.name}")
+                results["analyzed"].append(f"{product_id}/{video.name}")
 
             except Exception as e:
                 console.print(f" [red]✗[/red] {e}")
-                results['failed'].append({'product': product_id, 'video': video.name, 'error': str(e)})
+                results["failed"].append(
+                    {"product": product_id, "video": video.name, "error": str(e)}
+                )
 
     return results
 
@@ -335,95 +330,89 @@ def create_config(args) -> ScraperConfig:
     """
     return ScraperConfig(
         headless=not args.headed,
-        timeout=int(os.getenv('DEFAULT_TIMEOUT', 30000)),
-        max_retries=int(os.getenv('MAX_RETRIES', 3)),
-        download_timeout=int(os.getenv('DOWNLOAD_TIMEOUT', 300000)),
-        output_base_dir=args.output_dir or os.getenv('OUTPUT_BASE_DIR', '../product_list'),
-        log_level=args.log_level or os.getenv('LOG_LEVEL', 'INFO')
+        timeout=int(os.getenv("DEFAULT_TIMEOUT", 30000)),
+        max_retries=int(os.getenv("MAX_RETRIES", 3)),
+        download_timeout=int(os.getenv("DOWNLOAD_TIMEOUT", 300000)),
+        output_base_dir=args.output_dir
+        or os.getenv("OUTPUT_BASE_DIR", "../product_list"),
+        log_level=args.log_level or os.getenv("LOG_LEVEL", "INFO"),
     )
 
 
 def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
-        description='TikTok Shop Product Scraper - Multi-Source Support (tabcut.com & fastmoss.com)',
+        description="TikTok Shop Product Scraper - Multi-Source Support (tabcut.com & fastmoss.com)",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=__doc__
+        epilog=__doc__,
     )
 
     # Input options
     input_group = parser.add_mutually_exclusive_group(required=True)
     input_group.add_argument(
-        '--product-id',
-        type=str,
-        help='Single product ID to scrape'
+        "--product-id", type=str, help="Single product ID to scrape"
     )
-    input_group.add_argument(
-        '--batch-file',
-        type=str,
-        help='CSV file with product IDs'
-    )
+    input_group.add_argument("--batch-file", type=str, help="CSV file with product IDs")
 
     # Source selection
     parser.add_argument(
-        '--source',
+        "--source",
         type=str,
-        choices=['tabcut', 'fastmoss'],
-        default='tabcut',
-        help='Data source to scrape from (default: tabcut)'
+        choices=["tabcut", "fastmoss"],
+        default="tabcut",
+        help="Data source to scrape from (default: tabcut)",
     )
 
     # Scraping options
     parser.add_argument(
-        '--download-videos',
-        action='store_true',
-        help='Download top 5 videos for each product'
+        "--download-videos",
+        action="store_true",
+        help="Download top 5 videos for each product",
     )
     parser.add_argument(
-        '--analyze-videos',
-        action='store_true',
-        help='Analyze downloaded videos (requires videos to be downloaded first)'
+        "--analyze-videos",
+        action="store_true",
+        help="Analyze downloaded videos (requires videos to be downloaded first)",
     )
     parser.add_argument(
-        '--resume',
-        action='store_true',
-        help='Resume interrupted batch (requires --batch-file)'
+        "--resume",
+        action="store_true",
+        help="Resume interrupted batch (requires --batch-file)",
     )
 
     # Output options
     parser.add_argument(
-        '--output-dir',
-        type=str,
-        help='Output directory (default: ../product_list)'
+        "--output-dir", type=str, help="Output directory (default: ../product_list)"
     )
 
     # Browser options
     parser.add_argument(
-        '--headed',
-        action='store_true',
-        help='Run browser in headed mode (visible)'
+        "--headed", action="store_true", help="Run browser in headed mode (visible)"
     )
 
     # Logging options
     parser.add_argument(
-        '--log-level',
-        choices=['DEBUG', 'INFO', 'WARNING', 'ERROR'],
-        help='Logging level'
+        "--log-level",
+        choices=["DEBUG", "INFO", "WARNING", "ERROR"],
+        help="Logging level",
     )
 
     global args
     args = parser.parse_args()
 
-    # Load environment variables
-    env_path = Path(__file__).parent / 'config' / '.env'
+    # Load environment variables from repo root
+    repo_root = Path(__file__).resolve().parent.parent
+    env_path = repo_root / ".env"
     if env_path.exists():
         load_dotenv(env_path)
     else:
-        console.print("[yellow]Warning: .env file not found. Make sure credentials are set.[/yellow]")
+        console.print(
+            f"[yellow]Warning: .env file not found at {env_path}. Make sure credentials are set.[/yellow]"
+        )
 
     # Setup logging
-    log_level = args.log_level or os.getenv('LOG_LEVEL', 'INFO')
-    setup_logging(log_dir='logs', log_level=log_level)
+    log_level = args.log_level or os.getenv("LOG_LEVEL", "INFO")
+    setup_logging(log_dir="logs", log_level=log_level)
 
     # Create configuration
     config = create_config(args)
@@ -436,18 +425,22 @@ def main():
     try:
         if args.product_id:
             # Single product mode
-            console.print(f"[cyan]Scraping product ID: {args.product_id} from {args.source}[/cyan]")
+            console.print(
+                f"[cyan]Scraping product ID: {args.product_id} from {args.source}[/cyan]"
+            )
             success = asyncio.run(
                 scrape_single_product(
                     args.product_id,
                     config,
                     download_videos=args.download_videos,
-                    source=args.source
+                    source=args.source,
                 )
             )
 
             if success:
-                console.print("\n[bold green]✓ Scraping completed successfully![/bold green]")
+                console.print(
+                    "\n[bold green]✓ Scraping completed successfully![/bold green]"
+                )
                 sys.exit(0)
             else:
                 console.print("\n[bold red]✗ Scraping failed![/bold red]")
@@ -457,7 +450,9 @@ def main():
             # Batch mode
             product_ids = load_product_ids_from_csv(args.batch_file)
 
-            console.print(f"[cyan]Batch mode: {len(product_ids)} products from {args.source}[/cyan]")
+            console.print(
+                f"[cyan]Batch mode: {len(product_ids)} products from {args.source}[/cyan]"
+            )
             if args.download_videos:
                 console.print("[cyan]Video downloads: ENABLED[/cyan]")
             if args.analyze_videos:
@@ -473,7 +468,7 @@ def main():
                     config,
                     download_videos=args.download_videos,
                     resume=args.resume,
-                    source=args.source
+                    source=args.source,
                 )
             )
 
@@ -482,26 +477,29 @@ def main():
             console.print(f"[green]✓ Completed: {len(results['completed'])}[/green]")
             console.print(f"[red]✗ Failed: {len(results['failed'])}[/red]")
 
-            if results['failed']:
+            if results["failed"]:
                 console.print("\n[bold red]Failed Products:[/bold red]")
-                for failure in results['failed']:
+                for failure in results["failed"]:
                     console.print(f"  - {failure['product_id']}: {failure['error']}")
 
             # Video analysis step
-            if args.analyze_videos and results['completed']:
+            if args.analyze_videos and results["completed"]:
                 console.print("\n[bold cyan]Analyzing Videos...[/bold cyan]")
                 analysis_results = analyze_product_videos(
-                    results['completed'],
-                    config.output_base_dir
+                    results["completed"], config.output_base_dir
                 )
 
                 console.print("\n[bold]Video Analysis Summary:[/bold]")
-                console.print(f"[green]✓ Analyzed: {len(analysis_results['analyzed'])}[/green]")
-                if analysis_results['failed']:
-                    console.print(f"[red]✗ Failed: {len(analysis_results['failed'])}[/red]")
+                console.print(
+                    f"[green]✓ Analyzed: {len(analysis_results['analyzed'])}[/green]"
+                )
+                if analysis_results["failed"]:
+                    console.print(
+                        f"[red]✗ Failed: {len(analysis_results['failed'])}[/red]"
+                    )
 
             # Exit with appropriate code
-            sys.exit(0 if not results['failed'] else 1)
+            sys.exit(0 if not results["failed"] else 1)
 
     except KeyboardInterrupt:
         console.print("\n[yellow]Scraping interrupted by user[/yellow]")
@@ -512,5 +510,5 @@ def main():
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

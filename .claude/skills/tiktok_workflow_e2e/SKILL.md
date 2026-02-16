@@ -129,18 +129,27 @@ python3 run_scraper.py --product-id {product_id} --download-videos --output-dir 
 python3 run_scraper.py --batch-file products.csv --download-videos --output-dir "$OUT"
 ```
 
+**Post-scraping: Convert JSON to MD and cleanup**
+```bash
+# Convert JSON to human-readable MD and remove JSON files
+for pid in {product_ids}; do
+  python3 convert_json_to_md.py --product-id $pid --date $DATE
+  rm -f ../product_list/$DATE/$pid/tabcut_data.json
+  rm -f ../product_list/$DATE/$pid/fastmoss_data.json
+done
+```
+
 **Output per product:**
 ```
 product_list/YYYYMMDD/{product_id}/
-├── tabcut_data.json       # Product metadata
-├── tabcut_data.md         # Markdown version
+├── tabcut_data.md         # Human-readable product metadata (JSON converted + removed)
 ├── product_images/        # 5-9 product images
 │   └── *.webp
 └── ref_video/             # Top 5 videos
     └── *.mp4
 ```
 
-**Gate:** Check all products have `tabcut_data.json`
+**Gate:** Check all products have `tabcut_data.md` or `fastmoss_data.md`
 
 ---
 
@@ -918,9 +927,16 @@ Ready for video production!
 
 ---
 
-**Version:** 1.9.0
-**Last Updated:** 2026-02-10 (compliance gate enforcement)
+**Version:** 1.10.0
+**Last Updated:** 2026-02-15 (JSON to MD conversion + cleanup)
 **Changelog:**
+- v1.10.0 (2026-02-15): **ADDED JSON→MD CONVERSION + CLEANUP STEP** 📄
+  - **NEW:** Post-scraping step to convert JSON to human-readable MD
+  - **Cleanup:** Remove JSON files after conversion (MD is source of truth)
+  - **Gate Update:** verify_gate.sh now checks for MD files instead of JSON
+  - **Phase 1:** Added `convert_json_to_md.py` + `rm` commands after scraping
+  - **Rationale:** Human-readable MD files are easier to reference, JSON removed to avoid confusion
+  - Updated workflow output structure and gate check documentation
 - v1.9.0 (2026-02-10): **ADDED MANDATORY COMPLIANCE VALIDATION GATE** 🚨
   - **NEW Phase 3.2:** Compliance validation is now a separate, BLOCKING step after script writing
   - Updated workflow diagram to show compliance gate as critical checkpoint

@@ -34,14 +34,14 @@ python run_scraper.py --product-id 1729630936525936882 --source tabcut
 
 ### FastMoss Login
 - **Method**: Phone number + password
-- **Credentials**: In `scripts/config/.env`
+- **Credentials**: In `.env` (repository root)
   - `FASTMOSS_USERNAME=11476899`
   - `FASTMOSS_PASSWORD=abc123456`
 - **Login Flow**: Auto-clicks "密码登录" (Password Login) then fills credentials
 
 ### Tabcut Login  
 - **Method**: Phone number + password
-- **Credentials**: In `scripts/config/.env`
+- **Credentials**: In `.env` (repository root)
   - `TABCUT_USERNAME=13360945260`
   - `TABCUT_PASSWORD=qq123123`
 

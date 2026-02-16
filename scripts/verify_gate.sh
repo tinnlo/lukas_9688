@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Get script directory and repo root
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
 usage() {
   cat <<'EOF'
 verify_gate.sh — Vault quality gate verifier for TikTok workflow
@@ -52,7 +56,12 @@ if [[ -z "$BASE" ]]; then
     usage
     exit 2
   fi
-  BASE="product_list/$DATE"
+  BASE="$REPO_ROOT/product_list/$DATE"
+fi
+
+# Resolve BASE to absolute path if it's relative
+if [[ ! "$BASE" = /* ]]; then
+  BASE="$REPO_ROOT/$BASE"
 fi
 
 if [[ "$PHASE" != "analysis" && "$PHASE" != "scripts" && "$PHASE" != "index" && "$PHASE" != "all" ]]; then
@@ -62,6 +71,11 @@ if [[ "$PHASE" != "analysis" && "$PHASE" != "scripts" && "$PHASE" != "index" && 
 fi
 
 if [[ -z "$PRODUCT_IDS" ]]; then
+  # Resolve CSV path relative to repo root if it's relative
+  if [[ ! "$CSV" = /* ]]; then
+    CSV="$REPO_ROOT/$CSV"
+  fi
+  
   if [[ ! -f "$CSV" ]]; then
     echo "CSV not found: $CSV" >&2
     exit 2
@@ -98,24 +112,15 @@ for pid in $PRODUCT_IDS; do
     continue
   fi
 
-  tabcut_json="$product_dir/tabcut_data.json"
-  fastmoss_json="$product_dir/fastmoss_data.json"
+  tabcut_md="$product_dir/tabcut_data.md"
+  fastmoss_md="$product_dir/fastmoss_data.md"
 
-  if [[ ! -f "$tabcut_json" && ! -f "$fastmoss_json" ]]; then
-    echo "❌ FAIL: missing tabcut_data.json and fastmoss_data.json"
+  if [[ ! -f "$tabcut_md" && ! -f "$fastmoss_md" ]]; then
+    echo "❌ FAIL: missing tabcut_data.md and fastmoss_data.md"
     fail=1
   else
-    [[ -f "$tabcut_json" ]] && echo "✅ tabcut_data.json"
-    [[ -f "$fastmoss_json" ]] && echo "✅ fastmoss_data.json"
-  fi
-
-  if [[ -f "$tabcut_json" ]]; then
-    if [[ -f "$product_dir/tabcut_data.md" ]]; then
-      echo "✅ tabcut_data.md"
-    else
-      echo "❌ FAIL: tabcut_data.md missing"
-      fail=1
-    fi
+    [[ -f "$tabcut_md" ]] && echo "✅ tabcut_data.md"
+    [[ -f "$fastmoss_md" ]] && echo "✅ fastmoss_data.md"
   fi
 
   if [[ "$PHASE" == "analysis" || "$PHASE" == "all" ]]; then
@@ -187,7 +192,7 @@ for pid in $PRODUCT_IDS; do
 
     # Bilingual coverage validation
     if [[ -f "$img_dir/image_analysis.md" ]]; then
-      if python3 scripts/validate_bilingual_coverage.py "$img_dir/image_analysis.md" >/dev/null 2>&1; then
+      if python3 "$SCRIPT_DIR/validate_bilingual_coverage.py" "$img_dir/image_analysis.md" >/dev/null 2>&1; then
         echo "✅ image_analysis.md bilingual coverage"
       else
         echo "⚠️ WARN: image_analysis.md bilingual coverage below standards"
@@ -195,7 +200,7 @@ for pid in $PRODUCT_IDS; do
     fi
 
     if [[ -f "$video_dir/video_synthesis.md" ]]; then
-      if python3 scripts/validate_bilingual_coverage.py "$video_dir/video_synthesis.md" >/dev/null 2>&1; then
+      if python3 "$SCRIPT_DIR/validate_bilingual_coverage.py" "$video_dir/video_synthesis.md" >/dev/null 2>&1; then
         echo "✅ video_synthesis.md bilingual coverage"
       else
         echo "❌ FAIL: video_synthesis.md bilingual coverage below standards"
@@ -205,7 +210,7 @@ for pid in $PRODUCT_IDS; do
 
     # Compliance flags validation
     if [[ -f "$video_dir/video_synthesis.md" ]]; then
-      if python3 scripts/validate_compliance_flags.py "$video_dir/video_synthesis.md" >/dev/null 2>&1; then
+      if python3 "$SCRIPT_DIR/validate_compliance_flags.py" "$video_dir/video_synthesis.md" >/dev/null 2>&1; then
         echo "✅ video_synthesis.md compliance flags"
       else
         echo "❌ FAIL: video_synthesis.md has compliance violations"
@@ -256,7 +261,7 @@ for pid in $PRODUCT_IDS; do
       for script in "$scripts_dir"/*.md; do
         [[ -e "$script" ]] || continue
         [[ "$(basename "$script")" == "Campaign_Summary.md" ]] && continue
-        if ! python3 scripts/validate_compliance_flags.py "$script" >/dev/null 2>&1; then
+        if ! python3 "$SCRIPT_DIR/validate_compliance_flags.py" "$script" >/dev/null 2>&1; then
           echo "❌ FAIL: $(basename "$script") has compliance violations"
           fail=1
           script_compliance_fail=1
@@ -270,7 +275,7 @@ for pid in $PRODUCT_IDS; do
       for script in "$scripts_dir"/*.md; do
         [[ -e "$script" ]] || continue
         [[ "$(basename "$script")" == "Campaign_Summary.md" ]] && continue
-        if ! python3 scripts/validate_elevenlabs_cues.py "$script" >/dev/null 2>&1; then
+        if ! python3 "$SCRIPT_DIR/validate_elevenlabs_cues.py" "$script" >/dev/null 2>&1; then
           echo "❌ FAIL: $(basename "$script") ElevenLabs cues below standards"
           fail=1
           script_cues_fail=1
